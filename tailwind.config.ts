@@ -10,6 +10,9 @@ const config: Config = {
     extend: {
       container: {
         center: true
+      },
+      colors: {
+        'primary': '#e11e26'
       }
     }
   },
