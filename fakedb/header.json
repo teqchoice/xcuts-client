@@ -1,4 +1,34 @@
 {
+  "topMenu": {
+    "menu": [
+      {
+        "id": "1",
+        "title": "DELIVERY",
+        "url": "#"
+      },
+      {
+        "id": "2",
+        "title": "CONTACT",
+        "url": "#"
+      },
+      {
+        "id": "3",
+        "title": "SAMPLES",
+        "url": "#"
+      },
+      {
+        "id": "4",
+        "title": "MY ACCOUNT",
+        "url": "#"
+      }
+    ]
+  },
+  "mainHeader": {
+    "logo": "images/logo.webp",
+    "phone_number": "0170 790 7000",
+    "days": "MON - FRI",
+    "times": "8AM - 5PM"
+  },
   "mainMenu": {
     "menu": [
       {
@@ -27,11 +57,5 @@
         "url": "#"
       }
     ]
-  },
-  "mainHeader": {
-    "logo": "images/logo.webp",
-    "phone_number": "0170 790 7000",
-    "days": "MON - FRI",
-    "times": "8AM - 5PM"
   }
 }

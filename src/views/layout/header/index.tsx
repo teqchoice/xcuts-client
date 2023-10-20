@@ -6,7 +6,7 @@ import MineHeader from './mineHeader'
 export default function index({ Data }: any) {
   return (
     <header>
-      <TopMenu />
+      <TopMenu Data={Data.topMenu} />
       <MineHeader Data={Data.mainHeader} />
       <MineMenu Data={Data.mainMenu} />
     </header>

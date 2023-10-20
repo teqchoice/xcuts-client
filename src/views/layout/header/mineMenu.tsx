@@ -7,7 +7,40 @@ type MenuItem = {
   url: string
 }
 
-export default function MineMenu({ Data }: any) {
+const defaultMenuItem: Partial<MenuItem[]> = [
+  {
+    id: '1',
+    title: 'Decor collections',
+    url: '#'
+  },
+  {
+    id: '2',
+    title: 'Services',
+    url: '#'
+  },
+  {
+    id: '3',
+    title: 'Products',
+    url: '#'
+  },
+  {
+    id: '4',
+    title: 'Showroom',
+    url: '#'
+  },
+  {
+    id: '5',
+    title: 'Shop online',
+    url: '#'
+  }
+]
+
+export default function MineMenu(props: any) {
+  const Data: { menu: MenuItem[] } = {
+    menu: defaultMenuItem,
+    ...props.Data
+  }
+  
   return (
     <nav className='bg-black relative py-3'>
       <div className='px-4 sm:container flex justify-between flex-grow items-center'>
