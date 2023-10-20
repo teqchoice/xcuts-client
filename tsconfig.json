@@ -19,6 +19,7 @@
       "@/assets/*": ["./src/views/assets/*"],
       "@/components/*": ["./src/views/components/*"],
       "@/redux/*": ["./src/extensions/redux/*"],
+      "@/DB/*": ["./fakedb/*"],
     }
   },
   "include": ["src", "additional.d.ts", "next-env.d.ts", "**/*.ts", "**/*.tsx"],
