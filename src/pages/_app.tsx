@@ -12,9 +12,9 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <Provider store={store}>
       <Head>
-        <meta name='theme-color' content='#1beae8' />
+        <meta name='theme-color' content='#e11e26' />
         {/* <link rel='manifest' href='/manifest.json' /> */}
-        <link rel='shortcut icon' href='/favicon.jpg' />
+        <link rel='shortcut icon' href='/favicon.ico' />
         <meta name='description' content='xcut'></meta>
         <meta name='robots' content='index, follow' />
         <meta name='keywords' content='xcut'></meta>
