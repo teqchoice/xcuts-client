@@ -33,23 +33,23 @@
     "menu": [
       {
         "id": "1",
-        "title": "Decor collections",
-        "url": "#"
+        "title": "Home",
+        "url": "/"
       },
       {
         "id": "2",
-        "title": "Services",
-        "url": "#"
+        "title": "Sliding Doors",
+        "url": "/sliding-doors"
       },
       {
         "id": "3",
-        "title": "Products",
-        "url": "#"
+        "title": "Terms and Conditions",
+        "url": "/terms-and-conditions"
       },
       {
         "id": "4",
-        "title": "Showroom",
-        "url": "#"
+        "title": "Our Guarantee",
+        "url": "/our-guarantee"
       },
       {
         "id": "5",
@@ -58,5 +58,6 @@
       }
     ]
   },
-  "terms_and_conditions": {}
+  "terms_and_conditions": {},
+  "our_guarantee": {}
 }

@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import React from 'react'
 
 export default function MineMenu() {
@@ -105,9 +106,9 @@ export default function MineMenu() {
             <a href='#' className='text-white hover:text-primary font-light text-base transition-all'>
               Privacy notice
             </a>
-            <a href='#' className='text-white hover:text-primary font-light text-base transition-all'>
+            <Link href={'/terms-and-conditions'} className='text-white hover:text-primary font-light text-base transition-all'>
               Terms and conditions
-            </a>
+            </Link>
           </div>
         </div>
       </div>

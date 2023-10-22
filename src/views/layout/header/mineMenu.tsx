@@ -1,4 +1,5 @@
 import { Search, Shopping, ShoppingCart, ShoppingCartOne } from '@icon-park/react'
+import Link from 'next/link'
 import React from 'react'
 
 type MenuItem = {
@@ -59,12 +60,12 @@ export default function MineMenu(props: any) {
                 {Data?.menu?.map((item: MenuItem) => {
                   return (
                     <li key={item.id} className='md:mt-0'>
-                      <a
-                        href='#'
+                      <Link
+                        href={item.url}
                         className='text-base md:text-base block md:inline-block text-white px-2 sm:px-2 z-50 md:py-3 py-1.5 relative hover:before:bg-primary hover:before:absolute hover:before:top-0 hover:before:bottom-0 hover:before:contents hover:before:md:skew-y-[0deg] hover:before:md:skew-x-[30deg] hover:md:before:right-6 hover:before:right-0 hover:before:md:left-6 hover:before:left-0 hover:before:-z-50 before:transition before:duration-700 hover:before:md:rounded-none hover:before:rounded'
                       >
                         {item.title} +
-                      </a>
+                      </Link>
                     </li>
                   )
                 })}

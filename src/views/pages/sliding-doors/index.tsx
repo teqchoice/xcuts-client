@@ -1,7 +1,7 @@
 import React from 'react'
 import PageIntroduction from '@/views/pages/components/pageIntroduction'
 import IntroductionSection from './introductionSection'
-import FirstPortfolio from './firstportfolioSection'
+import FirstPortfolio from './firstPortfolioSection'
 import SecoundPortfolio from './secoundPortfolioSection'
 import ThirdPortfolio from './thirdPortfolioSection'
 
