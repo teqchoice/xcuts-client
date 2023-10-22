@@ -1,17 +1,11 @@
 import React from 'react'
+import MiddleRedTitle from '@/views/pages/components/middleRedTitle'
 
 export default function ServicesSection() {
   return (
     <section>
-      <div className='bg-primary py-11'>
-        <div className='px-4 sm:container flex justify-center'>
-          <div className='text-center w-[170px] md:w-[540px] skew-y-0 skew-x-[35deg] relative'>
-            <div className='w-10 h-11 md:w-20 bg-white absolute -left-14 md:-left-24 bottom-0'></div>
-            <div className='w-10 h-11 md:w-20 bg-white absolute -right-14 md:-right-24 top-0'></div>
-            <h2 className='text-2xl md:text-4xl text-white -skew-x-[35deg]'>Our Services</h2>
-          </div>
-        </div>
-      </div>
+      <MiddleRedTitle title={'Our Services'} />
+
       <div className='bg-neutral-100'>
         <div className=''>
           <div className='md:flex'>

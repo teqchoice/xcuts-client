@@ -3,7 +3,7 @@ import Header from '@/views/layout/header/index'
 import Footer from '@/views/layout/footer/index'
 
 // !! Fake DB
-import HeaderDb from '@/DB/header.json'
+import FakeDb from '@/DB/content.json'
 
 //** Font import */
 import { Poppins } from 'next/font/google'
@@ -17,7 +17,7 @@ const poppins = Poppins({
 export default function Layout({ children }: any) {
   return (
     <main className={`${poppins.className}`}>
-      <Header  Data={HeaderDb} />
+      <Header  Data={FakeDb} />
       {children}
       <Footer />
     </main>
