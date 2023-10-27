@@ -55,6 +55,16 @@
         "id": "5",
         "title": "Showroom",
         "url": "/showroom"
+      },
+      {
+        "id": "6",
+        "title": "delivery",
+        "url": "/delivery"
+      },
+      {
+        "id": "6",
+        "title": "panel edgebanding",
+        "url": "/panel-edgebanding"
       }
     ]
   },
@@ -81,5 +91,6 @@
         "a": "We're easy. Should you happen to be around the corner and would prefer to pick up your replacement panel and save even more time that's fine with us. Otherwise, we'll deliver it to you."
       }
     ]
-  }
+  },
+  "delivery": ""
 }

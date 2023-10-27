@@ -6,7 +6,7 @@ export default function TermsPage({ Data }: any) {
   return (
     <>
       <PageIntroduction Data={{ title: 'Terms and Conditions', baner: '' }} />
-      <TermsContent Data={Data.terms_and_conditions} />
+      <TermsContent Data={Data?.terms_and_conditions} />
     </>
   )
 }
