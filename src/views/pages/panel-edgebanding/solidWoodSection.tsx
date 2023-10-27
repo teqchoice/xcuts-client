@@ -38,7 +38,7 @@ const defaultTOurGuarantee: Partial<TOurGuarantee> = {
   ]
 }
 
-export default function BookingSection(props: any) {
+export default function SolidWoodSection(props: any) {
   const Data: TOurGuarantee = {
     ...defaultTOurGuarantee,
     ...props.Data
@@ -46,35 +46,44 @@ export default function BookingSection(props: any) {
   console.log(Data)
   return (
     <>
-      <section className='relative z-20 before:bg-neutral-200 before:content-normal before:lg:h-[583px] before:md:h-[583px] before:sm:h-[583px] before:h-[603px] before:block before:w-full before:absolute before:top-0 mb-24 '>
-        <div
-          className='pt-20 bg-no-repeat bg-[left_40px_top] relative z-20'
-          style={{ backgroundImage: "url('images/x-icon-02.webp');" }}
-        >
-          <div className='px-4 sm:container'>
-            <div className='text-center text-black mb-11 relative'>
-              <p className='text-3xl'>In a rush?</p>
-              <h4 className='lg:text-5xl md:text-4xl text-3xl font-semibold mb-7'>Book our Next day service</h4>
-              <p>
-                Our usual lead time for the cut and edge orders is around five working days. If you are in a rush and
-                require your cut and edge job completed sooner, you can order our Fast Flow service. Depending on how
-                busy we are, you can choose between Next day and 2 days or 3 and 5 days lead time options.
-              </p>
-            </div>
-            <div className='bg-black text-center relative flex flex-col items-center justify-center h-[363px] md:h-[463px] px-6'>
-              <p className='text-xl md:text-3xl mb-2 text-white'>When on a tight deadline</p>
-              <h4 className='text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold text-white uppercase'>
-                BOOK OUR FAST FLOW SERVICE
-              </h4>
-              <div className='flex justify-center gap-4 mt-10'>
-                <a
-                  href='#'
-                  className='bg-primary px-5 py-4 md:px-5 lg:px-6 lg:px-9 md:py-4 font-medium text-base sm:text-xl text-white hover:bg-white ease-in duration-200 flex items-center justify-between hover:text-black uppercase'
-                >
-                  Build your cutting list now
-                </a>
+      <section>
+        <div className='px-4 sm:container'>
+          <div className='text-center text-black mb-11 mt-20'>
+            <p className='text-3xl'>Solid wood</p>
+            <h4 className='md:text-5xl text-4xl font-semibold mb-7'>Edging finish options</h4>
+            <p className='text-base text-black'>
+              We apply matching wood edging to all our veneered boards. In most cases, we can edge any veneered panel
+              with 0.6mm, 1mm and 2mm edging tapes. Depending on the edging tape thickness, we can mill three different
+              edge finishes: radius, bevel and square.
+            </p>
+          </div>
+          <div className='grid md:grid-cols-3 gap-7'>
+            <div className='relative'>
+              <img src='images/2.0MM-Radius.webp' alt='' className='w-full md:w-auto' />
+              <div className='absolute bottom-2 left-0 right-0'>
+                <h5 className='text-2xl text-white font-bold text-center'>2.0MM-Radius</h5>
               </div>
             </div>
+            <div className='relative'>
+              <img src='images/2.0MM-BEVEL.webp' alt='' className='w-full md:w-auto' />
+              <div className='absolute bottom-2 left-0 right-0'>
+                <h5 className='text-2xl text-white font-bold text-center'>2.0MM-BEVEL</h5>
+              </div>
+            </div>
+            <div className='relative'>
+              <img src='images/2.0MM-SQUARE.webp' alt='' className='w-full md:w-auto' />
+              <div className='absolute bottom-2 left-0 right-0'>
+                <h5 className='text-2xl text-white font-bold text-center'>2.0MM-SQUARE</h5>
+              </div>
+            </div>
+          </div>
+          <div className='pt-14 pb-32 text-center flex justify-center'>
+            <a
+              href='#'
+              className='bg-black lg:w-[452px] px-3 py-4 md:px-5 lg:px-6 lg:px-9 md:py-4 font-medium text-lg md:text-2xl text-white hover:bg-primary ease-in duration-200 flex items-center justify-between'
+            >
+              Create your cutting list now <i className='ri-arrow-right-s-line'></i>
+            </a>
           </div>
         </div>
       </section>

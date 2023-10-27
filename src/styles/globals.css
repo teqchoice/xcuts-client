@@ -32,10 +32,18 @@
     }
   }
 
-  .our__prdts__item:hover .prdts__itembox{
+  .our__prdts__item:hover .prdts__itembox {
     bottom: 0px;
     transition-property: all;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     transition-duration: 1000ms;
+  }
+
+  table tbody tr:hover {
+    --tw-bg-opacity: 1;
+    background-color: rgb(229 231 235 / var(--tw-bg-opacity));
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
   }
 }

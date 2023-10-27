@@ -38,7 +38,7 @@ const defaultTOurGuarantee: Partial<TOurGuarantee> = {
   ]
 }
 
-export default function IntroductionSection(props: any) {
+export default function Collections(props: any) {
   const Data: TOurGuarantee = {
     ...defaultTOurGuarantee,
     ...props.Data
@@ -46,25 +46,20 @@ export default function IntroductionSection(props: any) {
   console.log(Data)
   return (
     <>
-      <section className="section-one-stop py-10 md:py-20">
-        <div className="px-4 sm:container">
-            <div className="text-center px-1 overflow-hidden">
-                <div className="text-2xl md:text-3xl mb-2">
-                    Professionally edged panels.
-                </div>
-                <div className="bg-black mx-6 md:mx-28 skew-y-[0] skew-x-[35deg] relative">
-                    <div className="w-3 md:w-20 h-11 bg-primary absolute left-0 md:-left-24 bottom-0"></div>
-                    <div className="w-3 md:w-20 h-11 bg-primary absolute right-0 md:-right-24 top-0"></div>
-                    <h1 className="text-white text-xl/6 md:text-4xl font-bold -skew-x-[35deg] py-2 px-4">Impeccable finish. Excellent adhesion.</h1>
-                </div>
-                <div className="flex flex-col gap-y-3 text-black-1d mt-10">
-                    <p>Our edgebanding machines use PUR glue, which provides excellent tape-to-panel adhesion and seals the edge protecting against water ingress. The machines have additional near-infrared laser glueing station, allowing to apply special edging tape that leaves no visible joint line.</p>
-                    <p>We can edgeband straight panels as narrow as 20mm in width and as short as 30mm in length.  We can also edgeband panels cut on an angle. The thickest panel we can apply edging tape to is 60mm in height. </p>
-                    <p>In every above case, we will tune the machine to suit the decor board so that edging tape fits the panel perfectly.</p>
-                </div>
+      <section className='section-one-stop py-10 md:py-20 pb-0 md:pb-0'>
+        <div className='px-4 sm:container'>
+          <div className='text-center px-1 overflow-hidden'>
+            <div className='text-2xl md:text-3xl mb-2'>Collections</div>
+            <div className='bg-black mx-6 md:mx-28 skew-y-[0] skew-x-[35deg] relative'>
+              <div className='w-3 md:w-20 h-11 bg-primary absolute left-0 md:-left-24 bottom-0'></div>
+              <div className='w-3 md:w-20 h-11 bg-primary absolute right-0 md:-right-24 top-0'></div>
+              <h1 className='text-white text-xl/6 md:text-4xl lg:text-5xl font-bold -skew-x-[35deg] py-2 px-4 uppercase'>
+                Latest decorative trends
+              </h1>
             </div>
+          </div>
         </div>
-    </section>
+      </section>
     </>
   )
 }

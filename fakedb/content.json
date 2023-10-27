@@ -62,9 +62,29 @@
         "url": "/delivery"
       },
       {
-        "id": "6",
+        "id": "7",
         "title": "panel edgebanding",
         "url": "/panel-edgebanding"
+      },
+      {
+        "id": "8",
+        "title": "about us",
+        "url": "/about-us"
+      },
+      {
+        "id": "9",
+        "title": "decor collections",
+        "url": "/decor-collections"
+      },
+      {
+        "id": "9",
+        "title": "privacy notice",
+        "url": "/privacy-notice"
+      },
+      {
+        "id": "10",
+        "title": "login",
+        "url": "/login"
       }
     ]
   },

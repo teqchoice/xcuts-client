@@ -38,7 +38,7 @@ const defaultTOurGuarantee: Partial<TOurGuarantee> = {
   ]
 }
 
-export default function IntroductionSection(props: any) {
+export default function VideoSection(props: any) {
   const Data: TOurGuarantee = {
     ...defaultTOurGuarantee,
     ...props.Data
@@ -46,25 +46,26 @@ export default function IntroductionSection(props: any) {
   console.log(Data)
   return (
     <>
-      <section className="section-one-stop py-10 md:py-20">
-        <div className="px-4 sm:container">
-            <div className="text-center px-1 overflow-hidden">
-                <div className="text-2xl md:text-3xl mb-2">
-                    Professionally edged panels.
-                </div>
-                <div className="bg-black mx-6 md:mx-28 skew-y-[0] skew-x-[35deg] relative">
-                    <div className="w-3 md:w-20 h-11 bg-primary absolute left-0 md:-left-24 bottom-0"></div>
-                    <div className="w-3 md:w-20 h-11 bg-primary absolute right-0 md:-right-24 top-0"></div>
-                    <h1 className="text-white text-xl/6 md:text-4xl font-bold -skew-x-[35deg] py-2 px-4">Impeccable finish. Excellent adhesion.</h1>
-                </div>
-                <div className="flex flex-col gap-y-3 text-black-1d mt-10">
-                    <p>Our edgebanding machines use PUR glue, which provides excellent tape-to-panel adhesion and seals the edge protecting against water ingress. The machines have additional near-infrared laser glueing station, allowing to apply special edging tape that leaves no visible joint line.</p>
-                    <p>We can edgeband straight panels as narrow as 20mm in width and as short as 30mm in length.  We can also edgeband panels cut on an angle. The thickest panel we can apply edging tape to is 60mm in height. </p>
-                    <p>In every above case, we will tune the machine to suit the decor board so that edging tape fits the panel perfectly.</p>
-                </div>
-            </div>
+      <section className='pt-20 relative before:bg-primary before:lg:h-[583px] before:md:h-[483px] before:sm:h-[383px] before:h-[303px] before:block before:w-full before:rounded-3xl before:absolute before:top-0'>
+        <div className='px-4 sm:container'>
+          <div className='text-center text-white mb-11 relative'>
+            <p className='lg:text-3xl text-2l'>This is how we do it.</p>
+            <h4 className='lg:text-5xl md:text-3xl text-2xl font-semibold'>Edgebanding service in action.</h4>
+          </div>
+          <div
+            className='embed-responsive pt-[55.5%] embed-responsive-16 by-9 relative w-full overflow-hidden border-solid border-8 border-white'
+            // style={{paddingTop: "55.5%"}}
+          >
+            <iframe
+              className='embed-responsive-item absolute bottom-0 left-0 right-0 top-0 h-full w-full'
+              src='https://www.youtube.com/embed/vlDzYIIOYmM?enablejsapi=1&amp;origin=https%3A%2F%2Fmdbootstrap.com'
+              // allowfullscreen=""
+              data-gtm-yt-inspected-2340190_699='true'
+              id='240632615'
+            ></iframe>
+          </div>
         </div>
-    </section>
+      </section>
     </>
   )
 }
