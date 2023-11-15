@@ -16,7 +16,7 @@ export default function App({ Component, pageProps }: AppProps) {
         {/* <link rel='manifest' href='/manifest.json' /> */}
         <link rel='shortcut icon' href='/favicon.ico' />
         <meta name='description' content='xcut'></meta>
-        <meta name='robots' content='index, follow' />
+        <meta name='robots' content='noindex, nofollow' />
         <meta name='keywords' content='xcut'></meta>
         <meta name='author' content='xcut'></meta>
         <title>XCUT</title>

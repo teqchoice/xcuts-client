@@ -42,7 +42,7 @@ export default function TopMenu(props: any) {
             <a
               key={item.id}
               href='#'
-              className='text-sm sm:text-base/3 text-white px-2 sm:px-3 z-50 py-1 sm:py-3 relative after:border-r-2 after:absolute after:w-1 after:h-3 sm:after:h-4 after:right-0 after:top-2 sm:after:inset-y-2/4 sm:after:-mt-2 hover:before:bg-primary hover:before:absolute hover:before:top-0 hover:before:bottom-0 hover:before:contents hover:before:skew-y-[0deg] hover:before:skew-x-[30deg] hover:before:right-4 hover:before:left-4 hover:before:-z-50 before:transition before:duration-700'
+              className='text-sm sm:text-base/3 text-white px-2 sm:px-3 z-10 py-1 sm:py-3 relative after:border-r-2 after:absolute after:w-1 after:h-3 sm:after:h-4 after:right-0 after:top-2 sm:after:inset-y-2/4 sm:after:-mt-2 hover:before:bg-primary hover:before:absolute hover:before:top-0 hover:before:bottom-0 hover:before:contents hover:before:skew-y-[0deg] hover:before:skew-x-[30deg] hover:before:right-4 hover:before:left-4 hover:before:-z-10 before:transition before:duration-700'
             >
               {item.title}
             </a>
