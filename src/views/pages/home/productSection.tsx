@@ -1,11 +1,35 @@
+import { select } from 'radash'
 import React from 'react'
 
-export default function ProductSection() {
+export default function ProductSection({ data }: any) {
+  // console.log(data)
+
+  const t = select(
+    data,
+    item => item[0],
+    item => item[0]?.id === '80'
+  )[0]
+  const s1 = select(
+    data,
+    item => item,
+    item => item[0]?.id === '81'
+  )[0]
+  const s2 = select(
+    data,
+    item => item,
+    item => item[0]?.id === '82'
+  )[0]
+  const s3 = select(
+    data,
+    item => item,
+    item => item[0]?.id === '83'
+  )[0]
+  // console.log(s1)
   return (
     <section className='py-20'>
       <div className='px-4 sm:container max-w-full xl:px-16 xxl:px-32'>
         <div className='text-center'>
-          <h2 className='font-normal text-5xl mb-14'>Our Products</h2>
+          <h2 className='font-normal text-5xl mb-14'>{t.value}</h2>
         </div>
 
         <div className='flex md:flex-row flex-col space-y-4 md:space-y-0 md:space-x-4'>
@@ -17,28 +41,42 @@ export default function ProductSection() {
                 alt=''
               />
               <div className='pr-11'>
-                <div className='prdts__itembox bg-neutral-600 pb-16 absolute -bottom-full transition-all duration-1000'>
+                <div className='prdts__itembox bg-neutral-200 pb-16 absolute -bottom-full transition-all duration-1000'>
                   <div className='pt-8 px-7'>
-                    <h4 className='text-black font-bold text-2xl mb-6'>Sliding Doors</h4>
-                    <p className='mb-4'>
-                      We can produce a range of sliding wardrobe doors in bespoke sizes in under five working days.
-                      Elegant, sturdy and well-priced.
-                    </p>
+                    <h4
+                      className='text-black font-bold text-2xl mb-6'
+                      dangerouslySetInnerHTML={{
+                        __html: s1[0]?.value
+                      }}
+                    ></h4>
+                    <div
+                      dangerouslySetInnerHTML={{
+                        __html: s1[1]?.value
+                      }}
+                    ></div>
                   </div>
                 </div>
                 <div className='flex gap-0 justify-end absolute bottom-0 right-0 pr-11'>
                   <a
-                    href='#'
+                    href={s1[2]?.link}
                     className='bg-primary px-3 py-4 md:px-6 md:py-4 font-bold text-base text-white hover:bg-black ease-in duration-200 flex items-center justify-between'
                   >
-                    Find out more
+                    <span
+                      dangerouslySetInnerHTML={{
+                        __html: s1[2]?.value
+                      }}
+                    ></span>
                     <img className='w-2 ml-2' src='images/angle-arrow.webp' alt='' />
                   </a>
                   <a
-                    href='#'
+                    href={s1[3]?.link}
                     className='bg-black px-5 py-4 md:px-5 lg:px-6 lg:px-9 md:py-3 font-bold text-base text-white hover:bg-primary ease-in duration-200 flex items-center justify-between'
                   >
-                    Shop
+                    <span
+                      dangerouslySetInnerHTML={{
+                        __html: s1[3]?.value
+                      }}
+                    ></span>
                     <img className='w-2 ml-2' src='images/angle-arrow.webp' alt='' />
                   </a>
                 </div>
@@ -54,28 +92,42 @@ export default function ProductSection() {
                 alt=''
               />
               <div className='pr-11'>
-                <div className='prdts__itembox bg-neutral-600 pb-16 absolute -bottom-full transition-all duration-1000'>
+                <div className='prdts__itembox bg-neutral-200 pb-16 absolute -bottom-full transition-all duration-1000'>
                   <div className='pt-8 px-7'>
-                    <h4 className='text-black font-bold text-2xl mb-6'>Sliding Doors</h4>
-                    <p className='mb-4'>
-                      We can produce a range of sliding wardrobe doors in bespoke sizes in under five working days.
-                      Elegant, sturdy and well-priced.
-                    </p>
+                    <h4
+                      className='text-black font-bold text-2xl mb-6'
+                      dangerouslySetInnerHTML={{
+                        __html: s2[0]?.value
+                      }}
+                    ></h4>
+                    <div
+                      dangerouslySetInnerHTML={{
+                        __html: s2[1]?.value
+                      }}
+                    ></div>
                   </div>
                 </div>
                 <div className='flex gap-0 justify-end absolute bottom-0 right-0 pr-11'>
                   <a
-                    href='#'
+                    href={s2[2]?.link}
                     className='bg-primary px-3 py-4 md:px-6 md:py-4 font-bold text-base text-white hover:bg-black ease-in duration-200 flex items-center justify-between'
                   >
-                    Find out more
+                    <span
+                      dangerouslySetInnerHTML={{
+                        __html: s2[2]?.value
+                      }}
+                    ></span>
                     <img className='w-2 ml-2' src='images/angle-arrow.webp' alt='' />
                   </a>
                   <a
-                    href='#'
+                    href={s2[3]?.link}
                     className='bg-black px-5 py-4 md:px-5 lg:px-6 lg:px-9 md:py-3 font-bold text-base text-white hover:bg-primary ease-in duration-200 flex items-center justify-between'
                   >
-                    Shop
+                    <span
+                      dangerouslySetInnerHTML={{
+                        __html: s2[3]?.value
+                      }}
+                    ></span>
                     <img className='w-2 ml-2' src='images/angle-arrow.webp' alt='' />
                   </a>
                 </div>
@@ -91,28 +143,42 @@ export default function ProductSection() {
                 alt=''
               />
               <div className='pr-11'>
-                <div className='prdts__itembox bg-neutral-600 pb-16 absolute -bottom-full transition-all duration-1000'>
+                <div className='prdts__itembox bg-neutral-200 pb-16 absolute -bottom-full transition-all duration-1000'>
                   <div className='pt-8 px-7'>
-                    <h4 className='text-black font-bold text-2xl mb-6'>Sliding Doors</h4>
-                    <p className='mb-4'>
-                      We can produce a range of sliding wardrobe doors in bespoke sizes in under five working days.
-                      Elegant, sturdy and well-priced.
-                    </p>
+                    <h4
+                      className='text-black font-bold text-2xl mb-6'
+                      dangerouslySetInnerHTML={{
+                        __html: s3[0]?.value
+                      }}
+                    ></h4>
+                    <div
+                      dangerouslySetInnerHTML={{
+                        __html: s3[1]?.value
+                      }}
+                    ></div>
                   </div>
                 </div>
                 <div className='flex gap-0 justify-end absolute bottom-0 right-0 pr-11'>
                   <a
-                    href='#'
-                    className='bg-primary px-3 py-4 md:px-4 md:py-4 font-bold text-base text-white hover:bg-black ease-in duration-200 flex items-center justify-between'
+                    href={s3[2]?.link}
+                    className='bg-primary px-3 py-4 md:px-6 md:py-4 font-bold text-base text-white hover:bg-black ease-in duration-200 flex items-center justify-between'
                   >
-                    Find out more
+                    <span
+                      dangerouslySetInnerHTML={{
+                        __html: s3[2]?.value
+                      }}
+                    ></span>
                     <img className='w-2 ml-2' src='images/angle-arrow.webp' alt='' />
                   </a>
                   <a
-                    href='#'
+                    href={s3[3]?.link}
                     className='bg-black px-5 py-4 md:px-5 lg:px-6 lg:px-9 md:py-3 font-bold text-base text-white hover:bg-primary ease-in duration-200 flex items-center justify-between'
                   >
-                    Shop
+                    <span
+                      dangerouslySetInnerHTML={{
+                        __html: s3[3]?.value
+                      }}
+                    ></span>
                     <img className='w-2 ml-2' src='images/angle-arrow.webp' alt='' />
                   </a>
                 </div>

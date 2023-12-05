@@ -31,7 +31,13 @@ export default function HomePage({ data }: any) {
         )}
       />
 
-      <ProductSection />
+      <ProductSection
+        data={select(
+          data,
+          item => item?.contents,
+          item => item?.name?.includes('Section3')
+        )}
+      />
     </>
   )
 }
