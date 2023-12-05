@@ -19,12 +19,12 @@ const Data = FakeDb
 
 export default function Layout({ children }: any) {
   const { passwordvrify } = useSelector((state: any) => state.options)
-  if (!passwordvrify)
-    return (
-      <div className='fixed top-0 left-0 h-screen w-screen bg-white z-50'>
-        <Login Data={Data?.delivery} />
-      </div>
-    )
+  // if (!passwordvrify)
+  //   return (
+  //     <div className='fixed top-0 left-0 h-screen w-screen bg-white z-50'>
+  //       <Login Data={Data?.delivery} />
+  //     </div>
+  //   )
   return (
     <main className={`${poppins.className}`}>
       <Header Data={FakeDb} />

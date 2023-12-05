@@ -1,13 +1,44 @@
-import React from 'react'
+import React, { Fragment } from 'react'
+import Slider from '../components/slider'
+import Image from 'next/image'
 
-export default function HeroSection() {
+export default function HeroSection({ data }: any) {
+  // console.log(data)
+
+  function SlideMap() {
+    return (
+      <Slider slidesPerView={1} className={'w-full overflow-hidden'}>
+        {data[0]?.map((slide: any, i: number) => {
+          // console.log(slide)
+          return (
+            <Fragment key={i}>
+              <img
+                src={process.env.NEXT_PUBLIC_API_URL + slide.filec}
+                alt='baner'
+                // width={100}
+                // height={100}
+                // unoptimized
+                className='w-full h-fit object-cover object-center rounded-lg'
+              />
+            </Fragment>
+          )
+        })}
+      </Slider>
+    )
+  }
+
   return (
-    <section className='swiper mySwiper'>
-      <div className='swiper-wrapper'>
-        <div className='swiper-slide after:absolute after:content-normal after:bottom-0 after:w-[200px] after:bg-inherit after:right-0 after:skew-y-[144deg] after:pb-36 after:origin-[100%_100%]'>
-          <img src='images/slide-01.webp' alt='' className='h-[365px] object-cover' />
+    <section className='relative overflow-hidden'>
+      {/* <section className='swiper mySwiper'>
+        <div className='swiper-wrapper'>
+          <div className='swiper-slide after:absolute after:content-normal after:bottom-0 after:w-[200px] after:bg-inherit after:right-0 after:skew-y-[144deg] after:pb-36 after:origin-[100%_100%]'>
+            <img src='images/slide-01.webp' alt='' className='h-[365px] object-cover' />
+          </div>
         </div>
-      </div>
+      </section> */}
+
+      <SlideMap />
+      <div className='absolute bottom-0 right-0 z-10 w-[200px] bg-white pb-36 skew-y-[144deg] origin-[100%_100%]'></div>
     </section>
   )
 }

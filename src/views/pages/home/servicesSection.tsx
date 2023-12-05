@@ -1,7 +1,8 @@
 import React from 'react'
 import MiddleRedTitle from '@/views/pages/components/middleRedTitle'
 
-export default function ServicesSection() {
+export default function ServicesSection({ data }: any) {
+  console.log(data[0])
   return (
     <section>
       <MiddleRedTitle title={'Our Services'} />

@@ -6,7 +6,7 @@
   #hamburger:checked ~ ul {
     left: 0;
   }
-  .swiper {
+  /* .swiper {
     width: 100%;
     height: 50%;
   }
@@ -30,6 +30,17 @@
     .swiper-slide img {
       height: 365px;
     }
+  } */
+  .swiper {
+    width: 100%;
+    height: 100%;
+  }
+
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 
   .our__prdts__item:hover .prdts__itembox {

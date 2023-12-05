@@ -60,7 +60,7 @@ export default function MineMenu(props: any) {
                 {Data?.menu?.map((item: MenuItem, i: number) => {
                   // if (i > 5)
                   return (
-                    <li key={item.id} className='md:mt-0'>
+                    <li key={i} className='md:mt-0'>
                       <Link
                         href={item.url}
                         className='text-base md:text-base block md:inline-block text-white px-2 sm:px-2 z-50 md:py-3 py-1.5 relative hover:before:bg-primary hover:before:absolute hover:before:top-0 hover:before:bottom-0 hover:before:contents hover:before:md:skew-y-[0deg] hover:before:md:skew-x-[30deg] hover:md:before:right-6 hover:before:right-0 hover:before:md:left-6 hover:before:left-0 hover:before:-z-50 before:transition before:duration-700 hover:before:md:rounded-none hover:before:rounded'
