@@ -18,6 +18,6 @@ export default function PHome({ data, layout }: any) {
 export const getServerSideProps = async (context: any) => {
   const { data } = await axios.get(`http://api.xcuts.co.uk/api/v1/get-content-query/page=1/`)
   const { data: layoutData } = await axios.get(`http://api.xcuts.co.uk/api/v1/get-content-query/page=5/`)
-  console.log(layoutData)
+  // console.log(layoutData)
   return { props: { data: data[0].positions, layout: layoutData[0]?.positions } }
 }

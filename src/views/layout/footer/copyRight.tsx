@@ -1,7 +1,7 @@
 import React from 'react'
 
 export default function CopyRight({ data }: any) {
-  console.log(data[1][2].filec)
+  // console.log(data[1][2].filec)
   return (
     <div className='ftr__copy__right flex flex-col md:flex-row md:justify-between items-center py-8'>
       <div className='order-1 md:order-none'>

@@ -22,12 +22,12 @@ const Data = FakeDb
 export default function Layout({ children, data }: any) {
   // console.log(data)
   const { passwordvrify } = useSelector((state: any) => state.options)
-  // if (!passwordvrify)
-  //   return (
-  //     <div className='fixed top-0 left-0 h-screen w-screen bg-white z-50'>
-  //       <Login Data={Data?.delivery} />
-  //     </div>
-  //   )
+  if (!passwordvrify)
+    return (
+      <div className='fixed top-0 left-0 h-screen w-screen bg-white z-50'>
+        <Login Data={Data?.delivery} />
+      </div>
+    )
   return (
     <main className={`${poppins.className}`}>
       <Header
@@ -47,10 +47,4 @@ export default function Layout({ children, data }: any) {
       />
     </main>
   )
-}
-
-export const getServerSideProps = async (context: any) => {
-  const { data } = await axios.get(`http://api.xcuts.co.uk/api/v1/get-content-query/page=5/`)
-  console.log(data)
-  return { props: { data: data[0].positions } }
 }

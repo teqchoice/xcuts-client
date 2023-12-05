@@ -1,7 +1,7 @@
 import React from 'react'
 
 export default function TopMneu({ data }: any) {
-  console.log(data)
+  // console.log(data)
   return (
     <div className='ftr__title__grid relative pt-20 pb-10'>
       <h4 className='text-2xl font-semibold text-white mb-8'>{data[1][0]?.value}</h4>

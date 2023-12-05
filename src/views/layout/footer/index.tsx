@@ -5,7 +5,7 @@ import CopyRight from './copyRight'
 import { select } from 'radash'
 
 export default function index({ data }: any) {
-  console.log(data)
+  // console.log(data)
   return (
     <footer className='bg-neutral-700'>
       <div className='px-4 sm:container'>
