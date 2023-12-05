@@ -37,7 +37,7 @@ export default function ProductSection({ data }: any) {
             <div className='our__prdts__item relative overflow-hidden'>
               <img
                 className='w-full h-96 md:h-[400px] xl:h-[709px] object-cover'
-                src='images/our-product-01.webp'
+                src={process.env.NEXT_PUBLIC_API_URL + s1[4]?.filec}
                 alt=''
               />
               <div className='pr-11'>
@@ -88,7 +88,7 @@ export default function ProductSection({ data }: any) {
             <div className='our__prdts__item relative overflow-hidden'>
               <img
                 className='w-full h-96 md:h-[400px] xl:h-[709px] object-cover'
-                src='images/our-product-02.webp'
+                src={process.env.NEXT_PUBLIC_API_URL + s2[4]?.filec}
                 alt=''
               />
               <div className='pr-11'>
@@ -139,7 +139,7 @@ export default function ProductSection({ data }: any) {
             <div className='our__prdts__item relative overflow-hidden'>
               <img
                 className='w-full h-96 md:h-[400px] xl:h-[709px] object-cover'
-                src='images/our-product-03.webp'
+                src={process.env.NEXT_PUBLIC_API_URL + s3[4]?.filec}
                 alt=''
               />
               <div className='pr-11'>

@@ -1,51 +1,59 @@
+import Link from 'next/link'
 import React from 'react'
 
-type MenuItem = {
-  id: string
-  title: string
-  url: string
-}
+// type MenuItem = {
+//   id: string
+//   title: string
+//   value: string
+//   link: string
+// }
 
-const defaultMenuItem: Partial<MenuItem[]> = [
-  {
-    id: '1',
-    title: 'DELIVERY',
-    url: '#'
-  },
-  {
-    id: '2',
-    title: 'CONTACT',
-    url: '#'
-  },
-  {
-    id: '3',
-    title: 'SAMPLES',
-    url: '#'
-  },
-  {
-    id: '4',
-    title: 'MY ACCOUNT',
-    url: '#'
-  }
-]
+// const defaultMenuItem: Partial<MenuItem[]> = [
+//   {
+//     id: '1',
+//     title: 'DELIVERY',
+//     value: 'DELIVERY',
+//     link: '#'
+//   },
+//   {
+//     id: '2',
+//     title: 'CONTACT',
+//     value: 'CONTACT',
+//     link: '#'
+//   },
+//   {
+//     id: '3',
+//     title: 'SAMPLES',
+//     value: 'SAMPLES',
+//     link: '#'
+//   },
+//   {
+//     id: '4',
+//     title: 'MY ACCOUNT',
+//     value: 'MY ACCOUNT',
+//     link: '#'
+//   }
+// ]
 
-export default function TopMenu(props: any) {
-  const Data: { menu: MenuItem[] } = {
-    menu: defaultMenuItem,
-    ...props.Data
-  }
+export default function TopMenu({ data }: any) {
+  // const Data: { menu: MenuItem[] } = {
+  //   menu: defaultMenuItem,
+  //   ...props.data
+  // }
+  // console.log(data)
   return (
-    <div className='topHder bg-neutral-300'>
-      <div className='px-4 sm:container flex justify-center sm:justify-end p-2 relative'>
-        {Data?.menu?.map((item: MenuItem) => {
+    <div className=' bg-neutral-300'>
+      <div className='px-4 sm:container flex justify-center sm:justify-end p-3 relative divide-x-2'>
+        {data?.map((item: any) => {
+          // console.log(item)
           return (
-            <a
+            <Link
               key={item.id}
-              href='#'
-              className='text-sm sm:text-base/3 text-white px-2 sm:px-3 z-10 py-1 sm:py-3 relative after:border-r-2 after:absolute after:w-1 after:h-3 sm:after:h-4 after:right-0 after:top-2 sm:after:inset-y-2/4 sm:after:-mt-2 hover:before:bg-primary hover:before:absolute hover:before:top-0 hover:before:bottom-0 hover:before:contents hover:before:skew-y-[0deg] hover:before:skew-x-[30deg] hover:before:right-4 hover:before:left-4 hover:before:-z-10 before:transition before:duration-700'
+              href={item.link}
+              className='text-sm sm:text-base/3 text-white font-medium px-2 py-1 hover:text-primary transition-all duration-300'
             >
-              {item.title}
-            </a>
+              {item.value}
+            </Link>
           )
         })}
       </div>

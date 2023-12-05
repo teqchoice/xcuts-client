@@ -8,6 +8,8 @@ import FakeDb from '@/DB/content.json'
 import { Poppins } from 'next/font/google'
 import Login from '../pages/login/logintest'
 import { useSelector } from 'react-redux'
+import axios from 'axios'
+import { select } from 'radash'
 const poppins = Poppins({
   weight: ['400', '700', '900'],
   style: ['normal'],
@@ -17,7 +19,8 @@ const poppins = Poppins({
 
 const Data = FakeDb
 
-export default function Layout({ children }: any) {
+export default function Layout({ children, data }: any) {
+  // console.log(data)
   const { passwordvrify } = useSelector((state: any) => state.options)
   // if (!passwordvrify)
   //   return (
@@ -27,9 +30,27 @@ export default function Layout({ children }: any) {
   //   )
   return (
     <main className={`${poppins.className}`}>
-      <Header Data={FakeDb} />
+      <Header
+        data={select(
+          data,
+          item => item?.contents,
+          item => item?.name?.includes('Header')
+        )}
+      />
       {children}
-      <Footer />
+      <Footer
+        data={select(
+          data,
+          item => item?.contents,
+          item => item?.name?.includes('Footer')
+        )}
+      />
     </main>
   )
+}
+
+export const getServerSideProps = async (context: any) => {
+  const { data } = await axios.get(`http://api.xcuts.co.uk/api/v1/get-content-query/page=5/`)
+  console.log(data)
+  return { props: { data: data[0].positions } }
 }

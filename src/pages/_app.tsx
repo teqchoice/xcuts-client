@@ -7,6 +7,8 @@ import { store } from '@/redux/store'
 
 import { Toaster } from 'react-hot-toast'
 import Head from 'next/head'
+import axios from 'axios'
+import Layout from '@/views/layout'
 
 export default function App({ Component, pageProps }: AppProps) {
   return (

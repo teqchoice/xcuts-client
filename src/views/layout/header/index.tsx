@@ -3,12 +3,13 @@ import TopMenu from './topMenu'
 import MineMenu from './mineMenu'
 import MineHeader from './mineHeader'
 
-export default function index({ Data }: any) {
+export default function index({ data }: any) {
+  // console.log(data)
   return (
     <header>
-      <TopMenu Data={Data.topMenu} />
-      <MineHeader Data={Data.mainHeader} />
-      <MineMenu Data={Data.mainMenu} />
+      <TopMenu data={data[2]} />
+      <MineHeader data={data[1]} />
+      <MineMenu data={data[0]} />
     </header>
   )
 }
