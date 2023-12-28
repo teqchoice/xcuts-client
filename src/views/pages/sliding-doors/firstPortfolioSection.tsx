@@ -3,7 +3,7 @@ import MiddleRedTitle from '@/views/pages/components/middleRedTitle'
 
 export default function FirstPortfolio() {
   return (
-    <section>
+    <section className='overflow-hidden'>
       <MiddleRedTitle title={'Doors can be made in less than five working days!'} />
       <div className='bg-neutral-100 md:flex'>
         <div className='basis-[52.12%] order-1'>

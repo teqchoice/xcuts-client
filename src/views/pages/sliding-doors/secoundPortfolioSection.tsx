@@ -3,7 +3,7 @@ import MiddleRedTitle from '@/views/pages/components/middleRedTitle'
 
 export default function SecoundPortfolio() {
   return (
-    <section>
+    <section className='overflow-hidden'>
       <MiddleRedTitle title={'Here are some examples of our sliding doors'} />
       <div className='px-4 sm:container'>
         <div className='relative mb-6'>

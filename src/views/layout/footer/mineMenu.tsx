@@ -31,10 +31,10 @@ export default function MineMenu({ data }: any) {
   )[0]
   // console.log(Collections.slice(1, 7))
   return (
-    <div className='ftr__links flex flex-col md:flex-row space-y-14 md:space-y-0 md:space-x-6'>
-      <div className='basis-full md:basis-[28%]'>
+    <div className='ftr__links grid grid-cols-1 md:grid-cols-3 gap-4 lg:grid-cols-6 space-y-14 md:space-y-0 md:space-x-6'>
+      <div className='basis-full md:basis-[28%] col-span-2'>
         <h5 className='text-2xl font-semibold text-white mb-4'>{Collections[0].value}</h5>
-        <div className='flex justify-between space-x-6'>
+        <div className='grid grid-cols-2 items-start '>
           <div className='mt-4 space-y-2 flex flex-col'>
             {Collections?.slice(1, 7)?.map((item: any) => (
               <a key={item.id} href='#' className='text-white hover:text-primary font-light text-base transition-all'>

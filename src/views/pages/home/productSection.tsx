@@ -27,13 +27,13 @@ export default function ProductSection({ data }: any) {
   // console.log(s1)
   return (
     <section className='py-20'>
-      <div className='px-4 sm:container max-w-full xl:px-16 xxl:px-32'>
+      <div className='px-4 lg:container max-w-full md:px-4 xl:px-16 xxl:px-32'>
         <div className='text-center'>
           <h2 className='font-normal text-5xl mb-14'>{t.value}</h2>
         </div>
 
-        <div className='flex md:flex-row flex-col space-y-4 md:space-y-0 md:space-x-4'>
-          <div className='basis-[100%] md:basis-[33.333%] xl:basis-[40%]'>
+        <div className='flex md:flex-row flex-col space-y-4 md:space-y-0 md:space-x-2'>
+          <div className='basis-[100%] md:basis-[33.333%] xl:basis-[33.333%]'>
             <div className='our__prdts__item relative overflow-hidden'>
               <img
                 className='w-full h-96 md:h-[400px] xl:h-[709px] object-cover'
@@ -56,10 +56,10 @@ export default function ProductSection({ data }: any) {
                     ></div>
                   </div>
                 </div>
-                <div className='flex gap-0 justify-end absolute bottom-0 right-0 pr-11'>
+                <div className='flex gap-0 justify-end absolute bottom-0 right-0 pr-1 lg:pr-11'>
                   <a
                     href={s1[2]?.link}
-                    className='bg-primary px-3 py-4 md:px-6 md:py-4 font-bold text-base text-white hover:bg-black ease-in duration-200 flex items-center justify-between'
+                    className='bg-primary px-3 py-4 md:px-3 md:py-4 font-bold text-base text-white hover:bg-black ease-in duration-200 flex items-center justify-between'
                   >
                     <span
                       dangerouslySetInnerHTML={{
@@ -70,7 +70,7 @@ export default function ProductSection({ data }: any) {
                   </a>
                   <a
                     href={s1[3]?.link}
-                    className='bg-black px-5 py-4 md:px-5 lg:px-6 lg:px-9 md:py-3 font-bold text-base text-white hover:bg-primary ease-in duration-200 flex items-center justify-between'
+                    className='bg-black px-3 py-4 md:px-3 md:py-4 font-bold text-base text-white hover:bg-primary ease-in duration-200 flex items-center justify-between'
                   >
                     <span
                       dangerouslySetInnerHTML={{
@@ -84,7 +84,7 @@ export default function ProductSection({ data }: any) {
             </div>
           </div>
 
-          <div className='basis-[100%] md:basis-[33.333%] xl:basis-[30%]'>
+          <div className='basis-[100%] md:basis-[33.333%] xl:basis-[33.333%]'>
             <div className='our__prdts__item relative overflow-hidden'>
               <img
                 className='w-full h-96 md:h-[400px] xl:h-[709px] object-cover'
@@ -107,10 +107,10 @@ export default function ProductSection({ data }: any) {
                     ></div>
                   </div>
                 </div>
-                <div className='flex gap-0 justify-end absolute bottom-0 right-0 pr-11'>
+                <div className='flex gap-0 justify-end absolute bottom-0 right-0 pr-1 lg:pr-11'>
                   <a
                     href={s2[2]?.link}
-                    className='bg-primary px-3 py-4 md:px-6 md:py-4 font-bold text-base text-white hover:bg-black ease-in duration-200 flex items-center justify-between'
+                    className='bg-primary px-3 py-4 md:px-3 md:py-4 font-bold text-base text-white hover:bg-black ease-in duration-200 flex items-center justify-between'
                   >
                     <span
                       dangerouslySetInnerHTML={{
@@ -121,7 +121,7 @@ export default function ProductSection({ data }: any) {
                   </a>
                   <a
                     href={s2[3]?.link}
-                    className='bg-black px-5 py-4 md:px-5 lg:px-6 lg:px-9 md:py-3 font-bold text-base text-white hover:bg-primary ease-in duration-200 flex items-center justify-between'
+                    className='bg-black px-3 py-4 md:px-3 md:py-4 font-bold text-base text-white hover:bg-primary ease-in duration-200 flex items-center justify-between'
                   >
                     <span
                       dangerouslySetInnerHTML={{
@@ -135,7 +135,7 @@ export default function ProductSection({ data }: any) {
             </div>
           </div>
 
-          <div className='basis-[100%] md:basis-[33.333%] xl:basis-[30%]'>
+          <div className='basis-[100%] md:basis-[33.333%] xl:basis-[33.333%]'>
             <div className='our__prdts__item relative overflow-hidden'>
               <img
                 className='w-full h-96 md:h-[400px] xl:h-[709px] object-cover'
@@ -158,10 +158,10 @@ export default function ProductSection({ data }: any) {
                     ></div>
                   </div>
                 </div>
-                <div className='flex gap-0 justify-end absolute bottom-0 right-0 pr-11'>
+                <div className='flex gap-0 justify-end absolute bottom-0 right-0 pr-1 lg:pr-11'>
                   <a
                     href={s3[2]?.link}
-                    className='bg-primary px-3 py-4 md:px-6 md:py-4 font-bold text-base text-white hover:bg-black ease-in duration-200 flex items-center justify-between'
+                    className='bg-primary px-3 py-4 md:px-3 md:py-4 font-bold text-base text-white hover:bg-black ease-in duration-200 flex items-center justify-between'
                   >
                     <span
                       dangerouslySetInnerHTML={{
@@ -172,7 +172,7 @@ export default function ProductSection({ data }: any) {
                   </a>
                   <a
                     href={s3[3]?.link}
-                    className='bg-black px-5 py-4 md:px-5 lg:px-6 lg:px-9 md:py-3 font-bold text-base text-white hover:bg-primary ease-in duration-200 flex items-center justify-between'
+                    className='bg-black px-3 py-4 md:px-3 md:py-4 font-bold text-base text-white hover:bg-primary ease-in duration-200 flex items-center justify-between'
                   >
                     <span
                       dangerouslySetInnerHTML={{

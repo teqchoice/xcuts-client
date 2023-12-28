@@ -23,7 +23,7 @@ export default function MineHeader({ data }: any) {
   return (
     <div className='mainHder bg-white py-5'>
       <div className='px-4 sm:container flex justify-between place-items-center'>
-        <a href={data[4]?.link}>
+        <a href={data[3]?.link}>
           <img src={process.env.NEXT_PUBLIC_API_URL + data[3]?.filec} alt='' className=' w-28 md:w-48' />{' '}
         </a>
         <div className='tp-phone flex place-items-center'>
