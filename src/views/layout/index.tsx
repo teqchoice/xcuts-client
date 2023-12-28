@@ -10,6 +10,7 @@ import Login from '../pages/login/logintest'
 import { useSelector } from 'react-redux'
 import axios from 'axios'
 import { select } from 'radash'
+
 const poppins = Poppins({
   weight: ['400', '700', '900'],
   style: ['normal'],
@@ -28,7 +29,7 @@ export default function Layout({ children, data }: any) {
   //     </div>
   //   )
   return (
-    <main className={`${poppins.className}`}>
+    <main className={poppins.className}>
       <Header
         data={select(
           data,
