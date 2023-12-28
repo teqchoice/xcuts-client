@@ -12,13 +12,13 @@ export default function HeroSection({ data }: any) {
           // console.log(slide)
           return (
             <Fragment key={i}>
-              <img
+              <Image
                 src={process.env.NEXT_PUBLIC_API_URL + slide.filec}
                 alt='baner'
-                // width={100}
-                // height={100}
-                // unoptimized
-                className='w-full h-fit object-cover object-center rounded-lg'
+                width={100}
+                height={100}
+                unoptimized
+                className='w-full aspect-video md:aspect-auto md:max-h-[270px] lg:max-h-[350px] xl:max-h-[420px] 2xl::max-h-[550px] rounded-lg'
               />
             </Fragment>
           )
@@ -36,9 +36,9 @@ export default function HeroSection({ data }: any) {
           </div>
         </div>
       </section> */}
-
+{/* md:origin-[100%_100%] md:w-[200px] */}
       <SlideMap />
-      <div className='absolute bottom-0 right-0 z-10 w-[200px] bg-white pb-36 skew-y-[144deg] origin-[100%_100%]'></div>
+      <div className='absolute bottom-0 right-0 z-10 w-[150px] bg-white pb-36 skew-y-[144deg] origin-[160%_100%] '></div>
     </section>
   )
 }

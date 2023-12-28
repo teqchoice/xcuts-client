@@ -19,12 +19,12 @@ export default function MineHeader({ data }: any) {
   //   ...defaultHeaderItem,
   //   ...props.Data
   // }
-  // console.log(data)
+  // console.log(data[3])
   return (
     <div className='mainHder bg-white py-5'>
       <div className='px-4 sm:container flex justify-between place-items-center'>
-        <a href={data[0]?.link}>
-          <img src={process.env.NEXT_PUBLIC_API_URL + data[0]?.filec} alt='' className=' w-28 md:w-48' />{' '}
+        <a href={data[4]?.link}>
+          <img src={process.env.NEXT_PUBLIC_API_URL + data[3]?.filec} alt='' className=' w-28 md:w-48' />{' '}
         </a>
         <div className='tp-phone flex place-items-center'>
           <img src='images/phone-icon.webp' alt='' className='w-9 h-9' />
@@ -32,18 +32,18 @@ export default function MineHeader({ data }: any) {
             <div className='text-sm md:text-lg flex gap-5'>
               <span
                 dangerouslySetInnerHTML={{
-                  __html: data[1]?.value
+                  __html: data[0]?.value
                 }}
               ></span>
               <span
                 className='text-primary'
                 dangerouslySetInnerHTML={{
-                  __html: data[2]?.value
+                  __html: data[1]?.value
                 }}
               ></span>
             </div>
             <a href='#' className='text-xl md:text-2xl leading-4'>
-              {data[3]?.value}
+              {data[2]?.value}
             </a>
           </div>
         </div>

@@ -7,9 +7,9 @@ export default function index({ data }: any) {
   // console.log(data)
   return (
     <header>
-      <TopMenu data={data[2]} />
-      <MineHeader data={data[1]} />
-      <MineMenu data={data[0]} />
+      <TopMenu data={data[1]} />
+      <MineHeader data={data[0]} />
+      <MineMenu data={data[2]} />
     </header>
   )
 }

@@ -5,6 +5,7 @@ import ProductSection from './productSection'
 import ServicesSection from './servicesSection'
 
 export default function HomePage({ data }: any) {
+  // console.log(data)
   return (
     <>
       <HeroSection

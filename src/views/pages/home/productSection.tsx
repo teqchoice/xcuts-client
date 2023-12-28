@@ -7,22 +7,22 @@ export default function ProductSection({ data }: any) {
   const t = select(
     data,
     item => item[0],
-    item => item[0]?.id === '80'
+    item => item[0]?.id === '73'
   )[0]
   const s1 = select(
     data,
     item => item,
-    item => item[0]?.id === '81'
+    item => item[0]?.id === '74'
   )[0]
   const s2 = select(
     data,
     item => item,
-    item => item[0]?.id === '82'
+    item => item[0]?.id === '75'
   )[0]
   const s3 = select(
     data,
     item => item,
-    item => item[0]?.id === '83'
+    item => item[0]?.id === '76'
   )[0]
   // console.log(s1)
   return (

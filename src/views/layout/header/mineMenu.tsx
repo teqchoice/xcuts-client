@@ -36,7 +36,7 @@ import React from 'react'
 //   }
 // ]
 
-export default function MineMenu({data}: any) {
+export default function MineMenu({ data }: any) {
   // const Data: { menu: MenuItem[] } = {
   //   menu: defaultMenuItem,
   //   ...props.Data
@@ -76,11 +76,9 @@ export default function MineMenu({data}: any) {
         </div>
         <div className='flex gap-6'>
           <a href='#' className=''>
-            {/* <img src='images/search-icon.webp' alt='' className='' /> */}
             <Search theme='outline' size='27' fill='#fff' />
           </a>
           <a href='#'>
-            {/* <img src='images/cart-icon.webp' alt='' /> */}
             <Shopping theme='outline' size='30' fill='#fff' />
           </a>
         </div>
