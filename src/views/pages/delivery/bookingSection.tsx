@@ -43,7 +43,7 @@ export default function BookingSection(props: any) {
     ...defaultTOurGuarantee,
     ...props.Data
   }
-  console.log(Data)
+  // console.log(Data)
   return (
     <>
       <section className='relative z-20 before:bg-neutral-200 before:content-normal before:lg:h-[583px] before:md:h-[583px] before:sm:h-[583px] before:h-[603px] before:block before:w-full before:absolute before:top-0 mb-24 '>

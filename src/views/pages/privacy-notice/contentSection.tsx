@@ -43,7 +43,7 @@ export default function ContentSection(props: any) {
     ...defaultTOurGuarantee,
     ...props.Data
   }
-  console.log(Data)
+  // console.log(Data)
   return (
     <>
       <section className='md:py-20 py-10 text-[#6d6d6d]'>

@@ -43,7 +43,7 @@ export default function IntroductionSection(props: any) {
     ...defaultTOurGuarantee,
     ...props.Data
   }
-  console.log(Data)
+  // console.log(Data)
   return (
     <>
       <section className="section-one-stop py-10 md:py-20">

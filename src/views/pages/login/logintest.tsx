@@ -8,7 +8,7 @@ export default function Login({ Data }: any) {
   const [value, setValue] = useState('')
   function submitfunc() {
     if (password === value) {
-      console.log(value)
+      // console.log(value)
       dispatch(passwordvrify(true))
     }
   }

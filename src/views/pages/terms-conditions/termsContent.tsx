@@ -441,7 +441,7 @@ export default function TermsContent(props: any) {
     ...defaultTermsAndContent,
     ...props.Data
   }
-  console.log(Data)
+  // console.log(Data)
   return (
     <section className='md:py-20 py-10'>
       <div className='px-4 sm:container'>

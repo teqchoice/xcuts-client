@@ -3,6 +3,7 @@ import PrivacyNotice from '@/views/pages/privacy-notice'
 
 // !! Fake DB
 import FakeDb from '@/DB/content.json'
+import axios from 'axios'
 
 export default function PPrivacyNotice({ data, layout }: any) {
   return (

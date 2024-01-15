@@ -43,7 +43,7 @@ export default function OurStorySection(props: any) {
     ...defaultTOurGuarantee,
     ...props.Data
   }
-  console.log(Data)
+  // console.log(Data)
   return (
     <>
       <section className='bg-no-repeat bg-[right_73px_top] mt-6 sm:mt-0 md:pb-12 pb-14'>

@@ -41,7 +41,7 @@ export default function MineMenu({ data, logo }: any) {
 
   useEffect(() => {
     localStorage.setItem('HamburgerMenu', `${isOpen}`)
-    console.log('first')
+    // console.log('first')
   }, [isOpen])
 
   const hamb = (

@@ -43,7 +43,7 @@ export default function VideoSection(props: any) {
     ...defaultTOurGuarantee,
     ...props.Data
   }
-  console.log(Data)
+  // console.log(Data)
   return (
     <>
       <section className='pt-20 relative before:bg-primary before:lg:h-[583px] before:md:h-[483px] before:sm:h-[383px] before:h-[303px] before:block before:w-full before:rounded-3xl before:absolute before:top-0'>

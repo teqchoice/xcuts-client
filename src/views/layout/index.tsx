@@ -5,17 +5,52 @@ import Footer from '@/views/layout/footer/index'
 import FakeDb from '@/DB/content.json'
 
 //** Font import */
-import { Poppins } from 'next/font/google'
+import localFont from 'next/font/local'
 import Login from '../pages/login/logintest'
 import { useSelector } from 'react-redux'
 import axios from 'axios'
 import { select } from 'radash'
 
-const poppins = Poppins({
-  weight: ['400', '700', '900'],
-  style: ['normal'],
-  subsets: ['latin'],
-  display: 'swap'
+// const poppins = Poppins({
+//   weight: ['400', '700', '900'],
+//   style: ['normal'],
+//   subsets: ['latin'],
+//   display: 'swap'
+// })
+
+export const poppins = localFont({
+  src: [
+    {
+      path: '../assets/fonts/Poppins-Thin.woff2',
+      weight: '300',
+      style: 'normal'
+    },
+    {
+      path: '../assets/fonts/Poppins-Regular.woff2',
+      weight: '400',
+      style: 'normal'
+    },
+    {
+      path: '../assets/fonts/Poppins-Medium.woff2',
+      weight: '500',
+      style: 'normal'
+    },
+    {
+      path: '../assets/fonts/Poppins-SemiBold.woff2',
+      weight: '600',
+      style: 'normal'
+    },
+    {
+      path: '../assets/fonts/Poppins-Bold.woff2',
+      weight: '700',
+      style: 'normal'
+    },
+    {
+      path: '../assets/fonts/Poppins-ExtraBold.woff2',
+      weight: '800',
+      style: 'normal'
+    }
+  ]
 })
 
 const Data = FakeDb

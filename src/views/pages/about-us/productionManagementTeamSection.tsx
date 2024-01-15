@@ -43,7 +43,7 @@ export default function ProductionManagementTeamSection(props: any) {
     ...defaultTOurGuarantee,
     ...props.Data
   }
-  console.log(Data)
+  // console.log(Data)
   return (
     <>
       <section className='md:py-24 py-16'>

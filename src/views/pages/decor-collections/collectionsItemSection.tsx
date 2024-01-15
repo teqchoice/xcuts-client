@@ -43,7 +43,7 @@ export default function CollectionsItemSection(props: any) {
     ...defaultTOurGuarantee,
     ...props.Data
   }
-  console.log(Data)
+  // console.log(Data)
   return (
     <>
       <div className='grid md:grid-cols-2 gap-x-7 gap-y-10 pb-20'>

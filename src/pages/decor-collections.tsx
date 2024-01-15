@@ -3,6 +3,7 @@ import DecorCollections from '@/views/pages/decor-collections'
 
 // !! Fake DB
 import FakeDb from '@/DB/content.json'
+import axios from 'axios'
 
 export default function PDecorCollections({ data, layout }: any) {
   return (

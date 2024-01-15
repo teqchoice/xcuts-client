@@ -43,7 +43,7 @@ export default function SalesTeamSection(props: any) {
     ...defaultTOurGuarantee,
     ...props.Data
   }
-  console.log(Data)
+  // console.log(Data)
   return (
     <>
       <section className='pt-20 relative before:bg-[#ededed] before:xl:h-[350px] before:lg:h-[313px] before:md:h-[406px] before:h-[303px] before:block before:w-full before:absolute before:top-0 before:-z-10'>

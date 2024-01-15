@@ -43,7 +43,7 @@ export default function MarketingTeamSection(props: any) {
     ...defaultTOurGuarantee,
     ...props.Data
   }
-  console.log(Data)
+  // console.log(Data)
   return (
     <>
       <section className='lg:py-24 md:py-10 pt-8 pb-16'>
