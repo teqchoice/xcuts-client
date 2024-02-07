@@ -21,6 +21,6 @@ export const baseSplitApi = createApi({
       return action.payload[reducerPath]
     }
   },
-  // tagTypes: ['Upload', 'farakhan'],
+  tagTypes: ['PageAndCat', 'PageContent'],
   endpoints: () => ({})
 })
