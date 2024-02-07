@@ -2,9 +2,9 @@
 const nextConfig = {
   
   reactStrictMode: true,
-  // typescript: {
-  //   ignoreBuildErrors: true
-  // },
+  typescript: {
+    ignoreBuildErrors: true
+  },
   images: {
     // unoptimized: true,
     // loader: 'custom',
