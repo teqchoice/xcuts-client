@@ -1,4 +1,5 @@
-import { Close, HamburgerButton, Search, Shopping, ShoppingCart, ShoppingCartOne, User } from '@icon-park/react'
+import Modal from '@/views/pages/components/Modal'
+import { Close, HamburgerButton, Pencil, Search, Shopping, ShoppingCart, ShoppingCartOne, User } from '@icon-park/react'
 import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
 
@@ -38,6 +39,7 @@ import React, { useEffect, useState } from 'react'
 
 export default function MineMenu({ data, logo }: any) {
   const [isOpen, setIsOpen] = useState(false)
+  const [modal, setModal] = useState(false)
 
   useEffect(() => {
     localStorage.setItem('HamburgerMenu', `${isOpen}`)
@@ -82,7 +84,7 @@ export default function MineMenu({ data, logo }: any) {
 
   return (
     <>
-      <nav className='bg-black relative py-3'>
+      <nav className='relative bg-black py-3'>
         <div className='px-4 sm:container flex justify-between flex-grow items-center'>
           <HamburgerButton
             theme='outline'
@@ -121,6 +123,10 @@ export default function MineMenu({ data, logo }: any) {
             </a>
           </div>
         </div>
+        <div className='cursor-pointer flex items-center justify-center bg-primary border border-white p-4 w-fit absolute left-0 top-0'>
+          <Pencil theme='outline' size='10' fill='#fff' className='cursor-pointer' onClick={() => setModal(true)} />
+        </div>
+        <Modal modal={modal} setModal={setModal} data={data} />
       </nav>
       {hamb}
     </>

@@ -162,9 +162,10 @@ export default function PanelContent({ Data }: any) {
                 method: 'put',
                 maxBodyLength: Infinity,
                 url: `https://api.xcuts.co.uk/api/v1/update-content/${fetch?.id}/`,
-                // headers: {
-                //   ...formData.getHeaders()
-                // },
+                headers: {
+                  // ...formData.getHeaders()
+                  Authorization: `Bearer ${process.env.NEXT_PUBLIC_TOKEN}`
+                },
                 data: formData
               }
 

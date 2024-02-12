@@ -6,17 +6,20 @@ import Modal from '../components/Modal'
 
 export default function AboutSection({ data }: any) {
   const [modal, setModal] = useState(false)
-  console.log(data)
-  console.log(
-    select(
-      data[0],
-      item => item?.value,
-      item => item?.title == 'XCUTS'
-    )[0]
-  )
+  // console.log(data)
+  // console.log(
+  //   select(
+  //     data[0],
+  //     item => item?.value,
+  //     item => item?.title == 'XCUTS'
+  //   )[0]
+  // )
 
   return (
     <section className='relative py-10 md:py-20'>
+      <div className='cursor-pointer flex items-center justify-center bg-primary border border-white p-4 w-fit absolute left-0 top-0'>
+        <Pencil theme='outline' size='27' fill='#fff' className='cursor-pointer' onClick={() => setModal(true)} />
+      </div>
       <div className='px-4 sm:container'>
         <div className='text-center px-1 overflow-hidden'>
           <div
@@ -29,9 +32,6 @@ export default function AboutSection({ data }: any) {
               )[0]
             }}
           ></div>
-          <div className='flex items-center justify-center bg-primary border border-white p-4 w-fit absolute left-0 top-0'>
-            <Pencil theme='outline' size='27' fill='#fff' className='' onClick={() => setModal(true)} />
-          </div>
           <div className='bg-black mx-6 md:mx-28 skew-y-[0] skew-x-[35deg] relative'>
             <div className='w-3 md:w-20 h-11 bg-primary absolute left-0 md:-left-24 bottom-0'></div>
             <div className='w-3 md:w-20 h-11 bg-primary absolute right-0 md:-right-24 top-0'></div>
@@ -49,12 +49,16 @@ export default function AboutSection({ data }: any) {
           <div
             className='flex flex-col gap-y-3 text-black-1d mt-10'
             dangerouslySetInnerHTML={{
-              __html: data[0][2].value
+              __html: select(
+                data[0],
+                item => item?.value,
+                item => item?.title == 'content'
+              )[0]
             }}
           ></div>
         </div>
       </div>
-      <Modal modal={modal} setModal={setModal} data={data} />
+      <Modal modal={modal} setModal={setModal} data={data[0]} />
     </section>
   )
 }

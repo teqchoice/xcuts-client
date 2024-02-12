@@ -1,5 +1,7 @@
+import Modal from '@/views/pages/components/Modal'
+import { Pencil } from '@icon-park/react'
 import Link from 'next/link'
-import React from 'react'
+import React, { useState } from 'react'
 
 // type MenuItem = {
 //   id: string
@@ -36,13 +38,14 @@ import React from 'react'
 // ]
 
 export default function TopMenu({ data }: any) {
+  const [modal, setModal] = useState(false)
   // const Data: { menu: MenuItem[] } = {
   //   menu: defaultMenuItem,
   //   ...props.data
   // }
   // console.log(data)
   return (
-    <div className=' bg-neutral-300'>
+    <div className='relative bg-neutral-300'>
       <div className='px-4 sm:container flex justify-center sm:justify-end p-3 relative divide-x-2'>
         {data?.map((item: any) => {
           // console.log(item)
@@ -57,6 +60,10 @@ export default function TopMenu({ data }: any) {
           )
         })}
       </div>
+      <div className='cursor-pointer flex items-center justify-center bg-primary border border-white p-4 w-fit absolute left-0 top-0'>
+        <Pencil theme='outline' size='10' fill='#fff' className='cursor-pointer' onClick={() => setModal(true)} />
+      </div>
+      <Modal modal={modal} setModal={setModal} data={data} />
     </div>
   )
 }

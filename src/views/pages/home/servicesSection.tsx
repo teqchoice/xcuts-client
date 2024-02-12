@@ -1,43 +1,49 @@
-import React from 'react'
+import React, { useState } from 'react'
 import MiddleRedTitle from '@/views/pages/components/middleRedTitle'
 import { select } from 'radash'
+import Modal from '../components/Modal'
+import { Pencil } from '@icon-park/react'
 
 export default function ServicesSection({ data }: any) {
   // console.log(data)
+  const [modal1, setModal1] = useState(false)
+  const [modal2, setModal2] = useState(false)
+  const [modal3, setModal3] = useState(false)
+  const [modal4, setModal4] = useState(false)
 
   const t = select(
     data,
     item => item[0],
-    item => item[0]?.id === '52'
+    item => item[0]?.title === 'Our Services'
   )[0]
   const s1 = select(
     data,
     item => item,
-    item => item[0]?.id === '53'
+    item => item[0]?.value === 'Panel edgebanding'
   )[0]
   const s2 = select(
     data,
     item => item,
-    item => item[0]?.id === '58'
+    item => item[0]?.value === 'CNC cutting'
   )[0]
   const s3 = select(
     data,
     item => item,
-    item => item[0]?.id === '59'
+    item => item[0]?.value == 'Panels cut to size'
   )[0]
   const s4 = select(
     data,
     item => item,
-    item => item[0]?.id === '60'
+    item => item[0]?.value === 'Spray painting'
   )[0]
-  // console.log(s4)
+  // console.log(s3)
   return (
-    <section>
+    <section className='relative'>
       <MiddleRedTitle title={t.value} />
 
       <div className='bg-neutral-100'>
         <div className=''>
-          <div className='md:flex'>
+          <div className='relative md:flex'>
             <div className='basis-[52.12%] md:basis-[55%] lg:basis-[54%] xl:basis-[53%] 2xl:basis-[52%]'>
               <div>
                 <div className='relative overflow-hidden w-full bg-neutral-100 before:absolute before:content-normal before:-bottom-[1px] before:w-1/2 before:bg-inherit before:right-1/2 before:skew-x-[40deg] before:pb-7 before:origin-[100%_100%] after:absolute after:content-normal after:bottom-0 after:w-1/2 after:bg-inherit after:left-1/2 after:-skew-x-[40deg] after:pb-7 after:origin-[100%_100%] md:before:w-10 md:before:h-1/2 md:before:top-0 md:before:bottom-auto md:before:right-0 md:before:skew-x-[0deg] md:before:skew-y-[40deg] md:after:w-10 md:after:h-1/2 md:after:bottom-0 md:after:right-0 md:after:left-auto md:after:skew-x-[0deg] md:after:-skew-y-[40deg]'>
@@ -88,9 +94,19 @@ export default function ServicesSection({ data }: any) {
                 </div>
               </div>
             </div>
+            <div className='cursor-pointer flex items-center justify-center bg-primary border border-white p-4 w-fit absolute left-0 top-0'>
+              <Pencil
+                theme='outline'
+                size='27'
+                fill='#fff'
+                className='cursor-pointer'
+                onClick={() => setModal1(true)}
+              />
+            </div>
+            <Modal modal={modal1} setModal={setModal1} data={s1} />
           </div>
 
-          <div className='md:flex'>
+          <div className='relative md:flex'>
             <div className='basis-[52.12%] md:basis-[55%] lg:basis-[54%] xl:basis-[53%] 2xl:basis-[52%] order-1'>
               <div className='relative overflow-hidden w-full bg-neutral-100 before:absolute before:content-normal before:bottom-0 before:w-1/2 before:bg-inherit before:right-1/2 before:skew-x-[40deg] before:pb-7 before:origin-[100%_100%] after:absolute after:content-normal after:bottom-0 after:w-1/2 after:bg-inherit after:left-1/2 after:-skew-x-[40deg] after:pb-7 after:origin-[100%_100%] md:before:w-10 md:before:h-1/2 md:before:top-0 md:before:bottom-auto md:before:right-auto md:before:skew-x-[0deg] md:before:-skew-y-[40deg] md:after:w-10 md:after:h-1/2 md:after:bottom-0 md:after:right-auto md:after:left-0 md:after:skew-x-[0deg] md:after:skew-y-[40deg] md:before:origin-[0%_0%] md:after:origin-[0%_0%]'>
                 <img
@@ -139,9 +155,19 @@ export default function ServicesSection({ data }: any) {
                 </div>
               </div>
             </div>
+            <div className='cursor-pointer flex items-center justify-center bg-primary border border-white p-4 w-fit absolute left-0 top-0'>
+              <Pencil
+                theme='outline'
+                size='27'
+                fill='#fff'
+                className='cursor-pointer'
+                onClick={() => setModal2(true)}
+              />
+            </div>
+            <Modal modal={modal2} setModal={setModal2} data={s2} />
           </div>
 
-          <div className='md:flex'>
+          <div className='relative md:flex'>
             <div className='basis-[52.12%] md:basis-[55%] lg:basis-[54%] xl:basis-[53%] 2xl:basis-[52%]'>
               <div>
                 <div className='relative overflow-hidden w-full bg-neutral-100 before:absolute before:content-normal before:bottom-0 before:w-1/2 before:bg-inherit before:right-1/2 before:skew-x-[40deg] before:pb-7 before:origin-[100%_100%] after:absolute after:content-normal after:bottom-0 after:w-1/2 after:bg-inherit after:left-1/2 after:-skew-x-[40deg] after:pb-7 after:origin-[100%_100%] md:before:w-10 md:before:h-1/2 md:before:top-0 md:before:bottom-auto md:before:right-0 md:before:skew-x-[0deg] md:before:skew-y-[40deg] md:after:w-10 md:after:h-1/2 md:after:bottom-0 md:after:right-0 md:after:left-auto md:after:skew-x-[0deg] md:after:-skew-y-[40deg]'>
@@ -192,9 +218,19 @@ export default function ServicesSection({ data }: any) {
                 </div>
               </div>
             </div>
+            <div className='cursor-pointer flex items-center justify-center bg-primary border border-white p-4 w-fit absolute left-0 top-0'>
+              <Pencil
+                theme='outline'
+                size='27'
+                fill='#fff'
+                className='cursor-pointer'
+                onClick={() => setModal3(true)}
+              />
+            </div>
+            <Modal modal={modal3} setModal={setModal3} data={s3} />
           </div>
 
-          <div className='md:flex'>
+          <div className='relative md:flex'>
             <div className='basis-[52.12%] md:basis-[55%] lg:basis-[54%] xl:basis-[53%] 2xl:basis-[52%] order-1'>
               <div className='relative overflow-hidden w-full bg-neutral-100 before:absolute before:content-normal before:bottom-0 before:w-1/2 before:bg-inherit before:right-1/2 before:skew-x-[40deg] before:pb-7 before:origin-[100%_100%] after:absolute after:content-normal after:bottom-0 after:w-1/2 after:bg-inherit after:left-1/2 after:-skew-x-[40deg] after:pb-7 after:origin-[100%_100%] md:before:w-10 md:before:h-1/2 md:before:top-0 md:before:bottom-auto md:before:right-auto md:before:skew-x-[0deg] md:before:-skew-y-[40deg] md:after:w-10 md:after:h-1/2 md:after:bottom-0 md:after:right-auto md:after:left-0 md:after:skew-x-[0deg] md:after:skew-y-[40deg] md:before:origin-[0%_0%] md:after:origin-[0%_0%]'>
                 <img
@@ -243,6 +279,16 @@ export default function ServicesSection({ data }: any) {
                 </div>
               </div>
             </div>
+            <div className='cursor-pointer flex items-center justify-center bg-primary border border-white p-4 w-fit absolute left-0 top-0'>
+              <Pencil
+                theme='outline'
+                size='27'
+                fill='#fff'
+                className='cursor-pointer'
+                onClick={() => setModal4(true)}
+              />
+            </div>
+            <Modal modal={modal4} setModal={setModal4} data={s4} />
           </div>
         </div>
       </div>

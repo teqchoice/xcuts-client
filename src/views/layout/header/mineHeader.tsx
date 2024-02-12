@@ -1,4 +1,6 @@
-import React from 'react'
+import Modal from '@/views/pages/components/Modal'
+import { Pencil } from '@icon-park/react'
+import React, { useState } from 'react'
 
 // type HeaderItem = {
 //   logo: string
@@ -15,13 +17,14 @@ import React from 'react'
 // }
 
 export default function MineHeader({ data }: any) {
+  const [modal, setModal] = useState(false)
   // const Data: HeaderItem = {
   //   ...defaultHeaderItem,
   //   ...props.Data
   // }
   // console.log(data[3])
   return (
-    <div className='mainHder bg-white py-5'>
+    <div className='relative mainHder bg-white py-5'>
       <div className='px-4 sm:container flex justify-between place-items-center'>
         <a href={data[3]?.link}>
           <img src={process.env.NEXT_PUBLIC_API_URL + data[3]?.filec} alt='' className=' w-28 md:w-48' />{' '}
@@ -48,6 +51,10 @@ export default function MineHeader({ data }: any) {
           </div>
         </div>
       </div>
+      <div className='cursor-pointer flex items-center justify-center bg-primary border border-white p-4 w-fit absolute left-0 top-0'>
+        <Pencil theme='outline' size='10' fill='#fff' className='cursor-pointer' onClick={() => setModal(true)} />
+      </div>
+      <Modal modal={modal} setModal={setModal} data={data} />
     </div>
   )
 }

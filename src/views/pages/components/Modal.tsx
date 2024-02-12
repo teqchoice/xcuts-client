@@ -10,9 +10,9 @@ export default function Modal({ modal, setModal, data }: any) {
       <div className='overflow-hidden flex items-center justify-center h-screen w-screen bg-black/50 fixed top-1/2 left-1/2  -translate-x-1/2 -translate-y-1/2 z-50'>
         <div
           ref={ref}
-          className='flex flex-col items-center justify-center gap-3 rounded-md shadow-[0_3px_15px_rgb(0,0,0,0.4)] bg-white md:p-3'
+          className='container max-h-[90vh] overflow-y-auto flex flex-col items-center justify-center gap-3 rounded-md shadow-[0_3px_15px_rgb(0,0,0,0.4)] bg-white md:p-3'
         >
-          {data[0]?.map((item: any, i: number) => {
+          {data?.map((item: any, i: number) => {
             return <PanelContent key={i} Data={item} />
           })}
           <button className='bg-red-500 py-2 px-10' onClick={() => setModal(false)}>
