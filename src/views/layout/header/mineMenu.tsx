@@ -1,4 +1,4 @@
-import { Close, HamburgerButton, Search, Shopping, ShoppingCart, ShoppingCartOne } from '@icon-park/react'
+import { Close, HamburgerButton, Search, Shopping, ShoppingCart, ShoppingCartOne, User } from '@icon-park/react'
 import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
 
@@ -114,6 +114,10 @@ export default function MineMenu({ data, logo }: any) {
             </a>
             <a href='#'>
               <Shopping theme='outline' size='30' fill='#fff' />
+            </a>
+            <a href='#' className=''>
+              <User theme='outline' size='27' fill='#fff' />
+              {/* <User className='cursor-pointer' theme='outline' strokeWidth={2} size='35'  /> */}
             </a>
           </div>
         </div>

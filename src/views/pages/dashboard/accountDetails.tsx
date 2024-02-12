@@ -2,6 +2,7 @@ import { useForm } from '@mantine/form'
 import { TextInput, Button, Group, Box } from '@mantine/core'
 import { randomId } from '@mantine/hooks'
 import { useEffect, useState } from 'react'
+import axios from 'axios'
 
 export default function Dtails() {
   //   const [value, setValue] = useState({
@@ -29,7 +30,6 @@ export default function Dtails() {
     }
   })
   useEffect(() => {
-    const axios = require('axios')
 
     let config = {
       method: 'get',
@@ -53,35 +53,34 @@ export default function Dtails() {
   }, [])
 
   function handleSend() {
-    console.log(form.values)
-    // const axios = require('axios')
+    // console.log(form.values)
     // let data = form.values
 
-    // let config = {
-    //   method: 'put',
-    //   maxBodyLength: Infinity,
-    //   url: 'https://api.xcuts.co.uk/api/user/customer-user-update/16/',
-    //   headers: {
-    //     'Content-Type': 'application/json',
-    //     Authorization: `Bearer ${process.env.NEXT_PUBLIC_TOKEN}`
-    //   },
-    //   data: data
-    // }
+    let config = {
+      method: 'put',
+      maxBodyLength: Infinity,
+      url: 'https://api.xcuts.co.uk/api/user/customer-user-update/',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${process.env.NEXT_PUBLIC_TOKEN}`
+      },
+      data: form.values
+    }
 
-    // axios
-    //   .request(config)
-    //   .then(response => {
-    //     console.log(response.data)
-    //   })
-    //   .catch(error => {
-    //     console.log(error)
-    //   })
+    axios
+      .request(config)
+      .then(response => {
+        console.log(response.data)
+      })
+      .catch(error => {
+        console.log(error)
+      })
   }
 
   return (
     <div className='grid w-full gap-3 p-3'>
-      <div className='grid grid-cols-2 w-full gap-3'>
-        <div className='grid gap-3'>
+      <div className='grid  w-full gap-3'>
+        <div className='grid grid-cols-2 gap-3'>
           <TextInput
             label='First Name'
             placeholder='first name'
@@ -90,7 +89,8 @@ export default function Dtails() {
                 border: '1px solid #49494940',
                 borderRadius: '3px',
                 width: '100%',
-                padding: '5px'
+                padding: '5px',
+                color: '#7e7d7d'
               }
             }}
             {...form.getInputProps('first_name')}
@@ -103,7 +103,8 @@ export default function Dtails() {
                 border: '1px solid #49494940',
                 borderRadius: '3px',
                 width: '100%',
-                padding: '5px'
+                padding: '5px',
+                color: '#7e7d7d'
               }
             }}
             {...form.getInputProps('last_name')}
@@ -117,10 +118,12 @@ export default function Dtails() {
                 border: '1px solid #49494940',
                 borderRadius: '3px',
                 width: '100%',
-                padding: '5px'
+                padding: '5px',
+                color: '#7e7d7d'
               }
             }}
             {...form.getInputProps('email')}
+            disabled
           />
           <TextInput
             label='phone'
@@ -130,7 +133,8 @@ export default function Dtails() {
                 border: '1px solid #49494940',
                 borderRadius: '3px',
                 width: '100%',
-                padding: '5px'
+                padding: '5px',
+                color: '#7e7d7d'
               }
             }}
             {...form.getInputProps('phone')}
@@ -145,7 +149,8 @@ export default function Dtails() {
                 border: '1px solid #49494940',
                 borderRadius: '3px',
                 width: '100%',
-                padding: '5px'
+                padding: '5px',
+                color: '#7e7d7d'
               }
             }}
             {...form.getInputProps('province')}
@@ -158,34 +163,37 @@ export default function Dtails() {
                 border: '1px solid #49494940',
                 borderRadius: '3px',
                 width: '100%',
-                padding: '5px'
+                padding: '5px',
+                color: '#7e7d7d'
               }
             }}
             {...form.getInputProps('city')}
           />
 
           <TextInput
-            label='delivery_address'
+            label='delivery address'
             placeholder='delivery_address'
             styles={{
               input: {
                 border: '1px solid #49494940',
                 borderRadius: '3px',
                 width: '100%',
-                padding: '5px'
+                padding: '5px',
+                color: '#7e7d7d'
               }
             }}
             {...form.getInputProps('delivery_address')}
           />
           <TextInput
-            label='building_address'
+            label='building address'
             placeholder='building_address'
             styles={{
               input: {
                 border: '1px solid #49494940',
                 borderRadius: '3px',
                 width: '100%',
-                padding: '5px'
+                padding: '5px',
+                color: '#7e7d7d'
               }
             }}
             {...form.getInputProps('building_address')}
@@ -200,7 +208,8 @@ export default function Dtails() {
             border: '1px solid #49494940',
             borderRadius: '3px',
             width: '100%',
-            padding: '5px'
+            padding: '5px',
+            color: '#7e7d7d'
           }
         }}
         {...form.getInputProps('description')}

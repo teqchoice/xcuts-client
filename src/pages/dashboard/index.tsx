@@ -19,12 +19,7 @@ export const getServerSideProps = async (context: any) => {
     //       'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4MTA1Nzg4LCJpYXQiOjE3MDc2NzM3ODgsImp0aSI6IjEzNTRlOWI1MzMzZjQwY2E4ZDVkNzQ3YmRlNjM3MzcxIiwidXNlcl9pZCI6MTd9.A_JXmU0t4egt8Ec7WkFp7s-uX9dd-z-88cACr-w0qtQ'
     //   }
     // })
-    const { data: layoutData } = await axios.get(`${process.env.NEXT_PUBLIC_API__URL}/get-content-query/page=3/`, {
-      headers: {
-        Authorization:
-          'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4MTA1Nzg4LCJpYXQiOjE3MDc2NzM3ODgsImp0aSI6IjEzNTRlOWI1MzMzZjQwY2E4ZDVkNzQ3YmRlNjM3MzcxIiwidXNlcl9pZCI6MTd9.A_JXmU0t4egt8Ec7WkFp7s-uX9dd-z-88cACr-w0qtQ'
-      }
-    })
+    const { data: layoutData } = await axios.get(`${process.env.NEXT_PUBLIC_API__URL}/get-content-query/page=3/`)
     return { props: { layout: layoutData[0]?.positions } }
   } catch (error) {
     const fake_layout = [
