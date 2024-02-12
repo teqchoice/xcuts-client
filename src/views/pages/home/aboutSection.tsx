@@ -36,7 +36,7 @@ export default function AboutSection({ data }: any) {
             <div className='w-3 md:w-20 h-11 bg-primary absolute left-0 md:-left-24 bottom-0'></div>
             <div className='w-3 md:w-20 h-11 bg-primary absolute right-0 md:-right-24 top-0'></div>
             <h1
-              className='text-white text-lg md:text-xl xl:text-2xl font-bold -skew-x-[35deg] py-3 uppercase px-5'
+              className='text-white text-lg md:text-xl lg:text-3xl xl:text-4xl font-bold -skew-x-[35deg] py-3 uppercase px-5'
               dangerouslySetInnerHTML={{
                 __html: select(
                   data[0],
@@ -47,7 +47,7 @@ export default function AboutSection({ data }: any) {
             ></h1>
           </div>
           <div
-            className='flex flex-col gap-y-3 text-black-1d mt-10'
+            className='flex flex-col gap-y-3 mt-10 text-lg'
             dangerouslySetInnerHTML={{
               __html: select(
                 data[0],
