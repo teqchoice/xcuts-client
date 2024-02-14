@@ -10,7 +10,7 @@ import toast from 'react-hot-toast'
 export default function PanelContent({ Data }: any) {
   const [removeContent, { data: Mudata, error: Muerror, isLoading: MuisLoading }] = useRemoveContentMutation()
   const [updateContent, { data: Updata, error: Uperror, isLoading: UpisLoading }] = useUpdateContentMutation()
-  console.log('data => ', Updata, 'error => ', Uperror, 'isLoading => ', UpisLoading)
+  // console.log('data => ', Updata, 'error => ', Uperror, 'isLoading => ', UpisLoading)
   // console.log(Data)
   const [editor, setEditor] = useState(false)
   const ref = useClickOutside(() => setEditor(false))
@@ -196,7 +196,7 @@ export default function PanelContent({ Data }: any) {
           >
             <Redo theme='outline' strokeWidth={2} size='30' fill='#6e6e6e' />
           </div>
-          <div className='flex justify-center items-center w-full py-2 grow hover:bg-red-200'>
+          {/* <div className='flex justify-center items-center w-full py-2 grow hover:bg-red-200'>
             <Delete
               theme='outline'
               strokeWidth={2}
@@ -206,7 +206,7 @@ export default function PanelContent({ Data }: any) {
               onClick={() => toast.error('close now for ...')}
               // onClick={() => removeContent({ id: fetch?.id })}
             />
-          </div>
+          </div> */}
         </div>
       </div>
       {/* </Accordion.Panel> */}

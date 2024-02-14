@@ -73,7 +73,7 @@ export default function Layout({ children, data }: any) {
     axios
       .request(config)
       .then(response => {
-        console.log(response.data[0])
+        // console.log(response.data[0])
         const oneWeekFromNow = new Date()
         oneWeekFromNow.setDate(oneWeekFromNow.getDate() + 7)
         cookie.set('user', response.data[0], {

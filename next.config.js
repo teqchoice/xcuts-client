@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  
+  // styledComponents: true,
   reactStrictMode: true,
   typescript: {
     ignoreBuildErrors: true

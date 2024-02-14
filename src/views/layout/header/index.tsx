@@ -6,7 +6,7 @@ import Link from 'next/link'
 import { select } from 'radash'
 
 export default function index({ data }: any) {
-  console.log(data)
+  // console.log(data)
   // const m1 = data.map(
   //   item =>
   //     select(

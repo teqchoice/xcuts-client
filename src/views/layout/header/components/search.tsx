@@ -16,7 +16,7 @@ export default function SearchC() {
   }
   return (
     <div className=''>
-      <Search theme='outline' size='27' fill='#fff' onClick={() => setOpen(true)} />
+      <Search theme='outline' size='27' fill='#fff' onClick={() => setOpen(true)} className='cursor-pointer' />
       <div
         className={`absolute z-50 flex items-center top-0 left-0 bg-red-600 ${
           open ? 'w-full opacity-100' : 'w-0 opacity-0'
@@ -31,7 +31,7 @@ export default function SearchC() {
             {...form.getInputProps('search')}
           />
         </form>
-        <Close theme='outline' size='27' fill='#fff' className='p-3' onClick={() => setOpen(false)} />
+        <Close theme='outline' size='27' fill='#fff' className='p-4' onClick={() => setOpen(false)} className='cursor-pointer' />
       </div>
     </div>
   )

@@ -4,7 +4,7 @@ import React, { useState } from 'react'
 import Modal from '../components/Modal'
 
 export default function ProductSection({ data }: any) {
-  console.log(data)
+  // console.log(data)
   const [modal1, setModal1] = useState(false)
   const [modal2, setModal2] = useState(false)
   const [modal3, setModal3] = useState(false)

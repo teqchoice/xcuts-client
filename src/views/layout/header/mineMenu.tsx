@@ -42,9 +42,11 @@ import SearchC from './components/search'
 export default function MineMenu({ data, logo }: any) {
   const [isOpen, setIsOpen] = useState(false)
   const [modal, setModal] = useState(false)
+  const [user, setUser] = useState(false)
 
   useEffect(() => {
     localStorage.setItem('HamburgerMenu', `${isOpen}`)
+    user_info ? setUser(true) : setUser(false)
     // console.log('first')
   }, [isOpen])
 
@@ -96,17 +98,18 @@ export default function MineMenu({ data, logo }: any) {
             onClick={() => setIsOpen(!isOpen)}
           />
           <div className='hidden md:block md:pt-0'>
-            <ul className='flex flex-col gap-y-4 md:gap-y-0 md:flex-row md:gap-x-0 transition duration-300 md:transition-none absolute md:relative w-[100%] left-0 top-[100%] bg-neutral-400 md:bg-transparent md:text-white space-y-0 px-2 md:px-0 pb-3 pt-2 md:pb-0 md:pt-0 z-10'>
+            <ul className='flex flex-col flex-wrap gap-y-4 md:gap-y-0 md:flex-row md:gap-x-0 transition duration-300 md:transition-none absolute md:relative w-[100%] left-0 top-[100%] bg-neutral-400 md:bg-transparent md:text-white space-y-0 px-2 md:px-0 pb-3 pt-2 md:pb-0 md:pt-0 z-10'>
               {data?.map((item: any, i: number) => {
                 // if (i > 5)
                 return (
-                  <li key={i} className='md:mt-0'>
+                  <li key={i} className='group relative md:mt-0'>
                     <Link
                       href={item.link}
                       className='text-base md:text-base block md:inline-block text-white px-2 sm:px-2 z-50 md:py-3 py-1.5 relative hover:before:bg-primary hover:before:absolute hover:before:top-0 hover:before:bottom-0 hover:before:contents hover:before:md:skew-y-[0deg] hover:before:md:skew-x-[30deg] hover:md:before:right-6 hover:before:right-0 hover:before:md:left-6 hover:before:left-0 hover:before:-z-50 before:transition before:duration-700 hover:before:md:rounded-none hover:before:rounded'
                     >
                       {item.value} +
                     </Link>
+                    <div className='opacity-0 group-hover:opacity-100 transition-all duration-150 w-16 h-8 bg-primary absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 skew-y-[0] skew-x-[35deg]'></div>
                   </li>
                 )
               })}
@@ -116,10 +119,9 @@ export default function MineMenu({ data, logo }: any) {
             <SearchC />
             <a href='#'>
               <Shopping theme='outline' size='30' fill='#fff' />
-
             </a>
-            <Link href='/dashboard' className='text-white flex items-center justify-center gap-2'>
-              {!user_info ? <User theme='outline' size='27' fill='#fff' /> : 'Hi ' + user_info?.first_name || 'new user'}
+            <Link href='/dashboard' className='text-white flex text-center items-center justify-center gap-2'>
+              {!user ? <User theme='outline' size='27' fill='#fff' /> : 'Hi ' + user_info?.first_name || 'new user'}
             </Link>
           </div>
         </div>
