@@ -3,6 +3,7 @@ import { TextInput, Button, Group, Box } from '@mantine/core'
 import { randomId } from '@mantine/hooks'
 import { useEffect, useState } from 'react'
 import axios from 'axios'
+import { token } from '@/extensions/redux/api/auth'
 
 export default function Dtails() {
   //   const [value, setValue] = useState({
@@ -36,7 +37,7 @@ export default function Dtails() {
       maxBodyLength: Infinity,
       url: 'https://api.xcuts.co.uk/api/user/get-user/',
       headers: {
-        Authorization: `Bearer ${process.env.NEXT_PUBLIC_TOKEN}`
+        Authorization: `Bearer ${token}`
       }
     }
 
@@ -62,7 +63,7 @@ export default function Dtails() {
       url: 'https://api.xcuts.co.uk/api/user/customer-user-update/',
       headers: {
         'Content-Type': 'application/json',
-        Authorization: `Bearer ${process.env.NEXT_PUBLIC_TOKEN}`
+        Authorization: `Bearer ${token}`
       },
       data: form.values
     }

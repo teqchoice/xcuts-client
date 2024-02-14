@@ -6,6 +6,7 @@ import { useClickOutside } from '@mantine/hooks'
 import RichTextC from './RichTextC'
 import TextareaC from './Textarea'
 import toast from 'react-hot-toast'
+import { token } from '@/extensions/redux/api/auth'
 
 export default function PanelContent({ Data }: any) {
   const [removeContent, { data: Mudata, error: Muerror, isLoading: MuisLoading }] = useRemoveContentMutation()
@@ -164,7 +165,7 @@ export default function PanelContent({ Data }: any) {
                 url: `https://api.xcuts.co.uk/api/v1/update-content/${fetch?.id}/`,
                 headers: {
                   // ...formData.getHeaders()
-                  Authorization: `Bearer ${process.env.NEXT_PUBLIC_TOKEN}`
+                  Authorization: `Bearer ${token}`
                 },
                 data: formData
               }
