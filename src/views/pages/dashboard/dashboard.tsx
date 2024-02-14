@@ -27,6 +27,7 @@ export default function Dashboard() {
         className='flex gap-5 border items-center justify-center bg-slate-100 cursor-pointer hover:bg-primary hover:text-white'
         onClick={() => {
           cookie.remove('jwt')
+          cookie.remove('user')
           window.location.replace('/login')
         }}
       >

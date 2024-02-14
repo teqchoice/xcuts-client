@@ -42,7 +42,8 @@ export default function TextareaC({
             input: {
               background: `${color || '#f6f6f6'}`,
               border: '1px solid #cacaca',
-              borderRadius: '5px'
+              borderRadius: '5px',
+              width: '100%'
             }
           }}
         />

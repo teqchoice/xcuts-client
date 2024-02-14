@@ -45,7 +45,7 @@ export default function PanelContent({ Data }: any) {
           <div className='flex justify-center items-center w-full'>id</div>
           <div className='flex justify-center items-center w-full py-2 grow'>{fetch?.id}</div>
         </div>
-        <div className='divide-y col-span-2 flex flex-col'>
+        <div className='hidden divide-y col-span-2 flex flex-col'>
           <div className='flex justify-center items-center w-full'>title</div>
           <div className='flex justify-center items-center w-full py-2 grow'>
             <TextareaC
@@ -62,7 +62,7 @@ export default function PanelContent({ Data }: any) {
             />
           </div>
         </div>
-        <div className='divide-y  col-span-3 flex flex-col'>
+        <div className='divide-y  col-span-5 flex flex-col'>
           <div className='flex justify-center items-center w-full gap-3'>
             value{' '}
             <Pencil

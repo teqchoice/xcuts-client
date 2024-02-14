@@ -65,6 +65,7 @@ export default function index() {
               }`}
               onClick={() => {
                 cookie.remove('jwt')
+                cookie.remove('user')
                 window.location.replace('/login')
               }}
             >
