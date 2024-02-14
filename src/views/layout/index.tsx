@@ -10,7 +10,11 @@ import Login from '../pages/login/logintest'
 import { useSelector } from 'react-redux'
 import axios from 'axios'
 import { select } from 'radash'
+import { useEffect } from 'react'
+import { token } from '@/extensions/redux/api/auth'
+import Cookies from 'universal-cookie'
 
+const cookie = new Cookies()
 // const poppins = Poppins({
 //   weight: ['400', '700', '900'],
 //   style: ['normal'],
@@ -56,13 +60,36 @@ export const poppins = localFont({
 const Data = FakeDb
 
 export default function Layout({ children, data }: any) {
-  const { passwordvrify } = useSelector((state: any) => state.options)
-  // if (!passwordvrify)
-  //   return (
-  //     <div className='fixed top-0 left-0 h-screen w-screen bg-white z-50'>
-  //       <Login Data={Data?.delivery} />
-  //     </div>
-  //   )
+  function get_user(t) {
+    let config = {
+      method: 'get',
+      maxBodyLength: Infinity,
+      url: 'https://api.xcuts.co.uk/api/user/get-user/',
+      headers: {
+        Authorization: `Bearer ${t}`
+      }
+    }
+
+    axios
+      .request(config)
+      .then(response => {
+        console.log(response.data[0])
+        const oneWeekFromNow = new Date()
+        oneWeekFromNow.setDate(oneWeekFromNow.getDate() + 7)
+        cookie.set('user', response.data[0], {
+          expires: oneWeekFromNow
+        })
+      })
+      .catch(error => {
+        console.log(error)
+      })
+  }
+
+  useEffect(() => {
+    if (token) {
+      get_user(token)
+    }
+  }, [token])
   return (
     <main className={poppins.className}>
       <Header

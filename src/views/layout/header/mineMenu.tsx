@@ -1,7 +1,9 @@
+import { user_info } from '@/extensions/redux/api/auth'
 import Modal from '@/views/pages/components/Modal'
 import { Close, HamburgerButton, Pencil, Search, Shopping, ShoppingCart, ShoppingCartOne, User } from '@icon-park/react'
 import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
+import SearchC from './components/search'
 
 // type MenuItem = {
 //   id: string
@@ -111,16 +113,14 @@ export default function MineMenu({ data, logo }: any) {
             </ul>
           </div>
           <div className='flex gap-6'>
-            <a href='#' className=''>
-              <Search theme='outline' size='27' fill='#fff' />
-            </a>
+            <SearchC />
             <a href='#'>
               <Shopping theme='outline' size='30' fill='#fff' />
+
             </a>
-            <a href='#' className=''>
-              <User theme='outline' size='27' fill='#fff' />
-              {/* <User className='cursor-pointer' theme='outline' strokeWidth={2} size='35'  /> */}
-            </a>
+            <Link href='/dashboard' className='text-white flex items-center justify-center gap-2'>
+              {!user_info ? <User theme='outline' size='27' fill='#fff' /> : 'Hi ' + user_info?.first_name || 'new user'}
+            </Link>
           </div>
         </div>
         <div className='cursor-pointer flex items-center justify-center bg-primary border border-white p-4 w-fit absolute left-0 top-0'>
