@@ -107,6 +107,7 @@ export default function Login() {
                     <button
                       className='bg-black text-white font-medium text-xl py-4 px-14 focus:outline-none focus:shadow-outline inline-block'
                       // onClick={handleSend}
+                      type='submit'
                     >
                       Sign in
                     </button>

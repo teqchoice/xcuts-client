@@ -1,5 +1,5 @@
 import { useForm } from '@mantine/form'
-import { TextInput, Button, Group, Box } from '@mantine/core'
+import { TextInput, Button, Group, Box, Textarea } from '@mantine/core'
 import { randomId } from '@mantine/hooks'
 import { useEffect, useState } from 'react'
 import axios from 'axios'
@@ -31,7 +31,6 @@ export default function Dtails() {
     }
   })
   useEffect(() => {
-
     let config = {
       method: 'get',
       maxBodyLength: Infinity,
@@ -80,147 +79,211 @@ export default function Dtails() {
 
   return (
     <div className='grid w-full gap-3 p-3'>
-      <div className='grid  w-full gap-3'>
-        <div className='grid grid-cols-2 gap-3'>
-          <TextInput
-            label='First Name'
-            placeholder='first name'
-            styles={{
-              input: {
-                border: '1px solid #49494940',
-                borderRadius: '3px',
-                width: '100%',
-                padding: '5px',
-                color: '#7e7d7d'
-              }
-            }}
-            {...form.getInputProps('first_name')}
-          />
-          <TextInput
-            label='Last Name'
-            placeholder='last name'
-            styles={{
-              input: {
-                border: '1px solid #49494940',
-                borderRadius: '3px',
-                width: '100%',
-                padding: '5px',
-                color: '#7e7d7d'
-              }
-            }}
-            {...form.getInputProps('last_name')}
-          />
-          <TextInput
-            mt='md'
-            label='Email'
-            placeholder='Email'
-            styles={{
-              input: {
-                border: '1px solid #49494940',
-                borderRadius: '3px',
-                width: '100%',
-                padding: '5px',
-                color: '#7e7d7d'
-              }
-            }}
-            {...form.getInputProps('email')}
-            disabled
-          />
-          <TextInput
-            label='phone'
-            placeholder='phone'
-            styles={{
-              input: {
-                border: '1px solid #49494940',
-                borderRadius: '3px',
-                width: '100%',
-                padding: '5px',
-                color: '#7e7d7d'
-              }
-            }}
-            {...form.getInputProps('phone')}
-          />
-        </div>
-        <div className='grid gap-3'>
-          <TextInput
-            label='province'
-            placeholder='province'
-            styles={{
-              input: {
-                border: '1px solid #49494940',
-                borderRadius: '3px',
-                width: '100%',
-                padding: '5px',
-                color: '#7e7d7d'
-              }
-            }}
-            {...form.getInputProps('province')}
-          />
-          <TextInput
-            label='city'
-            placeholder='city'
-            styles={{
-              input: {
-                border: '1px solid #49494940',
-                borderRadius: '3px',
-                width: '100%',
-                padding: '5px',
-                color: '#7e7d7d'
-              }
-            }}
-            {...form.getInputProps('city')}
-          />
+      <div className='grid  w-full gap-10'>
+        <div>
+          <h3 className='relative z-10 w-fit p-1 font-bold text-2xl bg-white mt-2'>Identity information</h3>
+          <div className='-mt-4 mb-3 grid grid-cols-2 gap-3 border border-gray-400 p-5'>
+            <TextInput
+              label='First Name'
+              placeholder='first name'
+              styles={{
+                input: {
+                  border: '1px solid #49494940',
+                  borderRadius: '3px',
+                  width: '100%',
+                  padding: '5px',
+                  color: '#7e7d7d'
+                }
+              }}
+              {...form.getInputProps('first_name')}
+            />
+            <TextInput
+              label='Last Name'
+              placeholder='last name'
+              styles={{
+                input: {
+                  border: '1px solid #49494940',
+                  borderRadius: '3px',
+                  width: '100%',
+                  padding: '5px',
+                  color: '#7e7d7d'
+                }
+              }}
+              {...form.getInputProps('last_name')}
+            />
+            <TextInput
+              mt='md'
+              label='Email'
+              placeholder='Email'
+              styles={{
+                input: {
+                  border: '1px solid #49494940',
+                  borderRadius: '3px',
+                  width: '100%',
+                  padding: '5px',
+                  color: '#7e7d7d'
+                }
+              }}
+              {...form.getInputProps('email')}
+              disabled
+            />
+            <TextInput
+              label='phone'
+              placeholder='phone'
+              styles={{
+                input: {
+                  border: '1px solid #49494940',
+                  borderRadius: '3px',
+                  width: '100%',
+                  padding: '5px',
+                  color: '#7e7d7d'
+                }
+              }}
+              {...form.getInputProps('phone')}
+            />
+            <Textarea
+              className='col-span-2'
+              label='description'
+              placeholder='description'
+              rows={4}
+              styles={{
+                input: {
+                  border: '1px solid #49494940',
+                  borderRadius: '3px',
+                  width: '100%',
+                  padding: '5px',
+                  color: '#7e7d7d'
+                }
+              }}
+              {...form.getInputProps('description')}
+            />
+          </div>
 
-          <TextInput
-            label='delivery address'
-            placeholder='delivery_address'
-            styles={{
-              input: {
-                border: '1px solid #49494940',
-                borderRadius: '3px',
-                width: '100%',
-                padding: '5px',
-                color: '#7e7d7d'
-              }
-            }}
-            {...form.getInputProps('delivery_address')}
-          />
-          <TextInput
-            label='building address'
-            placeholder='building_address'
-            styles={{
-              input: {
-                border: '1px solid #49494940',
-                borderRadius: '3px',
-                width: '100%',
-                padding: '5px',
-                color: '#7e7d7d'
-              }
-            }}
-            {...form.getInputProps('building_address')}
-          />
+          <Group justify='center' mt='xl'>
+            <Button
+              className='bg-primary text-white border py-2 px-3 hover:bg-white hover:text-black'
+              onClick={handleSend}
+            >
+              Update Details
+            </Button>
+          </Group>
+        </div>
+
+        <div>
+          <h3 className='relative z-10 w-fit p-1 font-bold text-2xl bg-white mt-2'>Shipping Address</h3>
+          <div className='-mt-4 mb-3 grid gap-3 border border-gray-400 p-5'>
+            <TextInput
+              label='province'
+              placeholder='province'
+              styles={{
+                input: {
+                  border: '1px solid #49494940',
+                  borderRadius: '3px',
+                  width: '100%',
+                  padding: '5px',
+                  color: '#7e7d7d'
+                }
+              }}
+              {...form.getInputProps('province')}
+            />
+            <TextInput
+              label='city'
+              placeholder='city'
+              styles={{
+                input: {
+                  border: '1px solid #49494940',
+                  borderRadius: '3px',
+                  width: '100%',
+                  padding: '5px',
+                  color: '#7e7d7d'
+                }
+              }}
+              {...form.getInputProps('city')}
+            />
+
+            <TextInput
+              label='delivery address'
+              placeholder='delivery_address'
+              styles={{
+                input: {
+                  border: '1px solid #49494940',
+                  borderRadius: '3px',
+                  width: '100%',
+                  padding: '5px',
+                  color: '#7e7d7d'
+                }
+              }}
+              {...form.getInputProps('delivery_address')}
+            />
+            <TextInput
+              label='building address'
+              placeholder='building_address'
+              styles={{
+                input: {
+                  border: '1px solid #49494940',
+                  borderRadius: '3px',
+                  width: '100%',
+                  padding: '5px',
+                  color: '#7e7d7d'
+                }
+              }}
+              {...form.getInputProps('building_address')}
+            />
+          </div>
+          <Group justify='center' mt='xl'>
+            <Button
+              className='bg-primary text-white border py-2 px-3 hover:bg-white hover:text-black'
+              onClick={handleSend}
+            >
+              Update Address
+            </Button>
+          </Group>
+        </div>
+
+        <div>
+          <h3 className='relative z-10 w-fit p-1 font-bold text-2xl bg-white mt-2'>Change Password</h3>
+          <div className='-mt-4 mb-3 grid gap-3 border border-gray-400 p-5'>
+            <TextInput
+              label='new password'
+              placeholder='new password'
+              type='password'
+              styles={{
+                input: {
+                  border: '1px solid #49494940',
+                  borderRadius: '3px',
+                  width: '100%',
+                  padding: '5px',
+                  color: '#7e7d7d'
+                }
+              }}
+              {...form.getInputProps('n-pass')}
+            />
+            <TextInput
+              label='repeat password'
+              placeholder='repeat password'
+              type='password'
+              styles={{
+                input: {
+                  border: '1px solid #49494940',
+                  borderRadius: '3px',
+                  width: '100%',
+                  padding: '5px',
+                  color: '#7e7d7d'
+                }
+              }}
+              {...form.getInputProps('r-pass')}
+            />
+          </div>
+          <Group justify='center' mt='xl'>
+            <Button
+              className='bg-primary text-white border py-2 px-3 hover:bg-white hover:text-black'
+              onClick={handleSend}
+            >
+              Update Password
+            </Button>
+          </Group>
         </div>
       </div>
-      <TextInput
-        label='description'
-        placeholder='description'
-        styles={{
-          input: {
-            border: '1px solid #49494940',
-            borderRadius: '3px',
-            width: '100%',
-            padding: '5px',
-            color: '#7e7d7d'
-          }
-        }}
-        {...form.getInputProps('description')}
-      />
-
-      <Group justify='center' mt='xl'>
-        <Button className='bg-primary text-white border py-2 px-3 hover:bg-white hover:text-black' onClick={handleSend}>
-          Update Details
-        </Button>
-      </Group>
     </div>
   )
 }
