@@ -1,15 +1,15 @@
 import Layout from '@/views/layout'
 import React from 'react'
-import PanelEdgebanding from '@/views/pages/panel-edgebanding'
+import ShopOnline from '@/views/pages/shop-online'
 
 // !! Fake DB
 import FakeDb from '@/DB/content.json'
 import axios from 'axios'
 
-export default function PPanelEdgebanding({ data, layout }: any) {
+export default function PShopOnline({ data, layout }: any) {
   return (
     <Layout data={layout}>
-      <PanelEdgebanding Data={FakeDb} />
+      <ShopOnline Data={FakeDb} />
     </Layout>
   )
 }

@@ -24,14 +24,14 @@ const defaultMenuItem = [
     id: '3',
     title: 'Services',
     value: 'Services',
-    link: '/services',
+    link: '/panel-edgebanding',
     filec: ''
   },
   {
     id: '4',
     title: 'Products',
     value: 'Products',
-    link: '/Products',
+    link: '/sliding-doors',
     filec: ''
   },
 
