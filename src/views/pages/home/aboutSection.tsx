@@ -16,7 +16,7 @@ export default function AboutSection({ data }: any) {
   // )
 
   return (
-    <section className='relative py-10 md:py-20'>
+    <section className='relative py-10 md:pb-20 md:pt-10'>
       <div className='cursor-pointer flex items-center justify-center bg-primary border border-white p-4 w-fit absolute left-0 top-0'>
         <Pencil theme='outline' size='27' fill='#fff' className='cursor-pointer' onClick={() => setModal(true)} />
       </div>

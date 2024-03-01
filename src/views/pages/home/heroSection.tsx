@@ -7,7 +7,7 @@ export default function HeroSection({ data }: any) {
 
   function SlideMap() {
     return (
-      <Slider slidesPerView={1} className={'w-full overflow-hidden'}>
+      <Slider slidesPerView={1} className={'w-full overflow-hidden  object-cover !h-auto'}>
         {data[0]?.map((slide: any, i: number) => {
           // console.log(slide)
           return (
@@ -18,7 +18,7 @@ export default function HeroSection({ data }: any) {
                 width={100}
                 height={100}
                 unoptimized
-                className='w-full aspect-video md:aspect-auto md:max-h-[270px] lg:max-h-[350px] xl:max-h-[420px] 2xl::max-h-[550px] rounded-lg'
+                className='w-full aspect-video md:aspect-auto object-cover md:max-h-[370px] lg:max-h-[450px] xl:max-h-[560px] 2xl::max-h-[650px]'
               />
             </Fragment>
           )

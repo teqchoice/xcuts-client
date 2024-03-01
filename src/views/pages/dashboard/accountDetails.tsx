@@ -128,7 +128,7 @@ export default function Dtails() {
               disabled
             />
             <TextInput
-              label='phone'
+              label='Phone'
               placeholder='phone'
               styles={{
                 input: {
@@ -143,7 +143,7 @@ export default function Dtails() {
             />
             <Textarea
               className='col-span-2'
-              label='description'
+              label='Description'
               placeholder='description'
               rows={4}
               styles={{
@@ -168,83 +168,267 @@ export default function Dtails() {
             </Button>
           </Group>
         </div>
+        <div className='grid lg:grid-cols-2 gap-5'>
+          <div>
+            <h3 className='relative z-10 w-fit p-1 font-bold text-2xl bg-white mt-2'>Billing Address</h3>
+            <div className='-mt-4 mb-3 grid gap-3 border border-gray-400 p-5'>
+              <TextInput
+                label='Email'
+                placeholder='email'
+                styles={{
+                  input: {
+                    border: '1px solid #49494940',
+                    borderRadius: '3px',
+                    width: '100%',
+                    padding: '5px',
+                    color: '#7e7d7d'
+                  }
+                }}
+                {...form.getInputProps('billing-email')}
+              />
+              <TextInput
+                label='Phone'
+                placeholder='phone'
+                styles={{
+                  input: {
+                    border: '1px solid #49494940',
+                    borderRadius: '3px',
+                    width: '100%',
+                    padding: '5px',
+                    color: '#7e7d7d'
+                  }
+                }}
+                {...form.getInputProps('billing-phone')}
+              />
+              <TextInput
+                label='FirstName'
+                placeholder='firstName'
+                styles={{
+                  input: {
+                    border: '1px solid #49494940',
+                    borderRadius: '3px',
+                    width: '100%',
+                    padding: '5px',
+                    color: '#7e7d7d'
+                  }
+                }}
+                {...form.getInputProps('billing-firstName')}
+              />
+              <TextInput
+                label='LastName'
+                placeholder='lastName'
+                styles={{
+                  input: {
+                    border: '1px solid #49494940',
+                    borderRadius: '3px',
+                    width: '100%',
+                    padding: '5px',
+                    color: '#7e7d7d'
+                  }
+                }}
+                {...form.getInputProps('billing-lastName')}
+              />
+              <TextInput
+                label='Province'
+                placeholder='province'
+                styles={{
+                  input: {
+                    border: '1px solid #49494940',
+                    borderRadius: '3px',
+                    width: '100%',
+                    padding: '5px',
+                    color: '#7e7d7d'
+                  }
+                }}
+                {...form.getInputProps('province')}
+              />
+              <TextInput
+                label='City'
+                placeholder='city'
+                styles={{
+                  input: {
+                    border: '1px solid #49494940',
+                    borderRadius: '3px',
+                    width: '100%',
+                    padding: '5px',
+                    color: '#7e7d7d'
+                  }
+                }}
+                {...form.getInputProps('city')}
+              />
 
-        <div>
-          <h3 className='relative z-10 w-fit p-1 font-bold text-2xl bg-white mt-2'>Shipping Address</h3>
-          <div className='-mt-4 mb-3 grid gap-3 border border-gray-400 p-5'>
-            <TextInput
-              label='province'
-              placeholder='province'
-              styles={{
-                input: {
-                  border: '1px solid #49494940',
-                  borderRadius: '3px',
-                  width: '100%',
-                  padding: '5px',
-                  color: '#7e7d7d'
-                }
-              }}
-              {...form.getInputProps('province')}
-            />
-            <TextInput
-              label='city'
-              placeholder='city'
-              styles={{
-                input: {
-                  border: '1px solid #49494940',
-                  borderRadius: '3px',
-                  width: '100%',
-                  padding: '5px',
-                  color: '#7e7d7d'
-                }
-              }}
-              {...form.getInputProps('city')}
-            />
-
-            <TextInput
-              label='delivery address'
-              placeholder='delivery_address'
-              styles={{
-                input: {
-                  border: '1px solid #49494940',
-                  borderRadius: '3px',
-                  width: '100%',
-                  padding: '5px',
-                  color: '#7e7d7d'
-                }
-              }}
-              {...form.getInputProps('delivery_address')}
-            />
-            <TextInput
-              label='building address'
-              placeholder='building_address'
-              styles={{
-                input: {
-                  border: '1px solid #49494940',
-                  borderRadius: '3px',
-                  width: '100%',
-                  padding: '5px',
-                  color: '#7e7d7d'
-                }
-              }}
-              {...form.getInputProps('building_address')}
-            />
+              <TextInput
+                label='Address line1'
+                placeholder='line1_address'
+                styles={{
+                  input: {
+                    border: '1px solid #49494940',
+                    borderRadius: '3px',
+                    width: '100%',
+                    padding: '5px',
+                    color: '#7e7d7d'
+                  }
+                }}
+                {...form.getInputProps('line1_address')}
+              />
+              <TextInput
+                label='Address line2'
+                placeholder='line2_address'
+                styles={{
+                  input: {
+                    border: '1px solid #49494940',
+                    borderRadius: '3px',
+                    width: '100%',
+                    padding: '5px',
+                    color: '#7e7d7d'
+                  }
+                }}
+                {...form.getInputProps('line2_address')}
+              />
+            </div>
+            <Group justify='center' mt='xl'>
+              <Button
+                className='bg-primary text-white border py-2 px-3 hover:bg-white hover:text-black'
+                onClick={handleSend}
+              >
+                Update Address
+              </Button>
+            </Group>
           </div>
-          <Group justify='center' mt='xl'>
-            <Button
-              className='bg-primary text-white border py-2 px-3 hover:bg-white hover:text-black'
-              onClick={handleSend}
-            >
-              Update Address
-            </Button>
-          </Group>
+
+          <div>
+            <h3 className='relative z-10 w-fit p-1 font-bold text-2xl bg-white mt-2'>Delivery Address</h3>
+            <div className='-mt-4 mb-3 grid gap-3 border border-gray-400 p-5'>
+              <TextInput
+                label='Email'
+                placeholder='email'
+                styles={{
+                  input: {
+                    border: '1px solid #49494940',
+                    borderRadius: '3px',
+                    width: '100%',
+                    padding: '5px',
+                    color: '#7e7d7d'
+                  }
+                }}
+                {...form.getInputProps('billing-email')}
+              />
+              <TextInput
+                label='Phone'
+                placeholder='phone'
+                styles={{
+                  input: {
+                    border: '1px solid #49494940',
+                    borderRadius: '3px',
+                    width: '100%',
+                    padding: '5px',
+                    color: '#7e7d7d'
+                  }
+                }}
+                {...form.getInputProps('billing-phone')}
+              />
+              <TextInput
+                label='FirstName'
+                placeholder='firstName'
+                styles={{
+                  input: {
+                    border: '1px solid #49494940',
+                    borderRadius: '3px',
+                    width: '100%',
+                    padding: '5px',
+                    color: '#7e7d7d'
+                  }
+                }}
+                {...form.getInputProps('billing-firstName')}
+              />
+              <TextInput
+                label='LastName'
+                placeholder='lastName'
+                styles={{
+                  input: {
+                    border: '1px solid #49494940',
+                    borderRadius: '3px',
+                    width: '100%',
+                    padding: '5px',
+                    color: '#7e7d7d'
+                  }
+                }}
+                {...form.getInputProps('billing-lastName')}
+              />
+              <TextInput
+                label='Province'
+                placeholder='province'
+                styles={{
+                  input: {
+                    border: '1px solid #49494940',
+                    borderRadius: '3px',
+                    width: '100%',
+                    padding: '5px',
+                    color: '#7e7d7d'
+                  }
+                }}
+                {...form.getInputProps('province')}
+              />
+              <TextInput
+                label='City'
+                placeholder='city'
+                styles={{
+                  input: {
+                    border: '1px solid #49494940',
+                    borderRadius: '3px',
+                    width: '100%',
+                    padding: '5px',
+                    color: '#7e7d7d'
+                  }
+                }}
+                {...form.getInputProps('city')}
+              />
+
+              <TextInput
+                label='Address line1'
+                placeholder='line1_address'
+                styles={{
+                  input: {
+                    border: '1px solid #49494940',
+                    borderRadius: '3px',
+                    width: '100%',
+                    padding: '5px',
+                    color: '#7e7d7d'
+                  }
+                }}
+                {...form.getInputProps('line1_address')}
+              />
+              <TextInput
+                label='Address line2'
+                placeholder='line2_address'
+                styles={{
+                  input: {
+                    border: '1px solid #49494940',
+                    borderRadius: '3px',
+                    width: '100%',
+                    padding: '5px',
+                    color: '#7e7d7d'
+                  }
+                }}
+                {...form.getInputProps('line2_address')}
+              />
+            </div>
+            <Group justify='center' mt='xl'>
+              <Button
+                className='bg-primary text-white border py-2 px-3 hover:bg-white hover:text-black'
+                onClick={handleSend}
+              >
+                Update Address
+              </Button>
+            </Group>
+          </div>
         </div>
 
         <div>
           <h3 className='relative z-10 w-fit p-1 font-bold text-2xl bg-white mt-2'>Change Password</h3>
           <div className='-mt-4 mb-3 grid gap-3 border border-gray-400 p-5'>
             <TextInput
-              label='new password'
+              label='New password'
               placeholder='new password'
               type='password'
               styles={{
@@ -259,7 +443,7 @@ export default function Dtails() {
               {...form.getInputProps('n-pass')}
             />
             <TextInput
-              label='repeat password'
+              label='Repeat password'
               placeholder='repeat password'
               type='password'
               styles={{

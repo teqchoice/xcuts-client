@@ -44,7 +44,7 @@ export default function ServicesSection({ data }: any) {
       <div className='bg-neutral-100'>
         <div className=''>
           <div className='relative md:flex'>
-            <div className='basis-[52.12%] md:basis-[55%] lg:basis-[54%] xl:basis-[53%] 2xl:basis-[52%]'>
+            <div className='basis-[52.12%] md:basis-[55%] lg:basis-[54%] xl:basis-[53%] 2xl:basis-[52.2%]'>
               <div>
                 <div className='relative overflow-hidden w-full bg-neutral-100 before:absolute before:content-normal before:-bottom-[1px] before:w-1/2 before:bg-inherit before:right-1/2 before:skew-x-[40deg] before:pb-7 before:origin-[100%_100%] after:absolute after:content-normal after:bottom-0 after:w-1/2 after:bg-inherit after:left-1/2 after:-skew-x-[40deg] after:pb-7 after:origin-[100%_100%] md:before:w-10 md:before:h-1/2 md:before:top-0 md:before:bottom-auto md:before:right-0 md:before:skew-x-[0deg] md:before:skew-y-[40deg] md:after:w-10 md:after:h-1/2 md:after:bottom-0 md:after:right-0 md:after:left-auto md:after:skew-x-[0deg] md:after:-skew-y-[40deg]'>
                   <img
@@ -107,7 +107,7 @@ export default function ServicesSection({ data }: any) {
           </div>
 
           <div className='relative md:flex'>
-            <div className='basis-[52.12%] md:basis-[55%] lg:basis-[54%] xl:basis-[53%] 2xl:basis-[52%] order-1'>
+            <div className='basis-[52.12%] md:basis-[55%] lg:basis-[54%] xl:basis-[53%] 2xl:basis-[52.2%] order-1'>
               <div className='relative overflow-hidden w-full bg-neutral-100 before:absolute before:content-normal before:bottom-0 before:w-1/2 before:bg-inherit before:right-1/2 before:skew-x-[40deg] before:pb-7 before:origin-[100%_100%] after:absolute after:content-normal after:bottom-0 after:w-1/2 after:bg-inherit after:left-1/2 after:-skew-x-[40deg] after:pb-7 after:origin-[100%_100%] md:before:w-10 md:before:h-1/2 md:before:top-0 md:before:bottom-auto md:before:right-auto md:before:skew-x-[0deg] md:before:-skew-y-[40deg] md:after:w-10 md:after:h-1/2 md:after:bottom-0 md:after:right-auto md:after:left-0 md:after:skew-x-[0deg] md:after:skew-y-[40deg] md:before:origin-[0%_0%] md:after:origin-[0%_0%]'>
                 <img
                   className='h-[380px] md:h-[460px] lg:h-[596px] w-full object-cover object-center'
@@ -168,7 +168,7 @@ export default function ServicesSection({ data }: any) {
           </div>
 
           <div className='relative md:flex'>
-            <div className='basis-[52.12%] md:basis-[55%] lg:basis-[54%] xl:basis-[53%] 2xl:basis-[52%]'>
+            <div className='basis-[52.12%] md:basis-[55%] lg:basis-[54%] xl:basis-[53%] 2xl:basis-[52.2%]'>
               <div>
                 <div className='relative overflow-hidden w-full bg-neutral-100 before:absolute before:content-normal before:bottom-0 before:w-1/2 before:bg-inherit before:right-1/2 before:skew-x-[40deg] before:pb-7 before:origin-[100%_100%] after:absolute after:content-normal after:bottom-0 after:w-1/2 after:bg-inherit after:left-1/2 after:-skew-x-[40deg] after:pb-7 after:origin-[100%_100%] md:before:w-10 md:before:h-1/2 md:before:top-0 md:before:bottom-auto md:before:right-0 md:before:skew-x-[0deg] md:before:skew-y-[40deg] md:after:w-10 md:after:h-1/2 md:after:bottom-0 md:after:right-0 md:after:left-auto md:after:skew-x-[0deg] md:after:-skew-y-[40deg]'>
                   <img
@@ -231,7 +231,7 @@ export default function ServicesSection({ data }: any) {
           </div>
 
           <div className='relative md:flex'>
-            <div className='basis-[52.12%] md:basis-[55%] lg:basis-[54%] xl:basis-[53%] 2xl:basis-[52%] order-1'>
+            <div className='basis-[53.12%] md:basis-[55%] lg:basis-[54%] xl:basis-[53%] 2xl:basis-[52.2%] order-1'>
               <div className='relative overflow-hidden w-full bg-neutral-100 before:absolute before:content-normal before:bottom-0 before:w-1/2 before:bg-inherit before:right-1/2 before:skew-x-[40deg] before:pb-7 before:origin-[100%_100%] after:absolute after:content-normal after:bottom-0 after:w-1/2 after:bg-inherit after:left-1/2 after:-skew-x-[40deg] after:pb-7 after:origin-[100%_100%] md:before:w-10 md:before:h-1/2 md:before:top-0 md:before:bottom-auto md:before:right-auto md:before:skew-x-[0deg] md:before:-skew-y-[40deg] md:after:w-10 md:after:h-1/2 md:after:bottom-0 md:after:right-auto md:after:left-0 md:after:skew-x-[0deg] md:after:skew-y-[40deg] md:before:origin-[0%_0%] md:after:origin-[0%_0%]'>
                 <img
                   className='h-[380px] md:h-[460px] lg:h-[596px] w-full object-cover object-center'

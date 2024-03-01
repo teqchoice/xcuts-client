@@ -18,8 +18,8 @@ export default function SearchC() {
     <div className=''>
       <Search theme='outline' size='27' fill='#fff' onClick={() => setOpen(true)} className='cursor-pointer' />
       <div
-        className={`absolute z-50 flex items-center top-0 left-0 bg-red-600 ${
-          open ? 'w-full opacity-100' : 'w-0 opacity-0'
+        className={`absolute flex items-center top-0 left-0 bg-red-600 ${
+          open ? 'w-full opacity-100 right-0  z-40' : 'w-0 right-full opacity-0'
         } h-full transition-all duration-300`}
       >
         <form onSubmit={form.onSubmit(handleSearch)} className='h-full w-full grow'>

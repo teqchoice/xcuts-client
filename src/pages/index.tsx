@@ -412,73 +412,46 @@ export const getServerSideProps = async (context: any) => {
         name: 'Header_Main_Menu',
         contents: [
           {
-            id: '9',
+            id: '1',
             title: 'Home',
             value: 'Home',
             link: '/',
             filec: ''
           },
           {
-            id: '10',
-            title: 'Sliding Doors',
-            value: 'Sliding Doors',
-            link: '/sliding-doors',
-            filec: ''
-          },
-          {
-            id: '94',
-            title: 'About Us',
-            value: 'About Us',
-            link: '/about-us',
-            filec: ''
-          },
-          {
-            id: '95',
-            title: 'Delivery',
-            value: 'Delivery',
-            link: '/delivery',
-            filec: ''
-          },
-          {
-            id: '96',
-            title: 'Showroom',
-            value: 'Showroom',
-            link: '/showroom',
-            filec: ''
-          },
-          {
-            id: '97',
+            id: '2',
             title: 'Decor Collections',
             value: 'Decor Collections',
             link: '/decor-collections',
             filec: ''
           },
           {
-            id: '98',
-            title: 'Our Guarantee',
-            value: 'Our Guarantee',
-            link: '/our-guarantee',
+            id: '3',
+            title: 'Services',
+            value: 'Services',
+            link: '/services',
             filec: ''
           },
           {
-            id: '99',
-            title: 'Panel Edgebanding',
-            value: 'Panel Edgebanding',
-            link: '/panel-edgebanding',
+            id: '4',
+            title: 'Products',
+            value: 'Products',
+            link: '/sliding-doors',
+            filec: ''
+          },
+
+          {
+            id: '5',
+            title: 'Showroom',
+            value: 'Showroom',
+            link: '/showroom',
             filec: ''
           },
           {
-            id: '100',
-            title: 'Privacy Notice',
-            value: 'Privacy Notice',
-            link: '/privacy-notice',
-            filec: ''
-          },
-          {
-            id: '101',
-            title: 'TAC',
-            value: 'TAC',
-            link: '/terms-and-conditions',
+            id: '6',
+            title: 'Shop online',
+            value: 'Shop online',
+            link: '/shop-online',
             filec: ''
           }
         ]

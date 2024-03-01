@@ -26,7 +26,7 @@ const Slider = ({ children, slidesPerView, spaceBetween, className }: any) => {
       {Array.isArray(children) ? (
         children.map((item, index) => {
           return (
-            <SwiperSlide key={index} className={`${className} overflow-hidden w-full !h-fit`}>
+            <SwiperSlide key={index} className={`${className} overflow-hidden w-full`}>
               {item.props.children}
             </SwiperSlide>
           )
