@@ -90,6 +90,14 @@ export default function Layout({ children, data }: any) {
       get_user(token)
     }
   }, [token])
+
+  const { passwordvrify } = useSelector((state: any) => state.options)
+  if (!passwordvrify)
+    return (
+      <div className='fixed top-0 left-0 h-screen w-screen bg-white z-50'>
+        <Login />
+      </div>
+    )
   return (
     <main className={poppins.className}>
       <Header

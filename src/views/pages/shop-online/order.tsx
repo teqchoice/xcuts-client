@@ -50,7 +50,7 @@ export default function Order() {
                               <th colSpan={7} />
                               <th colSpan={4} className='th-eb text-white text-lg uppercase pt-9 '>
                                 Edgebanding details <br />
-                                <div className='Switch mt-[15px] px-6'>
+                                {/* <div className='Switch mt-[15px] px-6'>
                                   <div className='Switch__bg w-full left-0 flex justify-between bg-[#6f6f6f] rounded-md py-4 px-[10px]'>
                                     <button className='text-white'>
                                       <input className='hidden' type='radio' id='Login21' name='row1' />
@@ -65,7 +65,7 @@ export default function Order() {
                                       </label>
                                     </button>
                                   </div>
-                                </div>
+                                </div> */}
                               </th>
                               <th colSpan={4} />
                             </tr>
@@ -290,7 +290,6 @@ export default function Order() {
                               <td className='td-eb'>
                                 <input
                                   type='text'
-                                  
                                   data-tab-index='L1'
                                   autoComplete='off'
                                   className='border border-[#cacaca] text-[15px] p-2 w-full bg-[#474747] text-white focus:border-primary focus:outline-none rounded'
@@ -299,7 +298,6 @@ export default function Order() {
                               <td className='td-eb'>
                                 <input
                                   type='text'
-                                  
                                   data-tab-index='L2'
                                   autoComplete='off'
                                   className='border border-[#cacaca] text-[15px] p-2 w-full bg-[#474747] text-white focus:border-primary focus:outline-none rounded'
@@ -308,7 +306,6 @@ export default function Order() {
                               <td className='td-eb'>
                                 <input
                                   type='text'
-                                  
                                   data-tab-index='W1'
                                   autoComplete='off'
                                   className='border border-[#cacaca] text-[15px] p-2 w-full bg-[#474747] text-white focus:border-primary focus:outline-none rounded'
