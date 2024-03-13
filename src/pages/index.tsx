@@ -411,13 +411,13 @@ export const getServerSideProps = async (context: any) => {
         id: 5,
         name: 'Header_Main_Menu',
         contents: [
-          {
-            id: '1',
-            title: 'Home',
-            value: 'Home',
-            link: '/',
-            filec: ''
-          },
+          // {
+          //   id: '1',
+          //   title: 'Home',
+          //   value: 'Home',
+          //   link: '/',
+          //   filec: ''
+          // },
           {
             id: '2',
             title: 'Decor Collections',

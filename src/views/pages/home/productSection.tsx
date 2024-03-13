@@ -2,6 +2,7 @@ import { Pencil } from '@icon-park/react'
 import { select } from 'radash'
 import React, { useState } from 'react'
 import Modal from '../components/Modal'
+import { user_info } from '@/extensions/redux/api/auth'
 
 export default function ProductSection({ data }: any) {
   // console.log(data)
@@ -115,15 +116,17 @@ export default function ProductSection({ data }: any) {
                 </div>
               </div>
             </div>
-            <div className='cursor-pointer flex items-center justify-center bg-primary border border-white p-4 w-fit absolute left-0 top-0'>
-              <Pencil
-                theme='outline'
-                size='27'
-                fill='#fff'
-                className='cursor-pointer'
-                onClick={() => setModal1(true)}
-              />
-            </div>
+            {user_info?.role === 'admin' && process.env.NEXT_PUBLIC_ADMIN_SHOW === 'true' && (
+              <div className='cursor-pointer flex items-center justify-center bg-primary border border-white p-4 w-fit absolute left-0 top-0'>
+                <Pencil
+                  theme='outline'
+                  size='27'
+                  fill='#fff'
+                  className='cursor-pointer'
+                  onClick={() => setModal1(true)}
+                />
+              </div>
+            )}
             <Modal modal={modal1} setModal={setModal1} data={s1} />
           </div>
 
@@ -211,15 +214,17 @@ export default function ProductSection({ data }: any) {
                 </div>
               </div>
             </div>
-            <div className='cursor-pointer flex items-center justify-center bg-primary border border-white p-4 w-fit absolute left-0 top-0'>
-              <Pencil
-                theme='outline'
-                size='27'
-                fill='#fff'
-                className='cursor-pointer'
-                onClick={() => setModal2(true)}
-              />
-            </div>
+            {user_info?.role === 'admin' && process.env.NEXT_PUBLIC_ADMIN_SHOW === 'true' && (
+              <div className='cursor-pointer flex items-center justify-center bg-primary border border-white p-4 w-fit absolute left-0 top-0'>
+                <Pencil
+                  theme='outline'
+                  size='27'
+                  fill='#fff'
+                  className='cursor-pointer'
+                  onClick={() => setModal2(true)}
+                />
+              </div>
+            )}
             <Modal modal={modal2} setModal={setModal2} data={s2} />
           </div>
 
@@ -307,15 +312,17 @@ export default function ProductSection({ data }: any) {
                 </div>
               </div>
             </div>
-            <div className='cursor-pointer flex items-center justify-center bg-primary border border-white p-4 w-fit absolute left-0 top-0'>
-              <Pencil
-                theme='outline'
-                size='27'
-                fill='#fff'
-                className='cursor-pointer'
-                onClick={() => setModal3(true)}
-              />
-            </div>
+            {user_info?.role === 'admin' && process.env.NEXT_PUBLIC_ADMIN_SHOW === 'true' && (
+              <div className='cursor-pointer flex items-center justify-center bg-primary border border-white p-4 w-fit absolute left-0 top-0'>
+                <Pencil
+                  theme='outline'
+                  size='27'
+                  fill='#fff'
+                  className='cursor-pointer'
+                  onClick={() => setModal3(true)}
+                />
+              </div>
+            )}
             <Modal modal={modal3} setModal={setModal3} data={s3} />
           </div>
         </div>

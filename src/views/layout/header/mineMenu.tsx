@@ -6,31 +6,31 @@ import React, { useEffect, useState } from 'react'
 import SearchC from './components/search'
 
 const defaultMenuItem = [
-  {
-    id: '1',
-    title: 'Home',
-    value: 'Home',
-    link: '/',
-    filec: ''
-  },
+  // {
+  //   id: '1',
+  //   title: 'Home',
+  //   value: 'Home',
+  //   link: '/',
+  //   filec: ''
+  // },
   {
     id: '2',
     title: 'Decor Collections',
-    value: 'Decor Collections',
+    value: 'ALL DECORS',
     link: '/decor-collections',
     filec: ''
   },
   {
     id: '3',
     title: 'Services',
-    value: 'Services',
+    value: 'SERVICES',
     link: '/panel-edgebanding',
     filec: ''
   },
   {
     id: '4',
     title: 'Products',
-    value: 'Products',
+    value: 'PRODUCTS',
     link: '/sliding-doors',
     filec: ''
   },
@@ -38,14 +38,14 @@ const defaultMenuItem = [
   {
     id: '5',
     title: 'Showroom',
-    value: 'Showroom',
+    value: 'SHOWROOM',
     link: '/showroom',
     filec: ''
   },
   {
     id: '6',
     title: 'Shop online',
-    value: 'Shop online',
+    value: 'SHOP ONLINE',
     link: '/shop-online',
     filec: ''
   }
@@ -100,7 +100,7 @@ export default function MineMenu({ data, logo }: any) {
 
   return (
     <>
-      <nav className='relative bg-black py-3'>
+      <nav className='relative bg-black py-2'>
         <div className='px-4 sm:container flex justify-between flex-grow items-center'>
           <HamburgerButton
             theme='outline'
@@ -137,9 +137,10 @@ export default function MineMenu({ data, logo }: any) {
             </Link>
           </div>
         </div>
+        {user_info?.role === 'admin' && process.env.NEXT_PUBLIC_ADMIN_SHOW === 'true' &&
         <div className='cursor-pointer flex items-center justify-center bg-primary border border-white p-4 w-fit absolute left-0 top-0'>
           <Pencil theme='outline' size='10' fill='#fff' className='cursor-pointer' onClick={() => setModal(true)} />
-        </div>
+        </div>}
         <Modal modal={modal} setModal={setModal} data={data} />
       </nav>
       {hamb}

@@ -5,20 +5,38 @@ import Image from 'next/image'
 export default function HeroSection({ data }: any) {
   // console.log(data)
 
+  const defaultSlide = [
+    {
+      id: '47',
+      title: 's1',
+      value: '',
+      link: '/',
+      filec: 'images/banner.gif'
+    },
+    {
+      id: '48',
+      title: 's2',
+      value: '',
+      link: '/',
+      filec: 'images/banner.gif'
+    }
+  ]
+
   function SlideMap() {
     return (
       <Slider slidesPerView={1} className={'w-full overflow-hidden  object-cover !h-auto'}>
-        {data[0]?.map((slide: any, i: number) => {
+        {defaultSlide?.map((slide: any, i: number) => {
           // console.log(slide)
           return (
             <Fragment key={i}>
               <Image
-                src={process.env.NEXT_PUBLIC_API_URL + slide.filec}
+                src={slide.filec}
+                // src={process.env.NEXT_PUBLIC_API_URL + slide.filec}
                 alt='baner'
                 width={100}
                 height={100}
                 unoptimized
-                className='w-full aspect-video md:aspect-auto object-cover md:max-h-[370px] lg:max-h-[450px] xl:max-h-[560px] 2xl::max-h-[650px]'
+                className='w-full aspect-video md:aspect-auto object-cover md:max-h-[370px] lg:max-h-[450px] xl:max-h-[39rem] 2xl::max-h-[650px]'
               />
             </Fragment>
           )
@@ -36,9 +54,8 @@ export default function HeroSection({ data }: any) {
           </div>
         </div>
       </section> */}
-{/* md:origin-[100%_100%] md:w-[200px] */}
+      {/* md:origin-[100%_100%] md:w-[200px] */}
       <SlideMap />
-      <div className='absolute bottom-0 right-0 z-10 w-[150px] bg-white pb-36 skew-y-[144deg] origin-[160%_100%] '></div>
     </section>
   )
 }

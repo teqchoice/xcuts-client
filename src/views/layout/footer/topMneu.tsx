@@ -1,3 +1,4 @@
+import { user_info } from '@/extensions/redux/api/auth'
 import Modal from '@/views/pages/components/Modal'
 import { Pencil } from '@icon-park/react'
 import { select } from 'radash'
@@ -7,7 +8,7 @@ export default function TopMneu({ data }: any) {
   const [modal1, setModal1] = useState(false)
   const [modal2, setModal2] = useState(false)
   const [modal3, setModal3] = useState(false)
-  console.log(data)
+  console.log(user_info?.role === 'admin' && process.env.NEXT_PUBLIC_ADMIN_SHOW === 'true')
   // console.log(data.find(arr => arr.some(obj => obj.title === 'Contact Details')))
   const datafilter = data?.find(
     arr =>
@@ -26,6 +27,7 @@ export default function TopMneu({ data }: any) {
   // )
   return (
     <div className='ftr__title__grid relative pt-20 pb-10'>
+      <div className='w-20 h-[0.35rem] mb-2 bg-primary'></div>
       <h4 className='text-2xl font-semibold text-white mb-8'>
         {
           select(
@@ -47,9 +49,18 @@ export default function TopMneu({ data }: any) {
               )[0]?.value
             }
           </p>
-          <div className='cursor-pointer flex items-center justify-center bg-primary border border-white p-4 w-fit absolute left-0 top-0'>
-            <Pencil theme='outline' size='10' fill='#fff' className='cursor-pointer' onClick={() => setModal1(true)} />
-          </div>
+          {user_info?.role === 'admin' && process.env.NEXT_PUBLIC_ADMIN_SHOW === 'true' && (
+            <div className='cursor-pointer flex items-center justify-center bg-primary border border-white p-4 w-fit absolute left-0 top-0'>
+              <Pencil
+                theme='outline'
+                size='10'
+                fill='#fff'
+                className='cursor-pointer'
+                onClick={() => setModal1(true)}
+              />
+            </div>
+          )}
+
           <Modal
             modal={modal1}
             setModal={setModal1}
@@ -71,9 +82,18 @@ export default function TopMneu({ data }: any) {
               )[0]?.value
             }
           </a>
-          <div className='cursor-pointer flex items-center justify-center bg-primary border border-white p-4 w-fit absolute left-0 top-0'>
-            <Pencil theme='outline' size='10' fill='#fff' className='cursor-pointer' onClick={() => setModal2(true)} />
-          </div>
+          {user_info?.role === 'admin' && process.env.NEXT_PUBLIC_ADMIN_SHOW === 'true' && (
+            <div className='cursor-pointer flex items-center justify-center bg-primary border border-white p-4 w-fit absolute left-0 top-0'>
+              <Pencil
+                theme='outline'
+                size='10'
+                fill='#fff'
+                className='cursor-pointer'
+                onClick={() => setModal2(true)}
+              />
+            </div>
+          )}
+
           <Modal
             modal={modal2}
             setModal={setModal2}
@@ -95,9 +115,17 @@ export default function TopMneu({ data }: any) {
               )[0]?.value
             }
           </a>
-          <div className='cursor-pointer flex items-center justify-center bg-primary border border-white p-4 w-fit absolute left-0 top-0'>
-            <Pencil theme='outline' size='10' fill='#fff' className='cursor-pointer' onClick={() => setModal3(true)} />
-          </div>
+          {user_info?.role === 'admin' && process.env.NEXT_PUBLIC_ADMIN_SHOW === 'true' && (
+            <div className='cursor-pointer flex items-center justify-center bg-primary border border-white p-4 w-fit absolute left-0 top-0'>
+              <Pencil
+                theme='outline'
+                size='10'
+                fill='#fff'
+                className='cursor-pointer'
+                onClick={() => setModal3(true)}
+              />
+            </div>
+          )}
           <Modal
             modal={modal3}
             setModal={setModal3}
