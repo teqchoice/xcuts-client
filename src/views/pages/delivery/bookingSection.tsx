@@ -53,16 +53,16 @@ export default function BookingSection(props: any) {
         >
           <div className='px-4 sm:container'>
             <div className='text-center text-black mb-11 relative'>
-              <p className='text-3xl'>In a rush?</p>
-              <h4 className='lg:text-5xl md:text-4xl text-3xl font-semibold mb-7'>Book our Next day service</h4>
+              <p className='text-3xl'>In a hurry?</p>
+              <h4 className='lg:text-5xl md:text-4xl text-3xl font-semibold mb-7'>Reserve our service for tomorrow</h4>
               <p>
-                Our usual lead time for the cut and edge orders is around five working days. If you are in a rush and
-                require your cut and edge job completed sooner, you can order our Fast Flow service. Depending on how
-                busy we are, you can choose between Next day and 2 days or 3 and 5 days lead time options.
+                For cut and edge orders, we typically require five working days in advance. You can order our Fast Flow
+                service if you need your cut and edge job finished sooner and are in a hurry. You can select between the
+                following day and 2 days or 3 and 5 days lead time options, depending on how busy we are.
               </p>
             </div>
             <div className='bg-black text-center relative flex flex-col items-center justify-center h-[363px] md:h-[463px] px-6'>
-              <p className='text-xl md:text-3xl mb-2 text-white'>When on a tight deadline</p>
+              <p className='text-xl md:text-3xl mb-2 text-white'>When there is a short turnaround time</p>
               <h4 className='text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold text-white uppercase'>
                 BOOK OUR FAST FLOW SERVICE
               </h4>
@@ -71,7 +71,7 @@ export default function BookingSection(props: any) {
                   href='#'
                   className='bg-primary px-5 py-4 md:px-5 lg:px-6 lg:px-9 md:py-4 font-medium text-base sm:text-xl text-white hover:bg-white ease-in duration-200 flex items-center justify-between hover:text-black uppercase'
                 >
-                  Build your cutting list now
+                  Create your cut list right away
                 </a>
               </div>
             </div>

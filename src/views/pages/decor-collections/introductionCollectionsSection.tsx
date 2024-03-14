@@ -54,7 +54,7 @@ export default function Collections(props: any) {
               <div className='w-3 md:w-20 h-11 bg-primary absolute left-0 md:-left-24 bottom-0'></div>
               <div className='w-3 md:w-20 h-11 bg-primary absolute right-0 md:-right-24 top-0'></div>
               <h1 className='text-white text-xl/6 md:text-4xl lg:text-5xl font-bold -skew-x-[35deg] py-2 px-4 uppercase'>
-                Latest decorative trends
+                Our Collections- Trendy Decors!
               </h1>
             </div>
           </div>

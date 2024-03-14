@@ -49,19 +49,27 @@ export default function IntroductionSection(props: any) {
       <section className='section-one-stop py-10 md:py-20 pb-0 md:pb-0'>
         <div className='px-4 sm:container'>
           <div className='text-center px-1 overflow-hidden'>
-            <div className='text-2xl md:text-3xl mb-2'>No matter where you are</div>
+            <div className='text-2xl md:text-3xl mb-2'>We'll ensure your panels arrive on schedule</div>
             <div className='bg-black mx-6 md:mx-28 skew-y-[0] skew-x-[35deg] relative'>
               <div className='w-3 md:w-20 h-11 bg-primary absolute left-0 md:-left-24 bottom-0'></div>
               <div className='w-3 md:w-20 h-11 bg-primary absolute right-0 md:-right-24 top-0'></div>
               <h1 className='text-white text-xl/6 md:text-4xl font-bold -skew-x-[35deg] py-2 px-4'>
-                We are delivering nationwide
+                BOOK DELIVERY WITH CERTAINTY!
               </h1>
+            </div>
+            <div className='flex justify-center gap-4 mt-10'>
+              <a
+                href='#'
+                className='bg-black px-5 py-4 md:px-5 lg:px-6 lg:px-9 md:py-4 font-medium text-xl text-white hover:bg-primary ease-in duration-200 flex items-center justify-between'
+              >
+                Calculate Now
+              </a>
             </div>
             <div className='flex flex-col gap-y-3 text-black-1d mt-10'>
               <p>
-                We operate a fleet of vans and handle most of the deliveries in-house. At times an alternative option
-                can be more cost-effective. Where and when it is available, we will present you with several delivery
-                options.
+                We deliver countrywide, no matter where you are. We run an array of vans and do the majority of our
+                deliveries ourselves. Occasionally, a different course of action may be more economical. We will give
+                you a choice of delivery methods, depending on where and when it is available.
               </p>
             </div>
           </div>
@@ -84,16 +92,16 @@ export default function IntroductionSection(props: any) {
             </div>
           </div>
           <div className='text-center pt-16'>
-            <p className='text-xl md:text-3xl mb-2'>Estimate your delivery cost</p>
+            <p className='text-xl md:text-3xl mb-2'>Calculate the cost of delivery</p>
             <h4 className='text-2xl sm:text-3xl md:text-5xl font-medium text-primary uppercase'>
-              Use delivery calculator
+              Use the calculator for delivery
             </h4>
             <div className='flex justify-center gap-4 mt-10'>
               <a
                 href='#'
                 className='bg-black px-5 py-4 md:px-5 lg:px-6 lg:px-9 md:py-4 font-medium text-xl text-white hover:bg-primary ease-in duration-200 flex items-center justify-between'
               >
-                Calculate now
+                Calculate Now
               </a>
             </div>
           </div>

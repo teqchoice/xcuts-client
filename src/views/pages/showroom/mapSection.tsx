@@ -4,7 +4,7 @@ export default function MapSection() {
   return (
     <section>
       <iframe
-        src='https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d2469.037150800648!2d-0.2435320404383935!3d51.76892800888425!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sUnit%2033%20The%20IO%20Centre%2C%20Hearle%20Way%2C%20Hatfield%2C%20AL10%209EW!5e0!3m2!1sen!2sin!4v1696864321701!5m2!1sen!2sin'
+        src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2469.0861021493192!2d-0.24476969999999998!3d51.7680331!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48763bed5f984847%3A0x449b1ca5b7d52def!2sXCUTS!5e0!3m2!1sen!2suk!4v1710348707213!5m2!1sen!2suk'
         width='100%'
         height='620'
         style={{ border: '0' }}

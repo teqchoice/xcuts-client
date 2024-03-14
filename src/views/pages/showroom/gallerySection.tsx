@@ -7,19 +7,19 @@ import 'photoswipe/style.css'
 
 const images = [
   {
-    largeURL: 'images/srm-glry-thumb-01.webp'
+    largeURL: 'images/showroom-1.jpeg'
   },
   {
-    largeURL: 'images/srm-glry-thumb-02.webp'
+    largeURL: 'images/banner-1-showroom.jpeg'
   },
   {
-    largeURL: 'images/srm-glry-thumb-03.webp'
+    largeURL: 'images/showroom-1.jpeg'
   },
   {
-    largeURL: 'images/srm-glry-thumb-04.webp'
+    largeURL: 'images/banner-1-showroom.jpeg'
   },
   {
-    largeURL: 'images/srm-glry-thumb-04.webp'
+    largeURL: 'images/showroom-1.jpeg'
   }
 ]
 
@@ -45,14 +45,14 @@ export default function GallerySection() {
           <Fragment key={index}>
             <a
               href={image.largeURL}
-              data-pswp-width={600}
-              data-pswp-height={600}
+              // data-pswp-width={600}
+              // data-pswp-height={600}
               key={'my-test-gallery' + '-' + index}
               target='_blank'
               rel='noreferrer'
               className='relative group'
             >
-              <img src={image.largeURL} alt='' />
+              <img src={image.largeURL} alt='' className='min-h-[20rem]' />
               <div className='absolute inset-0 bg-primary bg-opacity-80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition delay-300 cursor-pointer'>
                 <img
                   src='images/hover-eye-icon.webp'

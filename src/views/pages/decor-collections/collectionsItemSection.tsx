@@ -1,48 +1,6 @@
 import React from 'react'
 
-type TOurGuarantee = {
-  text1: string
-  image: string
-  text2: string
-  questions: TQuestion[]
-}
-
-type TQuestion = {
-  q: string
-  a: string
-}
-
-const defaultTOurGuarantee: Partial<TOurGuarantee> = {
-  text1:
-    "We will cut and edge panels to your exact specification, or we'll send a replacement to you free of charge in 24hrs.",
-  image: 'images/wwcaep-panels.webp',
-  text2:
-    "Here at Xcuts, we understand that humans (and machines) can sometimes make mistakes and things don't entirely turn out the way you want them. We don't like the idea of our customers being stuck on the job. That is why we will provide you with a replacement panel within 24 hours in the unlikely event we didn't get it right from the get-go.",
-  questions: [
-    {
-      q: 'What happens when Cworkshop gets it wrong?',
-      a: 'Simple. As soon as you notice an issue with your cut and edged panel, get in touch with us by twelve noon and we will send you a free replacement before midday on the next working day.'
-    },
-    {
-      q: 'What about CNC and Spray coating?',
-      a: "These services are very involved and time-consuming therefore we can't always guarantee that you will get it within 24 hours, but we will do our best. After all, good things are worth the wait."
-    },
-    {
-      q: 'What if the manufacturer gets it wrong?',
-      a: "Occasionally boards have a manufacturing fault, and if we don't spot it on time before it makes its way to you, we will aim to rectify this as soon as possible. Doing so might sometimes take longer than 24 hours but don't worry, we are here to help."
-    },
-    {
-      q: 'Delivery or Collection?',
-      a: "We're easy. Should you happen to be around the corner and would prefer to pick up your replacement panel and save even more time that's fine with us. Otherwise, we'll deliver it to you."
-    }
-  ]
-}
-
 export default function CollectionsItemSection(props: any) {
-  const Data: TOurGuarantee = {
-    ...defaultTOurGuarantee,
-    ...props.Data
-  }
   // console.log(Data)
   return (
     <>
@@ -50,25 +8,26 @@ export default function CollectionsItemSection(props: any) {
         <div className='col-span-1 flex flex-col'>
           <div className='flex sm:flex-row flex-col sm:items-end'>
             <div className='sm:w-[60%]'>
-              <img src='images/collections-egger-thumb.webp' alt='' className='w-full' />
+              <img src='images/alldecor.jpeg' alt='' className='w-full' />
             </div>
-            <div className='relative relative py-5 pl-5 pr-10 before:border-solid before:border-t-[bg-transparent] before:border-r-[#fff] before:border-b-[#f82f45] before:border-l-[bg-transparent] before:border-t-0 sm:before:border-r-[40px] before:border-b-[72px] before:border-l-0 before:absolute before:w-full before:h-full before:-top-2 before:md:top-0 before:left-0 before:-z-10 sm:w-[40%] lg:bottom-10 bottom-0'>
+            <div className='relative py-5 pl-5 pr-10 before:border-solid before:border-t-[bg-transparent] before:border-r-[#fff] before:border-b-[#f82f45] before:border-l-[bg-transparent] before:border-t-0 sm:before:border-r-[40px] before:border-b-[72px] before:border-l-0 before:absolute before:w-full before:h-full before:-top-2 before:md:top-0 before:left-0 before:-z-10 sm:w-[40%] lg:bottom-10 bottom-0'>
               <h5 className='lg:text-xl text-base pr-8 font-semibold text-white'>Egger</h5>
             </div>
           </div>
           <div className='xl:ml-16 lg:ml-12 ml:ml-8 ml-0 relative lg:-mt-10 h-full'>
             <div className='bg-white p-7 shadow-[0_10px_30px_0px_rgba(0,0,0,0.15)] h-full flex flex-col'>
               <p className='text-base text-[#5f5f5f] leading-7 mb-10'>
-                New Egger 2020-22 collection caters for trend orientated, as well as more traditional customers. It
-                features new decors and textures at both the premium and mid-level range. From primary colours to
-                natural wood finishes and high gloss or supermatt panels, Egger has covered it all.
+                Our newest Egger 2023-2025 collection at Xcuts accommodates our more trend-loving and traditional
+                customers. Not only does this collection cater to a large variety of colours, but also more sleek
+                natural wood glosses and matt finishes. Featuring new textures and decorative styles at both mid-level
+                range and premium, Egger has certainly covered it all!
               </p>
               <div className='flex sm:flex-row flex-col gap-y-4 sm:gap-y-0 sm:gap-x-4 mt-auto'>
                 <a
                   href='#'
                   className='text-base font-semibold text-black border border-primary lg:py-4 lg:px-6 md:py-4 md:px-3 py-4 px-6 block text-center hover:bg-primary hover:text-white transition-all'
                 >
-                  View Decors{' '}
+                  View More
                 </a>
                 <a
                   href='#'
@@ -83,7 +42,7 @@ export default function CollectionsItemSection(props: any) {
         <div className='col-span-1 flex flex-col'>
           <div className='flex sm:flex-row flex-col sm:items-end'>
             <div className='sm:w-[60%]'>
-              <img src='images/collections-kronospan-thumb.webp' alt='' className='w-full' />
+              <img src='images/alldecor.jpeg' alt='' className='w-full' />
             </div>
             <div className='relative relative py-5 pl-5 pr-10 before:border-solid before:border-t-[bg-transparent] before:border-r-[#fff] before:border-b-[#f82f45] before:border-l-[bg-transparent] before:border-t-0 sm:before:border-r-[40px] before:border-b-[72px] before:border-l-0 before:absolute before:w-full before:h-full before:-top-2 before:md:top-0 before:left-0 before:-z-10 sm:w-[40%] lg:bottom-10 bottom-0'>
               <h5 className='lg:text-xl text-base pr-8 font-semibold text-white'>Kronospan</h5>
@@ -92,17 +51,16 @@ export default function CollectionsItemSection(props: any) {
           <div className='xl:ml-16 lg:ml-12 ml:ml-8 ml-0 relative lg:-mt-10 h-full'>
             <div className='bg-white p-7 shadow-[0_10px_30px_0px_rgba(0,0,0,0.15)] h-full flex flex-col'>
               <p className='text-base text-[#5f5f5f] leading-7 mb-10'>
-                Kronospan's globally unified range of decors was born out of the desire for continuous improvement,
-                innovation and creation of materials that will inspire professionals all over the world. The collection
-                covers a full spectrum of interior design from classNameic and rich wood grain finishes to modern,
-                sophisticated stone and marble effects as well as plain colours.
+                Out of the desire for incessant improvement, the make of supplies, new innovations, and inspirational
+                materials: Kronospan’s range of unified decors was created. This trending collection not only covers a
+                spectrum of classic and rich wood grains but also elegant stone, marble effects and solid colours.
               </p>
               <div className='flex sm:flex-row flex-col gap-y-4 sm:gap-y-0 sm:gap-x-4 mt-auto'>
                 <a
                   href='#'
                   className='text-base font-semibold text-black border border-primary lg:py-4 lg:px-6 md:py-4 md:px-3 py-4 px-6 block text-center hover:bg-primary hover:text-white transition-all'
                 >
-                  View Decors{' '}
+                  View More
                 </a>
                 <a
                   href='#'
@@ -117,7 +75,7 @@ export default function CollectionsItemSection(props: any) {
         <div className='col-span-1 flex flex-col'>
           <div className='flex sm:flex-row flex-col sm:items-end'>
             <div className='sm:w-[60%]'>
-              <img src='images/xyloCleaf.webp' alt='' className='w-full' />
+              <img src='images/alldecor.jpeg' alt='' className='w-full' />
             </div>
             <div className='relative relative py-5 pl-5 pr-10 before:border-solid before:border-t-[bg-transparent] before:border-r-[#fff] before:border-b-[#f82f45] before:border-l-[bg-transparent] before:border-t-0 sm:before:border-r-[40px] before:border-b-[72px] before:border-l-0 before:absolute before:w-full before:h-full before:-top-2 before:md:top-0 before:left-0 before:-z-10 sm:w-[40%] lg:bottom-10 bottom-0'>
               <h5 className='lg:text-xl text-base pr-8 font-semibold text-white'>XyloCleaf</h5>
@@ -126,17 +84,17 @@ export default function CollectionsItemSection(props: any) {
           <div className='xl:ml-16 lg:ml-12 ml:ml-8 ml-0 relative lg:-mt-10 h-full'>
             <div className='bg-white p-7 shadow-[0_10px_30px_0px_rgba(0,0,0,0.15)] h-full flex flex-col'>
               <p className='text-base text-[#5f5f5f] leading-7 mb-10'>
-                The XyloCleaf collection embodies a true Italian design spirit featuring decorative surfaces with deep
-                realistic textures embossed in sync with ultra-realistic patterns. The decors have an appearance of
-                various natural materials such as stone, metal, leather and textile, and without a doubt, will add style
-                and beauty to every interior design project.
+                At Xcuts, our XyloCleaf trendy collection really gives our customers an authentic Italian design. This
+                line features embossed realistic textures which perfectly resemble their original patterns. Furthermore,
+                this decorative collection includes an appearance of natural textures: such as metal, stone, leather,
+                and textile and, surely enough, will add elegance to every interior design plan.
               </p>
               <div className='flex sm:flex-row flex-col gap-y-4 sm:gap-y-0 sm:gap-x-4 mt-auto'>
                 <a
                   href='#'
                   className='text-base font-semibold text-black border border-primary lg:py-4 lg:px-6 md:py-4 md:px-3 py-4 px-6 block text-center hover:bg-primary hover:text-white transition-all'
                 >
-                  View Decors{' '}
+                  View More
                 </a>
                 <a
                   href='#'
@@ -151,7 +109,7 @@ export default function CollectionsItemSection(props: any) {
         <div className='col-span-1 flex flex-col'>
           <div className='flex sm:flex-row flex-col sm:items-end'>
             <div className='sm:w-[60%]'>
-              <img src='images/swiss-krono.webp' alt='' className='w-full' />
+              <img src='images/alldecor.jpeg' alt='' className='w-full' />
             </div>
             <div className='relative relative py-5 pl-5 pr-10 before:border-solid before:border-t-[bg-transparent] before:border-r-[#fff] before:border-b-[#f82f45] before:border-l-[bg-transparent] before:border-t-0 sm:before:border-r-[40px] before:border-b-[72px] before:border-l-0 before:absolute before:w-full before:h-full before:-top-2 before:md:top-0 before:left-0 before:-z-10 sm:w-[40%] lg:bottom-10 bottom-0'>
               <h5 className='lg:text-xl text-base pr-8 font-semibold text-white'>Saviola</h5>
@@ -160,16 +118,16 @@ export default function CollectionsItemSection(props: any) {
           <div className='xl:ml-16 lg:ml-12 ml:ml-8 ml-0 relative lg:-mt-10 h-full'>
             <div className='bg-white p-7 shadow-[0_10px_30px_0px_rgba(0,0,0,0.15)] h-full flex flex-col'>
               <p className='text-base text-[#5f5f5f] leading-7 mb-10'>
-                New in the UK, Saviola decorative board collection delivers Italian elegance through subtle tones of
-                wood and stone decors. The range boasts deep textures and realistic finishes that echo current design
-                trends.
+                Saviola’s Italian luxurious decors are brought through with delicate highlights of wood and stone
+                styles. This ornamental board, incorporating deeply embossed textures and natural finishes, is the
+                newest design trend especially for the UK.
               </p>
               <div className='flex sm:flex-row flex-col gap-y-4 sm:gap-y-0 sm:gap-x-4 mt-auto'>
                 <a
                   href='#'
                   className='text-base font-semibold text-black border border-primary lg:py-4 lg:px-6 md:py-4 md:px-3 py-4 px-6 block text-center hover:bg-primary hover:text-white transition-all'
                 >
-                  View Decors{' '}
+                  View More
                 </a>
                 <a
                   href='#'
@@ -184,7 +142,7 @@ export default function CollectionsItemSection(props: any) {
         <div className='col-span-1 flex flex-col'>
           <div className='flex sm:flex-row flex-col sm:items-end'>
             <div className='sm:w-[60%]'>
-              <img src='images/swiss-krono.webp' alt='' className='w-full' />
+              <img src='images/alldecor.jpeg' alt='' className='w-full' />
             </div>
             <div className='relative relative py-5 pl-5 pr-10 before:border-solid before:border-t-[bg-transparent] before:border-r-[#fff] before:border-b-[#f82f45] before:border-l-[bg-transparent] before:border-t-0 sm:before:border-r-[40px] before:border-b-[72px] before:border-l-0 before:absolute before:w-full before:h-full before:-top-2 before:md:top-0 before:left-0 before:-z-10 sm:w-[40%] lg:bottom-10 bottom-0'>
               <h5 className='lg:text-xl text-base pr-8 font-semibold text-white'>Swiss Krono</h5>
@@ -193,16 +151,16 @@ export default function CollectionsItemSection(props: any) {
           <div className='xl:ml-16 lg:ml-12 ml:ml-8 ml-0 relative lg:-mt-10 h-full'>
             <div className='bg-white p-7 shadow-[0_10px_30px_0px_rgba(0,0,0,0.15)] h-full flex flex-col'>
               <p className='text-base text-[#5f5f5f] leading-7 mb-10'>
-                The 2021-22 collection of furniture decors from Switzerland delivers the latest global design trends.
-                The range encompasses colour, wood and design surfaces offering numerous ways to achieve endless design
-                possibilities.
+                Our newest Swiss Krono 2021-2022 collection at Xcuts accommodates our more trend-loving customers,
+                bringing materials straight from Switzerland. Not only does this collection cater to a large variety of
+                wood designs, but also covers variations of colour, leaving you with millions of design combinations!
               </p>
               <div className='flex sm:flex-row flex-col gap-y-4 sm:gap-y-0 sm:gap-x-4 mt-auto'>
                 <a
                   href='#'
                   className='text-base font-semibold text-black border border-primary lg:py-4 lg:px-6 md:py-4 md:px-3 py-4 px-6 block text-center hover:bg-primary hover:text-white transition-all'
                 >
-                  View Decors{' '}
+                  View More
                 </a>
                 <a
                   href='#'
@@ -217,7 +175,7 @@ export default function CollectionsItemSection(props: any) {
         <div className='col-span-1 flex flex-col'>
           <div className='flex sm:flex-row flex-col sm:items-end'>
             <div className='sm:w-[60%]'>
-              <img src='images/swiss-krono.webp' alt='' className='w-full' />
+              <img src='images/alldecor.jpeg' alt='' className='w-full' />
             </div>
             <div className='relative relative py-5 pl-5 pr-10 before:border-solid before:border-t-[bg-transparent] before:border-r-[#fff] before:border-b-[#f82f45] before:border-l-[bg-transparent] before:border-t-0 sm:before:border-r-[40px] before:border-b-[72px] before:border-l-0 before:absolute before:w-full before:h-full before:-top-2 before:md:top-0 before:left-0 before:-z-10 sm:w-[40%] lg:bottom-10 bottom-0'>
               <h5 className='lg:text-xl text-base pr-8 font-semibold text-white'>Alvic</h5>
@@ -226,17 +184,16 @@ export default function CollectionsItemSection(props: any) {
           <div className='xl:ml-16 lg:ml-12 ml:ml-8 ml-0 relative lg:-mt-10 h-full'>
             <div className='bg-white p-7 shadow-[0_10px_30px_0px_rgba(0,0,0,0.15)] h-full flex flex-col'>
               <p className='text-base text-[#5f5f5f] leading-7 mb-10'>
-                Alvic's Lux collection features high gloss finish boards with excellent physical and mechanical
-                performance. It is available in a wide range of colours and designs. Alvic's Syncron collection boasts
-                textured panels with attractive and unusual decorative designs creating natural and stunning decorative
-                looks.
+                Featuring perfect mechanical performances and fully glossed finishes, Alvic’s elegant collection is the
+                one. Precise textures, variations of colours and rare décor styles are a few examples of the stunning
+                decorative looks Alvic creates.
               </p>
               <div className='flex sm:flex-row flex-col gap-y-4 sm:gap-y-0 sm:gap-x-4 mt-auto'>
                 <a
                   href='#'
                   className='text-base font-semibold text-black border border-primary lg:py-4 lg:px-6 md:py-4 md:px-3 py-4 px-6 block text-center hover:bg-primary hover:text-white transition-all'
                 >
-                  View Decors{' '}
+                  View More
                 </a>
                 <a
                   href='#'
@@ -251,58 +208,25 @@ export default function CollectionsItemSection(props: any) {
         <div className='col-span-1 flex flex-col'>
           <div className='flex sm:flex-row flex-col sm:items-end'>
             <div className='sm:w-[60%]'>
-              <img src='images/swiss-krono.webp' alt='' className='w-full' />
+              <img src='images/alldecor.jpeg' alt='' className='w-full' />
             </div>
             <div className='relative relative py-5 pl-5 pr-10 before:border-solid before:border-t-[bg-transparent] before:border-r-[#fff] before:border-b-[#f82f45] before:border-l-[bg-transparent] before:border-t-0 sm:before:border-r-[40px] before:border-b-[90px] before:border-l-0 before:absolute before:w-full before:h-full before:-top-2 before:md:top-0 before:left-0 before:-z-10 sm:w-[40%] lg:bottom-10 bottom-0'>
-              <h5 className='lg:text-xl text-base pr-8 font-semibold text-white'>Grooved Boards</h5>
-            </div>
-          </div>
-          <div className='xl:ml-16 lg:ml-12 ml:ml-8 ml-0 relative lg:-mt-10 h-full'>
-            <div className='bg-white p-7 shadow-[0_10px_30px_0px_rgba(0,0,0,0.15)] h-full flex flex-col'>
-              <p className='text-base text-[#5f5f5f] leading-7 mb-10'>
-                Grooved decorative boards are expertly machined in our factory using Finsa's Hidrofugo moisture
-                resistant MDF, Twincolour MDF or oak veneered black MDF and come in five different designs with a
-                smooth, clean-cut finish ready for a coat of paint or lacquer.
-              </p>
-              <div className='flex sm:flex-row flex-col gap-y-4 sm:gap-y-0 sm:gap-x-4 mt-auto'>
-                <a
-                  href='#'
-                  className='text-base font-semibold text-black border border-primary lg:py-4 lg:px-6 md:py-4 md:px-3 py-4 px-6 block text-center hover:bg-primary hover:text-white transition-all'
-                >
-                  View Decors{' '}
-                </a>
-                <a
-                  href='#'
-                  className='text-base font-semibold text-black border border-black lg:py-4 lg:px-6 md:py-4 md:px-3 py-4 px-6 block text-center bg-black hover:text-black text-white hover:bg-white transition-all'
-                >
-                  Order Sample
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className='col-span-1 flex flex-col'>
-          <div className='flex sm:flex-row flex-col sm:items-end'>
-            <div className='sm:w-[60%]'>
-              <img src='images/swiss-krono.webp' alt='' className='w-full' />
-            </div>
-            <div className='relative relative py-5 pl-5 pr-10 before:border-solid before:border-t-[bg-transparent] before:border-r-[#fff] before:border-b-[#f82f45] before:border-l-[bg-transparent] before:border-t-0 sm:before:border-r-[40px] before:border-b-[72px] before:border-l-0 before:absolute before:w-full before:h-full before:-top-2 before:md:top-0 before:left-0 before:-z-10 sm:w-[40%] lg:bottom-10 bottom-0'>
               <h5 className='lg:text-xl text-base pr-8 font-semibold text-white'>Senoplast</h5>
             </div>
           </div>
           <div className='xl:ml-16 lg:ml-12 ml:ml-8 ml-0 relative lg:-mt-10 h-full'>
             <div className='bg-white p-7 shadow-[0_10px_30px_0px_rgba(0,0,0,0.15)] h-full flex flex-col'>
               <p className='text-base text-[#5f5f5f] leading-7 mb-10'>
-                It is a collection of acrylic film-coated MDF in high gloss and supermatt finishes. The range comes in
-                the most current trend-orientated colours. It offers excellent scratch, chemical and stain resistance as
-                well as excellent UV resistance for colour stability.
+                This is an assortment of MDF with high gloss and supermatt finishes coated with acrylic film. The
+                collection is available in the newest, trend-focused colour schemes. It provides exceptional resistance
+                to scratches, chemicals, and stains in addition to exceptional UV resistance for colour stability.
               </p>
               <div className='flex sm:flex-row flex-col gap-y-4 sm:gap-y-0 sm:gap-x-4 mt-auto'>
                 <a
                   href='#'
                   className='text-base font-semibold text-black border border-primary lg:py-4 lg:px-6 md:py-4 md:px-3 py-4 px-6 block text-center hover:bg-primary hover:text-white transition-all'
                 >
-                  View Decors{' '}
+                  View More
                 </a>
                 <a
                   href='#'
@@ -317,25 +241,25 @@ export default function CollectionsItemSection(props: any) {
         <div className='col-span-1 flex flex-col'>
           <div className='flex sm:flex-row flex-col sm:items-end'>
             <div className='sm:w-[60%]'>
-              <img src='images/swiss-krono.webp' alt='' className='w-full' />
+              <img src='images/alldecor.jpeg' alt='' className='w-full' />
             </div>
             <div className='relative relative py-5 pl-5 pr-10 before:border-solid before:border-t-[bg-transparent] before:border-r-[#fff] before:border-b-[#f82f45] before:border-l-[bg-transparent] before:border-t-0 sm:before:border-r-[40px] before:border-b-[72px] before:border-l-0 before:absolute before:w-full before:h-full before:-top-2 before:md:top-0 before:left-0 before:-z-10 sm:w-[40%] lg:bottom-10 bottom-0'>
-              <h5 className='lg:text-xl text-base pr-8 font-semibold text-white'>Swiss Krono</h5>
+              <h5 className='lg:text-xl text-base pr-8 font-semibold text-white'>Serica</h5>
             </div>
           </div>
           <div className='xl:ml-16 lg:ml-12 ml:ml-8 ml-0 relative lg:-mt-10 h-full'>
             <div className='bg-white p-7 shadow-[0_10px_30px_0px_rgba(0,0,0,0.15)] h-full flex flex-col'>
               <p className='text-base text-[#5f5f5f] leading-7 mb-10'>
-                The 2021-22 collection of furniture decors from Switzerland delivers the latest global design trends.
-                The range encompasses colour, wood and design surfaces offering numerous ways to achieve endless design
-                possibilities.
+                Modern colours in ultra-matt finishes are available in Serica's small selection of decorative surfaces,
+                offering a warm, velvety appearance. Both anti-scratch and anti-fingerprint properties are present in
+                this incredibly matte, low-light reflective material.
               </p>
               <div className='flex sm:flex-row flex-col gap-y-4 sm:gap-y-0 sm:gap-x-4 mt-auto'>
                 <a
                   href='#'
                   className='text-base font-semibold text-black border border-primary lg:py-4 lg:px-6 md:py-4 md:px-3 py-4 px-6 block text-center hover:bg-primary hover:text-white transition-all'
                 >
-                  View Decors{' '}
+                  View More
                 </a>
                 <a
                   href='#'
@@ -350,26 +274,26 @@ export default function CollectionsItemSection(props: any) {
         <div className='col-span-1 flex flex-col'>
           <div className='flex sm:flex-row flex-col sm:items-end'>
             <div className='sm:w-[60%]'>
-              <img src='images/swiss-krono.webp' alt='' className='w-full' />
+              <img src='images/alldecor.jpeg' alt='' className='w-full' />
             </div>
             <div className='relative relative py-5 pl-5 pr-10 before:border-solid before:border-t-[bg-transparent] before:border-r-[#fff] before:border-b-[#f82f45] before:border-l-[bg-transparent] before:border-t-0 sm:before:border-r-[40px] before:border-b-[72px] before:border-l-0 before:absolute before:w-full before:h-full before:-top-2 before:md:top-0 before:left-0 before:-z-10 sm:w-[40%] lg:bottom-10 bottom-0'>
-              <h5 className='lg:text-xl text-base pr-8 font-semibold text-white'>Alvic</h5>
+              <h5 className='lg:text-xl text-base pr-8 font-semibold text-white'>Wall Panelling</h5>
             </div>
           </div>
           <div className='xl:ml-16 lg:ml-12 ml:ml-8 ml-0 relative lg:-mt-10 h-full'>
             <div className='bg-white p-7 shadow-[0_10px_30px_0px_rgba(0,0,0,0.15)] h-full flex flex-col'>
               <p className='text-base text-[#5f5f5f] leading-7 mb-10'>
-                Alvic's Lux collection features high gloss finish boards with excellent physical and mechanical
-                performance. It is available in a wide range of colours and designs. Alvic's Syncron collection boasts
-                textured panels with attractive and unusual decorative designs creating natural and stunning decorative
-                looks.
+                Our acoustic and ornamental wall panels are suitable for both residential and commercial applications,
+                as well as being available in a variety of styles and finishes. The collection includes Decorative
+                Grooved Boards that we create in-house using premium materials, as well as Acoustic Panels that are
+                created and manufactured by Losán, a Dutch company.
               </p>
               <div className='flex sm:flex-row flex-col gap-y-4 sm:gap-y-0 sm:gap-x-4 mt-auto'>
                 <a
                   href='#'
                   className='text-base font-semibold text-black border border-primary lg:py-4 lg:px-6 md:py-4 md:px-3 py-4 px-6 block text-center hover:bg-primary hover:text-white transition-all'
                 >
-                  View Decors{' '}
+                  View More
                 </a>
                 <a
                   href='#'
@@ -384,25 +308,58 @@ export default function CollectionsItemSection(props: any) {
         <div className='col-span-1 flex flex-col'>
           <div className='flex sm:flex-row flex-col sm:items-end'>
             <div className='sm:w-[60%]'>
-              <img src='images/swiss-krono.webp' alt='' className='w-full' />
+              <img src='images/alldecor.jpeg' alt='' className='w-full' />
+            </div>
+            <div className='relative relative py-5 pl-5 pr-10 before:border-solid before:border-t-[bg-transparent] before:border-r-[#fff] before:border-b-[#f82f45] before:border-l-[bg-transparent] before:border-t-0 sm:before:border-r-[40px] before:border-b-[72px] before:border-l-0 before:absolute before:w-full before:h-full before:-top-2 before:md:top-0 before:left-0 before:-z-10 sm:w-[40%] lg:bottom-10 bottom-0'>
+              <h5 className='lg:text-xl text-base pr-8 font-semibold text-white'>MDF Boards</h5>
+            </div>
+          </div>
+          <div className='xl:ml-16 lg:ml-12 ml:ml-8 ml-0 relative lg:-mt-10 h-full'>
+            <div className='bg-white p-7 shadow-[0_10px_30px_0px_rgba(0,0,0,0.15)] h-full flex flex-col'>
+              <p className='text-base text-[#5f5f5f] leading-7 mb-10'>
+                At Xcuts we have a large selection of medium-density fiberboard in a range of sizes and thicknesses from
+                well-known brands like Medite, Finsa, Spanolux, and others. We offer a variety of MDF board types,
+                including standard, moisture-resistant, exterior grade, ultra-light, and ecological.
+              </p>
+              <div className='flex sm:flex-row flex-col gap-y-4 sm:gap-y-0 sm:gap-x-4 mt-auto'>
+                <a
+                  href='#'
+                  className='text-base font-semibold text-black border border-primary lg:py-4 lg:px-6 md:py-4 md:px-3 py-4 px-6 block text-center hover:bg-primary hover:text-white transition-all'
+                >
+                  View More
+                </a>
+                <a
+                  href='#'
+                  className='text-base font-semibold text-black border border-black lg:py-4 lg:px-6 md:py-4 md:px-3 py-4 px-6 block text-center bg-black hover:text-black text-white hover:bg-white transition-all'
+                >
+                  Order Sample
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className='col-span-1 flex flex-col'>
+          <div className='flex sm:flex-row flex-col sm:items-end'>
+            <div className='sm:w-[60%]'>
+              <img src='images/alldecor.jpeg' alt='' className='w-full' />
             </div>
             <div className='relative relative py-5 pl-5 pr-10 before:border-solid before:border-t-[bg-transparent] before:border-r-[#fff] before:border-b-[#f82f45] before:border-l-[bg-transparent] before:border-t-0 sm:before:border-r-[40px] before:border-b-[90px] before:border-l-0 before:absolute before:w-full before:h-full before:-top-2 before:md:top-0 before:left-0 before:-z-10 sm:w-[40%] lg:bottom-10 bottom-0'>
-              <h5 className='lg:text-xl text-base pr-8 font-semibold text-white'>Grooved Boards</h5>
+              <h5 className='lg:text-xl text-base pr-8 font-semibold text-white'>Veneered Boards</h5>
             </div>
           </div>
           <div className='xl:ml-16 lg:ml-12 ml:ml-8 ml-0 relative lg:-mt-10 h-full'>
             <div className='bg-white p-7 shadow-[0_10px_30px_0px_rgba(0,0,0,0.15)] h-full flex flex-col'>
               <p className='text-base text-[#5f5f5f] leading-7 mb-10'>
-                Grooved decorative boards are expertly machined in our factory using Finsa's Hidrofugo moisture
-                resistant MDF, Twincolour MDF or oak veneered black MDF and come in five different designs with a
-                smooth, clean-cut finish ready for a coat of paint or lacquer.
+                We offer a range of sizes and thicknesses of the most popular natural wood veneered boards in our
+                collection of veneered MDF. Along with less common veneers like wenge, teak, or cedar, you can also find
+                the classic oak, cherry, and walnut veneers.
               </p>
               <div className='flex sm:flex-row flex-col gap-y-4 sm:gap-y-0 sm:gap-x-4 mt-auto'>
                 <a
                   href='#'
                   className='text-base font-semibold text-black border border-primary lg:py-4 lg:px-6 md:py-4 md:px-3 py-4 px-6 block text-center hover:bg-primary hover:text-white transition-all'
                 >
-                  View Decors{' '}
+                  View More
                 </a>
                 <a
                   href='#'
@@ -417,25 +374,26 @@ export default function CollectionsItemSection(props: any) {
         <div className='col-span-1 flex flex-col'>
           <div className='flex sm:flex-row flex-col sm:items-end'>
             <div className='sm:w-[60%]'>
-              <img src='images/swiss-krono.webp' alt='' className='w-full' />
+              <img src='images/alldecor.jpeg' alt='' className='w-full' />
             </div>
             <div className='relative relative py-5 pl-5 pr-10 before:border-solid before:border-t-[bg-transparent] before:border-r-[#fff] before:border-b-[#f82f45] before:border-l-[bg-transparent] before:border-t-0 sm:before:border-r-[40px] before:border-b-[72px] before:border-l-0 before:absolute before:w-full before:h-full before:-top-2 before:md:top-0 before:left-0 before:-z-10 sm:w-[40%] lg:bottom-10 bottom-0'>
-              <h5 className='lg:text-xl text-base pr-8 font-semibold text-white'>Senoplast</h5>
+              <h5 className='lg:text-xl text-base pr-8 font-semibold text-white'>Plywood</h5>
             </div>
           </div>
           <div className='xl:ml-16 lg:ml-12 ml:ml-8 ml-0 relative lg:-mt-10 h-full'>
             <div className='bg-white p-7 shadow-[0_10px_30px_0px_rgba(0,0,0,0.15)] h-full flex flex-col'>
               <p className='text-base text-[#5f5f5f] leading-7 mb-10'>
-                It is a collection of acrylic film-coated MDF in high gloss and supermatt finishes. The range comes in
-                the most current trend-orientated colours. It offers excellent scratch, chemical and stain resistance as
-                well as excellent UV resistance for colour stability.
+                Even though we also sell marine-grade plywood, the majority of the boards in our collection of birch
+                plywood are used for interior applications. Our plywood is made of birch and is graded high, almost
+                flawless. It is perfect for furniture manufacturing and wall cladding, where the surface will be sealed
+                and finished with staining or lacquering.
               </p>
               <div className='flex sm:flex-row flex-col gap-y-4 sm:gap-y-0 sm:gap-x-4 mt-auto'>
                 <a
                   href='#'
                   className='text-base font-semibold text-black border border-primary lg:py-4 lg:px-6 md:py-4 md:px-3 py-4 px-6 block text-center hover:bg-primary hover:text-white transition-all'
                 >
-                  View Decors{' '}
+                  View More
                 </a>
                 <a
                   href='#'

@@ -9,7 +9,7 @@ import MapSection from './mapSection'
 export default function index({ Data }: any) {
   return (
     <>
-      <PageIntroduction Data={{ title: 'SHOWROOM', baner: 'images/showroom-banner.webp' }} />
+      <PageIntroduction Data={{ title: 'WELCOME TO OUR XCUTS SHOWROOM!', baner: 'images/banner-1-showroom.jpeg' }} />
       <IntroductionSection />
       <PortfolioSection />
       <GallerySection />

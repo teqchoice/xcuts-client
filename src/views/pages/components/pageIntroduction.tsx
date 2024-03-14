@@ -26,7 +26,7 @@ export default function PageIntroduction(props: any) {
             : 'relative text-center bg-[#eaeaea] h-[200px] flex items-center justify-center'
         }
       >
-        {Data?.baner && <img src={Data?.baner} alt='' className='h-[240px] md:h-auto object-cover' />}
+        {Data?.baner && <img src={Data?.baner} alt='' className='max-h-[460px] w-full md:h-auto object-cover' />}
 
         <div className='absolute top-1/2 w-full -translate-y-1/2 text-center grid'>
           {Data.baner ?? null ? (
