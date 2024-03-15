@@ -29,7 +29,7 @@ export default function HeroSection({ data }: any) {
           // console.log(slide)
           return (
             <Fragment key={i}>
-              <Image
+              {/* <Image
                 src={slide.filec}
                 // src={process.env.NEXT_PUBLIC_API_URL + slide.filec}
                 alt='baner'
@@ -37,7 +37,16 @@ export default function HeroSection({ data }: any) {
                 height={100}
                 unoptimized
                 className='w-full aspect-video md:aspect-auto object-cover md:max-h-[370px] lg:max-h-[450px] xl:max-h-[39rem] 2xl::max-h-[650px]'
-              />
+              /> */}
+              <video
+                src='../images/Home-Banner.mp4'
+                width='100%'
+                height='auto'
+                autoPlay
+                muted
+                className='w-full aspect-video md:aspect-auto object-cover md:max-h-[370px] lg:max-h-[450px] xl:max-h-[39rem] 2xl::max-h-[650px]'
+              ></video>
+              {/* <video ref="vidRef" src="../images/Home-Banner.mp4" typeof="video/mp4"></video> */}
             </Fragment>
           )
         })}
