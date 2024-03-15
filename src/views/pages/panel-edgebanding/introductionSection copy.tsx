@@ -1,70 +1,47 @@
 import React from 'react'
 
-type TOurGuarantee = {
-  text1: string
-  image: string
-  text2: string
-  questions: TQuestion[]
-}
-
-type TQuestion = {
-  q: string
-  a: string
-}
-
-const defaultTOurGuarantee: Partial<TOurGuarantee> = {
-  text1:
-    "We will cut and edge panels to your exact specification, or we'll send a replacement to you free of charge in 24hrs.",
-  image: 'images/wwcaep-panels.webp',
-  text2:
-    "Here at Xcuts, we understand that humans (and machines) can sometimes make mistakes and things don't entirely turn out the way you want them. We don't like the idea of our customers being stuck on the job. That is why we will provide you with a replacement panel within 24 hours in the unlikely event we didn't get it right from the get-go.",
-  questions: [
-    {
-      q: 'What happens when Cworkshop gets it wrong?',
-      a: 'Simple. As soon as you notice an issue with your cut and edged panel, get in touch with us by twelve noon and we will send you a free replacement before midday on the next working day.'
-    },
-    {
-      q: 'What about CNC and Spray coating?',
-      a: "These services are very involved and time-consuming therefore we can't always guarantee that you will get it within 24 hours, but we will do our best. After all, good things are worth the wait."
-    },
-    {
-      q: 'What if the manufacturer gets it wrong?',
-      a: "Occasionally boards have a manufacturing fault, and if we don't spot it on time before it makes its way to you, we will aim to rectify this as soon as possible. Doing so might sometimes take longer than 24 hours but don't worry, we are here to help."
-    },
-    {
-      q: 'Delivery or Collection?',
-      a: "We're easy. Should you happen to be around the corner and would prefer to pick up your replacement panel and save even more time that's fine with us. Otherwise, we'll deliver it to you."
-    }
-  ]
-}
-
 export default function IntroductionSection(props: any) {
-  const Data: TOurGuarantee = {
-    ...defaultTOurGuarantee,
-    ...props.Data
-  }
   // console.log(Data)
   return (
     <>
-      <section className="section-one-stop py-10 md:py-20">
-        <div className="px-4 sm:container">
-            <div className="text-center px-1 overflow-hidden">
-                <div className="text-2xl md:text-3xl mb-2">
-                    Professionally edged panels.
-                </div>
-                <div className="bg-black mx-6 md:mx-28 skew-y-[0] skew-x-[35deg] relative">
-                    <div className="w-3 md:w-20 h-11 bg-primary absolute left-0 md:-left-24 bottom-0"></div>
-                    <div className="w-3 md:w-20 h-11 bg-primary absolute right-0 md:-right-24 top-0"></div>
-                    <h1 className="text-white text-xl/6 md:text-4xl font-bold -skew-x-[35deg] py-2 px-4">Impeccable finish. Excellent adhesion.</h1>
-                </div>
-                <div className="flex flex-col gap-y-3 text-black-1d mt-10">
-                    <p>Our edgebanding machines use PUR glue, which provides excellent tape-to-panel adhesion and seals the edge protecting against water ingress. The machines have additional near-infrared laser glueing station, allowing to apply special edging tape that leaves no visible joint line.</p>
-                    <p>We can edgeband straight panels as narrow as 20mm in width and as short as 30mm in length.  We can also edgeband panels cut on an angle. The thickest panel we can apply edging tape to is 60mm in height. </p>
-                    <p>In every above case, we will tune the machine to suit the decor board so that edging tape fits the panel perfectly.</p>
-                </div>
+      <section className='section-one-stop py-10 md:py-20'>
+        <div className='px-4 sm:container'>
+          <div className='text-center px-1 overflow-hidden'>
+            <div className='text-2xl md:text-3xl mb-2'>Expertly Edged Panels</div>
+            <div className='bg-black mx-6 md:mx-28 skew-y-[0] skew-x-[35deg] relative'>
+              <div className='w-3 md:w-20 h-11 bg-primary absolute left-0 md:-left-24 bottom-0'></div>
+              <div className='w-3 md:w-20 h-11 bg-primary absolute right-0 md:-right-24 top-0'></div>
+              <h1 className='text-white text-xl/6 md:text-4xl font-bold -skew-x-[35deg] py-2 px-4'>
+                Excellent adherence and flawless finish.
+              </h1>
             </div>
+            <div className='flex flex-col gap-y-3 text-black-1d mt-10'>
+              <p>
+                Our edge banding equipment uses PUR glue, which seals the edge and offers great tape-to-panel adhesion
+                while preventing water infiltration. The machines also contain a near-infrared laser gluing station that
+                enables the application of special edging tape that conceals any apparent joint lines.
+              </p>
+              <p>
+                Straight panels with an edge band can be as short as 30mm in length and as narrow as 20mm in width. Edge
+                band panels with an angled cut are also an option. 60mm in height is the thickest panel that we can use
+                edge tape on.
+              </p>
+              <p>
+                In each of the aforementioned situations, we will adjust the machine to the décor board so that the edge
+                tape exactly matches the panel.
+              </p>
+            </div>
+            <div className='flex justify-center gap-4 mt-10'>
+              <a
+                href='#'
+                className='bg-black px-5 py-4 md:px-5 lg:px-6 lg:px-9 md:py-4 font-medium text-xl text-white hover:bg-primary ease-in duration-200 flex items-center justify-between'
+              >
+                Explore Our Edge Banding Service in More Detail <i className='ri-arrow-right-s-line text-xl'></i>
+              </a>
+            </div>
+          </div>
         </div>
-    </section>
+      </section>
     </>
   )
 }

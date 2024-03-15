@@ -74,14 +74,14 @@ export default function ServicesSection({ data }: any) {
                     className='bg-black px-5 py-4 md:px-3 lg:px-5 md:py-4 font-bold text-base text-white hover:bg-primary ease-in duration-200 flex items-center justify-between'
                   >
                     <span>Find out more</span>
-                    <img className='w-6 h-3 ml-3' src='images/btn-arrow.webp' alt='' />
+                    <img className='w-6 h-3 ml-3' src='../images/btn-arrow.webp' alt='' />
                   </a>
                   <a
                     href={'/'}
                     className='bg-primary px-5 py-4 md:px-3 lg:px-5 md:py-3 font-bold text-base text-white hover:bg-black ease-in duration-200 flex items-center justify-between'
                   >
                     <span>Shop</span>
-                    <img className='w-6 h-3 ml-3' src='images/btn-arrow.webp' alt='' />
+                    <img className='w-6 h-3 ml-3' src='../images/btn-arrow.webp' alt='' />
                   </a>
                 </div>
               </div>
@@ -123,14 +123,14 @@ export default function ServicesSection({ data }: any) {
                     className='bg-black px-5 py-4 md:px-3 lg:px-5 md:py-4 font-bold text-base text-white hover:bg-primary ease-in duration-200 flex items-center justify-between'
                   >
                     <span>Find out more</span>
-                    <img className='w-6 h-3 ml-3' src='images/btn-arrow.webp' alt='' />
+                    <img className='w-6 h-3 ml-3' src='../images/btn-arrow.webp' alt='' />
                   </a>
                   <a
                     href={'/'}
                     className='bg-primary px-5 py-4 md:px-3 lg:px-5 md:py-3 font-bold text-base text-white hover:bg-black ease-in duration-200 flex items-center justify-between'
                   >
                     <span>Shop</span>
-                    <img className='w-6 h-3 ml-3' src='images/btn-arrow.webp' alt='' />
+                    <img className='w-6 h-3 ml-3' src='../images/btn-arrow.webp' alt='' />
                   </a>
                 </div>
               </div>
@@ -174,14 +174,14 @@ export default function ServicesSection({ data }: any) {
                     className='bg-black px-5 py-4 md:px-3 lg:px-5 md:py-4 font-bold text-base text-white hover:bg-primary ease-in duration-200 flex items-center justify-between'
                   >
                     <span>Find out more</span>
-                    <img className='w-6 h-3 ml-3' src='images/btn-arrow.webp' alt='' />
+                    <img className='w-6 h-3 ml-3' src='../images/btn-arrow.webp' alt='' />
                   </a>
                   <a
                     href={'/'}
                     className='bg-primary px-5 py-4 md:px-3 lg:px-5 md:py-3 font-bold text-base text-white hover:bg-black ease-in duration-200 flex items-center justify-between'
                   >
                     <span>Shop</span>
-                    <img className='w-6 h-3 ml-3' src='images/btn-arrow.webp' alt='' />
+                    <img className='w-6 h-3 ml-3' src='../images/btn-arrow.webp' alt='' />
                   </a>
                 </div>
               </div>
@@ -223,14 +223,14 @@ export default function ServicesSection({ data }: any) {
                     className='bg-black px-5 py-4 md:px-3 lg:px-5 md:py-4 font-bold text-base text-white hover:bg-primary ease-in duration-200 flex items-center justify-between'
                   >
                     <span>Find out more</span>
-                    <img className='w-6 h-3 ml-3' src='images/btn-arrow.webp' alt='' />
+                    <img className='w-6 h-3 ml-3' src='../images/btn-arrow.webp' alt='' />
                   </a>
                   <a
                     href={'/'}
                     className='bg-primary px-5 py-4 md:px-3 lg:px-5 md:py-3 font-bold text-base text-white hover:bg-black ease-in duration-200 flex items-center justify-between'
                   >
                     <span>Shop</span>
-                    <img className='w-6 h-3 ml-3' src='images/btn-arrow.webp' alt='' />
+                    <img className='w-6 h-3 ml-3' src='../images/btn-arrow.webp' alt='' />
                   </a>
                 </div>
               </div>

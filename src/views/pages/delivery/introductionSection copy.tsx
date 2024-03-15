@@ -82,13 +82,25 @@ export default function IntroductionSection(props: any) {
         <div className='px-4 sm:container'>
           <div className='grid grid-flow-row sm:grid-cols-3 gap-y-6 sm:gap-3 md:gap-6 sm:pt-20 md:pt-24 lg:pt-40'>
             <div>
-              <img src='images/delivery-thumb-01.webp' alt='' className='w-full border-[6px] border-white shadow-2xl' />
+              <img
+                src='../images/delivery-thumb-02.webp'
+                alt=''
+                className='w-full border-[6px] border-white shadow-2xl'
+              />
             </div>
             <div className='sm:-mt-12 md:-mt-12 lg:-mt-24'>
-              <img src='images/delivery-thumb-02.webp' alt='' className='w-full border-[6px] border-white shadow-2xl' />
+              <img
+                src='../images/delivery-thumb-02.webp'
+                alt=''
+                className='w-full border-[6px] border-white shadow-2xl'
+              />
             </div>
             <div>
-              <img src='images/delivery-thumb-03.webp' alt='' className='w-full border-[6px] border-white shadow-2xl' />
+              <img
+                src='../images/delivery-thumb-02.webp'
+                alt=''
+                className='w-full border-[6px] border-white shadow-2xl'
+              />
             </div>
           </div>
           <div className='text-center pt-16'>

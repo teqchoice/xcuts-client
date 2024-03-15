@@ -107,6 +107,7 @@ export default function Layout({ children, data }: any) {
           item => item?.name?.includes('Header')
         )}
       />
+      
       {children}
       <Footer
         data={select(

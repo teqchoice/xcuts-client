@@ -7,7 +7,7 @@ import CollectionsItemSection from './collectionsItemSection'
 export default function index({ Data }: any) {
   return (
     <>
-      <PageIntroduction Data={{ title: 'DECOR COLLECTIONS', baner: 'images/collections-banner.webp' }} />
+      <PageIntroduction Data={{ title: 'ALL DECORS', baner: 'images/banner-1-showroom.jpeg' }} />
       <Collections Data={Data?.delivery} />
       <div className='px-4 sm:container'>
         <FilterSection Data={Data?.delivery} />

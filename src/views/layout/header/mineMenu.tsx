@@ -17,21 +17,21 @@ const defaultMenuItem = [
     id: '2',
     title: 'Decor Collections',
     value: 'ALL DECORS',
-    link: '/decor-collections',
+    link: '#',
     filec: ''
   },
   {
     id: '3',
     title: 'Services',
     value: 'SERVICES',
-    link: '/panel-edgebanding',
+    link: '#',
     filec: ''
   },
   {
     id: '4',
     title: 'Products',
     value: 'PRODUCTS',
-    link: '/sliding-doors',
+    link: '#',
     filec: ''
   },
 
@@ -51,7 +51,7 @@ const defaultMenuItem = [
   }
 ]
 
-export default function MineMenu({ data, logo }: any) {
+export default function MineMenu({ data, logo, setMenu }: any) {
   const [isOpen, setIsOpen] = useState(false)
   const [modal, setModal] = useState(false)
   const [user, setUser] = useState(false)
@@ -114,7 +114,12 @@ export default function MineMenu({ data, logo }: any) {
               {defaultMenuItem?.map((item: any, i: number) => {
                 // if (i > 5)
                 return (
-                  <li key={i} className='group relative md:mt-0'>
+                  <li
+                    key={i}
+                    className='group relative md:mt-0 cursor-pointer  z-50'
+                    onClick={() => setMenu(item.value)}
+                    // onMouseOut={() => setMenu('')}
+                  >
                     <Link
                       href={item.link}
                       className='text-base md:text-base block md:inline-block text-white px-2 sm:px-2 z-50 md:py-3 py-1.5 relative hover:before:bg-primary hover:before:absolute hover:before:top-0 hover:before:bottom-0 hover:before:contents hover:before:md:skew-y-[0deg] hover:before:md:skew-x-[30deg] hover:md:before:right-6 hover:before:right-0 hover:before:md:left-6 hover:before:left-0 hover:before:-z-50 before:transition before:duration-700 hover:before:md:rounded-none hover:before:rounded'
@@ -137,10 +142,11 @@ export default function MineMenu({ data, logo }: any) {
             </Link>
           </div>
         </div>
-        {user_info?.role === 'admin' && process.env.NEXT_PUBLIC_ADMIN_SHOW === 'true' &&
-        <div className='cursor-pointer flex items-center justify-center bg-primary border border-white p-4 w-fit absolute left-0 top-0'>
-          <Pencil theme='outline' size='10' fill='#fff' className='cursor-pointer' onClick={() => setModal(true)} />
-        </div>}
+        {user_info?.role === 'admin' && process.env.NEXT_PUBLIC_ADMIN_SHOW === 'true' && (
+          <div className='cursor-pointer flex items-center justify-center bg-primary border border-white p-4 w-fit absolute left-0 top-0'>
+            <Pencil theme='outline' size='10' fill='#fff' className='cursor-pointer' onClick={() => setModal(true)} />
+          </div>
+        )}
         <Modal modal={modal} setModal={setModal} data={data} />
       </nav>
       {hamb}

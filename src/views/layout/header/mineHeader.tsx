@@ -27,11 +27,11 @@ export default function MineHeader({ data }: any) {
   return (
     <div className='relative mainHder bg-white py-7'>
       <div className='px-4 sm:container flex justify-between place-items-center'>
-        <a href={data[3]?.link}>
-          <img src={process.env.NEXT_PUBLIC_API_URL + data[3]?.filec} alt='' className=' w-28 md:w-56' />{' '}
+        <a href={'/'}>
+          <img src={process.env.NEXT_PUBLIC_API_URL + data[3]?.filec} alt='' className=' w-28 md:w-56' />
         </a>
         <div className='tp-phone flex place-items-center'>
-          <img src='images/phone-icon.webp' alt='' className='w-9 h-9' />
+          <img src='../images/phone-icon.webp' alt='' className='w-9 h-9' />
           <div className='phoneDtls ml-3'>
             <div className='text-sm md:text-base flex gap-5'>
               <span
@@ -52,10 +52,11 @@ export default function MineHeader({ data }: any) {
           </div>
         </div>
       </div>
-      {user_info?.role === 'admin' && process.env.NEXT_PUBLIC_ADMIN_SHOW === 'true' &&
-      <div className='cursor-pointer flex items-center justify-center bg-primary border border-white p-4 w-fit absolute left-0 top-0'>
-        <Pencil theme='outline' size='10' fill='#fff' className='cursor-pointer' onClick={() => setModal(true)} />
-      </div>}
+      {user_info?.role === 'admin' && process.env.NEXT_PUBLIC_ADMIN_SHOW === 'true' && (
+        <div className='cursor-pointer flex items-center justify-center bg-primary border border-white p-4 w-fit absolute left-0 top-0'>
+          <Pencil theme='outline' size='10' fill='#fff' className='cursor-pointer' onClick={() => setModal(true)} />
+        </div>
+      )}
       <Modal modal={modal} setModal={setModal} data={data} />
     </div>
   )

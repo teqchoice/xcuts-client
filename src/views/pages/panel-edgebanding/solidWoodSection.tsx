@@ -48,41 +48,41 @@ export default function SolidWoodSection(props: any) {
     <>
       <section>
         <div className='px-4 sm:container'>
-          <div className='text-center text-black mb-11 mt-20'>
-            <p className='text-3xl'>Solid wood</p>
-            <h4 className='md:text-5xl text-4xl font-semibold mb-7'>Edging finish options</h4>
+          <div className='text-center text-black mb-5 mt-20'>
+            {/* <p className='text-3xl'>Solid wood</p> */}
+            <h4 className='md:text-5xl text-4xl font-semibold mb-7'>Solid Wood</h4>
             <p className='text-base text-black'>
-              We apply matching wood edging to all our veneered boards. In most cases, we can edge any veneered panel
-              with 0.6mm, 1mm and 2mm edging tapes. Depending on the edging tape thickness, we can mill three different
-              edge finishes: radius, bevel and square.
+              All of our veneered boards have matching wood edging. Most of the time, we may use 0.6mm, 1mm, or 2mm
+              edging tapes to edge any veneered panel. We are able to mill three various edge finishes: radius, bevel,
+              and square, depending on the thickness of the edging tape.
             </p>
           </div>
-          <div className='grid md:grid-cols-3 gap-7'>
+          {/* <div className='grid md:grid-cols-3 gap-7'>
             <div className='relative'>
-              <img src='images/2.0MM-Radius.webp' alt='' className='w-full md:w-auto' />
+              <img src='../images/2.0MM-Radius.webp' alt='' className='w-full md:w-auto' />
               <div className='absolute bottom-2 left-0 right-0'>
                 <h5 className='text-2xl text-white font-bold text-center'>2.0MM-Radius</h5>
               </div>
             </div>
             <div className='relative'>
-              <img src='images/2.0MM-BEVEL.webp' alt='' className='w-full md:w-auto' />
+              <img src='../images/2.0MM-BEVEL.webp' alt='' className='w-full md:w-auto' />
               <div className='absolute bottom-2 left-0 right-0'>
                 <h5 className='text-2xl text-white font-bold text-center'>2.0MM-BEVEL</h5>
               </div>
             </div>
             <div className='relative'>
-              <img src='images/2.0MM-SQUARE.webp' alt='' className='w-full md:w-auto' />
+              <img src='../images/2.0MM-SQUARE.webp' alt='' className='w-full md:w-auto' />
               <div className='absolute bottom-2 left-0 right-0'>
                 <h5 className='text-2xl text-white font-bold text-center'>2.0MM-SQUARE</h5>
               </div>
             </div>
-          </div>
+          </div> */}
           <div className='pt-14 pb-32 text-center flex justify-center'>
             <a
               href='#'
               className='bg-black lg:w-[452px] px-3 py-4 md:px-5 lg:px-6 lg:px-9 md:py-4 font-medium text-lg md:text-2xl text-white hover:bg-primary ease-in duration-200 flex items-center justify-between'
             >
-              Create your cutting list now <i className='ri-arrow-right-s-line'></i>
+              Create your cutting list now <i className='ri-arrow-right-s-line text-white'></i>
             </a>
           </div>
         </div>

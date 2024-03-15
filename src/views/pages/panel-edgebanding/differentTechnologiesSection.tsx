@@ -47,43 +47,63 @@ export default function DifferentTechnologiesSection(props: any) {
   return (
     <>
       <section>
-        <div className="text-center text-black mb-11 mt-20">
-            <p className="md:text-3xl text-xl">Two different technologies.</p>
-            <h4 className="lg:text-5xl md:text-3xl text-3xl font-semibold">Great edgebanding results.</h4>
+        <div className='text-center text-black mb-11 mt-20'>
+          <p className='md:text-3xl text-xl'>Two Distinct Technologies- Both with Excellent Edge Banding Outcomes!</p>
+          <h4 className='lg:text-5xl md:text-3xl text-3xl font-semibold'>Great edgebanding results.</h4>
         </div>
-        <div className="bg-neutral-100 md:flex">
-            <div className="basis-[52.12%] order-1">
-                <div className="relative overflow-hidden w-full bg-neutral-100 before:absolute before:content-normal before:bottom-0 before:w-1/2 before:bg-inherit before:right-1/2 before:skew-x-[40deg] before:pb-7 before:origin-[100%_100%] after:absolute after:content-normal after:bottom-0 after:w-1/2 after:bg-inherit after:left-1/2 after:-skew-x-[40deg] after:pb-7 after:origin-[100%_100%] md:before:w-10 md:before:h-1/2 md:before:top-0 md:before:bottom-auto md:before:right-auto md:before:skew-x-[0deg] md:before:-skew-y-[40deg] md:after:w-10 md:after:h-1/2 md:after:bottom-0 md:after:right-auto md:after:left-0 md:after:skew-x-[0deg] md:after:skew-y-[40deg] md:before:origin-[0%_0%] md:after:origin-[0%_0%]">
-                    <img className="h-[380px] md:h-[460px] lg:h-[596px] w-full object-cover object-center" src="images/pur-glue.webp" alt="" />
-                </div>
+        <div className='bg-neutral-100 md:flex'>
+          <div className='basis-[52.12%] order-1'>
+            <div className='relative overflow-hidden w-full bg-neutral-100 before:absolute before:content-normal before:bottom-0 before:w-1/2 before:bg-inherit before:right-1/2 before:skew-x-[40deg] before:pb-7 before:origin-[100%_100%] after:absolute after:content-normal after:bottom-0 after:w-1/2 after:bg-inherit after:left-1/2 after:-skew-x-[40deg] after:pb-7 after:origin-[100%_100%] md:before:w-10 md:before:h-1/2 md:before:top-0 md:before:bottom-auto md:before:right-auto md:before:skew-x-[0deg] md:before:-skew-y-[40deg] md:after:w-10 md:after:h-1/2 md:after:bottom-0 md:after:right-auto md:after:left-0 md:after:skew-x-[0deg] md:after:skew-y-[40deg] md:before:origin-[0%_0%] md:after:origin-[0%_0%]'>
+              <img
+                className='h-[380px] md:h-[460px] lg:h-[596px] w-full object-cover object-center'
+                src='../images/alldecor.jpeg'
+                alt=''
+              />
             </div>
-            <div className="basis-[47.88%] flex items-center">
-                <div className="flex flex-col md:justify-center md:ml-auto pb-16 py-8 px-4 md:max-w-[410px] lg:max-w-[567px] lg:pr-16">
-                    <h2 className="text-2xl md:text-3xl text-black font-bold mb-6">PUR glue</h2>
-                    <p className="text-lg">Polyurethane reactive hot melt glue is very different from traditional hot melts used in lower-end edgebanders. When applied, it forms a solid bond and obtains immediate edgeband adhesion. The bond also possesses superior flexibility, can withstand a broader range of temperatures and is water impenetrable. This adhesive option is ideal for applications subjected to a wide range of climate conditions. Also, when comparing to traditional hot melt adhesives, it requires twice as little glue application providing a thinner glue line and a better-looking finish.</p>
-                </div>
+          </div>
+          <div className='basis-[47.88%] flex items-center'>
+            <div className='flex flex-col md:justify-center md:ml-auto pb-16 py-8 px-4 md:max-w-[410px] lg:max-w-[567px] lg:pr-16'>
+              <h2 className='text-2xl md:text-3xl text-black font-bold mb-6'>PUR glue</h2>
+              <p className='text-lg'>
+                Traditional hot melts, used in budget situations, Edge Banders are considerably different from PUR Glue,
+                Polyurethane Reactive Hot Melt Glue. When used, it creates a strong connection and immediately achieves
+                Edge Band adhesion. Additionally, the bond has great flexibility, and can sustain a wider range of
+                temperatures, also being impervious to water. This glue choice is excellent for applications that must
+                withstand a variety of climatic conditions. Additionally, it takes half as much glue application as
+                standard hot melt adhesives, resulting in a thinner glue line and a better-looking finish.{' '}
+              </p>
             </div>
+          </div>
         </div>
-        <div className="bg-neutral-100 md:flex">
-            <div className="basis-[52.12%]">
-                <div>
-                    <div className="relative overflow-hidden w-full bg-neutral-100 before:absolute before:content-normal before:bottom-0 before:w-1/2 before:bg-inherit before:right-1/2 before:skew-x-[40deg] before:pb-7 before:origin-[100%_100%] after:absolute after:content-normal after:bottom-0 after:w-1/2 after:bg-inherit after:left-1/2 after:-skew-x-[40deg] after:pb-7 after:origin-[100%_100%] md:before:w-10 md:before:h-1/2 md:before:top-0 md:before:bottom-auto md:before:right-0 md:before:skew-x-[0deg] md:before:skew-y-[40deg] md:after:w-10 md:after:h-1/2 md:after:bottom-0 md:after:right-0 md:after:left-auto md:after:skew-x-[0deg] md:after:-skew-y-[40deg]">
-                        <img className="h-[380px] md:h-[460px] lg:h-[596px] w-full object-cover object-center" src="images/laser-technology.webp" alt="" />
-                    </div>
-                </div>
+        <div className='bg-neutral-100 md:flex'>
+          <div className='basis-[52.12%]'>
+            <div>
+              <div className='relative overflow-hidden w-full bg-neutral-100 before:absolute before:content-normal before:bottom-0 before:w-1/2 before:bg-inherit before:right-1/2 before:skew-x-[40deg] before:pb-7 before:origin-[100%_100%] after:absolute after:content-normal after:bottom-0 after:w-1/2 after:bg-inherit after:left-1/2 after:-skew-x-[40deg] after:pb-7 after:origin-[100%_100%] md:before:w-10 md:before:h-1/2 md:before:top-0 md:before:bottom-auto md:before:right-0 md:before:skew-x-[0deg] md:before:skew-y-[40deg] md:after:w-10 md:after:h-1/2 md:after:bottom-0 md:after:right-0 md:after:left-auto md:after:skew-x-[0deg] md:after:-skew-y-[40deg]'>
+                <img
+                  className='h-[380px] md:h-[460px] lg:h-[596px] w-full object-cover object-center'
+                  src='../images/alldecor.jpeg'
+                  alt=''
+                />
+              </div>
             </div>
-            <div className="basis-[47.88%] flex items-center">
-                <div className="flex flex-col md:justify-center md:mr-auto pb-16 py-8 px-4 md:max-w-[410px] lg:max-w-[567px] lg:pl-16">
-                    <h2 className="text-2xl md:text-3xl text-black font-bold mb-6">Laser technology</h2>
-                    <p className="text-lg">The innovative laser bonding technology makes it possible to bond the edgeband and board permanently without adhesive and leaves no visible joint line. A highly efficient near-infrared laser replaces the usual glueing element in the edgebanding machine. Board decorative layer melts to the bottom of the special edgeband and bonds the components together permanently. It makes it possible to do away with adhesive entirely and to create an invisible bond. However, the bond is not as strong as that of PUR glue.</p>
-                </div>
+          </div>
+          <div className='basis-[47.88%] flex items-center'>
+            <div className='flex flex-col md:justify-center md:mr-auto pb-16 py-8 px-4 md:max-w-[410px] lg:max-w-[567px] lg:pl-16'>
+              <h2 className='text-2xl md:text-3xl text-black font-bold mb-6'>Utilising Lasers</h2>
+              <p className='text-lg'>
+                The Edge Band and board may be firmly joined without glue and with no discernible connection line thanks
+                to cutting-edge laser bonding technology. The standard gluing component of the Edge Banding machine has
+                been replaced by a very effective near-infrared laser. The board's ornamental layer melts to the bottom
+                of the bands unique design, permanently joining the parts. It makes it possible to form an undetectable
+                bond without using any glue at all. The bond is not as strong as PUR glue, unfortunately.
+              </p>
             </div>
+          </div>
         </div>
-        <div className="bg-primary text-center py-11">
-            <h4 className="lg:text-5xl text-3xl text-white">Edgebanding tape finishing options</h4>
+        <div className='bg-primary text-center py-11'>
+          <h4 className='lg:text-5xl text-3xl text-white'>Edgebanding tape finishing options</h4>
         </div>
-        
-    </section>
+      </section>
     </>
   )
 }

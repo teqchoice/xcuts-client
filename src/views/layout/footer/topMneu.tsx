@@ -39,7 +39,7 @@ export default function TopMneu({ data }: any) {
       </h4>
       <div className='grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-8'>
         <div className='relative bg-neutral-400 text-center px-3 lg:p-5 flex flex-col justify-center align-middle min-h-[213px]'>
-          <img className='w-[39px] h-[49px] ml-auto mr-auto mb-6' src='images/map-icon.webp' alt='' />
+          <img className='w-[39px] h-[49px] ml-auto mr-auto mb-6' src='../images/map-icon.webp' alt='' />
           <p className='text-white xxl:px-16'>
             {
               select(
@@ -72,7 +72,7 @@ export default function TopMneu({ data }: any) {
           />
         </div>
         <div className='relative bg-neutral-400 text-center lg:p-5 flex flex-col justify-center align-middle min-h-[213px]'>
-          <img className='w-[57px] h-[41px] ml-auto mr-auto mb-6' src='images/envelop-icon.webp' alt='' />
+          <img className='w-[57px] h-[41px] ml-auto mr-auto mb-6' src='../images/envelop-icon.webp' alt='' />
           <a href='mailto:hello@xcuts.co.uk' className='text-white xxl:px-16'>
             {
               select(
@@ -105,7 +105,7 @@ export default function TopMneu({ data }: any) {
           />
         </div>
         <div className='relative bg-neutral-400 col-span-2 md:col-span-1 text-center lg:p-5 flex flex-col justify-center align-middle min-h-[213px]'>
-          <img className='w-[43px] h-[43px] ml-auto mr-auto mb-6' src='images/phone-ftr-icon.webp' alt='' />
+          <img className='w-[43px] h-[43px] ml-auto mr-auto mb-6' src='../images/phone-ftr-icon.webp' alt='' />
           <a href='tel:+44(0)1707907000' className='text-white xxl:px-16'>
             {
               select(

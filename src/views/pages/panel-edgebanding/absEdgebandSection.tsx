@@ -50,10 +50,10 @@ export default function ABSEdgebandSection(props: any) {
         <div className='px-4 sm:container'>
           <div className='text-center text-black mb-11 mt-20'>
             <p className='text-3xl'>ABS edgeband</p>
-            <h4 className='md:text-5xl text-4xl font-semibold mb-7'>ABS edgeband</h4>
+            <h4 className='md:text-5xl text-4xl font-semibold mb-7'>Tape ABS Edging- 1mm</h4>
             <p className='text-base text-black'>
-              1mm ABS edgebanding tape is very discreet and provides a reasonably strong edge surface. The tape can be
-              milled to two different finishes—radius and square.
+              The 1mm ABS Edge Banding tape is almost undetectable and offers a moderately robust edge surface. Square
+              and radius milling options are available for the tape.
             </p>
           </div>
           <div className='bg-neutral-100 md:flex mb-6'>
@@ -61,18 +61,18 @@ export default function ABSEdgebandSection(props: any) {
               <div className='relative overflow-hidden w-full bg-neutral-100 before:absolute before:content-normal before:bottom-0 before:w-1/2 before:bg-inherit before:right-1/2 before:skew-x-[40deg] before:pb-7 before:origin-[100%_100%] after:absolute after:content-normal after:bottom-0 after:w-1/2 after:bg-inherit after:left-1/2 after:-skew-x-[40deg] after:pb-7 after:origin-[100%_100%] md:before:w-10 md:before:h-1/2 md:before:top-0 md:before:bottom-auto md:before:right-auto md:before:skew-x-[0deg] md:before:-skew-y-[40deg] md:after:w-10 md:after:h-1/2 md:after:bottom-0 md:after:right-auto md:after:left-0 md:after:skew-x-[0deg] md:after:skew-y-[40deg] md:before:origin-[0%_0%] md:after:origin-[0%_0%]'>
                 <img
                   className='h-[380px] md:h-[460px] lg:h-[455px] w-full object-cover object-center'
-                  src='images/radius-finish.webp'
+                  src='../images/alldecor.jpeg'
                   alt=''
                 />
               </div>
             </div>
             <div className='basis-[47.88%] flex items-center'>
               <div className='flex flex-col md:justify-center md:ml-auto pb-16 py-8 px-8 md:max-w-[410px] lg:max-w-[567px]'>
-                <h2 className='text-2xl md:text-3xl text-black font-bold mb-6'>Radius finish</h2>
+                <h2 className='text-2xl md:text-3xl text-black font-bold mb-6'>Radius Finish</h2>
                 <p className='text-lg'>
-                  A one-millimetre rounded shape is milled to both sides of the tape and corners, making it gentle to
-                  the touch and easy on the eye. This finish is ideal for projects where precision and functionality
-                  have to balance.
+                  The corners and both sides of the tape have a one-millimetre rounded form, making it aesthetically
+                  pleasing and soft to the touch. This coating is perfect for situations where accuracy and usability
+                  must coexist.
                 </p>
               </div>
             </div>
@@ -83,7 +83,7 @@ export default function ABSEdgebandSection(props: any) {
                 <div className='relative overflow-hidden w-full bg-neutral-100 before:absolute before:content-normal before:bottom-0 before:w-1/2 before:bg-inherit before:right-1/2 before:skew-x-[40deg] before:pb-7 before:origin-[100%_100%] after:absolute after:content-normal after:bottom-0 after:w-1/2 after:bg-inherit after:left-1/2 after:-skew-x-[40deg] after:pb-7 after:origin-[100%_100%] md:before:w-10 md:before:h-1/2 md:before:top-0 md:before:bottom-auto md:before:right-0 md:before:skew-x-[0deg] md:before:skew-y-[40deg] md:after:w-10 md:after:h-1/2 md:after:bottom-0 md:after:right-0 md:after:left-auto md:after:skew-x-[0deg] md:after:-skew-y-[40deg]'>
                   <img
                     className='h-[380px] md:h-[460px] lg:h-[455px] w-full object-cover object-center'
-                    src='images/square-finish.webp'
+                    src='../images/alldecor.jpeg'
                     alt=''
                   />
                 </div>
@@ -91,11 +91,11 @@ export default function ABSEdgebandSection(props: any) {
             </div>
             <div className='basis-[47.88%] flex items-center'>
               <div className='flex flex-col md:justify-center md:mr-auto pb-16 py-8 px-8 md:max-w-[410px] lg:max-w-[567px]'>
-                <h2 className='text-2xl md:text-3xl text-black font-bold mb-6'>Square finish</h2>
+                <h2 className='text-2xl md:text-3xl text-black font-bold mb-6'>Square Finish</h2>
                 <p className='text-lg'>
-                  Ideal for those after precision and sharp lines. We cut the tape flat to the board surface, leaving
-                  both sides of the edgebanding tape and corners square. This finish looks better on dark colours than
-                  on light.
+                  Perfect if you want precise, clean lines. We left both sides of the edge banding tape and the corners
+                  square, and trimmed the tape flat to the board surface. Darker colours than lighter ones look better
+                  with this finish.
                 </p>
               </div>
             </div>
@@ -106,10 +106,10 @@ export default function ABSEdgebandSection(props: any) {
         <div className='px-4 sm:container'>
           <div className='text-center text-black mb-11 mt-20'>
             <p className='text-3xl'>ABS edgeband</p>
-            <h4 className='md:text-5xl text-4xl font-semibold mb-7'>ABS edgeband</h4>
+            <h4 className='md:text-5xl text-4xl font-semibold mb-7'>Tape ABS Edging- 2mm</h4>
             <p className='text-base text-black'>
-              2mm ABS edgebanding tape provides a durable edge surface. However, some may consider it a little too
-              obtrusive. The tape can be milled to two different finishes—radius and bevel.
+              A strong edge surface is provided with 2mm ABS Edge Banding tape. But some might find it a little too
+              intrusive. Radius and bevel are two possible milling finishes for the tape.
             </p>
           </div>
           <div className='bg-neutral-100 md:flex mb-6'>
@@ -117,17 +117,17 @@ export default function ABSEdgebandSection(props: any) {
               <div className='relative overflow-hidden w-full bg-neutral-100 before:absolute before:content-normal before:bottom-0 before:w-1/2 before:bg-inherit before:right-1/2 before:skew-x-[40deg] before:pb-7 before:origin-[100%_100%] after:absolute after:content-normal after:bottom-0 after:w-1/2 after:bg-inherit after:left-1/2 after:-skew-x-[40deg] after:pb-7 after:origin-[100%_100%] md:before:w-10 md:before:h-1/2 md:before:top-0 md:before:bottom-auto md:before:right-auto md:before:skew-x-[0deg] md:before:-skew-y-[40deg] md:after:w-10 md:after:h-1/2 md:after:bottom-0 md:after:right-auto md:after:left-0 md:after:skew-x-[0deg] md:after:skew-y-[40deg] md:before:origin-[0%_0%] md:after:origin-[0%_0%]'>
                 <img
                   className='h-[380px] md:h-[460px] lg:h-[455px] w-full object-cover object-center'
-                  src='images/radius-finish.webp'
+                  src='../images/alldecor.jpeg'
                   alt=''
                 />
               </div>
             </div>
             <div className='basis-[47.88%] flex items-center'>
               <div className='flex flex-col md:justify-center md:ml-auto pb-16 py-8 px-8 md:max-w-[410px] lg:max-w-[567px]'>
-                <h2 className='text-2xl md:text-3xl text-black font-bold mb-6'>Radius finish</h2>
+                <h2 className='text-2xl md:text-3xl text-black font-bold mb-6'>Radius Finish</h2>
                 <p className='text-lg'>
-                  A two-millimetre rounded shape is milled to both sides of the tape and corners, making it very
-                  pleasant to the touch. This is a classNameic finish for bedroom furniture.
+                  The corners and both sides of the tape have a two-millimetre rounded form, giving it a very pleasing
+                  feel to the touch. This is a traditional bedroom furniture finish.
                 </p>
               </div>
             </div>
@@ -138,7 +138,7 @@ export default function ABSEdgebandSection(props: any) {
                 <div className='relative overflow-hidden w-full bg-neutral-100 before:absolute before:content-normal before:bottom-0 before:w-1/2 before:bg-inherit before:right-1/2 before:skew-x-[40deg] before:pb-7 before:origin-[100%_100%] after:absolute after:content-normal after:bottom-0 after:w-1/2 after:bg-inherit after:left-1/2 after:-skew-x-[40deg] after:pb-7 after:origin-[100%_100%] md:before:w-10 md:before:h-1/2 md:before:top-0 md:before:bottom-auto md:before:right-0 md:before:skew-x-[0deg] md:before:skew-y-[40deg] md:after:w-10 md:after:h-1/2 md:after:bottom-0 md:after:right-0 md:after:left-auto md:after:skew-x-[0deg] md:after:-skew-y-[40deg]'>
                   <img
                     className='h-[380px] md:h-[460px] lg:h-[455px] w-full object-cover object-center'
-                    src='images/square-finish.webp'
+                    src='../images/alldecor.jpeg'
                     alt=''
                   />
                 </div>
@@ -146,11 +146,12 @@ export default function ABSEdgebandSection(props: any) {
             </div>
             <div className='basis-[47.88%] flex items-center'>
               <div className='flex flex-col md:justify-center md:mr-auto pb-16 py-8 px-8 md:max-w-[410px] lg:max-w-[567px]'>
-                <h2 className='text-2xl md:text-3xl text-black font-bold mb-6'>Bevel finish</h2>
+                <h2 className='text-2xl md:text-3xl text-black font-bold mb-6'>Bevel Finish</h2>
                 <p className='text-lg'>
-                  For those requiring a unique look, this option offers a modern and robust edge finish. The tape is
-                  milled at 45° bevel giving both sides of the edgebanding tape and corners a diamond-cut look. It shows
-                  best on panels with flat colours and modern decorative surfaces.
+                  This choice gives a contemporary and strong edge finish for individuals seeking a distinctive
+                  appearance. The corners and both sides of the Edge Banding tape have a diamond-cut appearance because
+                  the tape is machined with a 45° bevel. On panels with flat hues and contemporary ornamental surfaces,
+                  it displays wonderfully.
                 </p>
               </div>
             </div>

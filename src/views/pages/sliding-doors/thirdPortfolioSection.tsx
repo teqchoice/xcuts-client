@@ -7,14 +7,14 @@ export default function ThirdPortfolio() {
       <div className='px-4 sm:container grid grid-cols-1 gap-1'>
         <div className='grid grid-cols-2 gap-1'>
           <div>
-            <img src='images/some-more-thumb-01.webp' className='w-full' alt='' />
+            <img src='../images/alldecor.jpeg' className='w-full' alt='' />
           </div>
           <div>
-            <img src='images/some-more-thumb-02.webp' className='w-full' alt='' />
+            <img src='../images/alldecor.jpeg' className='w-full' alt='' />
           </div>
         </div>
         <div className='mt-[1px]'>
-          <img src='images/some-more-thumb-03.webp' className='w-full' alt='' />
+          <img src='../images/alldecor.jpeg' className='w-full' alt='' />
         </div>
         <div className='flex justify-center gap-4 mt-10'>
           <a

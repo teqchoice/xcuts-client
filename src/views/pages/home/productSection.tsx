@@ -90,7 +90,7 @@ export default function ProductSection({ data }: any) {
                         )[0]
                       }}
                     ></span>
-                    <img className='w-2 ml-2' src='images/angle-arrow.webp' alt='' />
+                    <img className='w-2 ml-2' src='../images/angle-arrow.webp' alt='' />
                   </a>
                   <a
                     href={
@@ -111,7 +111,7 @@ export default function ProductSection({ data }: any) {
                         )[0]
                       }}
                     ></span>
-                    <img className='w-2 ml-2' src='images/angle-arrow.webp' alt='' />
+                    <img className='w-2 ml-2' src='../images/angle-arrow.webp' alt='' />
                   </a>
                 </div>
               </div>
@@ -188,7 +188,7 @@ export default function ProductSection({ data }: any) {
                         )[0]
                       }}
                     ></span>
-                    <img className='w-2 ml-2' src='images/angle-arrow.webp' alt='' />
+                    <img className='w-2 ml-2' src='../images/angle-arrow.webp' alt='' />
                   </a>
                   <a
                     href={
@@ -209,7 +209,7 @@ export default function ProductSection({ data }: any) {
                         )[0]
                       }}
                     ></span>
-                    <img className='w-2 ml-2' src='images/angle-arrow.webp' alt='' />
+                    <img className='w-2 ml-2' src='../images/angle-arrow.webp' alt='' />
                   </a>
                 </div>
               </div>
@@ -286,7 +286,7 @@ export default function ProductSection({ data }: any) {
                         )[0]
                       }}
                     ></span>
-                    <img className='w-2 ml-2' src='images/angle-arrow.webp' alt='' />
+                    <img className='w-2 ml-2' src='../images/angle-arrow.webp' alt='' />
                   </a>
                   <a
                     href={
@@ -307,7 +307,7 @@ export default function ProductSection({ data }: any) {
                         )[0]
                       }}
                     ></span>
-                    <img className='w-2 ml-2' src='images/angle-arrow.webp' alt='' />
+                    <img className='w-2 ml-2' src='../images/angle-arrow.webp' alt='' />
                   </a>
                 </div>
               </div>

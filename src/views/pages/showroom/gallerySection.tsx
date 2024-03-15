@@ -55,7 +55,7 @@ export default function GallerySection() {
               <img src={image.largeURL} alt='' className='min-h-[20rem]' />
               <div className='absolute inset-0 bg-primary bg-opacity-80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition delay-300 cursor-pointer'>
                 <img
-                  src='images/hover-eye-icon.webp'
+                  src='../images/hover-eye-icon.webp'
                   data-te-img='images/srm-glry-thumb-01.webp'
                   alt=''
                   className='!w-10 !h-10 m-auto cursor-zoom-in '
@@ -80,10 +80,10 @@ export default function GallerySection() {
         {/* <div className='swiper LightBoxSwiper'>
           <div data-te-lightbox-init className='swiper-wrapper'>
             <div className='swiper-slide relative group'>
-              <img src='images/srm-glry-thumb-01.webp' />
+              <img src='../images/srm-glry-thumb-01.webp' />
               <div className='absolute inset-0 bg-primary bg-opacity-80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition delay-300 cursor-pointer'>
                 <img
-                  src='images/hover-eye-icon.webp'
+                  src='../images/hover-eye-icon.webp'
                   data-te-img='images/srm-glry-thumb-01.webp'
                   alt=''
                   className='w-[38px] cursor-zoom-in data-[te-lightbox-disabled]:cursor-auto'
@@ -91,10 +91,10 @@ export default function GallerySection() {
               </div>
             </div>
             <div className='swiper-slide relative group'>
-              <img src='images/srm-glry-thumb-02.webp' />
+              <img src='../images/srm-glry-thumb-02.webp' />
               <div className='absolute inset-0 bg-primary bg-opacity-80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition delay-300 cursor-pointer'>
                 <img
-                  src='images/hover-eye-icon.webp'
+                  src='../images/hover-eye-icon.webp'
                   data-te-img='images/srm-glry-thumb-02.webp'
                   alt=''
                   className='w-[38px] cursor-zoom-in data-[te-lightbox-disabled]:cursor-auto'
@@ -102,10 +102,10 @@ export default function GallerySection() {
               </div>
             </div>
             <div className='swiper-slide relative group'>
-              <img src='images/srm-glry-thumb-03.webp' />
+              <img src='../images/srm-glry-thumb-03.webp' />
               <div className='absolute inset-0 bg-primary bg-opacity-80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition delay-300 cursor-pointer'>
                 <img
-                  src='images/hover-eye-icon.webp'
+                  src='../images/hover-eye-icon.webp'
                   data-te-img='images/srm-glry-thumb-03.webp'
                   alt=''
                   className='w-[38px] cursor-zoom-in data-[te-lightbox-disabled]:cursor-auto'
@@ -113,10 +113,10 @@ export default function GallerySection() {
               </div>
             </div>
             <div className='swiper-slide relative group'>
-              <img src='images/srm-glry-thumb-04.webp' />
+              <img src='../images/srm-glry-thumb-04.webp' />
               <div className='absolute inset-0 bg-primary bg-opacity-80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition delay-300 cursor-pointer'>
                 <img
-                  src='images/hover-eye-icon.webp'
+                  src='../images/hover-eye-icon.webp'
                   data-te-img='images/srm-glry-thumb-04.webp'
                   alt=''
                   className='w-[38px] cursor-zoom-in data-[te-lightbox-disabled]:cursor-auto'
@@ -124,10 +124,10 @@ export default function GallerySection() {
               </div>
             </div>
             <div className='swiper-slide relative group'>
-              <img src='images/srm-glry-thumb-03.webp' />
+              <img src='../images/srm-glry-thumb-03.webp' />
               <div className='absolute inset-0 bg-primary bg-opacity-80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition delay-300 cursor-pointer'>
                 <img
-                  src='images/hover-eye-icon.webp'
+                  src='../images/hover-eye-icon.webp'
                   data-te-img='images/srm-glry-thumb-03.webp'
                   alt=''
                   className='w-[38px] cursor-zoom-in data-[te-lightbox-disabled]:cursor-auto'

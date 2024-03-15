@@ -56,7 +56,7 @@ export default function OurGuarantee(props: any) {
               We will <span className='text-primary'> cut and edge panels to your exact specification</span>, or we'll
               send a replacement to you free of charge in 24hrs.
             </p>
-            <img src='images/wwcaep-panels.webp' alt='' className='mx-auto border-[10px] border-[#c4c4c4] my-9' />
+            <img src='../images/wwcaep-panels.webp' alt='' className='mx-auto border-[10px] border-[#c4c4c4] my-9' />
             <p className='text-xl leading-8'>
               Here at <span className='text-primary'>X</span>cuts, we understand that humans (and machines) can
               sometimes make mistakes and things don't entirely turn out the way you want them. We don't like the idea

@@ -8,7 +8,7 @@ export default function CollectionsItemSection(props: any) {
         <div className='col-span-1 flex flex-col'>
           <div className='flex sm:flex-row flex-col sm:items-end'>
             <div className='sm:w-[60%]'>
-              <img src='images/alldecor.jpeg' alt='' className='w-full' />
+              <img src='../images/alldecor.jpeg' alt='' className='w-full' />
             </div>
             <div className='relative py-5 pl-5 pr-10 before:border-solid before:border-t-[bg-transparent] before:border-r-[#fff] before:border-b-[#f82f45] before:border-l-[bg-transparent] before:border-t-0 sm:before:border-r-[40px] before:border-b-[72px] before:border-l-0 before:absolute before:w-full before:h-full before:-top-2 before:md:top-0 before:left-0 before:-z-10 sm:w-[40%] lg:bottom-10 bottom-0'>
               <h5 className='lg:text-xl text-base pr-8 font-semibold text-white'>Egger</h5>
@@ -42,7 +42,7 @@ export default function CollectionsItemSection(props: any) {
         <div className='col-span-1 flex flex-col'>
           <div className='flex sm:flex-row flex-col sm:items-end'>
             <div className='sm:w-[60%]'>
-              <img src='images/alldecor.jpeg' alt='' className='w-full' />
+              <img src='../images/alldecor.jpeg' alt='' className='w-full' />
             </div>
             <div className='relative relative py-5 pl-5 pr-10 before:border-solid before:border-t-[bg-transparent] before:border-r-[#fff] before:border-b-[#f82f45] before:border-l-[bg-transparent] before:border-t-0 sm:before:border-r-[40px] before:border-b-[72px] before:border-l-0 before:absolute before:w-full before:h-full before:-top-2 before:md:top-0 before:left-0 before:-z-10 sm:w-[40%] lg:bottom-10 bottom-0'>
               <h5 className='lg:text-xl text-base pr-8 font-semibold text-white'>Kronospan</h5>
@@ -75,7 +75,7 @@ export default function CollectionsItemSection(props: any) {
         <div className='col-span-1 flex flex-col'>
           <div className='flex sm:flex-row flex-col sm:items-end'>
             <div className='sm:w-[60%]'>
-              <img src='images/alldecor.jpeg' alt='' className='w-full' />
+              <img src='../images/alldecor.jpeg' alt='' className='w-full' />
             </div>
             <div className='relative relative py-5 pl-5 pr-10 before:border-solid before:border-t-[bg-transparent] before:border-r-[#fff] before:border-b-[#f82f45] before:border-l-[bg-transparent] before:border-t-0 sm:before:border-r-[40px] before:border-b-[72px] before:border-l-0 before:absolute before:w-full before:h-full before:-top-2 before:md:top-0 before:left-0 before:-z-10 sm:w-[40%] lg:bottom-10 bottom-0'>
               <h5 className='lg:text-xl text-base pr-8 font-semibold text-white'>XyloCleaf</h5>
@@ -109,7 +109,7 @@ export default function CollectionsItemSection(props: any) {
         <div className='col-span-1 flex flex-col'>
           <div className='flex sm:flex-row flex-col sm:items-end'>
             <div className='sm:w-[60%]'>
-              <img src='images/alldecor.jpeg' alt='' className='w-full' />
+              <img src='../images/alldecor.jpeg' alt='' className='w-full' />
             </div>
             <div className='relative relative py-5 pl-5 pr-10 before:border-solid before:border-t-[bg-transparent] before:border-r-[#fff] before:border-b-[#f82f45] before:border-l-[bg-transparent] before:border-t-0 sm:before:border-r-[40px] before:border-b-[72px] before:border-l-0 before:absolute before:w-full before:h-full before:-top-2 before:md:top-0 before:left-0 before:-z-10 sm:w-[40%] lg:bottom-10 bottom-0'>
               <h5 className='lg:text-xl text-base pr-8 font-semibold text-white'>Saviola</h5>
@@ -142,7 +142,7 @@ export default function CollectionsItemSection(props: any) {
         <div className='col-span-1 flex flex-col'>
           <div className='flex sm:flex-row flex-col sm:items-end'>
             <div className='sm:w-[60%]'>
-              <img src='images/alldecor.jpeg' alt='' className='w-full' />
+              <img src='../images/alldecor.jpeg' alt='' className='w-full' />
             </div>
             <div className='relative relative py-5 pl-5 pr-10 before:border-solid before:border-t-[bg-transparent] before:border-r-[#fff] before:border-b-[#f82f45] before:border-l-[bg-transparent] before:border-t-0 sm:before:border-r-[40px] before:border-b-[72px] before:border-l-0 before:absolute before:w-full before:h-full before:-top-2 before:md:top-0 before:left-0 before:-z-10 sm:w-[40%] lg:bottom-10 bottom-0'>
               <h5 className='lg:text-xl text-base pr-8 font-semibold text-white'>Swiss Krono</h5>
@@ -175,7 +175,7 @@ export default function CollectionsItemSection(props: any) {
         <div className='col-span-1 flex flex-col'>
           <div className='flex sm:flex-row flex-col sm:items-end'>
             <div className='sm:w-[60%]'>
-              <img src='images/alldecor.jpeg' alt='' className='w-full' />
+              <img src='../images/alldecor.jpeg' alt='' className='w-full' />
             </div>
             <div className='relative relative py-5 pl-5 pr-10 before:border-solid before:border-t-[bg-transparent] before:border-r-[#fff] before:border-b-[#f82f45] before:border-l-[bg-transparent] before:border-t-0 sm:before:border-r-[40px] before:border-b-[72px] before:border-l-0 before:absolute before:w-full before:h-full before:-top-2 before:md:top-0 before:left-0 before:-z-10 sm:w-[40%] lg:bottom-10 bottom-0'>
               <h5 className='lg:text-xl text-base pr-8 font-semibold text-white'>Alvic</h5>
@@ -208,7 +208,7 @@ export default function CollectionsItemSection(props: any) {
         <div className='col-span-1 flex flex-col'>
           <div className='flex sm:flex-row flex-col sm:items-end'>
             <div className='sm:w-[60%]'>
-              <img src='images/alldecor.jpeg' alt='' className='w-full' />
+              <img src='../images/alldecor.jpeg' alt='' className='w-full' />
             </div>
             <div className='relative relative py-5 pl-5 pr-10 before:border-solid before:border-t-[bg-transparent] before:border-r-[#fff] before:border-b-[#f82f45] before:border-l-[bg-transparent] before:border-t-0 sm:before:border-r-[40px] before:border-b-[90px] before:border-l-0 before:absolute before:w-full before:h-full before:-top-2 before:md:top-0 before:left-0 before:-z-10 sm:w-[40%] lg:bottom-10 bottom-0'>
               <h5 className='lg:text-xl text-base pr-8 font-semibold text-white'>Senoplast</h5>
@@ -241,7 +241,7 @@ export default function CollectionsItemSection(props: any) {
         <div className='col-span-1 flex flex-col'>
           <div className='flex sm:flex-row flex-col sm:items-end'>
             <div className='sm:w-[60%]'>
-              <img src='images/alldecor.jpeg' alt='' className='w-full' />
+              <img src='../images/alldecor.jpeg' alt='' className='w-full' />
             </div>
             <div className='relative relative py-5 pl-5 pr-10 before:border-solid before:border-t-[bg-transparent] before:border-r-[#fff] before:border-b-[#f82f45] before:border-l-[bg-transparent] before:border-t-0 sm:before:border-r-[40px] before:border-b-[72px] before:border-l-0 before:absolute before:w-full before:h-full before:-top-2 before:md:top-0 before:left-0 before:-z-10 sm:w-[40%] lg:bottom-10 bottom-0'>
               <h5 className='lg:text-xl text-base pr-8 font-semibold text-white'>Serica</h5>
@@ -274,7 +274,7 @@ export default function CollectionsItemSection(props: any) {
         <div className='col-span-1 flex flex-col'>
           <div className='flex sm:flex-row flex-col sm:items-end'>
             <div className='sm:w-[60%]'>
-              <img src='images/alldecor.jpeg' alt='' className='w-full' />
+              <img src='../images/alldecor.jpeg' alt='' className='w-full' />
             </div>
             <div className='relative relative py-5 pl-5 pr-10 before:border-solid before:border-t-[bg-transparent] before:border-r-[#fff] before:border-b-[#f82f45] before:border-l-[bg-transparent] before:border-t-0 sm:before:border-r-[40px] before:border-b-[72px] before:border-l-0 before:absolute before:w-full before:h-full before:-top-2 before:md:top-0 before:left-0 before:-z-10 sm:w-[40%] lg:bottom-10 bottom-0'>
               <h5 className='lg:text-xl text-base pr-8 font-semibold text-white'>Wall Panelling</h5>
@@ -308,7 +308,7 @@ export default function CollectionsItemSection(props: any) {
         <div className='col-span-1 flex flex-col'>
           <div className='flex sm:flex-row flex-col sm:items-end'>
             <div className='sm:w-[60%]'>
-              <img src='images/alldecor.jpeg' alt='' className='w-full' />
+              <img src='../images/alldecor.jpeg' alt='' className='w-full' />
             </div>
             <div className='relative relative py-5 pl-5 pr-10 before:border-solid before:border-t-[bg-transparent] before:border-r-[#fff] before:border-b-[#f82f45] before:border-l-[bg-transparent] before:border-t-0 sm:before:border-r-[40px] before:border-b-[72px] before:border-l-0 before:absolute before:w-full before:h-full before:-top-2 before:md:top-0 before:left-0 before:-z-10 sm:w-[40%] lg:bottom-10 bottom-0'>
               <h5 className='lg:text-xl text-base pr-8 font-semibold text-white'>MDF Boards</h5>
@@ -341,7 +341,7 @@ export default function CollectionsItemSection(props: any) {
         <div className='col-span-1 flex flex-col'>
           <div className='flex sm:flex-row flex-col sm:items-end'>
             <div className='sm:w-[60%]'>
-              <img src='images/alldecor.jpeg' alt='' className='w-full' />
+              <img src='../images/alldecor.jpeg' alt='' className='w-full' />
             </div>
             <div className='relative relative py-5 pl-5 pr-10 before:border-solid before:border-t-[bg-transparent] before:border-r-[#fff] before:border-b-[#f82f45] before:border-l-[bg-transparent] before:border-t-0 sm:before:border-r-[40px] before:border-b-[90px] before:border-l-0 before:absolute before:w-full before:h-full before:-top-2 before:md:top-0 before:left-0 before:-z-10 sm:w-[40%] lg:bottom-10 bottom-0'>
               <h5 className='lg:text-xl text-base pr-8 font-semibold text-white'>Veneered Boards</h5>
@@ -374,7 +374,7 @@ export default function CollectionsItemSection(props: any) {
         <div className='col-span-1 flex flex-col'>
           <div className='flex sm:flex-row flex-col sm:items-end'>
             <div className='sm:w-[60%]'>
-              <img src='images/alldecor.jpeg' alt='' className='w-full' />
+              <img src='../images/alldecor.jpeg' alt='' className='w-full' />
             </div>
             <div className='relative relative py-5 pl-5 pr-10 before:border-solid before:border-t-[bg-transparent] before:border-r-[#fff] before:border-b-[#f82f45] before:border-l-[bg-transparent] before:border-t-0 sm:before:border-r-[40px] before:border-b-[72px] before:border-l-0 before:absolute before:w-full before:h-full before:-top-2 before:md:top-0 before:left-0 before:-z-10 sm:w-[40%] lg:bottom-10 bottom-0'>
               <h5 className='lg:text-xl text-base pr-8 font-semibold text-white'>Plywood</h5>
