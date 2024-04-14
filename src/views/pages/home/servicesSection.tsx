@@ -48,11 +48,19 @@ export default function ServicesSection({ data }: any) {
             <div className='basis-[52.12%] md:basis-[55%] lg:basis-[54%] xl:basis-[53%] 2xl:basis-[52.2%]'>
               <div>
                 <div className='relative overflow-hidden w-full bg-neutral-100 before:absolute before:content-normal before:-bottom-[1px] before:w-1/2 before:bg-inherit before:right-1/2 before:skew-x-[40deg] before:pb-7 before:origin-[100%_100%] after:absolute after:content-normal after:bottom-0 after:w-1/2 after:bg-inherit after:left-1/2 after:-skew-x-[40deg] after:pb-7 after:origin-[100%_100%] md:before:w-10 md:before:h-1/2 md:before:top-0 md:before:bottom-auto md:before:right-0 md:before:skew-x-[0deg] md:before:skew-y-[40deg] md:after:w-10 md:after:h-1/2 md:after:bottom-0 md:after:right-0 md:after:left-auto md:after:skew-x-[0deg] md:after:-skew-y-[40deg]'>
-                  <img
+                  {/* <img
                     className='md:h-[460px] lg:h-[596px] w-full object-cover object-center'
                     src={'images/img-1.jpeg'}
                     alt=''
-                  />
+                  /> */}
+                  <video
+                  className='h-[380px] md:h-[460px] lg:h-[596px] w-full object-cover object-center'
+                  src='../images/vid/Size-Cut Panels.mp4'
+                  width='100%'
+                  height='auto'
+                  autoPlay
+                  muted
+                ></video>
                 </div>
               </div>
             </div>
@@ -103,11 +111,19 @@ export default function ServicesSection({ data }: any) {
           <div className='relative md:flex'>
             <div className='basis-[52.12%] md:basis-[55%] lg:basis-[54%] xl:basis-[53%] 2xl:basis-[52.2%] order-1'>
               <div className='relative overflow-hidden w-full bg-neutral-100 before:absolute before:content-normal before:bottom-0 before:w-1/2 before:bg-inherit before:right-1/2 before:skew-x-[40deg] before:pb-7 before:origin-[100%_100%] after:absolute after:content-normal after:bottom-0 after:w-1/2 after:bg-inherit after:left-1/2 after:-skew-x-[40deg] after:pb-7 after:origin-[100%_100%] md:before:w-10 md:before:h-1/2 md:before:top-0 md:before:bottom-auto md:before:right-auto md:before:skew-x-[0deg] md:before:-skew-y-[40deg] md:after:w-10 md:after:h-1/2 md:after:bottom-0 md:after:right-auto md:after:left-0 md:after:skew-x-[0deg] md:after:skew-y-[40deg] md:before:origin-[0%_0%] md:after:origin-[0%_0%]'>
-                <img
+                {/* <img
                   className='h-[380px] md:h-[460px] lg:h-[596px] w-full object-cover object-center'
                   src={'images/img-4.webp'}
                   alt=''
-                />
+                /> */}
+                <video
+                  className='h-[380px] md:h-[460px] lg:h-[596px] w-full object-cover object-center'
+                  src='../images/vid/Edge-banding for Panels.mp4'
+                  width='100%'
+                  height='auto'
+                  autoPlay
+                  muted
+                ></video>
               </div>
             </div>
             <div className='basis-[47.88%]  md:basis-[45%] lg:basis-[46%] xl:basis-[47%] 2xl:basis-[48%] flex items-center'>
@@ -153,11 +169,19 @@ export default function ServicesSection({ data }: any) {
             <div className='basis-[52.12%] md:basis-[55%] lg:basis-[54%] xl:basis-[53%] 2xl:basis-[52.2%]'>
               <div>
                 <div className='relative overflow-hidden w-full bg-neutral-100 before:absolute before:content-normal before:bottom-0 before:w-1/2 before:bg-inherit before:right-1/2 before:skew-x-[40deg] before:pb-7 before:origin-[100%_100%] after:absolute after:content-normal after:bottom-0 after:w-1/2 after:bg-inherit after:left-1/2 after:-skew-x-[40deg] after:pb-7 after:origin-[100%_100%] md:before:w-10 md:before:h-1/2 md:before:top-0 md:before:bottom-auto md:before:right-0 md:before:skew-x-[0deg] md:before:skew-y-[40deg] md:after:w-10 md:after:h-1/2 md:after:bottom-0 md:after:right-0 md:after:left-auto md:after:skew-x-[0deg] md:after:-skew-y-[40deg]'>
-                  <img
+                  {/* <img
                     className='h-[380px] md:h-[460px] lg:h-[596px] w-full object-cover object-center'
                     src={'images/img-2.jpeg'}
                     alt=''
-                  />
+                  /> */}
+                  <video
+                    className='h-[380px] md:h-[460px] lg:h-[596px] w-full object-cover object-center'
+                    src='../images/vid/Using CNC.mp4'
+                    width='100%'
+                    height='auto'
+                    autoPlay
+                    muted
+                  ></video>
                 </div>
               </div>
             </div>
@@ -203,11 +227,19 @@ export default function ServicesSection({ data }: any) {
           <div className='relative md:flex'>
             <div className='basis-[53.12%] md:basis-[55%] lg:basis-[54%] xl:basis-[53%] 2xl:basis-[52.2%] order-1'>
               <div className='relative overflow-hidden w-full bg-neutral-100 before:absolute before:content-normal before:bottom-0 before:w-1/2 before:bg-inherit before:right-1/2 before:skew-x-[40deg] before:pb-7 before:origin-[100%_100%] after:absolute after:content-normal after:bottom-0 after:w-1/2 after:bg-inherit after:left-1/2 after:-skew-x-[40deg] after:pb-7 after:origin-[100%_100%] md:before:w-10 md:before:h-1/2 md:before:top-0 md:before:bottom-auto md:before:right-auto md:before:skew-x-[0deg] md:before:-skew-y-[40deg] md:after:w-10 md:after:h-1/2 md:after:bottom-0 md:after:right-auto md:after:left-0 md:after:skew-x-[0deg] md:after:skew-y-[40deg] md:before:origin-[0%_0%] md:after:origin-[0%_0%]'>
-                <img
+                {/* <img
                   className='h-[380px] md:h-[460px] lg:h-[596px] w-full object-cover object-center'
                   src={'images/spray-painting.webp'}
                   alt=''
-                />
+                /> */}
+                <video
+                  className='h-[380px] md:h-[460px] lg:h-[596px] w-full object-cover object-center'
+                  src='../images/vid/Main Banner.mp4'
+                  width='100%'
+                  height='auto'
+                  autoPlay
+                  muted
+                ></video>
               </div>
             </div>
             <div className='basis-[47.88%] md:basis-[45%] lg:basis-[46%] xl:basis-[47%] 2xl:basis-[48%] flex items-center'>

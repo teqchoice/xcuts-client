@@ -58,6 +58,10 @@
     transition-duration: 150ms;
   }
 
+  .ddddd svg {
+    display: none !important;
+  }
+
 
   
 }

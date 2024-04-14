@@ -1,6 +1,6 @@
 import Layout from '@/views/layout'
 import React from 'react'
-import PanelEdgebanding from '@/views/pages/panel-edgebanding'
+import PanelEdgebanding from '@/views/pages/services/panel-edgebanding'
 
 // !! Fake DB
 import FakeDb from '@/DB/content.json'

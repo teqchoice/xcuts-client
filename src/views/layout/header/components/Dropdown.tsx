@@ -123,7 +123,7 @@ export default function Dropdown({ menu, setMenu }) {
     return (
       <div onMouseLeave={() => setMenu('')} className={`relative  bg-white`}>
         <div className='container  grid grid-cols-4 p-8 gap-10'>
-          <div className=' group cursor-pointer'>
+          <Link href={'/services/size-cut-panels'} className=' group cursor-pointer'>
             <div className='relative aspect-video overflow-hidden'>
               <img src='../images/img-1.jpeg' alt='' className='w-full' />
               <div className='aspect-video overflow-hidden absolute left-0 top-0 z-10 ring-inset group-hover:ring-8 ring-primary opacity-0 group-hover:opacity-100 transition-all duration-150'>
@@ -135,7 +135,7 @@ export default function Dropdown({ menu, setMenu }) {
               Choose any ornamental board from our wide selection of decors, and we'll cut it into smaller-sized panels
               as you specify.
             </p>
-          </div>
+          </Link>
           <Link href={'/services/panel-edgebanding'} className=' group cursor-pointer'>
             <div className='relative aspect-video overflow-hidden'>
               <img src='../images/img-4.webp' alt='' className='w-full' />
@@ -149,7 +149,7 @@ export default function Dropdown({ menu, setMenu }) {
               glue to take care of it for you.
             </p>
           </Link>
-          <div className=' group cursor-pointer'>
+          <Link href={'/services/using-cnc'} className=' group cursor-pointer'>
             <div className='relative aspect-video overflow-hidden'>
               <img src='../images/img-2.jpeg' alt='' className='w-full' />
               <div className='aspect-video overflow-hidden absolute left-0 top-0 z-10 ring-inset group-hover:ring-8 ring-primary opacity-0 group-hover:opacity-100 transition-all duration-150'>
@@ -161,8 +161,8 @@ export default function Dropdown({ menu, setMenu }) {
               Give your panel cutting, ornamental pattern routing, hole drilling, and grooving projects to our CNC
               cutting department.
             </p>
-          </div>
-          <div className=' group cursor-pointer'>
+          </Link>
+          <Link href={'/services/spray-painting'} className=' group cursor-pointer'>
             <div className='relative aspect-video overflow-hidden'>
               <img src='../images/spray-painting.webp' alt='' className='w-full' />
               <div className='aspect-video overflow-hidden absolute left-0 top-0 z-10 ring-inset group-hover:ring-8 ring-primary opacity-0 group-hover:opacity-100 transition-all duration-150'>
@@ -174,7 +174,7 @@ export default function Dropdown({ menu, setMenu }) {
               You can easily make an online reservation on our website to have us spray-coat your panels with a white
               primer, clear lacquer, or any other shade of paint.
             </p>
-          </div>
+          </Link>
         </div>
         <div className='absolute -bottom-4 right-[5%]'>
           <img src='../images/x-icon-02.webp' alt='' className='w-full scale-125' />
