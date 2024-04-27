@@ -190,7 +190,7 @@ export default function Dropdown({ menu, setMenu }) {
     return (
       <div onMouseLeave={() => setMenu('')} className={`relative  bg-white`}>
         <div className='container  grid grid-cols-3 p-8 gap-10'>
-          <Link href={'/sliding-doors'} className='grid grid-cols-2 group cursor-pointer items-center gap-2'>
+          <Link href={'/product/sliding-doors'} className='grid grid-cols-2 group cursor-pointer items-center gap-2'>
             <div className='relative  overflow-hidden'>
               <img src='../images/our-product-01.webp' alt='' className='w-full' />
               <div className=' overflow-hidden absolute left-0 top-0 z-10 ring-inset group-hover:ring-8 ring-primary opacity-0 group-hover:opacity-100 transition-all duration-150'>
@@ -205,7 +205,7 @@ export default function Dropdown({ menu, setMenu }) {
               </p>
             </div>
           </Link>
-          <div className='grid grid-cols-2 group cursor-pointer items-center gap-2'>
+          <Link href={'/product/doors-shaker'} className='grid grid-cols-2 group cursor-pointer items-center gap-2'>
             <div className='relative  overflow-hidden'>
               <img src='../images/our-product-02.webp' alt='' className='w-full' />
               <div className=' overflow-hidden absolute left-0 top-0 z-10 ring-inset group-hover:ring-8 ring-primary opacity-0 group-hover:opacity-100 transition-all duration-150'>
@@ -219,9 +219,9 @@ export default function Dropdown({ menu, setMenu }) {
                 prices.
               </p>
             </div>
-          </div>
+          </Link>
 
-          <div className='grid grid-cols-2 group cursor-pointer items-center gap-2'>
+          <Link href={'/product/Interior-fixtures'} className='grid grid-cols-2 group cursor-pointer items-center gap-2'>
             <div className='relative  overflow-hidden '>
               <img src='../images/our-product-03.webp' alt='' className='w-full' />
               <div className=' overflow-hidden absolute left-0 top-0 z-10 ring-inset group-hover:ring-8 ring-primary opacity-0 group-hover:opacity-100 transition-all duration-150'>
@@ -235,7 +235,7 @@ export default function Dropdown({ menu, setMenu }) {
                 rapid pickup.
               </p>
             </div>
-          </div>
+          </Link>
         </div>
         <div className='absolute -bottom-4 right-[5%]'>
           <img src='../images/x-icon-02.webp' alt='' className='w-full scale-125' />

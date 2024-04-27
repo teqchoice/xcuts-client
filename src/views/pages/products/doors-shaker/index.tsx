@@ -8,11 +8,11 @@ import ThirdPortfolio from './thirdPortfolioSection'
 export default function index({ Data }: any) {
   return (
     <>
-      <PageIntroduction Data={{ title: 'Sliding doors', baner: 'images/sliding-doors-banner.webp' }} />
+      <PageIntroduction Data={{ title: 'DOOR SHAKER', baner: '../images/sliding-doors-banner.webp' }} />
       <IntroductionSection />
       <FirstPortfolio />
       <SecoundPortfolio />
-      <ThirdPortfolio />
+      {/* <ThirdPortfolio /> */}
     </>
   )
 }

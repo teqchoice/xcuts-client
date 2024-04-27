@@ -1,0 +1,44 @@
+import React from 'react'
+
+export default function Grooving(props: any) {
+  // console.log(Data)
+  return (
+    <>
+      <section>
+        <div className='px-4 sm:container'>
+          <div className=' flex justify-center items-center flex-col mt-20'>
+            <div className='text-center flex flex-col gap-3 max-w-[80%] text-black mb-5'>
+              <p className='text-3xl'>Gallery</p>
+              <h4 className='md:text-5xl text-4xl font-semibold mb-7'>Legrabox Applications:</h4>
+              <p className='text-base text-black'>
+                The Legrabox selection is as diverse as the idea of home itself. Different colours, heights, nominal
+                lengths, and load-bearing classifications are available for drawers, inner drawers, high fronted
+                pull-outs, and inner pull-outs.
+              </p>
+
+              <div className='flex gap-5 my-5 lg:my-10'>
+                <div className='flex flex-col items-center gap-3'>
+                  <img className=' w-full object-cover object-center' src='../images/alldecor.jpeg' alt='' />
+                </div>
+                <div className='flex flex-col items-center gap-3'>
+                  <img className=' w-full object-cover object-center' src='../images/alldecor.jpeg' alt='' />
+                </div>
+                <div className='flex flex-col items-center gap-3'>
+                  <img className=' w-full object-cover object-center' src='../images/alldecor.jpeg' alt='' />
+                </div>
+              </div>
+              <div className='flex justify-center'>
+                <a
+                  href='#'
+                  className='bg-black px-5 py-4 md:px-5 lg:px-9 md:py-4 font-medium text-xl text-white hover:bg-primary ease-in duration-200 flex items-center justify-between'
+                >
+                  Purchase Legrabox Now <i className='ri-arrow-right-s-line text-xl'></i>{' '}
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </>
+  )
+}

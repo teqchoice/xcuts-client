@@ -1,5 +1,5 @@
 import React from 'react'
-import SlidingDoors from '@/views/pages/sliding-doors'
+import SlidingDoors from '@/views/pages/products/sliding-doors'
 import Layout from '@/views/layout'
 
 // !! Fake DB
