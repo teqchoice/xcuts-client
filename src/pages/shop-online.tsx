@@ -1,6 +1,6 @@
 import Layout from '@/views/layout'
 import React from 'react'
-import ShopOnline from '@/views/pages/shop-online'
+import ShopOnline from '@/views/pages/shop-online/index'
 
 // !! Fake DB
 import FakeDb from '@/DB/content.json'
