@@ -54,13 +54,24 @@ export default function ServicesSection({ data }: any) {
                     alt=''
                   /> */}
                   <video
-                  className='h-[380px] md:h-[460px] lg:h-[596px] w-full object-cover object-center'
-                  src='../images/vid/Size-Cut Panels.mp4'
-                  width='100%'
-                  height='auto'
-                  autoPlay
-                  muted
-                ></video>
+                    className='h-[380px] md:h-[460px] lg:h-[596px] w-full object-cover object-center'
+                    src='../images/vid/Size-Cut Panels.mp4'
+                    width='100%'
+                    height='auto'
+                    onMouseEnter={e => {
+                      const video = e.currentTarget
+                      if (video.paused !== false) {
+                        video.play()
+                      }
+                    }}
+                    onMouseLeave={e => {
+                      const video = e.currentTarget
+                      if (video.paused === false) {
+                        video.pause()
+                      }
+                    }}
+                    muted
+                  ></video>
                 </div>
               </div>
             </div>
@@ -121,7 +132,18 @@ export default function ServicesSection({ data }: any) {
                   src='../images/vid/Edge-banding for Panels.mp4'
                   width='100%'
                   height='auto'
-                  autoPlay
+                  onMouseEnter={e => {
+                    const video = e.currentTarget
+                    if (video.paused !== false) {
+                      video.play()
+                    }
+                  }}
+                  onMouseLeave={e => {
+                    const video = e.currentTarget
+                    if (video.paused === false) {
+                      video.pause()
+                    }
+                  }}
                   muted
                 ></video>
               </div>
@@ -179,7 +201,18 @@ export default function ServicesSection({ data }: any) {
                     src='../images/vid/Using CNC.mp4'
                     width='100%'
                     height='auto'
-                    autoPlay
+                    onMouseEnter={e => {
+                      const video = e.currentTarget
+                      if (video.paused !== false) {
+                        video.play()
+                      }
+                    }}
+                    onMouseLeave={e => {
+                      const video = e.currentTarget
+                      if (video.paused === false) {
+                        video.pause()
+                      }
+                    }}
                     muted
                   ></video>
                 </div>
@@ -237,7 +270,18 @@ export default function ServicesSection({ data }: any) {
                   src='../images/vid/Main Banner.mp4'
                   width='100%'
                   height='auto'
-                  autoPlay
+                  onMouseEnter={e => {
+                    const video = e.currentTarget
+                    if (video.paused !== false) {
+                      video.play()
+                    }
+                  }}
+                  onMouseLeave={e => {
+                    const video = e.currentTarget
+                    if (video.paused === false) {
+                      video.pause()
+                    }
+                  }}
                   muted
                 ></video>
               </div>

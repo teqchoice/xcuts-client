@@ -11,14 +11,14 @@ export default function HeroSection({ data }: any) {
       title: 's1',
       value: '',
       link: '/',
-      filec: 'images/banner.gif'
+      filec: '../images/Home-Banner.mp4'
     },
     {
       id: '48',
       title: 's2',
       value: '',
       link: '/',
-      filec: 'images/banner.gif'
+      filec: '../images/vid/Main Banner.mp4'
     }
   ]
 
@@ -39,12 +39,24 @@ export default function HeroSection({ data }: any) {
                 className='w-full aspect-video md:aspect-auto object-cover md:max-h-[370px] lg:max-h-[450px] xl:max-h-[39rem] 2xl::max-h-[650px]'
               /> */}
               <video
-                src='../images/Home-Banner.mp4'
+                src={slide.filec}
                 width='100%'
                 height='auto'
                 autoPlay
                 muted
                 className='w-full aspect-video md:aspect-auto object-cover md:max-h-[370px] lg:max-h-[450px] xl:max-h-[39rem] 2xl::max-h-[650px]'
+                onMouseEnter={e => {
+                  const video = e.currentTarget
+                  if (video.paused !== false) {
+                    video.play()
+                  }
+                }}
+                onMouseLeave={e => {
+                  const video = e.currentTarget
+                  if (video.paused === false) {
+                    video.pause()
+                  }
+                }}
               ></video>
               {/* <video ref="vidRef" src="../images/Home-Banner.mp4" typeof="video/mp4"></video> */}
             </Fragment>
