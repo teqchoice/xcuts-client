@@ -56,13 +56,32 @@ export default function VideoSection(props: any) {
             className='embed-responsive pt-[55.5%] embed-responsive-16 by-9 relative w-full overflow-hidden border-solid border-8 border-white'
             // style={{paddingTop: "55.5%"}}
           >
-            <iframe
+            {/* <iframe
               className='embed-responsive-item absolute bottom-0 left-0 right-0 top-0 h-full w-full'
               src='https://www.youtube.com/embed/vlDzYIIOYmM?enablejsapi=1&amp;origin=https%3A%2F%2Fmdbootstrap.com'
               // allowfullscreen=""
               data-gtm-yt-inspected-2340190_699='true'
               id='240632615'
-            ></iframe>
+            ></iframe> */}
+            <video
+              className='embed-responsive-item absolute bottom-0 left-0 right-0 top-0 h-full w-full '
+              src='../images/vid/Main Banner.mp4'
+              width='100%'
+              height='auto'
+              onMouseEnter={e => {
+                const video = e.currentTarget
+                if (video.paused !== false) {
+                  video.play()
+                }
+              }}
+              onMouseLeave={e => {
+                const video = e.currentTarget
+                if (video.paused === false) {
+                  video.pause()
+                }
+              }}
+              muted
+            ></video>
           </div>
         </div>
       </section>
