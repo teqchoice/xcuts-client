@@ -7,29 +7,29 @@ export default function IntroductionSection(props: any) {
       <section className='section-one-stop py-10 md:py-20'>
         <div className='px-4 sm:container'>
           <div className='text-center px-1 overflow-hidden'>
-            <div className='text-2xl md:text-3xl mb-2'>Cut to Size Boards</div>
+            <div className='text-2xl md:text-3xl mb-2'>Boards Cut to Size</div>
             <div className='bg-black mx-6 md:mx-28 skew-y-[0] skew-x-[35deg] relative'>
               <div className='w-3 md:w-20 h-11 bg-primary absolute left-0 md:-left-24 bottom-0'></div>
               <div className='w-3 md:w-20 h-11 bg-primary absolute right-0 md:-right-24 top-0'></div>
               <h1 className='text-white text-xl/6 md:text-4xl font-bold -skew-x-[35deg] py-2 px-4'>
-                You can rely on our cutting service.
+                Get the best in board cutting service from us.
               </h1>
             </div>
             <div className='flex flex-col gap-y-3 text-black-1d mt-10'>
               <p>
-                Xcuts supplies and sizes a wide variety of plain and ornamental boards to satisfy the rising demand from
-                the building, furniture manufacturing and interior design sectors. The most recent global design trends
-                are represented in our board selections. We often cut to size a variety of materials on site, including
-                MDF, veneered, and melamine-faced chipboard (MFC).
+                XCuts supplies a massive variety of boards from trusted brands, including MDF and veneered boards from
+                Medite and Finsa, MFC boards from Egger and Kronospan, and Plywood boards from [brand name]. We ensure
+                that all boards that come into our workshop are thoroughly checked to verify that they are up to our
+                high standards and ready to cut to your specifications.
               </p>
               <p>
-                We can assist you whether you are an expert looking for cut-to-size panels for a custom project or a DIY
-                enthusiast looking for a single shelf. Full-size MDF and MFC boards can be difficult to handle, and
-                accurate cutting of them is impossible without the use of industrial-grade machinery. No matter the
-                sheet size, we clip boards on all four sides to produce a clean working edge with our cutting service,
-                and all subsequent cuts are accurate and nearly chip-free.
+                We have the experience and capabilities to provide you with a second-to-none board cut-to-size service
+                that consistently produces accurate panels, a clean edge, and a quick turnaround time.
               </p>
-              
+              <p>
+                Our board-cutting service is available to all— furniture makers, interior designers, builders, or even
+                DIYers looking to do their projects at home.
+              </p>
             </div>
             <div className='flex justify-center gap-4 mt-10'>
               <a

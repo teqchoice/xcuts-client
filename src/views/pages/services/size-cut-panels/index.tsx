@@ -13,7 +13,7 @@ import FAQ from './faq'
 export default function index({ Data }: any) {
   return (
     <>
-      <PageIntroduction Data={{ title: 'Size Cut Panels', baner: '../images/banner-1-showroom.jpeg' }} />
+      <PageIntroduction Data={{ title: 'Panels Cut to Size', baner: '../images/banner-1-showroom.jpeg' }} />
       <IntroductionSection Data={Data?.delivery} />
       <VideoSection Data={Data?.delivery} />
       {/* <DifferentTechnologiesSection Data={Data?.delivery} /> */}

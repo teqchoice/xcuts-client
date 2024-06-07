@@ -51,22 +51,18 @@ export default function CuttingMDF(props: any) {
           <div className=' flex justify-center items-center flex-col'>
             <div className='text-center flex flex-col gap-3 max-w-[80%] text-black mb-5'>
               {/* <p className='text-3xl'>Solid wood</p> */}
-              <h4 className='md:text-5xl text-4xl font-semibold mb-7'>Service for Cutting MDF Boards</h4>
+              <h4 className='md:text-5xl text-4xl font-semibold mb-7'>MDF Board Cutting Service</h4>
               <p className='text-base text-black'>
-                The most common type of board that our clients often request is Medium Density Fiberboard (MDF). Because
-                of its distinctive characteristics, MDF is widely utilised in the building and furniture industries for
-                a variety of purposes, including as wall panelling, furniture carcasses, doors, and general structural
-                components. We provide a wide selection of MDF sheets that are already cut, with boards that range in
-                thickness from 3mm to 50mm.
+                Medium-density fibreboard (MDF) is a popular material used in the furniture industry. Due to its smooth
+                service, durability, and ease of cutting, MDF can be used in a multitude of applications, such as MDF
+                shaker panelling, furniture carcasses, Shaker-style doors, and anywhere else that needs strong support.
               </p>
               <p className='text-base text-black'>
-                We provide and cut MDF boards from well-known manufacturers like Medite, Finsa, and Spanolux, many of
-                which have special qualities that help our customers meet the demands of different projects.
+                Our MDF cutting service includes cutting to size all types of MDF, with thicknesses ranging from 3mm to
+                50mm.
               </p>
 
-              <p className='text-base text-black'>
-                To learn more about the many MDF board kinds that we can cut for you, click the link below.
-              </p>
+              <p className='text-base text-black'>Learn more and shop for MDF here.</p>
             </div>
 
             <div className='pt-14 pb-32 text-center flex justify-center'>

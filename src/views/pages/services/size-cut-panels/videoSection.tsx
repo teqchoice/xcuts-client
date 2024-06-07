@@ -49,16 +49,13 @@ export default function VideoSection(props: any) {
       <section className='pt-20 relative before:bg-primary before:lg:h-[683px] before:md:h-[583px] before:sm:h-[383px] before:h-[303px] before:block before:w-full before:rounded-3xl before:absolute before:top-0'>
         <div className='px-4 sm:container'>
           <div className='text-center text-white mb-11 relative'>
-            <p className='lg:text-3xl text-2l'>This is how we do it.</p>
-            <h4 className='lg:text-5xl md:text-3xl text-2xl font-semibold'>
-              Explore Our Cutting Service in More Detail:
-            </h4>
+            <p className='lg:text-3xl text-2l'>How our board cutting service works.</p>
+            <h4 className='lg:text-5xl md:text-3xl text-2xl font-semibold'>A Clean Cut, Everytime</h4>
             <p className='mt-5'>
-              See how our saw operators load MDF and MFC boards so that our machines can cut them to size. The labels on
-              each board specify the dimensions of the panel cut and which sides require edging. Our saws receive
-              routine maintenance and cleaning at the conclusion of each working day. Our cutting-edge dust filtration
-              technology makes sure that the machine's moving components and surfaces are free of sawdust and other
-              contaminants.
+              Our saw operators load either MDF, MFC, or plywood on to the computer-programmed saw, ready to be cut.
+              After a particular panel is cut, a label is printed with the panel name, dimensions, and edgebanding
+              details that adhere to the panel. Our saws are well maintained and cleaned, and blades are replaced often,
+              to produce an accurate, clean cut every time.
             </p>
           </div>
           <div

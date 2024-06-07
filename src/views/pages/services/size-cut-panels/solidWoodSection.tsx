@@ -53,14 +53,19 @@ export default function SolidWoodSection(props: any) {
               {/* <p className='text-3xl'>Solid wood</p> */}
               <h4 className='md:text-5xl text-4xl font-semibold mb-7'>Grain Alignment</h4>
               <p className='text-base text-black'>
-                We may code a cutting plan when cutting boards so that it will permit the grain or pattern of the
-                melamine board or coated MDF to persist through many panels. Booking our grain-matching service, it is
-                advised and is more efficient if your project design includes numerous vertical doors with a
-                horizontally oriented grain or a stack of drawer fronts with a vertically oriented grain.
+                Your cutting list can be optimised to grain match the pattern to create a seamless design, which is
+                especially useful when working on larger projects.
               </p>
               <p className='text-base text-black'>
                 Several photos with doors or drawer fronts, that were cut using the grain-matching process to improve
                 the appearance of the completed product, can be found below.
+              </p>
+              <p className='text-base text-black'>
+                The grain matching service we provide works best with vertical panels, such as doors, but can also be
+                used in a stacked application for drawers.
+              </p>
+              <p className='text-base text-black'>
+                Grain matching can be used with our MFC, veneered MDF and plywood products.
               </p>
 
               <div className='flex gap-5 my-5 lg:my-10'>

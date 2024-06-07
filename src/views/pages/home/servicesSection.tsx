@@ -80,12 +80,12 @@ export default function ServicesSection({ data }: any) {
                 <h2
                   className='text-3xl md:text-4xl lg:text-5xl text-black font-bold'
                   dangerouslySetInnerHTML={{
-                    __html: 'Size-Cut Panels'
+                    __html: 'Furniture Boards Cut to Size'
                   }}
                 ></h2>
                 <div>
-                  Choose any ornamental board from our wide selection of decors, and we'll cut it into smaller-sized
-                  panels as you specify.
+                  Select any decor boards from highly-regarded panel board brands, and we’ll cut them to size to your
+                  exact specifications.
                 </div>
                 <div className='flex gap-4'>
                   <a
@@ -150,10 +150,10 @@ export default function ServicesSection({ data }: any) {
             </div>
             <div className='basis-[47.88%]  md:basis-[45%] lg:basis-[46%] xl:basis-[47%] 2xl:basis-[48%] flex items-center'>
               <div className='flex flex-col md:justify-center md:ml-auto gap-6 pb-16 py-8 px-4 md:max-w-[410px] lg:max-w-[567px] lg:pr-16'>
-                <h2 className='text-3xl md:text-4xl lg:text-5xl text-black font-bold'>Edge-banding for Panels</h2>
+                <h2 className='text-3xl md:text-4xl lg:text-5xl text-black font-bold'>Panel Edge Banding</h2>
                 <div>
-                  Give us a list of the panel edges you want to complete with edging tape, and we'll use equipment with
-                  PUR glue to take care of it for you.
+                  Easily select which panel needs to be edged; we can use the latest machinery and PUR glue to confirm
+                  the cleanest edge for your furniture panels.
                 </div>
                 <div className='flex gap-4'>
                   <a
@@ -220,10 +220,10 @@ export default function ServicesSection({ data }: any) {
             </div>
             <div className='basis-[47.88%]  md:basis-[45%] lg:basis-[46%] xl:basis-[47%] 2xl:basis-[48%] flex items-center'>
               <div className='flex flex-col md:justify-center gap-6 pb-16 py-8 px-4 md:max-w-[410px] lg:max-w-[567px] lg:pl-16'>
-                <h2 className='text-3xl md:text-4xl lg:text-5xl text-black font-bold'>Using CNC</h2>
+                <h2 className='text-3xl md:text-4xl lg:text-5xl text-black font-bold'>CNC Services</h2>
                 <div>
-                  Give your panel cutting, ornamental pattern routing, hole drilling, and grooving projects to our CNC
-                  cutting department.
+                  You can save time by using our CNC service hinge holes, shelf holes, panel grooving, and decorative
+                  patterns on your furniture boards.
                 </div>
                 <div className='flex gap-4'>
                   <a
@@ -288,10 +288,10 @@ export default function ServicesSection({ data }: any) {
             </div>
             <div className='basis-[47.88%] md:basis-[45%] lg:basis-[46%] xl:basis-[47%] 2xl:basis-[48%] flex items-center'>
               <div className='flex flex-col md:justify-center md:ml-auto gap-6 pb-16 py-8 px-4 md:max-w-[410px] lg:max-w-[567px] lg:pr-16'>
-                <h2 className='text-3xl md:text-4xl lg:text-5xl text-black font-bold'>Spray painting</h2>
+                <h2 className='text-3xl md:text-4xl lg:text-5xl text-black font-bold'>Spray Painting Service</h2>
                 <div>
-                  You can easily make an online reservation on our website to have us spray-coat your panels with a
-                  white primer, clear lacquer, or any other shade of paint.
+                  Personalise your MDF, plywood and veneer furniture boards further by spray coating with MDF primer,
+                  coloured paint, or clear lacquer.
                 </div>
                 <div className='flex gap-4'>
                   <a

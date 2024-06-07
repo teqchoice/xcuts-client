@@ -70,7 +70,8 @@ export default function ABSEdgebandSection(props: any) {
               <div className='flex flex-col md:justify-center md:ml-auto pb-16 py-8 px-8 md:max-w-[410px] lg:max-w-[567px]'>
                 <h2 className='text-2xl md:text-3xl text-black font-bold mb-6'>Computerised Cutting: </h2>
                 <p className='text-lg'>
-                  Instructing the operator on what to do and when, a computer efficiently directs the cutting process.
+                  Using your cutting list, our computerised saws optimise the cutting process to get the most out of
+                  your boards.
                 </p>
               </div>
             </div>
@@ -89,10 +90,9 @@ export default function ABSEdgebandSection(props: any) {
             </div>
             <div className='basis-[47.88%] flex items-center'>
               <div className='flex flex-col md:justify-center md:mr-auto pb-16 py-8 px-8 md:max-w-[410px] lg:max-w-[567px]'>
-                <h2 className='text-2xl md:text-3xl text-black font-bold mb-6'>Remarkable Accuracy: </h2>
+                <h2 className='text-2xl md:text-3xl text-black font-bold mb-6'>Accurate To 0.1mm </h2>
                 <p className='text-lg'>
-                  We are capable of cutting panels with a 0.1mm accuracy professionally, due to technology and the
-                  expertise of our operators.
+                  Our cutting capabilities can cut you panels to size within 0.1mm: accuracy at its best.
                 </p>
               </div>
             </div>
@@ -109,10 +109,9 @@ export default function ABSEdgebandSection(props: any) {
             </div>
             <div className='basis-[47.88%] flex items-center'>
               <div className='flex flex-col md:justify-center md:ml-auto pb-16 py-8 px-8 md:max-w-[410px] lg:max-w-[567px]'>
-                <h2 className='text-2xl md:text-3xl text-black font-bold mb-6'>Panel Labels:</h2>
+                <h2 className='text-2xl md:text-3xl text-black font-bold mb-6'>Panel labelling:</h2>
                 <p className='text-lg'>
-                  Each panel is labelled for your convenience and to make it simple to find it throughout subsequent
-                  machining processes.
+                  Each panel cut gets labelled with information, such as panel name, size, and edgebanding details.
                 </p>
               </div>
             </div>
@@ -131,9 +130,9 @@ export default function ABSEdgebandSection(props: any) {
             </div>
             <div className='basis-[47.88%] flex items-center'>
               <div className='flex flex-col md:justify-center md:mr-auto pb-16 py-8 px-8 md:max-w-[410px] lg:max-w-[567px]'>
-                <h2 className='text-2xl md:text-3xl text-black font-bold mb-6'>Quality Inspections: </h2>
+                <h2 className='text-2xl md:text-3xl text-black font-bold mb-6'>Quality Inspections:</h2>
                 <p className='text-lg'>
-                  Before the job leaves our factory, we inspect all cut and edged panels for quality.
+                  To ensure the highest quality, each cut panel is inspected before it reaches you.
                 </p>
               </div>
             </div>

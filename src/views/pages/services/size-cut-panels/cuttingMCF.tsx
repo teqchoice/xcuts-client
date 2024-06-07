@@ -51,20 +51,23 @@ export default function CuttingMCF(props: any) {
           <div className=' flex justify-center items-center flex-col'>
             <div className='text-center flex flex-col gap-3 max-w-[80%] text-black mb-5'>
               {/* <p className='text-3xl'>Solid wood</p> */}
-              <h4 className='md:text-5xl text-4xl font-semibold mb-7'>Service for Cutting MFC Boards</h4>
+              <h4 className='md:text-5xl text-4xl font-semibold mb-7'>MFC Board Cutting Service</h4>
               <p className='text-base text-black'>
-                MFC is a decorative furniture board that is available in a wide range of patterns, textures, and
-                finishes. Customers have the option of purchasing entire MFC sheets or submitting an online cutting list
-                for a board cutting and edging service. Our saws have double-blade technology to make sure that every
-                cut is seamless and nearly chip-free. We also swap the saw blades often during the day to ensure that
-                every board is cut precisely.
+                Melamine-Faced Chipboard (MFC) is a widely used furniture board that come in a number of design styles,
+                textures and surface finishes. MFC boards can be purchased with or with cutting; however we do recommend
+                using our cutting service to make your board more manageable, and paired with our edgebanding, your
+                panels will be ready for assembly.
               </p>
               <p className='text-base text-black'>
-                The majority of the melamine boards we provide come in thicknesses ranging from 8mm to 38 mm and may be
-                trimmed to size according to customer requirements in a few days.
+                Our saws use double-saw technology— one saw for scoring and the other for cutting, which produces a
+                clean, chip-free edge. Saw blades are switched out often to maintain a clean and precise cut. All boards
+                are trimmed around the edge by 5mm before the panels are cut to size.
               </p>
               <p className='text-base text-black'>
-                The most well-known brands of ornamental boards that we can cut are listed below.
+                MFC boards come in a range of sizes, from 8mm to 38mm, depending on the brand.
+              </p>
+              <p className='text-base text-black'>
+                <strong>We provide a large selection of MFC brands; here are a few of the most popular:</strong>
               </p>
 
               <div className='flex gap-5 my-5 lg:my-10'>
