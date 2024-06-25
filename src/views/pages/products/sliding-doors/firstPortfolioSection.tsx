@@ -22,8 +22,8 @@ export default function FirstPortfolio() {
               Modern and fashionable doorframe designs!
             </h2>
             <p className='text-lg'>
-              The twelve distinct frame styles available for sliding doors make them ideal for modern and contemporary
-              decor.
+              Our sliding wardrobe doors are available in XX distinct frame designs tailored for modern and contemporary
+              interiors.
             </p>
           </div>
         </div>
@@ -44,11 +44,11 @@ export default function FirstPortfolio() {
           <div className='flex flex-col md:justify-center md:mr-auto pb-16 py-8 px-8 md:max-w-[410px] lg:max-w-[567px]'>
             {/* <p className='text-xl md:text-3xl'>Aluminium profiles</p> */}
             <h2 className='text-3xl md:text-4xl text-black font-bold mb-6'>
-              Aluminium profiles are robust and long-lasting!
+              Aluminium Profiles for durability and lightness.
             </h2>
             <p className='text-lg'>
-              Aluminium profiles with thick walls that have been anodised for durability and colour stability. available
-              in six hues and five forms.
+              Durable aluminium profiles with thick walls, anodised for longevity and colour stability, are offered in
+              five shapes and six colours.
             </p>
           </div>
         </div>
@@ -66,10 +66,10 @@ export default function FirstPortfolio() {
         <div className='basis-[47.88%] flex items-center'>
           <div className='flex flex-col md:justify-center md:ml-auto pb-16 py-8 px-8 md:max-w-[410px] lg:max-w-[567px]'>
             {/* <p className='text-xl md:text-3xl'>Door panels</p> */}
-            <h2 className='text-3xl md:text-4xl text-black font-bold mb-6'>Door panels: Glass, Wood etc. </h2>
+            <h2 className='text-3xl md:text-4xl text-black font-bold mb-6'>Upteen combinations of materials.</h2>
             <p className='text-lg'>
-              Any type of décor from our decor collections is available for door panels, including coloured glass,
-              regular or tinted mirror, and pretty much anything.
+              Door panels are available in coloured glass, standard or tinted mirrors, or various decor options from our
+              collections, including Egger, Kronospan and XyloCleaf.
             </p>
           </div>
         </div>

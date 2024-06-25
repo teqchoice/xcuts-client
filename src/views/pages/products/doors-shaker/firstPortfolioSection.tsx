@@ -17,11 +17,11 @@ export default function FirstPortfolio() {
         </div>
         <div className='basis-[47.88%] flex items-center'>
           <div className='flex flex-col md:justify-center md:ml-auto pb-16 py-8 px-8 md:max-w-[410px] lg:max-w-[567px]'>
-            <p className='text-xl md:text-3xl'>"Shaker" Size Dimensions</p>
-            <h2 className='text-3xl md:text-4xl text-black font-bold mb-6'>customised to meet your needs!</h2>
+            <p className='text-xl md:text-3xl'>Any size Shaker Doors</p>
+            <h2 className='text-3xl md:text-4xl text-black font-bold mb-6'>Custom made to order</h2>
             <p className='text-lg'>
-              We can create "Shakers" that are properly squared and precisely proportioned up to 2.7 metres tall and 0.9
-              metres wide.
+              Made perfectly squared and precise for an ideal fit, our shakers have a maximum height of xx and width of
+              xx.
             </p>
           </div>
         </div>
@@ -40,11 +40,13 @@ export default function FirstPortfolio() {
         </div>
         <div className='basis-[47.88%] flex items-center'>
           <div className='flex flex-col md:justify-center md:mr-auto pb-16 py-8 px-8 md:max-w-[410px] lg:max-w-[567px]'>
-            <p className='text-xl md:text-3xl'>Door panels: </p>
-            <h2 className='text-3xl md:text-4xl text-black font-bold mb-6'>One, maybe two, three or four?</h2>
+            <p className='text-xl md:text-3xl'>Multiple door partitions.</p>
+            <h2 className='text-3xl md:text-4xl text-black font-bold mb-6'>
+              Get up to four partitions on your doors.{' '}
+            </h2>
             <p className='text-lg'>
-              When you can divide your doors into two, three, or four panels to better fit your design, why choose a
-              single panel?
+              Shaker door partitions are a great way to customise your doors further, maintain a traditional look, and
+              add further strength to longer doors.
             </p>
           </div>
         </div>
@@ -61,10 +63,11 @@ export default function FirstPortfolio() {
         </div>
         <div className='basis-[47.88%] flex items-center'>
           <div className='flex flex-col md:justify-center md:ml-auto pb-16 py-8 px-8 md:max-w-[410px] lg:max-w-[567px]'>
-            <p className='text-xl md:text-3xl'>Spray-finish: </p>
-            <h2 className='text-3xl md:text-4xl text-black font-bold mb-6'>Show off your individuality! </h2>
+            <p className='text-xl md:text-3xl'>Shaker door spray painting</p>
+            <h2 className='text-3xl md:text-4xl text-black font-bold mb-6'>Choose a colour that matches your style.</h2>
             <p className='text-lg'>
-              Have fun with your doors and get them satin- or matte-finished spray-painted in any colour.
+              Adding a splash of colour to your Shaker doors is a perfect way to give them a perfect finish and protect
+              your new doors further.
             </p>
           </div>
         </div>

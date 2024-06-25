@@ -5,22 +5,21 @@ export default function IntroductionSection() {
     <section className='section-one-stop py-10 md:py-20'>
       <div className='px-4 sm:container'>
         <div className='text-center px-1 overflow-hidden'>
-          <div className='text-2xl md:text-3xl mb-2'>Shaker-Design Doors</div>
+          <div className='text-2xl md:text-3xl mb-2'>Enhance your home with timeless elegance.</div>
           <div className='bg-black mx-6 md:mx-28 skew-y-[0] skew-x-[35deg] relative'>
             <div className='w-3 md:w-20 h-11 bg-primary absolute left-0 md:-left-24 bottom-0'></div>
             <div className='w-3 md:w-20 h-11 bg-primary absolute right-0 md:-right-24 top-0'></div>
             <h1 className='text-white text-xl/6 md:text-4xl font-bold -skew-x-[35deg] py-2 px-4'>
-              Bring classic charm to your house!
+              Order your made-to-measure shaker doors
             </h1>
           </div>
           <div className='flex flex-col gap-y-3 text-black-1d mt-10'>
             <p>
-              Xcuts now manufactures five-piece systems used to construct traditional Shaker-style doors and drawer
-              fronts in custom sizes. These systems are painstakingly designed to achieve absolutely square angles. The
-              "Shakers" may be carefully spray-painted in any colour of your choice or primed for a hand-finished
-              alternative. They are made from 22mm moisture resistant MDF for the frame and normal 9mm MDF for the
-              inset. The Blum hinges and drawer systems we provide pair nicely with the doors and drawer fronts to
-              create the ideal finish.
+              Introducing our custom-made Shaker-style doors and drawer fronts, built in bespoke sizes with meticulous
+              attention to detail using the traditional five-piece construction for precise angles. Made using the best
+              22mm moisture-resistant MDF for the frame and 9mm MDF for the inset, these "Shaker" designs can be
+              expertly spray-painted in your preferred colour or primed for a hand-finished look. We also drill hinge
+              holes for your convenience, completing your Shaker door, ready for installation.
             </p>
           </div>
           {/* <div className='flex justify-center gap-4 mt-10'>
