@@ -40,25 +40,33 @@ export default function AboutSection({ data }: any) {
             <div className='w-3 md:w-20 h-11 bg-primary absolute right-0 md:-right-24 top-0'></div>
             <h1
               className='text-white text-lg md:text-xl lg:text-3xl xl:text-5xl font-semibold -skew-x-[35deg] py-3 uppercase px-5'
-              dangerouslySetInnerHTML={{
-                __html: select(
-                  data[0],
-                  item => item?.value,
-                  item => item?.title == 'ONE-STOP'
-                )[0]
-              }}
-            ></h1>
+              // dangerouslySetInnerHTML={{
+              //   __html: select(
+              //     data[0],
+              //     item => item?.value,
+              //     item => item?.title == 'ONE-STOP'
+              //   )[0]
+              // }}
+            >
+              XCuts: Trustworthy, Efficient & Fast.
+            </h1>
           </div>
           <div
             className='flex flex-col gap-y-3 mt-10 text-lg'
-            dangerouslySetInnerHTML={{
-              __html: select(
-                data[0],
-                item => item?.value,
-                item => item?.title == 'content'
-              )[0]
-            }}
-          ></div>
+            // dangerouslySetInnerHTML={{
+            //   __html: select(
+            //     data[0],
+            //     item => item?.value,
+            //     item => item?.title == 'content'
+            //   )[0]
+            // }}
+          >
+            Xcuts offers a wide range of services and products to meet the needs of bespoke carpenters, interior
+            designers, general builders, and DIYers. We are purveyors of the highest-quality furniture boards available
+            and are committed to providing the best solutions for furniture panel cut-to-size, edgebanding, spray
+            painting, and CNC milling.
+          </div>
+          <div className='flex flex-col gap-y-3 mt-10 text-lg'>Get in touch today to learn more about us.</div>
         </div>
       </div>
       <Modal modal={modal} setModal={setModal} data={data[0]} />

@@ -68,7 +68,7 @@ export default function ABSEdgebandSection(props: any) {
             </div>
             <div className='basis-[47.88%] flex items-center'>
               <div className='flex flex-col md:justify-center md:ml-auto pb-16 py-8 px-8 md:max-w-[410px] lg:max-w-[567px]'>
-                <h2 className='text-2xl md:text-3xl text-black font-bold mb-6'>Computerised Cutting: </h2>
+                <h2 className='text-2xl md:text-3xl text-black font-bold mb-6'>Computerised Cutting : </h2>
                 <p className='text-lg'>
                   Using your cutting list, our computerised saws optimise the cutting process to get the most out of
                   your boards.
@@ -90,7 +90,7 @@ export default function ABSEdgebandSection(props: any) {
             </div>
             <div className='basis-[47.88%] flex items-center'>
               <div className='flex flex-col md:justify-center md:mr-auto pb-16 py-8 px-8 md:max-w-[410px] lg:max-w-[567px]'>
-                <h2 className='text-2xl md:text-3xl text-black font-bold mb-6'>Accurate To 0.1mm </h2>
+                <h2 className='text-2xl md:text-3xl text-black font-bold mb-6'>Accurate To 0.1mm :</h2>
                 <p className='text-lg'>
                   Our cutting capabilities can cut you panels to size within 0.1mm: accuracy at its best.
                 </p>
@@ -109,7 +109,7 @@ export default function ABSEdgebandSection(props: any) {
             </div>
             <div className='basis-[47.88%] flex items-center'>
               <div className='flex flex-col md:justify-center md:ml-auto pb-16 py-8 px-8 md:max-w-[410px] lg:max-w-[567px]'>
-                <h2 className='text-2xl md:text-3xl text-black font-bold mb-6'>Panel labelling:</h2>
+                <h2 className='text-2xl md:text-3xl text-black font-bold mb-6'>Panel labelling :</h2>
                 <p className='text-lg'>
                   Each panel cut gets labelled with information, such as panel name, size, and edgebanding details.
                 </p>
@@ -130,7 +130,7 @@ export default function ABSEdgebandSection(props: any) {
             </div>
             <div className='basis-[47.88%] flex items-center'>
               <div className='flex flex-col md:justify-center md:mr-auto pb-16 py-8 px-8 md:max-w-[410px] lg:max-w-[567px]'>
-                <h2 className='text-2xl md:text-3xl text-black font-bold mb-6'>Quality Inspections:</h2>
+                <h2 className='text-2xl md:text-3xl text-black font-bold mb-6'>Quality Inspections :</h2>
                 <p className='text-lg'>
                   To ensure the highest quality, each cut panel is inspected before it reaches you.
                 </p>

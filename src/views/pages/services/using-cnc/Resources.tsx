@@ -53,13 +53,10 @@ export default function Resources(props: any) {
               <p className='text-3xl'>With our CNC service, the possibilities are endless!</p>
               <h4 className='md:text-5xl text-4xl font-semibold mb-7'>Our Resources:</h4>
               <p className='text-base text-black'>
-                We provide CNC services for all of the items we offer for sale at Xcuts. On various grades, thicknesses,
-                and types of wood materials, including MDF, plywood, MFC, and veneered MDF, our CNC machine employs
-                specialised routing tools.
-              </p>
-              <p className='text-base text-black'>
-                Visit our entire selection of goods and decorations right now, then get in touch with us to discuss
-                starting your CNC project right now.
+                Our CNC service is available for all products offered at XCUTS. Our CNC machine utilises specialised
+                routing tools to work with various grades, thicknesses, and types of wood products, including MDF,
+                plywood, MFC, and veneered MDF. Explore our complete range of products and decors, and contact us to
+                start your CNC project today.
               </p>
 
               <div className='flex gap-5 my-5 lg:my-10'>
@@ -68,8 +65,9 @@ export default function Resources(props: any) {
                     <img className=' w-full object-cover object-center' src='../images/alldecor.jpeg' alt='' />
                     <h4 className='font-bold text-lg'>MDF</h4>
                     <p>
-                      Using our CNC service, MDF is a common material to be cut and grooved. We offer a fantastic range
-                      of MDF for every job, and the simple, smooth panel is the ideal surface to work on.
+                      MDF is highly favoured for cutting and grooving with our CNC service. Its plain, smooth surface
+                      makes it ideal for intricate work, and we offer a superb selection of MDF options tailored to
+                      every project's needs.
                     </p>
                   </div>
                   <a
@@ -84,8 +82,8 @@ export default function Resources(props: any) {
                     <img className=' w-full object-cover object-center' src='../images/alldecor.jpeg' alt='' />
                     <h4 className='font-bold text-lg'>Plywood</h4>
                     <p>
-                      We provide plywood cutting using our CNC machine, which produces flawless edges and reveals the
-                      plywood's cross grain to create a captivating appearance.
+                      Our CNC machine is perfect for plywood cutting, delivering smooth edges that showcase the
+                      cross-grain for a visually captivating effect.
                     </p>
                   </div>
                   <a
@@ -98,11 +96,11 @@ export default function Resources(props: any) {
                 <div className='flex flex-col items-center justify-between gap-3'>
                   <div>
                     <img className=' w-full object-cover object-center' src='../images/alldecor.jpeg' alt='' />
-                    <h4 className='font-bold text-lg'>Melamine-faced chipboard (MFC)</h4>
+                    <h4 className='font-bold text-lg'>MFC</h4>
                     <p>
-                      We are suppliers of some of the most sought-after MFC in the London region. We offer boards made
-                      by Egger, XyloCleaf, Kronospan, and many more manufacturers. View our whole selection of MFC
-                      boards for décor.
+                      We are renowned suppliers of high-demand melamine-faced chipboard (MFC) in the London region. Our
+                      selection includes boards from Egger, XyloCleaf, Kronospan, and other leading brands. Explore our
+                      comprehensive selection of MFC boards in various décors today.
                     </p>
                   </div>
                   <a
@@ -117,9 +115,9 @@ export default function Resources(props: any) {
                     <img className=' w-full object-cover object-center' src='../images/alldecor.jpeg' alt='' />
                     <h4 className='font-bold text-lg'>Veneered Boards</h4>
                     <p>
-                      Upgrade your furniture with veneered boards that have a core made of MDF or plywood and a genuine
-                      wood veneer like oak or walnut. If you want a sophisticated finish while still being able to deal
-                      with it easily, veneered boards are a fantastic option to other types of wood.
+                      Enhance your furniture with a natural wood veneer like oak or walnut combined with an MDF or
+                      plywood core. Veneered boards offer a sophisticated, elegant, practical finish for your
+                      woodworking projects.
                     </p>
                   </div>
                   <a

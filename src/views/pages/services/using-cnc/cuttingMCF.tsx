@@ -50,13 +50,17 @@ export default function CuttingMCF(props: any) {
         <div className='px-4 sm:container'>
           <div className=' flex justify-center items-center flex-col mt-10'>
             <div className='text-center flex flex-col gap-3 max-w-[80%] text-black mb-5'>
-              <p className='text-3xl'>Forming of Handles</p>
-              <h4 className='md:text-5xl text-4xl font-semibold mb-7'>Maximum effectiveness in a simple design.</h4>
+              <p className='text-3xl'>Handles Made With CNC</p>
+              <h4 className='md:text-5xl text-4xl font-semibold mb-7'>
+                A sleek but functional look to drawers and doors.
+              </h4>
               <p className='text-base text-black'>
-                Your panels might benefit from adding subtle elements that the CNC machine can provide for both
-                aesthetic appeal and practicality. A few of our customers' favourite handles created using our CNC
-                service are shown here; however, if you have a handle design in mind, get in contact to learn how we can
-                support you.
+                The CNC machine can add intricate details to your panels, enhancing both style and functionality.
+                Additionally, handleless doors and drawers offer a sleek, modern look and are easier to clean and
+                maintain. If you have a handle design in mind, get in touch to see how we can help.
+              </p>
+              <p className='text-base text-black'>
+                Below are some of our customers' favourite handles crafted with our CNC cutting service.
               </p>
 
               <div className='flex gap-5 my-5 lg:my-10'>
@@ -79,12 +83,15 @@ export default function CuttingMCF(props: any) {
               </div>
 
               <p className='text-base text-black'>
-                Drilling Holes- Precise and Efficient.
+                Hole Drilling
                 <br />
-                We may drill hinges and shelf slots into your panels for your convenience, which can be a tedious
-                operation requiring accuracy and close attention to detail. For instance, our CNC machine can chip-free
-                drill 100 shelf holes in 15 minutes. Using our user-friendly online tool, you can quickly define the
-                size, depth, and positions of the holes.
+                Save time, effort and mistakes with our panel hole drilling service.
+                <br />
+                For your convenience, we can drill hinge and shelf holes into your panels, which demands precision and
+                attention to detail. Our CNC machine can drill 100 chip-free shelf holes in a few minutes. Using our
+                easy-to-use online tool, you can easily specify hole size, depth, and locations. Utilising a CNC machine
+                ensures greater accuracy and flexibility in hole placements, allowing for perfect alignment and
+                customisation to suit your specific needs.
               </p>
             </div>
           </div>

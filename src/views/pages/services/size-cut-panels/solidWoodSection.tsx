@@ -57,8 +57,8 @@ export default function SolidWoodSection(props: any) {
                 especially useful when working on larger projects.
               </p>
               <p className='text-base text-black'>
-                Several photos with doors or drawer fronts, that were cut using the grain-matching process to improve
-                the appearance of the completed product, can be found below.
+                The grain matching service we provide works best with vertical panels, such as doors, but can also be
+                used in a stacked application for drawers.
               </p>
               <p className='text-base text-black'>
                 The grain matching service we provide works best with vertical panels, such as doors, but can also be

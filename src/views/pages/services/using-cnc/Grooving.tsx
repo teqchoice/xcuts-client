@@ -50,13 +50,13 @@ export default function Grooving(props: any) {
         <div className='px-4 sm:container'>
           <div className=' flex justify-center items-center flex-col mt-20'>
             <div className='text-center flex flex-col gap-3 max-w-[80%] text-black mb-5'>
-              <p className='text-3xl'>Panel Grooving</p>
-              <h4 className='md:text-5xl text-4xl font-semibold mb-7'>Useful, Ornamental, or both?</h4>
+              <p className='text-3xl'>Decorative CNC Panels</p>
+              <h4 className='md:text-5xl text-4xl font-semibold mb-7'>Bring your imaginative designs to life.</h4>
               <p className='text-base text-black'>
-                Whatever your demands, the CNC machine can carve recesses into MDF, plywood, or MFC in a variety of
-                lengths, depths, and widths. You may add a profile to your grooves by cutting them with variously shaped
-                routing bits, such as a V-groove or a square channel. Here are some methods for cutting grooves and
-                recesses with our CNC service.
+                Our CNC service can route decorative patterns, typically in MDF panels. This type of fretwork panelling
+                allows you to infuse your designs with personality, adding a unique touch to your home or office.
+                Decorative panels effectively uplift interiors, creating eye-catching focal points and enhancing the
+                overall aesthetic. Below are some examples of how decorative panels can transform your space.
               </p>
 
               <div className='flex gap-5 my-5 lg:my-10'>

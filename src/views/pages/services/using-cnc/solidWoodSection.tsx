@@ -51,16 +51,12 @@ export default function SolidWoodSection(props: any) {
           <div className=' flex justify-center items-center flex-col'>
             <div className='text-center  max-w-[80%] text-black mb-5 mt-20'>
               <p className='text-3xl'>The Key Points</p>
-              <h4 className='md:text-5xl text-4xl font-semibold mb-7'>Cutting Shapes: Every Size and Form!</h4>
+              <h4 className='md:text-5xl text-4xl font-semibold mb-7'>Cut Shapes in Wood</h4>
               <p className='text-base text-black'>
-                You have countless options when it comes to moulding your furniture thanks to our CNC shape-cutting
-                service. Our shape-cutting service may be used to produce angled cuts for distinctive storage solutions,
-                add a curve to a tabletop, or even generate many components of various decors that you can combine to
-                build a beautiful piece of furniture.
-              </p>
-              <p className='text-base text-black'>
-                Several photos with doors or drawer fronts, that were cut using the grain-matching process to improve
-                the appearance of the completed product, can be found below.
+                Our CNC cutting service opens up a world of possibilities for customising your furniture. Whether you
+                need precise angle cuts for innovative storage solutions, want to add a graceful curve to a plywood or
+                MDF tabletop, or are looking to craft multiple components for a unique decor ensemble, our CNC cutting
+                service can help you bring your creative vision to life.
               </p>
             </div>
           </div>

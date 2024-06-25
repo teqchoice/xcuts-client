@@ -68,11 +68,14 @@ export default function ABSEdgebandSection(props: any) {
             </div>
             <div className='basis-[47.88%] flex items-center'>
               <div className='flex flex-col md:justify-center md:ml-auto pb-16 py-8 px-8 md:max-w-[410px] lg:max-w-[567px]'>
-                <p className='text-2xl'>Regardless of the Colour</p>
-                <h2 className='text-2xl md:text-3xl text-black font-bold mb-6'>We can Match It!</h2>
+                <p className='text-2xl'>We colour match.</p>
+                <h2 className='text-2xl md:text-3xl text-black font-bold mb-6'>
+                  Choose from infinite colour possibilities.
+                </h2>
                 <p className='text-lg'>
-                  All we need is the name of the paint system or brand colour, whether it be RAL, NCS, Pantone, Farrow &
-                  Ball, Zoffany, Dulux, or any other well-known one.{' '}
+                  We can match colours from popular paint systems and brands such as RAL, NCS, Pantone, Farrow & Ball,
+                  Zoffany, Dulux, or any other well-known paint system or brand. Just provide us with the colour name,
+                  and we'll ensure a precise match for your project.
                 </p>
               </div>
             </div>
@@ -92,9 +95,10 @@ export default function ABSEdgebandSection(props: any) {
             <div className='basis-[47.88%] flex items-center'>
               <div className='flex flex-col md:justify-center md:mr-auto pb-16 py-8 px-8 md:max-w-[410px] lg:max-w-[567px]'>
                 <p className='text-2xl'>White Primer</p>
-                <h2 className='text-2xl md:text-3xl text-black font-bold mb-6'>When Painting by Hand</h2>
+                <h2 className='text-2xl md:text-3xl text-black font-bold mb-6'>For hand-painted finish.</h2>
                 <p className='text-lg'>
-                  Why spend your time priming it yourself when we can prime it for you and have it ready for a topcoat?
+                  You can save time by not having to prime on-site. By letting us handle the priming for you, you can
+                  have your panels professionally primed and ready for a finishing coat.
                 </p>
               </div>
             </div>
@@ -135,10 +139,12 @@ export default function ABSEdgebandSection(props: any) {
             <div className='basis-[47.88%] flex items-center'>
               <div className='flex flex-col md:justify-center md:mr-auto pb-16 py-8 px-8 md:max-w-[410px] lg:max-w-[567px]'>
                 <p className='text-2xl'>Clear Lacquer</p>
-                <h2 className='text-2xl md:text-3xl text-black font-bold mb-6'>for Woodwork Lovers!</h2>
+                <h2 className='text-2xl md:text-3xl text-black font-bold mb-6'>
+                  For the perfect plywood veneer finish.
+                </h2>
                 <p className='text-lg'>
-                  Apply many coats of clear lacquer to preserve and accentuate the inherent beauty of the wood. PU
-                  finish options include both satin and matte.
+                  Protect and enrich the natural beauty of wood with multiple coats of clear lacquer, offered in matte
+                  or satin PU finishes.
                 </p>
               </div>
             </div>

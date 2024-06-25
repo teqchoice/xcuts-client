@@ -6,15 +6,22 @@ export default function HeroSection({ data }: any) {
   // console.log(data)
 
   const defaultSlide = [
-    {
-      id: '47',
-      title: 's1',
-      value: '',
-      link: '/',
-      filec: '../images/Home-Banner.mp4'
-    },
+    // {
+    //   id: '47',
+    //   title: 's1',
+    //   value: '',
+    //   link: '/',
+    //   filec: '../images/Home-Banner.mp4'
+    // },
     {
       id: '48',
+      title: 's2',
+      value: '',
+      link: '/',
+      filec: '../images/vid/Main Banner.mp4'
+    },
+    {
+      id: '49',
       title: 's2',
       value: '',
       link: '/',

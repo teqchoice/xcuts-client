@@ -18,9 +18,9 @@ export default function IntroductionSection(props: any) {
             <div className='flex flex-col gap-y-3 text-black-1d mt-10'>
               <p>
                 XCuts supplies a massive variety of boards from trusted brands, including MDF and veneered boards from
-                Medite and Finsa, MFC boards from Egger and Kronospan, and Plywood boards from [brand name]. We ensure
-                that all boards that come into our workshop are thoroughly checked to verify that they are up to our
-                high standards and ready to cut to your specifications.
+                Medite and Finsa, MFC (Melamine-Faced Chipboard) boards from Egger and Kronospan, and Plywood boards
+                from brand. We ensure that all boards that come into our workshop are thoroughly checked to verify that
+                they are up to our high standards and ready to cut to your specifications.
               </p>
               <p>
                 We have the experience and capabilities to provide you with a second-to-none board cut-to-size service

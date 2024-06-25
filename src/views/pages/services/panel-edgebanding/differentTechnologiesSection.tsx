@@ -65,12 +65,10 @@ export default function DifferentTechnologiesSection(props: any) {
             <div className='flex flex-col md:justify-center md:ml-auto pb-16 py-8 px-4 md:max-w-[410px] lg:max-w-[567px] lg:pr-16'>
               <h2 className='text-2xl md:text-3xl text-black font-bold mb-6'>PUR glue</h2>
               <p className='text-lg'>
-                Traditional hot melts, used in budget situations, Edge Banders are considerably different from PUR Glue,
-                Polyurethane Reactive Hot Melt Glue. When used, it creates a strong connection and immediately achieves
-                Edge Band adhesion. Additionally, the bond has great flexibility, and can sustain a wider range of
-                temperatures, also being impervious to water. This glue choice is excellent for applications that must
-                withstand a variety of climatic conditions. Additionally, it takes half as much glue application as
-                standard hot melt adhesives, resulting in a thinner glue line and a better-looking finish.{' '}
+                Polyurethane Reactive (PUR) glue is a type of adhesive that is heated until it melts, making it perfect
+                for edgebanding purposes. Not only does it create a strong bond between panel and edgeband, but PUR is
+                also known not to wear off when in contact with water. PUR glue for edgebanding is considered the best
+                way to protect your panel edges and create a seamless join.
               </p>
             </div>
           </div>
@@ -89,13 +87,12 @@ export default function DifferentTechnologiesSection(props: any) {
           </div>
           <div className='basis-[47.88%] flex items-center'>
             <div className='flex flex-col md:justify-center md:mr-auto pb-16 py-8 px-4 md:max-w-[410px] lg:max-w-[567px] lg:pl-16'>
-              <h2 className='text-2xl md:text-3xl text-black font-bold mb-6'>Utilising Lasers</h2>
+              <h2 className='text-2xl md:text-3xl text-black font-bold mb-6'>Laser Bonding</h2>
               <p className='text-lg'>
-                The Edge Band and board may be firmly joined without glue and with no discernible connection line thanks
-                to cutting-edge laser bonding technology. The standard gluing component of the Edge Banding machine has
-                been replaced by a very effective near-infrared laser. The board's ornamental layer melts to the bottom
-                of the bands unique design, permanently joining the parts. It makes it possible to form an undetectable
-                bond without using any glue at all. The bond is not as strong as PUR glue, unfortunately.
+                Alternative to PUR glue, another popular bonding method for edgebanding to the panel is to use laser
+                technology. Without any type of glue, a heat laser is used to slightly melt the edgeband, which is then
+                applied to the panel’s edge. The main advantage of using laser edgebanding is that there is no visible
+                line between the panel and the edgebanding; however, the downside is that the bond is slightly inferior.
               </p>
             </div>
           </div>

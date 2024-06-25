@@ -70,9 +70,10 @@ export default function ABSEdgebandSection(props: any) {
             </div>
             <div className='basis-[47.88%] flex items-center'>
               <div className='flex flex-col md:justify-center md:ml-auto pb-16 py-8 px-8 md:max-w-[410px] lg:max-w-[567px]'>
-                <h2 className='text-2xl md:text-3xl text-black font-bold mb-6'>Wall Panels </h2>
+                <h2 className='text-2xl md:text-3xl text-black font-bold mb-6'>Wall Features</h2>
                 <p className='text-lg'>
-                  As an alternative to conventional wall panelling, our CNC machine can carve out elaborate designs.
+                  Our CNC machine can create complex and unique designs that are excellent alternatives to traditional
+                  wall features.
                 </p>
               </div>
             </div>
@@ -92,14 +93,19 @@ export default function ABSEdgebandSection(props: any) {
             <div className='basis-[47.88%] flex items-center'>
               <div className='flex flex-col md:justify-center md:mr-auto pb-16 py-8 px-8 md:max-w-[410px] lg:max-w-[567px]'>
                 <h2 className='text-2xl md:text-3xl text-black font-bold mb-6'>Room dividers </h2>
-                <p className='text-lg'>Use a screen to divide a space while preserving a sense of openness.</p>
+                <p className='text-lg'>
+                  Room dividers are ideal for open-plan layouts, providing separation and a sense of continuity while
+                  allowing light to flow through, maintaining an open and airy feel.
+                </p>
               </div>
             </div>
           </div>
           <div className='text-center text-black mb-11 mt-20'>
             <p className='text-base text-black'>
-              Fretwork Furniture: Use our CNC cutting service to transform common furniture, such drawer fronts and
-              wardrobe doors, into something more distinctive.
+              Fretwork furniture is great because it adds intricate, eye-catching details that enhance the aesthetic
+              appeal of any space, making it truly unique and stylish. Additionally, its versatile designs can
+              complement a wide range of interior styles, from traditional to contemporary, providing both elegance and
+              individuality.
             </p>
           </div>
         </div>
