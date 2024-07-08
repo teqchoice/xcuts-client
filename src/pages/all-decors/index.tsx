@@ -7,10 +7,10 @@ import axios from 'axios'
 
 export default function PDecorCollections({ data, layout }: any) {
   console.log('data')
-  console.log(data)
+  
   return (
     <Layout data={layout}>
-      <DecorCollections Data={FakeDb} />
+      <DecorCollections Data={data} />
     </Layout>
   )
 }
