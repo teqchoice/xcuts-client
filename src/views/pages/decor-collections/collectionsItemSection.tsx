@@ -80,8 +80,8 @@ export default function CollectionsItemSection({ Data, Brand }: any) {
   return (
     <>
       <div className='grid md:grid-cols-2 gap-x-10 gap-y-10 pb-20'>
-        <CollectionItem />
-        {/* <ProductItem /> */}
+        {/* <CollectionItem /> */}
+        <ProductItem />
       </div>
     </>
   )

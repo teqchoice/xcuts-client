@@ -34,7 +34,7 @@ export default function Dtails() {
     let config = {
       method: 'get',
       maxBodyLength: Infinity,
-      url: 'https://api.xcuts.co.uk/api/user/get-user/',
+      url: 'https://api.xcuts.co.uk/api/user/get-user',
       headers: {
         Authorization: `Bearer ${token}`
       }
@@ -59,7 +59,7 @@ export default function Dtails() {
     let config = {
       method: 'put',
       maxBodyLength: Infinity,
-      url: 'https://api.xcuts.co.uk/api/user/customer-user-update/',
+      url: 'https://api.xcuts.co.uk/api/user/customer-user-update',
       headers: {
         'Content-Type': 'application/json',
         Authorization: `Bearer ${token}`
