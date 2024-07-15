@@ -6,7 +6,7 @@ import FakeDb from '@/DB/content.json'
 import axios from 'axios'
 
 export default function PDecorCollections({ data, Brand, layout }: any) {
-  console.log(data)
+  // console.log(data)
 
   return (
     <Layout data={layout}>
@@ -16,7 +16,7 @@ export default function PDecorCollections({ data, Brand, layout }: any) {
 }
 
 export const getServerSideProps = async (context: any) => {
-  console.log('+++++++++++++++++', context.query)
+  // console.log('+++++++++++++++++', context.query)
 
   try {
     const parametr = context.query

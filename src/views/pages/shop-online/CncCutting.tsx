@@ -1,5 +1,7 @@
 import { token } from '@/extensions/redux/api/auth'
+import { Lock } from '@icon-park/react'
 import axios from 'axios'
+import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
 import toast from 'react-hot-toast'
 
@@ -93,7 +95,16 @@ export default function CNCCutting() {
         ></textarea>
       </div>
       <div className='col-span-2 items-center justify-center flex'>
-        {loading ? (
+        {!token ? (
+          <Link
+            href={'/login'}
+            className='flex whitespace-nowrap text-base font-semibold w-48 text-black border border-primary lg:py-4 lg:px-6 md:py-4 md:px-3 py-4 px-6 items-center text-center hover:bg-primary hover:text-white transition-all'
+            // onClick={login}
+          >
+            <Lock className='cursor-pointer' theme='outline' strokeWidth={2} size='35' />
+            Must be login
+          </Link>
+        ) : loading ? (
           <button className='w-48 flex justify-center items-center border bg-primary border-primary lg:py-4 lg:px-6 md:py-4 md:px-3 py-4 px-6  text-center hover:bg-primary hover:text-white transition-all'>
             <svg className='animate-spin h-7 w-7 border-t-4 border-b-4 rounded-full' viewBox='0 0 24 24'></svg>
           </button>
