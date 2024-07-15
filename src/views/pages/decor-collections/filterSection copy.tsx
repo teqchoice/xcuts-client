@@ -46,7 +46,7 @@ export default function FilterSection(props: any) {
     setTexture(router.query.Texture)
 
     // router.push(router)
-  }, [])
+  }, [router.query])
 
   // switch case for find wich filter and then set value
   function setvalue(name: string, value: string) {

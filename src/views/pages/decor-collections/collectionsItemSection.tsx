@@ -1,8 +1,16 @@
 import Link from 'next/link'
-import React from 'react'
+import { useRouter } from 'next/router'
+import React, { useEffect, useState } from 'react'
 
 export default function CollectionsItemSection({ Data, Brand }: any) {
   // console.log(Data)
+  const router = useRouter()
+
+  const [query, setQuery] = useState()
+
+  useEffect(() => {
+    setQuery(router.query)
+  }, [router.query])
   function CollectionItem() {
     return Brand.map((item: any, index: number) => {
       console.log(item)
@@ -27,7 +35,7 @@ export default function CollectionsItemSection({ Data, Brand }: any) {
                   View More
                 </Link>
                 <Link
-                  href={'/all-decors/' + item.slug}
+                  href={'/all-decors?Brand=' + item.slug}
                   className='text-base font-semibold text-black border border-black lg:py-4 lg:px-6 md:py-4 md:px-3 py-4 px-6 block text-center bg-black hover:text-black text-white hover:bg-white transition-all'
                 >
                   Order Sample
@@ -77,12 +85,16 @@ export default function CollectionsItemSection({ Data, Brand }: any) {
     })
   }
 
-  return (
-    <>
+  if (query && Object.values(query).every(x => x === '')) {
+    return (
       <div className='grid md:grid-cols-2 gap-x-10 gap-y-10 pb-20'>
-        {/* <CollectionItem /> */}
-        <ProductItem />
+        <CollectionItem />
       </div>
-    </>
+    )
+  }
+  return (
+    <div className='grid md:grid-cols-2 gap-x-10 gap-y-10 pb-20'>
+      <ProductItem />
+    </div>
   )
 }

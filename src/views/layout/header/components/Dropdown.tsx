@@ -15,31 +15,31 @@ export default function Dropdown({ menu, setMenu }) {
           </Link>
           <div>
             <ul className='grid gap-3'>
-              <Link href={'/'} className='group flex items-center gap-2 font-semibold'>
+              <Link href={'/all-decors/Egger'} className='group flex items-center gap-2 font-semibold'>
                 <div className='w-10 group-hover:scale-105'>
                   <img src='../images/marker.png' alt='' className='w-full' />
                 </div>
                 <li>Egger</li>
               </Link>
-              <Link href={'/'} className='group flex items-center gap-2 font-semibold'>
+              <Link href={'/all-decors/Kronospan'} className='group flex items-center gap-2 font-semibold'>
                 <div className='w-10 group-hover:scale-105'>
                   <img src='../images/marker.png' alt='' className='w-full' />
                 </div>
                 <li>Kronospan</li>
               </Link>
-              <Link href={'/'} className='group flex items-center gap-2 font-semibold'>
+              <Link href={'/all-decors/XyloCleaf'} className='group flex items-center gap-2 font-semibold'>
                 <div className='w-10 group-hover:scale-105'>
                   <img src='../images/marker.png' alt='' className='w-full' />
                 </div>
                 <li>XyloCleaf</li>
               </Link>
-              <Link href={'/'} className='group flex items-center gap-2 font-semibold'>
+              <Link href={'/all-decors/Saviola'} className='group flex items-center gap-2 font-semibold'>
                 <div className='w-10 group-hover:scale-105'>
                   <img src='../images/marker.png' alt='' className='w-full' />
                 </div>
                 <li>Saviola</li>
               </Link>
-              <Link href={'/'} className='group flex items-center gap-2 font-semibold'>
+              <Link href={'/all-decors/Swiss Krono'} className='group flex items-center gap-2 font-semibold'>
                 <div className='w-10 group-hover:scale-105'>
                   <img src='../images/marker.png' alt='' className='w-full' />
                 </div>
@@ -49,31 +49,31 @@ export default function Dropdown({ menu, setMenu }) {
           </div>
           <div>
             <ul className='grid gap-3'>
-              <Link href={'/'} className='group flex items-center gap-2 font-semibold'>
+              <Link href={'/all-decors/Alvic'} className='group flex items-center gap-2 font-semibold'>
                 <div className='w-10 group-hover:scale-105'>
                   <img src='../images/marker.png' alt='' className='w-full' />
                 </div>
                 <li>Alvic</li>
               </Link>
-              <Link href={'/'} className='group flex items-center gap-2 font-semibold'>
+              <Link href={'/all-decors/Senoplast'} className='group flex items-center gap-2 font-semibold'>
                 <div className='w-10 group-hover:scale-105'>
                   <img src='../images/marker.png' alt='' className='w-full' />
                 </div>
                 <li>Senoplast</li>
               </Link>
-              <Link href={'/'} className='group flex items-center gap-2 font-semibold'>
+              <Link href={'/all-decors/Serica'} className='group flex items-center gap-2 font-semibold'>
                 <div className='w-10 group-hover:scale-105'>
                   <img src='../images/marker.png' alt='' className='w-full' />
                 </div>
                 <li>Serica</li>
               </Link>
-              <Link href={'/'} className='group flex items-center gap-2 font-semibold'>
+              <Link href={'/all-decors/Wall Panelling'} className='group flex items-center gap-2 font-semibold'>
                 <div className='w-10 group-hover:scale-105'>
                   <img src='../images/marker.png' alt='' className='w-full' />
                 </div>
                 <li>Wall Panelling</li>
               </Link>
-              <Link href={'/'} className='group flex items-center gap-2 font-semibold'>
+              <Link href={'/all-decors/MDF'} className='group flex items-center gap-2 font-semibold'>
                 <div className='w-10 group-hover:scale-105'>
                   <img src='../images/marker.png' alt='' className='w-full' />
                 </div>
@@ -83,25 +83,25 @@ export default function Dropdown({ menu, setMenu }) {
           </div>
           <div>
             <ul className='grid gap-3'>
-              <Link href={'/'} className='group flex items-center gap-2 font-semibold'>
+              <Link href={'/all-decors/Veneers'} className='group flex items-center gap-2 font-semibold'>
                 <div className='w-10 group-hover:scale-105'>
                   <img src='../images/marker.png' alt='' className='w-full' />
                 </div>
                 <li>Veneers</li>
               </Link>
-              <Link href={'/'} className='group flex items-center gap-2 font-semibold'>
+              <Link href={'/all-decors/Plywood'} className='group flex items-center gap-2 font-semibold'>
                 <div className='w-10 group-hover:scale-105'>
                   <img src='../images/marker.png' alt='' className='w-full' />
                 </div>
                 <li>Plywood</li>
               </Link>
-              <Link href={'/'} className='group flex items-center gap-2 font-semibold'>
+              <Link href={'/all-decors/Diplos'} className='group flex items-center gap-2 font-semibold'>
                 <div className='w-10 group-hover:scale-105'>
                   <img src='../images/marker.png' alt='' className='w-full' />
                 </div>
                 <li>Diplos</li>
               </Link>
-              <Link href={'/'} className='group flex items-center gap-2 font-semibold'>
+              <Link href={'/all-decors/Finsa'} className='group flex items-center gap-2 font-semibold'>
                 <div className='w-10 group-hover:scale-105'>
                   <img src='../images/marker.png' alt='' className='w-full' />
                 </div>
