@@ -7,7 +7,7 @@ import CNCCutting from './CncCutting'
 export default function index({ Data }: any) {
   const [active, setActive] = useState(1)
   useEffect(() => {
-    console.log(active)
+    // console.log(active)
   }, [active])
 
   const rel = 'data-te-nav-active'
