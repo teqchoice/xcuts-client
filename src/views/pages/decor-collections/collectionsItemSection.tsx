@@ -2,7 +2,7 @@ import Link from 'next/link'
 import React from 'react'
 
 export default function CollectionsItemSection({ Data, Brand }: any) {
-  // console.log(Brand)
+  // console.log(Data)
   function CollectionItem() {
     return Brand.map((item: any, index: number) => {
       console.log(item)
@@ -44,7 +44,7 @@ export default function CollectionsItemSection({ Data, Brand }: any) {
     return Data.map((item: any, index: number) => {
       // console.log(item)
       return (
-        <div className='col-span-1 flex flex-col'>
+        <div className='col-span-1 flex flex-col' key={index}>
           <div className='flex sm:flex-row flex-col sm:items-end'>
             <div className='sm:w-[60%]'>
               <img src={`https://api.xcuts.co.uk${item.Texture?.image}`} alt='' className='w-full' />

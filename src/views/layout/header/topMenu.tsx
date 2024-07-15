@@ -11,12 +11,11 @@ export default function TopMenu({ data }: any) {
     <div className='relative bg-neutral-300'>
       <div className='px-4 sm:container flex justify-center sm:justify-end p-3 relative divide-x-2'>
         {data
-          ?.map((item: any) => {
+          ?.map((item: any, i: number) => {
             // console.log(item)
             return (
-              <div className='group relative '>
+              <div className='group relative ' key={i}>
                 <Link
-                  key={item.id}
                   href={item.link}
                   className='relative z-20 text-sm sm:text-base/3 text-white font-medium px-2 py-1'
                 >

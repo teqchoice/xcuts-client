@@ -8,7 +8,7 @@ export default function TopMneu({ data }: any) {
   const [modal1, setModal1] = useState(false)
   const [modal2, setModal2] = useState(false)
   const [modal3, setModal3] = useState(false)
-  console.log(user_info?.role === 'admin' && process.env.NEXT_PUBLIC_ADMIN_SHOW === 'true')
+  // console.log(user_info?.role === 'admin' && process.env.NEXT_PUBLIC_ADMIN_SHOW === 'true')
   // console.log(data.find(arr => arr.some(obj => obj.title === 'Contact Details')))
   const datafilter = data?.find(
     arr =>

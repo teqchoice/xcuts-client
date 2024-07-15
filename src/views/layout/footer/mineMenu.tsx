@@ -46,7 +46,7 @@ export default function MineMenu({ data }: any) {
       filec: ''
     }
   ]
-  console.log(Resources)
+  // console.log(Resources)
   // console.log(Collections.slice(1, 7))
   return (
     <div className='ftr__links grid grid-cols-1 md:grid-cols-3 gap-4 lg:grid-cols-6 space-y-14 md:space-y-0 md:space-x-6'>

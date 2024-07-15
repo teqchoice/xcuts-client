@@ -6,7 +6,7 @@ import FakeDb from '@/DB/content.json'
 import axios from 'axios'
 
 export default function PDecorCollections({ data, Brand, layout }: any) {
-  console.log('data')
+  console.log(data)
 
   return (
     <Layout data={layout}>
@@ -16,8 +16,13 @@ export default function PDecorCollections({ data, Brand, layout }: any) {
 }
 
 export const getServerSideProps = async (context: any) => {
+  console.log('+++++++++++++++++', context.query)
+
   try {
-    const { data } = await axios.get(`https://api.xcuts.co.uk/api/products/get-all-Decors`)
+    const parametr = context.query
+    const { data } = await axios.get(`https://api.xcuts.co.uk/api/products/filters/`, {
+      params: parametr
+    })
     const { data: Brand } = await axios.get(`https://api.xcuts.co.uk/api/products/get-all-brand`)
     const { data: layoutData } = await axios.get(`${process.env.NEXT_PUBLIC_API__URL}/get-content-query/page=3/`)
     return { props: { data: data, Brand: Brand, layout: layoutData[0]?.positions } }
