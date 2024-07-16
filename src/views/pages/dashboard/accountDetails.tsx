@@ -4,6 +4,8 @@ import { randomId } from '@mantine/hooks'
 import { useEffect, useState } from 'react'
 import axios from 'axios'
 import { token } from '@/extensions/redux/api/auth'
+import toast from 'react-hot-toast'
+import Delivery from './delivery'
 
 export default function Dtails() {
   //   const [value, setValue] = useState({
@@ -25,9 +27,15 @@ export default function Dtails() {
       phone: '',
       province: '',
       city: '',
-      delivery_address: '',
+      // delivery_address: '',
       building_address: '',
       description: ''
+    }
+  })
+  const formPass = useForm({
+    initialValues: {
+      password: '',
+      password2: ''
     }
   })
   useEffect(() => {
@@ -70,16 +78,44 @@ export default function Dtails() {
     axios
       .request(config)
       .then(response => {
-        console.log(response.data)
+        // console.log(response.data)
+        toast.success('updated successfully')
       })
       .catch(error => {
         console.log(error)
+        toast.success('something went wrong')
+      })
+  }
+  function handleSendPass() {
+    // console.log(form.values)
+    // let data = form.values
+
+    let config = {
+      method: 'put',
+      maxBodyLength: Infinity,
+      url: 'https://api.xcuts.co.uk/api/user/change_password',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${token}`
+      },
+      data: formPass.values
+    }
+
+    axios
+      .request(config)
+      .then(response => {
+        // console.log(response.data)
+        toast.success('updated successfully')
+      })
+      .catch(error => {
+        console.log(error)
+        toast.success('something went wrong')
       })
   }
 
   return (
     <div className='grid w-full gap-3 p-3'>
-      <div className='grid  w-full gap-10'>
+      <div className='grid w-full gap-10'>
         <div>
           <h3 className='relative z-10 w-fit p-1 font-bold text-2xl bg-white mt-2'>Identity information</h3>
           <div className='-mt-4 mb-3 grid grid-cols-2 gap-3 border border-gray-400 p-5'>
@@ -168,269 +204,69 @@ export default function Dtails() {
             </Button>
           </Group>
         </div>
-        <div className='grid lg:grid-cols-2 gap-5'>
-          <div>
-            <h3 className='relative z-10 w-fit p-1 font-bold text-2xl bg-white mt-2'>Billing Address</h3>
-            <div className='-mt-4 mb-3 grid gap-3 border border-gray-400 p-5'>
-              <TextInput
-                label='Email'
-                placeholder='email'
-                styles={{
-                  input: {
-                    border: '1px solid #49494940',
-                    borderRadius: '3px',
-                    width: '100%',
-                    padding: '5px',
-                    color: '#7e7d7d'
-                  }
-                }}
-                {...form.getInputProps('billing-email')}
-              />
-              <TextInput
-                label='Phone'
-                placeholder='phone'
-                styles={{
-                  input: {
-                    border: '1px solid #49494940',
-                    borderRadius: '3px',
-                    width: '100%',
-                    padding: '5px',
-                    color: '#7e7d7d'
-                  }
-                }}
-                {...form.getInputProps('billing-phone')}
-              />
-              <TextInput
-                label='FirstName'
-                placeholder='firstName'
-                styles={{
-                  input: {
-                    border: '1px solid #49494940',
-                    borderRadius: '3px',
-                    width: '100%',
-                    padding: '5px',
-                    color: '#7e7d7d'
-                  }
-                }}
-                {...form.getInputProps('billing-firstName')}
-              />
-              <TextInput
-                label='LastName'
-                placeholder='lastName'
-                styles={{
-                  input: {
-                    border: '1px solid #49494940',
-                    borderRadius: '3px',
-                    width: '100%',
-                    padding: '5px',
-                    color: '#7e7d7d'
-                  }
-                }}
-                {...form.getInputProps('billing-lastName')}
-              />
-              <TextInput
-                label='Province'
-                placeholder='province'
-                styles={{
-                  input: {
-                    border: '1px solid #49494940',
-                    borderRadius: '3px',
-                    width: '100%',
-                    padding: '5px',
-                    color: '#7e7d7d'
-                  }
-                }}
-                {...form.getInputProps('province')}
-              />
-              <TextInput
-                label='City'
-                placeholder='city'
-                styles={{
-                  input: {
-                    border: '1px solid #49494940',
-                    borderRadius: '3px',
-                    width: '100%',
-                    padding: '5px',
-                    color: '#7e7d7d'
-                  }
-                }}
-                {...form.getInputProps('city')}
-              />
-
-              <TextInput
-                label='Address line1'
-                placeholder='line1_address'
-                styles={{
-                  input: {
-                    border: '1px solid #49494940',
-                    borderRadius: '3px',
-                    width: '100%',
-                    padding: '5px',
-                    color: '#7e7d7d'
-                  }
-                }}
-                {...form.getInputProps('line1_address')}
-              />
-              <TextInput
-                label='Address line2'
-                placeholder='line2_address'
-                styles={{
-                  input: {
-                    border: '1px solid #49494940',
-                    borderRadius: '3px',
-                    width: '100%',
-                    padding: '5px',
-                    color: '#7e7d7d'
-                  }
-                }}
-                {...form.getInputProps('line2_address')}
-              />
-            </div>
-            <Group justify='center' mt='xl'>
-              <Button
-                className='bg-primary text-white border py-2 px-3 hover:bg-white hover:text-black'
-                onClick={handleSend}
-              >
-                Update Address
-              </Button>
-            </Group>
-          </div>
-
-          <div>
-            <h3 className='relative z-10 w-fit p-1 font-bold text-2xl bg-white mt-2'>Delivery Address</h3>
-            <div className='-mt-4 mb-3 grid gap-3 border border-gray-400 p-5'>
-              <TextInput
-                label='Email'
-                placeholder='email'
-                styles={{
-                  input: {
-                    border: '1px solid #49494940',
-                    borderRadius: '3px',
-                    width: '100%',
-                    padding: '5px',
-                    color: '#7e7d7d'
-                  }
-                }}
-                {...form.getInputProps('billing-email')}
-              />
-              <TextInput
-                label='Phone'
-                placeholder='phone'
-                styles={{
-                  input: {
-                    border: '1px solid #49494940',
-                    borderRadius: '3px',
-                    width: '100%',
-                    padding: '5px',
-                    color: '#7e7d7d'
-                  }
-                }}
-                {...form.getInputProps('billing-phone')}
-              />
-              <TextInput
-                label='FirstName'
-                placeholder='firstName'
-                styles={{
-                  input: {
-                    border: '1px solid #49494940',
-                    borderRadius: '3px',
-                    width: '100%',
-                    padding: '5px',
-                    color: '#7e7d7d'
-                  }
-                }}
-                {...form.getInputProps('billing-firstName')}
-              />
-              <TextInput
-                label='LastName'
-                placeholder='lastName'
-                styles={{
-                  input: {
-                    border: '1px solid #49494940',
-                    borderRadius: '3px',
-                    width: '100%',
-                    padding: '5px',
-                    color: '#7e7d7d'
-                  }
-                }}
-                {...form.getInputProps('billing-lastName')}
-              />
-              <TextInput
-                label='Province'
-                placeholder='province'
-                styles={{
-                  input: {
-                    border: '1px solid #49494940',
-                    borderRadius: '3px',
-                    width: '100%',
-                    padding: '5px',
-                    color: '#7e7d7d'
-                  }
-                }}
-                {...form.getInputProps('province')}
-              />
-              <TextInput
-                label='City'
-                placeholder='city'
-                styles={{
-                  input: {
-                    border: '1px solid #49494940',
-                    borderRadius: '3px',
-                    width: '100%',
-                    padding: '5px',
-                    color: '#7e7d7d'
-                  }
-                }}
-                {...form.getInputProps('city')}
-              />
-
-              <TextInput
-                label='Address line1'
-                placeholder='line1_address'
-                styles={{
-                  input: {
-                    border: '1px solid #49494940',
-                    borderRadius: '3px',
-                    width: '100%',
-                    padding: '5px',
-                    color: '#7e7d7d'
-                  }
-                }}
-                {...form.getInputProps('line1_address')}
-              />
-              <TextInput
-                label='Address line2'
-                placeholder='line2_address'
-                styles={{
-                  input: {
-                    border: '1px solid #49494940',
-                    borderRadius: '3px',
-                    width: '100%',
-                    padding: '5px',
-                    color: '#7e7d7d'
-                  }
-                }}
-                {...form.getInputProps('line2_address')}
-              />
-            </div>
-            <Group justify='center' mt='xl'>
-              <Button
-                className='bg-primary text-white border py-2 px-3 hover:bg-white hover:text-black'
-                onClick={handleSend}
-              >
-                Update Address
-              </Button>
-            </Group>
-          </div>
-        </div>
 
         <div>
-          <h3 className='relative z-10 w-fit p-1 font-bold text-2xl bg-white mt-2'>Change Password</h3>
+          <h3 className='relative z-10 w-fit p-1 font-bold text-2xl bg-white mt-2'>Billing Address</h3>
           <div className='-mt-4 mb-3 grid gap-3 border border-gray-400 p-5'>
+            {/* <TextInput
+                label='Email'
+                placeholder='email'
+                styles={{
+                  input: {
+                    border: '1px solid #49494940',
+                    borderRadius: '3px',
+                    width: '100%',
+                    padding: '5px',
+                    color: '#7e7d7d'
+                  }
+                }}
+                {...form.getInputProps('billing-email')}
+              /> */}
+            {/* <TextInput
+                label='Phone'
+                placeholder='phone'
+                styles={{
+                  input: {
+                    border: '1px solid #49494940',
+                    borderRadius: '3px',
+                    width: '100%',
+                    padding: '5px',
+                    color: '#7e7d7d'
+                  }
+                }}
+                {...form.getInputProps('billing-phone')}
+              /> */}
+            {/* <TextInput
+                label='FirstName'
+                placeholder='firstName'
+                styles={{
+                  input: {
+                    border: '1px solid #49494940',
+                    borderRadius: '3px',
+                    width: '100%',
+                    padding: '5px',
+                    color: '#7e7d7d'
+                  }
+                }}
+                {...form.getInputProps('billing-firstName')}
+              /> */}
+            {/* <TextInput
+                label='LastName'
+                placeholder='lastName'
+                styles={{
+                  input: {
+                    border: '1px solid #49494940',
+                    borderRadius: '3px',
+                    width: '100%',
+                    padding: '5px',
+                    color: '#7e7d7d'
+                  }
+                }}
+                {...form.getInputProps('billing-lastName')}
+              /> */}
             <TextInput
-              label='New password'
-              placeholder='new password'
-              type='password'
+              label='Province'
+              placeholder='province'
               styles={{
                 input: {
                   border: '1px solid #49494940',
@@ -440,12 +276,11 @@ export default function Dtails() {
                   color: '#7e7d7d'
                 }
               }}
-              {...form.getInputProps('n-pass')}
+              {...form.getInputProps('province')}
             />
             <TextInput
-              label='Repeat password'
-              placeholder='repeat password'
-              type='password'
+              label='City'
+              placeholder='city'
               styles={{
                 input: {
                   border: '1px solid #49494940',
@@ -455,13 +290,88 @@ export default function Dtails() {
                   color: '#7e7d7d'
                 }
               }}
-              {...form.getInputProps('r-pass')}
+              {...form.getInputProps('city')}
             />
+
+            <TextInput
+              label='Address'
+              placeholder='building_address'
+              styles={{
+                input: {
+                  border: '1px solid #49494940',
+                  borderRadius: '3px',
+                  width: '100%',
+                  padding: '5px',
+                  color: '#7e7d7d'
+                }
+              }}
+              {...form.getInputProps('building_address')}
+            />
+            {/* <TextInput
+                label='Address line2'
+                placeholder='line2_address'
+                styles={{
+                  input: {
+                    border: '1px solid #49494940',
+                    borderRadius: '3px',
+                    width: '100%',
+                    padding: '5px',
+                    color: '#7e7d7d'
+                  }
+                }}
+                {...form.getInputProps('line2_address')}
+              /> */}
           </div>
           <Group justify='center' mt='xl'>
             <Button
               className='bg-primary text-white border py-2 px-3 hover:bg-white hover:text-black'
               onClick={handleSend}
+            >
+              Update Address
+            </Button>
+          </Group>
+        </div>
+        
+        <Delivery />
+
+        <div>
+          <h3 className='relative z-10 w-fit p-1 font-bold text-2xl bg-white mt-2'>Change Password</h3>
+          <div className='-mt-4 mb-3 grid gap-3 border border-gray-400 p-5'>
+            <TextInput
+              label='Old password'
+              placeholder='password'
+              type='password'
+              styles={{
+                input: {
+                  border: '1px solid #49494940',
+                  borderRadius: '3px',
+                  width: '100%',
+                  padding: '5px',
+                  color: '#7e7d7d'
+                }
+              }}
+              {...formPass.getInputProps('password')}
+            />
+            <TextInput
+              label='New password'
+              placeholder='password2'
+              type='password2'
+              styles={{
+                input: {
+                  border: '1px solid #49494940',
+                  borderRadius: '3px',
+                  width: '100%',
+                  padding: '5px',
+                  color: '#7e7d7d'
+                }
+              }}
+              {...formPass.getInputProps('password2')}
+            />
+          </div>
+          <Group justify='center' mt='xl'>
+            <Button
+              className='bg-primary text-white border py-2 px-3 hover:bg-white hover:text-black'
+              onClick={handleSendPass}
             >
               Update Password
             </Button>
