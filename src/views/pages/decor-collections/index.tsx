@@ -11,7 +11,7 @@ export default function index({ Data, Brand }: any) {
       <Collections Data={Data?.delivery} />
       <div className='px-4 sm:container'>
         <FilterSection Data={Data?.delivery} />
-        <div className='mt-20'></div>
+        <div className=''></div>
         <CollectionsItemSection Data={Data} Brand={Brand}  />
       </div>
     </>

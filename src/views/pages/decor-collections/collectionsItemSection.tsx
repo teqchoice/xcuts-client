@@ -3,9 +3,11 @@ import { useRouter } from 'next/router'
 import React, { useEffect, useState } from 'react'
 import Pupapt from './pupupt'
 import { Close } from '@icon-park/react'
+import Table from './table'
 
 export default function CollectionsItemSection({ Data, Brand }: any) {
   const [opened, setOpened] = useState(false)
+  const [show, setShow] = useState(1)
   // console.log(Data)
   const router = useRouter()
 
@@ -59,7 +61,7 @@ export default function CollectionsItemSection({ Data, Brand }: any) {
           <div>
             <div className='relative'>
               <a data-fancybox='gallery-f206' href='assets/images/img-01.webp'>
-                <img src={`https://api.xcuts.co.uk${item.Texture?.image}`} />
+                <img src={`../imagestt/img-01.webp`} />
               </a>
               <div className='absolute hidden top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2'>
                 <img src='assets/images/grid-icon-hover.webp' />
@@ -143,8 +145,48 @@ export default function CollectionsItemSection({ Data, Brand }: any) {
     )
   }
   return (
-    <div className='grid md:grid-cols-2 gap-x-10 gap-y-10 pb-20'>
-      <ProductItem />
+    <div>
+      <div className='flex md:justify-end flex-col w-40 text-center ml-auto md:ml-auto md:mr-0 mr-auto'>
+        <p className='mb-3'>Display options</p>
+        <div className='flex justify-center'>
+          {/*Tabs navigation*/}
+          <ul
+            className='mb-5 flex gap-3 list-none flex-row flex-wrap border-b-0 pl-0'
+            role='tablist'
+            data-te-nav-ref=''
+          >
+            <li role='presentation' onClick={() => setShow(1)}>
+              <div className='cursor-pointer'>
+                <div className='flex space-y-[3px] flex-col'>
+                  <span className='w-[39px] h-[7px] bg-primary rounded-full block' />
+                  <span className='w-[39px] h-[7px] bg-primary rounded-full block' />
+                  <span className='w-[39px] h-[7px] bg-primary rounded-full block' />
+                  <span className='w-[39px] h-[7px] bg-[#afafaf] rounded-full block' />
+                </div>
+              </div>
+            </li>
+            <li role='presentation' onClick={() => setShow(2)}>
+              <div className='cursor-pointer'>
+                <div className='grid grid-cols-2 gap-1'>
+                  <span className='w-[16px] h-[16px] bg-primary rounded-sm block' />
+                  <span className='w-[16px] h-[16px] bg-primary rounded-sm block' />
+                  <span className='w-[16px] h-[16px] bg-primary rounded-sm block' />
+                  <span className='w-[16px] h-[16px] bg-[#afafaf] rounded-sm block' />
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      {show == 1 ? (
+        <Table data={Data} />
+      ) : (
+        <div className='grid md:grid-cols-2 gap-x-10 gap-y-10 pb-20'>
+          <ProductItem />
+        </div>
+      )}
+
       {opened && (
         <div className=' z-50 max-h-[90vh] overflow-y-scroll p-5 rounded-md fixed bg-white top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2'>
           <div className='relative'>
