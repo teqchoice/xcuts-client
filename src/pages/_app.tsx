@@ -1,5 +1,6 @@
 import type { AppProps } from 'next/app'
 
+import '@/styles/all.min.css'
 import '@/styles/globals.css'
 
 import { Provider } from 'react-redux'

@@ -1,7 +1,11 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -11,16 +15,35 @@
     "moduleResolution": "bundler",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "jsx": "preserve",
+    // "jsx": "preserve",
     "incremental": true,
     "paths": {
-      "@/*": ["./src/*"],
-      "@/public/*": ["./public/*"],
-      "@/assets/*": ["./src/views/assets/*"],
-      "@/redux/*": ["./src/extensions/redux/*"],
-      "@/DB/*": ["./fakedb/*"]
-    }
+      "@/*": [
+        "./src/*"
+      ],
+      "@/public/*": [
+        "./public/*"
+      ],
+      "@/assets/*": [
+        "./src/views/assets/*"
+      ],
+      "@/redux/*": [
+        "./src/extensions/redux/*"
+      ],
+      "@/DB/*": [
+        "./fakedb/*"
+      ]
+    },
+    "jsx": "preserve"
   },
-  "include": ["src", "additional.d.ts", "next-env.d.ts", "**/*.ts", "**/*.tsx"],
-  "exclude": ["node_modules"]
+  "include": [
+    "src",
+    "additional.d.ts",
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }
