@@ -4,28 +4,67 @@ import DecorCollections from '@/views/pages/decor-collections'
 // !! Fake DB
 import FakeDb from '@/DB/content.json'
 import axios from 'axios'
+import { useEffect, useState } from 'react'
 
-export default function PDecorCollections({ data, Brand, layout }: any) {
+export default function PDecorCollections({ data, brand, layout }: any) {
+  const [Brand, setBrand] = useState()
+  const [Data, setData] = useState()
   // console.log(data)
-
-  return (
-    <Layout data={layout}>
-      <DecorCollections Data={data} Brand={Brand} />
-    </Layout>
-  )
+  // console.log(layout)
+  useEffect(() => {
+    let config = {
+      method: 'get',
+      maxBodyLength: Infinity,
+      url: 'https://shop.xcuts.co.uk/api/collections/categories/records?filter=(parent.name=\'brand\')',
+      headers: { }
+    };
+    
+    axios.request(config)
+    .then((response) => {
+      console.log(setBrand(response.data));
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+    
+  },[setBrand])
+  useEffect(() => {
+    let config = {
+      method: 'get',
+      maxBodyLength: Infinity,
+      url: 'https://shop.xcuts.co.uk/api/collections/decors/records?expand=brand_ref&filter=(brand_ref.name~\'kronospan\')',
+      headers: { }
+    };
+    
+    axios.request(config)
+    .then((response) => {
+      console.log(setData(response.data));
+      console.log(Data);
+    })
+    .catch((error) => {
+      console.log(error);
+    });    
+    
+  },[setBrand])
+  
+    return <Layout data={layout}>
+      <DecorCollections Data={Data} Brand={Brand} />
+      </Layout>
 }
 
 export const getServerSideProps = async (context: any) => {
-  // console.log('+++++++++++++++++', context.query)
-
+  console.log('+++++++++++++++++', context.query)
+  
   try {
-    const parametr = context.query
-    const { data } = await axios.get(`https://api.xcuts.co.uk/api/products/filters/`, {
-      params: parametr
-    })
-    const { data: Brand } = await axios.get(`https://api.xcuts.co.uk/api/products/get-all-brand`)
+    const { data: brand } = await axios.get(
+      `https://shop.xcuts.co.uk/api/collections/categories/records?filter=(parent.name=\'brand\')`
+    )
+    const parametr = context.query.Brand
+    const { data } = await axios.get(`https://shop.xcuts.co.uk/api/collections/decors/records?filter=(brand_ref.name~'egger')`)
+
     const { data: layoutData } = await axios.get(`${process.env.NEXT_PUBLIC_API__URL}/get-content-query/page=3/`)
-    return { props: { data: data, Brand: Brand, layout: layoutData[0]?.positions } }
+
+    return { props: { data: data, brand: brand, layout: layoutData[0]?.positions } }
   } catch (error) {
     const fake_layout = [
       {

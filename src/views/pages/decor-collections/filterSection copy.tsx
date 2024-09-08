@@ -122,7 +122,7 @@ export default function FilterSection(props: any) {
             <option className='text-gray-500' value=''>
               Brand
             </option>
-            <option className='text-gray-500' value='Egger'>
+            <option className='text-gray-500' value='egger'>
               Egger
             </option>
             <option className='text-gray-500' value='Kronospan'>

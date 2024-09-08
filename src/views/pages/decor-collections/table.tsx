@@ -57,7 +57,7 @@ export default function Table({ data }: any) {
           <tbody>
             {data.map((item: any, index: number) => {
               return (
-                <tr className='border-t '>
+                <tr className='border-t ' key={index}>
                   <td>
                     <div className='text-center w-24 flex items-center justify-center'>
                       <a data-fancybox='gallery' href='../imagestt/img-01.webp' className='ltbx-thumb inline-block'>
