@@ -1,434 +1,130 @@
-import React from 'react'
-
+import { FaMinus, FaPlus } from 'react-icons/fa6'
 export default function Pupapt() {
   return (
     <div
       id='lightGreyMetalRock'
-      className='border  relative p-0'
+      className='container  border  relative p-0 box-content  items-center  justify-center  w-full  h-full  shadow-2xl'
     >
       <a className='popup-modal-dismiss absolute top-0 right-2' href='#'>
         <i className='fa-solid fa-xmark' />
       </a>
-      <div className='bg-[#fff]'>
-        <div className='accordion-contents'>
-          <div className='cart-datatable overflow-auto'>
-            <table className='w-full'>
-              <colgroup>
-                <col span={1} className='col-index' />
-                <col span={1} className='col-material' />
-                <col span={1} className='col-thick' />
-                <col span={1} className='col-length' />
-                <col span={1} className='col-width' />
-                <col span={1} className='col-qty' />
-                <col span={1} className='col-desc' />
-                <col span={1} className='col-edge' />
-                <col span={1} className='col-edge' />
-                <col span={1} className='col-edge' />
-                <col span={1} className='col-edge' />
-                <col span={1} className='col-drilling' />
-                <col span={1} className='col-spraying' />
-                <col span={1} className='col-grain' />
-                <col span={1} className='col-actions' />
-              </colgroup>
-              <thead>
-                <tr>
-                  <th colSpan={7} />
-                  <th colSpan={4} className='th-eb text-white text-center text-lg uppercase pt-9 '>
-                    Edgebanding details <br />
-                    <div className='Switch mt-[15px] px-6'>
-                      <div className='Switch__bg w-full left-0 flex justify-between bg-primary rounded-md py-4 px-[10px]'>
-                        <button className='text-white'>
-                          <input className='hidden' type='radio' id='Login24' name='row1' />
-                          <label className='px-5 py-2' htmlFor='Login24'>
-                            Standard
-                          </label>
-                        </button>
-                        <button className='text-white'>
-                          <input className='hidden' type='radio' id='Login26' name='row1' />
-                          <label className='px-5 py-2' htmlFor='Login26'>
-                            Expert
-                          </label>
-                        </button>
-                      </div>
-                    </div>
-                  </th>
-                  <th colSpan={4} />
-                </tr>
-                <tr>
-                  <th className='th-index p-2 text-center text-black'>#</th>
-                  <th className='text-left p-2 text-black'>Material decor code / name</th>
-                  <th className='text-center p-2 text-black'>
-                    Thick
-                    <br />
-                    [mm]
-                  </th>
-                  <th className='text-center p-2 text-black'>
-                    Length
-                    <br />
-                    [mm]
-                  </th>
-                  <th className='text-center p-2 text-black'>
-                    Width
-                    <br />
-                    [mm]
-                  </th>
-                  <th className='text-center p-2 text-black'>Qty</th>
-                  <th className='text-center p-2 text-black'>Part description</th>
-                  <th className='th-eb text-white p-2' colSpan={1}>
-                    L1
-                  </th>
-                  <th className='th-eb text-white p-2' colSpan={1}>
-                    L2
-                  </th>
-                  <th className='th-eb text-white p-2' colSpan={1}>
-                    W1
-                  </th>
-                  <th className='th-eb text-white p-2' colSpan={1}>
-                    W2
-                  </th>
-                  <th className='text-left p-2 text-black'>
-                    Additional
-                    <br />
-                    machining
-                  </th>
-                  <th className='text-center p-2 text-black'>
-                    Spray
-                    <br />
-                    coating
-                  </th>
-                  <th className='text-center p-2 text-black'>
-                    Grain
-                    <br />
-                    match
-                  </th>
-                  <th className='text-center th-actions p-2 text-black'>Actions</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td align='center' className='td-index'>
-                    <span className='text-base'>1</span>
-                  </td>
-                  <td className='td-index'>
-                    <div className='input-wrapper'>
-                      <input
-                        autoComplete='off'
-                        className='border shadow-2xl border-[#cacaca] text-[15px] p-2 w-full focus:border-primary focus:outline-none rounded'
-                        placeholder='Enter decor code or name'
-                        name='material_name'
-                        type='text'
-                        defaultValue=''
-                      />
-                    </div>
-                  </td>
-                  <td className='td-thic'>
-                    <div>
-                      <input
-                        className='border border-[#cacaca] shadow-2xl text-[15px] p-2 w-full focus:border-primary focus:outline-none rounded'
-                        type='text'
-                        name='thic'
-                        defaultValue=''
-                      />
-                    </div>
-                  </td>
-                  <td className=''>
-                    <input
-                      type='text'
-                      className='border border-[#cacaca] shadow-2xl text-[15px] p-2 w-full focus:border-primary focus:outline-none rounded'
-                      name='length'
-                      inputMode='numeric'
-                      pattern='[0-9]*'
-                      maxLength={4}
-                      autoComplete='off'
-                      placeholder=''
-                      defaultValue=''
-                    />
-                  </td>
-                  <td className=''>
-                    <input
-                      type='text'
-                      className='border border-[#cacaca] shadow-2xl text-[15px] p-2 w-full focus:border-primary focus:outline-none rounded'
-                      name='width'
-                      inputMode='numeric'
-                      pattern='[0-9]*'
-                      maxLength={4}
-                      autoComplete='off'
-                      placeholder=''
-                      defaultValue=''
-                    />
-                  </td>
-                  <td className=''>
-                    <input
-                      type='text'
-                      className='border border-[#cacaca] shadow-2xl text-[15px] p-2 w-full focus:border-primary focus:outline-none rounded'
-                      name='qty'
-                      inputMode='numeric'
-                      pattern='[0-9]*'
-                      maxLength={3}
-                      autoComplete='off'
-                      placeholder=''
-                      defaultValue=''
-                    />
-                  </td>
-                  <td className=''>
-                    <input
-                      type='text'
-                      className='border border-[#cacaca] shadow-2xl text-[15px] p-2 w-full focus:border-primary focus:outline-none rounded'
-                      name='description'
-                      autoComplete='off'
-                      placeholder=''
-                      defaultValue=''
-                    />
-                  </td>
-                  <td className='td-eb'>
-                    <input
-                      type='text'
-                      name=''
-                      data-tab-index='L1'
-                      placeholder=''
-                      autoComplete='off'
-                      className='border border-[#cacaca] text-[15px] p-2 w-full bg-[#474747] text-white focus:border-primary focus:outline-none rounded'
-                      defaultValue=''
-                    />
-                  </td>
-                  <td className='td-eb'>
-                    <input
-                      type='text'
-                      name=''
-                      data-tab-index='L2'
-                      placeholder=''
-                      autoComplete='off'
-                      className='border border-[#cacaca] text-[15px] p-2 w-full bg-[#474747] text-white focus:border-primary focus:outline-none rounded'
-                      defaultValue=''
-                    />
-                  </td>
-                  <td className='td-eb'>
-                    <input
-                      type='text'
-                      name=''
-                      data-tab-index='W1'
-                      placeholder=''
-                      autoComplete='off'
-                      className='border border-[#cacaca] text-[15px] p-2 w-full bg-[#474747] text-white focus:border-primary focus:outline-none rounded'
-                      defaultValue=''
-                    />
-                  </td>
-                  <td className='td-eb'>
-                    <input
-                      type='text'
-                      name=''
-                      data-tab-index='W2'
-                      placeholder=''
-                      autoComplete='off'
-                      className='border border-[#cacaca] text-[15px] p-2 w-full bg-[#474747] text-white focus:border-primary focus:outline-none rounded'
-                      defaultValue=''
-                    />
-                  </td>
-                  <td>&nbsp;</td>
-                  <td>&nbsp;</td>
-                  <td>&nbsp;</td>
-                  <td>&nbsp;</td>
-                </tr>
-              </tbody>
-            </table>
+      <div className='w-full  h-1/2  p-2 bg-gray-100'>
+        <div className='flex justify-between accordion-contents'>
+          <div className='flex  w-1/2 pl-4'>
+            <div className='relative'>
+              <p>ProductCode :F12C-PV-19</p>
+              <img src='/images/img-1.jpeg' className='w-100  h-60 ' />
+              <div className='absolute bottom-3 left-0 '>
+                <button className='border-2 border-red-700 bg-red-700 p-2 w-32 text-white'>Decor</button>
+              </div>
+            </div>
+            <div className='pt-4 p-4'>
+              <img src='/images/img-2.jpeg' className='w-20  h-20  pt-3' />
+              <img src='/images/img-3.jpeg' className='w-20 h-20  pt-3' />
+              <img src='/images/img-4.webp' className='w-20 h-20  pt-3' />
+            </div>
           </div>
+          <div className='w-1/2 mr-7 pt-6'>
+            <h3 className='text-xl text-red-600'>Egger f120PM</h3>
+            <p className='text-sm text-gray-400'>Light Grey Meta Rock</p>
+            <h5 className='text-xl text-black font-bold mt-2'>Product characteristics</h5>
+            <p className='text-sm  text-gray-400'>vsegewehytjjhegffff</p>
+            <p className='text-sm  text-gray-400'>vsegewehytjjhegffff</p>
+            <p className='text-sm  text-gray-400'>vsegewehytjjhegffff</p>
+            <h5 className='text-xl text-black font-bold mt-2'>B side description</h5>
+            <p className='text-sm  text-gray-400'>qwegw fe wg bgsf g g ds af afs ad a</p>
+            <div className='flex items-center text-center mt-2'>
+              <h5 className='text-base  text-black font-bold mr-4 text-center'>Available download</h5>
+              <button className='flex border-2  border-gray-400 p-2 text-red-700  text-xs align-center w-32 h-8 items-center text-center   bg-white'>
+                PDF Documents
+              </button>
+            </div>
+          </div>
+          <button className='flex align-start '>{/* <IoCloseSharp /> */}</button>
+        </div>
+        <div className='flex align-center justify-center text-center'>
+          <button className='p-4 mb-2 w-52 outline-red-700 mt-2  text-xs   text-white bg-red-700'>
+            Order a sample for $3.co
+          </button>
         </div>
       </div>
-      <div className='md:flex'>
-        <div className='basis-2/5 sm:px-10 px-3'>
-          <div className=' mt-2'>
-            <select
-              id='machining-type'
-              name='machining type'
-              className='lock w-full border-0 py-2 px-2.5 text-black shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary text-sm leading-6 focus:outline-none bg-white '
-            >
-              <option className='text-gray-500' value={1}>
-                Select machining type
-              </option>
-              <option className='text-gray-500' value={2}>
-                Two
-              </option>
-              <option className='text-gray-500' value={3}>
-                Three
-              </option>
-              <option className='text-gray-500' value={4}>
-                Four
-              </option>
-              <option className='text-gray-500' value={5}>
-                Five
-              </option>
-            </select>
-          </div>
-          <div className=' mt-4 mb-5'>
-            <div
-              className='relative max-w-md text-xs bg-[#f1f1f1] border border-black'
-              x-data="{
-                  search: '',
-                  showSelector: false,
-                  selected: {1:'Angel cut on L1-W1'},
-                  options: [],
-                  clearOpts() {
-                      this.search = '';
-                      this.showSelector = false;
-                      this.options = []
-                  },
-                  select(id, name) {
-                      this.selected[id] = name;
-                      this.clearOpts();
-                      $dispatch('selected', Object.keys(this.selected));
-                  },
-                  remove(id) {
-                      delete this.selected[id]
-                      $dispatch('selected', Object.keys(this.selected));
-                  },
-                  goSearch() {
-                      if (this.search) {
-                          this.options = {5: 'Carl', 6: 'Alex', 7: 'Bryan'};
-                          this.showSelector = true;
-                      } else {
-                          this.showSelector = false;
-                      }
-                  },
-              }"
-            >
-              <div className='bg-white p-2 flex gap-1 flex-wrap'>
-                <template x-for='(name, id) in selected' />
-                <div className='flex-1'>
-                  <input
-                    type='text'
-                    x-model='search'
-                    x-ref='search_input'
-                    placeholder='Search'
-                    className='w-full border-0 focus:border-0 focus:outline-none focus:ring-0 py-1 px-0'
-                  />
-                  <div x-show='showSelector' className='absolute left-0 bg-white z-30 w-full font-medium'>
-                    <div className='p-2 space-y-1'>
-                      <template x-for='(name, id) in options' />
-                      <template x-if='options.length === 0' />
-                    </div>
-                  </div>
-                </div>
-              </div>
+
+      <div className='flex md:flex  justify-between w-full  h-1/2  p-2'>
+        <div className='w-2/6 ml-4 h-82 text-sm'>
+          <div className='h-2/4 ml-3 mt-1 bg-gray-100 border-2 border-gray-400 p-4 mb-1'>
+            <h5 className='text-xl font-bold'>Product Maching</h5>
+            <div className='flex justify-between'>
+              <p className='text-red-700'>Cut to Size</p>
+              <span>Yse</span>
+            </div>
+            <div className='flex justify-between'>
+              <p className='text-red-700'>Cut to Size</p>
+              <span>Yse</span>
+            </div>
+            <div className='flex justify-between'>
+              <p className='text-red-700'>Cut to Size</p>
+              <span>Yse</span>
+            </div>
+            <div className='flex justify-between'>
+              <p className='text-red-700'>Cut to Size</p>
+              <span>Yse</span>
             </div>
           </div>
-          <div className='flex gap-x-2 items-center mb-5'>
-            <h3 className='mb-4 font-semibold text-gray-900 dark:text-white sm:w-[40%] w-[28%]'>Angel cut between:</h3>
-            <ul className='text-sm font-medium text-gray-900 bg-white dark:bg-gray-700 dark:border-gray-600 dark:text-white grid grid-cols-4 sm:w-[60%] w-[72%] '>
-              <li className='w-full'>
-                <div className='flex items-center pl-3 flex-col text-center'>
-                  <label
-                    htmlFor='list-radio-license'
-                    className='w-full py-3 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300'
-                  >
-                    L1-W1
-                  </label>
-                  <input
-                    id='list-radio-license'
-                    type='radio'
-                    defaultValue=''
-                    name='list-radio'
-                    className='w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500'
-                  />
-                </div>
-              </li>
-              <li className='w-full'>
-                <div className='flex items-center pl-3 flex-col text-center'>
-                  <label
-                    htmlFor='list-radio-id'
-                    className='w-full py-3 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300'
-                  >
-                    L1-W2
-                  </label>
-                  <input
-                    id='list-radio-id'
-                    type='radio'
-                    defaultValue=''
-                    name='list-radio'
-                    className='w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500'
-                  />
-                </div>
-              </li>
-              <li className='w-full'>
-                <div className='flex items-center pl-3 flex-col text-center'>
-                  <label
-                    htmlFor='list-radio-millitary'
-                    className='w-full py-3 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300'
-                  >
-                    L2-W1
-                  </label>
-                  <input
-                    id='list-radio-millitary'
-                    type='radio'
-                    defaultValue=''
-                    name='list-radio'
-                    className='w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500'
-                  />
-                </div>
-              </li>
-              <li className='w-full'>
-                <div className='flex items-center pl-3 flex-col text-center'>
-                  <label
-                    htmlFor='list-radio-passport'
-                    className='w-full py-3 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300'
-                  >
-                    L2-W2
-                  </label>
-                  <input
-                    id='list-radio-passport'
-                    type='radio'
-                    defaultValue=''
-                    name='list-radio'
-                    className='w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500'
-                  />
-                </div>
-              </li>
-            </ul>
-          </div>
-          <div className='grid grid-cols-2 gap-x-4 mb-5'>
-            <div className='flex gap-x-3 items-center'>
-              <div className='text-[14px] text-[12px] sm:w-1/2 w-[78%]'>From W2</div>
-              <div>
-                <input
-                  type='text'
-                  name='name'
-                  id='name'
-                  className='block border border-primary py-2 px-2.5 text-gray-900 shadow-sm placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary text-sm leading-6 focus:outline-none w-1/2'
-                />
-              </div>
+          <div className='h-1/3  ml-3 mt-2 bg-gray-100 border-2 border-gray-400 p-4  mb-2'>
+            <h5 className='text-xl font-bold'>Product size</h5>
+            <div className='flex justify-between'>
+              <p className='text-red-700'>Cut to Size</p>
+              <span>Yse</span>
             </div>
-            <div className='flex gap-x-3 items-center'>
-              <div className='sm:text-[14px] text-[12px] sm:w-1/2 w-[78%]'>From L2</div>
-              <div>
-                <input
-                  type='text'
-                  name='name'
-                  id='name'
-                  className='block border border-primary py-2 px-2.5 text-gray-900 shadow-sm placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary text-sm leading-6 focus:outline-none w-1/2'
-                />
-              </div>
+            <div className='flex justify-between'>
+              <p className='text-red-700'>Cut to Size</p>
+              <span>Yse</span>
             </div>
-          </div>
-          <div className='flex gap-x-5 items-center mb-16'>
-            <div>View</div>
-            <div className='border border-black flex'>
-              <div className='bg-primary text-xl text-white text-center px-4 py-5'>
-                A side <br />
-                <span className='text-base'>Front face</span>
-              </div>
-              <div className='bg-white text-xl text-black text-center px-4 py-5'>
-                B side <br />
-                <span className='text-base'>Front face</span>
-              </div>
-            </div>
-          </div>
-          <div className='border border-[#acacac]'>
-            <img src='../imagestt/aside-view-img.webp' alt='' />
           </div>
         </div>
-        <div className='basis-3/5 relative sm:mt-0 mt-[25px]'>
-          <img src='../imagestt/grain-direction-img.webp' alt='' />
-          <div className='sm:absolute text-center bottom-0 right-0 mb-6 mr-6'>
-            <button className='text-xl text-white bg-primary px-6 py-2'>Save</button>
+        <div className=' w-4/6 ml-8 p-4'>
+          <div>
+            <button className='border-2 border-lg border-gray-400 p-1 mr-3'>
+              {' '}
+              <FaPlus />
+            </button>
+            <span className='text-sm font-bold'>1</span>
+            <button className='border-2 border-lg border-gray-400 p-1 ml-3'>
+              <FaMinus />
+            </button>
+          </div>
+          <div className='flex  mt-3'>
+            <div className='mr-4 '>
+              <button className='p-3 outline-red-700 mt-2 w-40  text-xs   text-white bg-red-700'>Buy full sheet</button>
+              <h3 className='text-2xl font-bold'>
+                Total:<span className='text-red-700'>$248.75</span>
+              </h3>
+              <p className='text-sm'>With VAI:$298.50</p>
+            </div>
+            <div className='ml-4'>
+              <button className='p-3 outline-black mt-2 w-40  text-xs   text-white bg-black'>Add to cutting list</button>
+              <h3 className='text-2xl font-bold'>
+                Total:<span className='text-red-700'>$248.75</span>
+              </h3>
+              <p className='text-sm'>With VAI:$298.50</p>
+            </div>
+          </div>
+          <div className='mt-4'>
+            <p className='text-sm'>Available thicknesses[mm]:</p>
+            <div className='border-2 border-gray-400 p-2 bg-gray-100 mt-2'>
+              <div className='p-2'>
+                <span className='border-2 bg-red-700 border-red-700 p-1 text-white text-sm'>18</span>
+                <span className='border-2 bg-white border-red-700 p-1 text-black text-sm ml-1'>38</span>
+              </div>
+              <div className='flex justify-between'>
+                <p className='text-sm font-bold'>Full sheet Price</p>
+                <span className='text-red-700'>$248.75</span>
+              </div>
+              <div className='flex justify-between'>
+                <p className='text-sm font-bold'>Full sheet Price</p>
+                <span className='text-red-700'>$248.75</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>

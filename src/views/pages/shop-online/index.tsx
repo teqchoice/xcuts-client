@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import PageIntroduction from '../components/pageIntroduction'
-import Order from './order'
+// import Order from './order'
 import { BackgroundImage } from '@mantine/core'
 import CNCCutting from './CncCutting'
 

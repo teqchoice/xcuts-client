@@ -16,7 +16,7 @@ export default function CollectionsItemSection({ Data, Brand }: any) {
   useEffect(() => {
     setQuery(router.query)
   }, [router.query])
-  function CollectionItem() {
+  function BrandItem() {
     return Brand.map((item: any, index: number) => {
       // console.log(item)
       return (
@@ -140,7 +140,7 @@ export default function CollectionsItemSection({ Data, Brand }: any) {
   if (query && Object.values(query).every(x => x === '')) {
     return (
       <div className='grid md:grid-cols-2 gap-x-10 gap-y-10 pb-20'>
-        <CollectionItem />
+        <BrandItem />
       </div>
     )
   }
@@ -188,7 +188,7 @@ export default function CollectionsItemSection({ Data, Brand }: any) {
       )}
 
       {opened && (
-        <div className=' z-50 max-h-[90vh] overflow-y-scroll p-5 rounded-md fixed bg-white top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2'>
+        <div className='w-6/12 z-50 min-h-[80vh] overflow-y-scroll p-5 rounded-md fixed bg-white top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2'>
           <div className='relative'>
             <div
               className='bg-red-600 text-white p-3 top-0 right-0 w-10 h-10 cursor-pointer'
