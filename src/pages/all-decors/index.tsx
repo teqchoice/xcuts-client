@@ -32,7 +32,7 @@ export default function PDecorCollections({ data, brand, layout }: any) {
     let config = {
       method: 'get',
       maxBodyLength: Infinity,
-      url: 'https://shop.xcuts.co.uk/api/collections/decors/records?expand=brand_ref&filter=(brand_ref.name~\'kronospan\')',
+      url: 'https://shop.xcuts.co.uk/api/collections/decors/records?expand=brand_ref,core_ref,surface_ref,finish_ref,texture_ref,design_ref&filter=(brand_ref.name~\'egger\')',
       headers: { }
     };
     
