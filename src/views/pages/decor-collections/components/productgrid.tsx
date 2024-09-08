@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 
-export default function Productgrid({item, setOpened}:any) {
+export default function Productgrid({item, setOpened, opened}:any) {
     const [thickness, setThickness] = useState([])
 
     useEffect(()=>{

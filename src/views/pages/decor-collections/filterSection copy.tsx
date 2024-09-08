@@ -99,7 +99,7 @@ export default function FilterSection(props: any) {
   // console.log(Data)
   return (
     <>
-      <div className='grid lg:grid-cols-8 md:grid-cols-5 sm:grid-cols-4 gap-x-2 md:gap-y-2 sm:gap-y-2 gap-y-2 mt-10 mb-10'>
+      <div className='grid lg:grid-cols-8 md:grid-cols-5 sm:grid-cols-4 gap-x-2 md:gap-y-2 sm:gap-y-2 gap-y-2 mt-10 mb-2'>
         <div>
           <input
             value={name}

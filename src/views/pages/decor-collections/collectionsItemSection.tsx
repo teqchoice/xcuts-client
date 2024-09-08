@@ -75,11 +75,11 @@ export default function CollectionsItemSection({ Data, Brand }: any) {
   return (
     <div>
       <div className='flex md:justify-end flex-col w-40 text-center ml-auto md:ml-auto md:mr-0 mr-auto'>
-        <p className='mb-3'>Display options</p>
+        <p className='mb-2'>Display options</p>
         <div className='flex justify-center'>
           {/*Tabs navigation*/}
           <ul
-            className='mb-5 flex gap-3 list-none flex-row flex-wrap border-b-0 pl-0'
+            className='flex gap-3 list-none flex-row flex-wrap border-b-0 pl-0'
             role='tablist'
             data-te-nav-ref=''
           >
@@ -112,16 +112,16 @@ export default function CollectionsItemSection({ Data, Brand }: any) {
       ) : (
         <div className='grid md:grid-cols-2 gap-x-10 gap-y-10 pb-20'>
           { Data?.items?.map( (item: any, index: number) => {
-            return <Productgrid item={item} key={index} setOpened={setOpened}/>
+            return <Productgrid item={item} key={index} setOpened={setOpened} opened={opened}/>
           })}
         </div>
       )}
 
       {opened && (
-        <div className='w-6/12 z-50 min-h-[80vh] overflow-y-scroll p-5 rounded-md fixed bg-white top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2'>
-          <div className='relative'>
+        <div className='w-screen h-screen z-50 p-5 top-0 left-0 fixed bg-black/80'>
+          <div className='relative w-10/12 xl:w-8/12 2xl:w-7/12 z-50 rounded-md  bg-white top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2'>
             <div
-              className='bg-red-600 text-white p-3 top-0 right-0 w-10 h-10 cursor-pointer'
+              className='text-black p-3 top-0 right-0 w-10 h-10 cursor-pointer absolute z-50'
               onClick={() => setOpened(!opened)}
             >
               <Close />

@@ -49,7 +49,7 @@ export default function Pupapt() {
         </div>
       </div>
 
-      <div className='flex md:flex  justify-between w-full  h-1/2  p-2'>
+      <div className='flex md:flex justify-between w-full h-1/2 p-2'>
         <div className='w-2/6 ml-4 h-82 text-sm'>
           <div className='h-2/4 ml-3 mt-1 bg-gray-100 border-2 border-gray-400 p-4 mb-1'>
             <h5 className='text-xl font-bold'>Product Maching</h5>
