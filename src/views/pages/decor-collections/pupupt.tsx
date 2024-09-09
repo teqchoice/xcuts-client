@@ -103,14 +103,14 @@ export default function Pupapt({data}:any) {
             {show ? <button className='p-3 outline-primary mt-2 w-full text-xs text-white bg-primary'>Buy full sheet</button> : <div className='p-3 text-center outline-primary mt-2 w-full text-xs text-white bg-gray-400'>Buy full sheet</div>}
               
               <h3 className='text-2xl'>
-                Total:<span className='text-primary font-bold'>${show ? thickness[0]?.full_sheet_price : thickness[1]?.full_sheet_price}</span>
+                Total:<span className='text-primary font-bold'>£{show ? thickness[0]?.full_sheet_price : thickness[1]?.full_sheet_price}</span>
               </h3>
               <p className='text-sm'>With VAI:$298.50</p>
             </div>
             <div className=' w-full'>
               <button className='p-3 outline-black mt-2 w-full text-xs text-white bg-black'>Add to cutting list</button>
               <h3 className='text-2xl'>
-                Total:<span className='text-primary font-bold'>${show ? thickness[0]?.cutting_Price : thickness[1]?.cutting_Price}</span>
+                Total:<span className='text-primary font-bold'>£{show ? thickness[0]?.cutting_Price : thickness[1]?.cutting_Price}</span>
               </h3>
               <p className='text-sm'>With VAI:$298.50</p>
             </div>
@@ -124,11 +124,11 @@ export default function Pupapt({data}:any) {
               </div>
               <div className='flex justify-between mt-2'>
                 <p className='text-xs text-black'>Full sheet price</p>
-                <span className='text-primary'>${show ? thickness[0]?.full_sheet_price : thickness[1]?.full_sheet_price}</span>
+                <span className='text-primary'>£{show ? thickness[0]?.full_sheet_price : thickness[1]?.full_sheet_price}</span>
               </div>
               <div className='flex justify-between'>
                 <p className='text-xs text-black'>Sheet price with cutting (up to 20 pieces per sheet)</p>
-                <span className='text-primary'>${show ? thickness[0]?.cutting_Price : thickness[1]?.cutting_Price}</span>
+                <span className='text-primary'>£{show ? thickness[0]?.cutting_Price : thickness[1]?.cutting_Price}</span>
               </div>
             </div>
           </div>
