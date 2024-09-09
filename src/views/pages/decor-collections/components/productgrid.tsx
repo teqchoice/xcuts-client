@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 
-export default function Productgrid({item, setOpened, opened}:any) {
+export default function Productgrid({item, setOpened, opened, setPupitem}:any) {
     const [thickness, setThickness] = useState([])
 
     useEffect(()=>{
@@ -91,7 +91,13 @@ export default function Productgrid({item, setOpened, opened}:any) {
                 </div>
               </div>
               <div
-                onClick={() => setOpened(!opened)}
+                onClick={() => {
+                  setPupitem({
+                    item,
+                    thickness
+                  }) 
+                  setOpened(!opened)
+                }}
                 className='bg-black popup-modal -rotate-90 cursor-pointer inline-block text-white text-lg font-semibold px-10 py-5 absolute bottom-[76px] right-[-76px]'
               >
                 More info - Buy

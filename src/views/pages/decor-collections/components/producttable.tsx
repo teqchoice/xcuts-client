@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 
-export default function Producttable({item, setOpened}:any) {
+export default function Producttable({item, setOpened, opened, setPupitem}:any) {
     const [thickness, setThickness] = useState([])
 
     useEffect(()=>{
@@ -71,7 +71,14 @@ export default function Producttable({item, setOpened}:any) {
                       <div className='text-[14px] text-[#707070] w-10 border border-primary h-[39px] flex items-center justify-center px-[20px] py-[10px]'>
                       </div>
                       <div
-                        className='popup-modal px-6 py-[8px] font-medium text-[15px] bg-black text-white'
+                        className='cursor-pointer popup-modal px-6 py-[8px] font-medium text-[15px] bg-black text-white'
+                        onClick={() => {
+                          setPupitem({
+                            item,
+                            thickness
+                          }) 
+                          setOpened(!opened)
+                        }}
                       >
                         Buy
                       </div>

@@ -9,6 +9,7 @@ import Productgrid from './components/productgrid'
 
 export default function CollectionsItemSection({ Data, Brand }: any) {
   const [opened, setOpened] = useState(false)
+  const [pupitem, setPupitem] = useState([])
   const [show, setShow] = useState(1)
   // console.log(Brand?.items)
   const router = useRouter()
@@ -108,25 +109,25 @@ export default function CollectionsItemSection({ Data, Brand }: any) {
       </div>
 
       {show == 1 ? (
-        <Table data={Data?.items} />
+        <Table data={Data?.items} setOpened={setOpened} opened={opened} setPupitem={setPupitem} />
       ) : (
-        <div className='grid md:grid-cols-2 gap-x-10 gap-y-10 pb-20'>
+        <div className='grid md:grid-cols-2 xl:grid-cols-3 lg:grid-cols-2 lg:px-10 gap-x-10 gap-y-10 pb-20'>
           { Data?.items?.map( (item: any, index: number) => {
-            return <Productgrid item={item} key={index} setOpened={setOpened} opened={opened}/>
+            return <Productgrid item={item} key={index} setOpened={setOpened} opened={opened} setPupitem={setPupitem}/>
           })}
         </div>
       )}
 
       {opened && (
         <div className='w-screen h-screen z-50 p-5 top-0 left-0 fixed bg-black/80'>
-          <div className='relative w-10/12 xl:w-8/12 2xl:w-7/12 z-50 rounded-md  bg-white top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2'>
+          <div className='relative w-10/12 xl:w-8/12 2xl:w-6/12 z-50 rounded-md  bg-white top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2'>
             <div
               className='text-black p-3 top-0 right-0 w-10 h-10 cursor-pointer absolute z-50'
               onClick={() => setOpened(!opened)}
             >
               <Close />
             </div>
-            <Pupapt />
+            <Pupapt data={pupitem} />
           </div>
         </div>
       )}

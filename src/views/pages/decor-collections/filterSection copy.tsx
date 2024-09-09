@@ -125,37 +125,37 @@ export default function FilterSection(props: any) {
             <option className='text-gray-500' value='egger'>
               Egger
             </option>
-            <option className='text-gray-500' value='Kronospan'>
+            <option className='text-gray-500' value='kronospan'>
               Kronospan
             </option>
-            <option className='text-gray-500' value='XyloCleaf'>
+            <option className='text-gray-500' value='xylocleaf'>
               XyloCleaf
             </option>
-            <option className='text-gray-500' value='Saviola'>
+            <option className='text-gray-500' value='saviola'>
               Saviola
             </option>
-            <option className='text-gray-500' value='Swiss Krono'>
+            <option className='text-gray-500' value='swiss krono'>
               Swiss Krono
             </option>
-            <option className='text-gray-500' value='Alvic'>
+            <option className='text-gray-500' value='alvic'>
               Alvic
             </option>
-            <option className='text-gray-500' value='Senoplast'>
+            <option className='text-gray-500' value='senoplast'>
               Senoplast
             </option>
-            <option className='text-gray-500' value='Serica'>
+            <option className='text-gray-500' value='serica'>
               Serica
             </option>
-            <option className='text-gray-500' value='Wall Panelling'>
+            <option className='text-gray-500' value='wall panelling'>
               Wall Panelling
             </option>
-            <option className='text-gray-500' value='MDF Boards'>
+            <option className='text-gray-500' value='MDF boards'>
               MDF Boards
             </option>
-            <option className='text-gray-500' value='Veneered Boards'>
+            <option className='text-gray-500' value='veneered boards'>
               Veneered Boards
             </option>
-            <option className='text-gray-500' value='Plywood'>
+            <option className='text-gray-500' value='plywood'>
               Plywood
             </option>
           </select>
