@@ -9,11 +9,33 @@ import { useRouter } from 'next/router'
 
 export default function PDecorCollections({ data, brand, layout }: any) {
   const router = useRouter()
-  console.log(router.query.Brand)
   const [Brand, setBrand] = useState()
   const [Data, setData] = useState()
-  // console.log(data)
-  // console.log(layout)
+  console.log(`https://shop.xcuts.co.uk/api/collections/decors/records?filter=(brand_ref.name=\'${router.query.Brand}\'${router.query.Core ? `%26%26core_ref.name=\'${router.query.Core}\'`:''}${router.query.Surface ? `%26%26surface_ref.name=\'${router.query.Surface}\'`:''}${router.query.Design ? `%26%26design_ref.name=\'${router.query.Design}\'`:''}${router.query.Finish ? `%26%26finish_ref.name=\'${router.query.Finish}\'`:''})`)
+  // const [para, setParas] = useState('')
+  // useEffect(() => {
+  //   let queryStr = ''
+  //   if (router.query.Brand) {
+  //     queryStr += `brand_ref.name='${router.query.Brand}'`
+  //   }
+  //   if (router.query.Texture) {
+  //     queryStr += `&&texture_ref.name='${router.query.Texture}'`
+  //   }
+  //   if (router.query.Core) {
+  //     queryStr += `&&core_ref.name='${router.query.Core}'`
+  //   }
+  //   if (router.query.Design) {
+  //     queryStr += `&&design_ref.name='${router.query.Design}'`
+  //   }
+  //   if (router.query.Surface) {
+  //     queryStr += `&&surface_ref.name='${router.query.Surface}'`
+  //   }
+  //   if (router.query.Finish) {
+  //     queryStr += `&&finish_ref.name='${router.query.Finish}'`
+  //   }
+  //   setParas(queryStr)
+  //   console.log(para)
+  // }, [router.query])
   useEffect(() => {
     let config = {
       method: 'get',
@@ -35,7 +57,7 @@ export default function PDecorCollections({ data, brand, layout }: any) {
     let config = {
       method: 'get',
       maxBodyLength: Infinity,
-      url: `https://shop.xcuts.co.uk/api/collections/decors/records?expand=brand_ref,core_ref,surface_ref,finish_ref,texture_ref,design_ref&filter=(brand_ref.name~\'${router.query.Brand}\')&filter=(texture_ref.name=\'plain\')`,
+      url: `https://shop.xcuts.co.uk/api/collections/decors/records?filter=(brand_ref.name=\'${router.query.Brand}\'${router.query.Core ? `%26%26core_ref.name=\'${router.query.Core}\'`:''}${router.query.Surface ? `%26%26surface_ref.name=\'${router.query.Surface}\'`:''}${router.query.Design ? `%26%26design_ref.name=\'${router.query.Design}\'`:''}${router.query.Finish ? `%26%26finish_ref.name=\'${router.query.Finish}\'`:''})`,
       headers: { }
     };
     
