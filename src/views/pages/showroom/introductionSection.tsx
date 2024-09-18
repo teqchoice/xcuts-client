@@ -15,10 +15,10 @@ export default function IntroductionSection() {
           </div>
           <div className='flex flex-col gap-y-3 text-black-1d mt-10'>
             <p>
-              Conveniently located in Borehamwood, on the outskirts of London, the Cworkshop showroom is easily
-              accesible from the M25, M1 and A1 motorways. View some of our top decor ranges in the flesh and get more
-              familiar with the way we work. The showroom is open to all, including carpenters, furniture makers,
-              interior designers and DIY enthusiasts alike.
+              Conveniently located in Hatfield, just outside London, the Xcuts showroom is easily accessible via the
+              M25, M1, and A1. Visit us to explore our top décor selections in person and get a closer look at how we
+              operate. Our showroom is open to everyone, from carpenters and furniture makers to interior designers and
+              DIY enthusiasts.
             </p>
           </div>
         </div>

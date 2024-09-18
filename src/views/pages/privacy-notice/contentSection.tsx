@@ -20,7 +20,7 @@ const defaultTOurGuarantee: Partial<TOurGuarantee> = {
     "Here at Xcuts, we understand that humans (and machines) can sometimes make mistakes and things don't entirely turn out the way you want them. We don't like the idea of our customers being stuck on the job. That is why we will provide you with a replacement panel within 24 hours in the unlikely event we didn't get it right from the get-go.",
   questions: [
     {
-      q: 'What happens when Cworkshop gets it wrong?',
+      q: 'What happens when Xcuts gets it wrong?',
       a: 'Simple. As soon as you notice an issue with your cut and edged panel, get in touch with us by twelve noon and we will send you a free replacement before midday on the next working day.'
     },
     {
@@ -146,7 +146,7 @@ export default function ContentSection(props: any) {
                     Website
                   </th>
                   <td className='p-4 text-[#6d6d6d] border-t border-b border-[#e7e7e7]'>
-                    the website that you are currently using, cworkshop.co.uk, and any sub-domains of this site unless
+                    the website that you are currently using, Xcuts.co.uk, and any sub-domains of this site unless
                     expressly excluded by their own terms and conditions.
                   </td>
                 </tr>
@@ -325,7 +325,7 @@ export default function ContentSection(props: any) {
             <p className='mb-3'>
               2. Technical and organisational measures include measures to deal with any suspected data breach. If you
               suspect any misuse or loss or unauthorised access to your Data, please let us know immediately by
-              contacting us via this e-mail address: privacy @ cworkshop co uk.
+              contacting us via this e-mail address: privacy @ Xcuts co uk.
             </p>
             <p className='mb-3'>
               3. If you want detailed information from Get Safe Online on how to protect your information and your
@@ -383,7 +383,7 @@ export default function ContentSection(props: any) {
             <p className='mb-3'>
               2. To make enquiries, exercise any of your rights set out above, or withdraw your consent to the
               processing of your Data (where consent is our legal basis for processing your Data), please contact us via
-              this e-mail address: privacy @ cworkshop co uk.
+              this e-mail address: privacy @ Xcuts co uk.
             </p>
             <p className='mb-3'>
               3. If you are not satisfied with the way a complaint you make in relation to your Data is handled by us,
@@ -541,7 +541,7 @@ export default function ContentSection(props: any) {
               deemed to have accepted the terms of the privacy notice on your first use of the Website following the
               alterations.
             </p>
-            <p className='mb-3 pl-5'>You may contact C Workshop Ltd by email at privacy @ cworkshop co uk.</p>
+            <p className='mb-3 pl-5'>You may contact C Workshop Ltd by email at privacy @ Xcuts co uk.</p>
             <p className='mb-3 text-primary pl-5'>25 May 2018</p>
           </div>
           <div>
