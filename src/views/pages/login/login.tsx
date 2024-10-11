@@ -26,7 +26,7 @@ export default function Login() {
     let config = {
       method: 'post',
       maxBodyLength: Infinity,
-      url: 'https://api.xcuts.co.uk/api/user/login',
+      url: 'https://gate.xcuts.co.uk/users/sendCode',
       headers: {
         'Content-Type': 'application/json'
       },
@@ -39,8 +39,7 @@ export default function Login() {
     axios
       .request(config)
       .then(response => {
-        // console.log(response.data)
-
+        console.log(response.data)
         toast.success('code was sent to your email')
         setCode(true)
         // window.location.replace('/dashboard')
@@ -57,7 +56,7 @@ export default function Login() {
     let config = {
       method: 'post',
       maxBodyLength: Infinity,
-      url: 'https://api.xcuts.co.uk/api/user/verify',
+      url: `${process.env.NEXT_PUBLIC_SHOP_GATE_API_URL}/users/verification`,
       headers: {
         'Content-Type': 'application/json'
       },

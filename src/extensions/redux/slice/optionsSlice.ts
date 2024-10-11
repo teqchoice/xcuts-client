@@ -3,7 +3,7 @@ import { createSlice } from '@reduxjs/toolkit'
 export const options = createSlice({
   name: 'options',
   initialState: {
-    password: 'K&%XVH83]018Sd2%',
+    password: '12345',
     passwordvrify: false
   },
   reducers: {
