@@ -25,7 +25,7 @@ export default function AboutSection({ data }: any) {
       )}
       <div className='px-4 sm:container'>
         <div className='text-center px-1 overflow-hidden'>
-          <div
+          {/* <div
             className='text-2xl md:text-4xl'
             dangerouslySetInnerHTML={{
               __html: select(
@@ -34,7 +34,10 @@ export default function AboutSection({ data }: any) {
                 item => item?.title == 'XCUTS'
               )[0]
             }}
-          ></div>
+          ></div> */}
+          <div className='text-3xl md:text-5xl font-medium text-black'>
+            <span className='text-primary'>X</span>CUTS
+          </div>
           <div className='bg-black mx-6 md:mx-28 skew-y-[0] skew-x-[35deg] relative'>
             <div className='w-3 md:w-20 h-11 bg-primary absolute left-0 md:-left-24 bottom-0'></div>
             <div className='w-3 md:w-20 h-11 bg-primary absolute right-0 md:-right-24 top-0'></div>
@@ -52,21 +55,24 @@ export default function AboutSection({ data }: any) {
             </h1>
           </div>
           <div
-            className='flex flex-col gap-y-3 mt-10 text-lg'
-            // dangerouslySetInnerHTML={{
-            //   __html: select(
-            //     data[0],
-            //     item => item?.value,
-            //     item => item?.title == 'content'
-            //   )[0]
-            // }}
+            className='flex flex-col gap-y-1 mt-10 text-lg'
           >
-            Xcuts offers a wide range of services and products to meet the needs of bespoke carpenters, interior
+            XCUTS offers a wide range of services and products to meet the needs of bespoke carpenters, interior
             designers, general builders, and DIYers. We are purveyors of the highest-quality furniture boards available
-            and are committed to providing the best solutions for furniture panel cut-to-size, edgebanding, spray
+            and are committed to providing the best solutions for furniture panel cut-to-size, edge banding, spray
             painting, and CNC milling.
           </div>
-          <div className='flex flex-col gap-y-3 mt-10 text-lg'>Get in touch today to learn more about us.</div>
+          <div className='flex flex-col gap-y-1 mt-3 text-lg'>Get in touch today to learn more about us.</div>
+          <div
+            className='flex flex-col gap-y-1 mt-3 text-lg'
+            
+          >
+            Our goal is to become the leading provider of cutting, edging, and CNC services in the UK and expand our
+            reach globally. We are committed to delivering exceptional service, rapid turnaround times, and highly
+            competitive pricing to meet the diverse needs of our clients. Through innovation and dedication to quality,
+            we aim to set a new standard in the woodworking industry and support our customers in achieving outstanding
+            results.
+          </div>
         </div>
       </div>
       <Modal modal={modal} setModal={setModal} data={data[0]} />

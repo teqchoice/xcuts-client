@@ -51,21 +51,17 @@ export default function SolidWoodSection(props: any) {
           <div className=' flex justify-center items-center flex-col'>
             <div className='text-center  max-w-[80%] text-black mb-5 mt-20'>
               {/* <p className='text-3xl'>Solid wood</p> */}
-              <h4 className='md:text-5xl text-4xl font-semibold mb-7'>Grain Alignment</h4>
+              <h4 className='md:text-5xl text-4xl font-semibold mb-7'>Grain Alignment Service</h4>
               <p className='text-base text-black'>
-                Your cutting list can be optimised to grain match the pattern to create a seamless design, which is
-                especially useful when working on larger projects.
+                Maximise the aesthetic appeal of your project with our grain alignment service. We can code a cutting
+                plan that allows the grain or pattern of melamine boards or coated MDF to flow seamlessly across
+                multiple panels. This service is perfect for designs that feature:
               </p>
+              <p className='text-base text-black'>• Multiple vertical doors with horizontally aligned grain.</p>
+              <p className='text-base text-black'>• A stack of drawer fronts with vertically aligned grain.</p>
               <p className='text-base text-black'>
-                The grain matching service we provide works best with vertical panels, such as doors, but can also be
-                used in a stacked application for drawers.
-              </p>
-              <p className='text-base text-black'>
-                The grain matching service we provide works best with vertical panels, such as doors, but can also be
-                used in a stacked application for drawers.
-              </p>
-              <p className='text-base text-black'>
-                Grain matching can be used with our MFC, veneered MDF and plywood products.
+                This process results in a visually cohesive final product, enhancing the elegance and precision of your
+                design.
               </p>
 
               <div className='flex gap-5 my-5 lg:my-10'>
@@ -81,8 +77,8 @@ export default function SolidWoodSection(props: any) {
               </div>
 
               <p className='text-base text-black'>
-                Only boards with a grainy design or texture are eligible for the service. When creating your cutting
-                list, check the panels you want to have the grain matched, and we'll handle the rest.
+                Only boards with a grainy texture or design qualify for this service. Simply mark the panels you'd like
+                to have grain-matched when creating your cutting list, and our team will handle the rest.
               </p>
             </div>
 

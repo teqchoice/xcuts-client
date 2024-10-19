@@ -15,10 +15,10 @@ export default function PortfolioSection() {
         </div>
         <div className='basis-[47.88%] flex items-center'>
           <div className='flex flex-col md:justify-center md:ml-auto pb-16 py-8 px-4 md:max-w-[410px] lg:max-w-[567px] lg:pr-16'>
-            <p className='text-black text-3xl mb-1'>A sensory experience</p>
-            <h2 className='text-3xl md:text-4xl lg:text-5xl text-black font-bold mb-6'>LEARN</h2>
+            <p className='text-black text-3xl mb-1'>A feeling of the senses!</p>
+            <h2 className='text-3xl md:text-4xl lg:text-5xl text-black font-bold mb-6'>DISCOVER</h2>
             <p className='text-xl'>
-              Get to know more about our latest decors, what makes them unique and visualise them in your surroundings.
+              Learn more about our newest decors, what makes them special, and try to picture them in your environment.{' '}
             </p>
           </div>
         </div>

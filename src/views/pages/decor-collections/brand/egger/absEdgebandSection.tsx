@@ -50,7 +50,7 @@ export default function ABSEdgebandSection(props: any) {
         <div className='px-4 sm:container'>
           <div className='text-center text-black mb-11 mt-20'>
             {/* <p className='text-3xl'>ABS edgeband</p> */}
-            <h4 className='md:text-5xl text-4xl font-semibold mb-7'>The Key Features:</h4>
+            <h4 className='md:text-5xl text-4xl font-semibold mb-7'>Key Features of XCUTS Cutting Service</h4>
             {/* <p className='text-base text-black'>
               The 1mm ABS Edge Banding tape is almost undetectable and offers a moderately robust edge surface. Square
               and radius milling options are available for the tape.
@@ -68,10 +68,10 @@ export default function ABSEdgebandSection(props: any) {
             </div>
             <div className='basis-[47.88%] flex items-center'>
               <div className='flex flex-col md:justify-center md:ml-auto pb-16 py-8 px-8 md:max-w-[410px] lg:max-w-[567px]'>
-                <h2 className='text-2xl md:text-3xl text-black font-bold mb-6'>Computerised Cutting : </h2>
+                <h2 className='text-2xl md:text-3xl text-black font-bold mb-6'>Computerised Cutting:</h2>
                 <p className='text-lg'>
-                  Using your cutting list, our computerised saws optimise the cutting process to get the most out of
-                  your boards.
+                  Our cutting process is powered by advanced computer-controlled machinery that efficiently directs the
+                  operator on what to do and when, ensuring consistency and accuracy throughout the job.
                 </p>
               </div>
             </div>
@@ -90,9 +90,10 @@ export default function ABSEdgebandSection(props: any) {
             </div>
             <div className='basis-[47.88%] flex items-center'>
               <div className='flex flex-col md:justify-center md:mr-auto pb-16 py-8 px-8 md:max-w-[410px] lg:max-w-[567px]'>
-                <h2 className='text-2xl md:text-3xl text-black font-bold mb-6'>Accurate To 0.1mm :</h2>
+                <h2 className='text-2xl md:text-3xl text-black font-bold mb-6'>Remarkable Accuracy:</h2>
                 <p className='text-lg'>
-                  Our cutting capabilities can cut you panels to size within 0.1mm: accuracy at its best.
+                  Thanks to cutting-edge technology and the expertise of our operators, we can deliver precision cuts
+                  with an accuracy of 0.1mm, ensuring every panel is professionally tailored to your needs.
                 </p>
               </div>
             </div>
@@ -109,9 +110,10 @@ export default function ABSEdgebandSection(props: any) {
             </div>
             <div className='basis-[47.88%] flex items-center'>
               <div className='flex flex-col md:justify-center md:ml-auto pb-16 py-8 px-8 md:max-w-[410px] lg:max-w-[567px]'>
-                <h2 className='text-2xl md:text-3xl text-black font-bold mb-6'>Panel labelling :</h2>
+                <h2 className='text-2xl md:text-3xl text-black font-bold mb-6'>Panel Labels:</h2>
                 <p className='text-lg'>
-                  Each panel cut gets labelled with information, such as panel name, size, and edgebanding details.
+                  For ease of use, every panel we cut is labelled, making it simple to identify during any subsequent
+                  machining or installation processes.
                 </p>
               </div>
             </div>
@@ -130,9 +132,10 @@ export default function ABSEdgebandSection(props: any) {
             </div>
             <div className='basis-[47.88%] flex items-center'>
               <div className='flex flex-col md:justify-center md:mr-auto pb-16 py-8 px-8 md:max-w-[410px] lg:max-w-[567px]'>
-                <h2 className='text-2xl md:text-3xl text-black font-bold mb-6'>Quality Inspections :</h2>
+                <h2 className='text-2xl md:text-3xl text-black font-bold mb-6'>Quality Inspections:</h2>
                 <p className='text-lg'>
-                  To ensure the highest quality, each cut panel is inspected before it reaches you.
+                  We thoroughly inspect all cut and edged panels before they leave our factory, ensuring only the
+                  highest quality reaches you.
                 </p>
               </div>
             </div>

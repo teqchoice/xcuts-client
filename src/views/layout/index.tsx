@@ -10,9 +10,10 @@ import Login from '../pages/login/logintest'
 import { useSelector } from 'react-redux'
 import axios from 'axios'
 import { select } from 'radash'
-import { useEffect } from 'react'
+import { Suspense, useEffect } from 'react'
 import { token } from '@/extensions/redux/api/auth'
 import Cookies from 'universal-cookie'
+import Loading from './loading'
 
 const cookie = new Cookies()
 // const poppins = Poppins({
@@ -92,12 +93,12 @@ export default function Layout({ children, data }: any) {
   }, [token])
 
   const { passwordvrify } = useSelector((state: any) => state.options)
-  if (!passwordvrify)
-    return (
-      <div className='fixed top-0 left-0 h-screen w-screen bg-white z-50'>
-        <Login />
-      </div>
-    )
+  // if (!passwordvrify)
+  //   return (
+  //     <div className='fixed top-0 left-0 h-screen w-screen bg-white z-50'>
+  //       <Login />
+  //     </div>
+  //   )
   return (
     <main className={poppins.className}>
       <Header
@@ -107,7 +108,7 @@ export default function Layout({ children, data }: any) {
           item => item?.name?.includes('Header')
         )}
       />
-
+      {/* <Suspense fallback={<Loading />}>{children}</Suspense> */}
       {children}
       <Footer
         data={select(

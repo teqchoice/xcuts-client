@@ -5,11 +5,10 @@ import '@/styles/globals.css'
 
 import { Provider } from 'react-redux'
 import { store } from '@/redux/store'
+import { PagesTopLoader } from 'nextjs-toploader/pages'
 
 import { Toaster } from 'react-hot-toast'
 import Head from 'next/head'
-import axios from 'axios'
-import Layout from '@/views/layout'
 import { MantineProvider, createTheme } from '@mantine/core'
 const theme = createTheme({
   /** Put your mantine theme override here */
@@ -34,6 +33,21 @@ export default function App({ Component, pageProps }: AppProps) {
           toastOptions={{
             duration: 2000
           }}
+        />
+        <PagesTopLoader
+          color='#e11e26'
+          // initialPosition={0.08}
+          // crawlSpeed={200}
+          // height={3}
+          // crawl={true}
+          // showSpinner={true}
+          easing='ease'
+          speed={200}
+          shadow='0 0 10px #e11e26,0 0 5px #e11e26'
+        //   template='<div class="bar" role="bar"><div class="peg"></div></div> 
+        // <div class="spinner" role="spinner"><div class="spinner-icon"></div></div>'
+          zIndex={1600}
+          showAtBottom={false}
         />
         <Component {...pageProps} />
       </MantineProvider>

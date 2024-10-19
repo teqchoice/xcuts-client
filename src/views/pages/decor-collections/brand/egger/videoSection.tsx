@@ -49,13 +49,27 @@ export default function VideoSection(props: any) {
       <section className='pt-20 relative before:bg-primary before:lg:h-[683px] before:md:h-[583px] before:sm:h-[383px] before:h-[303px] before:block before:w-full before:rounded-3xl before:absolute before:top-0'>
         <div className='px-4 sm:container'>
           <div className='text-center text-white mb-11 relative'>
-            <p className='lg:text-3xl text-2l'>How our board cutting service works.</p>
+            <p className='lg:text-3xl text-2l'>Explore Our Cutting Service in Detail:</p>
             <h4 className='lg:text-5xl md:text-3xl text-2xl font-semibold'>A Clean Cut, Everytime</h4>
             <p className='mt-5'>
-              Our saw operators load either MDF, MFC, or plywood on to the computer-programmed saw, ready to be cut.
-              After a particular panel is cut, a label is printed with the panel name, dimensions, and edgebanding
-              details that adhere to the panel. Our saws are well maintained and cleaned, and blades are replaced often,
-              to produce an accurate, clean cut every time.
+              Our cutting service goes beyond just trimming boards. With state-of-the-art equipment and experienced saw
+              operators, we ensure each cut is accurate and meets your specifications.
+            </p>
+            <p className='mt-5'>
+              • Loading Process: Our operators carefully load each MDF or MFC board for precise cutting.
+            </p>
+            <p className='mt-5'>
+              • Clear Labelling: Each board is clearly labelled with exact dimensions and edging requirements.
+            </p>
+            <p className='mt-5'>
+              • Maintenance: We perform daily cleaning and maintenance to keep our saws in top condition.
+            </p>
+            <p className='mt-5'>
+              • Advanced Dust Filtration: Our dust filtration system ensures that machine surfaces and moving components
+              remain clean and free from sawdust for optimal performance.
+            </p>
+            <p className='mt-5'>
+              For projects of any size, XCUTS guarantees professional, reliable, and efficient board-cutting services.
             </p>
           </div>
           <div

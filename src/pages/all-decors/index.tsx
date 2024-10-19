@@ -1,11 +1,14 @@
 import Layout from '@/views/layout'
-import DecorCollections from '@/views/pages/decor-collections'
-
+const DecorCollections = dynamic(() => import('@/views/pages/decor-collections'), {
+  loading: () => <Loading />,
+})
 // !! Fake DB
 import FakeDb from '@/DB/content.json'
 import axios from 'axios'
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
+import dynamic from 'next/dynamic'
+import Loading from '@/views/layout/loading'
 
 export default function PDecorCollections({ data, brand, layout }: any) {
   const router = useRouter()

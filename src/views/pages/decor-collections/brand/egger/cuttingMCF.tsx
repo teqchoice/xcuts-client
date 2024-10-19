@@ -51,30 +51,27 @@ export default function CuttingMCF(props: any) {
           <div className=' flex justify-center items-center flex-col'>
             <div className='text-center flex flex-col gap-3 max-w-[80%] text-black mb-5'>
               {/* <p className='text-3xl'>Solid wood</p> */}
-              <h4 className='md:text-5xl text-4xl font-semibold mb-7'>MFC Board Cutting Service</h4>
+              <h4 className='md:text-5xl text-4xl font-semibold mb-7'>Service for Cutting MFC Boards</h4>
               <p className='text-base text-black'>
-                Melamine-Faced Chipboard (MFC) is a widely used furniture board that come in a number of design styles,
-                textures and surface finishes. MFC boards can be purchased with or with cutting; however we do recommend
-                using our cutting service to make your board more manageable, and paired with our edgebanding, your
-                panels will be ready for assembly.
+                Melamine Faced Chipboard (MFC) is a decorative furniture board available in various patterns, textures,
+                and finishes. At XCUTS, you can either purchase entire MFC sheets or submit a cutting list for our
+                precision board cutting and edging services.
               </p>
               <p className='text-base text-black'>
-                Our saws use double-saw technology— one saw for scoring and the other for cutting, which produces a
-                clean, chip-free edge. Saw blades are switched out often to maintain a clean and precise cut. All boards
-                are trimmed around the edge by 5mm before the panels are cut to size.
+                We use double-blade technology to ensure clean and nearly chip-free cuts on every board. Our team
+                regularly swaps saw blades throughout the day to maintain cutting precision. We cut MFC boards from 8mm
+                to 38mm thick, delivering custom-sized pieces to you within a few days.
               </p>
+
               <p className='text-base text-black'>
-                MFC boards come in a range of sizes, from 8mm to 38mm, depending on the brand.
-              </p>
-              <p className='text-base text-black'>
-                <strong>We provide a large selection of MFC brands; here are a few of the most popular:</strong>
+                <strong>We offer MFC boards from leading brands such as:</strong>
               </p>
 
               <div className='flex gap-5 my-5 lg:my-10'>
                 <div className='flex flex-col items-center gap-3'>
                   <img className=' w-full object-cover object-center' src='../images/alldecor.jpeg' alt='' />
                   <h4 className='font-bold text-lg'>Saviola</h4>
-                  <p>an Italian company that specialises in classic designs built from premium materials.</p>
+                  <p>Specialises in classic designs crafted from high-quality materials.</p>
                   <a
                     href='#'
                     className='bg-black  w-fit p-2 px-4 text-white hover:bg-primary ease-in duration-200 flex items-center justify-between'
@@ -85,7 +82,7 @@ export default function CuttingMCF(props: any) {
                 <div className='flex flex-col items-center gap-3'>
                   <img className=' w-full object-cover object-center' src='../images/alldecor.jpeg' alt='' />
                   <h4 className='font-bold text-lg'>Egger</h4>
-                  <p>this popular brand, Egger, offers a wide variety of hues, textures, replicas, and woodgrains.</p>
+                  <p>Known for a vast selection of colours, textures, and realistic woodgrain designs.</p>
                   <a
                     href='#'
                     className='bg-black  w-fit p-2 px-4 text-white hover:bg-primary ease-in duration-200 flex items-center justify-between'
@@ -96,9 +93,7 @@ export default function CuttingMCF(props: any) {
                 <div className='flex flex-col items-center gap-3'>
                   <img className=' w-full object-cover object-center' src='../images/alldecor.jpeg' alt='' />
                   <h4 className='font-bold text-lg'>Alvic</h4>
-                  <p>
-                    A high-end company that offers creative and distinctive decors in a variety of inspiring designs.
-                  </p>
+                  <p>A high-end brand offering creative and unique decors.</p>
                   <a
                     href='#'
                     className='bg-black  w-fit p-2 px-4 text-white hover:bg-primary ease-in duration-200 flex items-center justify-between'
@@ -109,7 +104,7 @@ export default function CuttingMCF(props: any) {
                 <div className='flex flex-col items-center gap-3'>
                   <img className=' w-full object-cover object-center' src='../images/alldecor.jpeg' alt='' />
                   <h4 className='font-bold text-lg'>XyloCleaf</h4>
-                  <p>Another well-liked brand with universally appealing, and high-quality designs.</p>
+                  <p>A popular brand known for its globally appealing designs.</p>
                   <a
                     href='#'
                     className='bg-black  w-fit p-2 px-4 text-white hover:bg-primary ease-in duration-200 flex items-center justify-between'
@@ -118,11 +113,6 @@ export default function CuttingMCF(props: any) {
                   </a>
                 </div>
               </div>
-
-              <p className='text-base text-black'>
-                Only boards with a grainy design or texture are eligible for the service. When creating your cutting
-                list, check the panels you want to have the grain matched, and we'll handle the rest.
-              </p>
             </div>
           </div>
         </div>

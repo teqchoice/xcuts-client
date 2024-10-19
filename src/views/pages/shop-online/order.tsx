@@ -21,7 +21,6 @@ export default function Order() {
                 <div className='accordion'>
                   <div className='item'>
                     <div className='accordion-header px-5 py-5 header flex items-center justify-between bg-white shadow-[0_15px_57px_rgba(93,93,93,0.18)] rounded-xl'>
-                      {' '}
                       <span className='text-xl text-[#1b1a1a] font-medium'>Cutting list</span>{' '}
                       <i className='fa-solid fa-angle-right text-xl' />{' '}
                     </div>

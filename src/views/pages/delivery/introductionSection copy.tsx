@@ -49,27 +49,34 @@ export default function IntroductionSection(props: any) {
       <section className='section-one-stop py-10 md:py-20 pb-0 md:pb-0'>
         <div className='px-4 sm:container'>
           <div className='text-center px-1 overflow-hidden'>
-            <div className='text-2xl md:text-3xl mb-2'>We'll ensure your panels arrive on schedule</div>
+            {/* <div className='text-2xl md:text-3xl mb-2'>We'll ensure your panels arrive on schedule</div> */}
             <div className='bg-black mx-6 md:mx-28 skew-y-[0] skew-x-[35deg] relative'>
               <div className='w-3 md:w-20 h-11 bg-primary absolute left-0 md:-left-24 bottom-0'></div>
               <div className='w-3 md:w-20 h-11 bg-primary absolute right-0 md:-right-24 top-0'></div>
               <h1 className='text-white text-xl/6 md:text-4xl font-bold -skew-x-[35deg] py-2 px-4'>
-                BOOK DELIVERY WITH CERTAINTY!
+                Delivery with XCUTS
               </h1>
             </div>
-            <div className='flex justify-center gap-4 mt-10'>
+            {/* <div className='flex justify-center gap-4 mt-10'>
               <a
                 href='#'
                 className='bg-black px-5 py-4 md:px-5 lg:px-6 lg:px-9 md:py-4 font-medium text-xl text-white hover:bg-primary ease-in duration-200 flex items-center justify-between'
               >
                 Calculate Now
               </a>
-            </div>
+            </div> */}
             <div className='flex flex-col gap-y-3 text-black-1d mt-10'>
               <p>
-                We deliver countrywide, no matter where you are. We run an array of vans and do the majority of our
-                deliveries ourselves. Occasionally, a different course of action may be more economical. We will give
-                you a choice of delivery methods, depending on where and when it is available.
+                We know how important timely deliveries are for your projects, which is why we guarantee that your
+                panels will arrive on schedule. Whether you're working on a large commercial project or a small DIY job,
+                we've got you covered.
+              </p>
+              <p className='text-xl md:text-3xl mb-2'>Nationwide Delivery Service</p>
+              <p>
+                We deliver across the entire UK, no matter where you're located. Our vans handle the majority of
+                deliveries directly, ensuring safe and secure transport. In some cases, depending on your location and
+                requirements, alternative delivery methods may be more efficient or cost-effective. We’ll provide you
+                with a range of options to suit your needs.
               </p>
             </div>
           </div>
@@ -104,9 +111,9 @@ export default function IntroductionSection(props: any) {
             </div>
           </div>
           <div className='text-center pt-16'>
-            <p className='text-xl md:text-3xl mb-2'>Calculate the cost of delivery</p>
+            <p className='text-xl md:text-3xl mb-2'>Calculate Your Delivery Cost</p>
             <h4 className='text-2xl sm:text-3xl md:text-5xl font-medium text-primary uppercase'>
-              Use the calculator for delivery
+              Use our online calculator to easily estimate the cost of delivering your panels.
             </h4>
             <div className='flex justify-center gap-4 mt-10'>
               <a

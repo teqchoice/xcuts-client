@@ -51,18 +51,21 @@ export default function CuttingMDF(props: any) {
           <div className=' flex justify-center items-center flex-col'>
             <div className='text-center flex flex-col gap-3 max-w-[80%] text-black mb-5'>
               {/* <p className='text-3xl'>Solid wood</p> */}
-              <h4 className='md:text-5xl text-4xl font-semibold mb-7'>MDF Board Cutting Service</h4>
+              <h4 className='md:text-5xl text-4xl font-semibold mb-7'>Service for Cutting MDF Boards</h4>
               <p className='text-base text-black'>
-                Medium-density fibreboard (MDF) is a popular material used in the furniture industry. Due to its smooth
-                service, durability, and ease of cutting, MDF can be used in a multitude of applications, such as MDF
-                shaker panelling, furniture carcasses, Shaker-style doors, and anywhere else that needs strong support.
+                MDF (Medium Density Fibreboard) is one of the most popular board materials requested by our clients. Its
+                versatile characteristics make it highly sought after in the construction and furniture industries. From
+                wall panelling and furniture carcasses to doors and structural components, MDF boards have a wide range
+                of applications.
               </p>
               <p className='text-base text-black'>
-                Our MDF cutting service includes cutting to size all types of MDF, with thicknesses ranging from 3mm to
-                50mm.
+                At XCUTS, we provide MDF sheets from 3mm to 50mm thick, sourced from leading manufacturers like Medite,
+                Finsa, and Spanolux. Each offers unique qualities that help meet the specific demands of your projects.
               </p>
 
-              <p className='text-base text-black'>Learn more and shop for MDF here.</p>
+              <p className='text-base text-black'>
+                Click below to explore the different MDF board varieties we can cut to your exact specifications.
+              </p>
             </div>
 
             <div className='pt-14 pb-32 text-center flex justify-center'>

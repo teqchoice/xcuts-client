@@ -53,13 +53,9 @@ export default function BookingSection(props: any) {
         >
           <div className='px-4 sm:container'>
             <div className='text-center text-black mb-11 relative'>
-              <p className='text-3xl'>In a hurry?</p>
+              <p className='text-3xl'>In a Hurry?</p>
               <h4 className='lg:text-5xl md:text-4xl text-3xl font-semibold mb-7'>Reserve our service for tomorrow</h4>
-              <p>
-                For cut and edge orders, we typically require five working days in advance. You can order our Fast Flow
-                service if you need your cut and edge job finished sooner and are in a hurry. You can select between the
-                following day and 2 days or 3 and 5 days lead time options, depending on how busy we are.
-              </p>
+              <p>If you need the project on spot please contact our team and we will help you like your team members</p>
             </div>
             <div className='bg-black text-center relative flex flex-col items-center justify-center h-[363px] md:h-[463px] px-6'>
               <p className='text-xl md:text-3xl mb-2 text-white'>When there is a short turnaround time</p>
