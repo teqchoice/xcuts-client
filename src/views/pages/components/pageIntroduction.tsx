@@ -30,9 +30,13 @@ export default function PageIntroduction(props: any) {
 
         <div className='absolute top-1/2 w-full -translate-y-1/2 text-center grid'>
           {Data.baner ?? null ? (
-            <span className='font-semibold text-white text-2xl md:text-4xl lg:text-6xl uppercase'>{Data?.title}</span>
+            <>
+            <h4 className='font-semibold text-white text-2xl md:text-4xl lg:text-6xl uppercase'>{Data?.title}</h4>
+            <span className='font-semibold text-white text-lg md:text-xl lg:text-2xl uppercase'>{Data?.subtitle}</span>
+            <a href={Data?.url} className='border w-fit mx-auto p-3 mt-4 font-semibold text-white hover:bg-white hover:text-primary hover:border-primary text-lg md:text-xl lg:text-2xl uppercase'>{Data?.butt}</a>
+            </>
           ) : (
-            <h4 className='font-semibold text-2xl md:text-4xl lg:text-6xl uppercase'>{Data?.title}</h4>
+            <h4 className='font-semibold text-2xl md:text-4xl lg:text-6xl uppercase'>{Data?.title}<br/>{Data?.subtitle && Data?.subtitle}</h4>
           )}
 
           {Data?.order && (

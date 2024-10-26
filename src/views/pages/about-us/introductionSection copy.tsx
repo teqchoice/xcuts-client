@@ -49,22 +49,35 @@ export default function IntroductionSection(props: any) {
       <section className='section-one-stop py-10 md:py-20 pb-0 md:pb-0'>
         <div className='px-4 sm:container'>
           <div className='text-center px-1 overflow-hidden'>
-            <div className='text-2xl md:text-3xl mb-2'>We strive to be the best. Everyday</div>
+            <div className='text-2xl md:text-3xl mb-2'>XCUTS: Trustworthy, Efficient & Fast.</div>
             <div className='bg-black mx-6 md:mx-28 skew-y-[0] skew-x-[35deg] relative'>
               <div className='w-3 md:w-20 h-11 bg-primary absolute left-0 md:-left-24 bottom-0'></div>
               <div className='w-3 md:w-20 h-11 bg-primary absolute right-0 md:-right-24 top-0'></div>
               <h1 className='text-white text-xl/6 md:text-4xl font-bold -skew-x-[35deg] py-2 px-4 uppercase'>
-                Our purpose
+                Our Mission
               </h1>
             </div>
             <div className='flex flex-col gap-y-3 text-black-1d mt-10'>
               <p>
-                To manufacture and trade wood-based components and products of the highest quality for furniture and
-                interior design industries, while giving excellent customer service and helping our customers grow.
+                XCUTS offers a wide range of services and products to meet the needs of bespoke carpenters, interior
+                designers, general builders, and DIYers. We are purveyors of the highest-quality furniture boards
+                available and are committed to providing the best solutions for furniture panel cut-to-size, edge
+                banding, spray painting, and CNC milling.
               </p>
+              <div className='flex justify-center gap-4 my-5'>
+                <a
+                  href='#'
+                  className='bg-black px-5 py-4 md:px-5 lg:px-6 lg:px-9 md:py-4 font-medium text-xl text-white hover:bg-primary ease-in duration-200 flex items-center justify-between'
+                >
+                  - Get in touch today to learn more about us <i className='ri-arrow-right-s-line text-xl'></i>
+                </a>
+              </div>
               <p>
-                XCUTS aims to become the largest and most innovative organisation of its kinds in the UK, well known for
-                the speed of service and product quality.{' '}
+                Our goal is to become the leading provider of cutting, edging, and CNC services in the UK and expand our
+                reach globally. We are committed to delivering exceptional service, rapid turnaround times, and highly
+                competitive pricing to meet the diverse needs of our clients. Through innovation and dedication to
+                quality, we aim to set a new standard in the woodworking industry and support our customers in achieving
+                outstanding results.
               </p>
             </div>
           </div>

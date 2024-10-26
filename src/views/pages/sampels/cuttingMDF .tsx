@@ -38,7 +38,7 @@ const defaultTOurGuarantee: Partial<TOurGuarantee> = {
   ]
 }
 
-export default function BookingSection(props: any) {
+export default function CuttingMDF(props: any) {
   const Data: TOurGuarantee = {
     ...defaultTOurGuarantee,
     ...props.Data
@@ -46,29 +46,35 @@ export default function BookingSection(props: any) {
   // console.log(Data)
   return (
     <>
-      <section className='relative z-20 before:bg-neutral-200 before:content-normal before:lg:h-[583px] before:md:h-[583px] before:sm:h-[583px] before:h-[603px] before:block before:w-full before:absolute before:top-0 mb-24 '>
-        <div
-          className='pt-20 bg-no-repeat bg-[left_40px_top] relative z-20'
-          style={{ backgroundImage: "url('images/x-icon-02.webp');" }}
-        >
-          <div className='px-4 sm:container'>
-            <div className='text-center text-black mb-11 relative'>
-              <h4 className='lg:text-5xl md:text-4xl text-3xl font-semibold mb-7'>In a Hurry?</h4>
-              <p>If you need the project on spot please contact our team and we will help you like your team members</p>
+      <section>
+        <div className='px-4 sm:container'>
+          <div className=' flex justify-center items-center flex-col'>
+            <div className='text-center flex flex-col gap-3 max-w-[80%] text-black mb-5'>
+              {/* <p className='text-3xl'>Solid wood</p> */}
+              <h4 className='md:text-5xl text-4xl font-semibold mb-7'>Service for Cutting MDF Boards</h4>
+              <p className='text-base text-black'>
+                MDF (Medium Density Fibreboard) is one of the most popular board materials requested by our clients. Its
+                versatile characteristics make it highly sought after in the construction and furniture industries. From
+                wall panelling and furniture carcasses to doors and structural components, MDF boards have a wide range
+                of applications.
+              </p>
+              <p className='text-base text-black'>
+                At XCUTS, we provide MDF sheets from 3mm to 50mm thick, sourced from leading manufacturers like Medite,
+                Finsa, and Spanolux. Each offers unique qualities that help meet the specific demands of your projects.
+              </p>
+
+              <p className='text-base text-black'>
+                Click below to explore the different MDF board varieties we can cut to your exact specifications.
+              </p>
             </div>
-            <div className='bg-black text-center relative flex flex-col items-center justify-center h-[363px] md:h-[463px] px-6'>
-              <p className='text-xl md:text-3xl mb-2 text-white'>When there is a short turnaround time</p>
-              <h4 className='text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold text-white uppercase'>
-                BOOK OUR FAST FLOW SERVICE
-              </h4>
-              <div className='flex justify-center gap-4 mt-10'>
-                <a
-                  href='#'
-                  className='bg-primary px-5 py-4 md:px-5 lg:px-6 lg:px-9 md:py-4 font-medium text-base sm:text-xl text-white hover:bg-white ease-in duration-200 flex items-center justify-between hover:text-black uppercase'
-                >
-                  Create your cut list right away
-                </a>
-              </div>
+
+            <div className='pt-14 pb-32 text-center flex justify-center'>
+              <a
+                href='#'
+                className='bg-black  px-3 py-4 md:px-5  lg:px-9 md:py-4 font-medium text-lg md:text-2xl text-white hover:bg-primary ease-in duration-200 flex items-center justify-between'
+              >
+                Find Information about MDF Varieties <i className='ri-arrow-right-s-line text-white'></i>
+              </a>
             </div>
           </div>
         </div>
