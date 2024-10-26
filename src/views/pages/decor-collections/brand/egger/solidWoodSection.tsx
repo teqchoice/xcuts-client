@@ -50,20 +50,18 @@ export default function SolidWoodSection(props: any) {
         <div className='px-4 sm:container'>
           <div className=' flex justify-center items-center flex-col'>
             <div className='text-center  max-w-[80%] text-black mb-5 mt-20'>
-              {/* <p className='text-3xl'>Solid wood</p> */}
-              <h4 className='md:text-5xl text-4xl font-semibold mb-7'>Grain Alignment Service</h4>
+              <p className='text-3xl'>MORE THAN JUST GLOSS</p>
+              <h4 className='md:text-5xl text-4xl font-semibold mb-7'>PERFECTSENSE</h4>
               <p className='text-base text-black'>
-                Maximise the aesthetic appeal of your project with our grain alignment service. We can code a cutting
-                plan that allows the grain or pattern of melamine boards or coated MDF to flow seamlessly across
-                multiple panels. This service is perfect for designs that feature:
-              </p>
-              <p className='text-base text-black'>• Multiple vertical doors with horizontally aligned grain.</p>
-              <p className='text-base text-black'>• A stack of drawer fronts with vertically aligned grain.</p>
-              <p className='text-base text-black'>
-                This process results in a visually cohesive final product, enhancing the elegance and precision of your
-                design.
+                With the Egger PerfectSense line, you can now design furniture that plays with light thanks to a new
+                standard in lacquered boards in Premium Matt (PM) and Premium Gloss (PG) finishes. PerfectSense decor
+                boards are designed to endure scratches, prolonging the life of your furniture while keeping daily
+                living in mind. Both gloss and matt options have enhanced stain resistance and are resistant to changes
+                in heat and moisture, in addition to their anti-scratch qualities. PerfectSense is a collection of
+                furniture-related materials available in a variety of colours and patterns, including stone and marble.
               </p>
 
+              {/* 
               <div className='flex gap-5 my-5 lg:my-10'>
                 <div>
                   <img className=' w-full object-cover object-center' src='../images/alldecor.jpeg' alt='' />
@@ -74,22 +72,22 @@ export default function SolidWoodSection(props: any) {
                 <div>
                   <img className=' w-full object-cover object-center' src='../images/alldecor.jpeg' alt='' />
                 </div>
-              </div>
+              </div> */}
 
               <p className='text-base text-black'>
-                Only boards with a grainy texture or design qualify for this service. Simply mark the panels you'd like
-                to have grain-matched when creating your cutting list, and our team will handle the rest.
+                Egger has introduced a new line of PerfectSense mats called Textured Matt (TM9), which provides those on
+                a tight budget with an affordable option.
               </p>
             </div>
 
-            <div className='pt-14 pb-32 text-center flex justify-center'>
+            {/* <div className='pt-14 pb-32 text-center flex justify-center'>
               <a
                 href='#'
                 className='bg-black  px-3 py-4 md:px-5  lg:px-9 md:py-4 font-medium text-lg md:text-2xl text-white hover:bg-primary ease-in duration-200 flex items-center justify-between'
               >
                 Create Your Cutting List Right Away! <i className='ri-arrow-right-s-line text-white'></i>
               </a>
-            </div>
+            </div> */}
           </div>
         </div>
       </section>

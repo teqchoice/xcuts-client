@@ -29,14 +29,14 @@ export default function IntroductionSection(props: any) {
                 the furniture and interior design industries with premium melamine faced board materials.
               </p>
             </div>
-            <div className='flex justify-center gap-4 mt-10'>
+            {/* <div className='flex justify-center gap-4 mt-10'>
               <a
                 href='#'
                 className='bg-black px-5 py-4 md:px-5 lg:px-6 lg:px-9 md:py-4 font-medium text-xl text-white hover:bg-primary ease-in duration-200 flex items-center justify-between'
               >
                 See our Décor Selections<i className='ri-arrow-right-s-line text-xl'></i>
               </a>
-            </div>
+            </div> */}
           </div>
         </div>
       </section>

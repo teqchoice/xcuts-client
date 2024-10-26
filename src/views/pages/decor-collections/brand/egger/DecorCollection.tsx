@@ -48,15 +48,41 @@ export default function ABSEdgebandSection(props: any) {
     <>
       <section>
         <div className='px-4 sm:container'>
-          <div className='text-center text-black mb-11 mt-20'>
-            {/* <p className='text-3xl'>ABS edgeband</p> */}
-            <h4 className='md:text-5xl text-4xl font-semibold mb-7'>Key Features of XCUTS Cutting Service</h4>
-            {/* <p className='text-base text-black'>
-              The 1mm ABS Edge Banding tape is almost undetectable and offers a moderately robust edge surface. Square
-              and radius milling options are available for the tape.
-            </p> */}
+          <div className=' flex justify-center items-center flex-col'>
+            <div className='text-center  max-w-[80%] text-black mb-5 mt-20'>
+              <h4 className='md:text-4xl text-2xl font-semibold mb-7'>The Virtual Design Studio helps through visual aids</h4>
+              <p className='text-base text-black'>
+                Egger has introduced a Virtual Design Studio, an online platform, to help you realise your ideas for
+                decor combinations. Get access to a large selection of room sets and experiment with different decors to
+                see which works best for your project. You'll save a tonne of money and time on product development.
+              </p>
+
+              {/* 
+              <div className='flex gap-5 my-5 lg:my-10'>
+                <div>
+                  <img className=' w-full object-cover object-center' src='../images/alldecor.jpeg' alt='' />
+                </div>
+                <div>
+                  <img className=' w-full object-cover object-center' src='../images/alldecor.jpeg' alt='' />
+                </div>
+                <div>
+                  <img className=' w-full object-cover object-center' src='../images/alldecor.jpeg' alt='' />
+                </div>
+              </div> */}
+
+             
+            </div>
+
+            <div className=' pb-32 text-center flex justify-center'>
+              <a
+                href='#'
+                className='bg-black  px-3 py-4 md:px-5  lg:px-9 md:py-4 font-medium text-lg md:text-2xl text-white hover:bg-primary ease-in duration-200 flex items-center justify-between'
+              >
+                Create Your Area Now
+              </a>
+            </div>
           </div>
-          {/* <div className='bg-neutral-100 md:flex mb-6'>
+          <div className='bg-neutral-100 md:flex mb-6'>
             <div className='basis-[52.12%] order-1'>
               <div className='relative overflow-hidden w-full bg-neutral-100 before:absolute before:content-normal before:bottom-0 before:w-1/2 before:bg-inherit before:right-1/2 before:skew-x-[40deg] before:pb-7 before:origin-[100%_100%] after:absolute after:content-normal after:bottom-0 after:w-1/2 after:bg-inherit after:left-1/2 after:-skew-x-[40deg] after:pb-7 after:origin-[100%_100%] md:before:w-10 md:before:h-1/2 md:before:top-0 md:before:bottom-auto md:before:right-auto md:before:skew-x-[0deg] md:before:-skew-y-[40deg] md:after:w-10 md:after:h-1/2 md:after:bottom-0 md:after:right-auto md:after:left-0 md:after:skew-x-[0deg] md:after:skew-y-[40deg] md:before:origin-[0%_0%] md:after:origin-[0%_0%]'>
                 <img
@@ -68,14 +94,23 @@ export default function ABSEdgebandSection(props: any) {
             </div>
             <div className='basis-[47.88%] flex items-center'>
               <div className='flex flex-col md:justify-center md:ml-auto pb-16 py-8 px-8 md:max-w-[410px] lg:max-w-[567px]'>
-                <h2 className='text-2xl md:text-3xl text-black font-bold mb-6'>Computerised Cutting:</h2>
+                <p className=' text-black'>Linking online and offline </p>
+                <h2 className='text-2xl md:text-3xl text-black font-bold mb-6'>Decor Collection App</h2>
                 <p className='text-lg'>
-                  Our cutting process is powered by advanced computer-controlled machinery that efficiently directs the
-                  operator on what to do and when, ensuring consistency and accuracy throughout the job.
+                  Whenever and wherever you need information, use the new app to get quick access to decor scans,
+                  product details, and availability.
                 </p>
+                <div className='flex gap-5 mt-5'>
+                  <a href='#' className='text-black text-xl font-bold'>
+                    [App store]
+                  </a>
+                  <a href='#' className='text-black text-xl font-bold'>
+                    [Google play]
+                  </a>
+                </div>
               </div>
             </div>
-          </div> */}
+          </div>
           <div className='bg-neutral-100 md:flex mb-6'>
             <div className='basis-[52.12%]'>
               <div>
@@ -90,12 +125,20 @@ export default function ABSEdgebandSection(props: any) {
             </div>
             <div className='basis-[47.88%] flex items-center'>
               <div className='flex flex-col md:justify-center md:mr-auto pb-16 py-8 px-8 md:max-w-[410px] lg:max-w-[567px]'>
-                <p className=' text-black'>ENDLESS INTERIOR DESIGN IDEAS </p>
-                <h2 className='text-2xl md:text-3xl text-black font-bold mb-6'>SIMPLE AND SOPHISTICATED? </h2>
+                <p className=' text-black'>Look through the selections</p>
+                <h2 className='text-2xl md:text-3xl text-black font-bold mb-6'>Shop Online</h2>
                 <p className='text-lg'>
-                  Whether you prefer a velvety matt finish or a brilliantly reflective gloss, PerfectSense decors offer
-                  durability for regular use.
+                  Choose decors for your project and begin creating a cutting list. No account is needed, and you can
+                  get an instant quotation
                 </p>
+                <div className='flex gap-5 mt-5'>
+                  <a href='#' className='text-black text-xl font-bold'>
+                    [View decors]
+                  </a>
+                  <a href='#' className='text-black text-xl font-bold'>
+                    [Build cutting list]
+                  </a>
+                </div>
               </div>
             </div>
           </div>

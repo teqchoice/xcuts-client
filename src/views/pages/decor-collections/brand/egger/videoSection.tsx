@@ -45,44 +45,28 @@ export default function VideoSection(props: any) {
   }
   // console.log(Data)
   return (
-    <>
-      <section className='pt-20 relative before:bg-primary before:lg:h-[683px] before:md:h-[583px] before:sm:h-[383px] before:h-[303px] before:block before:w-full before:rounded-3xl before:absolute before:top-0'>
-        <div className='px-4 sm:container'>
-          <div className='text-center text-white mb-11 relative'>
-            <p className='lg:text-3xl text-2l'>Explore Our Cutting Service in Detail:</p>
-            <h4 className='lg:text-5xl md:text-3xl text-2xl font-semibold'>A Clean Cut, Everytime</h4>
-            <p className='mt-5'>
-              Our cutting service goes beyond just trimming boards. With state-of-the-art equipment and experienced saw
-              operators, we ensure each cut is accurate and meets your specifications.
-            </p>
-            <p className='mt-5'>
-              • Loading Process: Our operators carefully load each MDF or MFC board for precise cutting.
-            </p>
-            <p className='mt-5'>
-              • Clear Labelling: Each board is clearly labelled with exact dimensions and edging requirements.
-            </p>
-            <p className='mt-5'>
-              • Maintenance: We perform daily cleaning and maintenance to keep our saws in top condition.
-            </p>
-            <p className='mt-5'>
-              • Advanced Dust Filtration: Our dust filtration system ensures that machine surfaces and moving components
-              remain clean and free from sawdust for optimal performance.
-            </p>
-            <p className='mt-5'>
-              For projects of any size, XCUTS guarantees professional, reliable, and efficient board-cutting services.
-            </p>
-          </div>
-          <div
+    <section className='py-20 relative bg-primary rounded-xl'>
+      <div className='px-4 sm:container'>
+        <div className='text-center text-white relative'>
+          <p className='lg:text-3xl text-2l'>EGGER DÉCOR COLLECTION:</p>
+          <h4 className='lg:text-5xl md:text-3xl text-2xl font-semibold'>2023-2025</h4>
+          <p className='mt-5'>
+            Following the latest developments in interior design super-matt and ultra-gloss finishes are back in Egger's
+            massively expanded range of 175 decors! In addition, also a few affordable choices to appeal to a larger
+            market. Simultaneously, synchronised wood textures have advanced to the point where they now feature
+            finishes that surpass the visual appeal of genuine wood. The new collection offers soft and elegant marbles
+            along with industrial material replicas like concrete and metal for those who are more urban-minded.
+          </p>
+          <p className='mt-5'>
+            Overall, better quality super-matt and high gloss finishes, a greater selection of grey tones, and complete
+            alignment with current market trends characterise the new Egger collection!
+          </p>
+        </div>
+        {/* <div
             className='embed-responsive pt-[55.5%] embed-responsive-16 by-9 relative w-full overflow-hidden border-solid border-8 border-white'
             // style={{paddingTop: "55.5%"}}
           >
-            {/* <iframe
-              className='embed-responsive-item absolute bottom-0 left-0 right-0 top-0 h-full w-full'
-              src='https://www.youtube.com/embed/vlDzYIIOYmM?enablejsapi=1&amp;origin=https%3A%2F%2Fmdbootstrap.com'
-              // allowfullscreen=""
-              data-gtm-yt-inspected-2340190_699='true'
-              id='240632615'
-            ></iframe> */}
+         
             <video
               className='embed-responsive-item absolute bottom-0 left-0 right-0 top-0 h-full w-full '
               src='../images/vid/Main Banner.mp4'
@@ -102,9 +86,8 @@ export default function VideoSection(props: any) {
               }}
               muted
             ></video>
-          </div>
-        </div>
-      </section>
-    </>
+          </div> */}
+      </div>
+    </section>
   )
 }

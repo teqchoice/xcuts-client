@@ -7,7 +7,12 @@ import ABSEdgebandSection from './absEdgebandSection'
 import PaintableSection from './paintableSection'
 import GrainAlignment from './solidWoodSection'
 import CuttingMDF from './cuttingMDF '
-import CuttingMCF from './cuttingMCF'
+import FEELWOOD from './FEELWOOD'
+import UNICOLOUR from './UNICOLOUR'
+import EXPECTATIONS from './EXPECTAT'
+import ALTERATIONS from './ALTERATIONS'
+import REPRODUCTIONS from './REPRODUCTIONS'
+import DecorCollection from './DecorCollection'
 import FAQ from './faq'
 
 export default function index({ Data }: any) {
@@ -22,15 +27,20 @@ export default function index({ Data }: any) {
           baner: '../images/banner-1-showroom.jpeg'
         }}
       />
-      <IntroductionSection Data={Data?.delivery} />
-      <VideoSection Data={Data?.delivery} />
+      <IntroductionSection />
+      <VideoSection />
       {/* <DifferentTechnologiesSection Data={Data?.delivery} /> */}
-      <ABSEdgebandSection Data={Data?.delivery} />
+      <GrainAlignment />
+      <ABSEdgebandSection />
       {/* <PaintableSection Data={Data?.delivery} /> */}
-      <GrainAlignment Data={Data?.delivery} />
-      <CuttingMDF Data={Data?.delivery} />
-      <CuttingMCF Data={Data?.delivery} />
-      <FAQ Data={Data?.delivery} />
+      {/* <CuttingMDF Data={Data?.delivery} /> */}
+      <FEELWOOD />
+      <UNICOLOUR />
+      <EXPECTATIONS />
+      <ALTERATIONS />
+      <REPRODUCTIONS />
+      <DecorCollection />
+      {/* <FAQ Data={Data?.delivery} /> */}
     </>
   )
 }
