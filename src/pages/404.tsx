@@ -1,4 +1,5 @@
 import Layout from '@/views/layout'
+import SvgComponent from '@/views/pages/components/svg'
 import axios from 'axios'
 
 export default function Custom404({ layout }: any) {
@@ -8,13 +9,17 @@ export default function Custom404({ layout }: any) {
     // <>j</>
     <Layout data={layout}>
       <div className='container'>
-        <div className='grid grid-cols-2'>
-          <div className='p-5'>
-            <h3 className='text-2xl lg:text-4xl font-bold'>404: Oops! Page Lost in the Void</h3>
+        <div className='grid grid-cols-5'>
+          <div className='col-span-2 p-5 flex flex-col justify-center'>
+            <h3 className='text-4xl lg:text-7xl font-bold'>404</h3>
+            <h3 className='text-2xl lg:text-4xl font-bold'>Oops! Page Lost in the Void</h3>
             <p className='text-lg '>
               Well, this is awkward. It looks like the page you’re hunting for has gone rogue or decided to take a
               permanent vacation. Maybe it’s off having an adventure somewhere we don’t know about!
             </p>
+          </div>
+          <div className='col-span-3 p-5 flex flex-col justify-center'>
+            <SvgComponent />
           </div>
         </div>
       </div>
