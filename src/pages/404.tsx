@@ -1,75 +1,32 @@
 import Layout from '@/views/layout'
-const DecorCollections = dynamic(() => import('@/views/pages/decor-collections'), {
-  loading: () => <Loading />,
-})
-// !! Fake DB
-import FakeDb from '@/DB/content.json'
 import axios from 'axios'
-import { useEffect, useState } from 'react'
-import { useRouter } from 'next/router'
-import dynamic from 'next/dynamic'
-import Loading from '@/views/layout/loading'
 
-export default function PDecorCollections({ data, brand, layout }: any) {
-  const router = useRouter()
-  const [Brand, setBrand] = useState()
-  const [Data, setData] = useState()
-  console.log(`https://shop.xcuts.co.uk/api/collections/decors/records?expand=brand_ref,core_ref,surface_ref,finish_ref,texture_ref,design_ref&filter=(brand_ref.name=\'${router.query.Brand}\'${router.query.Core ? `%26%26core_ref.name=\'${router.query.Core}\'`:''}${router.query.Surface ? `%26%26surface_ref.name=\'${router.query.Surface}\'`:''}${router.query.Design ? `%26%26design_ref.name=\'${router.query.Design}\'`:''}${router.query.Finish ? `%26%26finish_ref.name=\'${router.query.Finish}\'`:''})`)
-
-  useEffect(() => {
-    let config = {
-      method: 'get',
-      maxBodyLength: Infinity,
-      url: 'https://shop.xcuts.co.uk/api/collections/categories/records?filter=(parent.name=\'brand\')',
-      headers: { }
-    };
-    
-    axios.request(config)
-    .then((response) => {
-      setBrand(response.data)
-    })
-    .catch((error) => {
-      console.log(error);
-    });
-    
-  },[setBrand, router.query])
-  useEffect(() => {
-    let config = {
-      method: 'get',
-      maxBodyLength: Infinity,
-      url: `https://shop.xcuts.co.uk/api/collections/decors/records?expand=brand_ref,core_ref,surface_ref,finish_ref,texture_ref,design_ref&filter=(brand_ref.name=\'${router.query.Brand}\'${router.query.Core ? `%26%26core_ref.name=\'${router.query.Core}\'`:''}${router.query.Surface ? `%26%26surface_ref.name=\'${router.query.Surface}\'`:''}${router.query.Design ? `%26%26design_ref.name=\'${router.query.Design}\'`:''}${router.query.Finish ? `%26%26finish_ref.name=\'${router.query.Finish}\'`:''}${router.query.Texture ? `%26%26texture_ref.name=\'${router.query.Texture}\'`:''})`,
-      headers: { }
-    };
-    
-    axios.request(config)
-    .then((response) => {
-      setData(response.data)
-      // console.log(Data);
-    })
-    .catch((error) => {
-      console.log(error);
-    });    
-    
-  },[setBrand, router.query])
-  
-    return <Layout data={layout}>
-      <DecorCollections Data={Data} Brand={Brand} />
-      </Layout>
+export default function Custom404({ layout }: any) {
+  // console.log(data)
+  // console.log(layout)
+  return (
+    // <>j</>
+    <Layout data={layout}>
+      <div className='container'>
+        <div className='grid grid-cols-2'>
+          <div className='p-5'>
+            <h3 className='text-2xl lg:text-4xl font-bold'>404: Oops! Page Lost in the Void</h3>
+            <p className='text-lg '>
+              Well, this is awkward. It looks like the page you’re hunting for has gone rogue or decided to take a
+              permanent vacation. Maybe it’s off having an adventure somewhere we don’t know about!
+            </p>
+          </div>
+        </div>
+      </div>
+    </Layout>
+  )
 }
 
-export const getServerSideProps = async (context: any) => {
-  console.log('+++++++++++++++++', context.query)
-  
+export const getStaticProps = async (context: any) => {
   try {
-    const { data: brand } = await axios.get(
-      `https://shop.xcuts.co.uk/api/collections/categories/records?filter=(parent.name=\'brand\')`
-    )
-    const parametr = context.query.Brand
-    const { data } = await axios.get(`https://shop.xcuts.co.uk/api/collections/decors/records?filter=(brand_ref.name~'egger')`)
-
+    const { data } = await axios.get(`${process.env.NEXT_PUBLIC_API__URL}/get-content-query/page=1/`)
     const { data: layoutData } = await axios.get(`${process.env.NEXT_PUBLIC_API__URL}/get-content-query/page=3/`)
-
-    return { props: { data: data, brand: brand, layout: layoutData[0]?.positions } }
+    return { props: { data: data[0].positions, layout: layoutData[0]?.positions } }
   } catch (error) {
     const fake_layout = [
       {
@@ -460,13 +417,13 @@ export const getServerSideProps = async (context: any) => {
         id: 5,
         name: 'Header_Main_Menu',
         contents: [
-          {
-            id: '1',
-            title: 'Home',
-            value: 'Home',
-            link: '/',
-            filec: ''
-          },
+          // {
+          //   id: '1',
+          //   title: 'Home',
+          //   value: 'Home',
+          //   link: '/',
+          //   filec: ''
+          // },
           {
             id: '2',
             title: 'Decor Collections',
