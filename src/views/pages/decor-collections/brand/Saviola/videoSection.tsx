@@ -48,18 +48,22 @@ export default function VideoSection(props: any) {
     <section className='py-20 relative bg-primary rounded-xl'>
       <div className='px-4 sm:container'>
         <div className='text-center text-white relative'>
-          <p className='lg:text-3xl text-2l'>EGGER DÉCOR COLLECTION:</p>
-          <h4 className='lg:text-5xl md:text-3xl text-2xl font-semibold'>2023-2025</h4>
+          <p className='lg:text-3xl text-2l'>ELEGANT AND TRENDY</p>
+          <h4 className='lg:text-5xl md:text-3xl text-2xl font-semibold'>SAVIOLA UK DÉCOR COLLECTION</h4>
           <p className='mt-5'>
-            Following the latest developments in interior design super-matt and ultra-gloss finishes are back in Egger's
-            massively expanded range of 175 decors! In addition, also a few affordable choices to appeal to a larger
-            market. Simultaneously, synchronised wood textures have advanced to the point where they now feature
-            finishes that surpass the visual appeal of genuine wood. The new collection offers soft and elegant marbles
-            along with industrial material replicas like concrete and metal for those who are more urban-minded.
+            Now available in the UK, the Saviola collection brings a unique touch to your interior design with its
+            Melamine Ecological Panels. Featuring 26 elegantly designed decors, each panel is crafted entirely from
+            recycled materials, offering a sustainable yet stylish option for your home or office.
           </p>
           <p className='mt-5'>
-            Overall, better quality super-matt and high gloss finishes, a greater selection of grey tones, and complete
-            alignment with current market trends characterise the new Egger collection!
+            These panels showcase stunning replicas of premium wood, marble, and stone, complete with warm, realistic
+            textures and finishes. The neutral colour scheme of the Saviola collection ensures it seamlessly integrates
+            into any decor style while maintaining a timeless appeal.
+          </p>
+          <p className='mt-5'>
+            Designed for longevity and durability, Saviola’s panels not only enhance the aesthetic of your space but
+            also promise to stand the test of time, making them a perfect choice for those seeking both elegance and
+            sustainability.
           </p>
         </div>
         {/* <div

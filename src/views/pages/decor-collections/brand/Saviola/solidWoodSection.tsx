@@ -50,33 +50,11 @@ export default function SolidWoodSection(props: any) {
         <div className='px-4 sm:container'>
           <div className=' flex justify-center items-center flex-col'>
             <div className='text-center  max-w-[80%] text-black mb-5 mt-20'>
-              <p className='text-3xl'>MORE THAN JUST GLOSS</p>
-              <h4 className='md:text-5xl text-4xl font-semibold mb-7'>PERFECTSENSE</h4>
+              {/* <p className='text-3xl'>MORE THAN JUST GLOSS</p> */}
+              <h4 className='md:text-5xl text-4xl font-semibold mb-7'>Discover the Collection</h4>
               <p className='text-base text-black'>
-                With the Egger PerfectSense line, you can now design furniture that plays with light thanks to a new
-                standard in lacquered boards in Premium Matt (PM) and Premium Gloss (PG) finishes. PerfectSense decor
-                boards are designed to endure scratches, prolonging the life of your furniture while keeping daily
-                living in mind. Both gloss and matt options have enhanced stain resistance and are resistant to changes
-                in heat and moisture, in addition to their anti-scratch qualities. PerfectSense is a collection of
-                furniture-related materials available in a variety of colours and patterns, including stone and marble.
-              </p>
-
-              {/* 
-              <div className='flex gap-5 my-5 lg:my-10'>
-                <div>
-                  <img className=' w-full object-cover object-center' src='../images/alldecor.jpeg' alt='' />
-                </div>
-                <div>
-                  <img className=' w-full object-cover object-center' src='../images/alldecor.jpeg' alt='' />
-                </div>
-                <div>
-                  <img className=' w-full object-cover object-center' src='../images/alldecor.jpeg' alt='' />
-                </div>
-              </div> */}
-
-              <p className='text-base text-black'>
-                Egger has introduced a new line of PerfectSense mats called Textured Matt (TM9), which provides those on
-                a tight budget with an affordable option.
+                Discover the Collection Explore the full range of Saviola UK décor products and elevate your space with
+                sophisticated design choices.
               </p>
             </div>
 

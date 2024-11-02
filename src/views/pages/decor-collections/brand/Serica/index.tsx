@@ -20,7 +20,7 @@ export default function index({ Data }: any) {
     <>
       <PageIntroduction
         Data={{
-          title: 'XYLOLEAF',
+          title: 'Serica',
           subtitle: 'DÉCOR COLLECTION',
           butt: 'BROWSE AND BUY',
           url: '#',
@@ -28,17 +28,17 @@ export default function index({ Data }: any) {
         }}
       />
       <IntroductionSection />
-      <VideoSection />
+      {/* <VideoSection /> */}
       {/* <DifferentTechnologiesSection Data={Data?.delivery} /> */}
-      <GrainAlignment />
-      <ABSEdgebandSection />
+      {/* <GrainAlignment /> */}
+      {/* <ABSEdgebandSection /> */}
       {/* <PaintableSection Data={Data?.delivery} /> */}
       {/* <CuttingMDF Data={Data?.delivery} /> */}
-      <FEELWOOD />
-      <UNICOLOUR />
-      <EXPECTATIONS />
-      <ALTERATIONS />
-      <REPRODUCTIONS />
+      {/* <FEELWOOD /> */}
+      {/* <UNICOLOUR /> */}
+      {/* <EXPECTATIONS /> */}
+      {/* <ALTERATIONS /> */}
+      {/* <REPRODUCTIONS /> */}
       <DecorCollection />
       {/* <FAQ Data={Data?.delivery} /> */}
     </>
