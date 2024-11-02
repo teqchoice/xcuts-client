@@ -1,92 +1,32 @@
 import React from 'react'
 
-type TOurGuarantee = {
-  text1: string
-  image: string
-  text2: string
-  questions: TQuestion[]
-}
-
-type TQuestion = {
-  q: string
-  a: string
-}
-
-const defaultTOurGuarantee: Partial<TOurGuarantee> = {
-  text1:
-    "We will cut and edge panels to your exact specification, or we'll send a replacement to you free of charge in 24hrs.",
-  image: 'images/wwcaep-panels.webp',
-  text2:
-    "Here at Xcuts, we understand that humans (and machines) can sometimes make mistakes and things don't entirely turn out the way you want them. We don't like the idea of our customers being stuck on the job. That is why we will provide you with a replacement panel within 24 hours in the unlikely event we didn't get it right from the get-go.",
-  questions: [
-    {
-      q: 'What happens when Xcuts gets it wrong?',
-      a: 'Simple. As soon as you notice an issue with your cut and edged panel, get in touch with us by twelve noon and we will send you a free replacement before midday on the next working day.'
-    },
-    {
-      q: 'What about CNC and Spray coating?',
-      a: "These services are very involved and time-consuming therefore we can't always guarantee that you will get it within 24 hours, but we will do our best. After all, good things are worth the wait."
-    },
-    {
-      q: 'What if the manufacturer gets it wrong?',
-      a: "Occasionally boards have a manufacturing fault, and if we don't spot it on time before it makes its way to you, we will aim to rectify this as soon as possible. Doing so might sometimes take longer than 24 hours but don't worry, we are here to help."
-    },
-    {
-      q: 'Delivery or Collection?',
-      a: "We're easy. Should you happen to be around the corner and would prefer to pick up your replacement panel and save even more time that's fine with us. Otherwise, we'll deliver it to you."
-    }
-  ]
-}
-
 export default function VideoSection(props: any) {
-  const Data: TOurGuarantee = {
-    ...defaultTOurGuarantee,
-    ...props.Data
-  }
   // console.log(Data)
   return (
     <section className='py-20 relative bg-primary rounded-xl'>
       <div className='px-4 sm:container'>
         <div className='text-center text-white relative'>
-          <p className='lg:text-3xl text-2l'>EGGER DÉCOR COLLECTION:</p>
-          <h4 className='lg:text-5xl md:text-3xl text-2xl font-semibold'>2023-2025</h4>
+          <p className='lg:text-3xl text-2l'>RICH COLOURS JUST FOR YOUR FURNITURE!</p>
+          <h4 className='lg:text-5xl md:text-3xl text-2xl font-semibold'>SENOPLAST UK DÉCOR COLLECTION </h4>
           <p className='mt-5'>
-            Following the latest developments in interior design super-matt and ultra-gloss finishes are back in Egger's
-            massively expanded range of 175 decors! In addition, also a few affordable choices to appeal to a larger
-            market. Simultaneously, synchronised wood textures have advanced to the point where they now feature
-            finishes that surpass the visual appeal of genuine wood. The new collection offers soft and elegant marbles
-            along with industrial material replicas like concrete and metal for those who are more urban-minded.
+            Senoplast offers 26 stunning decors that are available across the UK, making it a top choice for high-end
+            interior design projects. Known for its expertise in plastic technology, Senoplast specializes in producing
+            high gloss panels in rich colour palettes, perfect for maintaining a modern and sophisticated look in your
+            interiors. For those who prefer a softer, more subtle appearance, Senoplast also offers a super matt range.
           </p>
           <p className='mt-5'>
-            Overall, better quality super-matt and high gloss finishes, a greater selection of grey tones, and complete
-            alignment with current market trends characterise the new Egger collection!
+            Whether you opt for the high gloss or matt finishes, Senoplast’s premium panels are designed to elevate any
+            interior furniture piece with both style and durability. See and feel the quality for yourself!
           </p>
         </div>
-        {/* <div
-            className='embed-responsive pt-[55.5%] embed-responsive-16 by-9 relative w-full overflow-hidden border-solid border-8 border-white'
-            // style={{paddingTop: "55.5%"}}
+        <div className='flex justify-center gap-4 mt-10'>
+          <a
+            href='#'
+            className='bg-black px-5 py-4 md:px-5 lg:px-6 lg:px-9 md:py-4 font-medium text-xl text-white hover:bg-primary ease-in duration-200 flex items-center justify-between'
           >
-         
-            <video
-              className='embed-responsive-item absolute bottom-0 left-0 right-0 top-0 h-full w-full '
-              src='../images/vid/Main Banner.mp4'
-              width='100%'
-              height='auto'
-              onMouseEnter={e => {
-                const video = e.currentTarget
-                if (video.paused !== false) {
-                  video.play()
-                }
-              }}
-              onMouseLeave={e => {
-                const video = e.currentTarget
-                if (video.paused === false) {
-                  video.pause()
-                }
-              }}
-              muted
-            ></video>
-          </div> */}
+            BROWSE AND BUY{' '}
+          </a>
+        </div>
       </div>
     </section>
   )

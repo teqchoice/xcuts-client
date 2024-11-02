@@ -1,48 +1,27 @@
 import React from 'react'
 
-type TOurGuarantee = {
-  text1: string
-  image: string
-  text2: string
-  questions: TQuestion[]
-}
-
-type TQuestion = {
-  q: string
-  a: string
-}
-
-const defaultTOurGuarantee: Partial<TOurGuarantee> = {
-  text1:
-    "We will cut and edge panels to your exact specification, or we'll send a replacement to you free of charge in 24hrs.",
-  image: 'images/wwcaep-panels.webp',
-  text2:
-    "Here at Xcuts, we understand that humans (and machines) can sometimes make mistakes and things don't entirely turn out the way you want them. We don't like the idea of our customers being stuck on the job. That is why we will provide you with a replacement panel within 24 hours in the unlikely event we didn't get it right from the get-go.",
+const Data = {
   questions: [
     {
-      q: 'What happens when Xcuts gets it wrong?',
-      a: 'Simple. As soon as you notice an issue with your cut and edged panel, get in touch with us by twelve noon and we will send you a free replacement before midday on the next working day.'
+      q: 'What happens if XCUTS makes a mistake?',
+      a: 'It’s straightforward. If there is an issue with your cut and edged panel, please contact us as soon as possible, and by the next working day, we will send you a replacement at no cost before the end of that day.'
     },
     {
-      q: 'What about CNC and Spray coating?',
-      a: "These services are very involved and time-consuming therefore we can't always guarantee that you will get it within 24 hours, but we will do our best. After all, good things are worth the wait."
+      q: 'What if the manufacturer makes a mistake?',
+      a: 'Occasionally, boards may have manufacturing defects that we may not catch before shipping. If we identify such issues, we will address them as quickly as possible. While it may take longer than a day to resolve, rest assured—we are here to help.'
     },
     {
-      q: 'What if the manufacturer gets it wrong?',
-      a: "Occasionally boards have a manufacturing fault, and if we don't spot it on time before it makes its way to you, we will aim to rectify this as soon as possible. Doing so might sometimes take longer than 24 hours but don't worry, we are here to help."
+      q: 'What about spray coating and CNC services?',
+      a: 'We strive to provide these services within a day, but due to their complexity and time requirements, we cannot guarantee this timeframe. After all, good things are worth the wait!'
     },
     {
-      q: 'Delivery or Collection?',
-      a: "We're easy. Should you happen to be around the corner and would prefer to pick up your replacement panel and save even more time that's fine with us. Otherwise, we'll deliver it to you."
+      q: 'Delivery or Pickup?',
+      a: "We keep it simple. If you're nearby, we encourage you to pick up your replacement panel to save time. Otherwise, we will deliver it directly to you."
     }
   ]
 }
 
-export default function OurGuarantee(props: any) {
-  const Data: TOurGuarantee = {
-    ...defaultTOurGuarantee,
-    ...props.Data
-  }
+export default function OurGuarantee() {
   // console.log(Data)
   return (
     <>
@@ -53,15 +32,15 @@ export default function OurGuarantee(props: any) {
         <div className='px-4 sm:container'>
           <div className='p-5 md:p-8 lg:p-12 text-center border-2 border-primary border-dashed bg-white'>
             <p className='text-[22px] md:text-[26px] lg:text-[36px]'>
-              We will <span className='text-primary'> cut and edge panels to your exact specification</span>, or we'll
-              send a replacement to you free of charge in 24hrs.
+              <span className='text-primary'> Our Commitment to You</span>
             </p>
             <img src='../images/wwcaep-panels.webp' alt='' className='mx-auto border-[10px] border-[#c4c4c4] my-9' />
             <p className='text-xl leading-8'>
-              Here at <span className='text-primary'>X</span>cuts, we understand that humans (and machines) can
-              sometimes make mistakes and things don't entirely turn out the way you want them. We don't like the idea
-              of our customers being stuck on the job. That is why we will provide you with a replacement panel within
-              24 hours in the unlikely event we didn't get it right from the get-go.
+              Panels will be accurately cut and edged to your specifications; if not, we will provide a replacement at
+              no additional cost within 24 hours. At XCUTS, we understand that both people and machines can make
+              mistakes, and plans may not always unfold as intended. We are committed to ensuring our clients are never
+              left in a difficult situation. Therefore, in the unlikely event that we make an error, we guarantee to
+              deliver a replacement panel within 24 hours.
             </p>
           </div>
         </div>
@@ -69,7 +48,7 @@ export default function OurGuarantee(props: any) {
       <section className='pb-16 bg-no-repeat bg-[right_top_0]' style={{ backgroundImage: "url('images/x-icon.webp')" }}>
         <div className='px-4 sm:container'>
           <div className='bg-primary text-center py-9 px-5 mb-9'>
-            <h4 className='text-2xl lg:text-4xl text-white'>How does it work?</h4>
+            <h4 className='text-2xl lg:text-4xl text-white'>How Do Our Guarantees Work?</h4>
           </div>
           {Data.questions.map(question => {
             return (

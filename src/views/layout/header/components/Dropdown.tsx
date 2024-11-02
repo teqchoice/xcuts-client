@@ -110,9 +110,9 @@ export default function Dropdown({ menu, setMenu }) {
             </ul>
           </div>
         </div>
-        <div className='absolute -bottom-4 right-[5%]'>
+        {/* <div className='absolute -bottom-4 right-[5%]'>
           <img src='../images/x-icon-02.webp' alt='' className='w-full scale-125' />
-        </div>
+        </div> */}
         {/* <div className='absolute -top-4 left-[5%] opacity-60'>
           <img src='../images/x-icon-02.webp' alt='' className='w-full scale-125' />
         </div> */}
