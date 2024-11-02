@@ -21,7 +21,7 @@ export default function CollectionsItemSection({ Data, Brand }: any) {
   }, [router.query])
   function BrandItem() {
     return Brand?.items?.map((item: any, index: number) => {
-      console.log(item)
+      // console.log(item)
       return (
         <div key={index} className='col-span-1 flex flex-col'>
           <div className='flex sm:flex-row flex-col sm:items-end'>
