@@ -50,8 +50,8 @@ export default function SolidWoodSection(props: any) {
         <div className='px-4 sm:container'>
           <div className=' flex justify-center items-center flex-col'>
             <div className='text-center  max-w-[80%] text-black mb-5 mt-20'>
-              <p className='text-3xl'>MORE THAN JUST GLOSS</p>
-              <h4 className='md:text-5xl text-4xl font-semibold mb-7'>PERFECTSENSE</h4>
+              {/* <p className='text-3xl'>MORE THAN JUST GLOSS</p> */}
+              <h4 className='md:text-5xl text-4xl font-semibold mb-7'>XYLOLEAF DÉCOR COLLECTION</h4>
               <p className='text-base text-black'>
                 With the Egger PerfectSense line, you can now design furniture that plays with light thanks to a new
                 standard in lacquered boards in Premium Matt (PM) and Premium Gloss (PG) finishes. PerfectSense decor
@@ -61,22 +61,46 @@ export default function SolidWoodSection(props: any) {
                 furniture-related materials available in a variety of colours and patterns, including stone and marble.
               </p>
 
-              {/* 
-              <div className='flex gap-5 my-5 lg:my-10'>
+              <div className='grid grid-cols-2  gap-5 my-5 lg:my-10'>
                 <div>
-                  <img className=' w-full object-cover object-center' src='../images/alldecor.jpeg' alt='' />
+                  <h4 className='md:text-2xl text-xl font-semibold mb-7'>
+                    Distinct Combinations of Texture and Design!
+                  </h4>
+                  <p className='text-base text-black'>
+                    The XyloCleaf line of decorative surfaces is renowned for its ability to constantly evolve, offering
+                    a diverse range of patterns, hues, and textures that set it apart from competitors. Rather than
+                    merely following trends, XyloCleaf often establishes and leads the way in contemporary design.
+                  </p>
                 </div>
                 <div>
-                  <img className=' w-full object-cover object-center' src='../images/alldecor.jpeg' alt='' />
+                  <h4 className='md:text-2xl text-xl font-semibold mb-7'>A Collection Like No Other</h4>
+                  <p className='text-base text-black'>
+                    Featuring ninety unique decors, the collection encapsulates the essence of authentic Italian design.
+                    From iconic abstract patterns to deep-grained wood and material reproductions, XyloCleaf provides a
+                    variety of options to suit any design vision.
+                  </p>
                 </div>
                 <div>
-                  <img className=' w-full object-cover object-center' src='../images/alldecor.jpeg' alt='' />
+                  <h4 className='md:text-2xl text-xl font-semibold mb-7'>Unmatched Realism </h4>
+                  <p className='text-base text-black'>
+                    The combination of deep, realistic textures and ultra-realistic patterns ensures that XyloCleaf
+                    products add that much-needed "wow" factor to high-end projects. Whether you're looking to create an
+                    inviting atmosphere or make a bold statement, this collection delivers.
+                  </p>
                 </div>
-              </div> */}
+                <div>
+                  <h4 className='md:text-2xl text-xl font-semibold mb-7'>Durability Meets Aesthetics </h4>
+                  <p className='text-base text-black'>
+                    Products crafted with XyloCleaf not only boast stunning visual appeal but also feature extremely
+                    scratch-resistant surfaces with superior wear characteristics. This makes them ideal for both
+                    residential and commercial applications, ensuring longevity without sacrificing style.
+                  </p>
+                </div>
+              </div>
 
               <p className='text-base text-black'>
-                Egger has introduced a new line of PerfectSense mats called Textured Matt (TM9), which provides those on
-                a tight budget with an affordable option.
+                Elevate your design projects with the exceptional textures and designs offered by the XyloLeaf Décor
+                Collection. Discover the perfect elements to create your vision today.
               </p>
             </div>
 

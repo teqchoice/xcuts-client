@@ -48,19 +48,17 @@ export default function VideoSection(props: any) {
     <section className='py-20 relative bg-primary rounded-xl'>
       <div className='px-4 sm:container'>
         <div className='text-center text-white relative'>
-          <p className='lg:text-3xl text-2l'>EGGER DÉCOR COLLECTION:</p>
-          <h4 className='lg:text-5xl md:text-3xl text-2xl font-semibold'>2023-2025</h4>
-          <p className='mt-5'>
-            Following the latest developments in interior design super-matt and ultra-gloss finishes are back in Egger's
-            massively expanded range of 175 decors! In addition, also a few affordable choices to appeal to a larger
-            market. Simultaneously, synchronised wood textures have advanced to the point where they now feature
-            finishes that surpass the visual appeal of genuine wood. The new collection offers soft and elegant marbles
-            along with industrial material replicas like concrete and metal for those who are more urban-minded.
+          <p className='lg:text-3xl text-2l'>
+            Explore the XyloLeaf décor collection to discover innovative design solutions that elevate your spaces
           </p>
-          <p className='mt-5'>
-            Overall, better quality super-matt and high gloss finishes, a greater selection of grey tones, and complete
-            alignment with current market trends characterise the new Egger collection!
-          </p>
+          <div className=' text-center flex justify-center'>
+            <a
+              href='#'
+              className='bg-black mt-5 px-3 py-4 md:px-5  lg:px-9 md:py-4 font-medium text-lg md:text-2xl text-white hover:bg-primary ease-in duration-200 flex items-center justify-between'
+            >
+              Browse Now
+            </a>
+          </div>
         </div>
         {/* <div
             className='embed-responsive pt-[55.5%] embed-responsive-16 by-9 relative w-full overflow-hidden border-solid border-8 border-white'

@@ -49,77 +49,14 @@ export default function CuttingMCF(props: any) {
       <div className='px-4 mt-10 sm:container'>
         <div className=' flex justify-center items-center flex-col'>
           <div className='text-center flex flex-col gap-3 max-w-[80%] text-black mb-5'>
-            <p className='text-3xl'>VARIATIONS OF WOOD DECORS</p>
-            <h4 className='md:text-5xl text-4xl font-semibold mb-7'>FEELWOOD</h4>
+            <p className='text-3xl'> Embossed Deeply</p>
+            <h4 className='md:text-5xl text-4xl font-semibold mb-7'>Wood Reproductions </h4>
             <p className='text-base text-black'>
-              Over the last few decades, Egger has emerged as the leading authority on innovative woodgrain designs. The
-              Feelwood line enhances the popular woodgrains collection by utilising synchronised pore technology to
-              highlight the unique knots, cracks, and grains found in each type of wood species. This makes it a top
-              choice for individuals seeking the highest level of realism. Feelwood decors are a superb substitute for
-              veneers made of real wood.
+              Experience an extensive range of realistic woodgrain patterns with deeply embossed textures designed to
+              seamlessly integrate into various interior design schemes. These meticulously crafted reproductions offer
+              the warmth and charm of natural wood, allowing you to create inviting spaces that exude elegance and
+              sophistication.
             </p>
-            <p className='text-base text-black'>
-              Feelwood, which is mostly made of oak, a species that is highly valued in the furniture industry,
-              demonstrates how oak can be altered to suit any identity with finishes that include smoked, natural, and
-              stain-effect in a variety of colours.
-            </p>
-            <p className='text-base text-black '>
-              Aside from its authentic look and feel, the Feelwood range extends the life of your furniture with its
-              antibacterial qualities, scratch and fade resistance, and ease of coordination with other Egger products.
-              Truly an all-round product.
-            </p>
-
-            {/* <p className='text-base text-black'>
-              <strong>We offer MFC boards from leading brands such as:</strong>
-            </p>
-
-            <div className='flex gap-5 my-5 lg:my-10'>
-              <div className='flex flex-col items-center gap-3'>
-                <img className=' w-full object-cover object-center' src='../images/alldecor.jpeg' alt='' />
-                <h4 className='font-bold text-lg'>Saviola</h4>
-                <p>Specialises in classic designs crafted from high-quality materials.</p>
-                <a
-                  href='#'
-                  className='bg-black  w-fit p-2 px-4 text-white hover:bg-primary ease-in duration-200 flex items-center justify-between'
-                >
-                  Learn More <i className='ri-arrow-right-s-line text-white'></i>
-                </a>
-              </div>
-              <div className='flex flex-col items-center gap-3'>
-                <img className=' w-full object-cover object-center' src='../images/alldecor.jpeg' alt='' />
-                <h4 className='font-bold text-lg'>Egger</h4>
-                <p>Known for a vast selection of colours, textures, and realistic woodgrain designs.</p>
-                <a
-                  href='#'
-                  className='bg-black  w-fit p-2 px-4 text-white hover:bg-primary ease-in duration-200 flex items-center justify-between'
-                >
-                  Learn More <i className='ri-arrow-right-s-line text-white'></i>
-                </a>
-              </div>
-              <div className='flex flex-col items-center gap-3'>
-                <img className=' w-full object-cover object-center' src='../images/alldecor.jpeg' alt='' />
-                <h4 className='font-bold text-lg'>Alvic</h4>
-                <p>A high-end brand offering creative and unique decors.</p>
-                <a
-                  href='#'
-                  className='bg-black  w-fit p-2 px-4 text-white hover:bg-primary ease-in duration-200 flex items-center justify-between'
-                >
-                  Learn More <i className='ri-arrow-right-s-line text-white'></i>
-                </a>
-              </div>
-              <div className='flex flex-col items-center gap-3'>
-                <img className=' w-full object-cover object-center' src='../images/alldecor.jpeg' alt='' />
-                <h4 className='font-bold text-lg'>XyloCleaf</h4>
-                <p>A popular brand known for its globally appealing designs.</p>
-                <a
-                  href='#'
-                  className='bg-black  w-fit p-2 px-4 text-white hover:bg-primary ease-in duration-200 flex items-center justify-between'
-                >
-                  Learn More <i className='ri-arrow-right-s-line text-white'></i>
-                </a>
-              </div>
-            </div> */}
-
           </div>
         </div>
       </div>

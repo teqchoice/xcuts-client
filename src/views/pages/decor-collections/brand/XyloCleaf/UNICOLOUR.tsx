@@ -49,25 +49,23 @@ export default function CuttingMCF(props: any) {
       <div className='px-4 mt-10 sm:container'>
         <div className=' flex justify-center items-center flex-col'>
           <div className='text-center flex flex-col gap-3 max-w-[80%] text-black mb-5'>
-            <p className='text-3xl'>THE BEST OF BOTH!</p>
-            <h4 className='md:text-5xl text-4xl font-semibold mb-7'>UNI COLOUR WOODGRAINS</h4>
+            <p className='text-3xl'>Trendy and Luxurious</p>
+            <h4 className='md:text-5xl text-4xl font-semibold mb-7'>Fabric Inspirations </h4>
             <p className='text-base text-black'>
-              The ST40 collection, which debuted in 2023, attempts to add colour to a woodgrain with a deeper structure
-              in neutral hues that are considered trendy. The ST40 collection of decors challenges the idea that painted
-              woodgrains are only expensive, making this popular style more affordable. You can now have both woodgrains
-              and colours without having to choose between the two.
-            </p>
-            <p className='text-base text-black'>
-              Do you find the colours unappealing? Egger has created a board with Painting Grade melamine, allowing you
-              to use our spray-painting service to achieve the ideal finish and have the deep woodgrain structure in any
-              colour you choose.
-            </p>
-            
-
-            {/* <p className='text-base text-black'>
-              <strong>We offer MFC boards from leading brands such as:</strong>
+              Explore décor options that beautifully mimic natural fabrics such as linen, silk, denim, and alpaca. The
+              luxurious textures and rich visual appeal of these materials bring a trendy flair to your designs,
+              enabling you to achieve a stylish yet comfortable atmosphere in any setting. Whether you're aiming for a
+              cozy home or a chic commercial space, these fabric-inspired decors provide the perfect finishing touch.
             </p>
 
+            <p className='text-base text-black'>
+              <strong>Discover the Essence of XyloLeaf</strong>
+              <p className='text-base text-black'>
+                The XyloLeaf Décor Collection combines innovation and artistry, offering products that transform your
+                interior spaces with unparalleled texture and style.
+              </p>
+            </p>
+            {/* 
             <div className='flex gap-5 my-5 lg:my-10'>
               <div className='flex flex-col items-center gap-3'>
                 <img className=' w-full object-cover object-center' src='../images/alldecor.jpeg' alt='' />

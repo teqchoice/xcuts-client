@@ -20,13 +20,30 @@ export default function IntroductionSection(props: any) {
                 global interior design industry, operating four production lines in Brianza, Italy—a district famous for
                 its furniture design and production.
               </p>
+              <h3 className='font-bold text-xl'>The Heart of Innovation</h3>
               <p>
-                In keeping with global trends, Egger constantly creates new surfaces and decors, advances technological
-                advancements, and continuously enhances goods while streamlining workflows.
+                Brianza is home to numerous prominent furniture manufacturers and brands, fostering collaboration,
+                synergies, and a vibrant exchange of ideas and skills within the industry. This interconnectedness
+                significantly influences Cleaf's identity and industrial culture.
               </p>
+              <h3 className='font-bold text-xl'>Commitment to Excellence</h3>
               <p>
-                Egger is a well-known brand in the UK for its decorative surface products, particularly for providing
-                the furniture and interior design industries with premium melamine faced board materials.
+                The ongoing success and continuous technological and design advancements of Cleaf materials stem from
+                several core principles:
+              </p>
+              <p className='text-left lg:ml-10'>
+                • Quality: Commitment to high standards in production.
+                <br />
+                • Effectiveness: Focus on functional design that meets user needs.
+                <br />
+                • Research: Ongoing investigation into materials and trends.
+                <br />• Market Sensitivity: Adapting to changes and preferences in the design landscape.
+              </p>
+              <h3 className='font-bold text-xl'>A Recognized Leader</h3>
+              <p>
+                From its inception, XyloCleaf has flourished in the UK, quickly gaining recognition among regional
+                architects, designers, and craftspeople. Today, XyloCleaf products are widely utilized in both expansive
+                modern building projects and bespoke luxury interior design endeavors.
               </p>
             </div>
             {/* <div className='flex justify-center gap-4 mt-10'>
