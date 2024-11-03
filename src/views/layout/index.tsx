@@ -61,34 +61,34 @@ export const poppins = localFont({
 const Data = FakeDb
 
 export default function Layout({ children, data }: any) {
-  function get_user(t) {
-    let config = {
-      method: 'get',
-      maxBodyLength: Infinity,
-      url: 'https://api.xcuts.co.uk/api/user/get-user/',
-      headers: {
-        Authorization: `Bearer ${t}`
-      }
-    }
+  // function get_user(t) {
+  //   let config = {
+  //     method: 'get',
+  //     maxBodyLength: Infinity,
+  //     url: 'https://api.xcuts.co.uk/api/user/get-user/',
+  //     headers: {
+  //       Authorization: `Bearer ${t}`
+  //     }
+  //   }
 
-    axios
-      .request(config)
-      .then(response => {
-        // console.log(response.data[0])
-        const oneWeekFromNow = new Date()
-        oneWeekFromNow.setDate(oneWeekFromNow.getDate() + 7)
-        cookie.set('user', response.data[0], {
-          expires: oneWeekFromNow
-        })
-      })
-      .catch(error => {
-        console.log(error)
-      })
-  }
+  //   axios
+  //     .request(config)
+  //     .then(response => {
+  //       // console.log(response.data[0])
+  //       const oneWeekFromNow = new Date()
+  //       oneWeekFromNow.setDate(oneWeekFromNow.getDate() + 7)
+  //       cookie.set('user', response.data[0], {
+  //         expires: oneWeekFromNow
+  //       })
+  //     })
+  //     .catch(error => {
+  //       console.log(error)
+  //     })
+  // }
 
   useEffect(() => {
     if (token) {
-      get_user(token)
+      // get_user(token)
     }
   }, [token])
 

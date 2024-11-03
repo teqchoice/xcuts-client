@@ -3,7 +3,7 @@ import { FaChevronDown } from 'react-icons/fa6'
 import clsx from 'clsx'
 import { TableSelection } from './list'
 
-export default function FullSheet() {
+export default function FullSheet({ price, setPrice }: any) {
   return (
     <Disclosure defaultOpen={true} as='div' className='w-full'>
       {({ open }) => (
@@ -20,7 +20,7 @@ export default function FullSheet() {
               className='origin-top transition duration-200 ease-out data-[closed]:-translate-y-6 data-[closed]:opacity-0'
             >
               <div className='border border-dashed border-gray-400 p-10 text-center font-bold text-xl'>
-                <TableSelection />
+                <TableSelection price={price} setPrice={setPrice}  />
               </div>
             </DisclosurePanel>
           </div>
