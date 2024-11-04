@@ -28,13 +28,14 @@ export default function Register() {
       let config = {
         method: 'post',
         maxBodyLength: Infinity,
-        url: 'https://api.xcuts.co.uk/api/user/register',
+        url: `${process.env.NEXT_PUBLIC_SHOP_GATE_API_URL}/users/create`,
         headers: {
           'Content-Type': 'application/json'
         },
         data: {
           email: form.values.email,
-          password: form.values.password
+          password: form.values.password,
+          passwordConfirm: form.values.password
         }
       }
 
@@ -42,9 +43,9 @@ export default function Register() {
         .request(config)
         .then(response => {
           // console.log(response.data)
-          toast.success('code was sent to your email')
+          toast.success('register your account successfully')
           setCode(true)
-          // window.location.replace('/login')
+          window.location.replace('/login')
         })
         .catch(error => {
           console.log(error)
