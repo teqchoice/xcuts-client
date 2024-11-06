@@ -105,14 +105,14 @@ export default function Pupapt({data}:any) {
               <h3 className='text-2xl'>
                 Total:<span className='text-primary font-bold'>£{show ? thickness[0]?.full_sheet_price : thickness[1]?.full_sheet_price}</span>
               </h3>
-              <p className='text-sm'>With VAI:$298.50</p>
+              <p className='text-sm'>With VAT:£298.50</p>
             </div>
             <div className=' w-full'>
               <button className='p-3 outline-black mt-2 w-full text-xs text-white bg-black'>Add to cutting list</button>
               <h3 className='text-2xl'>
                 Total:<span className='text-primary font-bold'>£{show ? thickness[0]?.cutting_Price : thickness[1]?.cutting_Price}</span>
               </h3>
-              <p className='text-sm'>With VAI:$298.50</p>
+              <p className='text-sm'>With VAT:£298.50</p>
             </div>
           </div>
           <div className='mt-2'>
