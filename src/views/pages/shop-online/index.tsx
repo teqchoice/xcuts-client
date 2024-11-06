@@ -6,6 +6,12 @@ import CNCCutting from './CncCutting'
 import CutEdge from './CutEdge'
 
 export default function index({ Data }: any) {
+  const [price, setPrice] = useState({
+    Cut_edge_spray: 0,
+    CNC_cutting: 0,
+    Sliding_doors: 0,
+    Furniture_fittings: 0
+  })
   const [active, setActive] = useState(1)
   useEffect(() => {
     // console.log(active)
@@ -41,7 +47,7 @@ export default function index({ Data }: any) {
                 >
                   <span className='inline-block md:px-8 px-5'>Cut, edge & spray</span>
                   <span className='inline-block group-hover:bg-primary bg-[#7c7c7c] md:px-6 px-4 py-5 skew-x-[45deg] data-active'>
-                    <span className='-skew-x-[45deg] text-white inline-block'>£0.00</span>
+                    <span className='-skew-x-[45deg] text-white inline-block'>£{price.Cut_edge_spray}.00</span>
                   </span>
                 </div>
               </a>
@@ -133,7 +139,7 @@ export default function index({ Data }: any) {
                 aria-labelledby='tabs-contact-tab'
                 data-te-tab-active={active === 1 ? 'true' : undefined}
               >
-                  <CutEdge />
+                <CutEdge price={price} setPrice={setPrice} />
               </div>
               <div
                 className='hidden opacity-100 transition-opacity duration-150 ease-linear data-[te-tab-active]:block'

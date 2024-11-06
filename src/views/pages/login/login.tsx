@@ -71,12 +71,13 @@ export default function Login() {
     axios
       .request(config)
       .then(response => {
-        // console.log(response.data)
+        console.log(response.data)
         const oneWeekFromNow = new Date()
         oneWeekFromNow.setDate(oneWeekFromNow.getDate() + 7)
         cookie.set('jwt', response.data?.access, {
           expires: oneWeekFromNow
         })
+        localStorage.setItem('id', response.data?.id)
         toast.success('You have successfully logged in')
         setCode(false)
         window.location.replace('/dashboard')

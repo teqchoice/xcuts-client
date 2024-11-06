@@ -36,7 +36,8 @@ export default function AboutSection({ data }: any) {
             }}
           ></div> */}
           <div className='text-3xl md:text-5xl font-medium text-black'>
-            <span className='text-primary'>X</span>CUTS
+            {/* <span className='text-primary'>X</span>CUTS */}
+            Furniture Boards Cut and Edged
           </div>
           <div className='bg-black mx-6 md:mx-28 skew-y-[0] skew-x-[35deg] relative'>
             <div className='w-3 md:w-20 h-11 bg-primary absolute left-0 md:-left-24 bottom-0'></div>
@@ -54,24 +55,27 @@ export default function AboutSection({ data }: any) {
               XCuts: Trustworthy, Efficient & Fast.
             </h1>
           </div>
-          <div
-            className='flex flex-col gap-y-1 mt-10 text-lg'
-          >
-            XCUTS offers a wide range of services and products to meet the needs of bespoke carpenters, interior
-            designers, general builders, and DIYers. We are purveyors of the highest-quality furniture boards available
-            and are committed to providing the best solutions for furniture panel cut-to-size, edge banding, spray
-            painting, and CNC milling.
+          <div className='flex flex-col gap-y-1 mt-10 text-lg'>
+            For furniture producers, interior designers, and builders, at XCUTS we offer a large variety of services and
+            products. Strongly committed to providing top-notch customer service and the best possible products!
+          </div>
+          <div className='flex flex-col gap-y-1 mt-3 text-lg'>
+            We believe we are the best in our field! How may we assist you?
+          </div>
+          <div className='flex flex-col gap-y-1 mt-3 text-lg'>
+            Change to: XCUTS offers a wide range of services and products to meet the needs of bespoke carpenters,
+            interior designers, general builders, and DIYers. We are purveyors of the highest-quality furniture boards
+            available and are committed to providing the best solutions for furniture panel cut-to-size, edge-banding,
+            spray painting, and CNC milling.
           </div>
           <div className='flex flex-col gap-y-1 mt-3 text-lg'>Get in touch today to learn more about us.</div>
-          <div
-            className='flex flex-col gap-y-1 mt-3 text-lg'
-            
-          >
-            Our goal is to become the leading provider of cutting, edging, and CNC services in the UK and expand our
-            reach globally. We are committed to delivering exceptional service, rapid turnaround times, and highly
-            competitive pricing to meet the diverse needs of our clients. Through innovation and dedication to quality,
-            we aim to set a new standard in the woodworking industry and support our customers in achieving outstanding
-            results.
+          <div className='mt-5 text-center flex justify-center'>
+            <a
+              href='#'
+              className='bg-black  px-3 py-4 md:px-5  lg:px-9 md:py-4 font-medium text-lg md:text-2xl text-white hover:bg-primary ease-in duration-200 flex items-center justify-between'
+            >
+              View Decors
+            </a>
           </div>
         </div>
       </div>
