@@ -13,8 +13,8 @@ export default function Pupapt({ data }: any) {
   }, [])
 
   const addToCard = () => {
-    console.log(thickness[0].id)
-    console.log(user)
+    // console.log(thickness[0].id)
+    // console.log(user)
     let data = JSON.stringify({
       'cart_full_sheets+': [thickness[0].id]
     })

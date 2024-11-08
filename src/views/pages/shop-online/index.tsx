@@ -4,6 +4,7 @@ import PageIntroduction from '../components/pageIntroduction'
 import { BackgroundImage } from '@mantine/core'
 import CNCCutting from './CncCutting'
 import CutEdge from './CutEdge'
+import axios from 'axios'
 
 export default function index({ Data }: any) {
   const [price, setPrice] = useState({
@@ -13,9 +14,37 @@ export default function index({ Data }: any) {
     Furniture_fittings: 0
   })
   const [active, setActive] = useState(1)
+  const [user, setUser] = useState('')
+
   useEffect(() => {
-    // console.log(active)
-  }, [active])
+    setUser(localStorage.getItem('id'))
+  }, [])
+
+  const sendPayment = () => {
+    console.log(user)
+    let data = {
+      userid: user
+    }
+
+    let config = {
+      method: 'post',
+      maxBodyLength: Infinity,
+      url: 'https://gate.xcuts.co.uk/payment/stripe',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      data: data
+    }
+
+    axios
+      .request(config)
+      .then(response => {
+        console.log(response.data)
+      })
+      .catch(error => {
+        console.log(error)
+      })
+  }
 
   const rel = 'data-te-nav-active'
   return (
@@ -174,6 +203,14 @@ export default function index({ Data }: any) {
                   Coming soon
                 </div>
               </div>
+            </div>
+            <div className='w-full flex justify-center items-center'>
+              <button
+                className='p-5 font-bold outline-primary text-xs text-white bg-primary hover:bg-black hover:text-white'
+                onClick={sendPayment}
+              >
+                Pay and Create an order
+              </button>
             </div>
           </div>
         </div>

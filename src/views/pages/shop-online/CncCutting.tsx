@@ -76,9 +76,7 @@ export default function CNCCutting() {
             </svg>
             {selectedFile ? (
               <>
-                <p className='mb-2 text-sm text-gray-500 dark:text-gray-400'>
-                  {selectedFile?.name}
-                </p>
+                <p className='mb-2 text-sm text-gray-500 dark:text-gray-400'>{selectedFile?.name}</p>
                 <p className='text-xs text-gray-500 dark:text-gray-400'>
                   {(selectedFile?.size / (1024 * 1024)).toFixed(2) + ' MB'}
                 </p>
@@ -119,16 +117,20 @@ export default function CNCCutting() {
             Must be login
           </Link>
         ) : loading ? (
-          <button className='w-48 flex justify-center items-center border bg-primary border-primary lg:py-4 lg:px-6 md:py-4 md:px-3 py-4 px-6  text-center hover:bg-primary hover:text-white transition-all'>
+          <a
+            href='#'
+            className='w-48 flex justify-center items-center border bg-primary border-primary lg:py-4 lg:px-6 md:py-4 md:px-3 py-4 px-6  text-center hover:bg-primary hover:text-white transition-all'
+          >
             <svg className='animate-spin h-7 w-7 border-t-4 border-b-4 rounded-full' viewBox='0 0 24 24'></svg>
-          </button>
+          </a>
         ) : (
-          <button
+          <a
+            href='#'
             className='text-base font-semibold w-48 text-black border border-primary lg:py-4 lg:px-6 md:py-4 md:px-3 py-4 px-6 block text-center hover:bg-primary hover:text-white transition-all'
             onClick={Submit}
           >
             Submit
-          </button>
+          </a>
         )}
       </div>
     </>
