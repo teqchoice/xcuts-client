@@ -15,31 +15,31 @@ export default function Dropdown({ menu, setMenu }) {
           </Link>
           <div>
             <ul className='grid gap-3'>
-              <Link href={'/all-decors/Egger'} className='group flex items-center gap-2 font-semibold'>
+              <Link href={'/all-decors?Brand=egger'} className='group flex items-center gap-2 font-semibold'>
                 <div className='w-10 group-hover:scale-105'>
                   <img src='../images/marker.png' alt='' className='w-full' />
                 </div>
                 <li>Egger</li>
               </Link>
-              <Link href={'/all-decors/Kronospan'} className='group flex items-center gap-2 font-semibold'>
+              <Link href={'/all-decors?Brand=kronospan'} className='group flex items-center gap-2 font-semibold'>
                 <div className='w-10 group-hover:scale-105'>
                   <img src='../images/marker.png' alt='' className='w-full' />
                 </div>
                 <li>Kronospan</li>
               </Link>
-              <Link href={'/all-decors/XyloCleaf'} className='group flex items-center gap-2 font-semibold'>
+              <Link href={'/all-decors?Brand=xylocleaf'} className='group flex items-center gap-2 font-semibold'>
                 <div className='w-10 group-hover:scale-105'>
                   <img src='../images/marker.png' alt='' className='w-full' />
                 </div>
                 <li>XyloCleaf</li>
               </Link>
-              <Link href={'/all-decors/Saviola'} className='group flex items-center gap-2 font-semibold'>
+              <Link href={'/all-decors?Brand=saviola'} className='group flex items-center gap-2 font-semibold'>
                 <div className='w-10 group-hover:scale-105'>
                   <img src='../images/marker.png' alt='' className='w-full' />
                 </div>
                 <li>Saviola</li>
               </Link>
-              <Link href={'/all-decors/Swiss Krono'} className='group flex items-center gap-2 font-semibold'>
+              <Link href={'/all-decors?Brand=swiss+krono'} className='group flex items-center gap-2 font-semibold'>
                 <div className='w-10 group-hover:scale-105'>
                   <img src='../images/marker.png' alt='' className='w-full' />
                 </div>
@@ -49,31 +49,31 @@ export default function Dropdown({ menu, setMenu }) {
           </div>
           <div>
             <ul className='grid gap-3'>
-              <Link href={'/all-decors/Alvic'} className='group flex items-center gap-2 font-semibold'>
+              <Link href={'/all-decors?Brand=alvic'} className='group flex items-center gap-2 font-semibold'>
                 <div className='w-10 group-hover:scale-105'>
                   <img src='../images/marker.png' alt='' className='w-full' />
                 </div>
                 <li>Alvic</li>
               </Link>
-              <Link href={'/all-decors/Senoplast'} className='group flex items-center gap-2 font-semibold'>
+              <Link href={'/all-decors?Brand=senoplast'} className='group flex items-center gap-2 font-semibold'>
                 <div className='w-10 group-hover:scale-105'>
                   <img src='../images/marker.png' alt='' className='w-full' />
                 </div>
                 <li>Senoplast</li>
               </Link>
-              <Link href={'/all-decors/Serica'} className='group flex items-center gap-2 font-semibold'>
+              <Link href={'/all-decors?Brand=serica'} className='group flex items-center gap-2 font-semibold'>
                 <div className='w-10 group-hover:scale-105'>
                   <img src='../images/marker.png' alt='' className='w-full' />
                 </div>
                 <li>Serica</li>
               </Link>
-              <Link href={'/all-decors/Wall Panelling'} className='group flex items-center gap-2 font-semibold'>
+              <Link href={'/all-decors?Brand=wall+panelling'} className='group flex items-center gap-2 font-semibold'>
                 <div className='w-10 group-hover:scale-105'>
                   <img src='../images/marker.png' alt='' className='w-full' />
                 </div>
                 <li>Wall Panelling</li>
               </Link>
-              <Link href={'/all-decors/MDF'} className='group flex items-center gap-2 font-semibold'>
+              <Link href={'/all-decors?Brand=MDF+boards'} className='group flex items-center gap-2 font-semibold'>
                 <div className='w-10 group-hover:scale-105'>
                   <img src='../images/marker.png' alt='' className='w-full' />
                 </div>
@@ -83,13 +83,13 @@ export default function Dropdown({ menu, setMenu }) {
           </div>
           <div>
             <ul className='grid gap-3'>
-              <Link href={'/all-decors/Veneers'} className='group flex items-center gap-2 font-semibold'>
+              <Link href={'/all-decors?Brand=veneered+boards'} className='group flex items-center gap-2 font-semibold'>
                 <div className='w-10 group-hover:scale-105'>
                   <img src='../images/marker.png' alt='' className='w-full' />
                 </div>
                 <li>Veneers</li>
               </Link>
-              <Link href={'/all-decors/Plywood'} className='group flex items-center gap-2 font-semibold'>
+              <Link href={'/all-decors?Brand=plywood'} className='group flex items-center gap-2 font-semibold'>
                 <div className='w-10 group-hover:scale-105'>
                   <img src='../images/marker.png' alt='' className='w-full' />
                 </div>
@@ -221,7 +221,10 @@ export default function Dropdown({ menu, setMenu }) {
             </div>
           </Link>
 
-          <Link href={'/product/Interior-fixtures'} className='grid grid-cols-2 group cursor-pointer items-center gap-2'>
+          <Link
+            href={'/product/Interior-fixtures'}
+            className='grid grid-cols-2 group cursor-pointer items-center gap-2'
+          >
             <div className='relative  overflow-hidden '>
               <img src='../images/our-product-03.webp' alt='' className='w-full' />
               <div className=' overflow-hidden absolute left-0 top-0 z-10 ring-inset group-hover:ring-8 ring-primary opacity-0 group-hover:opacity-100 transition-all duration-150'>
