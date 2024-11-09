@@ -80,7 +80,7 @@ export default function ServicesSection({ data }: any) {
                 <h2
                   className='text-3xl md:text-4xl lg:text-5xl text-black font-bold'
                   dangerouslySetInnerHTML={{
-                    __html: 'Furniture Boards Cut to Size'
+                    __html: 'Furniture Boards Cut to Size (higher search volume)'
                   }}
                 ></h2>
                 <div>

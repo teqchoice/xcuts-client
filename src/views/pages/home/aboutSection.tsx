@@ -56,25 +56,19 @@ export default function AboutSection({ data }: any) {
             </h1>
           </div>
           <div className='flex flex-col gap-y-1 mt-10 text-lg'>
-            For furniture producers, interior designers, and builders, at XCUTS we offer a large variety of services and
-            products. Strongly committed to providing top-notch customer service and the best possible products!
-          </div>
-          <div className='flex flex-col gap-y-1 mt-3 text-lg'>
-            We believe we are the best in our field! How may we assist you?
-          </div>
-          <div className='flex flex-col gap-y-1 mt-3 text-lg'>
-            Change to: XCUTS offers a wide range of services and products to meet the needs of bespoke carpenters,
-            interior designers, general builders, and DIYers. We are purveyors of the highest-quality furniture boards
-            available and are committed to providing the best solutions for furniture panel cut-to-size, edge-banding,
-            spray painting, and CNC milling.
+            Xcuts offers a wide range of services and products to meet the needs of bespoke carpenters, interior
+            designers, general builders, and DIYers. We are purveyors of the highest-quality furniture boards available
+            and are committed to providing the best solutions for furniture panel cut-to-size, edgebanding, spray
+            painting, and CNC milling.
           </div>
           <div className='flex flex-col gap-y-1 mt-3 text-lg'>Get in touch today to learn more about us.</div>
+
           <div className='mt-5 text-center flex justify-center'>
             <a
               href='#'
               className='bg-black  px-3 py-4 md:px-5  lg:px-9 md:py-4 font-medium text-lg md:text-2xl text-white hover:bg-primary ease-in duration-200 flex items-center justify-between'
             >
-              View Decors
+              Contact Us
             </a>
           </div>
         </div>

@@ -68,7 +68,7 @@ export default function ABSEdgebandSection(props: any) {
             </div>
             <div className='basis-[47.88%] flex items-center'>
               <div className='flex flex-col md:justify-center md:ml-auto pb-16 py-8 px-8 md:max-w-[410px] lg:max-w-[567px]'>
-                <h2 className='text-2xl md:text-3xl text-black font-bold mb-6'>Computerised Cutting : </h2>
+                <h2 className='text-2xl md:text-3xl text-black font-bold mb-6'>Computerised Cutting: </h2>
                 <p className='text-lg'>
                   Using your cutting list, our computerised saws optimise the cutting process to get the most out of
                   your boards.

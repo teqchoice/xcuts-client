@@ -60,7 +60,7 @@ export default function SolidWoodSection(props: any) {
                 The grain matching service we provide works best with vertical panels, such as doors, but can also be
                 used in a stacked application for drawers.
               </p>
-         
+
               <p className='text-base text-black'>
                 Grain matching can be used with our MFC, veneered MDF and plywood products.
               </p>
