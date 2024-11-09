@@ -63,7 +63,7 @@ export default function AboutSection({ data }: any) {
             We believe we are the best in our field! How may we assist you?
           </div>
           <div className='flex flex-col gap-y-1 mt-3 text-lg'>
-            Change to: XCUTS offers a wide range of services and products to meet the needs of bespoke carpenters,
+            XCUTS offers a wide range of services and products to meet the needs of bespoke carpenters,
             interior designers, general builders, and DIYers. We are purveyors of the highest-quality furniture boards
             available and are committed to providing the best solutions for furniture panel cut-to-size, edge-banding,
             spray painting, and CNC milling.

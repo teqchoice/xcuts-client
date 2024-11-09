@@ -22,24 +22,22 @@ export default function index({ Data }: any) {
 
   const sendPayment = () => {
     console.log(user)
-    let data = {
-      userid: user
-    }
 
     let config = {
       method: 'post',
       maxBodyLength: Infinity,
-      url: 'https://gate.xcuts.co.uk/payment/stripe',
+      url: `${process.env.NEXT_PUBLIC_SHOP_GATE_API_URL}/payment/stripe`,
       headers: {
         'Content-Type': 'application/json'
       },
-      data: data
+      data: { userid: user }
     }
 
     axios
       .request(config)
       .then(response => {
         console.log(response.data)
+        window.location.replace(response.data.payment)
       })
       .catch(error => {
         console.log(error)
