@@ -1,9 +1,11 @@
 import { token } from '@/extensions/redux/api/auth'
 import axios from 'axios'
 import { useEffect, useState } from 'react'
+import toast from 'react-hot-toast'
 import { FaMinus, FaPlus } from 'react-icons/fa6'
 export default function Pupapt({ data }: any) {
   const [show, setShow] = useState(1)
+  const [loader, setLoader] = useState(false)
   const [cunter, setCunter] = useState(1)
   const [user, setUser] = useState('')
   const { item, thickness } = data
@@ -13,10 +15,14 @@ export default function Pupapt({ data }: any) {
   }, [])
 
   const addToCard = () => {
-    console.log(thickness[0].id)
-    console.log(user)
+    if (!token) {
+      return toast.error('لطفا ثبت نام کنید')
+    }
+    setLoader(true)
+    // console.log(thickness[0]?.id)
+    // console.log(user)
     let data = JSON.stringify({
-      'cart_full_sheets+': [thickness[0].id]
+      'cart_full_sheets+': [thickness[0]?.id]
     })
 
     let config = {
@@ -29,11 +35,11 @@ export default function Pupapt({ data }: any) {
       },
       data: data
     }
-
     axios
       .request(config)
       .then(response => {
-        // console.log(response.data)
+        setLoader(false)
+        toast.success('محصول به سبد اضافه شد')
         window.location.replace('/shop-online')
       })
       .catch(error => {
@@ -167,13 +173,13 @@ export default function Pupapt({ data }: any) {
           </div>
           <div className='flex w-full gap-5'>
             <div className=' w-full'>
-              {show ? (
+              {show && loader === false ? (
                 <button className='p-3 outline-primary mt-2 w-full text-xs text-white bg-primary' onClick={addToCard}>
                   Buy full sheet
                 </button>
               ) : (
                 <div className='p-3 text-center outline-primary mt-2 w-full text-xs text-white bg-gray-400'>
-                  Buy full sheet
+                  Loading ...
                 </div>
               )}
 
