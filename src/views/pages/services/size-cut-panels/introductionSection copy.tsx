@@ -19,7 +19,7 @@ export default function IntroductionSection(props: any) {
               <p>
                 XCuts supplies a massive variety of boards from trusted brands, including MDF and veneered boards from
                 Medite and Finsa, MFC (Melamine-Faced Chipboard) boards from Egger and Kronospan, and Plywood boards
-                from [brand name]. We ensure that all boards that come into our workshop are thoroughly checked to
+                from brand. We ensure that all boards that come into our workshop are thoroughly checked to
                 verify that they are up to our high standards and ready to cut to your specifications.
               </p>
               <p>

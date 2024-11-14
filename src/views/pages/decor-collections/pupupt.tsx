@@ -22,7 +22,7 @@ export default function Pupapt({ data }: any) {
     let config = {
       method: 'patch',
       maxBodyLength: Infinity,
-      url: `https://shop.xcuts.co.uk/api/collections/users/records/${user}`,
+      url: `https://shopi.xcuts.co.uk/api/collections/users/records/${user}`,
       headers: {
         'Content-Type': 'application/json',
         Authorization: `Bearer ${token}`

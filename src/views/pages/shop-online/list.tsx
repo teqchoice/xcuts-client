@@ -33,7 +33,7 @@ export function TableSelection({ price, setPrice }: any) {
     let config = {
       method: 'get',
       maxBodyLength: Infinity,
-      url: 'https://shop.xcuts.co.uk/api/collections/users/records/31656cl85ta37vb?expand=cart_full_sheets.decor_ref.brand_ref&fields=expand',
+      url: 'https://shopi.xcuts.co.uk/api/collections/users/records/31656cl85ta37vb?expand=cart_full_sheets.decor_ref.brand_ref&fields=expand',
       headers: {
         'Content-Type': 'application/json',
         Authorization: `Bearer ${token}`
@@ -61,7 +61,7 @@ export function TableSelection({ price, setPrice }: any) {
     let config = {
       method: 'patch',
       maxBodyLength: Infinity,
-      url: `https://shop.xcuts.co.uk/api/collections/users/records/${user}`,
+      url: `https://shopi.xcuts.co.uk/api/collections/users/records/${user}`,
       headers: {
         'Content-Type': 'application/json',
         Authorization: `Bearer ${token}`
