@@ -6,7 +6,7 @@ import React from 'react'
 function contactUs({ layout }: any) {
   return (
     <Layout data={layout}>
-      <ContactUsPage />
+        <ContactUsPage />
     </Layout>
   )
 }
