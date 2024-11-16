@@ -16,7 +16,7 @@ export default function Pupapt({ data }: any) {
 
   const addToCard = () => {
     if (!token) {
-      return toast.error('لطفا ثبت نام کنید')
+      return toast.error("please register")
     }
     setLoader(true)
     // console.log(thickness[0]?.id)
@@ -28,7 +28,7 @@ export default function Pupapt({ data }: any) {
     let config = {
       method: 'patch',
       maxBodyLength: Infinity,
-      url: `https://shop.xcuts.co.uk/api/collections/users/records/${user}`,
+      url: `https://shopi.xcuts.co.uk/api/collections/users/records/${user}`,
       headers: {
         'Content-Type': 'application/json',
         Authorization: `Bearer ${token}`
@@ -39,7 +39,7 @@ export default function Pupapt({ data }: any) {
       .request(config)
       .then(response => {
         setLoader(false)
-        toast.success('محصول به سبد اضافه شد')
+        toast.success('seved in card successfully')
         window.location.replace('/shop-online')
       })
       .catch(error => {

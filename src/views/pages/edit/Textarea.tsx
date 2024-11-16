@@ -30,7 +30,6 @@ export default function TextareaC({
         <Textarea
           value={Var}
           size='md'
-          // error='باید این بخش را تکمیل نمائید'
           placeholder={title || place}
           onChange={Fun}
           className={`${classI} grow`}
