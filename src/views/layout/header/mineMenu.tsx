@@ -51,7 +51,7 @@ const defaultMenuItem = [
   }
 ]
 
-export default function MineMenu({ data, logo, setMenu }: any) {
+export default function MineMenu({ data, setMenu }: any) {
   const [isOpen, setIsOpen] = useState(false)
   const [modal, setModal] = useState(false)
   const [user, setUser] = useState(false)
@@ -76,8 +76,8 @@ export default function MineMenu({ data, logo, setMenu }: any) {
         className=' absolute top-0 left-0 p-3 cursor-pointer'
       />
       <div className=' pt-10 pb-5'>
-        <Link href={`${logo[4]?.link}`}>
-          <img src={process.env.NEXT_PUBLIC_API_URL + logo[4]?.filec} alt='' className=' w-48' />
+        <Link href={`${data.logo[4]?.link}`}>
+          {/* <img src={process.env.NEXT_PUBLIC_API_URL + logo[4]?.filec} alt='' className=' w-48' /> */}
         </Link>
       </div>
       {/* <div className=' text-white'>sdfdsf</div> */}

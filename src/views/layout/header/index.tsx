@@ -8,15 +8,12 @@ import Dropdown from './components/Dropdown'
 
 export default function index({ data }: any) {
   const [menu, setMenu] = useState('')
+  console.log(data)
   return (
     <header>
-      <TopMenu data={data.find(arr => arr.some(obj => obj.title === 'DELIVERY'))} />
-      <MineHeader data={data.find(arr => arr.some(obj => obj.title === 'times'))} />
-      <MineMenu
-        data={data.find(arr => arr.some(obj => obj.title === 'Home'))}
-        logo={data.find(arr => arr.some(obj => obj.title === 'times'))}
-        setMenu={setMenu}
-      />
+      <TopMenu data={data} />
+      <MineHeader data={data} />
+      <MineMenu data={data} setMenu={setMenu} />
 
       <Dropdown menu={menu} setMenu={setMenu} />
     </header>

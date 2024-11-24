@@ -60,7 +60,7 @@ export const poppins = localFont({
 
 const Data = FakeDb
 
-export default function Layout({ children, data }: any) {
+export default function Layout({ children, header, footer }: any) {
   // function get_user(t) {
   //   let config = {
   //     method: 'get',
@@ -92,30 +92,32 @@ export default function Layout({ children, data }: any) {
     }
   }, [token])
 
-  const { passwordvrify } = useSelector((state: any) => state.options)
-  if (!passwordvrify)
-    return (
-      <div className='fixed top-0 left-0 h-screen w-screen bg-white z-50'>
-        <Login />
-      </div>
-    )
+  // const { passwordvrify } = useSelector((state: any) => state.options)
+  // if (!passwordvrify)
+  //   return (
+  //     <div className='fixed top-0 left-0 h-screen w-screen bg-white z-50'>
+  //       <Login />
+  //     </div>
+  //   )
   return (
     <main className={poppins.className}>
       <Header
-        data={select(
-          data,
-          item => item?.contents,
-          item => item?.name?.includes('Header')
-        )}
+        data={header?.data}
+        // data={select(
+        //   header?.data,
+        //   // item => item?.contents,
+        //   // item => item?.name?.includes('Header')
+        // )}
       />
       {/* <Suspense fallback={<Loading />}>{children}</Suspense> */}
       {children}
       <Footer
-        data={select(
-          data,
-          item => item?.contents,
-          item => item?.name?.includes('Footer')
-        )}
+        data={footer?.data}
+        // data={select(
+        //   footer?.data,
+        //   item => item?.contents,
+        //   item => item?.name?.includes('Footer')
+        // )}
       />
     </main>
   )

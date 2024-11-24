@@ -10,8 +10,8 @@ export default function index({ data }: any) {
     <footer className='bg-neutral-700'>
       <div className='px-4 sm:container'>
         <TopMneu data={data} />
-        <MineMenu data={data} />
-        <CopyRight data={data} />
+         <MineMenu data={data} />
+        <CopyRight data={data} /> 
       </div>
     </footer>
   )

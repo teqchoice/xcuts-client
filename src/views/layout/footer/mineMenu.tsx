@@ -245,24 +245,24 @@ export default function MineMenu({ data }: any) {
         <h5 className='text-2xl font-semibold text-white mb-4'>Collections</h5>
         <div className='grid grid-cols-2 items-start '>
           <div className='mt-4 space-y-2 flex flex-col'>
-            {Collections?.slice(0, 7)?.map((item: any) => (
+            {data?.Collections_menu?.slice(0, 7)?.map((item: any) => (
               <a
                 key={item.id}
                 href={item.link}
                 className='text-white hover:text-primary font-normal text-base transition-all'
               >
-                {item.value}
+                {item.name}
               </a>
             ))}
           </div>
           <div className='mt-4 space-y-2 flex flex-col'>
-            {Collections?.slice(7, 14)?.map((item: any) => (
+            {data?.Collections_menu?.slice(7, 14)?.map((item: any) => (
               <a
                 key={item.id}
                 href={item.link}
                 className='text-white hover:text-primary font-normal text-base transition-all'
               >
-                {item.value}
+                {item.name}
               </a>
             ))}
           </div>
@@ -273,13 +273,13 @@ export default function MineMenu({ data }: any) {
         <h5 className='text-2xl font-semibold text-white mb-4'>Services</h5>
         <div className='flex gap-x-14'>
           <div className='mt-4 space-y-2 flex flex-col'>
-            {Services?.map((item: any) => (
+            {data?.Services_menu?.map((item: any) => (
               <a
                 key={item.id}
                 href={item.link}
                 className='text-white hover:text-primary font-normal text-base transition-all'
               >
-                {item.value}
+                {item.name}
               </a>
             ))}
           </div>
@@ -290,13 +290,13 @@ export default function MineMenu({ data }: any) {
         <h5 className='text-2xl font-semibold text-white mb-4'>Products</h5>
         <div className='flex gap-x-14'>
           <div className='mt-4 space-y-2 flex flex-col'>
-            {Products?.map((item: any) => (
+            {data?.Products_menu?.map((item: any) => (
               <a
                 key={item.id}
                 href={item.link}
                 className='text-white hover:text-primary font-normal text-base transition-all'
               >
-                {item.value}
+                {item.name}
               </a>
             ))}
           </div>
@@ -307,13 +307,13 @@ export default function MineMenu({ data }: any) {
         <h5 className='text-2xl font-semibold text-white mb-4'>Company</h5>
         <div className='flex gap-x-14'>
           <div className='mt-4 space-y-2 flex flex-col'>
-            {Company?.map((item: any) => (
+            {data?.Company_menu?.map((item: any) => (
               <a
                 key={item.id}
                 href={item.link}
                 className='text-white hover:text-primary font-normal text-base transition-all'
               >
-                {item.value}
+                {item.name}
               </a>
             ))}
           </div>

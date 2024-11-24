@@ -24,11 +24,12 @@ export default function MineHeader({ data }: any) {
   //   ...props.Data
   // }
   // console.log(data[3])
+  console.log(`https://cms.xcuts.co.uk/items/header/` + data.logo)
   return (
     <div className='relative mainHder bg-white py-7'>
       <div className='px-4 sm:container flex justify-between place-items-center'>
         <a href={'/'}>
-          <img src={process.env.NEXT_PUBLIC_API_URL + data[3]?.filec} alt='' className=' w-28 md:w-56' />
+          <img src={process.env.NEXT_PUBLIC_API__URL_header + data.logo} alt='' className=' w-28 md:w-56' />
         </a>
         <div className='tp-phone flex place-items-center'>
           <img src='../images/phone-icon.webp' alt='' className='w-9 h-9' />
@@ -36,18 +37,18 @@ export default function MineHeader({ data }: any) {
             <div className='text-sm md:text-base flex gap-5'>
               <span
                 dangerouslySetInnerHTML={{
-                  __html: data[2]?.value
+                  __html: data.days
                 }}
               ></span>
               <span
                 className='text-primary'
                 dangerouslySetInnerHTML={{
-                  __html: data[0]?.value
+                  __html: data.time
                 }}
               ></span>
             </div>
             <a href='#' className='text-xl md:text-[1.7rem] leading-4'>
-              {data[1]?.value}
+              {data.phone}
             </a>
           </div>
         </div>
