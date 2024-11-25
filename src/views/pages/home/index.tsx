@@ -8,40 +8,41 @@ export default function HomePage({ data }: any) {
   // console.log(data)
   return (
     <>
-      {/* <HeroSection
-        data={data}
+      <HeroSection
+        data={data.data}
         // data={select(
         //   data,
         //   item => item?.contents,
         //   item => item?.name?.includes('Top_Slider')
         // )}
-      /> */}
+      />
 
-      {/* <AboutSection
+      <AboutSection
         data={data.data}
         // data={select(
         //   data,
         //   item => item?.contents,
         //   item => item?.name?.includes('Section1_Xcut')
         // )}
-      /> */}
+      />
 
-      {/* <ServicesSection
-        data={data}
+      <ServicesSection
+        data={data.data}
         // data={select(
         //   data,
         //   item => item?.contents,
         //   item => item?.name?.includes('Section2')
         // )}
-      /> */}
+      />
 
-      {/* <ProductSection
-        data={select(
-          data,
-          item => item?.contents,
-          item => item?.name?.includes('Section3')
-        )}
-      />  */}
+      <ProductSection
+        data={data.data}
+        // data={select(
+        //   data,
+        //   item => item?.contents,
+        //   item => item?.name?.includes('Section3')
+        // )}
+      />
     </>
   )
 }

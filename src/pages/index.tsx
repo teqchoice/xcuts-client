@@ -19,13 +19,14 @@ export default function PHome({ data, header, footer }: any) {
 
 export const getServerSideProps = async (context: any) => {
   try {
-    const { data } = await axios.get(`https://cms.xcuts.co.uk/items/home_page`)
-    const { data: header } = await axios.get('https://cms.xcuts.co.uk/items/header')
-    const { data: footer } = await axios.get('https://cms.xcuts.co.uk/items/footer')
+    const { data } = await axios.get(`https://cms.xcuts.co.uk/items/home_page?fields=*.*`)
+
+    const { data: header } = await axios.get('https://cms.xcuts.co.uk/items/header?fields=*.*')
+    const { data: footer } = await axios.get('https://cms.xcuts.co.uk/items/footer?fields=*.*')
 
     return {
       props: {
-         data: data,
+        data: data,
         header: header,
         footer: footer
       }

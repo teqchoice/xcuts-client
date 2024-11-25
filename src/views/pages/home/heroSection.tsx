@@ -3,29 +3,29 @@ import Slider from '../components/slider'
 import Image from 'next/image'
 
 export default function HeroSection({ data }: any) {
+  console.log(process?.env.NEXT_PUBLIC_API__URL_images + `/${data?.s1_image?.id}/${data?.s1_image?.filename_download}`)
   // console.log(data)
-
   const defaultSlide = [
-    // {
-    //   id: '47',
-    //   title: 's1',
-    //   value: '',
-    //   link: '/',
-    //   filec: '../images/Home-Banner.mp4'
-    // },
+    {
+      id: '47',
+      title: 's1',
+      value: '',
+      link: '/',
+      filec: `${process.env.NEXT_PUBLIC_API__URL_images}/${data?.s1_image?.id}/${data?.s1_image?.filename_download}`
+    },
     {
       id: '48',
       title: 's2',
       value: '',
       link: '/',
-      filec: '../images/vid/Main Banner.mp4'
+      filec: `${process.env.NEXT_PUBLIC_API__URL_images}/${data?.s2_image?.id}/${data?.s2_image?.filename_download}`
     },
     {
       id: '49',
       title: 's2',
       value: '',
       link: '/',
-      filec: '../images/vid/Main Banner.mp4'
+      filec: `${process.env.NEXT_PUBLIC_API__URL_images}/${data?.s3_image?.id}/${data?.s3_image?.filename_download}`
     }
   ]
 

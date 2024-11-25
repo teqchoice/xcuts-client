@@ -12,35 +12,35 @@ export default function ServicesSection({ data }: any) {
   const [modal3, setModal3] = useState(false)
   const [modal4, setModal4] = useState(false)
 
-  const t = select(
-    data,
-    item => item[0],
-    item => item[0]?.title === 'Our Services'
-  )[0]
-  const s1 = select(
-    data,
-    item => item,
-    item => item[0]?.value === 'Panel edgebanding'
-  )[0]
-  const s2 = select(
-    data,
-    item => item,
-    item => item[0]?.value === 'CNC cutting'
-  )[0]
-  const s3 = select(
-    data,
-    item => item,
-    item => item[0]?.value == 'Panels cut to size'
-  )[0]
-  const s4 = select(
-    data,
-    item => item,
-    item => item[0]?.value === 'Spray painting'
-  )[0]
+  // const t = select(
+  //   data,
+  //   item => item[0],
+  //   item => item[0]?.title === 'Our Services'
+  // )[0]
+  // const s1 = select(
+  //   data,
+  //   item => item,
+  //   item => item[0]?.value === 'Panel edgebanding'
+  // )[0]
+  // const s2 = select(
+  //   data,
+  //   item => item,
+  //   item => item[0]?.value === 'CNC cutting'
+  // )[0]
+  // const s3 = select(
+  //   data,
+  //   item => item,
+  //   item => item[0]?.value == 'Panels cut to size'
+  // )[0]
+  // const s4 = select(
+  //   data,
+  //   item => item,
+  //   item => item[0]?.value === 'Spray painting'
+  // )[0]
   // console.log(s3)
   return (
     <section className='relative'>
-      <MiddleRedTitle title={t.value} />
+      <MiddleRedTitle title='Our Services' />
 
       <div className='bg-neutral-100'>
         <div className=''>
@@ -55,7 +55,7 @@ export default function ServicesSection({ data }: any) {
                   /> */}
                   <video
                     className='h-[380px] md:h-[460px] lg:h-[596px] w-full object-cover object-center'
-                    src='../images/vid/Size-Cut Panels.mp4'
+                    src={`${process.env.NEXT_PUBLIC_API__URL_images}/${data?.s_poster1?.id}/${data?.s_poster1?.filename_download}`}
                     width='100%'
                     height='auto'
                     onMouseEnter={e => {
@@ -80,26 +80,30 @@ export default function ServicesSection({ data }: any) {
                 <h2
                   className='text-3xl md:text-4xl lg:text-5xl text-black font-bold'
                   dangerouslySetInnerHTML={{
-                    __html: 'Furniture Boards Cut to Size (higher search volume)'
+                    __html: data?.s_name1
                   }}
                 ></h2>
-                <div>
-                  Select any decor boards from highly-regarded panel board brands, and we’ll cut them to size to your
-                  exact specifications.
+                <div
+                  dangerouslySetInnerHTML={{
+                    __html: data?.s_content1
+                  }}
+                >
+                  {/* Select any decor boards from highly-regarded panel board brands, and we’ll cut them to size to your
+                  exact specifications. */}
                 </div>
                 <div className='flex gap-4'>
                   <a
                     href={'/'}
                     className='bg-black px-5 py-4 md:px-3 lg:px-5 md:py-4 font-bold text-base text-white hover:bg-primary ease-in duration-200 flex items-center justify-between'
                   >
-                    <span>Find out more</span>
+                    <span>{data?.bt_find1}</span>
                     <img className='w-6 h-3 ml-3' src='../images/btn-arrow.webp' alt='' />
                   </a>
                   <a
                     href={'/'}
                     className='bg-primary px-5 py-4 md:px-3 lg:px-5 md:py-3 font-bold text-base text-white hover:bg-black ease-in duration-200 flex items-center justify-between'
                   >
-                    <span>Shop</span>
+                    <span>{data?.bt_shop1}</span>
                     <img className='w-6 h-3 ml-3' src='../images/btn-arrow.webp' alt='' />
                   </a>
                 </div>
@@ -116,7 +120,11 @@ export default function ServicesSection({ data }: any) {
                 />
               </div>
             )}
-            <Modal modal={modal1} setModal={setModal1} data={s1} />
+            <Modal
+              modal={modal1}
+              setModal={setModal1}
+              // data={s1}
+            />
           </div>
 
           <div className='relative md:flex'>
@@ -129,7 +137,7 @@ export default function ServicesSection({ data }: any) {
                 /> */}
                 <video
                   className='h-[380px] md:h-[460px] lg:h-[596px] w-full object-cover object-center'
-                  src='../images/vid/Edge-banding for Panels.mp4'
+                  src={`${process.env.NEXT_PUBLIC_API__URL_images}/${data?.s_poster2?.id}/${data?.s_poster2?.filename_download}`}
                   width='100%'
                   height='auto'
                   onMouseEnter={e => {
@@ -150,24 +158,28 @@ export default function ServicesSection({ data }: any) {
             </div>
             <div className='basis-[47.88%]  md:basis-[45%] lg:basis-[46%] xl:basis-[47%] 2xl:basis-[48%] flex items-center'>
               <div className='flex flex-col md:justify-center md:ml-auto gap-6 pb-16 py-8 px-4 md:max-w-[410px] lg:max-w-[567px] lg:pr-16'>
-                <h2 className='text-3xl md:text-4xl lg:text-5xl text-black font-bold'>Panel Edge Banding</h2>
-                <div>
-                  Easily select which panel needs to be edged; we can use the latest machinery and PUR glue to confirm
-                  the cleanest edge for your furniture panels.
+                <h2 className='text-3xl md:text-4xl lg:text-5xl text-black font-bold'>{data?.s_name2}</h2>
+                <div
+                  dangerouslySetInnerHTML={{
+                    __html: data?.s_content2
+                  }}
+                >
+                  {/* Easily select which panel needs to be edged; we can use the latest machinery and PUR glue to confirm
+                  the cleanest edge for your furniture panels. */}
                 </div>
                 <div className='flex gap-4'>
                   <a
                     href={'/'}
                     className='bg-black px-5 py-4 md:px-3 lg:px-5 md:py-4 font-bold text-base text-white hover:bg-primary ease-in duration-200 flex items-center justify-between'
                   >
-                    <span>Find out more</span>
+                    <span>{data?.bt_find2}</span>
                     <img className='w-6 h-3 ml-3' src='../images/btn-arrow.webp' alt='' />
                   </a>
                   <a
                     href={'/'}
                     className='bg-primary px-5 py-4 md:px-3 lg:px-5 md:py-3 font-bold text-base text-white hover:bg-black ease-in duration-200 flex items-center justify-between'
                   >
-                    <span>Shop</span>
+                    <span>{data?.bt_shop2}</span>
                     <img className='w-6 h-3 ml-3' src='../images/btn-arrow.webp' alt='' />
                   </a>
                 </div>
@@ -184,7 +196,11 @@ export default function ServicesSection({ data }: any) {
                 />
               </div>
             )}
-            <Modal modal={modal2} setModal={setModal2} data={s2} />
+            <Modal
+              modal={modal2}
+              setModal={setModal2}
+              // data={s2}
+            />
           </div>
 
           <div className='relative md:flex'>
@@ -198,7 +214,7 @@ export default function ServicesSection({ data }: any) {
                   /> */}
                   <video
                     className='h-[380px] md:h-[460px] lg:h-[596px] w-full object-cover object-center'
-                    src='../images/vid/Using CNC.mp4'
+                    src={`${process.env.NEXT_PUBLIC_API__URL_images}/${data?.s_poster3?.id}/${data?.s_poster3?.filename_download}`}
                     width='100%'
                     height='auto'
                     onMouseEnter={e => {
@@ -220,24 +236,28 @@ export default function ServicesSection({ data }: any) {
             </div>
             <div className='basis-[47.88%]  md:basis-[45%] lg:basis-[46%] xl:basis-[47%] 2xl:basis-[48%] flex items-center'>
               <div className='flex flex-col md:justify-center gap-6 pb-16 py-8 px-4 md:max-w-[410px] lg:max-w-[567px] lg:pl-16'>
-                <h2 className='text-3xl md:text-4xl lg:text-5xl text-black font-bold'>CNC Services</h2>
-                <div>
-                  You can save time by using our CNC service hinge holes, shelf holes, panel grooving, and decorative
-                  patterns on your furniture boards.
+                <h2 className='text-3xl md:text-4xl lg:text-5xl text-black font-bold'>{data?.s_name3}</h2>
+                <div
+                  dangerouslySetInnerHTML={{
+                    __html: data?.s_content3
+                  }}
+                >
+                  {/* You can save time by using our CNC service hinge holes, shelf holes, panel grooving, and decorative
+                  patterns on your furniture boards. */}
                 </div>
                 <div className='flex gap-4'>
                   <a
                     href={'/'}
                     className='bg-black px-5 py-4 md:px-3 lg:px-5 md:py-4 font-bold text-base text-white hover:bg-primary ease-in duration-200 flex items-center justify-between'
                   >
-                    <span>Find out more</span>
+                    <span>{data?.bt_find3}</span>
                     <img className='w-6 h-3 ml-3' src='../images/btn-arrow.webp' alt='' />
                   </a>
                   <a
                     href={'/'}
                     className='bg-primary px-5 py-4 md:px-3 lg:px-5 md:py-3 font-bold text-base text-white hover:bg-black ease-in duration-200 flex items-center justify-between'
                   >
-                    <span>Shop</span>
+                    <span>{data?.bt_shop3}</span>
                     <img className='w-6 h-3 ml-3' src='../images/btn-arrow.webp' alt='' />
                   </a>
                 </div>
@@ -254,7 +274,11 @@ export default function ServicesSection({ data }: any) {
                 />
               </div>
             )}
-            <Modal modal={modal3} setModal={setModal3} data={s3} />
+            <Modal
+              modal={modal3}
+              setModal={setModal3}
+              //  data={s3}
+            />
           </div>
 
           <div className='relative md:flex'>
@@ -267,7 +291,7 @@ export default function ServicesSection({ data }: any) {
                 /> */}
                 <video
                   className='h-[380px] md:h-[460px] lg:h-[596px] w-full object-cover object-center'
-                  src='../images/vid/Main Banner.mp4'
+                  src={`${process.env.NEXT_PUBLIC_API__URL_images}/${data?.s_poster4?.id}/${data?.s_poster4?.filename_download}`}
                   width='100%'
                   height='auto'
                   onMouseEnter={e => {
@@ -288,24 +312,28 @@ export default function ServicesSection({ data }: any) {
             </div>
             <div className='basis-[47.88%] md:basis-[45%] lg:basis-[46%] xl:basis-[47%] 2xl:basis-[48%] flex items-center'>
               <div className='flex flex-col md:justify-center md:ml-auto gap-6 pb-16 py-8 px-4 md:max-w-[410px] lg:max-w-[567px] lg:pr-16'>
-                <h2 className='text-3xl md:text-4xl lg:text-5xl text-black font-bold'>Spray Painting Service</h2>
-                <div>
-                  Personalise your MDF, plywood and veneer furniture boards further by spray coating with MDF primer,
-                  coloured paint, or clear lacquer.
+                <h2 className='text-3xl md:text-4xl lg:text-5xl text-black font-bold'>{data?.s_name4}</h2>
+                <div
+                  dangerouslySetInnerHTML={{
+                    __html: data?.s_content4
+                  }}
+                >
+                  {/* Personalise your MDF, plywood and veneer furniture boards further by spray coating with MDF primer,
+                  coloured paint, or clear lacquer. */}
                 </div>
                 <div className='flex gap-4'>
                   <a
                     href={'/'}
                     className='bg-black px-5 py-4 md:px-3 lg:px-5 md:py-4 font-bold text-base text-white hover:bg-primary ease-in duration-200 flex items-center justify-between'
                   >
-                    <span>Find out more</span>
+                    <span>{data?.bt_find4}</span>
                     <img className='w-6 h-3 ml-3' src='../images/btn-arrow.webp' alt='' />
                   </a>
                   <a
                     href={'/'}
                     className='bg-primary px-5 py-4 md:px-3 lg:px-5 md:py-3 font-bold text-base text-white hover:bg-black ease-in duration-200 flex items-center justify-between'
                   >
-                    <span>Shop</span>
+                    <span>{data?.bt_shop4}</span>
                     <img className='w-6 h-3 ml-3' src='../images/btn-arrow.webp' alt='' />
                   </a>
                 </div>
@@ -322,7 +350,11 @@ export default function ServicesSection({ data }: any) {
                 />
               </div>
             )}
-            <Modal modal={modal4} setModal={setModal4} data={s4} />
+            <Modal
+              modal={modal4}
+              setModal={setModal4}
+              //  data={s4}
+            />
           </div>
         </div>
       </div>
