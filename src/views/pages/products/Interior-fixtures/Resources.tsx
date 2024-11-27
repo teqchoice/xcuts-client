@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function Resources(props: any) {
+export default function Resources(data, props: any) {
   // console.log(Data)
   return (
     <>
@@ -9,9 +9,14 @@ export default function Resources(props: any) {
           <div className=' flex justify-center items-center flex-col mt-16'>
             <div className='text-center flex flex-col gap-3 text-black mb-5'>
               {/* <p className='text-3xl'></p> */}
-              <h4 className='md:text-5xl text-4xl font-semibold mb-7'>Broad variety of applications</h4>
+              <h4 className='md:text-5xl text-4xl font-semibold mb-7'>
+                {/* Broad variety of applications */}
+                {data?.data?.items[2]?.title}
+              </h4>
               <p className='text-base text-black'>
-                Blum offers a large selection of hinges solution for practically every situation.
+                {data?.data?.items[2]?.content}
+
+                {/* Blum offers a large selection of hinges solution for practically every situation. */}
               </p>
 
               <div className='flex gap-5 my-5 lg:my-10'>

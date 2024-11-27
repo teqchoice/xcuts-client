@@ -6,19 +6,26 @@ import Layout from '@/views/layout'
 import FakeDb from '@/DB/content.json'
 import axios from 'axios'
 
-export default function PSlidingDoors({ data, layout }: any) {
+export default function PSlidingDoors({ data, header, footer }: any) {
   return (
-    <Layout data={layout}>
-      <SlidingDoors Data={FakeDb} />
+    <Layout header={header} footer={footer}>
+      <SlidingDoors Data={FakeDb} data={data} />
     </Layout>
   )
 }
 
 export const getServerSideProps = async (context: any) => {
   try {
-    const { data } = await axios.get(`${process.env.NEXT_PUBLIC_API__URL}/get-content-query/page=1/`)
-    const { data: layoutData } = await axios.get(`${process.env.NEXT_PUBLIC_API__URL}/get-content-query/page=3/`)
-    return { props: { data: data[0].positions, layout: layoutData[0]?.positions } }
+    const { data } = await axios.get(`https://cms.xcuts.co.uk/items/sliding_doors?fields=*.*`)
+    const { data: header } = await axios.get('https://cms.xcuts.co.uk/items/header?fields=*.*')
+    const { data: footer } = await axios.get('https://cms.xcuts.co.uk/items/footer?fields=*.*')
+    return {
+      props: {
+        data: data,
+        header: header,
+        footer: footer
+      }
+    }
   } catch (error) {
     const fake_layout = [
       {

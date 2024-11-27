@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function ABSEdgebandSection(props: any) {
+export default function ABSEdgebandSection(data, props: any) {
   // console.log(Data)
   return (
     <>
@@ -28,13 +28,25 @@ export default function ABSEdgebandSection(props: any) {
             </div>
             <div className='basis-[47.88%] flex items-center'>
               <div className='flex flex-col md:justify-center md:ml-auto pb-16 py-8 px-8 md:max-w-[410px] lg:max-w-[567px]'>
-                <p className='text-xl md:text-3xl text-black'>Blumotion</p>
-                <h2 className='text-2xl md:text-3xl text-black font-bold mb-6'>Clip top</h2>
-                <p className='text-lg pb-3'>
-                  Cabinet doors may close smoothly and easily thanks to an inventive technique called integrated
-                  soft-close.
+                <p className='text-xl md:text-3xl text-black'>
+                  {/* Blumotion */}
+                  {data?.data?.paragraphs_items[5]?.top_title}
                 </p>
-                <a href='#' className=' text-black font-extrabold'>Extra details > </a>
+                <h2 className='text-2xl md:text-3xl text-black font-bold mb-6'>
+                  {/* Clip top */}
+                  {data?.data?.paragraphs_items[5]?.title}
+                </h2>
+                <p
+                  className='text-lg pb-3'
+                  dangerouslySetInnerHTML={{ __html: data?.data?.paragraphs_items[5]?.content }}
+                >
+                  {/* Cabinet doors may close smoothly and easily thanks to an inventive technique called integrated
+                  soft-close. */}
+                </p>
+                <a href={data?.data?.paragraphs_items[5]?.btn_url} className=' text-black font-extrabold'>
+                  {/* Extra details > */}
+                  {data?.data?.paragraphs_items[5]?.btn_name}
+                </a>
               </div>
             </div>
           </div>
@@ -52,14 +64,27 @@ export default function ABSEdgebandSection(props: any) {
             </div>
             <div className='basis-[47.88%] flex items-center'>
               <div className='flex flex-col md:justify-center md:mr-auto pb-16 py-8 px-8 md:max-w-[410px] lg:max-w-[567px]'>
-                <p className='text-xl md:text-3xl text-black'>Insertion</p>
-                <h2 className='text-2xl md:text-3xl text-black font-bold mb-6'>Clip Top</h2>
-                <p className='text-lg pb-3'>With Clip Top hinges, installing the hinge on a door is simple and requires no tools. It can have an integrated Blumotion as wsell.</p>
-                <a href='#' className=' text-black font-extrabold'>Extra details > </a>
+                <p className='text-xl md:text-3xl text-black'>
+                  {/* Insertion */}
+                  {data?.data?.paragraphs_items[6]?.top_title}
+                </p>
+                <h2 className='text-2xl md:text-3xl text-black font-bold mb-6'>
+                  {/* Clip Top */}
+                  {data?.data?.paragraphs_items[5]?.title}
+                </h2>
+                <p
+                  className='text-lg pb-3'
+                  dangerouslySetInnerHTML={{ __html: data?.data?.paragraphs_items[6]?.content }}
+                >
+                  {/* With Clip Top hinges, installing the hinge on a door is simple and requires no tools. It can have an integrated Blumotion as wsell. */}
+                </p>
+                <a href={data?.data?.paragraphs_items[6]?.btn_url} className=' text-black font-extrabold'>
+                  {/* Extra details >  */}
+                  {data?.data?.paragraphs_items[6]?.btn_name}
+                </a>
               </div>
             </div>
           </div>
-          
         </div>
       </section>
     </>

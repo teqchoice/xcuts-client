@@ -14,22 +14,22 @@ import Grooving from './Grooving'
 import Grooving2 from './Grooving2'
 import Resources from './Resources'
 
-export default function index({ Data }: any) {
+export default function index({ data }: any) {
   return (
     <>
-      <PageIntroduction Data={{ title: 'Interior fixtures', baner: '../images/sliding-doors-banner.webp' }} />
-      <IntroductionSection Data={Data?.delivery} />
+      <PageIntroduction data={data?.data} />
+      <IntroductionSection data={data?.data} />
       {/* <VideoSection Data={Data?.delivery} /> */}
-      <DifferentTechnologiesSection Data={Data?.delivery} />
+      <DifferentTechnologiesSection data={data?.data} />
       {/* <PaintableSection Data={Data?.delivery} /> */}
       {/* <GrainAlignment Data={Data?.delivery} /> */}
       {/* <CuttingMCF Data={Data?.delivery} /> */}
 
-      <Grooving Data={Data?.delivery} />
-      <DifferentTechnologiesSection2 Data={Data?.delivery} />
-      <Grooving2 Data={Data?.delivery} />
-      <ABSEdgebandSection Data={Data?.delivery} />
-      <Resources Data={Data?.delivery} />
+      <Grooving data={data?.data} />
+      <DifferentTechnologiesSection2 data={data?.data} />
+      <Grooving2 data={data?.data} />
+      <ABSEdgebandSection data={data?.data} />
+      <Resources data={data?.data} />
     </>
   )
 }

@@ -5,14 +5,14 @@ import FirstPortfolio from './firstPortfolioSection'
 import SecoundPortfolio from './secoundPortfolioSection'
 import ThirdPortfolio from './thirdPortfolioSection'
 
-export default function index({ Data }: any) {
+export default function index({ Data, data }: any) {
   return (
     <>
-      <PageIntroduction Data={{ title: 'Custom Shaker-style Doors', baner: '../images/sliding-doors-banner.webp' }} />
-      <IntroductionSection />
-      <FirstPortfolio />
-      <SecoundPortfolio />
-      {/* <ThirdPortfolio /> */}
+      <PageIntroduction data={data?.data} />
+      <IntroductionSection data={data?.data} />
+      <FirstPortfolio data={data?.data} />
+      <SecoundPortfolio data={data?.data} />
+      <ThirdPortfolio />
     </>
   )
 }

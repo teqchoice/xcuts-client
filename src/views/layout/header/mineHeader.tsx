@@ -41,18 +41,18 @@ export default function MineHeader({ data }: any) {
             <div className='text-sm md:text-base flex gap-5'>
               <span
                 dangerouslySetInnerHTML={{
-                  __html: data.days
+                  __html: data?.days
                 }}
               ></span>
               <span
                 className='text-primary'
                 dangerouslySetInnerHTML={{
-                  __html: data.time
+                  __html: data?.time
                 }}
               ></span>
             </div>
             <a href='#' className='text-xl md:text-[1.7rem] leading-4'>
-              {data.phone}
+              {data?.phone}
             </a>
           </div>
         </div>

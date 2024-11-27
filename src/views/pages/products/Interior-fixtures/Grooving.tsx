@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function Grooving(props: any) {
+export default function Grooving(data, props: any) {
   // console.log(Data)
   return (
     <>
@@ -9,22 +9,28 @@ export default function Grooving(props: any) {
           <div className=' flex justify-center items-center flex-col mt-20'>
             <div className='text-center flex flex-col gap-3 max-w-[80%] text-black mb-5'>
               <p className='text-3xl'>Panel Grooving</p>
-              <h4 className='md:text-5xl text-4xl font-semibold mb-7'>Movento Range Applications:</h4>
+              <h4 className='md:text-5xl text-4xl font-semibold mb-7'>
+                {/* Movento Range Applications: */}
+                {data?.data?.items[0]?.title}
+              </h4>
               <p className='text-base text-black'>
-                The Movento’s line is synchronised, with ultra-light glide and weight carrying capacity of 40 and 60 kg
+                {data?.data?.items[0]?.content}
+                {/* The Movento’s line is synchronised, with ultra-light glide and weight carrying capacity of 40 and 60 kg
                 which is exceptionally impressive. Base installation allows you to attach it to the shelf or base of the
-                cabinet, and full extension provides you complete access to the very back of drawers.
+                cabinet, and full extension provsynchronised, with ultra-light glide and weight carrying capacity of 40 and 60 kg
+                which is exceptionally impressive. Base installation allows you to attach it to the shelf or base of the
+                cabinet, and full extension provides you complete access to the very back of drawers. */}
               </p>
 
               <div className='flex gap-5 my-5 lg:my-10'>
                 <div className='flex flex-col items-center gap-3'>
-                  <img className=' w-full object-cover object-center' src='../images/alldecor.jpeg' alt='' />
+                  <img className=' w-full object-cover object-center' src={data?.data?.items[0]?.poster_url} alt='' />
                 </div>
                 <div className='flex flex-col items-center gap-3'>
-                  <img className=' w-full object-cover object-center' src='../images/alldecor.jpeg' alt='' />
+                  <img className=' w-full object-cover object-center' src={data?.data?.items[0]?.poster_url} alt='' />
                 </div>
                 <div className='flex flex-col items-center gap-3'>
-                  <img className=' w-full object-cover object-center' src='../images/alldecor.jpeg' alt='' />
+                  <img className=' w-full object-cover object-center' src={data?.data?.items[0]?.poster_url} alt='' />
                 </div>
               </div>
               <div className='flex justify-center'>

@@ -76,7 +76,7 @@ export default function MineMenu({ data, setMenu }: any) {
         className=' absolute top-0 left-0 p-3 cursor-pointer'
       />
       <div className=' pt-10 pb-5'>
-        <Link href={`${data.logo[4]?.link}`}>
+        <Link href={`${data?.logo?.link}`}>
           {/* <img src={process.env.NEXT_PUBLIC_API_URL + logo[4]?.filec} alt='' className=' w-48' /> */}
         </Link>
       </div>

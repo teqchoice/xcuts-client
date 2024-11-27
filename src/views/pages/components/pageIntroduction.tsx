@@ -10,9 +10,9 @@ const defaultPageIntroduction: Partial<TPageIntroduction> = {
   baner: 'images/sliding-doors-banner.webp'
 }
 
-export default function PageIntroduction(props: any) {
-  const Data = props?.Data
-  // console.log(Data)
+export default function PageIntroduction(data, props: any) {
+  const Data = { title: 'Wardrobe Sliding Doors', baner: '../images/sliding-doors-banner.webp' }
+
   return (
     <>
       {/* <section className='text-center bg-[#eaeaea] h-[200px] flex items-center justify-center'>
@@ -21,7 +21,7 @@ export default function PageIntroduction(props: any) {
 
       <section
         className={
-          Data.baner ?? null
+          Data?.baner ?? null
             ? 'relative'
             : 'relative text-center bg-[#eaeaea] h-[200px] flex items-center justify-center'
         }
@@ -29,9 +29,11 @@ export default function PageIntroduction(props: any) {
         {Data?.baner && <img src={Data?.baner} alt='' className='max-h-[460px] w-full md:h-auto object-cover' />}
 
         <div className='absolute top-1/2 w-full -translate-y-1/2 text-center grid'>
-          {Data.baner ?? null ? (
+          {Data?.baner ?? null ? (
             <>
-              <h4 className='font-semibold text-white text-2xl md:text-4xl lg:text-6xl uppercase'>{Data?.title}</h4>
+              <h4 className='font-semibold text-white text-2xl md:text-4xl lg:text-6xl uppercase'>
+                {data?.data?.title}
+              </h4>
               <span className='font-semibold text-white text-lg md:text-xl lg:text-2xl uppercase'>
                 {Data?.subtitle}
               </span>
