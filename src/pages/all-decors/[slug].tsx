@@ -1,24 +1,23 @@
 import Layout from '@/views/layout'
 import React from 'react'
-import DecorEgger from '@/views/pages/decor-collections/brand/details'
-
-// !! Fake DB
-import FakeDb from '@/DB/content.json'
 import axios from 'axios'
+import DecorEgger from '@/views/pages/decor-collections/brand/details'
+import Custom404 from '../404'
 
 export default function PDecorEgger({ data, header, footer }: any) {
-  // console.log(data.builder)
+  if (!data?.builder) return <Custom404 header={header} footer={footer} />
   return (
     <Layout header={header} footer={footer}>
-      <DecorEgger Data={data.builder} />
+      <DecorEgger Data={data?.builder} />
     </Layout>
   )
 }
 
 export const getServerSideProps = async (context: any) => {
   try {
+    console.log('+++++++++++++++++', context.query.slug)
     const { data } = await axios.get(
-      `${process.env.NEXT_PUBLIC_CMS_API_URL}/items/brands?fields=*.*.*.*&filter[page_name][_eq]=egger`
+      `${process.env.NEXT_PUBLIC_CMS_API_URL}/items/brands?fields=*.*.*.*&filter[page_name][_eq]=${context.query.slug}`
     )
 
     const { data: header } = await axios.get(`${process.env.NEXT_PUBLIC_CMS_API_URL}/items/header?fields=*.*`)
@@ -26,7 +25,7 @@ export const getServerSideProps = async (context: any) => {
 
     return {
       props: {
-        data: data.data[0],
+        data: data.data[0] || null,
         header: header,
         footer: footer
       }
