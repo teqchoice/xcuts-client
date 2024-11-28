@@ -3,21 +3,19 @@ import React from 'react'
 export default function BlockSample({ data }: any) {
   // console.log(data)
   return (
-    <section>
-      <div className='px-4 sm:container'>
-        <div className='bg-neutral-100 md:flex mb-6'>
-          <RenderImage data={data} />
-          <div className='basis-[47.88%] flex items-center'>
-            <div className='flex flex-col md:justify-center md:ml-auto pb-16 py-8 px-8 md:max-w-[410px] lg:max-w-[567px]'>
-              <p className=' text-black'>{data?.top_title}</p>
-              <h2 className='text-2xl md:text-3xl text-black font-bold'>{data?.title}</h2>
-              <p className=' text-black mb-6'>{data?.sub_title}</p>
-              <div
-                dangerouslySetInnerHTML={{
-                  __html: data?.content
-                }}
-              />
-            </div>
+    <section className='px-4 container'>
+      <div className='bg-neutral-100 md:flex mb-6'>
+        <RenderImage data={data} />
+        <div className='basis-[47.88%] flex items-center'>
+          <div className='flex flex-col md:justify-center pb-16 py-8 px-8 lg:px-16'>
+            <p className=' text-black'>{data?.top_title}</p>
+            <h2 className='text-2xl md:text-3xl text-black font-bold'>{data?.title}</h2>
+            <p className=' text-black mb-6'>{data?.sub_title}</p>
+            <div
+              dangerouslySetInnerHTML={{
+                __html: data?.content
+              }}
+            />
           </div>
         </div>
       </div>
