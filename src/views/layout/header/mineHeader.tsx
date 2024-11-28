@@ -3,19 +3,6 @@ import Modal from '@/views/pages/components/Modal'
 import { Pencil } from '@icon-park/react'
 import React, { useState } from 'react'
 
-// type HeaderItem = {
-//   logo: string
-//   phone_number: string
-//   days: string
-//   times: string
-// }
-
-// const defaultHeaderItem: Partial<HeaderItem> = {
-//   logo: 'images/logo.webp',
-//   phone_number: '0170 790 7000',
-//   days: 'MON - FRI',
-//   times: '8AM - 5PM'
-// }
 
 export default function MineHeader({ data }: any) {
   const [modal, setModal] = useState(false)

@@ -8,7 +8,7 @@ import Dropdown from './components/Dropdown'
 
 export default function index({ data }: any) {
   const [menu, setMenu] = useState('')
-  console.log(data)
+  // console.log(data)
   return (
     <header>
       <TopMenu data={data} />

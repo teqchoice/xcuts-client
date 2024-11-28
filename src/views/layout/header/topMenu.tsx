@@ -7,7 +7,7 @@ import React, { useState } from 'react'
 export default function TopMenu({ data }: any) {
   const [modal, setModal] = useState(false)
 
-  console.log(data)
+  // console.log(data)
   return (
     <div className='relative bg-neutral-300'>
       <div className='px-4 sm:container flex justify-center sm:justify-end p-3 relative divide-x-2'>
