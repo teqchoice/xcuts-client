@@ -45,7 +45,7 @@ export default function ProductSection({ data }: any) {
                     <h4
                       className='text-black font-bold text-2xl mb-6'
                       dangerouslySetInnerHTML={{
-                        __html: data.pr_content1
+                        __html: data?.pr_content1
                       }}
                     ></h4>
                     <div
@@ -66,7 +66,7 @@ export default function ProductSection({ data }: any) {
                   >
                     <span
                       dangerouslySetInnerHTML={{
-                        __html: data.pr_bt_red1
+                        __html: data?.pr_bt_red1
                       }}
                     ></span>
                     <img className='w-2 ml-2' src='../images/angle-arrow.webp' alt='' />
@@ -77,7 +77,7 @@ export default function ProductSection({ data }: any) {
                   >
                     <span
                       dangerouslySetInnerHTML={{
-                        __html: data.pr_bt_black1
+                        __html: data?.pr_bt_black1
                       }}
                     ></span>
                     <img className='w-2 ml-2' src='../images/angle-arrow.webp' alt='' />
@@ -116,7 +116,7 @@ export default function ProductSection({ data }: any) {
                     <h4
                       className='text-black font-bold text-2xl mb-6'
                       dangerouslySetInnerHTML={{
-                        __html: data.pr_content2
+                        __html: data?.pr_content2
                       }}
                     ></h4>
                     <div
@@ -137,7 +137,7 @@ export default function ProductSection({ data }: any) {
                   >
                     <span
                       dangerouslySetInnerHTML={{
-                        __html: data.pr_bt_red2
+                        __html: data?.pr_bt_red2
                       }}
                     ></span>
                     <img className='w-2 ml-2' src='../images/angle-arrow.webp' alt='' />
@@ -148,7 +148,7 @@ export default function ProductSection({ data }: any) {
                   >
                     <span
                       dangerouslySetInnerHTML={{
-                        __html: data.pr_bt_black2
+                        __html: data?.pr_bt_black2
                       }}
                     ></span>
                     <img className='w-2 ml-2' src='../images/angle-arrow.webp' alt='' />
@@ -187,7 +187,7 @@ export default function ProductSection({ data }: any) {
                     <h4
                       className='text-black font-bold text-2xl mb-6'
                       dangerouslySetInnerHTML={{
-                        __html: data.pr_content3
+                        __html: data?.pr_content3
                       }}
                     ></h4>
                     <div
@@ -208,7 +208,7 @@ export default function ProductSection({ data }: any) {
                   >
                     <span
                       dangerouslySetInnerHTML={{
-                        __html: data.pr_bt_red3
+                        __html: data?.pr_bt_red3
                       }}
                     ></span>
                     <img className='w-2 ml-2' src='../images/angle-arrow.webp' alt='' />
@@ -219,7 +219,7 @@ export default function ProductSection({ data }: any) {
                   >
                     <span
                       dangerouslySetInnerHTML={{
-                        __html: data.pr_bt_black3
+                        __html: data?.pr_bt_black3
                       }}
                     ></span>
                     <img className='w-2 ml-2' src='../images/angle-arrow.webp' alt='' />

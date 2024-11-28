@@ -5,17 +5,28 @@ import PrivacyNotice from '@/views/pages/privacy-notice'
 import FakeDb from '@/DB/content.json'
 import axios from 'axios'
 
-export default function PPrivacyNotice({ data, layout }: any) {
+export default function PPrivacyNotice({ data, header, footer }: any) {
   return (
-    <Layout data={layout}>
+    <Layout header={header} footer={footer}>
       <PrivacyNotice Data={FakeDb} />
     </Layout>
   )
 }
 
 export const getServerSideProps = async (context: any) => {
-  const { data } = await axios.get(`${process.env.NEXT_PUBLIC_API__URL}/get-content-query/page=1/`)
-  const { data: layoutData } = await axios.get(`${process.env.NEXT_PUBLIC_API__URL}/get-content-query/page=3/`)
-  // console.log(layoutData)
-  return { props: { data: data[0].positions, layout: layoutData[0]?.positions } }
+  try {
+    // const { data } = await axios.get(`${process.env.NEXT_PUBLIC_API__URL}/get-content-query/page=1/`)
+    const { data: header } = await axios.get(`${process.env.NEXT_PUBLIC_CMS_API_URL}/items/header?fields=*.*`)
+    const { data: footer } = await axios.get(`${process.env.NEXT_PUBLIC_CMS_API_URL}/items/footer?fields=*.*`)
+
+    return {
+      props: {
+        // data:data,
+        header: header,
+        footer: footer
+      }
+    }
+  } catch (error) {
+    return { props: { data: [], layout: [] } }
+  }
 }

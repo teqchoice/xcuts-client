@@ -38,7 +38,7 @@ export default function AboutSection({ data }: any) {
           <div className='text-3xl md:text-5xl font-medium text-black'>
             {/* <span className='text-primary'>X</span>CUTS */}
             {/* Furniture Boards Cut and Edged */}
-            {data.top_title}
+            {data?.top_title}
           </div>
           <div className='bg-black mx-6 md:mx-28 skew-y-[0] skew-x-[35deg] relative'>
             <div className='w-3 md:w-20 h-11 bg-primary absolute left-0 md:-left-24 bottom-0'></div>
@@ -63,7 +63,7 @@ export default function AboutSection({ data }: any) {
             and are committed to providing the best solutions for furniture panel cut-to-size, edgebanding, spray
             painting, and CNC milling. */}
           {/* </div> */}
-          <div className='flex flex-col gap-y-1 mt-10 text-lg' dangerouslySetInnerHTML={{ __html: data.content }} />
+          <div className='flex flex-col gap-y-1 mt-10 text-lg' dangerouslySetInnerHTML={{ __html: data?.content }} />
           {/* <div className='flex flex-col gap-y-1 mt-3 text-lg'>Get in touch today to learn more about us.</div> */}
 
           <div className='mt-5 text-center flex justify-center'>
@@ -76,7 +76,11 @@ export default function AboutSection({ data }: any) {
           </div>
         </div>
       </div>
-      <Modal modal={modal} setModal={setModal} data={data[0]} />
+      <Modal
+        modal={modal}
+        setModal={setModal}
+        // data={data[0]}
+      />
     </section>
   )
 }

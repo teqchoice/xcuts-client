@@ -3,10 +3,10 @@ import ContactUsPage from '@/views/pages/contact-us'
 import axios from 'axios'
 import React from 'react'
 
-function contactUs({ layout }: any) {
+function contactUs({ header, footer }: any) {
   return (
-    <Layout data={layout}>
-        <ContactUsPage />
+    <Layout header={header} footer={footer}>
+      <ContactUsPage />
     </Layout>
   )
 }
@@ -14,6 +14,18 @@ function contactUs({ layout }: any) {
 export default contactUs
 
 export const getServerSideProps = async (context: any) => {
-  const { data: layoutData } = await axios.get(`${process.env.NEXT_PUBLIC_API__URL}/get-content-query/page=3/`)
-  return { props: { layout: layoutData[0]?.positions } }
+  try {
+    const { data: header } = await axios.get(`${process.env.NEXT_PUBLIC_CMS_API_URL}/items/header?fields=*.*`)
+    const { data: footer } = await axios.get(`${process.env.NEXT_PUBLIC_CMS_API_URL}/items/footer?fields=*.*`)
+
+    return {
+      props: {
+        // data: data,
+        header: header,
+        footer: footer
+      }
+    }
+  } catch (error) {
+    return { props: { data: [], layout: [] } }
+  }
 }
