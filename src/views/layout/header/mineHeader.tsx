@@ -3,7 +3,6 @@ import Modal from '@/views/pages/components/Modal'
 import { Pencil } from '@icon-park/react'
 import React, { useState } from 'react'
 
-
 export default function MineHeader({ data }: any) {
   const [modal, setModal] = useState(false)
   // const Data: HeaderItem = {
@@ -38,7 +37,7 @@ export default function MineHeader({ data }: any) {
                 }}
               ></span>
             </div>
-            <a href='#' className='text-xl md:text-[1.7rem] leading-4'>
+            <a href={`tell:${data?.phone}`} className='text-xl md:text-[1.7rem] leading-4'>
               {data?.phone}
             </a>
           </div>
