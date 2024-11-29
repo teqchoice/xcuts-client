@@ -37,7 +37,7 @@ export default function MineHeader({ data }: any) {
                 }}
               ></span>
             </div>
-            <a href={`tell:${data?.phone}`} className='text-xl md:text-[1.7rem] leading-4'>
+            <a href={`tel:${data?.phone}`} className='text-xl md:text-[1.7rem] leading-4'>
               {data?.phone}
             </a>
           </div>
