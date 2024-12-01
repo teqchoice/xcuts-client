@@ -10,7 +10,15 @@ export default function BlockBaner({ data }: any) {
           : 'relative text-center bg-[#eaeaea] h-[200px] flex items-center justify-center'
       }
     >
-      {data?.baner && <img src={data?.baner} alt='baner' className='max-h-[460px] w-full md:h-auto object-cover' />}
+      {data?.baner ? (
+        <img src={data?.baner} alt='baner' className='max-h-[460px] w-full md:h-auto object-cover' />
+      ) : (
+        <img
+          src='https://cms.xcuts.co.uk/assets/c6f84333-6a2d-4f45-bbcc-ac899e74cf55/photo_2024-11-27_14-32-16.jpg'
+          alt=''
+          className='max-h-[460px] w-full md:h-auto object-cover'
+        />
+      )}
 
       <div className='absolute top-1/2 w-full -translate-y-1/2 text-center grid'>
         {data?.baner ?? null ? (

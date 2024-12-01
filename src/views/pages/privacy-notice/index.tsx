@@ -1,12 +1,6 @@
 import React from 'react'
-import PageIntroduction from '../components/pageIntroduction'
-import ContentSection from './contentSection'
+import RenderBlock from '../decor-collections/brand/details/renderBlock'
 
 export default function index({ Data }: any) {
-  return (
-    <>
-      <PageIntroduction Data={{ title: 'Privacy Notice', baner: '' }} />
-      <ContentSection Data={Data?.delivery} />
-    </>
-  )
+  return <RenderBlock Data={Data} />
 }

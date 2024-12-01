@@ -6,17 +6,15 @@ import MeetTheTeamSection from './meetTheTeamSection'
 import ProductionManagementTeamSection from './productionManagementTeamSection'
 import SalesTeamSection from './salesTeamSection'
 import MarketingTeamSection from './marketingTeamSection'
+import RenderBlock from '../decor-collections/brand/details/renderBlock'
 
 export default function index({ Data }: any) {
   return (
     <>
-      <PageIntroduction Data={{ title: 'About us', baner: 'images/about-banner.webp' }} />
-      <IntroductionSection Data={Data?.delivery} />
-      {/* <OurStorySection Data={Data?.delivery} /> */}
-      <MeetTheTeamSection Data={Data?.delivery} />
-      <ProductionManagementTeamSection Data={Data?.delivery} />
-      <SalesTeamSection Data={Data?.delivery} />
-      <MarketingTeamSection Data={Data?.delivery} />
+      <RenderBlock Data={Data} />
+      {/* <ProductionManagementTeamSection Data={Data?.delivery} /> */}
+      {/* <SalesTeamSection Data={Data?.delivery} /> */}
+      {/* <MarketingTeamSection Data={Data?.delivery} /> */}
     </>
   )
 }

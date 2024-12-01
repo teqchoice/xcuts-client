@@ -15,7 +15,7 @@ export default function PDecorEgger({ data, header, footer }: any) {
 
 export const getServerSideProps = async (context: any) => {
   try {
-    console.log('+++++++++++++++++', context.query.slug)
+    // console.log('+++++++++++++++++', context.query.slug)
     const { data } = await axios.get(
       `${process.env.NEXT_PUBLIC_CMS_API_URL}/items/brands?fields=*.*.*.*&filter[page_name][_eq]=${context.query.slug}`
     )

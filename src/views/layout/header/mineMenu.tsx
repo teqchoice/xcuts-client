@@ -85,7 +85,7 @@ export default function MineMenu({ data, setMenu }: any) {
         <ul className='flex flex-col text-white divide-y'>
           {defaultMenuItem?.map((item: any, i: number) => {
             return (
-              <li key={i} className='relative group p-3'>
+              <li key={i+item.value} className='relative group p-3'>
                 <Link href={item.link} className='group-hover:text-black relative duration-150'>
                   {item.value}
                 </Link>
@@ -115,7 +115,7 @@ export default function MineMenu({ data, setMenu }: any) {
                 // if (i > 5)
                 return (
                   <li
-                    key={i}
+                    key={i+item.value}
                     className='group relative md:mt-0 cursor-pointer  z-50'
                     onClick={() => setMenu(item.value)}
                     // onMouseOut={() => setMenu('')}

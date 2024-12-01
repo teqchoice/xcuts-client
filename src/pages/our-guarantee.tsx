@@ -8,20 +8,21 @@ import axios from 'axios'
 export default function POurGuarantee({ data, header, footer }: any) {
   return (
     <Layout header={header} footer={footer}>
-      <OurGuarantee Data={FakeDb} />
+      <OurGuarantee Data={data?.builder} />
     </Layout>
   )
 }
 
 export const getServerSideProps = async (context: any) => {
   try {
-    // const { data } = await axios.get(`${process.env.NEXT_PUBLIC_API__URL}/get-content-query/page=1/`)
+    const { data } = await axios.get(`${process.env.NEXT_PUBLIC_CMS_API_URL}/items/our_guarantee?fields=*.*.*.*`)
+
     const { data: header } = await axios.get(`${process.env.NEXT_PUBLIC_CMS_API_URL}/items/header?fields=*.*`)
     const { data: footer } = await axios.get(`${process.env.NEXT_PUBLIC_CMS_API_URL}/items/footer?fields=*.*`)
 
     return {
       props: {
-        // data:data,
+        data: data.data || null,
         header: header,
         footer: footer
       }
