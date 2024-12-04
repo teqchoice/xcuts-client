@@ -1,9 +1,12 @@
 import { token } from '@/extensions/redux/api/auth'
 import axios from 'axios'
+import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
 import toast from 'react-hot-toast'
 import { FaMinus, FaPlus } from 'react-icons/fa6'
 export default function Pupapt({ data }: any) {
+  const router = useRouter()
+
   const [show, setShow] = useState(1)
   const [loader, setLoader] = useState(false)
   const [cunter, setCunter] = useState(1)
@@ -16,7 +19,7 @@ export default function Pupapt({ data }: any) {
 
   const addToCard = () => {
     if (!token) {
-      return toast.error('please register')
+      return router.push('/login')
     }
     setLoader(true)
     // console.log(thickness[0]?.id)
@@ -117,7 +120,7 @@ export default function Pupapt({ data }: any) {
         </div>
         <div className='flex align-center justify-center text-center'>
           <button className='px-4 py-3 mb-2 w-52 outline-primary mt-2 text-xs text-white bg-primary'>
-            Order a sample for £3.co
+            Order a sample for £3.00
           </button>
         </div>
       </div>

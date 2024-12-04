@@ -1,5 +1,5 @@
 import { useForm } from '@mantine/form'
-import { TextInput, Button, Group, Box, Textarea } from '@mantine/core'
+import { TextInput, Button, Group, Box, Textarea, NumberInput } from '@mantine/core'
 import { randomId } from '@mantine/hooks'
 import { useEffect, useState } from 'react'
 import axios from 'axios'
@@ -264,49 +264,125 @@ export default function Dtails() {
                 }}
                 {...form.getInputProps('billing-lastName')}
               /> */}
-            <TextInput
-              label='Province'
-              placeholder='province'
-              styles={{
-                input: {
-                  border: '1px solid #49494940',
-                  borderRadius: '3px',
-                  width: '100%',
-                  padding: '5px',
-                  color: '#7e7d7d'
-                }
-              }}
-              {...form.getInputProps('province')}
-            />
-            <TextInput
-              label='City'
-              placeholder='city'
-              styles={{
-                input: {
-                  border: '1px solid #49494940',
-                  borderRadius: '3px',
-                  width: '100%',
-                  padding: '5px',
-                  color: '#7e7d7d'
-                }
-              }}
-              {...form.getInputProps('city')}
-            />
+            <div className='-mt-2 mb-3 grid grid-cols-2 gap-3 p-2'>
+              <TextInput
+                label='First Name'
+                placeholder='first name'
+                styles={{
+                  input: {
+                    border: '1px solid #49494940',
+                    borderRadius: '3px',
+                    width: '100%',
+                    padding: '5px',
+                    color: '#7e7d7d'
+                  }
+                }}
+                // {...form.getInputProps('first_name')}
+              />
+              <TextInput
+                label='Last Name'
+                placeholder='last name'
+                styles={{
+                  input: {
+                    border: '1px solid #49494940',
+                    borderRadius: '3px',
+                    width: '100%',
+                    padding: '5px',
+                    color: '#7e7d7d'
+                  }
+                }}
+                // {...form.getInputProps('last_name')}
+              />
+            </div>
+            <div className='-mt-2 mb-3 grid grid-cols-1 gap-3 p-2'>
+              <TextInput
+                label='Address line 1'
+                placeholder='Address line 1'
+                styles={{
+                  input: {
+                    border: '1px solid #49494940',
+                    borderRadius: '3px',
+                    width: '100%',
+                    padding: '5px',
+                    color: '#7e7d7d'
+                  }
+                }}
+                // {...form.getInputProps('')}
+              />
+              <TextInput
+                label='Address line 2'
+                placeholder='Address line 2'
+                styles={{
+                  input: {
+                    border: '1px solid #49494940',
+                    borderRadius: '3px',
+                    width: '100%',
+                    padding: '5px',
+                    color: '#7e7d7d'
+                  }
+                }}
+                // {...form.getInputProps('')}
+              />
+            </div>
+            <div className='-mt-2 mb-3 grid grid-cols-2 gap-3 p-2'>
+              <TextInput
+                label='Town/city'
+                placeholder='Town/city'
+                styles={{
+                  input: {
+                    border: '1px solid #49494940',
+                    borderRadius: '3px',
+                    width: '100%',
+                    padding: '5px',
+                    color: '#7e7d7d'
+                  }
+                }}
+                // {...form.getInputProps('city')}
+              />
+              <NumberInput
+                label='Postcode'
+                placeholder='Postcode'
+                styles={{
+                  input: {
+                    border: '1px solid #49494940',
+                    borderRadius: '3px',
+                    width: '100%',
+                    padding: '5px',
+                    color: '#7e7d7d'
+                  }
+                }}
+              />
+            </div>
+            <div className='-mt-2 mb-3 grid grid-cols-2 gap-3 p-2'>
+              <NumberInput
+                label='Contact no'
+                placeholder='Contact no'
+                styles={{
+                  input: {
+                    border: '1px solid #49494940',
+                    borderRadius: '3px',
+                    width: '100%',
+                    padding: '5px',
+                    color: '#7e7d7d'
+                  }
+                }}
+                // {...form.getInputProps('building_address')}
+              />
+              <TextInput
+                label='Email Address'
+                placeholder='Email Address'
+                styles={{
+                  input: {
+                    border: '1px solid #49494940',
+                    borderRadius: '3px',
+                    width: '100%',
+                    padding: '5px',
+                    color: '#7e7d7d'
+                  }
+                }}
+              />
+            </div>
 
-            <TextInput
-              label='Address'
-              placeholder='building_address'
-              styles={{
-                input: {
-                  border: '1px solid #49494940',
-                  borderRadius: '3px',
-                  width: '100%',
-                  padding: '5px',
-                  color: '#7e7d7d'
-                }
-              }}
-              {...form.getInputProps('building_address')}
-            />
             {/* <TextInput
                 label='Address line2'
                 placeholder='line2_address'
@@ -331,7 +407,7 @@ export default function Dtails() {
             </Button>
           </Group>
         </div>
-        
+
         <Delivery />
 
         <div>

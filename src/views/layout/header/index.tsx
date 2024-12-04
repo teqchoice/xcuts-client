@@ -15,7 +15,7 @@ export default function index({ data }: any) {
       <MineHeader data={data} />
       <MineMenu data={data} setMenu={setMenu} />
 
-      <Dropdown menu={menu} setMenu={setMenu} />
+      <Dropdown data={data} menu={menu} setMenu={setMenu} />
     </header>
   )
 }
