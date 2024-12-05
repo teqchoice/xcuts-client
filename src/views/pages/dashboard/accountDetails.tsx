@@ -21,15 +21,28 @@ export default function Dtails() {
   //   })
   const form = useForm({
     initialValues: {
-      email: '',
       first_name: '',
       last_name: '',
+      email: '',
       phone: '',
-      province: '',
-      city: '',
-      // delivery_address: '',
-      building_address: '',
       description: ''
+      // delivery_address: '',
+      // building_address: '',
+    }
+  })
+  const formBilling = useForm({
+    initialValues: {
+      first_name: '',
+      last_name: '',
+      address_line1: '',
+      address_line2: '',
+      city: '',
+      postcode: '',
+      contact_no: '',
+      email: ''
+      // delivery_address: '',
+      // building_address: '',
+      // description: ''
     }
   })
   const formPass = useForm({
@@ -60,31 +73,34 @@ export default function Dtails() {
     // console.log(value)
   }, [])
 
-  function handleSend() {
-    // console.log(form.values)
+  function handleSendBilling() {
+    console.log(formBilling.values)
+  }
+  function handleSendForm() {
+    console.log(form.values)
     // let data = form.values
 
-    let config = {
-      method: 'put',
-      maxBodyLength: Infinity,
-      url: 'https://api.xcuts.co.uk/api/user/customer-user-update',
-      headers: {
-        'Content-Type': 'application/json',
-        Authorization: `Bearer ${token}`
-      },
-      data: form.values
-    }
+    // let config = {
+    //   method: 'put',
+    //   maxBodyLength: Infinity,
+    //   url: 'https://api.xcuts.co.uk/api/user/customer-user-update',
+    //   headers: {
+    //     'Content-Type': 'application/json',
+    //     Authorization: `Bearer ${token}`
+    //   },
+    //   data: form.values
+    // }
 
-    axios
-      .request(config)
-      .then(response => {
-        // console.log(response.data)
-        toast.success('updated successfully')
-      })
-      .catch(error => {
-        console.log(error)
-        toast.success('something went wrong')
-      })
+    // axios
+    //   .request(config)
+    //   .then(response => {
+    //     // console.log(response.data)
+    //     toast.success('updated successfully')
+    //   })
+    //   .catch(error => {
+    //     console.log(error)
+    //     toast.error('something went wrong')
+    //   })
   }
   function handleSendPass() {
     // console.log(form.values)
@@ -198,7 +214,7 @@ export default function Dtails() {
           <Group justify='center' mt='xl'>
             <Button
               className='bg-primary text-white border py-2 px-3 hover:bg-white hover:text-black'
-              onClick={handleSend}
+              onClick={handleSendForm}
             >
               Update Details
             </Button>
@@ -277,7 +293,7 @@ export default function Dtails() {
                     color: '#7e7d7d'
                   }
                 }}
-                // {...form.getInputProps('first_name')}
+                {...formBilling.getInputProps('first_name')}
               />
               <TextInput
                 label='Last Name'
@@ -291,7 +307,7 @@ export default function Dtails() {
                     color: '#7e7d7d'
                   }
                 }}
-                // {...form.getInputProps('last_name')}
+                {...formBilling.getInputProps('last_name')}
               />
             </div>
             <div className='-mt-2 mb-3 grid grid-cols-1 gap-3 p-2'>
@@ -307,7 +323,7 @@ export default function Dtails() {
                     color: '#7e7d7d'
                   }
                 }}
-                // {...form.getInputProps('')}
+                {...formBilling.getInputProps('address_line1')}
               />
               <TextInput
                 label='Address line 2'
@@ -321,7 +337,7 @@ export default function Dtails() {
                     color: '#7e7d7d'
                   }
                 }}
-                // {...form.getInputProps('')}
+                {...formBilling.getInputProps('address_line2')}
               />
             </div>
             <div className='-mt-2 mb-3 grid grid-cols-2 gap-3 p-2'>
@@ -337,7 +353,7 @@ export default function Dtails() {
                     color: '#7e7d7d'
                   }
                 }}
-                // {...form.getInputProps('city')}
+                {...formBilling.getInputProps('city')}
               />
               <NumberInput
                 label='Postcode'
@@ -351,6 +367,7 @@ export default function Dtails() {
                     color: '#7e7d7d'
                   }
                 }}
+                {...formBilling.getInputProps('postcode')}
               />
             </div>
             <div className='-mt-2 mb-3 grid grid-cols-2 gap-3 p-2'>
@@ -366,7 +383,7 @@ export default function Dtails() {
                     color: '#7e7d7d'
                   }
                 }}
-                // {...form.getInputProps('building_address')}
+                {...formBilling.getInputProps('contact_no')}
               />
               <TextInput
                 label='Email Address'
@@ -380,6 +397,7 @@ export default function Dtails() {
                     color: '#7e7d7d'
                   }
                 }}
+                {...formBilling.getInputProps('email')}
               />
             </div>
 
@@ -401,7 +419,7 @@ export default function Dtails() {
           <Group justify='center' mt='xl'>
             <Button
               className='bg-primary text-white border py-2 px-3 hover:bg-white hover:text-black'
-              onClick={handleSend}
+              onClick={handleSendBilling}
             >
               Update Address
             </Button>
