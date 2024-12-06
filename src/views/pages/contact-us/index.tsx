@@ -8,7 +8,7 @@ function ContactUsPage() {
     initialValues: {
       name: '',
       email: '',
-      phoneNo: '',
+      telNo: '',
       postCode: '',
       message: ''
     },
@@ -44,8 +44,8 @@ function ContactUsPage() {
           <input
             className='w-full border-b-4 border-gray-300 p-2 my-2'
             type='number'
-            placeholder='Number No.'
-            {...form.getInputProps('phoneNo')}
+            placeholder='Tel No.'
+            {...form.getInputProps('telNo')}
           />
           <input
             className='w-full border-b-4 border-gray-300 p-2 my-2'
