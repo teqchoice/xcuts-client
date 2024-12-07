@@ -1,22 +1,47 @@
+import { token } from '@/extensions/redux/api/auth'
 import { LocalTwo, Mail, PhoneTelephone } from '@icon-park/react'
 import { Button, NumberInput, rem, Textarea, TextInput } from '@mantine/core'
 import { useForm } from '@mantine/form'
+import axios from 'axios'
+import toast from 'react-hot-toast'
 
 function ContactUsPage() {
   const form = useForm({
-    mode: 'uncontrolled',
     initialValues: {
       name: '',
       email: '',
-      telNo: '',
-      postCode: '',
-      message: ''
+      message: '',
+      phone: Number
     },
 
     validate: {
       email: value => (/^\S+@\S+$/.test(value) ? null : 'Invalid email')
     }
   })
+  const submitHandler = () => {
+    // console.log(form.values)
+    let data = form.values
+    let config = {
+      method: 'post',
+      url: 'https://cms.xcuts.co.uk/items/contact_us',
+      data: data,
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${token}`
+      }
+    }
+
+    axios
+      .request(config)
+      .then(response => {
+        // console.log(response)
+        toast.success('Successfull')
+      })
+      .catch(error => {
+        // console.log(error)
+        toast.error('Error')
+      })
+  }
   return (
     <div className='max-w-full max-h-[540px]  flex flex-col justify-center items-center text-center my-16'>
       <div className='w-4/6 flex justify-start items-start text-start'>
@@ -25,13 +50,13 @@ function ContactUsPage() {
       <div className='w-4/6 h-[540px] flex justify-center items-center text-center mb-8'>
         <form
           className='w-3/6 flex flex-col justify-start items-start text-start p-2 text-xl mx-4'
-          onSubmit={form.onSubmit(values => console.log(values))}
+          onSubmit={form.onSubmit(submitHandler)}
         >
           <h1 className='text-2xl my-2'>GET IN TOUCH</h1>
           {/* <TextInput style={{ paddingTop: '6px', width: '100%' }} placeholder='Name' {...form.getInputProps('name')} /> */}
           <input
             className='w-full border-b-4 border-gray-300 p-2 my-2'
-            type='text '
+            type='text'
             placeholder='Name'
             {...form.getInputProps('name')}
           />
@@ -44,18 +69,18 @@ function ContactUsPage() {
           <input
             className='w-full border-b-4 border-gray-300 p-2 my-2'
             type='number'
-            placeholder='Tel No.'
-            {...form.getInputProps('telNo')}
+            placeholder='Phone'
+            {...form.getInputProps('phone')}
           />
-          <input
+          {/* <input
             className='w-full border-b-4 border-gray-300 p-2 my-2'
             type='number'
             placeholder='Post Code'
             {...form.getInputProps('postCode')}
-          />
+          /> */}
           <textarea
             className='w-full border-b-4 border-gray-300 p-2 my-2'
-            rows='4'
+            minrows={4}
             placeholder='Message'
             {...form.getInputProps('message')}
           />
