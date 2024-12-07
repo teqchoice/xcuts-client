@@ -28,7 +28,6 @@ function ContactUsPage() {
       data: data,
       headers: {
         'Content-Type': 'application/json',
-        Authorization: `Bearer ${token}`
       }
     }
 
@@ -44,34 +43,7 @@ function ContactUsPage() {
       })
   }
 
-  // useEffect(() => {
-  //   let gfdgfd = {
-  //     name: 'test2',
-  //     email: 'test@test.test',
-  //     message: 'test',
-  //     phone: '09198282615'
-  //   }
-
-  //   let config = {
-  //     method: 'post',
-  //     maxBodyLength: Infinity,
-  //     url: 'https://cms.xcuts.co.uk/items/contact_us',
-  //     headers: {
-  //       'Content-Type': 'application/json'
-  //     },
-  //     data: gfdgfd
-  //   }
-
-  //   axios
-  //     .request(config)
-  //     .then(response => {
-  //       console.log(JSON.stringify(response.data))
-  //     })
-  //     .catch(error => {
-  //       console.log(error)
-  //     })
-  // }, [])
-
+  
   return (
     <div className='max-w-full max-h-[540px]  flex flex-col justify-center items-center text-center my-16'>
       <div className='w-4/6 flex justify-start items-start text-start'>
