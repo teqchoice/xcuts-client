@@ -3,6 +3,7 @@ import { LocalTwo, Mail, PhoneTelephone } from '@icon-park/react'
 import { Button, NumberInput, rem, Textarea, TextInput } from '@mantine/core'
 import { useForm } from '@mantine/form'
 import axios from 'axios'
+import { useEffect } from 'react'
 import toast from 'react-hot-toast'
 
 function ContactUsPage() {
@@ -38,10 +39,39 @@ function ContactUsPage() {
         toast.success('Successfull')
       })
       .catch(error => {
-        // console.log(error)
+        console.log(error)
         toast.error('Error')
       })
   }
+
+  // useEffect(() => {
+  //   let gfdgfd = {
+  //     name: 'test2',
+  //     email: 'test@test.test',
+  //     message: 'test',
+  //     phone: '09198282615'
+  //   }
+
+  //   let config = {
+  //     method: 'post',
+  //     maxBodyLength: Infinity,
+  //     url: 'https://cms.xcuts.co.uk/items/contact_us',
+  //     headers: {
+  //       'Content-Type': 'application/json'
+  //     },
+  //     data: gfdgfd
+  //   }
+
+  //   axios
+  //     .request(config)
+  //     .then(response => {
+  //       console.log(JSON.stringify(response.data))
+  //     })
+  //     .catch(error => {
+  //       console.log(error)
+  //     })
+  // }, [])
+
   return (
     <div className='max-w-full max-h-[540px]  flex flex-col justify-center items-center text-center my-16'>
       <div className='w-4/6 flex justify-start items-start text-start'>
