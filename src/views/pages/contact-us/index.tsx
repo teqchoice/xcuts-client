@@ -38,7 +38,7 @@ function ContactUsPage() {
         toast.success('Successfull')
       })
       .catch(error => {
-        console.log(error)
+        // console.log(error)
         toast.error('Error')
       })
   }

@@ -24,22 +24,30 @@ export default function Login() {
     // console.log(form.values)
 
     let config = {
-      method: 'post',
+      method: 'get',
       maxBodyLength: Infinity,
-      url: `${process.env.NEXT_PUBLIC_SHOP_GATE_API_URL}/users/sendCode`,
+      url: `https://shop.xcuts.co.uk/flows/trigger/16833e91-cc5b-46d5-932b-a90885609de7?email=${form.values.email}&password=${form.values.password}`,
       headers: {
         'Content-Type': 'application/json'
-      },
-      data: {
-        email: form.values.email,
-        password: form.values.password
       }
     }
+    // let config = {
+    //   method: 'post',
+    //   maxBodyLength: Infinity,
+    //   url: `${process.env.NEXT_PUBLIC_SHOP_GATE_API_URL}/users/sendCode`,
+    //   headers: {
+    //     'Content-Type': 'application/json'
+    //   },
+    //   data: {
+    //     email: form.values.email,
+    //     password: form.values.password
+    //   }
+    // }
 
     axios
       .request(config)
       .then(response => {
-        // console.log(response.data)
+        console.log(response.data)
 
         toast.success('code was sent to your email')
         setCode(true)
@@ -55,36 +63,44 @@ export default function Login() {
     // console.log(form.values)
 
     let config = {
-      method: 'post',
+      method: 'get',
       maxBodyLength: Infinity,
-      url: `${process.env.NEXT_PUBLIC_SHOP_GATE_API_URL}/users/verification`,
+      url: `https://shop.xcuts.co.uk/flows/trigger/4e45ccbf-14e5-4bfa-affb-0ba7c05616d3?email=${form.values.email}&password=${form.values.password}&otp=${form.values.otp}`,
       headers: {
         'Content-Type': 'application/json'
-      },
-      data: {
-        email: form.values.email,
-        password: form.values.password,
-        otp: form.values.otp
       }
     }
+    // let config = {
+    //   method: 'post',
+    //   maxBodyLength: Infinity,
+    //   url: `${process.env.NEXT_PUBLIC_SHOP_GATE_API_URL}/users/verification`,
+    //   headers: {
+    //     'Content-Type': 'application/json'
+    //   },
+    //   data: {
+    //     email: form.values.email,
+    //     password: form.values.password,
+    //     otp: form.values.otp
+    //   }
+    // }
 
     axios
       .request(config)
       .then(response => {
-        console.log(response.data)
-        const oneWeekFromNow = new Date()
-        oneWeekFromNow.setDate(oneWeekFromNow.getDate() + 7)
-        cookie.set('jwt', response.data?.access, {
-          expires: oneWeekFromNow
+        console.log(response.data.data.data.access_token)
+        // const oneWeekFromNow = new Date()
+        // oneWeekFromNow.setDate(oneWeekFromNow.getDate() + 7)
+        cookie.set('jwt', response.data.data.data.access_token, {
+          expires: response.data.data.data.expires
         })
-        localStorage.setItem('id', response.data?.id)
+        // localStorage.setItem('id', response.data?.id)
         toast.success('You have successfully logged in')
         setCode(false)
         window.location.replace('/dashboard')
       })
       .catch(error => {
-        console.log(error)
-        toast.error(error?.response?.data?.detail)
+        // console.log(error)
+        toast.error("check your otp")
       })
   }
 

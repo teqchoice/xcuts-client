@@ -26,16 +26,11 @@ export default function Register() {
       // console.log(form.values)
 
       let config = {
-        method: 'post',
+        method: 'get',
         maxBodyLength: Infinity,
-        url: `${process.env.NEXT_PUBLIC_SHOP_GATE_API_URL}/users/create`,
+        url: `https://shop.xcuts.co.uk/flows/trigger/16833e91-cc5b-46d5-932b-a90885609de7?email=${form.values.email}&password=${form.values.password}`,
         headers: {
           'Content-Type': 'application/json'
-        },
-        data: {
-          email: form.values.email,
-          password: form.values.password,
-          passwordConfirm: form.values.password
         }
       }
 
@@ -56,40 +51,40 @@ export default function Register() {
       toast.error('The correct password was not entered')
     }
   }
-  function handleSubmit() {
-    if (form.values.password === form.values.password_val) {
-      // console.log(form.values)
+  // function handleSubmit() {
+  //   if (form.values.password === form.values.password_val) {
+  //     // console.log(form.values)
 
-      let config = {
-        method: 'post',
-        maxBodyLength: Infinity,
-        url: 'https://api.xcuts.co.uk/api/user/reg-verify',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        data: {
-          email: form.values.email,
-          otp: form.values.otp
-        }
-      }
+  //     let config = {
+  //       method: 'post',
+  //       maxBodyLength: Infinity,
+  //       url: 'https://api.xcuts.co.uk/api/user/reg-verify',
+  //       headers: {
+  //         'Content-Type': 'application/json'
+  //       },
+  //       data: {
+  //         email: form.values.email,
+  //         otp: form.values.otp
+  //       }
+  //     }
 
-      axios
-        .request(config)
-        .then(response => {
-          // console.log(response.data)
-          toast.success('register your account successfully')
-          setCode(false)
-          window.location.replace('/login')
-        })
-        .catch(error => {
-          console.log(error)
-          toast.error(error?.response?.data?.detail)
-          // toast.error(error.message)
-        })
-    } else {
-      toast.error('The correct password was not entered')
-    }
-  }
+  //     axios
+  //       .request(config)
+  //       .then(response => {
+  //         // console.log(response.data)
+  //         toast.success('register your account successfully')
+  //         setCode(false)
+  //         window.location.replace('/login')
+  //       })
+  //       .catch(error => {
+  //         console.log(error)
+  //         toast.error(error?.response?.data?.detail)
+  //         // toast.error(error.message)
+  //       })
+  //   } else {
+  //     toast.error('The correct password was not entered')
+  //   }
+  // }
 
   return (
     <section className='lg:py-36 md:py-24 py-9'>
