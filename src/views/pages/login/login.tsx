@@ -60,8 +60,6 @@ export default function Login() {
   }
 
   function handleSubmit() {
-    // console.log(form.values)
-
     let config = {
       method: 'get',
       maxBodyLength: Infinity,
@@ -70,39 +68,20 @@ export default function Login() {
         'Content-Type': 'application/json'
       }
     }
-    // let config = {
-    //   method: 'post',
-    //   maxBodyLength: Infinity,
-    //   url: `${process.env.NEXT_PUBLIC_SHOP_GATE_API_URL}/users/verification`,
-    //   headers: {
-    //     'Content-Type': 'application/json'
-    //   },
-    //   data: {
-    //     email: form.values.email,
-    //     password: form.values.password,
-    //     otp: form.values.otp
-    //   }
-    // }
 
     axios
       .request(config)
       .then(response => {
-        console.log(response.data.data.data.access_token)
-        // const oneWeekFromNow = new Date()
-        // oneWeekFromNow.setDate(oneWeekFromNow.getDate() + 7)
-        cookie.set('jwt', response.data.data.data.access_token, {
-          expires: response.data.data.data.expires
-        })
-        // localStorage.setItem('id', response.data?.id)
+        cookie.set('jwt', response.data.data.data.access_token)
         toast.success('You have successfully logged in')
         setCode(false)
         window.location.replace('/dashboard')
       })
       .catch(error => {
-        // console.log(error)
         toast.error("check your otp")
       })
   }
+
 
   return (
     <section className='lg:py-36 md:py-24 py-9'>

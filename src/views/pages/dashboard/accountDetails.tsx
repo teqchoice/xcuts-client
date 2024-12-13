@@ -26,11 +26,8 @@ export default function Dtails() {
     initialValues: {
       first_name: '',
       last_name: '',
-      // email: '',
       phone: '',
       description: ''
-      // delivery_address: '',
-      // building_address: '',
     }
   })
   const formBilling = useForm({
@@ -67,9 +64,10 @@ export default function Dtails() {
     axios
       .request(config)
       .then(response => {
-        // form.setValues(response.data[0])
-        console.log(response.data)
-        setData(response?.data)
+        form.setValues(response.data?.data)
+        formBilling.setValues(response.data?.data.billing_address[0])
+        console.log(response.data?.data)
+        setData(response?.data?.data)
       })
       .catch(error => {
         console.log(error)
@@ -78,8 +76,7 @@ export default function Dtails() {
   }, [])
 
   function handleSendBilling() {
-    // console.log(formBilling.values)
-
+    console.log(formBilling.values)
     let config = {
       method: 'patch',
       maxBodyLength: Infinity,
@@ -87,8 +84,8 @@ export default function Dtails() {
       headers: {
         'Content-Type': 'application/json',
         Authorization: `Bearer ${token}`
-      }
-      // data: [...data?.data, formBilling?.values]
+      },
+      data: { billing_address: [formBilling?.values] }
     }
 
     axios
@@ -102,6 +99,7 @@ export default function Dtails() {
         toast.error('something went wrong')
       })
   }
+
   function handleSendForm() {
     // console.log(form.values)
     // let data = form.values
@@ -114,7 +112,12 @@ export default function Dtails() {
         'Content-Type': 'application/json',
         Authorization: `Bearer ${token}`
       },
-      data: form.values
+      data: {
+        first_name: form.values.first_name,
+        last_name: form.values.last_name,
+        phone: form.values.phone,
+        description: form.values.description
+      }
     }
 
     axios
@@ -140,7 +143,9 @@ export default function Dtails() {
         'Content-Type': 'application/json',
         Authorization: `Bearer ${token}`
       },
-      data: formPass.values
+      data: {
+        password: formPass.values.password
+      }
     }
 
     axios
@@ -151,7 +156,7 @@ export default function Dtails() {
       })
       .catch(error => {
         console.log(error)
-        toast.success('something went wrong')
+        toast.error('something went wrong')
       })
   }
 
@@ -163,7 +168,7 @@ export default function Dtails() {
           <div className='-mt-4 mb-3 grid grid-cols-2 gap-3 border border-gray-400 p-5'>
             <TextInput
               label='First Name'
-              placeholder={data ? data?.data?.first_name : 'first name'}
+              placeholder={'first name'}
               styles={{
                 input: {
                   border: '1px solid #49494940',
@@ -178,7 +183,7 @@ export default function Dtails() {
 
             <TextInput
               label='Last Name'
-              placeholder={data ? data?.data?.last_name : 'last name'}
+              placeholder={'last name'}
               styles={{
                 input: {
                   border: '1px solid #49494940',
@@ -190,25 +195,9 @@ export default function Dtails() {
               }}
               {...form.getInputProps('last_name')}
             />
-            {/* <TextInput
-              mt='md'
-              label='Email'
-              placeholder={data ? data?.data?.email : 'Email'}
-              styles={{
-                input: {
-                  border: '1px solid #49494940',
-                  borderRadius: '3px',
-                  width: '100%',
-                  padding: '5px',
-                  color: '#7e7d7d'
-                }
-              }}
-              {...form.getInputProps('email')}
-              disabled
-            /> */}
             <TextInput
               label='Phone'
-              placeholder={data?.data?.phone ? data?.data?.phone : 'phone'}
+              placeholder={'phone'}
               styles={{
                 input: {
                   border: '1px solid #49494940',
@@ -223,7 +212,7 @@ export default function Dtails() {
             <Textarea
               className='col-span-2'
               label='Description'
-              placeholder={data ? data?.data?.description : 'description'}
+              placeholder={'description'}
               rows={4}
               styles={{
                 input: {
@@ -251,62 +240,6 @@ export default function Dtails() {
         <div>
           <h3 className='relative z-10 w-fit p-1 font-bold text-2xl bg-white mt-2'>Billing Address</h3>
           <div className='-mt-4 mb-3 grid gap-3 border border-gray-400 p-5'>
-            {/* <TextInput
-                label='Email'
-                placeholder='email'
-                styles={{
-                  input: {
-                    border: '1px solid #49494940',
-                    borderRadius: '3px',
-                    width: '100%',
-                    padding: '5px',
-                    color: '#7e7d7d'
-                  }
-                }}
-                {...form.getInputProps('billing-email')}
-              /> */}
-            {/* <TextInput
-                label='Phone'
-                placeholder='phone'
-                styles={{
-                  input: {
-                    border: '1px solid #49494940',
-                    borderRadius: '3px',
-                    width: '100%',
-                    padding: '5px',
-                    color: '#7e7d7d'
-                  }
-                }}
-                {...form.getInputProps('billing-phone')}
-              /> */}
-            {/* <TextInput
-                label='FirstName'
-                placeholder='firstName'
-                styles={{
-                  input: {
-                    border: '1px solid #49494940',
-                    borderRadius: '3px',
-                    width: '100%',
-                    padding: '5px',
-                    color: '#7e7d7d'
-                  }
-                }}
-                {...form.getInputProps('billing-firstName')}
-              /> */}
-            {/* <TextInput
-                label='LastName'
-                placeholder='lastName'
-                styles={{
-                  input: {
-                    border: '1px solid #49494940',
-                    borderRadius: '3px',
-                    width: '100%',
-                    padding: '5px',
-                    color: '#7e7d7d'
-                  }
-                }}
-                {...form.getInputProps('billing-lastName')}
-              /> */}
             <div className='-mt-2 mb-3 grid grid-cols-2 gap-3 p-2'>
               <TextInput
                 label='First Name'
@@ -427,21 +360,6 @@ export default function Dtails() {
                 {...formBilling.getInputProps('email_address')}
               />
             </div>
-
-            {/* <TextInput
-                label='Address line2'
-                placeholder='line2_address'
-                styles={{
-                  input: {
-                    border: '1px solid #49494940',
-                    borderRadius: '3px',
-                    width: '100%',
-                    padding: '5px',
-                    color: '#7e7d7d'
-                  }
-                }}
-                {...form.getInputProps('line2_address')}
-              /> */}
           </div>
           <Group justify='center' mt='xl'>
             <Button
@@ -453,13 +371,13 @@ export default function Dtails() {
           </Group>
         </div>
 
-        <Delivery />
+        <Delivery data={data} />
 
         <div>
           <h3 className='relative z-10 w-fit p-1 font-bold text-2xl bg-white mt-2'>Change Password</h3>
           <div className='-mt-4 mb-3 grid gap-3 border border-gray-400 p-5'>
             <TextInput
-              label='Old password'
+              label='password'
               placeholder='password'
               type='password'
               styles={{
@@ -474,7 +392,7 @@ export default function Dtails() {
               {...formPass.getInputProps('password')}
             />
             <TextInput
-              label='New password'
+              label='confirm Password'
               placeholder='password2'
               type='password2'
               styles={{
