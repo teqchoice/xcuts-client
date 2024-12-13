@@ -8,6 +8,9 @@ import toast from 'react-hot-toast'
 import Delivery from './delivery'
 
 export default function Dtails() {
+  const [data, setData] = useState()
+  // console.log(data?.data.)
+  // console.log(token)
   //   const [value, setValue] = useState({
   //     email: '',
   //     first_name: '',
@@ -23,7 +26,7 @@ export default function Dtails() {
     initialValues: {
       first_name: '',
       last_name: '',
-      email: '',
+      // email: '',
       phone: '',
       description: ''
       // delivery_address: '',
@@ -39,7 +42,7 @@ export default function Dtails() {
       city: '',
       postcode: '',
       contact_no: '',
-      email: ''
+      email_address: ''
       // delivery_address: '',
       // building_address: '',
       // description: ''
@@ -55,7 +58,7 @@ export default function Dtails() {
     let config = {
       method: 'get',
       maxBodyLength: Infinity,
-      url: 'https://api.xcuts.co.uk/api/user/get-user',
+      url: 'https://shop.xcuts.co.uk/users/me',
       headers: {
         Authorization: `Bearer ${token}`
       }
@@ -64,8 +67,9 @@ export default function Dtails() {
     axios
       .request(config)
       .then(response => {
-        form.setValues(response.data[0])
-        // console.log(response.data[0])
+        // form.setValues(response.data[0])
+        console.log(response.data)
+        setData(response?.data)
       })
       .catch(error => {
         console.log(error)
@@ -74,33 +78,55 @@ export default function Dtails() {
   }, [])
 
   function handleSendBilling() {
-    console.log(formBilling.values)
+    // console.log(formBilling.values)
+
+    let config = {
+      method: 'patch',
+      maxBodyLength: Infinity,
+      url: 'https://shop.xcuts.co.uk/users/me',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${token}`
+      }
+      // data: [...data?.data, formBilling?.values]
+    }
+
+    axios
+      .request(config)
+      .then(response => {
+        console.log(response)
+        toast.success('updated successfully')
+      })
+      .catch(error => {
+        console.log(error)
+        toast.error('something went wrong')
+      })
   }
   function handleSendForm() {
-    console.log(form.values)
+    // console.log(form.values)
     // let data = form.values
 
-    // let config = {
-    //   method: 'put',
-    //   maxBodyLength: Infinity,
-    //   url: 'https://api.xcuts.co.uk/api/user/customer-user-update',
-    //   headers: {
-    //     'Content-Type': 'application/json',
-    //     Authorization: `Bearer ${token}`
-    //   },
-    //   data: form.values
-    // }
+    let config = {
+      method: 'patch',
+      maxBodyLength: Infinity,
+      url: 'https://shop.xcuts.co.uk/users/me',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${token}`
+      },
+      data: form.values
+    }
 
-    // axios
-    //   .request(config)
-    //   .then(response => {
-    //     // console.log(response.data)
-    //     toast.success('updated successfully')
-    //   })
-    //   .catch(error => {
-    //     console.log(error)
-    //     toast.error('something went wrong')
-    //   })
+    axios
+      .request(config)
+      .then(response => {
+        // console.log(response)
+        toast.success('updated successfully')
+      })
+      .catch(error => {
+        // console.log(error)
+        toast.error('something went wrong')
+      })
   }
   function handleSendPass() {
     // console.log(form.values)
@@ -137,7 +163,7 @@ export default function Dtails() {
           <div className='-mt-4 mb-3 grid grid-cols-2 gap-3 border border-gray-400 p-5'>
             <TextInput
               label='First Name'
-              placeholder='first name'
+              placeholder={data ? data?.data?.first_name : 'first name'}
               styles={{
                 input: {
                   border: '1px solid #49494940',
@@ -149,9 +175,10 @@ export default function Dtails() {
               }}
               {...form.getInputProps('first_name')}
             />
+
             <TextInput
               label='Last Name'
-              placeholder='last name'
+              placeholder={data ? data?.data?.last_name : 'last name'}
               styles={{
                 input: {
                   border: '1px solid #49494940',
@@ -163,10 +190,10 @@ export default function Dtails() {
               }}
               {...form.getInputProps('last_name')}
             />
-            <TextInput
+            {/* <TextInput
               mt='md'
               label='Email'
-              placeholder='Email'
+              placeholder={data ? data?.data?.email : 'Email'}
               styles={{
                 input: {
                   border: '1px solid #49494940',
@@ -178,10 +205,10 @@ export default function Dtails() {
               }}
               {...form.getInputProps('email')}
               disabled
-            />
+            /> */}
             <TextInput
               label='Phone'
-              placeholder='phone'
+              placeholder={data?.data?.phone ? data?.data?.phone : 'phone'}
               styles={{
                 input: {
                   border: '1px solid #49494940',
@@ -196,7 +223,7 @@ export default function Dtails() {
             <Textarea
               className='col-span-2'
               label='Description'
-              placeholder='description'
+              placeholder={data ? data?.data?.description : 'description'}
               rows={4}
               styles={{
                 input: {
@@ -397,7 +424,7 @@ export default function Dtails() {
                     color: '#7e7d7d'
                   }
                 }}
-                {...formBilling.getInputProps('email')}
+                {...formBilling.getInputProps('email_address')}
               />
             </div>
 
