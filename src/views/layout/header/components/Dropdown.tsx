@@ -2,8 +2,8 @@ import Link from 'next/link'
 import React from 'react'
 
 export default function Dropdown({ menu, setMenu, data }: any) {
-  console.log(data)
-  function AllDecors({ menu }) {
+  // console.log(data)
+  function AllDecors({ menu }: any) {
     return (
       <div onMouseLeave={() => setMenu('')} className={`relative bg-white`}>
         <div className='container  grid grid-cols-4 p-6 gap-10 items-center'>
@@ -15,8 +15,12 @@ export default function Dropdown({ menu, setMenu, data }: any) {
           </Link>
           <div>
             <ul className='grid gap-3'>
-              {data?.all_decors_menuitem.slice(0, 5).map(i => (
-                <Link href={`/all-decors?Brand=${i?.link}`} className='group flex items-center gap-2 font-semibold'>
+              {data?.all_decors_menuitem.slice(0, 5).map((i: any) => (
+                <Link
+                  key={i.name}
+                  href={`/all-decors?Brand=${i?.link}`}
+                  className='group flex items-center gap-2 font-semibold'
+                >
                   <div className='w-10 group-hover:scale-105'>
                     <img src='../images/marker.png' alt='' className='w-full' />
                   </div>
@@ -27,8 +31,12 @@ export default function Dropdown({ menu, setMenu, data }: any) {
           </div>
           <div>
             <ul className='grid gap-3'>
-              {data?.all_decors_menuitem.slice(5, 10).map(i => (
-                <Link href={`/all-decors?Brand=${i?.link}`} className='group flex items-center gap-2 font-semibold'>
+              {data?.all_decors_menuitem.slice(5, 10).map((i: any) => (
+                <Link
+                  key={i.name}
+                  href={`/all-decors?Brand=${i?.link}`}
+                  className='group flex items-center gap-2 font-semibold'
+                >
                   <div className='w-10 group-hover:scale-105'>
                     <img src='../images/marker.png' alt='' className='w-full' />
                   </div>
@@ -39,8 +47,12 @@ export default function Dropdown({ menu, setMenu, data }: any) {
           </div>
           <div>
             <ul className='grid gap-3'>
-              {data?.all_decors_menuitem.slice(10, 15).map(i => (
-                <Link href={`/all-decors?Brand=${i?.link}`} className='group flex items-center gap-2 font-semibold'>
+              {data?.all_decors_menuitem.slice(10, 15).map((i: any) => (
+                <Link
+                  key={i.name}
+                  href={`/all-decors?Brand=${i?.link}`}
+                  className='group flex items-center gap-2 font-semibold'
+                >
                   <div className='w-10 group-hover:scale-105'>
                     <img src='../images/marker.png' alt='' className='w-full' />
                   </div>
@@ -87,16 +99,16 @@ export default function Dropdown({ menu, setMenu, data }: any) {
       </div>
     )
   }
-  function Services({ menu }) {
+  function Services({ menu }: any) {
     return (
       <div onMouseLeave={() => setMenu('')} className={`relative  bg-white`}>
         <div className='container  grid grid-cols-4 p-8 gap-10'>
-          {data?.services_menuitem.map(i => (
-            <Link href={`/${i?.link}`} className=' group cursor-pointer'>
+          {data?.services_menuitem.map((i: any) => (
+            <Link key={i.name} href={`/${i?.link}`} className=' group cursor-pointer'>
               <div className='relative aspect-video overflow-hidden'>
-                <img src='../images/img-1.jpeg' alt='' className='w-full' />
+                <img src={i?.poster_url} alt='' className='w-full' />
                 <div className='aspect-video overflow-hidden absolute left-0 top-0 z-10 ring-inset group-hover:ring-8 ring-primary opacity-0 group-hover:opacity-100 transition-all duration-150'>
-                  <img src='../images/img-1.jpeg' alt='' className='w-full opacity-20' />
+                  <img src={i?.poster_url} alt='' className='w-full opacity-20' />
                 </div>
               </div>
               <h3 className='font-bold text-lg'>{i?.name}</h3>
@@ -114,16 +126,20 @@ export default function Dropdown({ menu, setMenu, data }: any) {
     )
   }
 
-  function Product({ menu }) {
+  function Product({ menu }: any) {
     return (
       <div onMouseLeave={() => setMenu('')} className={`relative  bg-white`}>
         <div className='container  grid grid-cols-3 p-8 gap-10'>
-          {data?.products_menuitem?.map(i => (
-            <Link href={`/${i?.link}`} className='grid grid-cols-2 group cursor-pointer items-center gap-2'>
+          {data?.products_menuitem?.map((i: any) => (
+            <Link
+              key={i.name}
+              href={`/${i?.link}`}
+              className='grid grid-cols-2 group cursor-pointer items-center gap-2'
+            >
               <div className='relative  overflow-hidden'>
-                <img src='../images/our-product-01.webp' alt='' className='w-full' />
+                <img src={i?.poster_url} alt='' className='w-full h-40' />
                 <div className=' overflow-hidden absolute left-0 top-0 z-10 ring-inset group-hover:ring-8 ring-primary opacity-0 group-hover:opacity-100 transition-all duration-150'>
-                  <img src='../images/our-product-01.webp' alt='' className='w-full opacity-20' />
+                  <img src={i?.poster_url} alt='' className='w-full opacity-20 h-40' />
                 </div>
               </div>
               <div>

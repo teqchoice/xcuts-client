@@ -6,7 +6,7 @@ import { useLayoutEffect } from 'react'
 // import MainMenu from '@/DB/mainMenu.json'
 
 export default function PHome({ data, header, footer }: any) {
-  console.log(data)
+  // console.log(data)
   // console.log(header)
   return (
     <>

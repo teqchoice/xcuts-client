@@ -247,7 +247,7 @@ export default function MineMenu({ data }: any) {
           <div className='mt-4 space-y-2 flex flex-col'>
             {data?.Collections_menu?.slice(0, 7)?.map((item: any) => (
               <a
-                key={item.id}
+                key={item.name}
                 href={item.link}
                 className='text-white hover:text-primary font-normal text-base transition-all'
               >
@@ -258,7 +258,7 @@ export default function MineMenu({ data }: any) {
           <div className='mt-4 space-y-2 flex flex-col'>
             {data?.Collections_menu?.slice(7, 14)?.map((item: any) => (
               <a
-                key={item.id}
+                key={item.name}
                 href={item.link}
                 className='text-white hover:text-primary font-normal text-base transition-all'
               >
@@ -275,7 +275,7 @@ export default function MineMenu({ data }: any) {
           <div className='mt-4 space-y-2 flex flex-col'>
             {data?.Services_menu?.map((item: any) => (
               <a
-                key={item.id}
+                key={item.name}
                 href={item.link}
                 className='text-white hover:text-primary font-normal text-base transition-all'
               >
@@ -292,7 +292,7 @@ export default function MineMenu({ data }: any) {
           <div className='mt-4 space-y-2 flex flex-col'>
             {data?.Products_menu?.map((item: any) => (
               <a
-                key={item.id}
+                key={item.name}
                 href={item.link}
                 className='text-white hover:text-primary font-normal text-base transition-all'
               >
@@ -309,7 +309,7 @@ export default function MineMenu({ data }: any) {
           <div className='mt-4 space-y-2 flex flex-col'>
             {data?.Company_menu?.map((item: any) => (
               <a
-                key={item.id}
+                key={item.name}
                 href={item.link}
                 className='text-white hover:text-primary font-normal text-base transition-all'
               >

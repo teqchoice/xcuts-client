@@ -3,7 +3,7 @@ import Slider from '../components/slider'
 import Image from 'next/image'
 
 export default function HeroSection({ data }: any) {
-  console.log(process?.env.NEXT_PUBLIC_API__URL_images + `/${data?.s1_image?.id}/${data?.s1_image?.filename_download}`)
+  // console.log(process?.env.NEXT_PUBLIC_API__URL_images + `/${data?.s1_image?.id}/${data?.s1_image?.filename_download}`)
   // console.log(data)
   const defaultSlide = [
     {
