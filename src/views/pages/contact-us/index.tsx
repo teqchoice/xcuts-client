@@ -27,7 +27,7 @@ function ContactUsPage() {
       url: 'https://cms.xcuts.co.uk/items/contact_us',
       data: data,
       headers: {
-        'Content-Type': 'application/json',
+        'Content-Type': 'application/json'
       }
     }
 
@@ -43,15 +43,14 @@ function ContactUsPage() {
       })
   }
 
-  
   return (
-    <div className='max-w-full max-h-[540px]  flex flex-col justify-center items-center text-center my-16'>
-      <div className='w-4/6 flex justify-start items-start text-start'>
+    <div className='max-w-full max-h-[540px]  flex flex-col justify-center items-center text-center max-[393px]:my-60  sm:my-20 '>
+      <div className='w-4/6 flex justify-start items-start text-start max-[393px]:text-center max-[393px]:justify-center sm:justify-center'>
         <h1 className='text-4xl'>Contact Us</h1>
       </div>
-      <div className='w-4/6 h-[540px] flex justify-center items-center text-center mb-8'>
+      <div className='w-4/6 h-[540px] max-[393px]:flex-col max-[393px]:w-[600px]   max-[393px]:h-[650px] max-[393px]:mt-24 max-[393px]:mb-24 flex justify-center items-center text-center sm:w-full sm:h-full sm:mt-4 xl:w-4/6  lg:w-4/6 2xl:w-4/6 '>
         <form
-          className='w-3/6 flex flex-col justify-start items-start text-start p-2 text-xl mx-4'
+          className='w-3/6 flex flex-col justify-start items-start text-start text-xl mx-4 max-[393px]:mb-2 '
           onSubmit={form.onSubmit(submitHandler)}
         >
           <h1 className='text-2xl my-2'>GET IN TOUCH</h1>
@@ -88,7 +87,7 @@ function ContactUsPage() {
           />
           <button className='w-full bg-primary p-2 mt-2 text-white'>Send</button>
         </form>
-        <div className='w-3/6 h-[540px]  flex flex-col justify-center items-center text-center bg-primary text-white  p-2 text-lg mx-4 border-r-[50px] border-yellow-400'>
+        <div className='w-3/6 h-[540px]  flex flex-col justify-center items-center text-center bg-primary text-white  p-2 text-lg mx-4 border-r-[50px] border-yellow-400 sm:h-[400px] sm:text-sm lg:text-base'>
           <div className='flex flex-col justify-center items-center text-center p-2  my-2 '>
             <PhoneTelephone theme='filled' size='30' fill='white' strokeLinejoin='miter' strokeLinecap='square' />
             <p className='text-yellow-400'>Call Us</p>
