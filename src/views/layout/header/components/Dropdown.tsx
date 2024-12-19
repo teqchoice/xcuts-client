@@ -105,10 +105,10 @@ export default function Dropdown({ menu, setMenu, data }: any) {
         <div className='container  grid grid-cols-4 p-8 gap-10'>
           {data?.services_menuitem.map((i: any) => (
             <Link key={i.name} href={`/${i?.link}`} className=' group cursor-pointer'>
-              <div className='relative aspect-video overflow-hidden'>
-                <img src={i?.poster_url} alt='' className='w-full' />
-                <div className='aspect-video overflow-hidden absolute left-0 top-0 z-10 ring-inset group-hover:ring-8 ring-primary opacity-0 group-hover:opacity-100 transition-all duration-150'>
-                  <img src={i?.poster_url} alt='' className='w-full opacity-20' />
+              <div className='relative  overflow-hidden'>
+                <img src={i?.poster_url} alt='' className='w-full h-40' />
+                <div className=' overflow-hidden absolute left-0 top-0 z-10 ring-inset group-hover:ring-8 ring-primary opacity-0 group-hover:opacity-100 transition-all duration-150'>
+                  <img src={i?.poster_url} alt='' className='w-screen h-40  opacity-20' />
                 </div>
               </div>
               <h3 className='font-bold text-lg'>{i?.name}</h3>

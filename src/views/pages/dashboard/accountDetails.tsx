@@ -315,7 +315,7 @@ export default function Dtails() {
                 }}
                 {...formBilling.getInputProps('city')}
               />
-              <NumberInput
+              <TextInput
                 label='Postcode'
                 placeholder='Postcode'
                 styles={{

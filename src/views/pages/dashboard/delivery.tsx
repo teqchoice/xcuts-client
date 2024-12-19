@@ -159,7 +159,7 @@ export default function Delivery({ data }: any) {
               }}
               {...formdelivery.getInputProps('city')}
             />
-            <NumberInput
+            <TextInput
               label='Postcode'
               placeholder='Postcode'
               styles={{

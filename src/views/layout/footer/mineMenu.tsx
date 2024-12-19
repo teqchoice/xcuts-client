@@ -248,7 +248,7 @@ export default function MineMenu({ data }: any) {
             {data?.Collections_menu?.slice(0, 7)?.map((item: any) => (
               <a
                 key={item.name}
-                href={item.link}
+                href={`/all-decors?Brand=${item.link}`}
                 className='text-white hover:text-primary font-normal text-base transition-all'
               >
                 {item.name}
@@ -259,7 +259,18 @@ export default function MineMenu({ data }: any) {
             {data?.Collections_menu?.slice(7, 14)?.map((item: any) => (
               <a
                 key={item.name}
-                href={item.link}
+                href={`/all-decors?Brand=${item.link}`}
+                className='text-white hover:text-primary font-normal text-base transition-all'
+              >
+                {item.name}
+              </a>
+            ))}
+          </div>
+          <div className='mt-4 space-y-2 flex flex-col'>
+            {data?.Collections_menu?.slice(14, 21)?.map((item: any) => (
+              <a
+                key={item.name}
+                href={`/all-decors?Brand=${item.link}`}
                 className='text-white hover:text-primary font-normal text-base transition-all'
               >
                 {item.name}
