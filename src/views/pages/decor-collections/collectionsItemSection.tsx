@@ -7,7 +7,8 @@ import Table from './table'
 import axios from 'axios'
 import Productgrid from './components/productgrid'
 
-export default function CollectionsItemSection({ Data, Brand }: any) {
+export default function CollectionsItemSection({ Data, Brand, BrandData }: any) {
+  console.log(BrandData)
   const [opened, setOpened] = useState(false)
   const [pupitem, setPupitem] = useState([])
   const [show, setShow] = useState(1)
@@ -20,16 +21,16 @@ export default function CollectionsItemSection({ Data, Brand }: any) {
     setQuery(router.query)
   }, [router.query])
   function BrandItem() {
-    return Brand?.items?.map((item: any, index: number) => {
-      // console.log(item)
+    return BrandData?.map((item: any, index: number) => {
+      console.log(item)
       return (
         <div key={index} className='col-span-1 flex flex-col'>
           <div className='flex sm:flex-row flex-col sm:items-end'>
             <div className='sm:w-[60%] aspect-square'>
-              <img src={`${process.env.NEXT_PUBLIC_SHOP_API_URL}/files/${item?.collectionName}/${item?.id}/${item?.poster}`} alt='' className='w-full h-full object-cover object-center' />
+              <img src={`${process.env.NEXT_PUBLIC_API__URL_images}/${item?.poster?.id}/${item?.poster?.filename_disk}`} alt='' className='w-full h-full object-cover object-center' />
             </div>
             <div className='relative py-5 pl-5 pr-10 before:border-solid before:border-t-[bg-transparent] before:border-r-[#fff] before:border-b-[#f82f45] before:border-l-[bg-transparent] before:border-t-0 sm:before:border-r-[40px] before:border-b-[72px] before:border-l-0 before:absolute before:w-full before:h-full before:-top-2 before:md:top-0 before:left-0 before:-z-10 sm:w-[40%] lg:bottom-10 bottom-0'>
-              <h5 className='lg:text-xl text-base pr-8 font-semibold text-white whitespace-nowrap'>{item?.name}</h5>
+              <h5 className='lg:text-xl text-base pr-8 font-semibold text-white whitespace-nowrap'>{item?.page_name}</h5>
             </div>
           </div>
           <div className='xl:ml-16 lg:ml-12 ml:ml-8 ml-0 relative lg:-mt-10 h-full'>
@@ -39,13 +40,13 @@ export default function CollectionsItemSection({ Data, Brand }: any) {
                 }}/>
               <div className='flex sm:flex-row flex-col gap-y-4 sm:gap-y-0 sm:gap-x-4 mt-auto'>
                 <Link
-                  href={'/all-decors/' + item?.name}
+                  href={'/all-decors/' + item?.page_name}
                   className='text-base font-semibold text-black border border-primary lg:py-4 lg:px-6 md:py-4 md:px-3 py-4 px-6 block text-center hover:bg-primary hover:text-white transition-all'
                 >
                   View More
                 </Link>
                 <Link
-                  href={'/all-decors?Brand=' + item?.name}
+                  href={'/all-decors?Brand=' + item?.page_name}
                   className='text-base font-semibold text-black border border-black lg:py-4 lg:px-6 md:py-4 md:px-3 py-4 px-6 block text-center bg-black hover:text-black text-white hover:bg-white transition-all'
                 >
                   Order Sample

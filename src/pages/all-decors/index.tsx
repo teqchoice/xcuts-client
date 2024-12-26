@@ -10,19 +10,20 @@ import { useRouter } from 'next/router'
 import dynamic from 'next/dynamic'
 import Loading from '@/views/layout/loading'
 
-export default function PDecorCollections({ header, footer }: any) {
+export default function PDecorCollections({ header, footer, brandsData }: any) {
+  // console.log(brandsData)
   const router = useRouter()
   const [Brand, setBrand] = useState()
   const [Data, setData] = useState()
-  console.log(
-    `https://shopi.xcuts.co.uk/api/collections/decors/records?expand=brand_ref,core_ref,surface_ref,finish_ref,texture_ref,design_ref&filter=(brand_ref.name=\'${
-      router.query.Brand
-    }\'${router.query.Core ? `%26%26core_ref.name=\'${router.query.Core}\'` : ''}${
-      router.query.Surface ? `%26%26surface_ref.name=\'${router.query.Surface}\'` : ''
-    }${router.query.Design ? `%26%26design_ref.name=\'${router.query.Design}\'` : ''}${
-      router.query.Finish ? `%26%26finish_ref.name=\'${router.query.Finish}\'` : ''
-    })`
-  )
+  // console.log(
+  //   `https://shopi.xcuts.co.uk/api/collections/decors/records?expand=brand_ref,core_ref,surface_ref,finish_ref,texture_ref,design_ref&filter=(brand_ref.name=\'${
+  //     router.query.Brand
+  //   }\'${router.query.Core ? `%26%26core_ref.name=\'${router.query.Core}\'` : ''}${
+  //     router.query.Surface ? `%26%26surface_ref.name=\'${router.query.Surface}\'` : ''
+  //   }${router.query.Design ? `%26%26design_ref.name=\'${router.query.Design}\'` : ''}${
+  //     router.query.Finish ? `%26%26finish_ref.name=\'${router.query.Finish}\'` : ''
+  //   })`
+  // )
 
   useEffect(() => {
     let config = {
@@ -68,7 +69,7 @@ export default function PDecorCollections({ header, footer }: any) {
 
   return (
     <Layout header={header} footer={footer}>
-      <DecorCollections Data={Data} Brand={Brand} />
+      <DecorCollections Data={Data} Brand={Brand} BrandData={brandsData} />
     </Layout>
   )
 }
@@ -87,10 +88,21 @@ export const getServerSideProps = async (context: any) => {
 
     // const { data: layoutData } = await axios.get(`${process.env.NEXT_PUBLIC_API__URL}/get-content-query/page=3/`)
 
+    const { data } = await axios.get(
+      `https://cms.xcuts.co.uk/items/brands?fields=page_name,description,poster.filename_disk,poster.id`
+    )
+    // `https://shop.xcuts.co.uk/items/categories?&filter[parent][related_categories_id][name][_contains]=brand`
+
     const { data: header } = await axios.get(`${process.env.NEXT_PUBLIC_CMS_API_URL}/items/header?fields=*.*`)
     const { data: footer } = await axios.get(`${process.env.NEXT_PUBLIC_CMS_API_URL}/items/footer?fields=*.*`)
 
-    return { props: { data: [], brand: [], header: header, footer: footer } }
+    return {
+      props: {
+        brandsData: data.data || null,
+        header: header,
+        footer: footer
+      }
+    }
   } catch (error) {
     return { props: { data: [], layout: [] } }
   }
