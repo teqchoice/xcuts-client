@@ -4,7 +4,7 @@ import Collections from './introductionCollectionsSection'
 import FilterSection from './filterSection copy'
 import CollectionsItemSection from './collectionsItemSection'
 
-export default function index({ Data, Brand, BrandData }: any) {
+export default function index({ Data, Brand, BrandData, DecorsData }: any) {
   return (
     <>
       <PageIntroduction Data={{ title: 'ALL DECORS', baner: 'images/banner-1-showroom.jpeg' }} />
@@ -12,7 +12,7 @@ export default function index({ Data, Brand, BrandData }: any) {
       <div className='px-4 sm:container'>
         <FilterSection Data={Data?.delivery} />
         <div className=''></div>
-        <CollectionsItemSection Data={Data} Brand={Brand} BrandData={BrandData}  />
+        <CollectionsItemSection Data={Data} Brand={Brand} BrandData={BrandData} DecorsData={DecorsData} />
       </div>
     </>
   )

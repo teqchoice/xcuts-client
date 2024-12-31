@@ -7,8 +7,8 @@ import Table from './table'
 import axios from 'axios'
 import Productgrid from './components/productgrid'
 
-export default function CollectionsItemSection({ Data, Brand, BrandData }: any) {
-  console.log(BrandData)
+export default function CollectionsItemSection({ Data, Brand, BrandData, DecorsData }: any) {
+  // console.log(BrandData)
   const [opened, setOpened] = useState(false)
   const [pupitem, setPupitem] = useState([])
   const [show, setShow] = useState(1)
@@ -110,7 +110,7 @@ export default function CollectionsItemSection({ Data, Brand, BrandData }: any) 
       </div>
 
       {show == 1 ? (
-        <Table data={Data?.items} setOpened={setOpened} opened={opened} setPupitem={setPupitem} />
+        <Table data={Data?.items} DecorsData={DecorsData} setOpened={setOpened} opened={opened} setPupitem={setPupitem} />
       ) : (
         <div className='grid md:grid-cols-2 xl:grid-cols-3 lg:grid-cols-2 lg:px-10 gap-x-10 gap-y-10 pb-20'>
           { Data?.items?.map( (item: any, index: number) => {

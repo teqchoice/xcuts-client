@@ -10,11 +10,11 @@ import { useRouter } from 'next/router'
 import dynamic from 'next/dynamic'
 import Loading from '@/views/layout/loading'
 
-export default function PDecorCollections({ header, footer, brandsData }: any) {
-  // console.log(brandsData)
+export default function PDecorCollections({ header, footer, brandsData, decorsData }: any) {
   const router = useRouter()
   const [Brand, setBrand] = useState()
   const [Data, setData] = useState()
+  
   // console.log(
   //   `https://shopi.xcuts.co.uk/api/collections/decors/records?expand=brand_ref,core_ref,surface_ref,finish_ref,texture_ref,design_ref&filter=(brand_ref.name=\'${
   //     router.query.Brand
@@ -42,6 +42,7 @@ export default function PDecorCollections({ header, footer, brandsData }: any) {
         console.log(error)
       })
   }, [setBrand, router.query])
+
   useEffect(() => {
     let config = {
       method: 'get',
@@ -66,16 +67,17 @@ export default function PDecorCollections({ header, footer, brandsData }: any) {
         console.log(error)
       })
   }, [setBrand, router.query])
-
+  // console.log(decorsData)
+  // console.log(Data)
   return (
     <Layout header={header} footer={footer}>
-      <DecorCollections Data={Data} Brand={Brand} BrandData={brandsData} />
+      <DecorCollections Data={Data} Brand={Brand} BrandData={brandsData} DecorsData={decorsData} />
     </Layout>
   )
 }
 
 export const getServerSideProps = async (context: any) => {
-  // console.log('+++++++++++++++++', context.query)
+  console.log('+++++++++++++++++', context.query.Brand)
 
   try {
     // const { data: brand } = await axios.get(
@@ -88,8 +90,11 @@ export const getServerSideProps = async (context: any) => {
 
     // const { data: layoutData } = await axios.get(`${process.env.NEXT_PUBLIC_API__URL}/get-content-query/page=3/`)
 
-    const { data } = await axios.get(
+    const { data: brands } = await axios.get(
       `https://cms.xcuts.co.uk/items/brands?fields=page_name,description,poster.filename_disk,poster.id`
+    )
+    const { data: decors } = await axios.get(
+      `https://shop.xcuts.co.uk/items/decors?fields=*.*&filter[brand_ref][name][_eq]=${context.query.Brand}&limit=500`
     )
     // `https://shop.xcuts.co.uk/items/categories?&filter[parent][related_categories_id][name][_contains]=brand`
 
@@ -98,7 +103,8 @@ export const getServerSideProps = async (context: any) => {
 
     return {
       props: {
-        brandsData: data.data || null,
+        brandsData: brands.data || null,
+        decorsData: decors.data || null,
         header: header,
         footer: footer
       }

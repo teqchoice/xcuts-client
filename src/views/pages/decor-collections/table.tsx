@@ -1,7 +1,7 @@
 import React from 'react'
 import Producttable from './components/producttable'
 
-export default function Table({ data, setOpened, opened, setPupitem }: any) {
+export default function Table({ data, setOpened, opened, setPupitem, DecorsData }: any) {
   return (
     <div
       className='hidden opacity-100 transition-opacity duration-150 ease-linear data-[te-tab-active]:block mb-16'
@@ -56,10 +56,17 @@ export default function Table({ data, setOpened, opened, setPupitem }: any) {
             </tr>
           </thead>
           <tbody>
-            {data?.map((item: any, index: number) => {
+            {DecorsData?.map((item: any, index: number) => {
+              // console.log(item)
               return <Producttable key={index} item={item} setOpened={setOpened} opened={opened} setPupitem={setPupitem}/>
             })}
           </tbody>
+          {/* <tbody>
+            {data?.map((item: any, index: number) => {
+              // console.log(item)
+              return <Producttable key={index} item={item} setOpened={setOpened} opened={opened} setPupitem={setPupitem}/>
+            })}
+          </tbody> */}
         </table>
       </div>
     </div>

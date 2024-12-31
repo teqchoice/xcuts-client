@@ -64,7 +64,7 @@ export default function Pupapt({ data }: any) {
           <div className='col-span-1 grid grid-cols-12 gap-1'>
             <div className='col-span-9 relative overflow-hidden'>
               <img
-                src={`${process.env.NEXT_PUBLIC_SHOP_API_URL}/files/${item?.collectionName}/${item?.id}/${item?.decor[0]}`}
+                src={`${process.env.NEXT_PUBLIC_API_SHOP_URL_images}/${item?.poster?.id}/${item?.poster?.filename_disk}`}
                 className='w-full h-full'
               />
               <div className='absolute z-10 py-3 pl-5 pr-[75px] before:border-solid before:border-t-[bg-transparent] before:border-r-transparent before:border-b-primary before:border-l-[bg-transparent] before:border-t-0 sm:before:border-r-[40px] before:border-b-[40px] before:border-l-0 before:absolute before:w-full before:h-full before:-top-2 before:md:top-0 before:left-0 before:-z-10 lg:bottom-0 bottom-0'>
@@ -75,15 +75,15 @@ export default function Pupapt({ data }: any) {
             </div>
             <div className='col-span-3 flex flex-col gap-1'>
               <img
-                src={`${process.env.NEXT_PUBLIC_SHOP_API_URL}/files/${item?.collectionName}/${item?.id}/${item?.decor[1]}`}
+                src={`${process.env.NEXT_PUBLIC_API_SHOP_URL_images}/${item?.poster?.id}/${item?.poster?.filename_disk}`}
                 className='w-full h-full'
               />
               <img
-                src={`${process.env.NEXT_PUBLIC_SHOP_API_URL}/files/${item?.collectionName}/${item?.id}/${item?.decor[2]}`}
+                src={`${process.env.NEXT_PUBLIC_API_SHOP_URL_images}/${item?.poster?.id}/${item?.poster?.filename_disk}`}
                 className='w-full h-full'
               />
               <img
-                src={`${process.env.NEXT_PUBLIC_SHOP_API_URL}/files/${item?.expand?.texture_ref?.collectionName}/${item?.expand?.texture_ref?.id}/${item?.expand?.texture_ref?.poster}`}
+                src={`${process.env.NEXT_PUBLIC_API_SHOP_URL_images}/${item?.poster?.id}/${item?.poster?.filename_disk}`}
                 className='w-full h-full'
               />
             </div>
@@ -118,11 +118,11 @@ export default function Pupapt({ data }: any) {
           </div>
           <button className='flex align-start '>{/* <IoCloseSharp /> */}</button>
         </div>
-        <div className='flex align-center justify-center text-center'>
+        {/* <div className='flex align-center justify-center text-center'>
           <button className='px-4 py-3 mb-2 w-52 outline-primary mt-2 text-xs text-white bg-primary'>
             Order a sample for £3.00
           </button>
-        </div>
+        </div> */}
       </div>
 
       <div className='w-full px-6 py-2 grid grid-cols-12 gap-x-4'>
