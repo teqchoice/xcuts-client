@@ -56,9 +56,15 @@ export default function Producttable({ item, setOpened, opened, setPupitem }: an
           <div className='bg-primary text-white text-[14px] w-10 border border-primary h-[39px] flex items-center justify-center px-[20px] py-[10px]'>
             {item?.thickness_ref[1]?.thickness}
           </div>
-          <div className='text-[14px] text-[#707070] w-10 border border-primary h-[39px] flex items-center justify-center px-[20px] py-[10px]'></div>
-          <div className='text-[14px] text-[#707070] w-10 border border-primary h-[39px] flex items-center justify-center px-[20px] py-[10px]'></div>
-          <div className='text-[14px] text-[#707070] w-10 border border-primary h-[39px] flex items-center justify-center px-[20px] py-[10px]'></div>
+          <div className='text-[14px] text-[#707070] w-10 border border-primary h-[39px] flex items-center justify-center px-[20px] py-[10px]'>
+            {item?.thickness_ref[2]?.thickness}
+          </div>
+          <div className='bg-primary text-white text-[14px] w-10 border border-primary h-[39px] flex items-center justify-center px-[20px] py-[10px]'>
+            {item?.thickness_ref[3]?.thickness}
+          </div>
+          <div className='text-[14px] text-[#707070] w-10 border border-primary h-[39px] flex items-center justify-center px-[20px] py-[10px]'>
+            {item?.thickness_ref[4]?.thickness}
+          </div>
           <div
             className='cursor-pointer popup-modal px-6 py-[8px] font-medium text-[15px] bg-black text-white'
             onClick={() => {

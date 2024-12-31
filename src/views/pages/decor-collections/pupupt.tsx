@@ -90,18 +90,18 @@ export default function Pupapt({ data }: any) {
           </div>
           <div className='col-span-1 px-4'>
             <h3 className='text-2xl font-bold text-primary capitalize'>
-              {item?.expand?.brand_ref[0].name} {item?.code}
+              {item?.brand_ref?.name} {item?.code}
             </h3>
             <p className='text-sm text-gray-500'>Light Grey Meta Rock</p>
             <h5 className='text-lg text-black font-bold mt-2'>Product characteristics</h5>
             <p className='text-sm  text-gray-400'>
-              Core: {item?.expand?.core_ref?.name} | Surface: {item?.expand?.surface_ref?.name}
+              Core: {item?.core_ref?.name} | Surface: {item?.surface_ref?.name}
             </p>
             <p className='text-sm  text-gray-400'>
-              Finish: {item?.expand?.finish_ref?.name} | Design: {item?.expand?.design_ref?.name}
+              Finish: {item?.finish_ref?.name} | Design: {item?.design_ref?.name}
             </p>
             <p className='text-sm  text-gray-400'>
-              Texture: {item?.expand?.texture_ref?.name} | Grain: {item?.expand?.surface_ref?.name}
+              Texture: {item?.texture_ref?.name} | Grain: {item?.surface_ref?.name}
             </p>
             <h5 className='text-lg text-black font-bold mt-2'>B side description</h5>
             <p className='text-sm  text-gray-400'>{item?.b_description}</p>
