@@ -11,7 +11,7 @@ export default function Producttable({ item, setOpened, opened, setPupitem }: an
         <div className='text-center w-16 h-16 flex items-center justify-center rounded-full overflow-hidden'>
           <img
             className='w-full h-full object-cover object-center'
-            src={`${process.env.NEXT_PUBLIC_API_SHOP_URL_images}/${item?.poster?.id}/${item?.poster?.filename_disk}`}
+            src={`${process.env.NEXT_PUBLIC_API_SHOP_URL_images}/${item?.decor_poster[0]?.directus_files_id?.id}/${item?.decor_poster[0]?.directus_files_id?.filename_disk}`}
             // src={`${process.env.NEXT_PUBLIC_SHOP_API_URL}/files/${item?.collectionName}/${item?.id}/${item?.decor[0]}`}
             alt=''
           />
@@ -21,7 +21,7 @@ export default function Producttable({ item, setOpened, opened, setPupitem }: an
         <div className='text-center w-16 h-16 flex items-center justify-center rounded-full overflow-hidden'>
           <img
             className='w-full h-full object-cover object-center'
-            src={`${process.env.NEXT_PUBLIC_API_SHOP_URL_images}/${item?.poster?.id}/${item?.poster?.filename_disk}`}
+            src={`${process.env.NEXT_PUBLIC_API_SHOP_URL_images}/${item?.decor_poster[1]?.directus_files_id?.id}/${item?.decor_poster[1]?.directus_files_id?.filename_disk}`}
             alt=''
           />
         </div>

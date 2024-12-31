@@ -94,7 +94,7 @@ export const getServerSideProps = async (context: any) => {
       `https://cms.xcuts.co.uk/items/brands?fields=page_name,description,poster.filename_disk,poster.id`
     )
     const { data: decors } = await axios.get(
-      `https://shop.xcuts.co.uk/items/decors?fields=*.*&filter[brand_ref][name][_eq]=${context.query.Brand}&limit=500`
+      `https://shop.xcuts.co.uk/items/decors?fields=*.*.*&filter[brand_ref][name][_eq]=${context.query.Brand}&limit=500`
     )
     // `https://shop.xcuts.co.uk/items/categories?&filter[parent][related_categories_id][name][_contains]=brand`
 
