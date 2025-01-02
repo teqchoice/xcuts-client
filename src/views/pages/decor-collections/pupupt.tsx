@@ -17,37 +17,56 @@ export default function Pupapt({ data }: any) {
     setUser(localStorage.getItem('id'))
   }, [])
 
-  const addToCard = () => {
+  const addToCard = async () => {
     if (!token) {
       return router.push('/login')
     }
     setLoader(true)
     // console.log(thickness[0]?.id)
-    // console.log(user)
-    let data = JSON.stringify({
-      'cart_full_sheets+': [thickness[0]?.id]
-    })
 
-    let config = {
-      method: 'patch',
-      maxBodyLength: Infinity,
-      url: `https://shopi.xcuts.co.uk/api/collections/users/records/${user}`,
+    const options = {
+      method: 'GET',
+      url: 'https://shop.xcuts.co.uk/users/me',
+      params: { fields: 'cart_full_sheets.*' },
       headers: {
-        'Content-Type': 'application/json',
-        Authorization: `Bearer ${token}`
-      },
-      data: data
+        Authorization: `Bearer ${token}`,
+        'content-type': 'application/json'
+      }
     }
-    axios
-      .request(config)
-      .then(response => {
-        setLoader(false)
-        toast.success('seved in card successfully')
-        window.location.replace('/shop-online')
-      })
-      .catch(error => {
-        console.log(error)
-      })
+
+    try {
+      const { data } = await axios.request(options)
+      console.log(data?.data?.cart_full_sheets)
+      let config = {
+        method: 'patch',
+        maxBodyLength: Infinity,
+        url: `https://shop.xcuts.co.uk/users/me`,
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${token}`
+        },
+        data: {
+          cart_full_sheets: [
+            ...data?.data?.cart_full_sheets,
+            {
+              thickness_id: thickness[0]?.id
+            }
+          ]
+        }
+      }
+      axios
+        .request(config)
+        .then(response => {
+          setLoader(false)
+          toast.success('seved in card successfully')
+          window.location.replace('/shop-online')
+        })
+        .catch(error => {
+          console.log(error)
+        })
+    } catch (error) {
+      console.error(error)
+    }
   }
 
   return (
@@ -189,20 +208,20 @@ export default function Pupapt({ data }: any) {
               <h3 className='text-2xl'>
                 Total:
                 <span className='text-primary font-bold'>
-                  £{show ? thickness[0]?.full_sheet_price : thickness[1]?.full_sheet_price}
+                  £{show ? thickness[0]?.price_full_sheet : thickness[1]?.price_full_sheet}
                 </span>
               </h3>
-              <p className='text-sm'>With VAT:£298.50</p>
+              <p className='text-sm'>With VAT: % {show ? thickness[0]?.tax_percent : thickness[1]?.tax_percent}</p>
             </div>
             <div className=' w-full'>
               <button className='p-3 outline-black mt-2 w-full text-xs text-white bg-black'>Add to cutting list</button>
               <h3 className='text-2xl'>
                 Total:
                 <span className='text-primary font-bold'>
-                  £{show ? thickness[0]?.cutting_Price : thickness[1]?.cutting_Price}
+                  £{show ? thickness[0]?.price_cutting : thickness[1]?.price_cutting}
                 </span>
               </h3>
-              <p className='text-sm'>With VAT:£298.50</p>
+              <p className='text-sm'>With VAT: % {show ? thickness[0]?.tax_percent : thickness[1]?.tax_percent}</p>
             </div>
           </div>
           <div className='mt-2'>
@@ -229,13 +248,13 @@ export default function Pupapt({ data }: any) {
               <div className='flex justify-between mt-2'>
                 <p className='text-xs text-black'>Full sheet price</p>
                 <span className='text-primary'>
-                  £{show ? thickness[0]?.full_sheet_price : thickness[1]?.full_sheet_price}
+                  £{show ? thickness[0]?.price_full_sheet : thickness[1]?.price_full_sheet}
                 </span>
               </div>
               <div className='flex justify-between'>
                 <p className='text-xs text-black'>Sheet price with cutting (up to 20 pieces per sheet)</p>
                 <span className='text-primary'>
-                  £{show ? thickness[0]?.cutting_Price : thickness[1]?.cutting_Price}
+                  £{show ? thickness[0]?.price_cutting : thickness[1]?.price_cutting}
                 </span>
               </div>
             </div>
