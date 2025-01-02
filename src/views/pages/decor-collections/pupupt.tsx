@@ -35,8 +35,8 @@ export default function Pupapt({ data }: any) {
     }
 
     try {
-      const { data } = await axios.request(options)
-      console.log(data?.data?.cart_full_sheets)
+      const { data: updata } = await axios.request(options)
+      console.log(updata)
       let config = {
         method: 'patch',
         maxBodyLength: Infinity,
