@@ -2,7 +2,7 @@ import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 
 export default function Producttable({ item, setOpened, opened, setPupitem }: any) {
-  console.log(item)
+  // console.log(item)
   const [thickness, setThickness] = useState([])
 
   return (

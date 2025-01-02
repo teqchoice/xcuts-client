@@ -57,6 +57,7 @@ export default function Pupapt({ data }: any) {
       axios
         .request(config)
         .then(response => {
+          console.log(response.data)
           setLoader(false)
           toast.success('seved in card successfully')
           window.location.replace('/shop-online')

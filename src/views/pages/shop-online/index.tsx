@@ -4,6 +4,8 @@ import PageIntroduction from '../components/pageIntroduction'
 import { BackgroundImage } from '@mantine/core'
 import CNCCutting from './CncCutting'
 import CutEdge from './CutEdge'
+import axios from 'axios'
+import { token } from '@/extensions/redux/api/auth'
 
 export default function index({ Data }: any) {
   const [price, setPrice] = useState({
@@ -12,9 +14,27 @@ export default function index({ Data }: any) {
     Sliding_doors: 0,
     Furniture_fittings: 0
   })
+  const [user, setUser] = useState({})
   const [active, setActive] = useState(1)
   useEffect(() => {
-    // console.log(active)
+    let config = {
+      method: 'get',
+      maxBodyLength: Infinity,
+      url: 'https://shop.xcuts.co.uk/users/me?fields=id',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${token}`
+      }
+    }
+
+    axios
+      .request(config)
+      .then(response => {
+        setUser(response?.data?.data.id)
+      })
+      .catch(error => {
+        console.log(error)
+      })
   }, [active])
 
   const rel = 'data-te-nav-active'
@@ -47,7 +67,7 @@ export default function index({ Data }: any) {
                 >
                   <span className='inline-block md:px-8 px-5'>Cut, edge & spray</span>
                   <span className='inline-block group-hover:bg-primary bg-[#7c7c7c] md:px-6 px-4 py-5 skew-x-[45deg] data-active'>
-                    <span className='-skew-x-[45deg] text-white inline-block'>£{price.Cut_edge_spray}.00</span>
+                    <span className='-skew-x-[45deg] text-white inline-block'>£{price.Cut_edge_spray}</span>
                   </span>
                 </div>
               </a>
@@ -139,7 +159,7 @@ export default function index({ Data }: any) {
                 aria-labelledby='tabs-contact-tab'
                 data-te-tab-active={active === 1 ? 'true' : undefined}
               >
-                <CutEdge price={price} setPrice={setPrice} />
+                <CutEdge price={price} setPrice={setPrice} setUser={setUser} />
               </div>
               <div
                 className='hidden opacity-100 transition-opacity duration-150 ease-linear data-[te-tab-active]:block'
@@ -176,6 +196,30 @@ export default function index({ Data }: any) {
               </div>
             </div>
           </div>
+
+          <button
+            className='p-3 outline-primary mt-2 w-full text-xs text-white bg-primary'
+            onClick={async () => {
+              const options = {
+                method: 'POST',
+                url: `${process.env.NEXT_PUBLIC_API_URL}/payment/stripe`,
+                headers: { 'content-type': 'application/json' },
+                data: { userid: user }
+              }
+
+              try {
+                const { data } = await axios.request(options)
+                console.log(data)
+
+                // Redirect to payment page with the payment details
+                window.location.href = data.payment
+              } catch (error) {
+                console.error(error)
+              }
+            }}
+          >
+            Add Order and Payment
+          </button>
         </div>
       </section>
     </>

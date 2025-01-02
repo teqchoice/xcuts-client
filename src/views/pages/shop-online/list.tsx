@@ -7,24 +7,24 @@ import { Close, Pencil } from '@icon-park/react'
 import { useRouter } from 'next/router'
 import { token } from '@/extensions/redux/api/auth'
 
-export function TableSelection({ price, setPrice }: any) {
+export function TableSelection({ price, setPrice, setUser }: any) {
   // console.log(price)
   const router = useRouter()
   const [change, setChange] = useState<number>(1)
   const [selection, setSelection] = useState(['1'])
   const [Rdata, setRDtata] = useState([])
-  const [user, setUser] = useState('')
+  // const [user, setUser] = useState('')
 
-  // useEffect(() => {
-  //   const allprice = Rdata?.map((item: any) => item?.full_sheet_price)
-  //   // setPrice()
-  //   function sumArray(arr) {
-  //     return arr.reduce((a, b) => a + b, 0)
-  //   }
-  // console.log(allprice)
-  // console.log(sumArray(allprice))
-  //   setPrice({ ...price, Cut_edge_spray: sumArray(allprice) })
-  // }, [change, Rdata])
+  useEffect(() => {
+    const allprice = Rdata?.map((item: any) => item?.thickness_id?.price_full_sheet)
+    // setPrice()
+    function sumArray(arr: number[]): number {
+      return arr.reduce((a, b) => a + b, 0)
+    }
+    console.log(allprice)
+    console.log(sumArray(allprice))
+    setPrice({ ...price, Cut_edge_spray: sumArray(allprice) })
+  }, [change, Rdata])
 
   useEffect(() => {
     let config = {
@@ -40,7 +40,7 @@ export function TableSelection({ price, setPrice }: any) {
     axios
       .request(config)
       .then(response => {
-        console.log(response?.data?.data.cart_full_sheets[4].thickness_id)
+        console.log(response?.data?.data)
         setRDtata(response?.data?.data.cart_full_sheets)
       })
       .catch(error => {
@@ -94,6 +94,7 @@ export function TableSelection({ price, setPrice }: any) {
         <Table.Td>{item?.thickness_id?.weight}</Table.Td>
         <Table.Td>{item?.thickness_id?.thickness_ref?.product_name}</Table.Td>
         <Table.Td>1</Table.Td>
+        <Table.Td>£{item?.thickness_id?.price_full_sheet}.00</Table.Td>
         <Table.Td className='flex justify-center gap-5 py-3'>
           {/* <div
             className='cursor-pointer border border-gray-300 hover:bg-gray-300  fill-gray-300 hover:fill-white p-1'
@@ -119,11 +120,12 @@ export function TableSelection({ price, setPrice }: any) {
         <Table.Tr>
           <Table.Th>#</Table.Th>
           <Table.Th>Material decor code / name</Table.Th>
-          <Table.Th>Thick [mm]</Table.Th>
+          {/* <Table.Th>Thick [mm]</Table.Th> */}
           <Table.Th>Length [mm]</Table.Th>
           <Table.Th>Width [mm]</Table.Th>
           <Table.Th>Brand</Table.Th>
           <Table.Th>Qty </Table.Th>
+          <Table.Th>Price</Table.Th>
           <Table.Th>Actions</Table.Th>
         </Table.Tr>
       </Table.Thead>
