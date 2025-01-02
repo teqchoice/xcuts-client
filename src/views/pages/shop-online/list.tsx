@@ -15,25 +15,22 @@ export function TableSelection({ price, setPrice }: any) {
   const [Rdata, setRDtata] = useState([])
   const [user, setUser] = useState('')
 
-  useEffect(() => {
-    setUser(localStorage.getItem('id'))
-  }, [])
-  useEffect(() => {
-    const allprice = Rdata?.map((item: any) => item?.full_sheet_price)
-    // setPrice()
-    function sumArray(arr) {
-      return arr.reduce((a, b) => a + b, 0)
-    }
-    // console.log(allprice)
-    // console.log(sumArray(allprice))
-    setPrice({ ...price, Cut_edge_spray: sumArray(allprice) })
-  }, [change, Rdata])
+  // useEffect(() => {
+  //   const allprice = Rdata?.map((item: any) => item?.full_sheet_price)
+  //   // setPrice()
+  //   function sumArray(arr) {
+  //     return arr.reduce((a, b) => a + b, 0)
+  //   }
+  // console.log(allprice)
+  // console.log(sumArray(allprice))
+  //   setPrice({ ...price, Cut_edge_spray: sumArray(allprice) })
+  // }, [change, Rdata])
 
   useEffect(() => {
     let config = {
       method: 'get',
       maxBodyLength: Infinity,
-      url: 'https://shopi.xcuts.co.uk/api/collections/users/records/31656cl85ta37vb?expand=cart_full_sheets.decor_ref.brand_ref&fields=expand',
+      url: 'https://shop.xcuts.co.uk/users/me?fields=cart_full_sheets.thickness_id.*.*',
       headers: {
         'Content-Type': 'application/json',
         Authorization: `Bearer ${token}`
@@ -43,8 +40,8 @@ export function TableSelection({ price, setPrice }: any) {
     axios
       .request(config)
       .then(response => {
-        // console.log(response.data)
-        setRDtata(response.data?.expand?.cart_full_sheets)
+        console.log(response?.data?.data.cart_full_sheets[4].thickness_id)
+        setRDtata(response?.data?.data.cart_full_sheets)
       })
       .catch(error => {
         console.log(error)
@@ -54,46 +51,48 @@ export function TableSelection({ price, setPrice }: any) {
   function handleRemove(id: any) {
     console.log(id)
 
-    let data = JSON.stringify({
+    let data = {
       'cart_full_sheets-': [id]
-    })
-
-    let config = {
-      method: 'patch',
-      maxBodyLength: Infinity,
-      url: `https://shopi.xcuts.co.uk/api/collections/users/records/${user}`,
-      headers: {
-        'Content-Type': 'application/json',
-        Authorization: `Bearer ${token}`
-      },
-      data: data
     }
 
-    axios
-      .request(config)
-      .then(response => {
-        // console.log(response.data)
-        setChange(change + 1)
-        // window.location.replace('/shop-online')
-      })
-      .catch(error => {
-        console.log(error)
-      })
+    // let config = {
+    //   method: 'patch',
+    //   maxBodyLength: Infinity,
+    //   url: `https://shop.xcuts.co.uk/users/me`,
+    //   headers: {
+    //     'Content-Type': 'application/json',
+    //     Authorization: `Bearer ${token}`
+    //   },
+    //   data: data
+    // }
+
+    // axios
+    //   .request(config)
+    //   .then(response => {
+    //     // console.log(response.data)
+    //     setChange(change + 1)
+    //     // window.location.replace('/shop-online')
+    //   })
+    //   .catch(error => {
+    //     console.log(error)
+    //   })
   }
+
+  // console.log(Rdata)
 
   const rows = Rdata?.map((item: any, i) => {
     // console.log(item)
     const selected = selection.includes(item.id)
     return (
-      <Table.Tr key={item.id} className={cx({ [classes.rowSelected]: selected })}>
+      <Table.Tr key={item?.thickness_id.id} className={cx({ [classes.rowSelected]: selected })}>
         <Table.Td>{i + 1}</Table.Td>
         <Table.Td>
-          {item?.expand?.decor_ref?.code} {item?.thickness}
+          {item?.thickness_id?.thickness_ref?.product_code} - {item?.thickness_id?.thickness}
         </Table.Td>
-        <Table.Td>{item?.thickness}</Table.Td>
-        <Table.Td>{item?.length}</Table.Td>
-        <Table.Td>{item?.weight}</Table.Td>
-        <Table.Td>{item?.expand?.decor_ref?.expand?.brand_ref[0]?.name}</Table.Td>
+        {/* <Table.Td>{item?.thickness_id?.thickness}</Table.Td> */}
+        <Table.Td>{item?.thickness_id?.length}</Table.Td>
+        <Table.Td>{item?.thickness_id?.weight}</Table.Td>
+        <Table.Td>{item?.thickness_id?.thickness_ref?.product_name}</Table.Td>
         <Table.Td>1</Table.Td>
         <Table.Td className='flex justify-center gap-5 py-3'>
           {/* <div
@@ -104,7 +103,7 @@ export function TableSelection({ price, setPrice }: any) {
           </div> */}
           <div
             className='cursor-pointer border border-red-500 hover:bg-red-500 w-fit fill-red-500 hover:fill-white p-1'
-            onClick={() => handleRemove(item?.id)}
+            onClick={() => handleRemove(item?.thickness_id?.id)}
           >
             <Close theme='outline' strokeWidth={2} size='30' fill='#f5b8b8' />
           </div>
