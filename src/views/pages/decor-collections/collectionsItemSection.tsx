@@ -76,10 +76,9 @@ export default function CollectionsItemSection({ Data, Brand, BrandData, DecorsD
   }
   return (
     <div>
-      <div className='flex md:justify-end flex-col w-40 text-center ml-auto md:ml-auto md:mr-0 mr-auto'>
-        <p className='mb-2'>Display options</p>
+      <div className='flex md:justify-end flex-col w-40 text-center ml-auto md:ml-auto md:mr-0 mr-auto mt-16'>
+        {/* <p className='mb-2'>Display options</p>
         <div className='flex justify-center'>
-          {/*Tabs navigation*/}
           <ul
             className='flex gap-3 list-none flex-row flex-wrap border-b-0 pl-0'
             role='tablist'
@@ -106,7 +105,7 @@ export default function CollectionsItemSection({ Data, Brand, BrandData, DecorsD
               </div>
             </li>
           </ul>
-        </div>
+        </div> */}
       </div>
 
       {show == 1 ? (

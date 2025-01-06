@@ -128,8 +128,11 @@ export default function FilterSection(props: any) {
             <option className='text-gray-500' value='kronospan'>
               Kronospan
             </option>
-            <option className='text-gray-500' value='xylocleaf'>
-              XyloCleaf
+            <option className='text-gray-500' value='cleaf'>
+              Cleaf
+            </option>
+            <option className='text-gray-500' value='XYLO Surface'>
+              XYLO Surface
             </option>
             <option className='text-gray-500' value='saviola'>
               Saviola
@@ -394,7 +397,7 @@ export default function FilterSection(props: any) {
             className='lock w-full border-0 py-2 px-2.5 text-primary shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary text-sm leading-6 focus:outline-none bg-white '
           >
             <option className='text-gray-500' value=''>
-            {/* <option className='text-gray-500' value='U+2800'> */}
+              {/* <option className='text-gray-500' value='U+2800'> */}
               Design
             </option>
             <option className='text-gray-500' value='woodgrain'>

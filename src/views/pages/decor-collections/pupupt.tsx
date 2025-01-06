@@ -212,7 +212,12 @@ export default function Pupapt({ data }: any) {
                   £{show ? thickness[0]?.price_full_sheet : thickness[1]?.price_full_sheet}
                 </span>
               </h3>
-              <p className='text-sm'>With VAT: % {show ? thickness[0]?.tax_percent : thickness[1]?.tax_percent}</p>
+              <p className='text-sm'>
+                With VAT:{' '}
+                {show
+                  ? (thickness[0]?.price_full_sheet * (1 + thickness[0]?.tax_percent / 100)).toFixed(2)
+                  : (thickness[1]?.price_full_sheet * (1 + thickness[1]?.tax_percent / 100)).toFixed(2)}
+              </p>
             </div>
             <div className=' w-full'>
               <button className='p-3 outline-black mt-2 w-full text-xs text-white bg-black'>Add to cutting list</button>
@@ -222,7 +227,12 @@ export default function Pupapt({ data }: any) {
                   £{show ? thickness[0]?.price_cutting : thickness[1]?.price_cutting}
                 </span>
               </h3>
-              <p className='text-sm'>With VAT: % {show ? thickness[0]?.tax_percent : thickness[1]?.tax_percent}</p>
+              <p className='text-sm'>
+                With VAT:{' '}
+                {show
+                  ? (thickness[0]?.price_cutting * (1 + (thickness[0]?.tax_percent ?? 20) / 100)).toFixed(2)
+                  : (thickness[1]?.price_cutting * (1 + (thickness[1]?.tax_percent ?? 20) / 100)).toFixed(2)}
+              </p>
             </div>
           </div>
           <div className='mt-2'>
@@ -249,13 +259,19 @@ export default function Pupapt({ data }: any) {
               <div className='flex justify-between mt-2'>
                 <p className='text-xs text-black'>Full sheet price</p>
                 <span className='text-primary'>
-                  £{show ? thickness[0]?.price_full_sheet : thickness[1]?.price_full_sheet}
+                  £
+                  {show
+                    ? (thickness[0]?.price_full_sheet * (1 + thickness[0]?.tax_percent / 100)).toFixed(2)
+                    : (thickness[1]?.price_full_sheet * (1 + thickness[1]?.tax_percent / 100)).toFixed(2)}
                 </span>
               </div>
               <div className='flex justify-between'>
                 <p className='text-xs text-black'>Sheet price with cutting (up to 20 pieces per sheet)</p>
                 <span className='text-primary'>
-                  £{show ? thickness[0]?.price_cutting : thickness[1]?.price_cutting}
+                  £
+                  {show
+                    ? (thickness[0]?.price_cutting * (1 + (thickness[0]?.tax_percent ?? 20) / 100)).toFixed(2)
+                    : (thickness[1]?.price_cutting * (1 + (thickness[1]?.tax_percent ?? 20) / 100)).toFixed(2)}
                 </span>
               </div>
             </div>

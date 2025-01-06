@@ -86,12 +86,11 @@ export function TableSelection({ price, setPrice, setUser }: any) {
     return (
       <Table.Tr key={item?.thickness_id.id} className={cx({ [classes.rowSelected]: selected })}>
         <Table.Td>{i + 1}</Table.Td>
-        <Table.Td>
-          {item?.thickness_id?.thickness_ref?.product_code} - {item?.thickness_id?.thickness}
-        </Table.Td>
-        {/* <Table.Td>{item?.thickness_id?.thickness}</Table.Td> */}
-        <Table.Td>{item?.thickness_id?.length}</Table.Td>
-        <Table.Td>{item?.thickness_id?.weight}</Table.Td>
+        <Table.Td>{item?.thickness_id?.thickness_ref?.product_code}</Table.Td>
+        <Table.Td>{item?.thickness_id?.thickness_ref?.product_name}</Table.Td>
+        <Table.Td>{item?.thickness_id?.thickness}</Table.Td>
+        <Table.Td>{item?.thickness_id?.thickness_ref?.length}</Table.Td>
+        <Table.Td>{item?.thickness_id?.thickness_ref?.weight}</Table.Td>
         <Table.Td>{item?.thickness_id?.thickness_ref?.product_name}</Table.Td>
         <Table.Td>1</Table.Td>
         <Table.Td>£{item?.thickness_id?.price_full_sheet}.00</Table.Td>
@@ -119,8 +118,9 @@ export function TableSelection({ price, setPrice, setUser }: any) {
       <Table.Thead>
         <Table.Tr>
           <Table.Th>#</Table.Th>
-          <Table.Th>Material decor code / name</Table.Th>
-          {/* <Table.Th>Thick [mm]</Table.Th> */}
+          <Table.Th>decor code</Table.Th>
+          <Table.Th>decor name</Table.Th>
+          <Table.Th>Thick [mm]</Table.Th>
           <Table.Th>Length [mm]</Table.Th>
           <Table.Th>Width [mm]</Table.Th>
           <Table.Th>Brand</Table.Th>
