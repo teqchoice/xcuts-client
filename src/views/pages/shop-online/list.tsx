@@ -16,7 +16,9 @@ export function TableSelection({ price, setPrice, setUser }: any) {
   // const [user, setUser] = useState('')
 
   useEffect(() => {
-    const allprice = Rdata?.map((item: any) => item?.thickness_id?.price_full_sheet)
+    const allprice = Rdata?.map((item: any) =>
+      parseFloat((item?.thickness_id?.price_full_sheet * (1 + item?.thickness_id?.tax_percent / 100)).toFixed(2))
+    )
     // setPrice()
     function sumArray(arr: number[]): number {
       return arr.reduce((a, b) => a + b, 0)
@@ -93,7 +95,9 @@ export function TableSelection({ price, setPrice, setUser }: any) {
         <Table.Td>{item?.thickness_id?.thickness_ref?.weight}</Table.Td>
         <Table.Td>{item?.thickness_id?.thickness_ref?.product_name}</Table.Td>
         <Table.Td>1</Table.Td>
-        <Table.Td>£{item?.thickness_id?.price_full_sheet}.00</Table.Td>
+        <Table.Td>
+          £{(item?.thickness_id?.price_full_sheet * (1 + item?.thickness_id?.tax_percent / 100)).toFixed(2)}
+        </Table.Td>
         <Table.Td className='flex justify-center gap-5 py-3'>
           {/* <div
             className='cursor-pointer border border-gray-300 hover:bg-gray-300  fill-gray-300 hover:fill-white p-1'
