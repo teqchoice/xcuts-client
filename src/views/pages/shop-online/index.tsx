@@ -212,7 +212,7 @@ export default function index({ Data }: any) {
                 console.log(data)
 
                 // Redirect to payment page with the payment details
-                // window.location.href = data.payment
+                window.location.href = data.payment
               } catch (error) {
                 console.error(error)
               }
