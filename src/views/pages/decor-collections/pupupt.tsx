@@ -33,10 +33,12 @@ export default function Pupapt({ data }: any) {
         'content-type': 'application/json'
       }
     }
-
+    console.log("1")
     try {
       const { data: updata } = await axios.request(options)
+      console.log("2")
       console.log(updata)
+      
       let config = {
         method: 'patch',
         maxBodyLength: Infinity,
@@ -47,7 +49,7 @@ export default function Pupapt({ data }: any) {
         },
         data: {
           cart_full_sheets: [
-            ...data?.data?.cart_full_sheets,
+            ...updata?.data?.cart_full_sheets,
             {
               thickness_id: thickness[0]?.id
             }
@@ -57,6 +59,7 @@ export default function Pupapt({ data }: any) {
       axios
         .request(config)
         .then(response => {
+          console.log("3")
           console.log(response.data)
           setLoader(false)
           toast.success('seved in card successfully')
@@ -79,7 +82,7 @@ export default function Pupapt({ data }: any) {
         <i className='fa-solid fa-xmark' />
       </a>
       <div className='w-full px-6 py-2 bg-gray-100'>
-        <p className='font-semibold text-sm'>ProductCode : {item?.code}</p>
+        <p className='font-semibold text-sm'>ProductCode : {item?.product_code}</p>
         <div className='grid grid-cols-2'>
           <div className='col-span-1 grid grid-cols-12 gap-1'>
             <div className='col-span-9 relative overflow-hidden'>
