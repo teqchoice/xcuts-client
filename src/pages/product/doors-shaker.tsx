@@ -1,9 +1,6 @@
 import React from 'react'
 import SlidingDoors from '@/views/pages/products/doors-shaker'
 import Layout from '@/views/layout'
-
-// !! Fake DB
-import FakeDb from '@/DB/content.json'
 import axios from 'axios'
 
 export default function PSlidingDoors({ data, header, footer }: any) {

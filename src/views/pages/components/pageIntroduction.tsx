@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import React from 'react'
 
 type TPageIntroduction = {
@@ -7,11 +8,11 @@ type TPageIntroduction = {
 
 const defaultPageIntroduction: Partial<TPageIntroduction> = {
   title: 'Page Name',
-  baner: 'images/sliding-doors-banner.webp'
+  baner: '/images/sliding-doors-banner.webp'
 }
 
 export default function PageIntroduction(data, props: any) {
-  const Data = { title: 'Wardrobe Sliding Doors', baner: '../images/sliding-doors-banner.webp' }
+  const Data = { title: 'Wardrobe Sliding Doors', baner: '/images/sliding-doors-banner.webp' }
 
   return (
     <>
@@ -26,7 +27,15 @@ export default function PageIntroduction(data, props: any) {
             : 'relative text-center bg-[#eaeaea] h-[200px] flex items-center justify-center'
         }
       >
-        {Data?.baner && <img src={Data?.baner} alt='' className='max-h-[460px] w-full md:h-auto object-cover' />}
+        {Data?.baner && (
+          <Image
+            src={Data?.baner}
+            alt=''
+            className='max-h-[460px] w-full md:h-auto h-[200px] object-cover'
+            width={2000}
+            height={460}
+          />
+        )}
 
         <div className='absolute top-1/2 w-full -translate-y-1/2 text-center grid'>
           {Data?.baner ?? null ? (
@@ -34,7 +43,7 @@ export default function PageIntroduction(data, props: any) {
               <h4 className='font-semibold text-white text-2xl md:text-4xl lg:text-6xl uppercase'>
                 {data?.data?.title}
               </h4>
-              <span className='font-semibold text-white text-lg md:text-xl lg:text-2xl uppercase'>
+              {/* <span className='font-semibold text-white text-lg md:text-xl lg:text-2xl uppercase'>
                 {Data?.subtitle}
               </span>
               {Data?.butt && (
@@ -44,17 +53,17 @@ export default function PageIntroduction(data, props: any) {
                 >
                   {Data?.butt}
                 </a>
-              )}
+              )} */}
             </>
           ) : (
             <h4 className='font-semibold text-2xl md:text-4xl lg:text-6xl uppercase'>
               {Data?.title}
               <br />
-              {Data?.subtitle && Data?.subtitle}
+              {/* {Data?.subtitle && Data?.subtitle} */}
             </h4>
           )}
 
-          {Data?.order && (
+          {/* {Data?.order && (
             <>
               <a href='#' className='text-xl text-white underline hover:no-underline mt-3'>
                 Order name
@@ -63,7 +72,7 @@ export default function PageIntroduction(data, props: any) {
               <p className='text-xl text-center text-white leading-9 mt-1'>Order status: Saved</p>
               <p className='text-xl text-center text-white leading-9 mt-1'>Created on: 22 Sep 2023</p>
             </>
-          )}
+          )} */}
         </div>
       </section>
     </>

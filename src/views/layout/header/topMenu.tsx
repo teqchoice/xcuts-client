@@ -11,8 +11,8 @@ export default function TopMenu({ data }: any) {
   return (
     <div className='relative bg-neutral-300'>
       <div className='md:px-4 sm:container flex justify-center sm:justify-end p-3 relative divide-x-2'>
-        {data?.top_menu_items.map((e: any) => (
-          <div className='group relative ' key={data?.id}>
+        {data?.top_menu_items.map((e: any, index: number) => (
+          <div className='group relative ' key={index}>
             <Link href={e?.link} className='relative z-20 text-sm sm:text-base/3 text-white font-medium px-2 py-1'>
               {e?.name}
             </Link>
