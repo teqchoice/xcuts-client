@@ -17,12 +17,11 @@ export default function DifferentTechnologiesSection(data, props: any) {
                 {/* Legrabox */}
                 {data?.data?.paragraphs_items[4]?.title}
               </h4>
-              <p
+              <div
                 className='text-xl text-black mb-3'
                 dangerouslySetInnerHTML={{ __html: data?.data?.paragraphs_items[4]?.content }}
-              >
-                {/* Slim, Sleek and Simple. This metal drawer box arrangement is called Legrabox by Blum. The product line makes an impression with its clarity, precise curves, and parallel accentuated lines as a focal point of the design. */}
-              </p>
+              />
+
               <a href={data?.data?.paragraphs_items[4]?.btn_url} className=' text-black font-extrabold'>
                 {/* More Details >  */}
                 {data?.data?.paragraphs_items[4]?.btn_name}
@@ -42,7 +41,7 @@ export default function DifferentTechnologiesSection(data, props: any) {
                 construct and install.
               </p>
 
-              <div className='flex gap-5 my-5 lg:my-10'>
+              <div className='flex md:flex-row flex-col gap-5 my-5 lg:my-10'>
                 <div className='flex flex-col items-center gap-3'>
                   <img className=' w-full object-cover object-center' src='../images/alldecor.jpeg' alt='' />
                   <h4 className='font-bold text-lg'>Streamlined Style</h4>

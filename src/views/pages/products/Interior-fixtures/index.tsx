@@ -19,8 +19,11 @@ export default function index({ data }: any) {
     <>
       <PageIntroduction data={data?.data} />
       <IntroductionSection data={data?.data} />
+
       {/* <VideoSection Data={Data?.delivery} /> */}
+
       <DifferentTechnologiesSection data={data?.data} />
+
       {/* <PaintableSection Data={Data?.delivery} /> */}
       {/* <GrainAlignment Data={Data?.delivery} /> */}
       {/* <CuttingMCF Data={Data?.delivery} /> */}
