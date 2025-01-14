@@ -1,7 +1,6 @@
 import React from 'react'
 
 export default function IntroductionSection(data, props: any) {
-  // console.log(Data)
   return (
     <>
       <section className='section-one-stop py-10 md:py-20'>
@@ -19,25 +18,10 @@ export default function IntroductionSection(data, props: any) {
                 {data?.data?.intro_title}
               </h1>
             </div>
-            <div className='flex flex-col gap-y-3 text-black-1d mt-10'>
-              {/* <p>Why not order everything from us rather than sourcing components from several vendors?</p> */}
-              <p dangerouslySetInnerHTML={{ __html: data?.data?.intro_content }}>
-                {/* With the intention of serving both DIY enthusiasts and professionals such as carpenters, cabinetmakers,
-                builders, and similar tradespeople, Xcuts was founded. We now offer Blum furniture fittings, a brand
-                renowned for its high standards of quality, dependability, and product innovation. Each product includes
-                links to the product page on the manufacturer's website as well as technical and installation drawings.
-                Furniture fittings may be ordered over the phone or online. */}
-              </p>
-              {/* <p>With time, we'll broaden our customers selection by incorporating additional fittings and brands.</p> */}
-            </div>
-            {/* <div className='flex justify-center gap-4 mt-10'>
-              <a
-                href='#'
-                className='bg-black px-5 py-4 md:px-5 lg:px-6 lg:px-9 md:py-4 font-medium text-xl text-white hover:bg-primary ease-in duration-200 flex items-center justify-between'
-              >
-                See our Décor Selections <i className='ri-arrow-right-s-line text-xl'></i>
-              </a>
-            </div> */}
+            <div
+              className='flex flex-col gap-y-3 text-black-1d mt-10'
+              dangerouslySetInnerHTML={{ __html: data?.data?.intro_content }}
+            />
           </div>
         </div>
       </section>

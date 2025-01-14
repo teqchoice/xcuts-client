@@ -1,15 +1,13 @@
 import React from 'react'
-import SlidingDoors from '@/views/pages/products/Interior-fixtures'
+import InteriorFixtures from '@/views/pages/products/Interior-fixtures'
 import Layout from '@/views/layout'
 
-// !! Fake DB
-import FakeDb from '@/DB/content.json'
 import axios from 'axios'
 
-export default function PSlidingDoors({ data, header, footer }: any) {
+export default function PInteriorFixtures({ data, header, footer }: any) {
   return (
     <Layout header={header} footer={footer}>
-      <SlidingDoors data={data} />
+      <InteriorFixtures data={data} />
     </Layout>
   )
 }

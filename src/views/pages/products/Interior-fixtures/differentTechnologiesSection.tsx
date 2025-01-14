@@ -5,7 +5,7 @@ export default function DifferentTechnologiesSection(data, props: any) {
   return (
     <>
       <section>
-        <div className='text-center text-black mb-11 mt-20'>
+        <div className='text-center text-black mb-11 md:mt-20 mt-5'>
           {/* <p className='md:text-3xl text-xl'>The Key Features:</p> */}
           <h4 className='lg:text-5xl md:text-3xl text-3xl font-semibold'>
             {/* System Runners: */}
@@ -25,13 +25,11 @@ export default function DifferentTechnologiesSection(data, props: any) {
                 {/* Movento */}
                 {data?.data?.paragraphs_items[0]?.sub_title}
               </h4>
-              <p
+              <div
                 className='text-xl text-black mb-3'
                 dangerouslySetInnerHTML={{ __html: data?.data?.paragraphs_items[0]?.content }}
-              >
-                {/* Blum has made improvements to its runner system to make sure that the runner's performance is even more
-                exact and offers synchronised, fluid running motion in addition to additional adjustment possibilities. */}
-              </p>
+              />
+
               <a href={data?.data?.paragraphs_items[0]?.btn_url} className=' text-black font-extrabold'>
                 {data?.data?.paragraphs_items[0]?.btn_name}{' '}
               </a>
@@ -49,7 +47,7 @@ export default function DifferentTechnologiesSection(data, props: any) {
               />
             </div>
           </div>
-          <div className='basis-[47.88%] flex items-center'>
+          <div className='basis-[47.88%] flex md:flex-row flex-col items-center'>
             <div className='flex flex-col md:justify-center md:ml-auto pb-16 py-8 px-4 md:max-w-[410px] lg:max-w-[567px] lg:pr-16'>
               <p className='text-xl md:text-3xl text-black'>
                 {/* Light glide */}
@@ -59,12 +57,10 @@ export default function DifferentTechnologiesSection(data, props: any) {
                 {/* coordinated */}
                 {data?.data?.paragraphs_items[1]?.title}
               </h2>
-              <p
+              <div
                 className='text-lg mb-3'
                 dangerouslySetInnerHTML={{ __html: data?.data?.paragraphs_items[1]?.content }}
-              >
-                {/* Low-friction nylon rolls and the coordinated movement of the roller carriage and drawer profile produce an incredibly smooth operating motion. */}
-              </p>
+              />
               <a href={data?.data?.paragraphs_items[1]?.btn_url} className=' text-black font-extrabold'>
                 {/* Watch this clip >  */}
                 {data?.data?.paragraphs_items[1]?.btn_name}
@@ -94,10 +90,7 @@ export default function DifferentTechnologiesSection(data, props: any) {
                 {/* Utilising Lasers */}
                 {data?.data?.paragraphs_items[2]?.title}
               </h2>
-              <p className='text-lg' dangerouslySetInnerHTML={{ __html: data?.data?.paragraphs_items[2]?.content }}>
-                {/* Drawer front height, side, depth, and tilt adjustments are rapid and tool-free thanks to the innovative
-                Movento runner system design. */}
-              </p>
+              <div className='text-lg' dangerouslySetInnerHTML={{ __html: data?.data?.paragraphs_items[2]?.content }} />
             </div>
           </div>
         </div>
@@ -121,12 +114,10 @@ export default function DifferentTechnologiesSection(data, props: any) {
                 {/* a dual system */}
                 {data?.data?.paragraphs_items[3]?.title}
               </h2>
-              <p
+              <div
                 className='text-lg mb-3'
                 dangerouslySetInnerHTML={{ __html: data?.data?.paragraphs_items[3]?.content }}
-              >
-                {/* For the combination of the push-to-open mechanical opening mechanism with the soft-close. */}
-              </p>
+              />
             </div>
           </div>
         </div>
