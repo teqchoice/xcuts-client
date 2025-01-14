@@ -5,8 +5,7 @@ import FirstPortfolio from './firstPortfolioSection'
 import SecoundPortfolio from './secoundPortfolioSection'
 import ThirdPortfolio from './thirdPortfolioSection'
 
-export default function index({ Data, data }: any) {
-  // console.log(data)
+export default function index({ data }: any) {
   return (
     <>
       <PageIntroduction data={data?.data} />

@@ -16,19 +16,8 @@ export default function IntroductionSection({ data }: any) {
           </div>
           <div
             className='flex flex-col gap-y-3 text-black-1d mt-10'
-            // dangerouslySetInnerHTML={{ __html: data?.intro_content }}
-          >
-            <p dangerouslySetInnerHTML={{ __html: data?.intro_content }}>
-              {/* We provide various custom-sized sliding wardrobe doors featuring several distinct profiles in different
-              finishes and options for XX different frame designs. Our doors are designed for easy installation and
-              adjustment and are supported by durable roller wheels engineered to last up to 30 years or endure 110,000
-              cycles of opening and closing. */}
-              {/* {data?.intro_content} */}
-            </p>
-            <p>
-              {/* Download our brochure, measuring guide, and installation manual below for specific details and images. */}
-            </p>
-          </div>
+            dangerouslySetInnerHTML={{ __html: data?.intro_content }}
+          />
           <div className='flex justify-center gap-4 mt-10'>
             <a
               href={data?.intro_btn_url}
