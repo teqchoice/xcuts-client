@@ -1,8 +1,6 @@
 import Layout from '@/views/layout'
 import Showroom from '@/views/pages/showroom'
 
-// !! Fake DB
-import FakeDb from '@/DB/content.json'
 import axios from 'axios'
 
 export default function PShowroom({ data, header, footer }: any) {
