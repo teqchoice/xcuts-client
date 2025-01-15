@@ -46,7 +46,7 @@ export default function VideoSection(props: any) {
   // console.log(Data)
   return (
     <>
-      <section className='pt-20 relative before:bg-primary before:lg:h-[683px] before:md:h-[583px] before:sm:h-[383px] before:h-[303px] before:block before:w-full before:rounded-3xl before:absolute before:top-0'>
+      <section className='sm:pt-20 pt-10 relative before:bg-primary before:lg:h-[683px] before:md:h-[583px] before:sm:h-[420px] before:h-[500px] before:block before:w-full before:lg:rounded-3xl before:rounded-xl before:absolute before:top-0'>
         <div className='px-4 sm:container'>
           <div className='text-center text-white mb-11 relative'>
             <p className='lg:text-3xl text-2l'>This is how we do it.</p>

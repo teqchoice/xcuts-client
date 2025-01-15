@@ -49,7 +49,7 @@ export default function SolidWoodSection(props: any) {
       <section>
         <div className='px-4 sm:container'>
           <div className=' flex justify-center items-center flex-col'>
-            <div className='text-center  max-w-[80%] text-black mb-5 mt-20'>
+            <div className='text-center md:max-w-[80%] max-w-full text-black mb-5 md:mt-20 mt-10'>
               <p className='text-3xl'>The Key Points</p>
               <h4 className='md:text-5xl text-4xl font-semibold mb-7'>Cut Shapes in Wood</h4>
               <p className='text-base text-black'>
