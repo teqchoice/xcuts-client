@@ -48,8 +48,8 @@ export default function CuttingMCF(props: any) {
     <>
       <section>
         <div className='px-4 sm:container'>
-          <div className=' flex justify-center items-center flex-col'>
-            <div className='text-center flex flex-col gap-3 max-w-[80%] text-black mb-5'>
+          <div className='flex justify-center items-center flex-col'>
+            <div className='text-center flex flex-col gap-3 md:max-w-[80%] max-w-full text-black mb-5'>
               {/* <p className='text-3xl'>Solid wood</p> */}
               <h4 className='md:text-5xl text-4xl font-semibold mb-7'>MFC Board Cutting Service</h4>
               <p className='text-base text-black'>
@@ -70,7 +70,7 @@ export default function CuttingMCF(props: any) {
                 <strong>We provide a large selection of MFC brands; here are a few of the most popular:</strong>
               </p>
 
-              <div className='flex gap-5 my-5 lg:my-10'>
+              <div className='flex md:flex-row flex-col gap-5 my-5 lg:my-10'>
                 <div className='flex flex-col items-center gap-3'>
                   <img className=' w-full object-cover object-center' src='../images/alldecor.jpeg' alt='' />
                   <h4 className='font-bold text-lg'>Saviola</h4>
