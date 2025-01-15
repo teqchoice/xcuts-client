@@ -16,9 +16,13 @@ export default function index({ Data }: any) {
       <PageIntroduction Data={{ title: 'Panels Cut to Size', baner: '../images/banner-1-showroom.jpeg' }} />
       <IntroductionSection Data={Data?.delivery} />
       <VideoSection Data={Data?.delivery} />
+
       {/* <DifferentTechnologiesSection Data={Data?.delivery} /> */}
+
       <ABSEdgebandSection Data={Data?.delivery} />
+
       {/* <PaintableSection Data={Data?.delivery} /> */}
+
       <GrainAlignment Data={Data?.delivery} />
       <CuttingMDF Data={Data?.delivery} />
       <CuttingMCF Data={Data?.delivery} />
