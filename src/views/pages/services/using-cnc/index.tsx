@@ -18,8 +18,10 @@ export default function index({ Data }: any) {
       <PageIntroduction Data={{ title: 'CNC Wood Milling', baner: '../images/banner-1-showroom.jpeg' }} />
       <IntroductionSection Data={Data?.delivery} />
       <VideoSection Data={Data?.delivery} />
+
       {/* <DifferentTechnologiesSection Data={Data?.delivery} /> */}
       {/* <PaintableSection Data={Data?.delivery} /> */}
+
       <GrainAlignment Data={Data?.delivery} />
       <CuttingMCF Data={Data?.delivery} />
       <Grooving Data={Data?.delivery} />

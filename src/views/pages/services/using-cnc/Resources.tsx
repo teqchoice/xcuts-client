@@ -49,7 +49,7 @@ export default function Resources(props: any) {
       <section>
         <div className='px-4 sm:container'>
           <div className=' flex justify-center items-center flex-col mt-16'>
-            <div className='text-center flex flex-col gap-3 max-w-[80%] text-black mb-5'>
+            <div className='text-center flex flex-col gap-3 md:max-w-[80%] max-w-full text-black mb-5'>
               <p className='text-3xl'>With our CNC service, the possibilities are endless!</p>
               <h4 className='md:text-5xl text-4xl font-semibold mb-7'>Our Resources:</h4>
               <p className='text-base text-black'>
@@ -59,7 +59,7 @@ export default function Resources(props: any) {
                 start your CNC project today.
               </p>
 
-              <div className='flex gap-5 my-5 lg:my-10'>
+              <div className='flex md:flex-row flex-col gap-5 my-5 lg:my-10'>
                 <div className='flex flex-col items-center justify-between gap-3'>
                   <div>
                     <img className=' w-full object-cover object-center' src='../images/alldecor.jpeg' alt='' />
