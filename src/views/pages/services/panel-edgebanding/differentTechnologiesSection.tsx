@@ -47,7 +47,7 @@ export default function DifferentTechnologiesSection(props: any) {
   return (
     <>
       <section>
-        <div className='text-center text-black mb-11 mt-20'>
+        <div className='text-center text-black mb-11 md:mt-20 mt-10'>
           <p className='md:text-3xl text-xl'>Two Distinct Technologies- Both with Excellent Edge Banding Outcomes!</p>
           <h4 className='lg:text-5xl md:text-3xl text-3xl font-semibold'>Great edgebanding results.</h4>
         </div>

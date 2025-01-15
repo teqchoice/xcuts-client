@@ -48,7 +48,7 @@ export default function SolidWoodSection(props: any) {
     <>
       <section>
         <div className='px-4 sm:container'>
-          <div className='text-center text-black mb-5 mt-20'>
+          <div className='text-center text-black mb-5 md:mt-20 mt-10'>
             {/* <p className='text-3xl'>Solid wood</p> */}
             <h4 className='md:text-5xl text-4xl font-semibold mb-7'>Solid Wood</h4>
             <p className='text-base text-black'>
