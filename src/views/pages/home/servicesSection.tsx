@@ -70,7 +70,10 @@ export default function ServicesSection({ data }: any) {
                         video.pause()
                       }
                     }}
+                    playsInline
+                    autoPlay
                     muted
+                    preload='auto'
                   ></video>
                 </div>
               </div>
@@ -152,7 +155,10 @@ export default function ServicesSection({ data }: any) {
                       video.pause()
                     }
                   }}
+                  playsInline
+                  autoPlay
                   muted
+                  preload='auto'
                 ></video>
               </div>
             </div>
@@ -229,7 +235,10 @@ export default function ServicesSection({ data }: any) {
                         video.pause()
                       }
                     }}
+                    playsInline
+                    autoPlay
                     muted
+                    preload='auto'
                   ></video>
                 </div>
               </div>
@@ -306,7 +315,10 @@ export default function ServicesSection({ data }: any) {
                       video.pause()
                     }
                   }}
+                  playsInline
+                  autoPlay
                   muted
+                  preload='auto'
                 ></video>
               </div>
             </div>
