@@ -1,5 +1,3 @@
-import Link from 'next/link'
-import { select } from 'radash'
 import React from 'react'
 export default function MineMenu({ data }: any) {
   // console.log(Collections)
@@ -239,17 +237,17 @@ export default function MineMenu({ data }: any) {
   // console.log(Resources)
   // console.log(Collections.slice(1, 7))
   return (
-    <div className='ftr__links grid grid-cols-1 md:grid-cols-3 gap-4 lg:grid-cols-12 gap-y-14 md:gap-y-0 md:gap-x-6'>
+    <div className='ftr__links grid grid-cols-1 md:grid-cols-3 gap-4 lg:grid-cols-12 gap-y-8 md:gap-y-0 md:gap-x-6'>
       <div className='basis-full md:basis-[28%] col-span-4'>
         <div className='w-16 h-[0.35rem] mb-2 bg-primary'></div>
-        <h5 className='text-2xl font-semibold text-white mb-4'>Collections</h5>
+        <h5 className='md:text-2xl text-xl font-semibold text-white md:mb-4 mb-2'>Collections</h5>
         <div className='grid grid-cols-2 items-start '>
           <div className='mt-4 space-y-2 flex flex-col'>
             {data?.Collections_menu?.slice(0, 7)?.map((item: any) => (
               <a
                 key={item.name}
                 href={`/all-decors?Brand=${item.link}`}
-                className='text-white hover:text-primary font-normal text-base transition-all'
+                className='text-white hover:text-primary font-normal md:text-base text-[12px] transition-all'
               >
                 {item.name}
               </a>
@@ -260,7 +258,7 @@ export default function MineMenu({ data }: any) {
               <a
                 key={item.name}
                 href={`/all-decors?Brand=${item.link}`}
-                className='text-white hover:text-primary font-normal text-base transition-all'
+                className='text-white hover:text-primary font-normal md:text-base text-[12px] transition-all'
               >
                 {item.name}
               </a>
@@ -271,7 +269,7 @@ export default function MineMenu({ data }: any) {
               <a
                 key={item.name}
                 href={`/all-decors?Brand=${item.link}`}
-                className='text-white hover:text-primary font-normal text-base transition-all'
+                className='text-white hover:text-primary font-normal md:text-base text-[12px] transition-all'
               >
                 {item.name}
               </a>
@@ -281,14 +279,14 @@ export default function MineMenu({ data }: any) {
       </div>
       <div className='basis-full md:basis-[19%] col-span-3'>
         <div className='w-14 h-[0.35rem] mb-2 bg-primary'></div>
-        <h5 className='text-2xl font-semibold text-white mb-4'>Services</h5>
+        <h5 className='md:text-2xl text-xl font-semibold text-white md:mb-4 mb-2'>Services</h5>
         <div className='flex gap-x-14'>
           <div className='mt-4 space-y-2 flex flex-col'>
             {data?.Services_menu?.map((item: any) => (
               <a
                 key={item.name}
                 href={item.link}
-                className='text-white hover:text-primary font-normal text-base transition-all'
+                className='text-white hover:text-primary font-normal md:text-base text-[12px] transition-all'
               >
                 {item.name}
               </a>
@@ -298,14 +296,14 @@ export default function MineMenu({ data }: any) {
       </div>
       <div className='basis-full md:basis-[19%] col-span-3'>
         <div className='w-14 h-[0.35rem] mb-2 bg-primary'></div>
-        <h5 className='text-2xl font-semibold text-white mb-4'>Products</h5>
+        <h5 className='md:text-2xl text-xl font-semibold text-white md:mb-4 mb-2'>Products</h5>
         <div className='flex gap-x-14'>
           <div className='mt-4 space-y-2 flex flex-col'>
             {data?.Products_menu?.map((item: any) => (
               <a
                 key={item.name}
                 href={item.link}
-                className='text-white hover:text-primary font-normal text-base transition-all'
+                className='text-white hover:text-primary font-normal md:text-base text-[12px] transition-all'
               >
                 {item.name}
               </a>
@@ -315,14 +313,14 @@ export default function MineMenu({ data }: any) {
       </div>
       <div className='basis-full md:basis-[19%] col-span-2'>
         <div className='w-16 h-[0.35rem] mb-2 bg-primary'></div>
-        <h5 className='text-2xl font-semibold text-white mb-4'>Company</h5>
+        <h5 className='md:text-2xl text-xl font-semibold text-white md:mb-4 mb-2'>Company</h5>
         <div className='flex gap-x-14'>
           <div className='mt-4 space-y-2 flex flex-col'>
             {data?.Company_menu?.map((item: any) => (
               <a
                 key={item.name}
                 href={item.link}
-                className='text-white hover:text-primary font-normal text-base transition-all'
+                className='text-white hover:text-primary font-normal md:text-base text-[12px] transition-all'
               >
                 {item.name}
               </a>
