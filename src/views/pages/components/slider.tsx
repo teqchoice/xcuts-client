@@ -10,9 +10,6 @@ import { useRef } from 'react'
 import { Left, Pencil, Right } from '@icon-park/react'
 
 const Slider = ({ children, slidesPerView, spaceBetween, className }: any) => {
-  // console.log(children)
-  // const navigationNextRef = useRef(null)
-  // const navigationPrevRef = useRef(null)
   const swiperRef = useRef<SwiperType>()
   return (
     <Swiper
@@ -21,19 +18,10 @@ const Slider = ({ children, slidesPerView, spaceBetween, className }: any) => {
       slidesPerView={slidesPerView || 'auto'}
       loop={true}
       spaceBetween={spaceBetween || 10}
-      // pagination={{
-      //     clickable: true,
-      // }}
-      // navigation={{
-      //   prevEl: navigationPrevRef.current,
-      //   nextEl: navigationNextRef.current
-      // }}
       onBeforeInit={swiper => {
         swiperRef.current = swiper
       }}
       modules={[Navigation]}
-      // onSlideChange={() => console.log('slide change')}
-      // onSwiper={swiper => console.log(swiper)}
     >
       {Array.isArray(children) ? (
         children.map((item, index) => {
