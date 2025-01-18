@@ -239,7 +239,7 @@ export default function MineMenu({ data }: any) {
   // console.log(Resources)
   // console.log(Collections.slice(1, 7))
   return (
-    <div className='ftr__links grid grid-cols-1 md:grid-cols-3 gap-4 lg:grid-cols-12 space-y-14 md:space-y-0 md:space-x-6'>
+    <div className='ftr__links grid grid-cols-1 md:grid-cols-3 gap-4 lg:grid-cols-12 gap-y-14 md:gap-y-0 md:gap-x-6'>
       <div className='basis-full md:basis-[28%] col-span-4'>
         <div className='w-16 h-[0.35rem] mb-2 bg-primary'></div>
         <h5 className='text-2xl font-semibold text-white mb-4'>Collections</h5>
