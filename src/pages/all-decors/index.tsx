@@ -14,7 +14,7 @@ export default function PDecorCollections({ header, footer, brandsData, decorsDa
   const router = useRouter()
   const [Brand, setBrand] = useState()
   const [Data, setData] = useState()
-  
+
   // console.log(
   //   `https://shopi.xcuts.co.uk/api/collections/decors/records?expand=brand_ref,core_ref,surface_ref,finish_ref,texture_ref,design_ref&filter=(brand_ref.name=\'${
   //     router.query.Brand
