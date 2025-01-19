@@ -86,7 +86,10 @@ export default function VideoSection(props: any) {
                   video.pause()
                 }
               }}
+              playsInline
+              autoPlay
               muted
+              preload='auto'
             ></video>
           </div>
         </div>

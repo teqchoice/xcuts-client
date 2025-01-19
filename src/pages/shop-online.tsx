@@ -5,12 +5,18 @@ import ShopOnline from '@/views/pages/shop-online/index'
 // !! Fake DB
 import FakeDb from '@/DB/content.json'
 import axios from 'axios'
+import Head from 'next/head'
 
 export default function PShopOnline({ data, header, footer }: any) {
   return (
-    <Layout header={header} footer={footer}>
-      <ShopOnline Data={FakeDb} />
-    </Layout>
+    <>
+      <Head>
+        <meta name='viewport' content='width=1280, initial-scale=1, maximum-scale=1, user-scalable=no' />
+      </Head>
+      <Layout header={header} footer={footer}>
+        <ShopOnline Data={FakeDb} />
+      </Layout>
+    </>
   )
 }
 
