@@ -4,6 +4,7 @@ import { Close, HamburgerButton, Pencil, Search, Shopping, ShoppingCart, Shoppin
 import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
 import SearchC from './components/search'
+import { Accordion } from '@mantine/core'
 
 const defaultMenuItem = [
   // {
@@ -17,22 +18,25 @@ const defaultMenuItem = [
     id: '2',
     title: 'Decor Collections',
     value: 'ALL DECORS',
-    link: '#',
-    filec: ''
+    link: '',
+    filec: '',
+    dataFieldName: 'all_decors_menuitem'
   },
   {
     id: '3',
     title: 'Services',
     value: 'SERVICES',
-    link: '#',
-    filec: ''
+    link: '',
+    filec: '',
+    dataFieldName: 'services_menuitem'
   },
   {
     id: '4',
     title: 'Products',
     value: 'PRODUCTS',
-    link: '#',
-    filec: ''
+    link: '',
+    filec: '',
+    dataFieldName: 'products_menuitem'
   },
 
   {
@@ -81,19 +85,62 @@ export default function MineMenu({ data, setMenu }: any) {
         </Link>
       </div>
       {/* <div className=' text-white'>sdfdsf</div> */}
-      <div className=' w-full p-5 '>
-        <ul className='flex flex-col text-white divide-y'>
-          {defaultMenuItem?.map((item: any, i: number) => {
-            return (
-              <li key={i + item.value} className='relative group p-3'>
-                <Link href={item.link} className='group-hover:text-black relative duration-150'>
-                  {item.value}
-                </Link>
-                <span className='absolute left-0 bottom-0 w-0 h-full bg-white -z-10 group-hover:w-full group-hover:transition-all duration-150'></span>
-              </li>
-            )
-          })}
-        </ul>
+      <div className='w-full p-4 flex flex-col divide-y divide-gray-300'>
+        {/* <ul className='flex flex-col text-white divide-y'> */}
+
+        {defaultMenuItem?.map((item, i: number) => {
+          return (
+            <Accordion
+              chevronPosition='right'
+              styles={{
+                chevron: {
+                  color: 'white',
+                  order: 2,
+                  width: '20px'
+                }
+              }}
+              chevron={data[item.dataFieldName!]?.length ? undefined : false}
+            >
+              <Accordion.Item key={i + item.value} value={item.value}>
+                <Accordion.Control className='p-3 px-1 flex justify-between w-full'>
+                  {data[item.dataFieldName!]?.length ? (
+                    <span className='text-white relative duration-150'>{item.value}</span>
+                  ) : (
+                    <Link
+                      href={item.link}
+                      className='text-white relative duration-150'
+                      onClick={() => setIsOpen(!isOpen)}
+                    >
+                      {item.value}
+                    </Link>
+                  )}
+                </Accordion.Control>
+                {data[item.dataFieldName!]?.length && (
+                  <Accordion.Panel className='px-1 pb-3'>
+                    <ul className='flex flex-col gap-y-1'>
+                      {data[item.dataFieldName!]?.map((child: any) => (
+                        <li>
+                          <Link
+                            href={
+                              item?.dataFieldName === 'all_decors_menuitem'
+                                ? `/all-decors?Brand=${child?.link}`
+                                : `/${child.link}`
+                            }
+                            className='text-gray-300'
+                            onClick={() => setIsOpen(!isOpen)}
+                          >
+                            {child.name}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </Accordion.Panel>
+                )}
+              </Accordion.Item>
+            </Accordion>
+          )
+        })}
+        {/* </ul> */}
       </div>
     </div>
   )
@@ -111,21 +158,27 @@ export default function MineMenu({ data, setMenu }: any) {
           />
           <div className='hidden md:block md:pt-0'>
             <ul className='flex flex-col flex-wrap gap-y-4 md:gap-y-0 md:flex-row md:gap-x-0 transition duration-300 md:transition-none absolute md:relative w-[100%] left-0 top-[100%] bg-neutral-400 md:bg-transparent md:text-white space-y-0 px-2 md:px-0 pb-3 pt-2 md:pb-0 md:pt-0 z-10'>
-              {defaultMenuItem?.map((item: any, i: number) => {
+              {defaultMenuItem?.map((item, i: number) => {
                 // if (i > 5)
                 return (
                   <li
                     key={i + item.value}
-                    className='group relative md:mt-0 cursor-pointer  z-50'
+                    className='group relative md:mt-0 cursor-pointer z-50'
                     onClick={() => setMenu(item.value)}
                     // onMouseOut={() => setMenu('')}
                   >
-                    <Link
-                      href={item.link}
-                      className='text-base md:text-base block md:inline-block text-white px-2 sm:px-2 z-50 md:py-3 py-1.5 relative hover:before:bg-primary hover:before:absolute hover:before:top-0 hover:before:bottom-0 hover:before:contents hover:before:md:skew-y-[0deg] hover:before:md:skew-x-[30deg] hover:md:before:right-6 hover:before:right-0 hover:before:md:left-6 hover:before:left-0 hover:before:-z-50 before:transition before:duration-700 hover:before:md:rounded-none hover:before:rounded'
-                    >
-                      {item.value}
-                    </Link>
+                    {item?.dataFieldName ? (
+                      <span className='text-base md:text-base block md:inline-block text-white px-2 sm:px-2 z-50 md:py-3 py-1.5 relative hover:before:bg-primary hover:before:absolute hover:before:top-0 hover:before:bottom-0 hover:before:contents hover:before:md:skew-y-[0deg] hover:before:md:skew-x-[30deg] hover:md:before:right-6 hover:before:right-0 hover:before:md:left-6 hover:before:left-0 hover:before:-z-50 before:transition before:duration-700 hover:before:md:rounded-none hover:before:rounded'>
+                        {item.value}
+                      </span>
+                    ) : (
+                      <Link
+                        href={item.link}
+                        className='text-base md:text-base block md:inline-block text-white px-2 sm:px-2 z-50 md:py-3 py-1.5 relative hover:before:bg-primary hover:before:absolute hover:before:top-0 hover:before:bottom-0 hover:before:contents hover:before:md:skew-y-[0deg] hover:before:md:skew-x-[30deg] hover:md:before:right-6 hover:before:right-0 hover:before:md:left-6 hover:before:left-0 hover:before:-z-50 before:transition before:duration-700 hover:before:md:rounded-none hover:before:rounded'
+                      >
+                        {item.value}
+                      </Link>
+                    )}
                     <div className='opacity-0 group-hover:opacity-100 transition-all duration-150 w-16 h-8 bg-primary absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 skew-y-[0] skew-x-[35deg]'></div>
                   </li>
                 )
