@@ -1,5 +1,3 @@
-import Link from 'next/link'
-import { select } from 'radash'
 import React from 'react'
 export default function MineMenu({ data }: any) {
   // console.log(Collections)
