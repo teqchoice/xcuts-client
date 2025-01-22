@@ -12,9 +12,9 @@ export default function CopyRight({ data }: any) {
   //     )[0]
   // )
   return (
-    <div className='ftr__copy__right flex flex-col md:flex-row md:justify-between items-center py-10'>
+    <div className='ftr__copy__right flex flex-col md:flex-row md:justify-between items-center md:py-10 py-4'>
       <div className='order-1 md:order-none'>
-        <a href='#' className='text-white text-base'>
+        <a href='#' className='text-white md:text-base text-[12px]'>
           {/* {
             select(
               datafilter,

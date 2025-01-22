@@ -4,6 +4,7 @@ import { select } from 'radash'
 import Modal from '../components/Modal'
 import { Pencil } from '@icon-park/react'
 import { user_info } from '@/extensions/redux/api/auth'
+import Link from 'next/link'
 
 export default function ServicesSection({ data }: any) {
   // console.log(data)
@@ -38,6 +39,9 @@ export default function ServicesSection({ data }: any) {
   //   item => item[0]?.value === 'Spray painting'
   // )[0]
   // console.log(s3)
+
+  console.log(data)
+
   return (
     <section className='relative'>
       <MiddleRedTitle title='Our Services' />
@@ -95,20 +99,20 @@ export default function ServicesSection({ data }: any) {
                   exact specifications. */}
                 </div>
                 <div className='flex gap-4'>
-                  <a
-                    href={'/'}
+                  <Link
+                    href={data?.bt_find2}
                     className='bg-black px-5 py-4 md:px-3 lg:px-5 md:py-4 font-bold text-base text-white hover:bg-primary ease-in duration-200 flex items-center justify-between'
                   >
-                    <span>{data?.bt_find1}</span>
+                    <span>Find out more</span>
                     <img className='w-6 h-3 ml-3' src='../images/btn-arrow.webp' alt='' />
-                  </a>
-                  <a
-                    href={'/'}
+                  </Link>
+                  <Link
+                    href={data?.bt_shop1}
                     className='bg-primary px-5 py-4 md:px-3 lg:px-5 md:py-3 font-bold text-base text-white hover:bg-black ease-in duration-200 flex items-center justify-between'
                   >
-                    <span>{data?.bt_shop1}</span>
+                    <span>Shop</span>
                     <img className='w-6 h-3 ml-3' src='../images/btn-arrow.webp' alt='' />
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -175,17 +179,17 @@ export default function ServicesSection({ data }: any) {
                 </div>
                 <div className='flex gap-4'>
                   <a
-                    href={'/'}
+                    href={data?.bt_find1}
                     className='bg-black px-5 py-4 md:px-3 lg:px-5 md:py-4 font-bold text-base text-white hover:bg-primary ease-in duration-200 flex items-center justify-between'
                   >
-                    <span>{data?.bt_find2}</span>
+                    <span>Find out more</span>
                     <img className='w-6 h-3 ml-3' src='../images/btn-arrow.webp' alt='' />
                   </a>
                   <a
-                    href={'/'}
+                    href={data?.bt_shop2}
                     className='bg-primary px-5 py-4 md:px-3 lg:px-5 md:py-3 font-bold text-base text-white hover:bg-black ease-in duration-200 flex items-center justify-between'
                   >
-                    <span>{data?.bt_shop2}</span>
+                    <span>Shop</span>
                     <img className='w-6 h-3 ml-3' src='../images/btn-arrow.webp' alt='' />
                   </a>
                 </div>
@@ -256,17 +260,17 @@ export default function ServicesSection({ data }: any) {
                 </div>
                 <div className='flex gap-4'>
                   <a
-                    href={'/'}
+                    href={data?.bt_find3}
                     className='bg-black px-5 py-4 md:px-3 lg:px-5 md:py-4 font-bold text-base text-white hover:bg-primary ease-in duration-200 flex items-center justify-between'
                   >
-                    <span>{data?.bt_find3}</span>
+                    <span>Find out more</span>
                     <img className='w-6 h-3 ml-3' src='../images/btn-arrow.webp' alt='' />
                   </a>
                   <a
-                    href={'/'}
+                    href={data?.bt_shop3}
                     className='bg-primary px-5 py-4 md:px-3 lg:px-5 md:py-3 font-bold text-base text-white hover:bg-black ease-in duration-200 flex items-center justify-between'
                   >
-                    <span>{data?.bt_shop3}</span>
+                    <span>Shop</span>
                     <img className='w-6 h-3 ml-3' src='../images/btn-arrow.webp' alt='' />
                   </a>
                 </div>
@@ -335,17 +339,17 @@ export default function ServicesSection({ data }: any) {
                 </div>
                 <div className='flex gap-4'>
                   <a
-                    href={'/'}
+                    href={data?.bt_find4}
                     className='bg-black px-5 py-4 md:px-3 lg:px-5 md:py-4 font-bold text-base text-white hover:bg-primary ease-in duration-200 flex items-center justify-between'
                   >
-                    <span>{data?.bt_find4}</span>
+                    <span>Find out more</span>
                     <img className='w-6 h-3 ml-3' src='../images/btn-arrow.webp' alt='' />
                   </a>
                   <a
-                    href={'/'}
+                    href={data?.bt_shop4}
                     className='bg-primary px-5 py-4 md:px-3 lg:px-5 md:py-3 font-bold text-base text-white hover:bg-black ease-in duration-200 flex items-center justify-between'
                   >
-                    <span>{data?.bt_shop4}</span>
+                    <span>Shop</span>
                     <img className='w-6 h-3 ml-3' src='../images/btn-arrow.webp' alt='' />
                   </a>
                 </div>

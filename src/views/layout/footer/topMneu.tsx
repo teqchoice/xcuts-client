@@ -26,9 +26,9 @@ export default function TopMneu({ data }: any) {
   //   )[0]?.value
   // )
   return (
-    <div className='ftr__title__grid relative pt-20 pb-10'>
+    <div className='ftr__title__grid relative md:pt-20 pt-7 md:pb-10 pb-4'>
       <div className='w-20 h-[0.35rem] mb-2 bg-primary'></div>
-      <h4 className='text-2xl font-semibold text-white mb-8'>
+      <h4 className='md:text-2xl text-xl font-semibold text-white md:mb-8 mb-2'>
         {/* {
           select(
             datafilter,
@@ -40,9 +40,13 @@ export default function TopMneu({ data }: any) {
         Contact Details
       </h4>
       <div className='grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-8'>
-        <div className='relative bg-neutral-400 text-center px-3 lg:p-5 flex flex-col justify-center align-middle min-h-[213px]'>
-          <img className='w-[39px] h-[49px] ml-auto mr-auto mb-6' src='../images/map-icon.webp' alt='' />
-          <p className='text-white xxl:px-16'>
+        <div className='relative bg-neutral-400 text-center px-3 lg:p-5 flex flex-col justify-center md:align-middle md:min-h-[213px] min-h-[120px]'>
+          <img
+            className='md:w-[39px] md:h-[49px] w-[20px] h-[25px] ml-auto mr-auto md:mb-6 mb-2'
+            src='../images/map-icon.webp'
+            alt=''
+          />
+          <p className='text-white xxl:px-16 md:text-base text-[12px]'>
             {/* {
               select(
                 datafilter,
@@ -75,10 +79,14 @@ export default function TopMneu({ data }: any) {
             // )}
           />
         </div>
-        <div className='relative bg-neutral-400 text-center lg:p-5 flex flex-col justify-center align-middle min-h-[213px]'>
-          <img className='w-[57px] h-[41px] ml-auto mr-auto mb-6' src='../images/envelop-icon.webp' alt='' />
+        <div className='relative bg-neutral-400 text-center lg:p-5 flex flex-col justify-center align-middle md:min-h-[213px] min-h-[120px]'>
+          <img
+            className='md:w-[57px] md:h-[41px] w-[30px] h-[20px] ml-auto mr-auto md:mb-6 mb-2'
+            src='../images/envelop-icon.webp'
+            alt=''
+          />
 
-          <a href='mailto:hello@xcuts.co.uk' className='text-white xxl:px-16'>
+          <a href='mailto:hello@xcuts.co.uk' className='text-white md:text-base text-[12px] xxl:px-16'>
             {/* {
               select(
                 datafilter,
@@ -110,9 +118,13 @@ export default function TopMneu({ data }: any) {
             // )}
           />
         </div>
-        <div className='relative bg-neutral-400 col-span-2 md:col-span-1 text-center lg:p-5 flex flex-col justify-center align-middle min-h-[213px]'>
-          <img className='w-[43px] h-[43px] ml-auto mr-auto mb-6' src='../images/phone-ftr-icon.webp' alt='' />
-          <a href='tel:+44(0)1707907000' className='text-white xxl:px-16'>
+        <div className='relative bg-neutral-400 col-span-2 md:col-span-1 text-center lg:p-5 flex flex-col justify-center align-middle md:min-h-[213px] min-h-[80px]'>
+          <img
+            className='md:w-[43px] w-[20px] md:h-[43px] h-[20px] ml-auto mr-auto md:mb-6 mb-2'
+            src='../images/phone-ftr-icon.webp'
+            alt=''
+          />
+          <a href='tel:+44(0)1707907000' className='text-white md:text-base text-[12px] xxl:px-16'>
             {/* {
               select(
                 datafilter,
