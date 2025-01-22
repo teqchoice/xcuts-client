@@ -1,6 +1,7 @@
 import { user_info } from '@/extensions/redux/api/auth'
 import Modal from '@/views/pages/components/Modal'
 import { Pencil } from '@icon-park/react'
+import Link from 'next/link'
 import React, { useState } from 'react'
 
 export default function MineHeader({ data }: any) {
@@ -14,13 +15,13 @@ export default function MineHeader({ data }: any) {
   return (
     <div className='relative mainHder bg-white py-7'>
       <div className='px-4 sm:container flex justify-between place-items-center'>
-        <a href={'/'}>
+        <Link href={'/'}>
           <img
             src={`${process.env.NEXT_PUBLIC_API__URL_images}/${data?.logo?.id}/${data?.logo?.filename_download}`}
             alt=''
-            className=' w-28 md:w-56'
+            className='w-28 md:w-56'
           />
-        </a>
+        </Link>
         <div className='tp-phone flex place-items-center'>
           <img src='../images/phone-icon.webp' alt='' className='w-9 h-9' />
           <div className='phoneDtls ml-3'>

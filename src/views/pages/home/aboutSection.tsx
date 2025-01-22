@@ -4,6 +4,7 @@ import { select } from 'radash'
 import React, { useState } from 'react'
 import Modal from '../components/Modal'
 import { user_info } from '@/extensions/redux/api/auth'
+import Link from 'next/link'
 
 export default function AboutSection({ data }: any) {
   const [modal, setModal] = useState(false)
@@ -67,12 +68,12 @@ export default function AboutSection({ data }: any) {
           {/* <div className='flex flex-col gap-y-1 mt-3 text-lg'>Get in touch today to learn more about us.</div> */}
 
           <div className='mt-5 text-center flex justify-center'>
-            <a
-              href='#'
+            <Link
+              href={data?.button_url ?? ''}
               className='bg-black  px-3 py-4 md:px-5  lg:px-9 md:py-4 font-medium text-lg md:text-2xl text-white hover:bg-primary ease-in duration-200 flex items-center justify-between'
             >
               {data?.button}
-            </a>
+            </Link>
           </div>
         </div>
       </div>

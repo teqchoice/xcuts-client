@@ -58,7 +58,9 @@ export default function Table({ data, setOpened, opened, setPupitem, DecorsData 
           <tbody>
             {DecorsData?.map((item: any, index: number) => {
               // console.log(item)
-              return <Producttable key={index} item={item} setOpened={setOpened} opened={opened} setPupitem={setPupitem}/>
+              return (
+                <Producttable key={index} item={item} setOpened={setOpened} opened={opened} setPupitem={setPupitem} />
+              )
             })}
           </tbody>
           {/* <tbody>
