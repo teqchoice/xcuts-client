@@ -36,7 +36,7 @@ export default function AboutSection({ data }: any) {
               )[0]
             }}
           ></div> */}
-          <div className='text-3xl md:text-5xl font-medium text-black mb-2'>
+          <div className='text-[24px] md:text-[28px] font-normal text-black mb-2'>
             {/* <span className='text-primary'>X</span>CUTS */}
             {/* Furniture Boards Cut and Edged */}
             {data?.top_title}
@@ -45,7 +45,7 @@ export default function AboutSection({ data }: any) {
             <div className='w-3 md:w-20 h-11 bg-primary absolute left-0 md:-left-24 bottom-0'></div>
             <div className='w-3 md:w-20 h-11 bg-primary absolute right-0 md:-right-24 top-0'></div>
             <h1
-              className='text-white text-lg md:text-xl lg:text-3xl xl:text-5xl font-semibold -skew-x-[35deg] py-3 uppercase px-5'
+              className='text-white text-lg md:text-xl lg:text-3xl xl:text-5xl font-normal -skew-x-[35deg] py-3 uppercase px-5'
               // dangerouslySetInnerHTML={{
               //   __html: select(
               //     data[0],
@@ -64,7 +64,7 @@ export default function AboutSection({ data }: any) {
             and are committed to providing the best solutions for furniture panel cut-to-size, edgebanding, spray
             painting, and CNC milling. */}
           {/* </div> */}
-          <div className='flex flex-col gap-y-1 mt-10 text-lg' dangerouslySetInnerHTML={{ __html: data?.content }} />
+          <div dangerouslySetInnerHTML={{ __html: data?.content }} />
           {/* <div className='flex flex-col gap-y-1 mt-3 text-lg'>Get in touch today to learn more about us.</div> */}
 
           <div className='mt-5 text-center flex justify-center'>
