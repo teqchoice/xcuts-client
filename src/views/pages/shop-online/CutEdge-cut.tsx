@@ -1,6 +1,7 @@
 import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/react'
 import { FaChevronDown } from 'react-icons/fa6'
 import clsx from 'clsx'
+import { CuttingList } from './cutting-list/components'
 
 export default function CutToSize() {
   return (
@@ -18,7 +19,7 @@ export default function CutToSize() {
               transition
               className='origin-top transition duration-200 ease-out data-[closed]:-translate-y-6 data-[closed]:opacity-0'
             >
-              <div className='border border-dashed border-gray-400 p-10 text-center font-bold text-xl'>Coming soon</div>
+              <CuttingList />
             </DisclosurePanel>
           </div>
         </>
