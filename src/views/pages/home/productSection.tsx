@@ -3,6 +3,7 @@ import { select } from 'radash'
 import React, { useState } from 'react'
 import Modal from '../components/Modal'
 import { user_info } from '@/extensions/redux/api/auth'
+import Link from 'next/link'
 
 export default function ProductSection({ data }: any) {
   // console.log(data)
@@ -60,28 +61,20 @@ export default function ProductSection({ data }: any) {
                   </div>
                 </div>
                 <div className='flex gap-0 justify-end absolute bottom-0 right-0 pr-1 lg:pr-11'>
-                  <a
-                    href='#'
+                  <Link
+                    href={data?.pr_bt_red1}
                     className='bg-primary px-3 py-4 md:px-3 md:py-4 font-bold text-base text-white hover:bg-black ease-in duration-200 flex items-center justify-between'
                   >
-                    <span
-                      dangerouslySetInnerHTML={{
-                        __html: data?.pr_bt_red1
-                      }}
-                    ></span>
+                    Shop
                     <img className='w-2 ml-2' src='../images/angle-arrow.webp' alt='' />
-                  </a>
-                  <a
-                    href='#'
+                  </Link>
+                  <Link
+                    href={data?.pr_bt_black1}
                     className='bg-black px-3 py-4 md:px-3 md:py-4 font-bold text-base text-white hover:bg-primary ease-in duration-200 flex items-center justify-between'
                   >
-                    <span
-                      dangerouslySetInnerHTML={{
-                        __html: data?.pr_bt_black1
-                      }}
-                    ></span>
+                    Find out more
                     <img className='w-2 ml-2' src='../images/angle-arrow.webp' alt='' />
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -131,28 +124,20 @@ export default function ProductSection({ data }: any) {
                   </div>
                 </div>
                 <div className='flex gap-0 justify-end absolute bottom-0 right-0 pr-1 lg:pr-11'>
-                  <a
-                    href='#'
+                  <Link
+                    href={data?.pr_bt_red2}
                     className='bg-primary px-3 py-4 md:px-3 md:py-4 font-bold text-base text-white hover:bg-black ease-in duration-200 flex items-center justify-between'
                   >
-                    <span
-                      dangerouslySetInnerHTML={{
-                        __html: data?.pr_bt_red2
-                      }}
-                    ></span>
+                    Shop
                     <img className='w-2 ml-2' src='../images/angle-arrow.webp' alt='' />
-                  </a>
-                  <a
-                    href='#'
+                  </Link>
+                  <Link
+                    href={data?.pr_bt_black2}
                     className='bg-black px-3 py-4 md:px-3 md:py-4 font-bold text-base text-white hover:bg-primary ease-in duration-200 flex items-center justify-between'
                   >
-                    <span
-                      dangerouslySetInnerHTML={{
-                        __html: data?.pr_bt_black2
-                      }}
-                    ></span>
+                    Find out more
                     <img className='w-2 ml-2' src='../images/angle-arrow.webp' alt='' />
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -202,28 +187,20 @@ export default function ProductSection({ data }: any) {
                   </div>
                 </div>
                 <div className='flex gap-0 justify-end absolute bottom-0 right-0 pr-1 lg:pr-11'>
-                  <a
-                    href='#'
+                  <Link
+                    href={data?.pr_bt_red3}
                     className='bg-primary px-3 py-4 md:px-3 md:py-4 font-bold text-base text-white hover:bg-black ease-in duration-200 flex items-center justify-between'
                   >
-                    <span
-                      dangerouslySetInnerHTML={{
-                        __html: data?.pr_bt_red3
-                      }}
-                    ></span>
+                    Shop
                     <img className='w-2 ml-2' src='../images/angle-arrow.webp' alt='' />
-                  </a>
-                  <a
-                    href='#'
+                  </Link>
+                  <Link
+                    href={data?.pr_bt_black3}
                     className='bg-black px-3 py-4 md:px-3 md:py-4 font-bold text-base text-white hover:bg-primary ease-in duration-200 flex items-center justify-between'
                   >
-                    <span
-                      dangerouslySetInnerHTML={{
-                        __html: data?.pr_bt_black3
-                      }}
-                    ></span>
+                    Find out more
                     <img className='w-2 ml-2' src='../images/angle-arrow.webp' alt='' />
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
