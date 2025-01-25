@@ -1,24 +1,36 @@
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import Pupapt from './pupupt'
 import { Close } from '@icon-park/react'
 import Table from './table'
-import axios from 'axios'
 import Productgrid from './components/productgrid'
-import { useMediaQuery } from '@mantine/hooks'
 import { ParsedUrlQuery } from 'querystring'
+import { Pagination } from '@mantine/core'
+import { useMediaQuery } from '@mantine/hooks'
 
 export default function CollectionsItemSection({ Data, Brand, BrandData, DecorsData }: any) {
-  // console.log(BrandData)
+  const isGreaterThanMd = useMediaQuery('(min-width: 768px)')
+
   const [opened, setOpened] = useState(false)
+
   const [pupitem, setPupitem] = useState([])
-  // console.log(Brand?.items)
+
+  const [show, setShow] = useState(1)
+
+  const [currentPage, setCurrentPage] = useState(1)
+
+  const pageSize = show === 1 ? 25 : 12
+
+  const totalPages = Math.ceil(DecorsData?.length / pageSize)
+
+  const currentItems = DecorsData?.slice((currentPage - 1) * pageSize, currentPage * pageSize)
+
+  const componentRef = useRef<HTMLDivElement>(null)
+
   const router = useRouter()
 
   const [query, setQuery] = useState<ParsedUrlQuery | undefined>(undefined)
-
-  const isGreaterThanLg = useMediaQuery('(min-width: 1024px)')
 
   useEffect(() => {
     setQuery(router.query)
@@ -78,6 +90,13 @@ export default function CollectionsItemSection({ Data, Brand, BrandData, DecorsD
     })
   }
 
+  const handlePageChange = (page: number) => {
+    setCurrentPage(page)
+    if (componentRef.current) {
+      componentRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    }
+  }
+
   if (query && Object.values(query).every(x => x === '')) {
     return (
       <div className='grid md:grid-cols-2 gap-x-10 gap-y-10 pb-20'>
@@ -87,16 +106,27 @@ export default function CollectionsItemSection({ Data, Brand, BrandData, DecorsD
   }
 
   return (
-    <div>
-      <div className='flex md:justify-end flex-col w-40 text-center ml-auto md:ml-auto md:mr-0 mr-auto mt-16'>
-        {/* <p className='mb-2'>Display options</p>
+    <div ref={componentRef}>
+      <div
+        className={`flex md:justify-end flex-col w-40 text-center ml-auto md:ml-auto md:mr-0 mr-auto mt-16 ${
+          show === 2 ? 'mb-5' : ''
+        }`}
+      >
+        <p className='mb-2'>Display options</p>
         <div className='flex justify-center'>
           <ul
-            className='flex gap-3 list-none flex-row flex-wrap border-b-0 pl-0'
+            className='flex gap-1 list-none flex-row flex-wrap border-b-0 pl-0 items-center'
             role='tablist'
             data-te-nav-ref=''
           >
-            <li role='presentation' onClick={() => setShow(1)}>
+            <li
+              role='presentation'
+              onClick={() => {
+                setShow(1)
+                setCurrentPage(1)
+              }}
+              className={`p-1 rounded-sm border border-transparent${show === 1 ? 'border border-primary' : ''}`}
+            >
               <div className='cursor-pointer'>
                 <div className='flex space-y-[3px] flex-col'>
                   <span className='w-[39px] h-[7px] bg-primary rounded-full block' />
@@ -106,7 +136,14 @@ export default function CollectionsItemSection({ Data, Brand, BrandData, DecorsD
                 </div>
               </div>
             </li>
-            <li role='presentation' onClick={() => setShow(2)}>
+            <li
+              role='presentation'
+              onClick={() => {
+                setShow(2)
+                setCurrentPage(1)
+              }}
+              className={`p-1 rounded-sm border border-transparent${show === 2 ? 'border border-primary' : ''}`}
+            >
               <div className='cursor-pointer'>
                 <div className='grid grid-cols-2 gap-1'>
                   <span className='w-[16px] h-[16px] bg-primary rounded-sm block' />
@@ -117,15 +154,15 @@ export default function CollectionsItemSection({ Data, Brand, BrandData, DecorsD
               </div>
             </li>
           </ul>
-        </div> */}
+        </div>
       </div>
 
-      {isGreaterThanLg ? (
+      {show === 1 ? (
         <>
-          {DecorsData?.length ? (
+          {currentItems?.length ? (
             <Table
               data={Data?.items}
-              DecorsData={DecorsData}
+              DecorsData={currentItems}
               setOpened={setOpened}
               opened={opened}
               setPupitem={setPupitem}
@@ -135,19 +172,31 @@ export default function CollectionsItemSection({ Data, Brand, BrandData, DecorsD
           )}
         </>
       ) : (
-        <div className='grid md:grid-cols-2 xl:grid-cols-3 lg:grid-cols-2 lg:px-10 gap-x-10 gap-y-10 pb-20'>
-          {DecorsData?.length ? (
-            DecorsData?.map((item: any, index: number) => {
-              return (
+        <div className='grid md:grid-cols-2 xl:grid-cols-3 lg:grid-cols-2 lg:px-10 gap-x-10 gap-y-10 pb-10'>
+          {currentItems?.length ? (
+            <>
+              {currentItems.map((item: any, index: number) => (
                 <Productgrid item={item} key={index} setOpened={setOpened} opened={opened} setPupitem={setPupitem} />
-              )
-            })
+              ))}
+            </>
           ) : (
             <div className='text-center col-span-3'>No Items Found...</div>
           )}
         </div>
       )}
-
+      <div className='flex justify-center pb-20'>
+        <Pagination
+          radius='lg'
+          total={totalPages}
+          value={currentPage}
+          onChange={handlePageChange}
+          classNames={{
+            root: 'all-decors-pagination',
+            control: 'pagination-control'
+          }}
+          siblings={isGreaterThanMd ? 1 : 0}
+        />
+      </div>
       {opened && (
         <div className='w-screen h-screen z-50 p-5 top-0 left-0 fixed bg-black/80 overflow-y-scroll'>
           <div className='relative w-full md:w-10/12 xl:w-8/12 2xl:w-6/12 z-50 rounded-md bg-white mx-auto my-8'>
