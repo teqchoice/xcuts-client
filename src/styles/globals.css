@@ -61,7 +61,8 @@
   .ddddd svg {
     display: none !important;
   }
+}
 
-
-  
+.pagination-control:not([data-active]) {
+  border: none !important;
 }

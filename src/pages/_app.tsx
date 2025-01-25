@@ -10,8 +10,10 @@ import { PagesTopLoader } from 'nextjs-toploader/pages'
 import { Toaster } from 'react-hot-toast'
 import Head from 'next/head'
 import { MantineProvider, createTheme } from '@mantine/core'
+import '@mantine/core/styles.css'
+
 const theme = createTheme({
-  /** Put your mantine theme override here */
+  primaryColor: 'red'
 })
 export default function App({ Component, pageProps }: AppProps) {
   return (
@@ -44,8 +46,8 @@ export default function App({ Component, pageProps }: AppProps) {
           easing='ease'
           speed={200}
           shadow='0 0 10px #e11e26,0 0 5px #e11e26'
-        //   template='<div class="bar" role="bar"><div class="peg"></div></div> 
-        // <div class="spinner" role="spinner"><div class="spinner-icon"></div></div>'
+          //   template='<div class="bar" role="bar"><div class="peg"></div></div>
+          // <div class="spinner" role="spinner"><div class="spinner-icon"></div></div>'
           zIndex={1600}
           showAtBottom={false}
         />
