@@ -3,7 +3,7 @@ import React from 'react'
 export default function Collections(props: any) {
   return (
     <>
-      <section className='section-one-stop py-10 md:py-20 pb-0 md:pb-0'>
+      <section className='section-one-stop py-10 pb-0 md:pb-0'>
         <div className='px-4 sm:container'>
           <div className='text-center px-1 overflow-hidden'>
             <div className='text-2xl md:text-3xl mb-2'>Collections</div>

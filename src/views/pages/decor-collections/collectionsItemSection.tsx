@@ -6,23 +6,26 @@ import { Close } from '@icon-park/react'
 import Table from './table'
 import axios from 'axios'
 import Productgrid from './components/productgrid'
+import { useMediaQuery } from '@mantine/hooks'
+import { ParsedUrlQuery } from 'querystring'
 
 export default function CollectionsItemSection({ Data, Brand, BrandData, DecorsData }: any) {
   // console.log(BrandData)
   const [opened, setOpened] = useState(false)
   const [pupitem, setPupitem] = useState([])
-  const [show, setShow] = useState(1)
   // console.log(Brand?.items)
   const router = useRouter()
 
-  const [query, setQuery] = useState()
+  const [query, setQuery] = useState<ParsedUrlQuery | undefined>(undefined)
+
+  const isGreaterThanLg = useMediaQuery('(min-width: 1024px)')
 
   useEffect(() => {
     setQuery(router.query)
   }, [router.query])
+
   function BrandItem() {
     return BrandData?.map((item: any, index: number) => {
-      console.log(item)
       return (
         <div key={index} className='col-span-1 flex flex-col'>
           <div className='flex sm:flex-row flex-col sm:items-end'>
@@ -67,6 +70,7 @@ export default function CollectionsItemSection({ Data, Brand, BrandData, DecorsD
       )
     })
   }
+
   function ProductItem() {
     // console.log(Brand)
     return Data?.items?.map((item: any, index: number) => {
@@ -116,19 +120,31 @@ export default function CollectionsItemSection({ Data, Brand, BrandData, DecorsD
         </div> */}
       </div>
 
-      {show == 1 ? (
-        <Table
-          data={Data?.items}
-          DecorsData={DecorsData}
-          setOpened={setOpened}
-          opened={opened}
-          setPupitem={setPupitem}
-        />
+      {isGreaterThanLg ? (
+        <>
+          {DecorsData?.length ? (
+            <Table
+              data={Data?.items}
+              DecorsData={DecorsData}
+              setOpened={setOpened}
+              opened={opened}
+              setPupitem={setPupitem}
+            />
+          ) : (
+            <div className='text-center pb-14'>No Items Found...</div>
+          )}
+        </>
       ) : (
         <div className='grid md:grid-cols-2 xl:grid-cols-3 lg:grid-cols-2 lg:px-10 gap-x-10 gap-y-10 pb-20'>
-          {Data?.items?.map((item: any, index: number) => {
-            return <Productgrid item={item} key={index} setOpened={setOpened} opened={opened} setPupitem={setPupitem} />
-          })}
+          {DecorsData?.length ? (
+            DecorsData?.map((item: any, index: number) => {
+              return (
+                <Productgrid item={item} key={index} setOpened={setOpened} opened={opened} setPupitem={setPupitem} />
+              )
+            })
+          ) : (
+            <div className='text-center col-span-3'>No Items Found...</div>
+          )}
         </div>
       )}
 
