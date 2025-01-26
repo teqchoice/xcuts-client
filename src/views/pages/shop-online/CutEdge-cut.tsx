@@ -14,7 +14,7 @@ export default function CutToSize() {
               className={clsx('w-5 transition duration-200', open && 'rotate-180 transition duration-200')}
             />
           </DisclosureButton>
-          <div className='overflow-hidden py-2'>
+          <div className='py-2'>
             <DisclosurePanel
               transition
               className='origin-top transition duration-200 ease-out data-[closed]:-translate-y-6 data-[closed]:opacity-0'

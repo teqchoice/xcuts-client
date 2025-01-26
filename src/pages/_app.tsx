@@ -11,8 +11,10 @@ import { Toaster } from 'react-hot-toast'
 import Head from 'next/head'
 import { MantineProvider, createTheme } from '@mantine/core'
 import ReactQueryProvider from '@/providers/react-query.provider'
+import '@mantine/core/styles.css'
+
 const theme = createTheme({
-  /** Put your mantine theme override here */
+  primaryColor: 'red'
 })
 export default function App({ Component, pageProps }: AppProps) {
   return (

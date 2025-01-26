@@ -11,7 +11,7 @@ export default function PShopOnline({ data, header, footer }: any) {
   return (
     <>
       <Head>
-        <meta name='viewport' content='width=1280, initial-scale=1, maximum-scale=1, user-scalable=no' />
+        <meta name='viewport' content='width=1536, initial-scale=1, maximum-scale=1, user-scalable=no' />
       </Head>
       <Layout header={header} footer={footer}>
         <ShopOnline Data={FakeDb} />

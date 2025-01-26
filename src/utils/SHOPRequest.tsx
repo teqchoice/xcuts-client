@@ -1,4 +1,4 @@
-import { paths } from '@/core/api-cms/v1'
+import { paths } from '@/core/api-shop/v1'
 import createFetchClient, { type Middleware } from 'openapi-fetch'
 import createClient from 'openapi-react-query'
 const SHOPMiddleware: Middleware = {

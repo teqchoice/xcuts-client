@@ -721,21 +721,11 @@ export interface components {
              */
             options?: Record<string, never> | null;
             /**
-             * @description UUID of the operation connected to the trigger in the flow.
-             * @example 92e82998-e421-412f-a513-13701e83e4ce
-             */
-            operation?: string;
-            /**
              * Format: date-time
              * @description Timestamp in ISO8601 when the flow was created.
              * @example 2022-05-11T13:14:52Z
              */
             date_created?: string | null;
-            /**
-             * @description The user who created the flow.
-             * @example 63716273-0f29-4648-8a2a-2af2948f6f78
-             */
-            user_created?: string;
             operations?: string | null;
         };
         Webhooks: {

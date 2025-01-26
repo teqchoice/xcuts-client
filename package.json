@@ -8,7 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "generate-openapi:CMS": "npx openapi-typescript https://cms.xcuts.co.uk/server/specs/oas -o ./src/core/api-cms/v1.d.ts",
-    "generate-openapi:SHOP": "npx openapi-typescript ./oas.yaml -o ./src/core/api-shop/v1.d.ts"
+    "generate-openapi:SHOP": "npx openapi-typescript ./oas.json -o ./src/core/api-shop/v1.d.ts"
   },
   "dependencies": {
     "@headlessui/react": "^2.1.10",
@@ -19,6 +19,7 @@
     "@mantine/tiptap": "^7.4.1",
     "@reduxjs/toolkit": "^1.9.7",
     "@tanstack/react-query": "^5.64.2",
+    "@tanstack/react-table": "^8.20.6",
     "@tiptap/extension-color": "^2.1.16",
     "@tiptap/extension-highlight": "^2.1.16",
     "@tiptap/extension-link": "^2.1.16",
