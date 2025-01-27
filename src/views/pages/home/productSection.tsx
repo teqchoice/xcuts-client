@@ -44,7 +44,7 @@ export default function ProductSection({ data }: any) {
                 <div className='prdts__itembox bg-neutral-200 pb-16 absolute -bottom-full transition-all duration-1000'>
                   <div className='pt-8 px-7'>
                     <h4
-                      className='text-black font-bold text-2xl mb-6'
+                      className='text-black font-bold lg:text-xl text-lg mb-6'
                       dangerouslySetInnerHTML={{
                         __html: data?.pr_content1
                       }}
@@ -107,7 +107,7 @@ export default function ProductSection({ data }: any) {
                 <div className='prdts__itembox bg-neutral-200 pb-16 absolute -bottom-full transition-all duration-1000'>
                   <div className='pt-8 px-7'>
                     <h4
-                      className='text-black font-bold text-2xl mb-6'
+                      className='text-black font-bold lg:text-xl text-lg mb-6'
                       dangerouslySetInnerHTML={{
                         __html: data?.pr_content2
                       }}
@@ -170,7 +170,7 @@ export default function ProductSection({ data }: any) {
                 <div className='prdts__itembox bg-neutral-200 pb-16 absolute -bottom-full transition-all duration-1000'>
                   <div className='pt-8 px-7'>
                     <h4
-                      className='text-black font-bold text-2xl mb-6'
+                      className='text-black font-bold lg:text-xl text-lg mb-6'
                       dangerouslySetInnerHTML={{
                         __html: data?.pr_content3
                       }}

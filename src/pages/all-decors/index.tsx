@@ -98,6 +98,8 @@ export const getServerSideProps = async (context: any) => {
     )
     // `https://shop.xcuts.co.uk/items/categories?&filter[parent][related_categories_id][name][_contains]=brand`
 
+    console.log(decors, 'decors')
+
     const { data: header } = await axios.get(`${process.env.NEXT_PUBLIC_CMS_API_URL}/items/header?fields=*.*`)
     const { data: footer } = await axios.get(`${process.env.NEXT_PUBLIC_CMS_API_URL}/items/footer?fields=*.*`)
 
