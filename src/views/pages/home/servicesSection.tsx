@@ -77,6 +77,7 @@ export default function ServicesSection({ data }: any) {
                     playsInline
                     autoPlay
                     muted
+                    loop
                     preload='auto'
                   ></video>
                 </div>
@@ -162,6 +163,7 @@ export default function ServicesSection({ data }: any) {
                   playsInline
                   autoPlay
                   muted
+                  loop
                   preload='auto'
                 ></video>
               </div>
@@ -242,6 +244,7 @@ export default function ServicesSection({ data }: any) {
                     playsInline
                     autoPlay
                     muted
+                    loop
                     preload='auto'
                   ></video>
                 </div>
@@ -322,6 +325,7 @@ export default function ServicesSection({ data }: any) {
                   playsInline
                   autoPlay
                   muted
+                  loop
                   preload='auto'
                 ></video>
               </div>

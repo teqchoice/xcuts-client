@@ -82,7 +82,7 @@ export default function Pupapt({ data }: any) {
         <i className='fa-solid fa-xmark' />
       </a>
       <div className='w-full md:px-6 px-2 py-2 bg-gray-100'>
-        <p className='font-semibold text-sm'>ProductCode : {item?.product_code}</p>
+        <p className='font-semibold text-sm'>Product Code : {item?.product_code}</p>
         <div className='grid lg:grid-cols-2 grid-cols-1 gap-y-4'>
           <div className='col-span-1 grid grid-cols-12 gap-1'>
             <div className='col-span-9 relative overflow-hidden'>
@@ -115,15 +115,15 @@ export default function Pupapt({ data }: any) {
             <h3 className='text-2xl font-bold text-primary capitalize'>
               {item?.brand_ref?.name} {item?.code}
             </h3>
-            <p className='text-sm text-gray-500'>Light Grey Meta Rock</p>
+            <p className='text-sm text-gray-500'>{item?.product_name}</p>
             <h5 className='text-lg text-black font-bold mt-2'>Product characteristics</h5>
-            <p className='text-sm  text-gray-400'>
+            <p className='text-sm  text-gray-400 capitalize'>
               Core: {item?.core_ref?.name} | Surface: {item?.surface_ref?.name}
             </p>
-            <p className='text-sm  text-gray-400'>
+            <p className='text-sm  text-gray-400 capitalize'>
               Finish: {item?.finish_ref?.name} | Design: {item?.design_ref?.name}
             </p>
-            <p className='text-sm  text-gray-400'>
+            <p className='text-sm  text-gray-400 capitalize'>
               Texture: {item?.texture_ref?.name} | Grain: {item?.surface_ref?.name}
             </p>
             <h5 className='text-lg text-black font-bold mt-2'>B side description</h5>

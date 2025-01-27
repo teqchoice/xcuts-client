@@ -82,23 +82,23 @@ export default function Productgrid({ item, setOpened, opened, setPupitem }: any
             </div>
             <div className='grid grid-cols-2 text-left'>
               <div className='text-sm text-black'>Core: </div>
-              <div className='text-sm text-primary'>{item?.core_ref?.name}</div>
+              <div className='text-sm text-primary capitalize'>{item?.core_ref?.name}</div>
             </div>
             <div className='grid grid-cols-2 text-left'>
               <div className='text-sm text-black'>Surface:</div>
-              <div className='text-sm text-primary'>{item?.surface_ref?.name}</div>
+              <div className='text-sm text-primary capitalize'>{item?.surface_ref?.name}</div>
             </div>
             <div className='grid grid-cols-2 text-left'>
               <div className='text-sm text-black'>Finish: </div>
-              <div className='text-sm text-primary'>{item?.finish_ref?.name}</div>
+              <div className='text-sm text-primary capitalize'>{item?.finish_ref?.name}</div>
             </div>
             <div className='grid grid-cols-2 text-left'>
               <div className='text-sm text-black'>Design:</div>
-              <div className='text-sm text-primary'>{item?.design_ref?.name}</div>
+              <div className='text-sm text-primary capitalize'>{item?.design_ref?.name}</div>
             </div>
             <div className='grid grid-cols-2 text-left'>
               <div className='text-sm text-black'>Texture: </div>
-              <div className='text-sm text-primary'>{item?.texture_ref?.name}</div>
+              <div className='text-sm text-primary capitalize'>{item?.texture_ref?.name}</div>
             </div>
           </div>
           <div

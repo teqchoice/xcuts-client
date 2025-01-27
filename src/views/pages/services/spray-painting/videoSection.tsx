@@ -92,6 +92,7 @@ export default function VideoSection(props: any) {
               playsInline
               autoPlay
               muted
+              loop
               preload='auto'
             ></video>
           </div>
