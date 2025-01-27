@@ -91,12 +91,12 @@ export default function MineMenu({ data, setMenu }: any) {
         {defaultMenuItem?.map((item, i: number) => {
           return (
             <Accordion
-              chevronPosition='right'
+              chevronPosition='left'
               styles={{
                 chevron: {
                   color: 'white',
                   order: 2,
-                  width: '20px'
+                  width: '10px'
                 }
               }}
               chevron={data[item.dataFieldName!]?.length ? undefined : false}

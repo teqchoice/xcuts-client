@@ -26,7 +26,7 @@ export default function Productgrid({ item, setOpened, opened, setPupitem }: any
   return (
     <div className='text-center flex items-center justify-center'>
       <div>
-        <div className='relative'>
+        <div className='relative shadow-[0_0px_20px_1px_rgba(0,0,0,0.15)]'>
           <Image
             alt={item.product_name}
             src={`${process.env.NEXT_PUBLIC_API_SHOP_URL_images}/${item?.decor_poster[0]?.directus_files_id?.id}/${item?.decor_poster[0]?.directus_files_id?.filename_disk}`}
@@ -105,7 +105,7 @@ export default function Productgrid({ item, setOpened, opened, setPupitem }: any
             onClick={() => {
               setPupitem({
                 item,
-                thickness
+                thickness: item?.thickness_ref
               })
               setOpened(!opened)
             }}

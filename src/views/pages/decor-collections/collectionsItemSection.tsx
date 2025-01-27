@@ -12,6 +12,8 @@ import { useMediaQuery } from '@mantine/hooks'
 export default function CollectionsItemSection({ Data, Brand, BrandData, DecorsData }: any) {
   const isGreaterThanMd = useMediaQuery('(min-width: 768px)')
 
+  const isGreaterThanLg = useMediaQuery('(min-width: 1024px)')
+
   const [opened, setOpened] = useState(false)
 
   const [pupitem, setPupitem] = useState([])
@@ -35,6 +37,10 @@ export default function CollectionsItemSection({ Data, Brand, BrandData, DecorsD
   useEffect(() => {
     setQuery(router.query)
   }, [router.query])
+
+  useEffect(() => {
+    if (!isGreaterThanLg) setShow(2)
+  }, [isGreaterThanLg])
 
   function BrandItem() {
     return BrandData?.map((item: any, index: number) => {
@@ -108,7 +114,7 @@ export default function CollectionsItemSection({ Data, Brand, BrandData, DecorsD
   return (
     <div ref={componentRef}>
       <div
-        className={`flex md:justify-end flex-col w-40 text-center ml-auto md:ml-auto md:mr-0 mr-auto mt-16 ${
+        className={`flex md:justify-end flex-col w-40 text-center ml-auto md:ml-auto md:mr-0 mr-auto mt-8 ${
           show === 2 ? 'mb-5' : ''
         }`}
       >
