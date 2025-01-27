@@ -73,8 +73,6 @@ export default function Pupapt({ data }: any) {
     }
   }
 
-  console.log('first')
-
   return (
     <div
       id='lightGreyMetalRock'
