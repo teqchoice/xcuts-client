@@ -82,8 +82,10 @@ const ProductSelectorDropdown = (props: ProductSelectorDropdownProps) => {
     setSelectedDecor(decor)
 
     if (onSelect) {
-      onSelect({ name: decor.product_name ?? '' })
+      onSelect({ name: `${decor.product_code} ${decor.product_name}` })
     }
+
+    setIsOpen(false)
   }
 
   return (
@@ -107,7 +109,9 @@ const ProductSelectorDropdown = (props: ProductSelectorDropdownProps) => {
             <div className='max-h-[150px] overflow-y-scroll'>
               {decors?.map(decor => (
                 <div
-                  className='grid grid-cols-6 px-2 py-1.5 transition duration-200 hover:bg-[#FFFADB] cursor-pointer'
+                  className={`grid grid-cols-6 px-2 py-1.5 transition duration-200 hover:bg-[#FFFADB] cursor-pointer ${
+                    selectedDecor?.product_code === decor.product_code ? 'bg-[#feeec5]' : ''
+                  }`}
                   onClick={() => handleSelectDecor(decor)}
                 >
                   <span className='col-span-1 text-[14px]'>{decor.product_code}</span>

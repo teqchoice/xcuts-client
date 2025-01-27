@@ -1,11 +1,12 @@
 import React, { useState } from 'react'
 import { useReactTable, flexRender, getCoreRowModel, ColumnDef } from '@tanstack/react-table'
 import ProductSelectorDropdown from './ProductSelectorDropdown'
+import MachiningModal from './MachiningModal'
 
 // Define the type for your data
 type CuttingListData = {
   id: number
-  material: string
+  material: { name: string } | null
   thick: string
   length: string
   width: string
@@ -62,7 +63,6 @@ const CuttingList = () => {
     {
       accessorKey: 'material',
       header: 'Material decor code / name',
-
       size: 215
     },
     {
@@ -176,7 +176,11 @@ const CuttingList = () => {
     {
       accessorKey: 'additionalMachining',
       header: 'Additional machining',
-      cell: info => <span>{info.getValue() as string}</span>,
+      cell: ({ getValue, row: { index }, column: { id }, table }) => {
+        if (data[index]?.material) {
+          return <MachiningModal />
+        }
+      },
       size: 150
     },
     {
@@ -202,7 +206,7 @@ const CuttingList = () => {
   const [data, setData] = useState<CuttingListData[]>([
     {
       id: 0,
-      material: 'Material 1',
+      material: null,
       thick: '10',
       length: '100',
       width: '50',
@@ -219,7 +223,7 @@ const CuttingList = () => {
     },
     {
       id: 1,
-      material: 'Material 2',
+      material: null,
       thick: '20',
       length: '200',
       width: '60',
@@ -236,7 +240,7 @@ const CuttingList = () => {
     },
     {
       id: 2,
-      material: 'Material 3',
+      material: null,
       thick: '30',
       length: '300',
       width: '70',
@@ -252,8 +256,6 @@ const CuttingList = () => {
       actions: 'Actions 3'
     }
   ])
-
-  console.log(data)
 
   // Create a table instance
   const table = useReactTable({

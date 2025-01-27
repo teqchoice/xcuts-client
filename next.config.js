@@ -12,8 +12,7 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'shop.xcuts.co.uk',
-        
+        hostname: 'shop.xcuts.co.uk'
       }
     ]
   }
