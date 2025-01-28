@@ -1,8 +1,8 @@
 import { useState } from 'react'
-import { Modal, Group, Button } from '@mantine/core'
-import dynamic from 'next/dynamic'
-import Canvas from './Canvas'
+import { Modal, Select } from '@mantine/core'
+import Canvas from './canvas'
 import { IoMdClose } from 'react-icons/io'
+import MachiningOptions from './canvas/MachiningOptions'
 
 const MachiningModal = () => {
   const [isOpen, setIsOpen] = useState(false)
@@ -39,8 +39,10 @@ const MachiningModal = () => {
           />
 
           <div className='grid grid-cols-3'>
-            <div className='col-span-1 bg-red-400'>hello</div>
-            <div className='col-span-2 bg-primary-100'>
+            <div className='col-span-1 bg-[#F5F5F5] p-4'>
+              <MachiningOptions />
+            </div>
+            <div className='col-span-2 bg-primary-100 relative'>
               <Canvas />
             </div>
           </div>

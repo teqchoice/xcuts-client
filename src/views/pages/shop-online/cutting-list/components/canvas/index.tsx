@@ -1,5 +1,8 @@
 import React, { useState } from 'react'
-import { Stage, Layer, Rect, Line, Text, Circle } from 'react-konva'
+import { Stage, Layer, Rect, Line, Text, Circle, Arrow } from 'react-konva'
+import FaceBox from './FaceBox'
+import Image from 'next/image'
+import GrainBox from './GrainBox'
 
 interface Dimensions {
   width: number // Represents the rectangle's width
@@ -12,7 +15,7 @@ const Canvas: React.FC = () => {
     height: 2000 // The height of the rectangle
   })
 
-  const stageWidth = 800
+  const stageWidth = 780
   const stageHeight = 800
 
   // Scale factor to fit the rectangle within the stage
@@ -105,25 +108,10 @@ const Canvas: React.FC = () => {
             stroke='#7D848C'
           />
           <Text x={rectX + scaledWidth / 2 - 7.5} y={rectY + scaledHeight + 55} text='L2' fontSize={12} fill='#000' />
-
-          {/* Top-left square */}
-          <Rect x={10} y={30} width={100} height={100} stroke='#000000' strokeWidth={1} />
-          <Text x={10} y={10} text='Grain direction' fontSize={12} lineHeight={1.5} fill='#222222' />
-          <Line
-            x={20}
-            y={20}
-            points={[15, 50, 150, 0, 200, 100, 0, 100]}
-            fill='#ffffff'
-            stroke='#7D848C'
-            strokeWidth={1}
-          />
-          {/* Bottom-left square */}
-          <Text x={10} y={670} text='Panel shows' fontSize={12} lineHeight={1.5} fill='#222222' />
-          <Rect x={10} y={690} width={100} height={100} stroke='#000000' strokeWidth={1} />
-          <Text x={17.5} y={705} text='FRONT' fontSize={24} lineHeight={1.5} fill='#707070' />
-          <Text x={35} y={745} text='FACE' fontSize={18} lineHeight={1.5} fill='#707070' />
         </Layer>
       </Stage>
+      <GrainBox />
+      <FaceBox />
     </div>
   )
 }
