@@ -93,12 +93,9 @@ export const getServerSideProps = async (context: any) => {
     const { data: brands } = await axios.get(
       `https://cms.xcuts.co.uk/items/brands?fields=page_name,description,poster.filename_disk,poster.id`
     )
-    // const { data: decors } = await axios.get(
-    //   `https://shop.xcuts.co.uk/items/decors?fields=*.*.*&filter[brand_ref][name][_eq]=${context.query.Brand}&limit=500&sort=sort,-date_updated,date_updated`
-    // )
-
-    const decors = { data: [] }
-
+    const { data: decors } = await axios.get(
+      `https://shop.xcuts.co.uk/items/decors?fields=*.*.*&filter[brand_ref][name][_eq]=${context.query.Brand}&limit=500&sort=sort,-date_updated,date_updated`
+    )
     // `https://shop.xcuts.co.uk/items/categories?&filter[parent][related_categories_id][name][_contains]=brand`
 
     const { data: header } = await axios.get(`${process.env.NEXT_PUBLIC_CMS_API_URL}/items/header?fields=*.*`)
