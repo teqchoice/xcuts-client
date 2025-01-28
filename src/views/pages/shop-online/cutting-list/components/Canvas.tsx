@@ -107,28 +107,21 @@ const Canvas: React.FC = () => {
           <Text x={rectX + scaledWidth / 2 - 7.5} y={rectY + scaledHeight + 55} text='L2' fontSize={12} fill='#000' />
 
           {/* Top-left square */}
-          <Rect
-            x={10} // Adjust x and y to position the square
-            y={10}
-            width={100}
-            height={100}
+          <Rect x={10} y={30} width={100} height={100} stroke='#000000' strokeWidth={1} />
+          <Text x={10} y={10} text='Grain direction' fontSize={12} lineHeight={1.5} fill='#222222' />
+          <Line
+            x={20}
+            y={20}
+            points={[15, 50, 150, 0, 200, 100, 0, 100]}
             fill='#ffffff'
-            stroke='#000000'
+            stroke='#7D848C'
             strokeWidth={1}
           />
-          <Text x={55} y={65} text='Grain direction' fontSize={12} lineHeight={1.5} />
-
           {/* Bottom-left square */}
-          <Rect
-            x={10} // Adjust x and y to position the square
-            y={690}
-            width={100}
-            height={100}
-            fill='#ffffff'
-            stroke='#000000'
-            strokeWidth={1}
-          />
-          <Text x={55} y={415} text='FRONT FACE' fontSize={12} lineHeight={1.5} />
+          <Text x={10} y={670} text='Panel shows' fontSize={12} lineHeight={1.5} fill='#222222' />
+          <Rect x={10} y={690} width={100} height={100} stroke='#000000' strokeWidth={1} />
+          <Text x={17.5} y={705} text='FRONT' fontSize={24} lineHeight={1.5} fill='#707070' />
+          <Text x={35} y={745} text='FACE' fontSize={18} lineHeight={1.5} fill='#707070' />
         </Layer>
       </Stage>
     </div>
