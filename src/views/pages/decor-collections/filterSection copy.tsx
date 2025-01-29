@@ -1,54 +1,37 @@
+import { useDebouncedValue } from '@mantine/hooks'
 import { useRouter } from 'next/router'
 import React, { useEffect, useState } from 'react'
 
 export default function FilterSection(props: any) {
   const router = useRouter()
 
+  const [startSearching, setStartSearching] = useState(false)
   const [name, setName] = useState('')
   const [barand, setBrand] = useState('')
   const [core, setCore] = useState('')
   const [thickness, setThickness] = useState('')
   const [surface, setSurface] = useState('')
-  // const [qualities, setQualities] = useState('')
   const [design, setDesign] = useState('')
   const [texture, setTexture] = useState('')
   const [finish, setFinish] = useState('')
 
+  const [value] = useDebouncedValue(name, 500)
+
   useEffect(() => {
-    // router.query = {
-    //   CodeOrName: name ? name : '',
-    //   Brand: '',
-    //   Core: '',
-    //   Thickness: '',
-    //   Surface: '',
-    //   Finish: '',
-    //   Design: '',
-    //   Texture: ''
-    // }
-    // setName(router.query.CodeOrName)
-    // setBrand(router.query.Brand)
-    // setCore(router.query.Core)
-    // setThickness(router.query.Thickness)
-    // setSurface(router.query.Surface)
-    // setDesign(router.query.Design)
-    // setTexture(router.query.Texture)
-    // setFinish(router.query.Finish)
+    if (startSearching) setvalue('name', name)
+  }, [value])
 
-    // console.log(barand)
-    // router.push(router)
-    setName(router.query.CodeOrName as string)
-    setBrand(router.query.Brand as string)
-    setCore(router.query.Core as string)
-    setThickness(router.query.Thickness as string)
-    setSurface(router.query.Surface as string)
-    setFinish(router.query.Finish as string)
-    setDesign(router.query.Design as string)
-    setTexture(router.query.Texture as string)
-
-    // router.push(router)
+  useEffect(() => {
+    if (router.query.CodeOrName) setName(router.query.CodeOrName as string)
+    if (router.query.Brand) setBrand(router.query.Brand as string)
+    if (router.query.Core) setCore(router.query.Core as string)
+    if (router.query.Thickness) setThickness(router.query.Thickness as string)
+    if (router.query.Surface) setSurface(router.query.Surface as string)
+    if (router.query.Finish) setFinish(router.query.Finish as string)
+    if (router.query.Design) setDesign(router.query.Design as string)
+    if (router.query.Texture) setTexture(router.query.Texture as string)
   }, [router.query])
 
-  // switch case for find wich filter and then set value
   function setvalue(name: string, value: string) {
     switch (name) {
       case 'name':
@@ -95,8 +78,7 @@ export default function FilterSection(props: any) {
         console.log(`Invalid filter name: ${name}`)
     }
   }
-  // onChange={e => setName(e.target.value)}
-  // console.log(Data)
+
   return (
     <>
       <div className='grid lg:grid-cols-8 md:grid-cols-5 sm:grid-cols-4 gap-x-2 md:gap-y-2 sm:gap-y-2 gap-y-2 mt-10 mb-2'>
@@ -108,7 +90,10 @@ export default function FilterSection(props: any) {
             id='name'
             className='block w-full border-0 py-2 px-2.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary text-sm leading-6 focus:outline-none'
             placeholder='Code/Name'
-            onChange={e => setvalue('name', e.target.value)}
+            onChange={e => {
+              setName(e.target.value)
+              setStartSearching(true)
+            }}
           />
         </div>
         <div>
@@ -174,13 +159,13 @@ export default function FilterSection(props: any) {
             <option className='text-gray-500' value=''>
               Core
             </option>
-            <option className='text-gray-500' value='chipboard'>
+            <option className='text-gray-500' value='Chipboard'>
               Chipboard
             </option>
             <option className='text-gray-500' value='MDF'>
               MDF
             </option>
-            <option className='text-gray-500' value='plywood'>
+            <option className='text-gray-500' value='Plywood'>
               Plywood
             </option>
           </select>
@@ -196,112 +181,112 @@ export default function FilterSection(props: any) {
             <option className='text-gray-500' value=''>
               Thickness
             </option>
-            <option className='text-gray-500' value='3 mm'>
+            <option className='text-gray-500' value='3'>
               3 mm
             </option>
-            <option className='text-gray-500' value='4 mm'>
+            <option className='text-gray-500' value='4'>
               4 mm
             </option>
             {/* <option className='text-gray-500' value='5 mm'>
               5 mm
             </option> */}
-            <option className='text-gray-500' value='6 mm'>
+            <option className='text-gray-500' value='6'>
               6 mm
             </option>
-            <option className='text-gray-500' value='7 mm'>
+            <option className='text-gray-500' value='7'>
               7 mm
             </option>
-            <option className='text-gray-500' value='8 mm'>
+            <option className='text-gray-500' value='8'>
               8 mm
             </option>
-            <option className='text-gray-500' value='9 mm'>
+            <option className='text-gray-500' value='9'>
               9 mm
             </option>
-            <option className='text-gray-500' value='10 mm'>
+            <option className='text-gray-500' value='10'>
               10 mm
             </option>
-            {/* <option className='text-gray-500' value='11 mm'>
+            {/* <option className='text-gray-500' value='11'>
               11 mm
             </option> */}
-            <option className='text-gray-500' value='12 mm'>
+            <option className='text-gray-500' value='12'>
               12 mm
             </option>
-            <option className='text-gray-500' value='13 mm'>
+            <option className='text-gray-500' value='13'>
               13 mm
             </option>
-            {/* <option className='text-gray-500' value='14 mm'>
+            {/* <option className='text-gray-500' value='14'>
               14 mm
             </option> */}
-            <option className='text-gray-500' value='15 mm'>
+            <option className='text-gray-500' value='15'>
               15 mm
             </option>
-            <option className='text-gray-500' value='16 mm'>
+            <option className='text-gray-500' value='16'>
               16 mm
             </option>
-            {/* <option className='text-gray-500' value='17 mm'>
+            {/* <option className='text-gray-500' value='17'>
               17 mm
             </option> */}
-            <option className='text-gray-500' value='18 mm'>
+            <option className='text-gray-500' value='18'>
               18 mm
             </option>
-            <option className='text-gray-500' value='18.5 mm'>
+            <option className='text-gray-500' value='18.5'>
               18.5 mm
             </option>
-            <option className='text-gray-500' value='19 mm'>
+            <option className='text-gray-500' value='19'>
               19 mm
             </option>
-            {/* <option className='text-gray-500' value='20 mm'>
+            {/* <option className='text-gray-500' value='20'>
               20 mm
             </option> */}
-            <option className='text-gray-500' value='21 mm'>
+            <option className='text-gray-500' value='21'>
               21 mm
             </option>
-            <option className='text-gray-500' value='22 mm'>
+            <option className='text-gray-500' value='22'>
               22 mm
             </option>
-            {/* <option className='text-gray-500' value='23 mm'>
+            {/* <option className='text-gray-500' value='23'>
               23 mm
             </option> */}
-            <option className='text-gray-500' value='24 mm'>
+            <option className='text-gray-500' value='24'>
               24 mm
             </option>
-            <option className='text-gray-500' value='25 mm'>
+            <option className='text-gray-500' value='25'>
               25 mm
             </option>
-            <option className='text-gray-500' value='26 mm'>
+            <option className='text-gray-500' value='26'>
               26 mm
             </option>
-            <option className='text-gray-500' value='27 mm'>
+            <option className='text-gray-500' value='27'>
               27 mm
             </option>
-            {/* <option className='text-gray-500' value='28 mm'>
+            {/* <option className='text-gray-500' value='28'>
               28 mm
             </option> */}
-            {/* <option className='text-gray-500' value='29 mm'>
+            {/* <option className='text-gray-500' value='29'>
               29 mm
             </option> */}
-            <option className='text-gray-500' value='30 mm'>
+            <option className='text-gray-500' value='30'>
               30 mm
             </option>
-            <option className='text-gray-500' value='31 mm'>
+            <option className='text-gray-500' value='31'>
               31 mm
             </option>
-            <option className='text-gray-500' value='36 mm'>
+            <option className='text-gray-500' value='36'>
               36 mm
             </option>
-            <option className='text-gray-500' value='37 mm'>
+            <option className='text-gray-500' value='37'>
               37 mm
             </option>
-            <option className='text-gray-500' value='38 mm'>
+            <option className='text-gray-500' value='38'>
               38 mm
             </option>
-            <option className='text-gray-500' value='40 mm'>
+            <option className='text-gray-500' value='40'>
               40 mm
             </option>
-            <option className='text-gray-500' value='45 mm'>
+            <option className='text-gray-500' value='45'>
               45 mm
             </option>
-            <option className='text-gray-500' value='50 mm'>
+            <option className='text-gray-500' value='50'>
               50 mm
             </option>
           </select>
@@ -317,46 +302,46 @@ export default function FilterSection(props: any) {
             <option className='text-gray-500' value=''>
               Surface
             </option>
-            <option className='text-gray-500' value='melamine'>
+            <option className='text-gray-500' value='Melamine'>
               Melamine
             </option>
-            <option className='text-gray-500' value='lacquered melamine'>
+            <option className='text-gray-500' value='Lacquered Melamine'>
               Lacquered Melamine
             </option>
-            <option className='text-gray-500' value='acrylic'>
+            <option className='text-gray-500' value='Acrylic'>
               Acrylic
             </option>
-            <option className='text-gray-500' value='foil'>
+            <option className='text-gray-500' value='Foil'>
               Foil
             </option>
-            <option className='text-gray-500' value='metal'>
+            <option className='text-gray-500' value='Metal'>
               Metal
             </option>
-            <option className='text-gray-500' value='fabric'>
+            <option className='text-gray-500' value='Fabric'>
               Fabric
             </option>
             <option className='text-gray-500' value='MDF'>
               MDF
             </option>
-            <option className='text-gray-500' value='dyed MDF'>
+            <option className='text-gray-500' value='Dyed MDF'>
               Dyed MDF
             </option>
-            <option className='text-gray-500' value='primed MDF'>
+            <option className='text-gray-500' value='Primed MDF'>
               Primed MDF
             </option>
-            <option className='text-gray-500' value='veneer'>
+            <option className='text-gray-500' value='Veneer'>
               Veneer
             </option>
-            <option className='text-gray-500' value='lacquered veneer'>
+            <option className='text-gray-500' value='Lacquered Veneer'>
               Lacquered Veneer
             </option>
-            <option className='text-gray-500' value='qiled veneer'>
+            <option className='text-gray-500' value='Qiled Veneer'>
               Oiled Veneer
             </option>
-            <option className='text-gray-500' value='birch ply'>
+            <option className='text-gray-500' value='Birch Ply'>
               Birch Ply
             </option>
-            <option className='text-gray-500' value='plywood'>
+            <option className='text-gray-500' value='Plywood'>
               Plywood
             </option>
           </select>
@@ -422,31 +407,31 @@ export default function FilterSection(props: any) {
             <option className='text-gray-500' value=''>
               Texture
             </option>
-            <option className='text-gray-500' value='plain'>
+            <option className='text-gray-500' value='Plain'>
               Plain
             </option>
-            <option className='text-gray-500' value='pearl'>
+            <option className='text-gray-500' value='Pearl'>
               Pearl
             </option>
-            <option className='text-gray-500' value='abstract'>
+            <option className='text-gray-500' value='Abstract'>
               Abstract
             </option>
-            <option className='text-gray-500' value='wood'>
+            <option className='text-gray-500' value='Wood'>
               Wood
             </option>
-            <option className='text-gray-500' value='synced wood'>
+            <option className='text-gray-500' value='Synced Wood'>
               Synced Wood
             </option>
-            <option className='text-gray-500' value='leather'>
+            <option className='text-gray-500' value='Leather'>
               Leather
             </option>
-            <option className='text-gray-500' value='textile'>
+            <option className='text-gray-500' value='Textile'>
               Textile
             </option>
-            <option className='text-gray-500' value='stone'>
+            <option className='text-gray-500' value='Stone'>
               Stone
             </option>
-            <option className='text-gray-500' value='metal'>
+            <option className='text-gray-500' value='Metal'>
               Metal
             </option>
           </select>
@@ -462,28 +447,28 @@ export default function FilterSection(props: any) {
             <option className='text-gray-500' value=''>
               Finish
             </option>
-            <option className='text-gray-500' value='supermatt'>
+            <option className='text-gray-500' value='Supermatt'>
               Supermatt
             </option>
             <option className='text-gray-500' value='matt'>
               Matt
             </option>
-            <option className='text-gray-500' value='semimatt'>
+            <option className='text-gray-500' value='Semimatt'>
               Semimatt
             </option>
-            <option className='text-gray-500' value='matt-satin'>
+            <option className='text-gray-500' value='Matt-Satin'>
               Matt-Satin
             </option>
-            <option className='text-gray-500' value='satin'>
+            <option className='text-gray-500' value='Satin'>
               Satin
             </option>
-            <option className='text-gray-500' value='semigloss'>
+            <option className='text-gray-500' value='Semigloss'>
               Semigloss
             </option>
             <option className='text-gray-500' value='gloss'>
               Gloss
             </option>
-            <option className='text-gray-500' value='high gloss'>
+            <option className='text-gray-500' value='Highgloss'>
               High Gloss
             </option>
             <option className='text-gray-500' value='primed'>

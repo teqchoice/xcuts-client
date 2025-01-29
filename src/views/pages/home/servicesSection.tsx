@@ -86,7 +86,7 @@ export default function ServicesSection({ data }: any) {
             <div className='basis-[47.88%]  md:basis-[45%] lg:basis-[46%] xl:basis-[47%] 2xl:basis-[48%] flex items-center'>
               <div className='flex flex-col md:justify-center gap-6 pb-16 py-8 px-4 md:max-w-[410px] lg:max-w-[567px] lg:pl-16'>
                 <h2
-                  className='text-3xl md:text-4xl lg:text-5xl text-black'
+                  className='text-3xl md:text-[40px] text-black'
                   dangerouslySetInnerHTML={{
                     __html: data?.s_name1
                   }}
@@ -170,7 +170,7 @@ export default function ServicesSection({ data }: any) {
             </div>
             <div className='basis-[47.88%]  md:basis-[45%] lg:basis-[46%] xl:basis-[47%] 2xl:basis-[48%] flex items-center'>
               <div className='flex flex-col md:justify-center md:ml-auto gap-6 pb-16 py-8 px-4 md:max-w-[410px] lg:max-w-[567px] lg:pr-16'>
-                <h2 className='text-3xl md:text-4xl lg:text-5xl text-black'>{data?.s_name2}</h2>
+                <h2 className='text-3xl md:text-[40px] text-black'>{data?.s_name2}</h2>
                 <div
                   dangerouslySetInnerHTML={{
                     __html: data?.s_content2
@@ -252,7 +252,7 @@ export default function ServicesSection({ data }: any) {
             </div>
             <div className='basis-[47.88%]  md:basis-[45%] lg:basis-[46%] xl:basis-[47%] 2xl:basis-[48%] flex items-center'>
               <div className='flex flex-col md:justify-center gap-6 pb-16 py-8 px-4 md:max-w-[410px] lg:max-w-[567px] lg:pl-16'>
-                <h2 className='text-3xl md:text-4xl lg:text-5xl text-black'>{data?.s_name3}</h2>
+                <h2 className='text-3xl md:text-[40px] text-black'>{data?.s_name3}</h2>
                 <div
                   dangerouslySetInnerHTML={{
                     __html: data?.s_content3
@@ -332,7 +332,7 @@ export default function ServicesSection({ data }: any) {
             </div>
             <div className='basis-[47.88%] md:basis-[45%] lg:basis-[46%] xl:basis-[47%] 2xl:basis-[48%] flex items-center'>
               <div className='flex flex-col md:justify-center md:ml-auto gap-6 pb-16 py-8 px-4 md:max-w-[410px] lg:max-w-[567px] lg:pr-16'>
-                <h2 className='text-3xl md:text-4xl lg:text-5xl text-black'>{data?.s_name4}</h2>
+                <h2 className='text-3xl md:text-[40px] text-black'>{data?.s_name4}</h2>
                 <div
                   dangerouslySetInnerHTML={{
                     __html: data?.s_content4

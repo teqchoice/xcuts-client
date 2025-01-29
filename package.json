@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@fancyapps/ui": "^5.0.36",
     "@headlessui/react": "^2.1.10",
     "@icon-park/react": "^1.4.2",
     "@mantine/core": "^7.12.1",
@@ -37,6 +38,7 @@
     "next-redux-wrapper": "^8.1.0",
     "nextjs-toploader": "^3.7.15",
     "photoswipe": "^5.4.3",
+    "qs": "^6.14.0",
     "radash": "^11.0.0",
     "react": "^18",
     "react-dom": "^18",
@@ -50,6 +52,7 @@
   },
   "devDependencies": {
     "@types/node": "^20",
+    "@types/qs": "^6.9.18",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "autoprefixer": "^10",
