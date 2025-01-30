@@ -28,10 +28,8 @@ export const getServerSideProps = async (context: any) => {
         finish_ref: context.query.Finish ? { name: { _eq: context.query.Finish } } : null
       }).filter(([_, value]) => value !== null)
     ),
-    name: context.query.CodeOrName ? context.query.CodeOrName : null
+    search: context.query.CodeOrName ? context.query.CodeOrName : null
   })
-
-  console.log(filters)
 
   try {
     // const { data: brand } = await axios.get(

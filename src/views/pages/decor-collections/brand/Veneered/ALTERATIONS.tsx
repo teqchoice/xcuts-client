@@ -50,7 +50,7 @@ export default function CuttingMCF(props: any) {
         <div className=' flex justify-center items-center flex-col'>
           <div className='text-center flex flex-col gap-3 max-w-[80%] text-black mb-5'>
             <p className='text-3xl'>VARIATIONS OF FABRIC, STONE AND MARBLE!</p>
-            <h4 className='md:text-5xl text-4xl font-semibold mb-7'>MATERIAL ALTERATIONS</h4>
+            <h4 className='md:text-[40px] text-2xl font-semibold mb-7'>MATERIAL ALTERATIONS</h4>
             <p className='text-base text-black'>
               The material reproductions collection from Egger is a popular choice for interiors with an industrial,
               minimalist, or contemporary aesthetic. It includes a variety of materials, both natural and manufactured.

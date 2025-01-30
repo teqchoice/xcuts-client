@@ -51,7 +51,7 @@ export default function CuttingMDF(props: any) {
           <div className=' flex justify-center items-center flex-col'>
             <div className='text-center flex flex-col gap-3 max-w-[80%] text-black mb-5'>
               {/* <p className='text-3xl'>Solid wood</p> */}
-              <h4 className='md:text-5xl text-4xl font-semibold mb-7'>Service for Cutting MDF Boards</h4>
+              <h4 className='md:text-[40px] text-2xl font-semibold mb-7'>Service for Cutting MDF Boards</h4>
               <p className='text-base text-black'>
                 MDF (Medium Density Fibreboard) is one of the most popular board materials requested by our clients. Its
                 versatile characteristics make it highly sought after in the construction and furniture industries. From

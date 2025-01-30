@@ -8,7 +8,7 @@ export default function CuttingMCF(props: any) {
         <div className=' flex justify-center items-center flex-col'>
           <div className='text-center flex flex-col gap-3 max-w-[80%] text-black mb-5'>
             <p className='text-3xl'>SPECIAL SELECTIONS OF WOOD TO SUIT JUST YOU </p>
-            <h4 className='md:text-5xl text-4xl font-semibold mb-7'>WOOD REPRODUCTIONS</h4>
+            <h4 className='md:text-[40px] text-2xl font-semibold mb-7'>WOOD REPRODUCTIONS</h4>
             <p className='text-base text-black'>
               One of the few companies that offers a beautiful mix of tree species in various textured surfaces to bring
               the outdoors into your living and working spaces is Egger. Along with the typical oaks and walnuts, this

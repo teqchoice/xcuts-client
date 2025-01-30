@@ -51,7 +51,7 @@ export default function SolidWoodSection(props: any) {
           <div className='flex justify-center items-center flex-col'>
             <div className='text-center md:max-w-[80%] max-w-full text-black mb-5 md:mt-20 mt-10'>
               {/* <p className='text-3xl'>Solid wood</p> */}
-              <h4 className='md:text-5xl text-4xl font-semibold mb-7'>Grain Alignment</h4>
+              <h4 className='md:text-[40px] text-2xl font-semibold mb-7'>Grain Alignment</h4>
               <p className='text-base text-black'>
                 Your cutting list can be optimised to grain match the pattern to create a seamless design, which is
                 especially useful when working on larger projects.

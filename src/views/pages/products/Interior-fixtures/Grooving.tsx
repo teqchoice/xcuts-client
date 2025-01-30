@@ -9,7 +9,7 @@ export default function Grooving(data, props: any) {
           <div className=' flex justify-center items-center flex-col md:mt-20 mt-10'>
             <div className='text-center flex flex-col gap-3 md:max-w-[80%] max-w-full text-black mb-5'>
               <p className='text-3xl'>Panel Grooving</p>
-              <h4 className='md:text-5xl text-4xl font-semibold mb-7'>
+              <h4 className='md:text-[40px] text-2xl font-semibold mb-7'>
                 {/* Movento Range Applications: */}
                 {data?.data?.items[0]?.title}
               </h4>

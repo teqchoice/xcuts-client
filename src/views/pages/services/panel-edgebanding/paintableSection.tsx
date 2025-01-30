@@ -48,9 +48,9 @@ export default function PaintableSection(props: any) {
     <>
       <section>
         <div className='px-4 sm:container'>
-          <div className='text-center text-black mb-11 md:mt-20 mt-10'>
+          <div className='text-center text-black mb-11 md:mt-20 mt-10 flex lg:gap-y-3 gap-y-2 justify-center flex-col'>
             {/* <p className="text-3xl">Paintable preparation tape</p> */}
-            <h4 className='md:text-5xl text-4xl font-semibold mb-7'>Preparatory Painting Tape</h4>
+            <h4 className='md:text-[40px] text-2xl font-semibold mb-7'>Preparatory Painting Tape</h4>
             <p className='text-base text-black'>
               An MDF board's edges can be sealed with preparation tape. The tape eliminates the need to fill and sand
               edges and offers a great surface for hand painting at home or spray painting in a factory. You have the

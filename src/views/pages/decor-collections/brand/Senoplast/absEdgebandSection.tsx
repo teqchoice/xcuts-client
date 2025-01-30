@@ -50,7 +50,7 @@ export default function ABSEdgebandSection(props: any) {
         <div className='px-4 sm:container'>
           <div className='text-center text-black mb-11 mt-20'>
             {/* <p className='text-3xl'>ABS edgeband</p> */}
-            <h4 className='md:text-5xl text-4xl font-semibold mb-7'>Key Features of XCUTS Cutting Service</h4>
+            <h4 className='md:text-[40px] text-2xl font-semibold mb-7'>Key Features of XCUTS Cutting Service</h4>
             {/* <p className='text-base text-black'>
               The 1mm ABS Edge Banding tape is almost undetectable and offers a moderately robust edge surface. Square
               and radius milling options are available for the tape.

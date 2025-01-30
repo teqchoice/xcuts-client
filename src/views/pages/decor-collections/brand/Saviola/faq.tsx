@@ -16,7 +16,7 @@ export default function FAQ(props: any) {
             <div className='text-center flex flex-col gap-3 w-[80%] text-black mb-5'>
               {/* <p className='text-3xl'>Solid wood</p> */}
               {/* <p className='text-base text-black'>Get the greatest results from our cutting service!</p> */}
-              <h4 className='md:text-5xl text-4xl font-semibold mb-7'>FAQs:</h4>
+              <h4 className='md:text-[40px] text-2xl font-semibold mb-7'>FAQs:</h4>
 
               <Accordion variant='separated' className='w-full flex flex-col gap-5 ddddd'>
                 <Accordion.Item value='1' className='bg-slate-100 text-left p-4 rounded-md shadow-md'>

@@ -51,7 +51,7 @@ export default function SolidWoodSection(props: any) {
           <div className=' flex justify-center items-center flex-col'>
             <div className='text-center  max-w-[80%] text-black mb-5 mt-20'>
               <p className='text-3xl'>MORE THAN JUST GLOSS</p>
-              <h4 className='md:text-5xl text-4xl font-semibold mb-7'>PERFECTSENSE</h4>
+              <h4 className='md:text-[40px] text-2xl font-semibold mb-7'>PERFECTSENSE</h4>
               <p className='text-base text-black'>
                 With the Egger PerfectSense line, you can now design furniture that plays with light thanks to a new
                 standard in lacquered boards in Premium Matt (PM) and Premium Gloss (PG) finishes. PerfectSense decor
