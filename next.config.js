@@ -5,6 +5,7 @@ const nextConfig = {
   typescript: {
     ignoreBuildErrors: true
   },
+  trailingSlash: true,
   images: {
     // unoptimized: true,
     // loader: 'custom',
@@ -12,8 +13,11 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'shop.xcuts.co.uk',
-        
+        hostname: 'shop.xcuts.co.uk'
+      },
+      {
+        protocol: 'https',
+        hostname: 'cms.xcuts.co.uk'
       }
     ]
   }

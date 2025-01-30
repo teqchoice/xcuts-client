@@ -1,10 +1,4 @@
-import axios from 'axios'
-import React, { useEffect, useState } from 'react'
-
 export default function Producttable({ item, setOpened, opened, setPupitem }: any) {
-  // console.log(item)
-  const [thickness, setThickness] = useState([])
-
   return (
     <tr className='border-t '>
       <td>
@@ -48,7 +42,7 @@ export default function Producttable({ item, setOpened, opened, setPupitem }: an
       <td>
         <div className='text-[#707070] text-[15px] text-center px-3'>{item?.width}</div>
       </td>
-      <td className=''>
+      <td className='min-w-[150px]'>
         <div className='flex xl:justify-around flex-row gap-x-1 w-full'>
           <div className='flex gap-x-2'>
             {item?.thickness_ref?.map((thicknessItem: any, index: number) => (

@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import React from 'react'
 
 export default function BlockBaner({ data }: any) {
@@ -11,7 +12,14 @@ export default function BlockBaner({ data }: any) {
       }
     >
       {data?.baner ? (
-        <img src={data?.baner} alt='baner' className='max-h-[460px] w-full md:h-auto object-cover' />
+        <Image
+          src={data?.baner}
+          alt='baner'
+          className='max-h-[460px] w-full md:h-auto object-cover'
+          height={460}
+          width={1000}
+          quality={100}
+        />
       ) : (
         <img
           src='https://cms.xcuts.co.uk/assets/c6f84333-6a2d-4f45-bbcc-ac899e74cf55/photo_2024-11-27_14-32-16.jpg'
