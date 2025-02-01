@@ -1,7 +1,6 @@
 import axios from 'axios'
-import Image from 'next/image'
 import React, { useEffect, useState } from 'react'
-
+import Image from '@/views/pages/components/Image'
 export default function Productgrid({ item, setOpened, opened, setPupitem }: any) {
   const [thickness, setThickness] = useState([])
 
@@ -33,7 +32,6 @@ export default function Productgrid({ item, setOpened, opened, setPupitem }: any
             width={448}
             height={300}
             className='md:w-[448px] md:h-[300px] object-cover'
-            quality={100}
           />
           <div className='absolute hidden top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2'>
             <img src='assets/images/grid-icon-hover.webp' />
@@ -49,12 +47,12 @@ export default function Productgrid({ item, setOpened, opened, setPupitem }: any
               <img src='assets/images/img-04.webp' />
             </a>
           </div>
-          <div className='absolute z-10 py-5 pl-5 pr-[75px] before:border-solid before:border-t-[bg-transparent] before:border-r-transparent before:border-b-[#f82f45] before:border-l-[bg-transparent] before:border-t-0 before:border-r-[40px] before:border-b-[90px] before:border-l-0 before:absolute before:w-full before:h-full before:-top-2 before:md:top-0 before:left-0 before:-z-10 md:bottom-0 bottom-[-8px]'>
-            <div className='flex justify-between'>
-              <span className='font-medium text-xl text-white mr-4 capitalize'>{item?.brand_ref?.name}</span>
-              <span className='font-medium text-xl text-white'>{item.product_code}</span>
+          <div className='absolute z-10 py-5 pl-5 pr-[75px] before:border-solid before:border-t-[bg-transparent] before:border-r-transparent before:border-b-[#f82f45] before:border-l-[bg-transparent] before:border-t-0 before:border-r-[40px] before:border-b-[90px] before:border-l-0 before:absolute before:w-full before:h-full before:-top-2 before:md:top-0 before:left-0 before:-z-10 md:bottom-1 bottom-[-8px]'>
+            <div className='flex justify-between gap-x-2'>
+              <span className='font-medium text-[14px] text-white capitalize'>{item?.brand_ref?.name}</span>
+              <span className='font-medium text-[14px] text-white'>{item.product_code}</span>
             </div>
-            <div className='text-lg text-white text-left truncate'>{item.product_name}</div>
+            <div className='text-[14px] text-white text-left truncate'>{item.product_name}</div>
           </div>
         </div>
         <div className='relative border border-[#cccccc] px-4 py-6'>

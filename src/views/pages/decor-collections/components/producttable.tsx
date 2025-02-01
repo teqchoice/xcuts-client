@@ -49,7 +49,7 @@ export default function Producttable({ item, setOpened, opened, setPupitem }: an
         <div className='text-[#707070] text-[15px] text-center px-3'>{item?.width}</div>
       </td>
       <td className=''>
-        <div className='flex xl:justify-around flex-row gap-x-1 w-full'>
+        <div className='flex justify-between flex-row gap-x-1 w-full'>
           <div className='flex gap-x-2'>
             {item?.thickness_ref?.map((thicknessItem: any, index: number) => (
               <div
