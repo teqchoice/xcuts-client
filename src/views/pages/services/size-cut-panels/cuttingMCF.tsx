@@ -51,7 +51,7 @@ export default function CuttingMCF(props: any) {
           <div className='flex justify-center items-center flex-col'>
             <div className='text-center flex flex-col gap-3 md:max-w-[80%] max-w-full text-black mb-5'>
               {/* <p className='text-3xl'>Solid wood</p> */}
-              <h4 className='md:text-5xl text-4xl font-semibold mb-7'>MFC Board Cutting Service</h4>
+              <h4 className='md:text-[40px] text-2xl font-semibold mb-7'>MFC Board Cutting Service</h4>
               <p className='text-base text-black'>
                 Melamine-Faced Chipboard (MFC) is a widely used furniture board that come in a number of design styles,
                 textures and surface finishes. MFC boards can be purchased with or with cutting; however we do recommend

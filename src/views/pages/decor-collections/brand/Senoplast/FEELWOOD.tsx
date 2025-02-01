@@ -50,7 +50,7 @@ export default function CuttingMCF(props: any) {
         <div className=' flex justify-center items-center flex-col'>
           <div className='text-center flex flex-col gap-3 max-w-[80%] text-black mb-5'>
             <p className='text-3xl'>VARIATIONS OF WOOD DECORS</p>
-            <h4 className='md:text-5xl text-4xl font-semibold mb-7'>FEELWOOD</h4>
+            <h4 className='md:text-[40px] text-2xl font-semibold mb-7'>FEELWOOD</h4>
             <p className='text-base text-black'>
               Over the last few decades, Egger has emerged as the leading authority on innovative woodgrain designs. The
               Feelwood line enhances the popular woodgrains collection by utilising synchronised pore technology to
@@ -119,7 +119,6 @@ export default function CuttingMCF(props: any) {
                 </a>
               </div>
             </div> */}
-
           </div>
         </div>
       </div>

@@ -48,9 +48,9 @@ export default function ABSEdgebandSection(props: any) {
     <>
       <section>
         <div className='px-4 sm:container'>
-          <div className='text-center text-black mb-11 md:mt-20 mt-10'>
+          <div className='text-center text-black mb-11 md:mt-20 mt-10 flex lg:gap-y-3 gap-y-2 justify-center flex-col'>
             <p className='text-3xl'>Decorated Panels</p>
-            <h4 className='md:text-5xl text-4xl font-semibold mb-7'>Let Your Imagination Run Wild!</h4>
+            <h4 className='md:text-[40px] text-2xl font-semibold mb-7'>Let Your Imagination Run Wild!</h4>
             <p className='text-base text-black'>
               Routing out a decorative pattern, often in an MDF panel, is a frequent usage of our CNC service. With this
               style of fretwork panelling, you can express your personality via your designs and give your house or

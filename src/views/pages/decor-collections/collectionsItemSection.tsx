@@ -6,10 +6,10 @@ import { Close } from '@icon-park/react'
 import Table from './table'
 import Productgrid from './components/productgrid'
 import { ParsedUrlQuery } from 'querystring'
-import { Pagination } from '@mantine/core'
+import { Pagination, Select } from '@mantine/core'
 import { useMediaQuery } from '@mantine/hooks'
 
-export default function CollectionsItemSection({ Data, Brand, BrandData, DecorsData }: any) {
+export default function CollectionsItemSection({ BrandData, DecorsData }: any) {
   const isGreaterThanMd = useMediaQuery('(min-width: 768px)')
 
   const isGreaterThanLg = useMediaQuery('(min-width: 1024px)')
@@ -22,7 +22,7 @@ export default function CollectionsItemSection({ Data, Brand, BrandData, DecorsD
 
   const [currentPage, setCurrentPage] = useState(1)
 
-  const pageSize = show === 1 ? 25 : 12
+  const [pageSize, setPageSize] = useState(show === 1 ? 20 : 10)
 
   const totalPages = Math.ceil(DecorsData?.length / pageSize)
 
@@ -39,8 +39,15 @@ export default function CollectionsItemSection({ Data, Brand, BrandData, DecorsD
   }, [router.query])
 
   useEffect(() => {
-    if (!isGreaterThanLg) setShow(2)
+    if (isGreaterThanLg === false) {
+      setShow(2)
+      setPageSize(10)
+    }
   }, [isGreaterThanLg])
+
+  useEffect(() => {
+    if (DecorsData) setCurrentPage(1)
+  }, [DecorsData])
 
   function BrandItem() {
     return BrandData?.map((item: any, index: number) => {
@@ -89,13 +96,6 @@ export default function CollectionsItemSection({ Data, Brand, BrandData, DecorsD
     })
   }
 
-  function ProductItem() {
-    // console.log(Brand)
-    return Data?.items?.map((item: any, index: number) => {
-      return <Productgrid />
-    })
-  }
-
   const handlePageChange = (page: number) => {
     setCurrentPage(page)
     if (componentRef.current) {
@@ -130,6 +130,7 @@ export default function CollectionsItemSection({ Data, Brand, BrandData, DecorsD
               onClick={() => {
                 setShow(1)
                 setCurrentPage(1)
+                setPageSize(20)
               }}
               className={`p-1 rounded-sm border border-transparent${show === 1 ? 'border border-primary' : ''}`}
             >
@@ -147,6 +148,7 @@ export default function CollectionsItemSection({ Data, Brand, BrandData, DecorsD
               onClick={() => {
                 setShow(2)
                 setCurrentPage(1)
+                setPageSize(10)
               }}
               className={`p-1 rounded-sm border border-transparent${show === 2 ? 'border border-primary' : ''}`}
             >
@@ -166,13 +168,7 @@ export default function CollectionsItemSection({ Data, Brand, BrandData, DecorsD
       {show === 1 ? (
         <>
           {currentItems?.length ? (
-            <Table
-              data={Data?.items}
-              DecorsData={currentItems}
-              setOpened={setOpened}
-              opened={opened}
-              setPupitem={setPupitem}
-            />
+            <Table DecorsData={currentItems} setOpened={setOpened} opened={opened} setPupitem={setPupitem} />
           ) : (
             <div className='text-center pb-14'>No Items Found...</div>
           )}
@@ -190,7 +186,7 @@ export default function CollectionsItemSection({ Data, Brand, BrandData, DecorsD
           )}
         </div>
       )}
-      <div className='flex justify-center pb-20'>
+      <div className='flex md:flex-row flex-col gap-y-5 items-center justify-center relative pb-10'>
         <Pagination
           radius='lg'
           total={totalPages}
@@ -201,6 +197,21 @@ export default function CollectionsItemSection({ Data, Brand, BrandData, DecorsD
             control: 'pagination-control'
           }}
           siblings={isGreaterThanMd ? 1 : 0}
+        />
+        <Select
+          placeholder='Page size'
+          data={['All', '10', '20', '50', '100']}
+          className='md:absolute right-0 sm:w-fit w-full'
+          value={pageSize.toString()}
+          onChange={value => {
+            if (value === 'All') {
+              setPageSize(1000)
+              setCurrentPage(1)
+            } else {
+              setPageSize(value ? +value : 0)
+              setCurrentPage(1)
+            }
+          }}
         />
       </div>
       {opened && (

@@ -34,7 +34,7 @@ export default function DifferentTechnologiesSection(data, props: any) {
           <div className=' flex justify-center items-center flex-col'>
             <div className='text-center flex flex-col gap-3  text-black mb-5'>
               <p className='text-3xl'>Legrabox</p>
-              <h4 className='md:text-5xl text-4xl font-semibold mb-7'>The key points</h4>
+              <h4 className='md:text-[40px] text-2xl font-semibold mb-7'>The key points</h4>
               <p className='text-base text-black'>
                 Legrabox includes several features and characteristics of design that are noteworthy. Blum has worked
                 hard to develop a really distinctive product line that is not only exquisite in form but also simple to

@@ -51,7 +51,7 @@ export default function CuttingMCF(props: any) {
           <div className=' flex justify-center items-center flex-col'>
             <div className='text-center flex flex-col gap-3 max-w-[80%] text-black mb-5'>
               {/* <p className='text-3xl'>Solid wood</p> */}
-              <h4 className='md:text-5xl text-4xl font-semibold mb-7'>Service for Cutting MFC Boards</h4>
+              <h4 className='md:text-[40px] text-2xl font-semibold mb-7'>Service for Cutting MFC Boards</h4>
               <p className='text-base text-black'>
                 MFC is a decorative furniture board that is available in a wide range of patterns, textures, and
                 finishes. Customers have the option of purchasing entire MFC sheets or submitting an online cutting list

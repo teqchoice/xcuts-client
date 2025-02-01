@@ -51,7 +51,7 @@ export default function SolidWoodSection(props: any) {
           <div className=' flex justify-center items-center flex-col'>
             <div className='text-center md:max-w-[80%] max-w-full text-black mb-5 md:mt-20 mt-10'>
               <p className='text-3xl'>The Key Points</p>
-              <h4 className='md:text-5xl text-4xl font-semibold mb-7'>Cut Shapes in Wood</h4>
+              <h4 className='md:text-[40px] text-2xl font-semibold mb-7'>Cut Shapes in Wood</h4>
               <p className='text-base text-black'>
                 Our CNC cutting service opens up a world of possibilities for customising your furniture. Whether you
                 need precise angle cuts for innovative storage solutions, want to add a graceful curve to a plywood or

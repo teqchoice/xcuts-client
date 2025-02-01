@@ -51,7 +51,7 @@ export default function Grooving(props: any) {
           <div className=' flex justify-center items-center flex-col mt-20'>
             <div className='text-center flex flex-col gap-3 md:max-w-[80%] max-w-full text-black mb-5'>
               <p className='text-3xl'>Decorative CNC Panels</p>
-              <h4 className='md:text-5xl text-4xl font-semibold mb-7'>Bring your imaginative designs to life.</h4>
+              <h4 className='md:text-[40px] text-2xl font-semibold mb-7'>Bring your imaginative designs to life.</h4>
               <p className='text-base text-black'>
                 Our CNC service can route decorative patterns, typically in MDF panels. This type of fretwork panelling
                 allows you to infuse your designs with personality, adding a unique touch to your home or office.

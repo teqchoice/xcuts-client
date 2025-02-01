@@ -32,7 +32,7 @@ export default function Productgrid({ item, setOpened, opened, setPupitem }: any
             src={`${process.env.NEXT_PUBLIC_API_SHOP_URL_images}/${item?.decor_poster[0]?.directus_files_id?.id}/${item?.decor_poster[0]?.directus_files_id?.filename_disk}`}
             width={448}
             height={300}
-            className='md:w-[448px] md:h-[300px] object-cover'
+            className='md:w-[448px] w-full md:h-[300px] object-cover'
             quality={100}
           />
           <div className='absolute hidden top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2'>

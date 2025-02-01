@@ -50,7 +50,7 @@ export default function CuttingMCF(props: any) {
         <div className=' flex justify-center items-center flex-col'>
           <div className='text-center flex flex-col gap-3 max-w-[80%] text-black mb-5'>
             <p className='text-3xl'> Embossed Deeply</p>
-            <h4 className='md:text-5xl text-4xl font-semibold mb-7'>Wood Reproductions </h4>
+            <h4 className='md:text-[40px] text-2xl font-semibold mb-7'>Wood Reproductions </h4>
             <p className='text-base text-black'>
               Experience an extensive range of realistic woodgrain patterns with deeply embossed textures designed to
               seamlessly integrate into various interior design schemes. These meticulously crafted reproductions offer

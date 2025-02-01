@@ -9,7 +9,7 @@ export default function Grooving(props: any) {
           <div className=' flex justify-center items-center flex-col mt-20'>
             <div className='text-center flex flex-col gap-3 max-w-[80%] text-black mb-5'>
               <p className='text-3xl'>Panel Grooving</p>
-              <h4 className='md:text-5xl text-4xl font-semibold mb-7'>Movento Range Applications:</h4>
+              <h4 className='md:text-[40px] text-2xl font-semibold mb-7'>Movento Range Applications:</h4>
               <p className='text-base text-black'>
                 The Movento’s line is synchronised, with ultra-light glide and weight carrying capacity of 40 and 60 kg
                 which is exceptionally impressive. Base installation allows you to attach it to the shelf or base of the

@@ -1,10 +1,4 @@
-import axios from 'axios'
-import React, { useEffect, useState } from 'react'
-
 export default function Producttable({ item, setOpened, opened, setPupitem }: any) {
-  // console.log(item)
-  const [thickness, setThickness] = useState([])
-
   return (
     <tr className='border-t '>
       <td>
@@ -48,22 +42,19 @@ export default function Producttable({ item, setOpened, opened, setPupitem }: an
       <td>
         <div className='text-[#707070] text-[15px] text-center px-3'>{item?.width}</div>
       </td>
-      <td className=''>
+      <td className='min-w-[150px]'>
         <div className='flex xl:justify-around flex-row gap-x-1 w-full'>
-          <div className='text-[14px] text-[#707070] w-10 border border-primary h-[39px] flex items-center justify-center px-[20px] py-[10px]'>
-            {item?.thickness_ref[0]?.thickness}
-          </div>
-          <div className='bg-primary text-white text-[14px] w-10 border border-primary h-[39px] flex items-center justify-center px-[20px] py-[10px]'>
-            {item?.thickness_ref[1]?.thickness}
-          </div>
-          <div className='text-[14px] text-[#707070] w-10 border border-primary h-[39px] flex items-center justify-center px-[20px] py-[10px]'>
-            {item?.thickness_ref[2]?.thickness}
-          </div>
-          <div className='bg-primary text-white text-[14px] w-10 border border-primary h-[39px] flex items-center justify-center px-[20px] py-[10px]'>
-            {item?.thickness_ref[3]?.thickness}
-          </div>
-          <div className='text-[14px] text-[#707070] w-10 border border-primary h-[39px] flex items-center justify-center px-[20px] py-[10px]'>
-            {item?.thickness_ref[4]?.thickness}
+          <div className='flex gap-x-2'>
+            {item?.thickness_ref?.map((thicknessItem: any, index: number) => (
+              <div
+                key={index}
+                className={`text-[14px] w-10 border border-primary h-[39px] flex items-center justify-center px-[20px] py-[10px] ${
+                  index % 2 === 0 ? 'text-[#707070]' : 'bg-primary text-white'
+                }`}
+              >
+                {thicknessItem?.thickness}
+              </div>
+            ))}
           </div>
           <div
             className='cursor-pointer popup-modal px-6 py-[8px] font-medium text-[15px] bg-black text-white'
