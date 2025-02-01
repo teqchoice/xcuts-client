@@ -20,7 +20,7 @@ const Image = (props: ImageProps) => {
       width={width ?? 40}
       height={height ?? 40}
       alt={alt}
-      className={`${className} ${!defaultImage && 'cursor-pointer'}`}
+      className={`${className}`}
       onError={e => setDefaultImage(e.type === 'error' ? true : false)}
     />
   )

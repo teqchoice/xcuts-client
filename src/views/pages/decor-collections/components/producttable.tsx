@@ -1,10 +1,6 @@
-import axios from 'axios'
-import React, { useEffect, useState } from 'react'
+import Image from '@/views/pages/components/Image'
 
 export default function Producttable({ item, setOpened, opened, setPupitem }: any) {
-  // console.log(item)
-  const [thickness, setThickness] = useState([])
-
   return (
     <tr className='border-t '>
       <td>
@@ -27,8 +23,20 @@ export default function Producttable({ item, setOpened, opened, setPupitem }: an
         </div>
       </td>
       <td>
-        <div className='text-center w-16 h-16 flex items-center justify-center px-3'>
-          <img className='' src='../imagestt/cross-icon.webp' alt='' />
+        <div className='text-center flex items-center justify-center px-3' title={item?.grain_ref?.name ?? ''}>
+          <Image
+            alt={item?.grain_ref?.name ?? ''}
+            src={
+              item?.grain_ref?.name === 'Length oriented grain'
+                ? '/images/length-oriented-grain.png'
+                : item?.grain_ref?.name === 'Width oriented grain'
+                ? '/images/width-oriented-grain.png'
+                : '/images/no-grain.png'
+            }
+            width={26}
+            height={26}
+            className='!h-[26px] !w-[26px]'
+          />
         </div>
       </td>
       <td>

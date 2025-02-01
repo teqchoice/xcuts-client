@@ -58,10 +58,20 @@ export default function Productgrid({ item, setOpened, opened, setPupitem }: any
         <div className='relative border border-[#cccccc] px-4 py-6'>
           <div className='bg-[#f4f4f4] border border-[#898989] px-[10px] py-2 flex w-max'>
             <div className='flex items-center gap-x-4'>
-              {item?.grain_ref?.name}
-              <span>
-                <img src='../cross-icon.webp' alt='' />
-              </span>
+              <span className='capitalize'>{item?.grain_ref?.name}</span>
+              <Image
+                alt=''
+                src={
+                  item?.grain_ref?.name === 'Length oriented grain'
+                    ? '/images/length-oriented-grain.png'
+                    : item?.grain_ref?.name === 'Width oriented grain'
+                    ? '/images/width-oriented-grain.png'
+                    : '/images/no-grain.png'
+                }
+                width={26}
+                height={26}
+                className='!h-[26px] !w-[26px]'
+              />
             </div>
           </div>
           <div className='mt-3 flex flex-col gap-y-1 mr-[70px]'>
@@ -74,7 +84,7 @@ export default function Productgrid({ item, setOpened, opened, setPupitem }: any
             <div className='grid grid-cols-2 text-left'>
               <div className='text-sm text-black'>Thickness: </div>
               <div className='text-sm text-primary'>
-                {item?.thickness_ref?.map((thickness: any) => thickness.thickness)?.join(',')}{' '}
+                {item?.thickness_ref?.map((thickness: any) => thickness.thickness)?.join(', ')}{' '}
                 {item?.thickness_ref?.length && 'mm'}
               </div>
             </div>
