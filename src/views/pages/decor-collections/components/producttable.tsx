@@ -1,3 +1,5 @@
+import Image from '@/views/pages/components/Image'
+
 export default function Producttable({ item, setOpened, opened, setPupitem }: any) {
   return (
     <tr className='border-t '>
@@ -21,8 +23,20 @@ export default function Producttable({ item, setOpened, opened, setPupitem }: an
         </div>
       </td>
       <td>
-        <div className='text-center w-16 h-16 flex items-center justify-center px-3'>
-          <img className='' src='../imagestt/cross-icon.webp' alt='' />
+        <div className='text-center flex items-center justify-center px-3' title={item?.grain_ref?.name ?? ''}>
+          <Image
+            alt={item?.grain_ref?.name ?? ''}
+            src={
+              item?.grain_ref?.name === 'Length oriented grain'
+                ? '/images/length-oriented-grain.png'
+                : item?.grain_ref?.name === 'Width oriented grain'
+                ? '/images/width-oriented-grain.png'
+                : '/images/no-grain.png'
+            }
+            width={26}
+            height={26}
+            className='!h-[26px] !w-[26px]'
+          />
         </div>
       </td>
       <td>
@@ -42,8 +56,8 @@ export default function Producttable({ item, setOpened, opened, setPupitem }: an
       <td>
         <div className='text-[#707070] text-[15px] text-center px-3'>{item?.width}</div>
       </td>
-      <td className='min-w-[150px]'>
-        <div className='flex xl:justify-around flex-row gap-x-1 w-full'>
+      <td className=''>
+        <div className='flex justify-between flex-row gap-x-1 w-full'>
           <div className='flex gap-x-2'>
             {item?.thickness_ref?.map((thicknessItem: any, index: number) => (
               <div

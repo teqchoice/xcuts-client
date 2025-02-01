@@ -85,20 +85,6 @@ export default function FilterSection(props: any) {
   const filters = (
     <>
       <div>
-        <input
-          value={name}
-          type='text'
-          name='name'
-          id='name'
-          className='block w-full border-0 py-2 px-2.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary text-sm leading-6 focus:outline-none'
-          placeholder='Code/Name'
-          onChange={e => {
-            setName(e.target.value)
-            setStartSearching(true)
-          }}
-        />
-      </div>
-      <div>
         <select
           id='brand'
           value={barand}
@@ -487,6 +473,20 @@ export default function FilterSection(props: any) {
   return (
     <>
       <div className='grid lg:grid-cols-8 md:grid-cols-5 sm:grid-cols-4 gap-x-2 md:gap-y-2 sm:gap-y-2 gap-y-2 mt-10 mb-2'>
+        <div>
+          <input
+            value={name}
+            type='text'
+            name='name'
+            id='name'
+            className='block w-full border-0 py-2 px-2.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary text-sm leading-6 focus:outline-none'
+            placeholder='Code/Name'
+            onChange={e => {
+              setName(e.target.value)
+              setStartSearching(true)
+            }}
+          />
+        </div>
         {isGreaterThanMd ? (
           filters
         ) : (
@@ -499,8 +499,24 @@ export default function FilterSection(props: any) {
             className='lg:col-span-8 md:col-span-5 sm:col-span-4 col-span-1'
           >
             <Accordion.Item value={'filters'}>
-              <Accordion.Control>Filters</Accordion.Control>
-              <Accordion.Panel>{filters}</Accordion.Panel>
+              <Accordion.Control
+                styles={{
+                  control: {
+                    padding: '0px'
+                  }
+                }}
+              >
+                Filters
+              </Accordion.Control>
+              <Accordion.Panel
+                styles={{
+                  content: {
+                    padding: 0
+                  }
+                }}
+              >
+                {filters}
+              </Accordion.Panel>
             </Accordion.Item>
           </Accordion>
         )}
