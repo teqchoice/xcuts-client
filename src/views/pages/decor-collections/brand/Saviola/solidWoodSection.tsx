@@ -51,7 +51,7 @@ export default function SolidWoodSection(props: any) {
           <div className=' flex justify-center items-center flex-col'>
             <div className='text-center  max-w-[80%] text-black mb-5 mt-20'>
               {/* <p className='text-3xl'>MORE THAN JUST GLOSS</p> */}
-              <h4 className='md:text-5xl text-4xl font-semibold mb-7'>Discover the Collection</h4>
+              <h4 className='md:text-[40px] text-2xl font-semibold mb-7'>Discover the Collection</h4>
               <p className='text-base text-black'>
                 Discover the Collection Explore the full range of Saviola UK décor products and elevate your space with
                 sophisticated design choices.

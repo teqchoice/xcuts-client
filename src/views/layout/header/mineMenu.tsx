@@ -91,19 +91,19 @@ export default function MineMenu({ data, setMenu }: any) {
         {defaultMenuItem?.map((item, i: number) => {
           return (
             <Accordion
-              chevronPosition='right'
+              chevronPosition='left'
               styles={{
                 chevron: {
                   color: 'white',
                   order: 2,
-                  width: '20px'
+                  width: '10px'
                 }
               }}
-              chevron={data[item.dataFieldName!]?.length ? undefined : false}
+              chevron={data?.[item.dataFieldName!]?.length ? undefined : false}
             >
               <Accordion.Item key={i + item.value} value={item.value}>
                 <Accordion.Control className='p-3 px-1 flex justify-between w-full'>
-                  {data[item.dataFieldName!]?.length ? (
+                  {data?.[item.dataFieldName!]?.length ? (
                     <span className='text-white relative duration-150'>{item.value}</span>
                   ) : (
                     <Link
@@ -115,10 +115,10 @@ export default function MineMenu({ data, setMenu }: any) {
                     </Link>
                   )}
                 </Accordion.Control>
-                {data[item.dataFieldName!]?.length && (
+                {data?.[item.dataFieldName!]?.length && (
                   <Accordion.Panel className='px-1 pb-3'>
                     <ul className='flex flex-col gap-y-1'>
-                      {data[item.dataFieldName!]?.map((child: any) => (
+                      {data?.[item.dataFieldName!]?.map((child: any) => (
                         <li>
                           <Link
                             href={

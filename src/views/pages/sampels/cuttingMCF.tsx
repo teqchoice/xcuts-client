@@ -51,7 +51,7 @@ export default function CuttingMCF(props: any) {
           <div className=' flex justify-center items-center flex-col'>
             <div className='text-center flex flex-col gap-3 max-w-[80%] text-black mb-5'>
               {/* <p className='text-3xl'>Solid wood</p> */}
-              <h4 className='md:text-5xl text-4xl font-semibold mb-7'>Service for Cutting MFC Boards</h4>
+              <h4 className='md:text-[40px] text-2xl font-semibold mb-7'>Service for Cutting MFC Boards</h4>
               <p className='text-base text-black'>
                 Melamine Faced Chipboard (MFC) is a decorative furniture board available in various patterns, textures,
                 and finishes. At XCUTS, you can either purchase entire MFC sheets or submit a cutting list for our

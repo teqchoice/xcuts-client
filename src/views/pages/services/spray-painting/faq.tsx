@@ -11,7 +11,7 @@ export default function FAQ() {
               <p className='text-base text-black'>
                 for Spray Coating Services: Use our spray-painting service to its full potential!
               </p>
-              <h4 className='md:text-5xl text-4xl font-semibold mb-7'>FAQs:</h4>
+              <h4 className='md:text-[40px] text-2xl font-semibold mb-7'>FAQs:</h4>
 
               <Accordion variant='separated' className='w-full flex flex-col gap-5 ddddd'>
                 <Accordion.Item value='1' className='bg-slate-100 text-left p-4 rounded-md shadow-md'>

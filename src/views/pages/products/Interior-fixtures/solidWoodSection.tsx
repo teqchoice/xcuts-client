@@ -51,7 +51,7 @@ export default function SolidWoodSection(props: any) {
           <div className=' flex justify-center items-center flex-col'>
             <div className='text-center  max-w-[80%] text-black mb-5 mt-20'>
               <p className='text-3xl'>The Key Points</p>
-              <h4 className='md:text-5xl text-4xl font-semibold mb-7'>Cutting Shapes: Every Size and Form!</h4>
+              <h4 className='md:text-[40px] text-2xl font-semibold mb-7'>Cutting Shapes: Every Size and Form!</h4>
               <p className='text-base text-black'>
                 You have countless options when it comes to moulding your furniture thanks to our CNC shape-cutting
                 service. Our shape-cutting service may be used to produce angled cuts for distinctive storage solutions,

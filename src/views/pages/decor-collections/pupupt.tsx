@@ -4,6 +4,7 @@ import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
 import toast from 'react-hot-toast'
 import { FaMinus, FaPlus } from 'react-icons/fa6'
+import PopUpGallery from './PopUpGallery'
 export default function Pupapt({ data }: any) {
   const router = useRouter()
 
@@ -73,6 +74,8 @@ export default function Pupapt({ data }: any) {
     }
   }
 
+  console.log(item)
+
   return (
     <div
       id='lightGreyMetalRock'
@@ -82,48 +85,22 @@ export default function Pupapt({ data }: any) {
         <i className='fa-solid fa-xmark' />
       </a>
       <div className='w-full md:px-6 px-2 py-2 bg-gray-100'>
-        <p className='font-semibold text-sm'>ProductCode : {item?.product_code}</p>
+        <p className='font-semibold text-sm'>Product Code: {item?.product_code}</p>
         <div className='grid lg:grid-cols-2 grid-cols-1 gap-y-4'>
-          <div className='col-span-1 grid grid-cols-12 gap-1'>
-            <div className='col-span-9 relative overflow-hidden'>
-              <img
-                src={`${process.env.NEXT_PUBLIC_API_SHOP_URL_images}/${item?.attachment[0]?.directus_files_id?.id}/${item?.attachment[0]?.directus_files_id?.filename_disk}`}
-                className='w-full h-full'
-              />
-              <div className='absolute z-10 py-3 pl-5 pr-[75px] before:border-solid before:border-t-[bg-transparent] before:border-r-transparent before:border-b-primary before:border-l-[bg-transparent] before:border-t-0 sm:before:border-r-[40px] before:border-b-[40px] before:border-l-0 before:absolute before:w-full before:h-full before:-top-2 before:md:top-0 before:left-0 before:-z-10 lg:bottom-0 bottom-0'>
-                <div className='flex justify-between'>
-                  <span className='font-medium text-white mr-4'>Decor</span>
-                </div>
-              </div>
-            </div>
-            <div className='col-span-3 flex flex-col gap-1'>
-              <img
-                src={`${process.env.NEXT_PUBLIC_API_SHOP_URL_images}/${item?.decor_poster[0]?.directus_files_id?.id}/${item?.decor_poster[0]?.directus_files_id?.filename_disk}`}
-                className='w-full h-full'
-              />
-              <img
-                src={`${process.env.NEXT_PUBLIC_API_SHOP_URL_images}/${item?.decor_poster[1]?.directus_files_id?.id}/${item?.decor_poster[1]?.directus_files_id?.filename_disk}`}
-                className='w-full h-full'
-              />
-              <img
-                src={`${process.env.NEXT_PUBLIC_API_SHOP_URL_images}/${item?.decor_poster[2]?.directus_files_id?.id}/${item?.decor_poster[2]?.directus_files_id?.filename_disk}`}
-                className='w-full h-full'
-              />
-            </div>
-          </div>
+          <PopUpGallery item={item} />
           <div className='col-span-1 md:px-4 px-0'>
             <h3 className='text-2xl font-bold text-primary capitalize'>
               {item?.brand_ref?.name} {item?.code}
             </h3>
-            <p className='text-sm text-gray-500'>Light Grey Meta Rock</p>
+            <p className='text-sm text-gray-500'>{item?.product_name}</p>
             <h5 className='text-lg text-black font-bold mt-2'>Product characteristics</h5>
-            <p className='text-sm  text-gray-400'>
+            <p className='text-sm  text-gray-400 capitalize'>
               Core: {item?.core_ref?.name} | Surface: {item?.surface_ref?.name}
             </p>
-            <p className='text-sm  text-gray-400'>
+            <p className='text-sm  text-gray-400 capitalize'>
               Finish: {item?.finish_ref?.name} | Design: {item?.design_ref?.name}
             </p>
-            <p className='text-sm  text-gray-400'>
+            <p className='text-sm  text-gray-400 capitalize'>
               Texture: {item?.texture_ref?.name} | Grain: {item?.surface_ref?.name}
             </p>
             <h5 className='text-lg text-black font-bold mt-2'>B side description</h5>
@@ -151,22 +128,26 @@ export default function Pupapt({ data }: any) {
       <div className='w-full md:px-6 px-2 py-2 grid grid-cols-12 gap-4'>
         <div className='md:col-span-5 col-span-12 flex flex-col gap-2'>
           <div className='bg-gray-100 border border-gray-400/70 p-4 rounded-lg'>
-            <h5 className='text-xl font-bold'>Product Maching</h5>
+            <h5 className='text-xl font-bold'>Product Machining</h5>
             <div className='flex justify-between'>
               <p className='text-primary'>Cut to Size</p>
-              <span>{item?.cut_to_size ? 'Yes' : 'No'}</span>
+              {/* <span>{item?.cut_to_size ? 'Yes' : 'No'}</span> */}
+              <span>Yes</span>
             </div>
             <div className='flex justify-between'>
               <p className='text-primary'>Edgebanding</p>
-              <span>{item?.edgebanding ? 'Yes' : 'No'}</span>
+              {/* <span>{item?.edgebanding ? 'Yes' : 'No'}</span> */}
+              <span>Yes</span>
             </div>
             <div className='flex justify-between'>
               <p className='text-primary'>CNC Machining</p>
-              <span>{item?.cnc_machining ? 'Yes' : 'No'}</span>
+              {/* <span>{item?.cnc_machining ? 'Yes' : 'No'}</span> */}
+              <span>Yes</span>
             </div>
             <div className='flex justify-between'>
               <p className='text-primary'>Drilling</p>
-              <span>{item?.drilling ? 'Yes' : 'No'}</span>
+              {/* <span>{item?.drilling ? 'Yes' : 'No'}</span> */}
+              <span>Yes</span>
             </div>
           </div>
           <div className='bg-gray-100 border border-gray-400/70 p-4 rounded-lg'>
@@ -210,13 +191,13 @@ export default function Pupapt({ data }: any) {
               )}
 
               <h3 className='text-2xl'>
-                Total:
+                Total:{' '}
                 <span className='text-primary font-bold'>
                   £{show ? thickness[0]?.price_full_sheet : thickness[1]?.price_full_sheet}
                 </span>
               </h3>
               <p className='text-sm'>
-                With VAT:{' '}
+                With VAT: £
                 {show
                   ? (thickness[0]?.price_full_sheet * (1 + thickness[0]?.tax_percent / 100)).toFixed(2)
                   : (thickness[1]?.price_full_sheet * (1 + thickness[1]?.tax_percent / 100)).toFixed(2)}
@@ -225,13 +206,13 @@ export default function Pupapt({ data }: any) {
             <div className=' w-full'>
               <button className='p-3 outline-black mt-2 w-full text-xs text-white bg-black'>Add to cutting list</button>
               <h3 className='text-2xl'>
-                Total:
+                Total:{' '}
                 <span className='text-primary font-bold'>
                   £{show ? thickness[0]?.price_cutting : thickness[1]?.price_cutting}
                 </span>
               </h3>
               <p className='text-sm'>
-                With VAT:{' '}
+                With VAT: £
                 {show
                   ? (thickness[0]?.price_cutting * (1 + (thickness[0]?.tax_percent ?? 20) / 100)).toFixed(2)
                   : (thickness[1]?.price_cutting * (1 + (thickness[1]?.tax_percent ?? 20) / 100)).toFixed(2)}

@@ -51,7 +51,7 @@ export default function CuttingMCF(props: any) {
           <div className=' flex justify-center items-center flex-col mt-10'>
             <div className='text-center flex flex-col gap-3 max-w-[80%] text-black mb-5'>
               <p className='text-3xl'>Forming of Handles</p>
-              <h4 className='md:text-5xl text-4xl font-semibold mb-7'>Maximum effectiveness in a simple design.</h4>
+              <h4 className='md:text-[40px] text-2xl font-semibold mb-7'>Maximum effectiveness in a simple design.</h4>
               <p className='text-base text-black'>
                 Your panels might benefit from adding subtle elements that the CNC machine can provide for both
                 aesthetic appeal and practicality. A few of our customers' favourite handles created using our CNC

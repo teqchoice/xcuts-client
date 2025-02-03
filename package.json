@@ -11,6 +11,7 @@
     "generate-openapi:SHOP": "npx openapi-typescript ./oas.json -o ./src/core/api-shop/v1.d.ts"
   },
   "dependencies": {
+    "@fancyapps/ui": "^5.0.36",
     "@headlessui/react": "^2.1.10",
     "@icon-park/react": "^1.4.2",
     "@mantine/core": "^7.12.1",
@@ -44,6 +45,7 @@
     "openapi-fetch": "^0.13.4",
     "openapi-react-query": "^0.2.9",
     "photoswipe": "^5.4.3",
+    "qs": "^6.14.0",
     "radash": "^11.0.0",
     "react": "^18",
     "react-dom": "^18",
@@ -59,6 +61,7 @@
   },
   "devDependencies": {
     "@types/node": "^20",
+    "@types/qs": "^6.9.18",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "autoprefixer": "^10",

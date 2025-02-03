@@ -8,7 +8,7 @@ export default function CuttingMCF(props: any) {
         <div className=' flex justify-center items-center flex-col'>
           <div className='text-center flex flex-col gap-3 max-w-[80%] text-black mb-5'>
             <p className='text-3xl'>TEXTURE MEETS COLOUR!</p>
-            <h4 className='md:text-5xl text-4xl font-semibold mb-7'>CLEAR EXPECTATIONS</h4>
+            <h4 className='md:text-[40px] text-2xl font-semibold mb-7'>CLEAR EXPECTATIONS</h4>
             <p className='text-base text-black'>
               For your projects, go for a bold or subtle finish using fashionable colours like crisp greens, rich blues,
               and sophisticated neutrals.

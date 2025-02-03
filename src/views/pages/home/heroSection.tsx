@@ -52,6 +52,7 @@ export default function HeroSection({ data }: any) {
                 playsInline
                 autoPlay
                 muted
+                loop
                 preload='auto'
                 className='w-full aspect-video md:aspect-auto object-cover md:max-h-[370px] lg:max-h-[450px] xl:max-h-[39rem] 2xl::max-h-[650px]'
                 onMouseEnter={e => {

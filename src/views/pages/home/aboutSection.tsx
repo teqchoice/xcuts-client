@@ -36,7 +36,7 @@ export default function AboutSection({ data }: any) {
               )[0]
             }}
           ></div> */}
-          <div className='text-[24px] md:text-[28px] font-normal text-black mb-2'>
+          <div className='text-[20px] md:text-[28px] font-normal text-black mb-2'>
             {/* <span className='text-primary'>X</span>CUTS */}
             {/* Furniture Boards Cut and Edged */}
             {data?.top_title}

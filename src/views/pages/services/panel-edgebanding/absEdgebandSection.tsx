@@ -48,9 +48,9 @@ export default function ABSEdgebandSection(props: any) {
     <>
       <section>
         <div className='px-4 sm:container'>
-          <div className='text-center text-black mb-11 md:mt-20 mt-10'>
+          <div className='text-center text-black mb-11 md:mt-20 mt-10 flex lg:gap-y-3 gap-y-2 justify-center flex-col'>
             <p className='text-3xl'>ABS edgeband</p>
-            <h4 className='md:text-5xl text-4xl font-semibold mb-7'>Tape ABS Edging- 1mm</h4>
+            <h4 className='md:text-[40px] text-2xl font-semibold mb-7'>Tape ABS Edging- 1mm</h4>
             <p className='text-base text-black'>
               The 1mm ABS Edge Banding tape is almost undetectable and offers a moderately robust edge surface. Square
               and radius milling options are available for the tape.
@@ -104,9 +104,9 @@ export default function ABSEdgebandSection(props: any) {
       </section>
       <section>
         <div className='px-4 sm:container'>
-          <div className='text-center text-black mb-11 md:mt-20 mt-10'>
+          <div className='text-center text-black mb-11 md:mt-20 mt-10 flex lg:gap-y-3 gap-y-2 justify-center flex-col'>
             <p className='text-3xl'>ABS edgeband</p>
-            <h4 className='md:text-5xl text-4xl font-semibold mb-7'>Tape ABS Edging- 2mm</h4>
+            <h4 className='md:text-[40px] text-2xl font-semibold mb-7'>Tape ABS Edging- 2mm</h4>
             <p className='text-base text-black'>
               A strong edge surface is provided with 2mm ABS Edge Banding tape. But some might find it a little too
               intrusive. Radius and bevel are two possible milling finishes for the tape.

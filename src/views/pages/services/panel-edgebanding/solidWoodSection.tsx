@@ -50,7 +50,7 @@ export default function SolidWoodSection(props: any) {
         <div className='px-4 sm:container'>
           <div className='text-center text-black mb-5 md:mt-20 mt-10'>
             {/* <p className='text-3xl'>Solid wood</p> */}
-            <h4 className='md:text-5xl text-4xl font-semibold mb-7'>Solid Wood</h4>
+            <h4 className='md:text-[40px] text-2xl font-semibold mb-7'>Solid Wood</h4>
             <p className='text-base text-black'>
               All of our veneered boards have matching wood edging. Most of the time, we may use 0.6mm, 1mm, or 2mm
               edging tapes to edge any veneered panel. We are able to mill three various edge finishes: radius, bevel,

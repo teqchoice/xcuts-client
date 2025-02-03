@@ -51,7 +51,7 @@ export default function CuttingMDF(props: any) {
           <div className=' flex justify-center items-center flex-col'>
             <div className='text-center flex flex-col gap-3 max-w-[80%] text-black mb-5'>
               {/* <p className='text-3xl'>Solid wood</p> */}
-              <h4 className='md:text-5xl text-4xl font-semibold mb-7'>Service for Cutting MDF Boards</h4>
+              <h4 className='md:text-[40px] text-2xl font-semibold mb-7'>Service for Cutting MDF Boards</h4>
               <p className='text-base text-black'>
                 The most common type of board that our clients often request is Medium Density Fiberboard (MDF). Because
                 of its distinctive characteristics, MDF is widely utilised in the building and furniture industries for

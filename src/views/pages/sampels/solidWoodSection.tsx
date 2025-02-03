@@ -51,7 +51,7 @@ export default function SolidWoodSection(props: any) {
           <div className=' flex justify-center items-center flex-col'>
             <div className='text-center  max-w-[80%] text-black mb-5 mt-20'>
               {/* <p className='text-3xl'>Solid wood</p> */}
-              <h4 className='md:text-5xl text-4xl font-semibold mb-7'>Grain Alignment Service</h4>
+              <h4 className='md:text-[40px] text-2xl font-semibold mb-7'>Grain Alignment Service</h4>
               <p className='text-base text-black'>
                 Maximise the aesthetic appeal of your project with our grain alignment service. We can code a cutting
                 plan that allows the grain or pattern of melamine boards or coated MDF to flow seamlessly across

@@ -51,7 +51,7 @@ export default function Resources(props: any) {
           <div className=' flex justify-center items-center flex-col mt-16'>
             <div className='text-center flex flex-col gap-3 md:max-w-[80%] max-w-full text-black mb-5'>
               <p className='text-3xl'>With our CNC service, the possibilities are endless!</p>
-              <h4 className='md:text-5xl text-4xl font-semibold mb-7'>Our Resources:</h4>
+              <h4 className='md:text-[40px] text-2xl font-semibold mb-7'>Our Resources:</h4>
               <p className='text-base text-black'>
                 Our CNC service is available for all products offered at XCUTS. Our CNC machine utilises specialised
                 routing tools to work with various grades, thicknesses, and types of wood products, including MDF,
