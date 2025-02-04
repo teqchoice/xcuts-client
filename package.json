@@ -57,7 +57,8 @@
     "sweetalert2": "^11.10.3",
     "swiper": "^11.0.5",
     "universal-cookie": "^6.1.1",
-    "xss": "^1.0.14"
+    "xss": "^1.0.14",
+    "zustand": "^5.0.3"
   },
   "devDependencies": {
     "@types/node": "^20",

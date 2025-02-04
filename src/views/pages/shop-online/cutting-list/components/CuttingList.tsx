@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useReactTable, flexRender, getCoreRowModel, ColumnDef } from '@tanstack/react-table'
 import ProductSelectorDropdown from './ProductSelectorDropdown'
-import MachiningModal from './MachiningModal'
+import MachiningModal from './machining/MachiningModal'
 
 // Define the type for your data
 type CuttingListData = {

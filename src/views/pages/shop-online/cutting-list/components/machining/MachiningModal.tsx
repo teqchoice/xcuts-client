@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import { Modal, Select } from '@mantine/core'
-import Canvas from './canvas'
+import Canvas from './Canvas'
 import { IoMdClose } from 'react-icons/io'
-import MachiningOptions from './canvas/MachiningOptions'
+import MachiningOptions from './MachiningOptions'
 
 const MachiningModal = () => {
   const [isOpen, setIsOpen] = useState(false)

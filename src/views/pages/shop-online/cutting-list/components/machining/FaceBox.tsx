@@ -1,14 +1,15 @@
 import React, { useRef, useState } from 'react'
 import Image from 'next/image'
+import { useMachiningStore } from '../store/machiningOptionsStore'
 const FaceBox = () => {
-  const [isBack, setIsBack] = useState(false)
+  const { currentMachiningOption } = useMachiningStore()
 
-  const handleToggleFaceRotation = () => setIsBack(!isBack)
+  const isBack = currentMachiningOption?.type === 'angled-cut' ? currentMachiningOption?.options.view === 'back' : false
 
   return (
     <div className='flex flex-col'>
       <span className='absolute bottom-[100px] left-2.5 text-[13px]'>Panel shows</span>
-      <div onClick={handleToggleFaceRotation} className='relative'>
+      <div className='relative'>
         <Image
           src={'/images/machining/front-face.svg'}
           width={90}
