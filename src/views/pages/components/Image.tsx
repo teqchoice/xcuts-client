@@ -7,6 +7,7 @@ type ImageProps = {
   width?: number
   height?: number
   className?: HTMLAttributes<HTMLImageElement>['className']
+  onClick?: HTMLAttributes<HTMLImageElement>['onClick']
 }
 
 const Image = (props: ImageProps) => {

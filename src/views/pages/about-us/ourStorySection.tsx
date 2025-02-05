@@ -43,7 +43,6 @@ export default function OurStorySection(props: any) {
     ...defaultTOurGuarantee,
     ...props.Data
   }
-  // console.log(Data)
   return (
     <>
       <section className='bg-no-repeat bg-[right_73px_top] mt-6 sm:mt-0 md:pb-12 pb-14'>
@@ -91,9 +90,7 @@ export default function OurStorySection(props: any) {
             <p className='text-xl md:text-3xl mb-2'>
               The driving force behind <span className='text-primary font-semibold'>X</span>CUTS
             </p>
-            <h4 className='text-4xl sm:text-4xl md:text-5xl lg:text-6xl  text-black font-semibold'>
-              Meet the team
-            </h4>
+            <h4 className='text-4xl sm:text-4xl md:text-5xl lg:text-6xl  text-black font-semibold'>Meet the team</h4>
           </div>
         </div>
       </section>
