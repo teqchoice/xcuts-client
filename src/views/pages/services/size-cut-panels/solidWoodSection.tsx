@@ -67,13 +67,13 @@ export default function SolidWoodSection(props: any) {
 
               <div className='flex md:flex-row flex-col gap-5 my-5 lg:my-10'>
                 <div>
-                  <img className=' w-full object-cover object-center' src='../images/alldecor.jpeg' alt='' />
+                  <img className=' w-full object-cover object-center' src='/images/alldecor.jpeg' alt='' />
                 </div>
                 <div>
-                  <img className=' w-full object-cover object-center' src='../images/alldecor.jpeg' alt='' />
+                  <img className=' w-full object-cover object-center' src='/images/alldecor.jpeg' alt='' />
                 </div>
                 <div>
-                  <img className=' w-full object-cover object-center' src='../images/alldecor.jpeg' alt='' />
+                  <img className=' w-full object-cover object-center' src='/images/alldecor.jpeg' alt='' />
                 </div>
               </div>
 

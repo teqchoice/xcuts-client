@@ -13,7 +13,9 @@ import PageIntroduction from '../components/pageIntroduction'
 export default function index({ Data }: any) {
   return (
     <>
-      <PageIntroduction Data={{ title: 'SWATCHES AND SAMPLES', subtitle: "", baner: '../images/banner-1-showroom.jpeg' }} />
+      <PageIntroduction
+        Data={{ title: 'SWATCHES AND SAMPLES', subtitle: '', baner: '/images/banner-1-showroom.jpeg' }}
+      />
       <IntroductionSection Data={Data?.delivery} />
       {/* <VideoSection Data={Data?.delivery} /> */}
       {/* <DifferentTechnologiesSection Data={Data?.delivery} /> */}

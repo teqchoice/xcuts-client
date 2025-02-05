@@ -92,10 +92,10 @@ export default function Dropdown({ menu, setMenu, data }: any) {
           </div> */}
         </div>
         {/* <div className='absolute -bottom-4 right-[5%]'>
-          <img src='../images/x-icon-02.webp' alt='' className='w-full scale-125' />
+          <img src='/images/x-icon-02.webp' alt='' className='w-full scale-125' />
         </div> */}
         {/* <div className='absolute -top-4 left-[5%] opacity-60'>
-          <img src='../images/x-icon-02.webp' alt='' className='w-full scale-125' />
+          <img src='/images/x-icon-02.webp' alt='' className='w-full scale-125' />
         </div> */}
       </div>
     )
@@ -118,10 +118,10 @@ export default function Dropdown({ menu, setMenu, data }: any) {
           ))}
         </div>
         <div className='absolute -bottom-4 right-[5%]'>
-          <img src='../images/x-icon-02.webp' alt='' className='w-full scale-125' />
+          <img src='/images/x-icon-02.webp' alt='' className='w-full scale-125' />
         </div>
         {/* <div className='absolute -top-4 left-[5%] opacity-60'>
-          <img src='../images/x-icon-02.webp' alt='' className='w-full scale-125' />
+          <img src='/images/x-icon-02.webp' alt='' className='w-full scale-125' />
         </div> */}
       </div>
     )
@@ -151,10 +151,10 @@ export default function Dropdown({ menu, setMenu, data }: any) {
           ))}
         </div>
         <div className='absolute -bottom-4 right-[5%]'>
-          <img src='../images/x-icon-02.webp' alt='' className='w-full scale-125' />
+          <img src='/images/x-icon-02.webp' alt='' className='w-full scale-125' />
         </div>
         {/* <div className='absolute top-0 left-[5%]'>
-          <img src='../images/x-icon-02.webp' alt='' className='w-full scale-125' />
+          <img src='/images/x-icon-02.webp' alt='' className='w-full scale-125' />
         </div> */}
       </div>
     )

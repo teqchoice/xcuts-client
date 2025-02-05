@@ -69,7 +69,7 @@ export default function CuttingMCF(props: any) {
 
               <div className='flex gap-5 my-5 lg:my-10'>
                 <div className='flex flex-col items-center gap-3'>
-                  <img className=' w-full object-cover object-center' src='../images/alldecor.jpeg' alt='' />
+                  <img className=' w-full object-cover object-center' src='/images/alldecor.jpeg' alt='' />
                   <h4 className='font-bold text-lg'>Saviola</h4>
                   <p>Specialises in classic designs crafted from high-quality materials.</p>
                   <a
@@ -80,7 +80,7 @@ export default function CuttingMCF(props: any) {
                   </a>
                 </div>
                 <div className='flex flex-col items-center gap-3'>
-                  <img className=' w-full object-cover object-center' src='../images/alldecor.jpeg' alt='' />
+                  <img className=' w-full object-cover object-center' src='/images/alldecor.jpeg' alt='' />
                   <h4 className='font-bold text-lg'>Egger</h4>
                   <p>Known for a vast selection of colours, textures, and realistic woodgrain designs.</p>
                   <a
@@ -91,7 +91,7 @@ export default function CuttingMCF(props: any) {
                   </a>
                 </div>
                 <div className='flex flex-col items-center gap-3'>
-                  <img className=' w-full object-cover object-center' src='../images/alldecor.jpeg' alt='' />
+                  <img className=' w-full object-cover object-center' src='/images/alldecor.jpeg' alt='' />
                   <h4 className='font-bold text-lg'>Alvic</h4>
                   <p>A high-end brand offering creative and unique decors.</p>
                   <a
@@ -102,7 +102,7 @@ export default function CuttingMCF(props: any) {
                   </a>
                 </div>
                 <div className='flex flex-col items-center gap-3'>
-                  <img className=' w-full object-cover object-center' src='../images/alldecor.jpeg' alt='' />
+                  <img className=' w-full object-cover object-center' src='/images/alldecor.jpeg' alt='' />
                   <h4 className='font-bold text-lg'>XyloCleaf</h4>
                   <p>A popular brand known for its globally appealing designs.</p>
                   <a

@@ -59,19 +59,19 @@ export default function SolidWoodSection(props: any) {
           </div>
           {/* <div className='grid md:grid-cols-3 gap-7'>
             <div className='relative'>
-              <img src='../images/2.0MM-Radius.webp' alt='' className='w-full md:w-auto' />
+              <img src='/images/2.0MM-Radius.webp' alt='' className='w-full md:w-auto' />
               <div className='absolute bottom-2 left-0 right-0'>
                 <h5 className='text-2xl text-white font-bold text-center'>2.0MM-Radius</h5>
               </div>
             </div>
             <div className='relative'>
-              <img src='../images/2.0MM-BEVEL.webp' alt='' className='w-full md:w-auto' />
+              <img src='/images/2.0MM-BEVEL.webp' alt='' className='w-full md:w-auto' />
               <div className='absolute bottom-2 left-0 right-0'>
                 <h5 className='text-2xl text-white font-bold text-center'>2.0MM-BEVEL</h5>
               </div>
             </div>
             <div className='relative'>
-              <img src='../images/2.0MM-SQUARE.webp' alt='' className='w-full md:w-auto' />
+              <img src='/images/2.0MM-SQUARE.webp' alt='' className='w-full md:w-auto' />
               <div className='absolute bottom-2 left-0 right-0'>
                 <h5 className='text-2xl text-white font-bold text-center'>2.0MM-SQUARE</h5>
               </div>
