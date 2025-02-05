@@ -18,17 +18,17 @@ export default function Grooving(props: any) {
 
               <div className='flex gap-5 my-5 lg:my-10'>
                 <div className='flex flex-col items-center gap-3'>
-                  <img className=' w-full object-cover object-center' src='../images/alldecor.jpeg' alt='' />
+                  <img className=' w-full object-cover object-center' src='/images/alldecor.jpeg' alt='' />
                   <h4 className='font-bold text-lg'>Gallery</h4>
                   <p>To cover up your LED strip and cables invisibly, have a recess carved into your panel.</p>
                 </div>
                 <div className='flex flex-col items-center gap-3'>
-                  <img className=' w-full object-cover object-center' src='../images/alldecor.jpeg' alt='' />
+                  <img className=' w-full object-cover object-center' src='/images/alldecor.jpeg' alt='' />
                   <h4 className='font-bold text-lg'>Back Panel</h4>
                   <p>To make it simple to slot in your base, grooves can be carved into the drawer sides.</p>
                 </div>
                 <div className='flex flex-col items-center gap-3'>
-                  <img className=' w-full object-cover object-center' src='../images/alldecor.jpeg' alt='' />
+                  <img className=' w-full object-cover object-center' src='/images/alldecor.jpeg' alt='' />
                   <h4 className='font-bold text-lg'>Ornamental</h4>
                   <p>By using ornamental grooves, you may give your MDF or plywood a more upscale appearance.</p>
                 </div>

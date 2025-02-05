@@ -53,25 +53,25 @@ export default function SalesTeamSection(props: any) {
           </div>
           <div className='grid lg:grid-cols-4 md:grid-cols-2 md:gap-x-6 lg:gap-x-6'>
             <div>
-              <img src='../images/avatar-black-img.webp' alt='' className='w-full' />
+              <img src='/images/avatar-black-img.webp' alt='' className='w-full' />
               <div className='text-center px-6 py-10'>
                 <h5>Sales manager</h5>
               </div>
             </div>
             <div>
-              <img src='../images/avatar-black-img.webp' alt='' className='w-full' />
+              <img src='/images/avatar-black-img.webp' alt='' className='w-full' />
               <div className='text-center px-6 py-10'>
                 <h5>Sales representative</h5>
               </div>
             </div>
             <div>
-              <img src='../images/avatar-black-img.webp' alt='' className='w-full' />
+              <img src='/images/avatar-black-img.webp' alt='' className='w-full' />
               <div className='text-center px-6 py-10'>
                 <h5>Sales representative</h5>
               </div>
             </div>
             <div>
-              <img src='../images/avatar-black-img.webp' alt='' className='w-full' />
+              <img src='/images/avatar-black-img.webp' alt='' className='w-full' />
               <div className='text-center px-6 py-10'>
                 <h5>Sales representative</h5>
               </div>

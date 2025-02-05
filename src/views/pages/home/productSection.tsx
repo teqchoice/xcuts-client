@@ -66,14 +66,14 @@ export default function ProductSection({ data }: any) {
                     className='bg-primary px-3 py-4 md:px-3 md:py-4 font-bold text-base text-white hover:bg-black ease-in duration-200 flex items-center justify-between'
                   >
                     Shop
-                    <img className='w-2 ml-2' src='../images/angle-arrow.webp' alt='' />
+                    <img className='w-2 ml-2' src='/images/angle-arrow.webp' alt='' />
                   </Link>
                   <Link
                     href={data?.pr_bt_black1}
                     className='bg-black px-3 py-4 md:px-3 md:py-4 font-bold text-base text-white hover:bg-primary ease-in duration-200 flex items-center justify-between'
                   >
                     Find out more
-                    <img className='w-2 ml-2' src='../images/angle-arrow.webp' alt='' />
+                    <img className='w-2 ml-2' src='/images/angle-arrow.webp' alt='' />
                   </Link>
                 </div>
               </div>
@@ -129,14 +129,14 @@ export default function ProductSection({ data }: any) {
                     className='bg-primary px-3 py-4 md:px-3 md:py-4 font-bold text-base text-white hover:bg-black ease-in duration-200 flex items-center justify-between'
                   >
                     Shop
-                    <img className='w-2 ml-2' src='../images/angle-arrow.webp' alt='' />
+                    <img className='w-2 ml-2' src='/images/angle-arrow.webp' alt='' />
                   </Link>
                   <Link
                     href={data?.pr_bt_black2}
                     className='bg-black px-3 py-4 md:px-3 md:py-4 font-bold text-base text-white hover:bg-primary ease-in duration-200 flex items-center justify-between'
                   >
                     Find out more
-                    <img className='w-2 ml-2' src='../images/angle-arrow.webp' alt='' />
+                    <img className='w-2 ml-2' src='/images/angle-arrow.webp' alt='' />
                   </Link>
                 </div>
               </div>
@@ -192,14 +192,14 @@ export default function ProductSection({ data }: any) {
                     className='bg-primary px-3 py-4 md:px-3 md:py-4 font-bold text-base text-white hover:bg-black ease-in duration-200 flex items-center justify-between'
                   >
                     Shop
-                    <img className='w-2 ml-2' src='../images/angle-arrow.webp' alt='' />
+                    <img className='w-2 ml-2' src='/images/angle-arrow.webp' alt='' />
                   </Link>
                   <Link
                     href={data?.pr_bt_black3}
                     className='bg-black px-3 py-4 md:px-3 md:py-4 font-bold text-base text-white hover:bg-primary ease-in duration-200 flex items-center justify-between'
                   >
                     Find out more
-                    <img className='w-2 ml-2' src='../images/angle-arrow.webp' alt='' />
+                    <img className='w-2 ml-2' src='/images/angle-arrow.webp' alt='' />
                   </Link>
                 </div>
               </div>

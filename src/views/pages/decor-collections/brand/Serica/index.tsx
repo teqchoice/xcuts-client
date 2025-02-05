@@ -24,7 +24,7 @@ export default function index({ Data }: any) {
           subtitle: 'DÉCOR COLLECTION',
           butt: 'BROWSE AND BUY',
           url: '#',
-          baner: '../images/banner-1-showroom.jpeg'
+          baner: '/images/banner-1-showroom.jpeg'
         }}
       />
       <IntroductionSection />

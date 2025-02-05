@@ -15,7 +15,7 @@ import Resources from './Resources'
 export default function index({ Data }: any) {
   return (
     <>
-      <PageIntroduction Data={{ title: 'CNC Wood Milling', baner: '../images/banner-1-showroom.jpeg' }} />
+      <PageIntroduction Data={{ title: 'CNC Wood Milling', baner: '/images/banner-1-showroom.jpeg' }} />
       <IntroductionSection Data={Data?.delivery} />
       <VideoSection Data={Data?.delivery} />
 
