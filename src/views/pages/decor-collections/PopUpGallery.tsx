@@ -3,9 +3,9 @@
 import 'swiper/css'
 import 'swiper/css/free-mode'
 import 'swiper/css/thumbs'
-import Image from 'next/image'
 import Fancybox from './FancyBox'
 import { useEffect, useState } from 'react'
+import Image from '@/views/pages/components/Image'
 
 const PopUpGallery = ({ item }: any) => {
   const [selectedImage, setSelectedImage] = useState<string>('')

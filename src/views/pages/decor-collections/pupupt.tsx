@@ -11,12 +11,9 @@ export default function Pupapt({ data }: any) {
   const [show, setShow] = useState(1)
   const [loader, setLoader] = useState(false)
   const [cunter, setCunter] = useState(1)
-  const [user, setUser] = useState('')
   const { item, thickness } = data
 
-  useEffect(() => {
-    setUser(localStorage.getItem('id'))
-  }, [])
+  const [currentThickness, setCurrentThickness] = useState(item?.thickness_ref?.[0])
 
   const addToCard = async () => {
     if (!token) {
@@ -85,7 +82,10 @@ export default function Pupapt({ data }: any) {
         <i className='fa-solid fa-xmark' />
       </a>
       <div className='w-full md:px-6 px-2 py-2 bg-gray-100'>
-        <p className='font-semibold text-sm'>Product Code: {item?.product_code}</p>
+        <p className='font-semibold text-sm'>
+          Product Code: {item?.product_code}
+          {currentThickness?.thickness ? `-${currentThickness?.thickness}` : ''}
+        </p>
         <div className='grid lg:grid-cols-2 grid-cols-1 gap-y-4'>
           <PopUpGallery item={item} />
           <div className='col-span-1 md:px-4 px-0'>
@@ -93,20 +93,23 @@ export default function Pupapt({ data }: any) {
               {item?.brand_ref?.name} {item?.code}
             </h3>
             <p className='text-sm text-gray-500'>{item?.product_name}</p>
-            <h5 className='text-lg text-black font-bold mt-2'>Product characteristics</h5>
-            <p className='text-sm  text-gray-400 capitalize'>
-              Core: {item?.core_ref?.name} | Surface: {item?.surface_ref?.name}
-            </p>
-            <p className='text-sm  text-gray-400 capitalize'>
-              Finish: {item?.finish_ref?.name} | Design: {item?.design_ref?.name}
-            </p>
-            <p className='text-sm  text-gray-400 capitalize'>
-              Texture: {item?.texture_ref?.name} | Grain: {item?.surface_ref?.name}
-            </p>
-            <h5 className='text-lg text-black font-bold mt-2'>B side description</h5>
+            <h5 className='text-lg text-black font-bold mt-2'>Product Characteristics</h5>
+            <div className='flex'>
+              <div className='flex flex-col gap-y-1'>
+                <p className='text-sm text-gray-400 capitalize w-[120px]'>Core: {item?.core_ref?.name} </p>
+                <p className='text-sm  text-gray-400 capitalize'>Finish: {item?.finish_ref?.name}</p>
+                <p className='text-sm  text-gray-400 capitalize'>Texture: {item?.texture_ref?.name}</p>
+              </div>
+              <div className='flex flex-col gap-y-1'>
+                <p className='text-sm text-gray-400 capitalize'>| Surface: {item?.surface_ref?.name}</p>
+                <p className='text-sm  text-gray-400 capitalize'>| Design: {item?.design_ref?.name}</p>
+                <p className='text-sm  text-gray-400 capitalize'>| Grain: {item?.surface_ref?.name}</p>
+              </div>
+            </div>
+            <h5 className='text-lg text-black font-bold mt-2'>B side Description</h5>
             <p className='text-sm  text-gray-400'>{item?.b_description}</p>
             <div className='flex items-center text-center mt-2'>
-              <h5 className='text-lg  text-black font-bold mr-3 text-center'>Available download</h5>
+              <h5 className='text-lg  text-black font-bold mr-3 text-center'>Available Download</h5>
               <a
                 href={`${process.env.NEXT_PUBLIC_SHOP_API_URL}/files/${item?.collectionName}/${item?.id}/${item?.attachment}`}
                 download
@@ -223,22 +226,17 @@ export default function Pupapt({ data }: any) {
             <p className='text-xs mb-1'>Available thicknesses[mm]:</p>
             <div className='bg-gray-100 border border-gray-400/70 p-2 rounded-lg'>
               <div className='flex gap-2'>
-                <span
-                  className={`cursor-pointer flex items-center justify-center border w-8 h-8 p-1 bg-white hover:bg-primary border-primary text-black hover:text-white ${
-                    show == 1 && '!bg-primary text-white'
-                  }`}
-                  onClick={() => setShow(1)}
-                >
-                  {thickness[0]?.thickness}
-                </span>
-                <span
-                  className={`cursor-pointer flex items-center justify-center border w-8 h-8 p-1 bg-white hover:bg-primary border-primary text-black hover:text-white ${
-                    show == 0 && '!bg-primary text-white'
-                  }`}
-                  onClick={() => setShow(0)}
-                >
-                  {thickness[1]?.thickness}
-                </span>
+                {item?.thickness_ref?.map((thicknessItem: any, index: number) => (
+                  <div
+                    key={index}
+                    className={`text-[14px] w-10 border border-primary cursor-pointer h-[39px] flex items-center justify-center px-[20px] py-[10px] ${
+                      thicknessItem.id === currentThickness?.id ? 'bg-primary text-white' : 'text-black'
+                    }`}
+                    onClick={() => setCurrentThickness(thicknessItem)}
+                  >
+                    {thicknessItem?.thickness}
+                  </div>
+                ))}
               </div>
               <div className='flex justify-between mt-2'>
                 <p className='text-xs text-black'>Full sheet price</p>

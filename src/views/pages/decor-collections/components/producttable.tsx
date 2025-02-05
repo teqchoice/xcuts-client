@@ -5,20 +5,24 @@ export default function Producttable({ item, setOpened, opened, setPupitem }: an
     <tr className='border-t '>
       <td>
         <div className='text-center w-16 h-16 flex items-center justify-center rounded-full overflow-hidden'>
-          <img
+          <Image
             className='w-full h-full object-cover object-center'
             src={`${process.env.NEXT_PUBLIC_API_SHOP_URL_images}/${item?.decor_poster[0]?.directus_files_id?.id}/${item?.decor_poster[0]?.directus_files_id?.filename_disk}`}
             // src={`${process.env.NEXT_PUBLIC_SHOP_API_URL}/files/${item?.collectionName}/${item?.id}/${item?.decor[0]}`}
             alt=''
+            width={64}
+            height={64}
           />
         </div>
       </td>
       <td>
         <div className='text-center w-16 h-16 flex items-center justify-center rounded-full overflow-hidden'>
-          <img
+          <Image
             className='w-full h-full object-cover object-center'
             src={`${process.env.NEXT_PUBLIC_API_SHOP_URL_images}/${item?.decor_poster[1]?.directus_files_id?.id}/${item?.decor_poster[1]?.directus_files_id?.filename_disk}`}
             alt=''
+            width={64}
+            height={64}
           />
         </div>
       </td>

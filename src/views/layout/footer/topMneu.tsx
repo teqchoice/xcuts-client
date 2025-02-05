@@ -1,6 +1,7 @@
 import { user_info } from '@/extensions/redux/api/auth'
 import Modal from '@/views/pages/components/Modal'
 import { Pencil } from '@icon-park/react'
+import Image from 'next/image'
 import { select } from 'radash'
 import React, { useState } from 'react'
 
@@ -41,10 +42,12 @@ export default function TopMneu({ data }: any) {
       </h4>
       <div className='grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-8'>
         <div className='relative bg-neutral-400 text-center px-3 lg:p-5 flex flex-col justify-center md:align-middle md:min-h-[213px] min-h-[120px]'>
-          <img
+          <Image
             className='md:w-[39px] md:h-[49px] w-[20px] h-[25px] ml-auto mr-auto md:mb-6 mb-2'
-            src='../images/map-icon.webp'
+            src='/images/map-icon.webp'
             alt=''
+            width={39}
+            height={49}
           />
           <p className='text-white xxl:px-16 md:text-base text-[12px]'>
             {/* {
@@ -80,10 +83,12 @@ export default function TopMneu({ data }: any) {
           />
         </div>
         <div className='relative bg-neutral-400 text-center lg:p-5 flex flex-col justify-center align-middle md:min-h-[213px] min-h-[120px]'>
-          <img
+          <Image
             className='md:w-[57px] md:h-[41px] w-[30px] h-[20px] ml-auto mr-auto md:mb-6 mb-2'
-            src='../images/envelop-icon.webp'
+            src='/images/envelop-icon.webp'
             alt=''
+            width={57}
+            height={41}
           />
 
           <a href='mailto:hello@xcuts.co.uk' className='text-white md:text-base text-[12px] xxl:px-16'>
@@ -119,10 +124,12 @@ export default function TopMneu({ data }: any) {
           />
         </div>
         <div className='relative bg-neutral-400 col-span-2 md:col-span-1 text-center lg:p-5 flex flex-col justify-center align-middle md:min-h-[213px] min-h-[80px]'>
-          <img
+          <Image
             className='md:w-[43px] w-[20px] md:h-[43px] h-[20px] ml-auto mr-auto md:mb-6 mb-2'
-            src='../images/phone-ftr-icon.webp'
+            src='/images/phone-ftr-icon.webp'
             alt=''
+            width={43}
+            height={43}
           />
           <a href='tel:+44(0)1707907000' className='text-white md:text-base text-[12px] xxl:px-16'>
             {/* {
