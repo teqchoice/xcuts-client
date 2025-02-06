@@ -178,7 +178,7 @@ export default function CollectionsItemSection({ BrandData, DecorsData }: any) {
           {currentItems?.length ? (
             <>
               {currentItems.map((item: any, index: number) => (
-                <Productgrid item={item} key={index} setOpened={setOpened} opened={opened} setPupitem={setPupitem} />
+                <Productgrid item={item} key={item?.id} setOpened={setOpened} opened={opened} setPupitem={setPupitem} />
               ))}
             </>
           ) : (
