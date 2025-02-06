@@ -60,9 +60,9 @@ export default function Producttable({ item, setOpened, opened, setPupitem }: an
       <td>
         <div className='text-[#707070] text-[15px] text-center px-3'>{item?.width}</div>
       </td>
-      <td className=''>
+      <td className='py-2'>
         <div className='flex justify-between flex-row gap-x-1 w-full'>
-          <div className='flex gap-x-2'>
+          <div className='grid grid-cols-5 gap-2'>
             {item?.thickness_ref?.map((thicknessItem: any, index: number) => (
               <div
                 key={index}
@@ -75,7 +75,7 @@ export default function Producttable({ item, setOpened, opened, setPupitem }: an
             ))}
           </div>
           <div
-            className='cursor-pointer popup-modal px-6 py-[8px] font-medium text-[15px] bg-black text-white'
+            className='cursor-pointer h-fit popup-modal px-6 py-[8px] font-medium text-[15px] bg-black text-white'
             onClick={() => {
               setPupitem({
                 item,

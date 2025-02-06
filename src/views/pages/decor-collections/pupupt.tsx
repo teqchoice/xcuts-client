@@ -140,7 +140,7 @@ export default function Pupapt({ data }: any) {
             <div className='flex justify-between'>
               <p className='text-primary'>Edgebanding</p>
               {/* <span>{item?.edgebanding ? 'Yes' : 'No'}</span> */}
-              <span>Yes</span>
+              <span>{currentThickness?.thickness <= 6 ? 'No' : 'Yes'}</span>
             </div>
             <div className='flex justify-between'>
               <p className='text-primary'>CNC Machining</p>
@@ -196,14 +196,14 @@ export default function Pupapt({ data }: any) {
               <h3 className='text-2xl'>
                 Total:{' '}
                 <span className='text-primary font-bold'>
-                  £{show ? thickness[0]?.price_full_sheet : thickness[1]?.price_full_sheet}
+                  {currentThickness ? `£${currentThickness?.price_full_sheet} ` : ''}
                 </span>
               </h3>
               <p className='text-sm'>
-                With VAT: £
-                {show
-                  ? (thickness[0]?.price_full_sheet * (1 + thickness[0]?.tax_percent / 100)).toFixed(2)
-                  : (thickness[1]?.price_full_sheet * (1 + thickness[1]?.tax_percent / 100)).toFixed(2)}
+                With VAT:
+                {currentThickness
+                  ? `£${(currentThickness?.price_full_sheet * (1 + currentThickness?.tax_percent / 100)).toFixed(2)}`
+                  : ''}
               </p>
             </div>
             <div className=' w-full'>
@@ -211,14 +211,16 @@ export default function Pupapt({ data }: any) {
               <h3 className='text-2xl'>
                 Total:{' '}
                 <span className='text-primary font-bold'>
-                  £{show ? thickness[0]?.price_cutting : thickness[1]?.price_cutting}
+                  {currentThickness ? `£${currentThickness?.price_cutting}` : ''}
                 </span>
               </h3>
               <p className='text-sm'>
-                With VAT: £
-                {show
-                  ? (thickness[0]?.price_cutting * (1 + (thickness[0]?.tax_percent ?? 20) / 100)).toFixed(2)
-                  : (thickness[1]?.price_cutting * (1 + (thickness[1]?.tax_percent ?? 20) / 100)).toFixed(2)}
+                With VAT:
+                {currentThickness
+                  ? `£${(currentThickness?.price_cutting * (1 + (currentThickness?.tax_percent ?? 20) / 100)).toFixed(
+                      2
+                    )}`
+                  : ''}
               </p>
             </div>
           </div>
@@ -238,22 +240,22 @@ export default function Pupapt({ data }: any) {
                   </div>
                 ))}
               </div>
-              <div className='flex justify-between mt-2'>
+              <div className={`flex justify-between mt-2 ${!currentThickness && 'mb-2'}`}>
                 <p className='text-xs text-black'>Full sheet price</p>
                 <span className='text-primary'>
-                  £
-                  {show
-                    ? (thickness[0]?.price_full_sheet * (1 + thickness[0]?.tax_percent / 100)).toFixed(2)
-                    : (thickness[1]?.price_full_sheet * (1 + thickness[1]?.tax_percent / 100)).toFixed(2)}
+                  {currentThickness
+                    ? `£${(currentThickness?.price_full_sheet * (1 + currentThickness?.tax_percent / 100)).toFixed(2)}`
+                    : ''}
                 </span>
               </div>
               <div className='flex justify-between'>
                 <p className='text-xs text-black'>Sheet price with cutting (up to 20 pieces per sheet)</p>
                 <span className='text-primary'>
-                  £
-                  {show
-                    ? (thickness[0]?.price_cutting * (1 + (thickness[0]?.tax_percent ?? 20) / 100)).toFixed(2)
-                    : (thickness[1]?.price_cutting * (1 + (thickness[1]?.tax_percent ?? 20) / 100)).toFixed(2)}
+                  {currentThickness
+                    ? `£${(currentThickness?.price_cutting * (1 + (currentThickness?.tax_percent ?? 20) / 100)).toFixed(
+                        2
+                      )}`
+                    : ''}
                 </span>
               </div>
             </div>
