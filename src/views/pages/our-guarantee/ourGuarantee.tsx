@@ -34,7 +34,7 @@ export default function OurGuarantee() {
             <p className='text-[22px] md:text-[26px] lg:text-[36px]'>
               <span className='text-primary'> Our Commitment to You</span>
             </p>
-            <img src='../images/wwcaep-panels.webp' alt='' className='mx-auto border-[10px] border-[#c4c4c4] my-9' />
+            <img src='/images/wwcaep-panels.webp' alt='' className='mx-auto border-[10px] border-[#c4c4c4] my-9' />
             <p className='text-xl leading-8'>
               Panels will be accurately cut and edged to your specifications; if not, we will provide a replacement at
               no additional cost within 24 hours. At XCUTS, we understand that both people and machines can make

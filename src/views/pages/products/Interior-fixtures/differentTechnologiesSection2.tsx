@@ -7,7 +7,7 @@ export default function DifferentTechnologiesSection(data, props: any) {
       <section>
         <div className='px-4 sm:container py-5'>
           <div className='relative mb-6'>
-            <img src='../images/alldecor.jpeg' alt='' className='w-full' />
+            <img src='/images/alldecor.jpeg' alt='' className='w-full' />
             <div className='px-5 py-6 md:px-10 md:py-9 bg-[#f3f3f3] md:absolute md:bottom-0 md:w-[600px] lg:w-[503px]'>
               <p className='text-xl md:text-3xl text-black'>
                 {/* Blum box approach. */}
@@ -43,7 +43,7 @@ export default function DifferentTechnologiesSection(data, props: any) {
 
               <div className='flex md:flex-row flex-col gap-5 my-5 lg:my-10'>
                 <div className='flex flex-col items-center gap-3'>
-                  <img className=' w-full object-cover object-center' src='../images/alldecor.jpeg' alt='' />
+                  <img className=' w-full object-cover object-center' src='/images/alldecor.jpeg' alt='' />
                   <h4 className='font-bold text-lg'>Streamlined Style</h4>
                   <p>
                     The wonderfully straight and thin (12.8 mm) drawer sides mix in well with all pieces of furniture.
@@ -51,7 +51,7 @@ export default function DifferentTechnologiesSection(data, props: any) {
                   </p>
                 </div>
                 <div className='flex flex-col items-center gap-3'>
-                  <img className=' w-full object-cover object-center' src='../images/alldecor.jpeg' alt='' />
+                  <img className=' w-full object-cover object-center' src='/images/alldecor.jpeg' alt='' />
                   <h4 className='font-bold text-lg'>Total capacity for Bearing Loads</h4>
                   <p>
                     Legrabox delivers excellent performance even when fully stretched and loaded. Due to its high
@@ -59,7 +59,7 @@ export default function DifferentTechnologiesSection(data, props: any) {
                   </p>
                 </div>
                 <div className='flex flex-col items-center gap-3'>
-                  <img className=' w-full object-cover object-center' src='../images/alldecor.jpeg' alt='' />
+                  <img className=' w-full object-cover object-center' src='/images/alldecor.jpeg' alt='' />
                   <h4 className='font-bold text-lg'>High-front Stability</h4>
                   <p>
                     High fronts have grown into a more and more common design feature. With a new kind of front fixing
@@ -68,7 +68,7 @@ export default function DifferentTechnologiesSection(data, props: any) {
                   </p>
                 </div>
                 <div className='flex flex-col items-center gap-3'>
-                  <img className=' w-full object-cover object-center' src='../images/alldecor.jpeg' alt='' />
+                  <img className=' w-full object-cover object-center' src='/images/alldecor.jpeg' alt='' />
                   <h4 className='font-bold text-lg'>Tip-on Bluemotion</h4>
                   <p>
                     The benefits of this mechanical opening mechanism are combined with Blumotion's tried-and-true

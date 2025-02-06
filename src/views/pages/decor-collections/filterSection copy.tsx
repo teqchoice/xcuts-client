@@ -1,5 +1,6 @@
 import { Accordion } from '@mantine/core'
 import { useDebouncedValue, useMediaQuery } from '@mantine/hooks'
+import axios from 'axios'
 import { useRouter } from 'next/router'
 import React, { useEffect, useState } from 'react'
 
@@ -19,6 +20,44 @@ export default function FilterSection(props: any) {
   const [finish, setFinish] = useState('')
 
   const [value] = useDebouncedValue(name, 500)
+
+  const [brands, setBrands] = useState<any[]>([])
+
+  const [cores, setCores] = useState<any[]>([])
+
+  const [surfaces, setSurfaces] = useState<any[]>([])
+
+  const [designs, setDesigns] = useState<any[]>([])
+
+  const [textures, setTextures] = useState<any[]>([])
+
+  const [finishes, setFinishes] = useState<any[]>([])
+
+  useEffect(() => {
+    axios
+      .get('https://shop.xcuts.co.uk/items/categories?fields=&filter[parent][related_categories_id][name][_eq]=brand')
+      .then(res => setBrands(res?.data?.data))
+
+    axios
+      .get('https://shop.xcuts.co.uk/items/categories?fields=&filter[parent][related_categories_id][name][_eq]=core')
+      .then(res => setCores(res?.data?.data))
+
+    axios
+      .get('https://shop.xcuts.co.uk/items/categories?fields=&filter[parent][related_categories_id][name][_eq]=surface')
+      .then(res => setSurfaces(res?.data?.data))
+
+    axios
+      .get('https://shop.xcuts.co.uk/items/categories?fields=&filter[parent][related_categories_id][name][_eq]=design')
+      .then(res => setDesigns(res?.data?.data))
+
+    axios
+      .get('https://shop.xcuts.co.uk/items/categories?fields=&filter[parent][related_categories_id][name][_eq]=texture')
+      .then(res => setTextures(res?.data?.data))
+
+    axios
+      .get('https://shop.xcuts.co.uk/items/categories?fields=&filter[parent][related_categories_id][name][_eq]=finish')
+      .then(res => setFinishes(res?.data?.data))
+  }, [])
 
   useEffect(() => {
     if (startSearching) setvalue('name', name)
@@ -89,51 +128,17 @@ export default function FilterSection(props: any) {
           id='brand'
           value={barand}
           name='brand'
-          className='lock w-full border-0 py-2 px-2.5 text-primary shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary text-sm leading-6 focus:outline-none bg-white '
+          className='lock w-full border-0 py-2 px-2.5 text-primary capitalize shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary text-sm leading-6 focus:outline-none bg-white '
           onChange={e => setvalue('Brand', e.target.value)}
         >
           <option className='text-gray-500' value=''>
             Brand
           </option>
-          <option className='text-gray-500' value='egger'>
-            Egger
-          </option>
-          <option className='text-gray-500' value='kronospan'>
-            Kronospan
-          </option>
-          <option className='text-gray-500' value='cleaf'>
-            Cleaf
-          </option>
-          <option className='text-gray-500' value='XYLO Surface'>
-            XYLO Surface
-          </option>
-          <option className='text-gray-500' value='saviola'>
-            Saviola
-          </option>
-          <option className='text-gray-500' value='swiss krono'>
-            Swiss Krono
-          </option>
-          <option className='text-gray-500' value='alvic'>
-            Alvic
-          </option>
-          <option className='text-gray-500' value='senoplast'>
-            Senoplast
-          </option>
-          <option className='text-gray-500' value='serica'>
-            Serica
-          </option>
-          <option className='text-gray-500' value='wall panelling'>
-            Wall Panelling
-          </option>
-          <option className='text-gray-500' value='MDF boards'>
-            MDF Boards
-          </option>
-          <option className='text-gray-500' value='veneered boards'>
-            Veneered Boards
-          </option>
-          <option className='text-gray-500' value='plywood'>
-            Plywood
-          </option>
+          {brands?.map(brand => (
+            <option className='text-gray-500 capitalize' value={brand?.name}>
+              {brand?.name}
+            </option>
+          ))}
         </select>
       </div>
       <div>
@@ -142,20 +147,16 @@ export default function FilterSection(props: any) {
           value={core}
           name='core'
           onChange={e => setvalue('Core', e.target.value)}
-          className='lock w-full border-0 py-2 px-2.5 text-primary shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary text-sm leading-6 focus:outline-none bg-white '
+          className='lock w-full border-0 py-2 px-2.5 text-primary capitalize shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary text-sm leading-6 focus:outline-none bg-white '
         >
           <option className='text-gray-500' value=''>
             Core
           </option>
-          <option className='text-gray-500' value='Chipboard'>
-            Chipboard
-          </option>
-          <option className='text-gray-500' value='MDF'>
-            MDF
-          </option>
-          <option className='text-gray-500' value='Plywood'>
-            Plywood
-          </option>
+          {cores?.map(core => (
+            <option className='text-gray-500 capitalize' value={core.name}>
+              {core.name}
+            </option>
+          ))}
         </select>
       </div>
       <div>
@@ -285,53 +286,16 @@ export default function FilterSection(props: any) {
           value={surface}
           name='surface'
           onChange={e => setvalue('Surface', e.target.value)}
-          className='lock w-full border-0 py-2 px-2.5 text-primary shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary text-sm leading-6 focus:outline-none bg-white '
+          className='lock w-full border-0 py-2 px-2.5 text-primary capitalize shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary text-sm leading-6 focus:outline-none bg-white '
         >
           <option className='text-gray-500' value=''>
             Surface
           </option>
-          <option className='text-gray-500' value='Melamine'>
-            Melamine
-          </option>
-          <option className='text-gray-500' value='Lacquered Melamine'>
-            Lacquered Melamine
-          </option>
-          <option className='text-gray-500' value='Acrylic'>
-            Acrylic
-          </option>
-          <option className='text-gray-500' value='Foil'>
-            Foil
-          </option>
-          <option className='text-gray-500' value='Metal'>
-            Metal
-          </option>
-          <option className='text-gray-500' value='Fabric'>
-            Fabric
-          </option>
-          <option className='text-gray-500' value='MDF'>
-            MDF
-          </option>
-          <option className='text-gray-500' value='Dyed MDF'>
-            Dyed MDF
-          </option>
-          <option className='text-gray-500' value='Primed MDF'>
-            Primed MDF
-          </option>
-          <option className='text-gray-500' value='Veneer'>
-            Veneer
-          </option>
-          <option className='text-gray-500' value='Lacquered Veneer'>
-            Lacquered Veneer
-          </option>
-          <option className='text-gray-500' value='Qiled Veneer'>
-            Oiled Veneer
-          </option>
-          <option className='text-gray-500' value='Birch Ply'>
-            Birch Ply
-          </option>
-          <option className='text-gray-500' value='Plywood'>
-            Plywood
-          </option>
+          {surfaces?.map(surface => (
+            <option className='text-gray-500 capitalize' value={surface.name}>
+              {surface.name}
+            </option>
+          ))}
         </select>
       </div>
       {/* <div>
@@ -367,21 +331,17 @@ export default function FilterSection(props: any) {
           value={design}
           name='design'
           onChange={e => setvalue('Design', e.target.value)}
-          className='lock w-full border-0 py-2 px-2.5 text-primary shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary text-sm leading-6 focus:outline-none bg-white '
+          className='lock w-full border-0 py-2 px-2.5 text-primary capitalize shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary text-sm leading-6 focus:outline-none bg-white '
         >
           <option className='text-gray-500' value=''>
             {/* <option className='text-gray-500' value='U+2800'> */}
             Design
           </option>
-          <option className='text-gray-500' value='woodgrain'>
-            Woodgrain
-          </option>
-          <option className='text-gray-500' value='pattern'>
-            Pattern
-          </option>
-          <option className='text-gray-500' value='colour'>
-            Colour
-          </option>
+          {designs?.map(design => (
+            <option className='text-gray-500 capitalize' value={design?.name}>
+              {design?.name}
+            </option>
+          ))}
         </select>
       </div>
       <div>
@@ -390,38 +350,16 @@ export default function FilterSection(props: any) {
           value={texture}
           name='texture'
           onChange={e => setvalue('Texture', e.target.value)}
-          className='lock w-full border-0 py-2 px-2.5 text-primary shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary text-sm leading-6 focus:outline-none bg-white '
+          className='lock w-full border-0 py-2 px-2.5 text-primary capitalize shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary text-sm leading-6 focus:outline-none bg-white '
         >
           <option className='text-gray-500' value=''>
             Texture
           </option>
-          <option className='text-gray-500' value='Plain'>
-            Plain
-          </option>
-          <option className='text-gray-500' value='Pearl'>
-            Pearl
-          </option>
-          <option className='text-gray-500' value='Abstract'>
-            Abstract
-          </option>
-          <option className='text-gray-500' value='Wood'>
-            Wood
-          </option>
-          <option className='text-gray-500' value='Synced Wood'>
-            Synced Wood
-          </option>
-          <option className='text-gray-500' value='Leather'>
-            Leather
-          </option>
-          <option className='text-gray-500' value='Textile'>
-            Textile
-          </option>
-          <option className='text-gray-500' value='Stone'>
-            Stone
-          </option>
-          <option className='text-gray-500' value='Metal'>
-            Metal
-          </option>
+          {textures?.map(texture => (
+            <option className='text-gray-500 capitalize' value={texture?.name}>
+              {texture?.name}
+            </option>
+          ))}
         </select>
       </div>
       <div>
@@ -430,41 +368,16 @@ export default function FilterSection(props: any) {
           value={finish}
           name='finish'
           onChange={e => setvalue('Finish', e.target.value)}
-          className='lock w-full border-0 py-2 px-2.5 text-primary shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary text-sm leading-6 focus:outline-none bg-white '
+          className='lock w-full border-0 py-2 px-2.5 text-primary capitalize shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary text-sm leading-6 focus:outline-none bg-white '
         >
           <option className='text-gray-500' value=''>
             Finish
           </option>
-          <option className='text-gray-500' value='Supermatt'>
-            Supermatt
-          </option>
-          <option className='text-gray-500' value='matt'>
-            Matt
-          </option>
-          <option className='text-gray-500' value='Semimatt'>
-            Semimatt
-          </option>
-          <option className='text-gray-500' value='Matt-Satin'>
-            Matt-Satin
-          </option>
-          <option className='text-gray-500' value='Satin'>
-            Satin
-          </option>
-          <option className='text-gray-500' value='Semigloss'>
-            Semigloss
-          </option>
-          <option className='text-gray-500' value='gloss'>
-            Gloss
-          </option>
-          <option className='text-gray-500' value='Highgloss'>
-            High Gloss
-          </option>
-          <option className='text-gray-500' value='primed'>
-            Primed
-          </option>
-          <option className='text-gray-500' value='raw'>
-            Raw
-          </option>
+          {finishes?.map(finish => (
+            <option className='text-gray-500 capitalize' value={finish?.name}>
+              {finish?.name}
+            </option>
+          ))}
         </select>
       </div>
     </>

@@ -2015,7 +2015,7 @@ export default function Order() {
                                                 href='assets/images/panel-design-img-01.jpg'
                                               >
                                                 <img
-                                                  src='../images/panel-design-img-01.jpg'
+                                                  src='/images/panel-design-img-01.jpg'
                                                   className='w-full object-cover sm:h-auto'
                                                 />
                                               </a>

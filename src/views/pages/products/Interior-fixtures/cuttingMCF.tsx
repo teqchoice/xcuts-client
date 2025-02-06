@@ -61,19 +61,19 @@ export default function CuttingMCF(props: any) {
 
               <div className='flex gap-5 my-5 lg:my-10'>
                 <div className='flex flex-col items-center gap-3'>
-                  <img className=' w-full object-cover object-center' src='../images/alldecor.jpeg' alt='' />
+                  <img className=' w-full object-cover object-center' src='/images/alldecor.jpeg' alt='' />
                   <h4 className='font-bold text-lg'>Cutout</h4>
                 </div>
                 <div className='flex flex-col items-center gap-3'>
-                  <img className=' w-full object-cover object-center' src='../images/alldecor.jpeg' alt='' />
+                  <img className=' w-full object-cover object-center' src='/images/alldecor.jpeg' alt='' />
                   <h4 className='font-bold text-lg'>Insert</h4>
                 </div>
                 <div className='flex flex-col items-center gap-3'>
-                  <img className=' w-full object-cover object-center' src='../images/alldecor.jpeg' alt='' />
+                  <img className=' w-full object-cover object-center' src='/images/alldecor.jpeg' alt='' />
                   <h4 className='font-bold text-lg'>J Profile</h4>
                 </div>
                 <div className='flex flex-col items-center gap-3'>
-                  <img className=' w-full object-cover object-center' src='../images/alldecor.jpeg' alt='' />
+                  <img className=' w-full object-cover object-center' src='/images/alldecor.jpeg' alt='' />
                   <h4 className='font-bold text-lg'>Bevel</h4>
                 </div>
               </div>

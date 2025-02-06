@@ -20,27 +20,8 @@
 </div>
 </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
 <div class="p-5 md:p-8 lg:p-12 text-center border-2 border-primary border-dashed bg-white">
 <p class="text-[22px] md:text-[26px] lg:text-[36px]"><span class="text-primary"> Our Commitment to You</span></p>
-<img class="mx-auto border-[10px] border-[#c4c4c4] my-9" src="../images/wwcaep-panels.webp" alt="">
+<img class="mx-auto border-[10px] border-[#c4c4c4] my-9" src="/images/wwcaep-panels.webp" alt="">
 <p class="text-xl leading-8">Panels will be accurately cut and edged to your specifications; if not, we will provide a replacement at no additional cost within 24 hours. At XCUTS, we understand that both people and machines can make mistakes, and plans may not always unfold as intended. We are committed to ensuring our clients are never left in a difficult situation. Therefore, in the unlikely event that we make an error, we guarantee to deliver a replacement panel within 24 hours.</p>
 </div>
-
-
-
-
-
-
-

@@ -7,21 +7,23 @@ type ImageProps = {
   width?: number
   height?: number
   className?: HTMLAttributes<HTMLImageElement>['className']
+  onClick?: HTMLAttributes<HTMLImageElement>['onClick']
 }
 
 const Image = (props: ImageProps) => {
-  const { src, alt, width, height, className } = props
+  const { src, alt, width, height, className, onClick } = props
 
   const [defaultImage, setDefaultImage] = useState<boolean>()
 
   return (
     <NextImage
-      src={defaultImage ? '/images/placeholder.jpg' : src}
+      src={defaultImage ? '/images/x-logo.png' : src}
       width={width ?? 40}
       height={height ?? 40}
       alt={alt}
-      className={`${className}`}
-      onError={e => setDefaultImage(e.type === 'error' ? true : false)}
+      onClick={onClick}
+      className={`${className} ${defaultImage ? '!object-contain px-2' : ''}`}
+      onError={e => setDefaultImage(true)}
     />
   )
 }

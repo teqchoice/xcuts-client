@@ -62,7 +62,7 @@ export default function Resources(props: any) {
               <div className='flex md:flex-row flex-col gap-5 my-5 lg:my-10'>
                 <div className='flex flex-col items-center justify-between gap-3'>
                   <div>
-                    <img className=' w-full object-cover object-center' src='../images/alldecor.jpeg' alt='' />
+                    <img className=' w-full object-cover object-center' src='/images/alldecor.jpeg' alt='' />
                     <h4 className='font-bold text-lg'>MDF</h4>
                     <p>
                       MDF is highly favoured for cutting and grooving with our CNC service. Its plain, smooth surface
@@ -79,7 +79,7 @@ export default function Resources(props: any) {
                 </div>
                 <div className='flex flex-col items-center justify-between gap-3'>
                   <div>
-                    <img className=' w-full object-cover object-center' src='../images/alldecor.jpeg' alt='' />
+                    <img className=' w-full object-cover object-center' src='/images/alldecor.jpeg' alt='' />
                     <h4 className='font-bold text-lg'>Plywood</h4>
                     <p>
                       Our CNC machine is perfect for plywood cutting, delivering smooth edges that showcase the
@@ -95,7 +95,7 @@ export default function Resources(props: any) {
                 </div>
                 <div className='flex flex-col items-center justify-between gap-3'>
                   <div>
-                    <img className=' w-full object-cover object-center' src='../images/alldecor.jpeg' alt='' />
+                    <img className=' w-full object-cover object-center' src='/images/alldecor.jpeg' alt='' />
                     <h4 className='font-bold text-lg'>MFC</h4>
                     <p>
                       We are renowned suppliers of high-demand melamine-faced chipboard (MFC) in the London region. Our
@@ -112,7 +112,7 @@ export default function Resources(props: any) {
                 </div>
                 <div className='flex flex-col items-center justify-between gap-3'>
                   <div>
-                    <img className=' w-full object-cover object-center' src='../images/alldecor.jpeg' alt='' />
+                    <img className=' w-full object-cover object-center' src='/images/alldecor.jpeg' alt='' />
                     <h4 className='font-bold text-lg'>Veneered Boards</h4>
                     <p>
                       Enhance your furniture with a natural wood veneer like oak or walnut combined with an MDF or

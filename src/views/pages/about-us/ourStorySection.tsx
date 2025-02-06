@@ -43,14 +43,13 @@ export default function OurStorySection(props: any) {
     ...defaultTOurGuarantee,
     ...props.Data
   }
-  // console.log(Data)
   return (
     <>
       <section className='bg-no-repeat bg-[right_73px_top] mt-6 sm:mt-0 md:pb-12 pb-14'>
         <div className='px-4 sm:container'>
           <div className='grid grid-flow-row md:grid-cols-3 gap-y-6 md:gap-3 lg:gap-6 sm:pt-20 md:pt-24 lg:pt-40'>
             <div className=''>
-              <img src='../images/our-story-thumb-01.webp' alt='' className='w-full' />
+              <img src='/images/our-story-thumb-01.webp' alt='' className='w-full' />
               <div className='bg-white text-center pt-5 pb-7 px-3 shadow-2xl'>
                 <h3 className='text-primary text-3xl font-semibold mb-3'>2022</h3>
                 <p>
@@ -65,7 +64,7 @@ export default function OurStorySection(props: any) {
                 Our story so far
               </h4>
               <div className=''>
-                <img src='../images/our-story-thumb-02.webp' alt='' className='w-full' />
+                <img src='/images/our-story-thumb-02.webp' alt='' className='w-full' />
                 <div className='bg-white text-center pt-5 pb-7 px-3 shadow-2xl'>
                   <h3 className='text-primary text-3xl font-semibold mb-3'>2023</h3>
                   <p>
@@ -77,7 +76,7 @@ export default function OurStorySection(props: any) {
               </div>
             </div>
             <div className=''>
-              <img src='../images/our-story-thumb-03.webp' alt='' className='w-full' />
+              <img src='/images/our-story-thumb-03.webp' alt='' className='w-full' />
               <div className='bg-white text-center pt-5 pb-7 px-3 shadow-2xl'>
                 <h3 className='text-primary text-3xl font-semibold mb-3'>2023</h3>
                 <p>
@@ -91,9 +90,7 @@ export default function OurStorySection(props: any) {
             <p className='text-xl md:text-3xl mb-2'>
               The driving force behind <span className='text-primary font-semibold'>X</span>CUTS
             </p>
-            <h4 className='text-4xl sm:text-4xl md:text-5xl lg:text-6xl  text-black font-semibold'>
-              Meet the team
-            </h4>
+            <h4 className='text-4xl sm:text-4xl md:text-5xl lg:text-6xl  text-black font-semibold'>Meet the team</h4>
           </div>
         </div>
       </section>

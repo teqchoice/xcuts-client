@@ -68,7 +68,7 @@ export default function HeroSection({ data }: any) {
                   }
                 }}
               ></video>
-              {/* <video ref="vidRef" src="../images/Home-Banner.mp4" typeof="video/mp4"></video> */}
+              {/* <video ref="vidRef" src="/images/Home-Banner.mp4" typeof="video/mp4"></video> */}
             </Fragment>
           )
         })}
@@ -81,7 +81,7 @@ export default function HeroSection({ data }: any) {
       {/* <section className='swiper mySwiper'>
         <div className='swiper-wrapper'>
           <div className='swiper-slide after:absolute after:content-normal after:bottom-0 after:w-[200px] after:bg-inherit after:right-0 after:skew-y-[144deg] after:pb-36 after:origin-[100%_100%]'>
-            <img src='../images/slide-01.webp' alt='' className='h-[365px] object-cover' />
+            <img src='/images/slide-01.webp' alt='' className='h-[365px] object-cover' />
           </div>
         </div>
       </section> */}

@@ -5,20 +5,24 @@ export default function Producttable({ item, setOpened, opened, setPupitem }: an
     <tr className='border-t '>
       <td>
         <div className='text-center w-16 h-16 flex items-center justify-center rounded-full overflow-hidden'>
-          <img
+          <Image
             className='w-full h-full object-cover object-center'
             src={`${process.env.NEXT_PUBLIC_API_SHOP_URL_images}/${item?.decor_poster[0]?.directus_files_id?.id}/${item?.decor_poster[0]?.directus_files_id?.filename_disk}`}
             // src={`${process.env.NEXT_PUBLIC_SHOP_API_URL}/files/${item?.collectionName}/${item?.id}/${item?.decor[0]}`}
             alt=''
+            width={64}
+            height={64}
           />
         </div>
       </td>
       <td>
         <div className='text-center w-16 h-16 flex items-center justify-center rounded-full overflow-hidden'>
-          <img
+          <Image
             className='w-full h-full object-cover object-center'
             src={`${process.env.NEXT_PUBLIC_API_SHOP_URL_images}/${item?.decor_poster[1]?.directus_files_id?.id}/${item?.decor_poster[1]?.directus_files_id?.filename_disk}`}
             alt=''
+            width={64}
+            height={64}
           />
         </div>
       </td>
@@ -56,9 +60,9 @@ export default function Producttable({ item, setOpened, opened, setPupitem }: an
       <td>
         <div className='text-[#707070] text-[15px] text-center px-3'>{item?.width}</div>
       </td>
-      <td className=''>
+      <td className='py-2'>
         <div className='flex justify-between flex-row gap-x-1 w-full'>
-          <div className='flex gap-x-2'>
+          <div className='grid grid-cols-5 gap-2'>
             {item?.thickness_ref?.map((thicknessItem: any, index: number) => (
               <div
                 key={index}
@@ -71,7 +75,7 @@ export default function Producttable({ item, setOpened, opened, setPupitem }: an
             ))}
           </div>
           <div
-            className='cursor-pointer popup-modal px-6 py-[8px] font-medium text-[15px] bg-black text-white'
+            className='cursor-pointer h-fit popup-modal px-6 py-[8px] font-medium text-[15px] bg-black text-white'
             onClick={() => {
               setPupitem({
                 item,

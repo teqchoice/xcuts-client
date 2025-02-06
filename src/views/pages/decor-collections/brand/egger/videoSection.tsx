@@ -69,7 +69,7 @@ export default function VideoSection(props: any) {
          
             <video
               className='embed-responsive-item absolute bottom-0 left-0 right-0 top-0 h-full w-full '
-              src='../images/vid/Main Banner.mp4'
+              src='/images/vid/Main Banner.mp4'
               width='100%'
               height='auto'
               onMouseEnter={e => {
