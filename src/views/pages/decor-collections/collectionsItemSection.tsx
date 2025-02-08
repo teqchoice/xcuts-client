@@ -6,15 +6,15 @@ import { Close } from '@icon-park/react'
 import Table from './table'
 import Productgrid from './components/productgrid'
 import { ParsedUrlQuery } from 'querystring'
-import { Pagination, Select } from '@mantine/core'
-import { useMediaQuery } from '@mantine/hooks'
+import { Modal, Pagination, Select } from '@mantine/core'
+import { useDisclosure, useMediaQuery } from '@mantine/hooks'
 
 export default function CollectionsItemSection({ BrandData, DecorsData }: any) {
   const isGreaterThanMd = useMediaQuery('(min-width: 768px)')
 
   const isGreaterThanLg = useMediaQuery('(min-width: 1024px)')
 
-  const [opened, setOpened] = useState(false)
+  const [opened, { open, close }] = useDisclosure(false)
 
   const [pupitem, setPupitem] = useState([])
 
@@ -168,7 +168,7 @@ export default function CollectionsItemSection({ BrandData, DecorsData }: any) {
       {show === 1 ? (
         <>
           {currentItems?.length ? (
-            <Table DecorsData={currentItems} setOpened={setOpened} opened={opened} setPupitem={setPupitem} />
+            <Table DecorsData={currentItems} setOpened={open} opened={opened} setPupitem={setPupitem} />
           ) : (
             <div className='text-center pb-14'>No Items Found...</div>
           )}
@@ -178,7 +178,7 @@ export default function CollectionsItemSection({ BrandData, DecorsData }: any) {
           {currentItems?.length ? (
             <>
               {currentItems.map((item: any, index: number) => (
-                <Productgrid item={item} key={item?.id} setOpened={setOpened} opened={opened} setPupitem={setPupitem} />
+                <Productgrid item={item} key={item?.id} setOpened={open} opened={opened} setPupitem={setPupitem} />
               ))}
             </>
           ) : (
@@ -215,17 +215,38 @@ export default function CollectionsItemSection({ BrandData, DecorsData }: any) {
         />
       </div>
       {opened && (
-        <div className='w-screen h-screen z-50 p-5 top-0 left-0 fixed bg-black/80 overflow-y-scroll'>
-          <div className='relative w-full md:w-10/12 xl:w-8/12 2xl:w-6/12 z-50 rounded-md bg-white mx-auto my-8'>
-            <div
-              className='text-black p-3 top-0 right-0 w-10 h-10 cursor-pointer absolute z-50'
-              onClick={() => setOpened(false)}
-            >
-              <Close />
-            </div>
-            <Pupapt data={pupitem} />
+        // <div className='w-screen h-screen z-50 p-5 top-0 left-0 fixed bg-black/80 overflow-y-scroll'>
+        //   <div className='relative w-full md:w-10/12 xl:w-8/12 2xl:w-6/12 z-50 rounded-md bg-white mx-auto'>
+        //     <div className='sticky top-0 bg-white z-50'>
+        //       <div
+        //         className='text-black p-3 top-0 right-0 w-10 h-10 cursor-pointer absolute z-50'
+        //         onClick={() => setOpened(false)}
+        //       >
+        //         <Close />
+        //       </div>
+        //     </div>
+
+        //   </div>
+        // </div>
+        <Modal
+          opened={opened}
+          onClose={close}
+          withCloseButton={false}
+          size={isGreaterThanMd ? '1024px' : '100%'}
+          overlayProps={{ blur: 3 }}
+          centered
+          styles={{
+            body: {
+              padding: '0px',
+              overflowX: 'hidden'
+            }
+          }}
+        >
+          <div className='text-black p-3 top-0 right-0 w-10 h-10 cursor-pointer absolute z-50' onClick={close}>
+            <Close />
           </div>
-        </div>
+          <Pupapt data={pupitem} />
+        </Modal>
       )}
     </div>
   )

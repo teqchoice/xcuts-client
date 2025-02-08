@@ -44,7 +44,7 @@ export default function MineMenu({ data }: any) {
             <Link
               key={item.name}
               href={`/all-decors?Brand=${item.name}`}
-              className='text-white hover:text-primary font-normal md:text-base text-[12px] transition-all'
+              className='text-white hover:text-primary font-normal capitalize md:text-base text-[12px] transition-all'
             >
               {item.name}
             </Link>
