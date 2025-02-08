@@ -225,7 +225,7 @@ export default function Pupapt({ data }: any) {
           <div className='mt-2'>
             <p className='text-xs mb-1'>Available thicknesses[mm]:</p>
             <div className='bg-gray-100 border border-gray-400/70 p-2 rounded-lg'>
-              <div className='flex gap-2'>
+              <div className='flex gap-2 flex-wrap'>
                 {item?.thickness_ref?.map((thicknessItem: any, index: number) => (
                   <div
                     key={index}
