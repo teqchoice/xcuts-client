@@ -8,16 +8,14 @@ const FaceBox = () => {
 
   return (
     <div className='flex flex-col'>
-      <span className='absolute bottom-[100px] left-2.5 text-[13px]'>Panel shows</span>
+      <span className='absolute bottom-[110px] left-2.5 text-[13px]'>Panel shows</span>
       <div className='relative'>
         <Image
           src={'/images/machining/front-face.svg'}
           width={90}
           height={90}
           alt=''
-          className={`${
-            !isBack ? 'opacity-100' : 'opacity-0'
-          } absolute bottom-2.5 left-2.5 transition-all duration-500`}
+          className={`${!isBack ? 'opacity-100' : 'opacity-0'} absolute bottom-4 left-2.5 transition-all duration-500`}
           style={{
             transform: isBack ? 'rotateX(180deg)' : '',
             transformOrigin: 'center center'
@@ -28,7 +26,7 @@ const FaceBox = () => {
           width={90}
           height={90}
           alt=''
-          className={`${isBack ? 'opacity-100' : 'opacity-0'} absolute bottom-2.5 left-2.5 transition-all duration-500`}
+          className={`${isBack ? 'opacity-100' : 'opacity-0'} absolute bottom-4 left-2.5 transition-all duration-500`}
           style={{
             transform: !isBack ? 'rotateX(180deg)' : '',
             transformOrigin: 'center center'

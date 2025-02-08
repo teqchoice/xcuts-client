@@ -20,9 +20,9 @@ const HorizontalLine = (props: HorizontalLineProps) => {
   return (
     <>
       <Line points={linePoints} stroke='#7D848C' strokeWidth={1} />
-      <Rect x={lines.right.x} y={lines.right.y} width={70} height={10} fill='#fad2d4' />
+      <Rect x={textBgX} y={textBgY} width={70} height={10} fill='#fad2d4' />
       <Rect x={lines.left.x} y={lines.left.y} height={10} stroke='#7D848C' strokeWidth={1} />
-      <Rect x={textBgX} y={textBgY} height={10} stroke='#7D848C' strokeWidth={1} />
+      <Rect x={lines.right.x} y={lines.right.y} height={10} stroke='#7D848C' strokeWidth={1} />
       <Text x={textX} y={textY} text={text} width={70} fontSize={12} align='center' fill='#222222' />
     </>
   )

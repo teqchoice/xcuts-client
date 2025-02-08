@@ -25,6 +25,8 @@ const Canvas: React.FC = () => {
 
   const angles = isAngledCut ? currentMachiningOption?.options.angleOn.split('-') : []
 
+  console.log(angles)
+
   const stageWidth = 780
   const stageHeight = 800
 
@@ -53,12 +55,35 @@ const Canvas: React.FC = () => {
             strokeWidth={1}
             closed={true} // Ensures the shape is closed
           />
+
+          {/* top line */}
+          {isAngledCut && (
+            <HorizontalLine
+              linePoints={[rectX, rectY - 90, rectX + scaledWidth, rectY - 90]}
+              lines={{
+                right: {
+                  x: rectX + scaledWidth,
+                  y: rectY - 95
+                },
+                left: {
+                  x: rectX,
+                  y: rectY - 95
+                }
+              }}
+              textBgX={rectX + scaledWidth / 2 - 35}
+              textBgY={rectY - 95}
+              textX={rectX + scaledWidth / 2 - 35}
+              textY={rectY - 95}
+              text={`${dimensions.width} mm`}
+            />
+          )}
+
           {/* bottom line */}
           <HorizontalLine
             linePoints={[rectX, rectY + scaledHeight + 90, rectX + scaledWidth, rectY + scaledHeight + 90]}
             lines={{
               right: {
-                x: rectX + scaledWidth / 2 - 35,
+                x: rectX + scaledWidth,
                 y: rectY + scaledHeight + 85
               },
               left: {
@@ -66,19 +91,20 @@ const Canvas: React.FC = () => {
                 y: rectY + scaledHeight + 85
               }
             }}
-            textBgX={rectX + scaledWidth}
+            textBgX={rectX + scaledWidth / 2 - 35}
             textBgY={rectY + scaledHeight + 85}
             textX={rectX + scaledWidth / 2 - 35}
             textY={rectY + scaledHeight + 85}
             text={`${dimensions.width} mm`}
           />
+
           {/* right line */}
           <VerticalLine
             linePoints={[rectX + scaledWidth + 90, rectY, rectX + scaledWidth + 90, rectY + scaledHeight]}
             lines={{
               top: {
-                x: rectX + scaledWidth + 85,
-                y: rectY + scaledHeight / 2 - 35
+                x: rectX + scaledWidth + 90,
+                y: rectY + scaledHeight
               },
               bottom: {
                 x: rectX + scaledWidth + 90,
@@ -86,11 +112,33 @@ const Canvas: React.FC = () => {
               }
             }}
             text={`${dimensions.height} mm`}
-            textBgX={rectX + scaledWidth + 90}
-            textBgY={rectY + scaledHeight}
+            textBgX={rectX + scaledWidth + 85}
+            textBgY={rectY + scaledHeight / 2 - 35}
             textX={rectX + scaledWidth + 95}
             textY={rectY + scaledHeight / 2 - 25}
           />
+
+          {/* right line */}
+          {isAngledCut && (
+            <VerticalLine
+              linePoints={[rectX - 90, rectY, rectX - 90, rectY + scaledHeight]}
+              lines={{
+                top: {
+                  x: rectX - 90,
+                  y: rectY + scaledHeight
+                },
+                bottom: {
+                  x: rectX - 90,
+                  y: rectY
+                }
+              }}
+              text={`${dimensions.height} mm`}
+              textBgX={rectX - 95}
+              textBgY={rectY + scaledHeight / 2 - 35}
+              textX={rectX - 85}
+              textY={rectY + scaledHeight / 2 - 25}
+            />
+          )}
 
           {/* Label L1 */}
           <DirectionTile

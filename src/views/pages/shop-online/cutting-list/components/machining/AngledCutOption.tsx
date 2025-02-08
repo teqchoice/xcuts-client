@@ -47,7 +47,7 @@ const getOppositeSides = (angleOn: 'L1-W1' | 'L1-W2' | 'L2-W1' | 'L2-W2') => {
 const AngledCutOption = (props: AngledCutOptionProps) => {
   const {} = props
 
-  const { currentMachiningOption, updateCurrentMachiningOption, machiningOptions } = useMachiningStore()
+  const { currentMachiningOption, updateCurrentMachiningOption } = useMachiningStore()
 
   const isAngledCut = currentMachiningOption?.type === 'angled-cut'
 
@@ -57,6 +57,17 @@ const AngledCutOption = (props: AngledCutOptionProps) => {
 
   const oppositeSides = getOppositeSides(selectedDirection as 'L1-W1' | 'L1-W2' | 'L2-W1' | 'L2-W2')
 
+  const handleChangeDirection = (direction: 'L1-W1' | 'L1-W2' | 'L2-W1' | 'L2-W2') => {
+    setSelectedDirection(direction)
+
+    if (currentMachiningOption?.type === 'angled-cut') {
+      updateCurrentMachiningOption({
+        ...currentMachiningOption,
+        options: { ...currentMachiningOption.options, angleOn: direction }
+      })
+    }
+  }
+
   if (currentMachiningOption?.type === 'angled-cut') {
     return (
       <div className='flex flex-col gap-y-5'>
@@ -64,7 +75,7 @@ const AngledCutOption = (props: AngledCutOptionProps) => {
           <span className='text-sm whitespace-nowrap'>Angle cut on:</span>
           <Radio.Group
             name='favoriteFramework'
-            onChange={value => setSelectedDirection(value)}
+            onChange={value => handleChangeDirection(value as 'L1-W1' | 'L1-W2' | 'L2-W1' | 'L2-W2')}
             value={selectedDirection}
           >
             <Group>
@@ -78,11 +89,25 @@ const AngledCutOption = (props: AngledCutOptionProps) => {
         <div className='flex justify-between items-center'>
           <div className='flex items-center gap-x-5'>
             <span className='text-sm'>From {oppositeSides.horizontal}</span>
-            <Input w={80} />
+            <Input
+              w={80}
+              styles={{
+                input: {
+                  borderRadius: '0px'
+                }
+              }}
+            />
           </div>
           <div className='flex items-center gap-x-5'>
-            <span className='text-sm'>From {oppositeSides.horizontal}</span>
-            <Input w={80} />
+            <span className='text-sm'>From {oppositeSides.vertical}</span>
+            <Input
+              w={80}
+              styles={{
+                input: {
+                  borderRadius: '0px'
+                }
+              }}
+            />
           </div>
         </div>
         <div className='flex items-center justify-between'>
