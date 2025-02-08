@@ -71,8 +71,6 @@ export default function Pupapt({ data }: any) {
     }
   }
 
-  console.log(item)
-
   return (
     <div
       id='lightGreyMetalRock'
@@ -196,11 +194,11 @@ export default function Pupapt({ data }: any) {
               <h3 className='text-2xl'>
                 Total:{' '}
                 <span className='text-primary font-bold'>
-                  {currentThickness ? `£${currentThickness?.price_full_sheet} ` : ''}
+                  {currentThickness ? `£${currentThickness?.price_full_sheet.toFixed(2)} ` : ''}
                 </span>
               </h3>
               <p className='text-sm'>
-                With VAT:
+                With VAT:{' '}
                 {currentThickness
                   ? `£${(currentThickness?.price_full_sheet * (1 + currentThickness?.tax_percent / 100)).toFixed(2)}`
                   : ''}
@@ -211,11 +209,11 @@ export default function Pupapt({ data }: any) {
               <h3 className='text-2xl'>
                 Total:{' '}
                 <span className='text-primary font-bold'>
-                  {currentThickness ? `£${currentThickness?.price_cutting}` : ''}
+                  {currentThickness ? `£${currentThickness?.price_cutting.toFixed(2)}` : ''}
                 </span>
               </h3>
               <p className='text-sm'>
-                With VAT:
+                With VAT:{' '}
                 {currentThickness
                   ? `£${(currentThickness?.price_cutting * (1 + (currentThickness?.tax_percent ?? 20) / 100)).toFixed(
                       2
@@ -227,7 +225,7 @@ export default function Pupapt({ data }: any) {
           <div className='mt-2'>
             <p className='text-xs mb-1'>Available thicknesses[mm]:</p>
             <div className='bg-gray-100 border border-gray-400/70 p-2 rounded-lg'>
-              <div className='flex gap-2'>
+              <div className='flex gap-2 flex-wrap'>
                 {item?.thickness_ref?.map((thicknessItem: any, index: number) => (
                   <div
                     key={index}
@@ -240,16 +238,16 @@ export default function Pupapt({ data }: any) {
                   </div>
                 ))}
               </div>
-              <div className={`flex justify-between mt-2 ${!currentThickness && 'mb-2'}`}>
-                <p className='text-xs text-black'>Full sheet price</p>
+              <div className={`flex justify-between items-center mt-2 ${!currentThickness && 'mb-2'}`}>
+                <p className='text-[9px] text-black'>Full sheet price</p>
                 <span className='text-primary'>
                   {currentThickness
                     ? `£${(currentThickness?.price_full_sheet * (1 + currentThickness?.tax_percent / 100)).toFixed(2)}`
                     : ''}
                 </span>
               </div>
-              <div className='flex justify-between'>
-                <p className='text-xs text-black'>Sheet price with cutting (up to 20 pieces per sheet)</p>
+              <div className='flex justify-between items-center'>
+                <p className='text-[9px] text-black'>Sheet price with cutting (up to 20 pieces per sheet)</p>
                 <span className='text-primary'>
                   {currentThickness
                     ? `£${(currentThickness?.price_cutting * (1 + (currentThickness?.tax_percent ?? 20) / 100)).toFixed(
