@@ -47,7 +47,7 @@ export default function Producttable({ item, setOpened, opened, setPupitem }: an
         <div className='text-[#707070] text-[15px] text-center whitespace-nowrap'>{item.product_code}</div>
       </td>
       <td>
-        <div className='border border-[#959595] border-dashed rounded-md px-3 py-3 font-medium text-[15px] text-center text-primary whitespace-nowrap'>
+        <div className='border border-[#959595] border-dashed rounded-md lg:px-3 py-3 font-medium lg:text-[15px] text-sm text-center text-primary whitespace-nowrap'>
           {item.product_name}
         </div>
       </td>
@@ -61,12 +61,12 @@ export default function Producttable({ item, setOpened, opened, setPupitem }: an
         <div className='text-[#707070] text-[15px] text-center px-3'>{item?.width}</div>
       </td>
       <td className='py-2'>
-        <div className='flex justify-between flex-row gap-x-1 w-full'>
-          <div className='grid grid-cols-5 gap-2'>
+        <div className='flex justify-between flex-row lg:gap-x-1 gap-x-4 w-full'>
+          <div className='grid xl:grid-cols-5 grid-cols-6 gap-2.5'>
             {item?.thickness_ref?.map((thicknessItem: any, index: number) => (
               <div
                 key={index}
-                className={`text-[14px] w-10 border border-primary h-[39px] flex items-center justify-center px-[20px] py-[10px] ${
+                className={`xl:text-[14px] text-[12px] xl:col-span-1 lg:col-span-2 col-span-3 xl:w-10 lg:w-7 w-6 border border-primary xl:h-10 lg:h-7 h-6 flex items-center justify-center ${
                   index % 2 === 0 ? 'text-[#707070]' : 'bg-primary text-white'
                 }`}
               >
@@ -75,7 +75,7 @@ export default function Producttable({ item, setOpened, opened, setPupitem }: an
             ))}
           </div>
           <div
-            className='cursor-pointer h-fit popup-modal px-6 py-[8px] font-medium text-[15px] bg-black text-white'
+            className='cursor-pointer h-fit popup-modal lg:px-6 px-4 lg:py-2 py-1 font-medium lg:text-[15px] text-[12px] bg-black text-white'
             onClick={() => {
               setPupitem({
                 item,
