@@ -191,33 +191,37 @@ export default function Pupapt({ data }: any) {
                 </div>
               )}
 
-              <h3 className='text-2xl'>
+              <h3 className='lg:text-2xl text-[20px]'>
                 Total:{' '}
                 <span className='text-primary font-bold'>
-                  {currentThickness ? `£${currentThickness?.price_full_sheet.toFixed(2)} ` : ''}
+                  {currentThickness ? `£${currentThickness?.price_full_sheet?.toFixed(2) ?? ''} ` : ''}
                 </span>
               </h3>
               <p className='text-sm'>
                 With VAT:{' '}
                 {currentThickness
-                  ? `£${(currentThickness?.price_full_sheet * (1 + currentThickness?.tax_percent / 100)).toFixed(2)}`
+                  ? `£${
+                      (currentThickness?.price_full_sheet * (1 + currentThickness?.tax_percent / 100))?.toFixed(2) ?? ''
+                    }`
                   : ''}
               </p>
             </div>
             <div className=' w-full'>
               <button className='p-3 outline-black mt-2 w-full text-xs text-white bg-black'>Add to cutting list</button>
-              <h3 className='text-2xl'>
+              <h3 className='lg:text-2xl text-[20px]'>
                 Total:{' '}
                 <span className='text-primary font-bold'>
-                  {currentThickness ? `£${currentThickness?.price_cutting.toFixed(2)}` : ''}
+                  {currentThickness ? `£${currentThickness?.price_cutting?.toFixed(2) ?? ''}` : ''}
                 </span>
               </h3>
               <p className='text-sm'>
                 With VAT:{' '}
                 {currentThickness
-                  ? `£${(currentThickness?.price_cutting * (1 + (currentThickness?.tax_percent ?? 20) / 100)).toFixed(
-                      2
-                    )}`
+                  ? `£${
+                      (currentThickness?.price_cutting * (1 + (currentThickness?.tax_percent ?? 20) / 100))?.toFixed(
+                        2
+                      ) ?? ''
+                    }`
                   : ''}
               </p>
             </div>
