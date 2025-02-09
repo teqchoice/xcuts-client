@@ -33,7 +33,7 @@ const PopUpGallery = ({ item }: any) => {
               <div className='absolute items-center justify-center h-full w-full bg-gray-800 bg-opacity-25 text-blue-500 group-hover:flex hidden'>
                 Quick view
               </div>
-              <Image src={selectedImage} alt='' width={330} height={240} className='' />
+              <Image src={selectedImage} alt='' width={330} height={240} className='lg:h-[240px]' />
             </div>
           </a>
 
@@ -49,7 +49,7 @@ const PopUpGallery = ({ item }: any) => {
                     `${process.env.NEXT_PUBLIC_API_SHOP_URL_images}/${poster?.directus_files_id?.id}/${poster?.directus_files_id?.filename_disk}`
                   )
                 }
-                className='cursor-pointer'
+                className='cursor-pointer lg:h-[77px]'
               />
             ))}
           </div>
