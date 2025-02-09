@@ -25,7 +25,7 @@ const Canvas: React.FC = () => {
 
   const angles = isAngledCut ? currentMachiningOption?.options.angleOn.split('-') : []
 
-  console.log(angles)
+  console.log(Math.round(Math.sqrt(200 * 200 + 100 * 100)))
 
   const stageWidth = 780
   const stageHeight = 800
