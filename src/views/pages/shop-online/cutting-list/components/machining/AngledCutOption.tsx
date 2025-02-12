@@ -1,6 +1,7 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useMachiningStore } from '../store/machiningOptionsStore'
 import { Group, Input, Radio } from '@mantine/core'
+import useCuttingListStore from '../store/cuttingListStore'
 
 type AngledCutOptionProps = {}
 
@@ -47,7 +48,9 @@ const getOppositeSides = (angleOn: 'L1-W1' | 'L1-W2' | 'L2-W1' | 'L2-W2') => {
 const AngledCutOption = (props: AngledCutOptionProps) => {
   const {} = props
 
-  const { currentMachiningOption, updateCurrentMachiningOption } = useMachiningStore()
+  const { currentMachiningOption, updateCurrentMachiningOption, machiningOptions } = useMachiningStore()
+
+  const { currentDecor, updateDecor } = useCuttingListStore()
 
   const isAngledCut = currentMachiningOption?.type === 'angled-cut'
 
@@ -68,21 +71,57 @@ const AngledCutOption = (props: AngledCutOptionProps) => {
     }
   }
 
+  const isDirectionDisabled = (direction: 'L1-W1' | 'L1-W2' | 'L2-W1' | 'L2-W2') => {
+    return machiningOptions?.some(
+      option =>
+        option.type === 'angled-cut' && option.options.angleOn === direction && option !== currentMachiningOption
+    )
+  }
+
+  useEffect(() => {
+    if (isAngledCut) {
+      setSelectedDirection(currentMachiningOption.options.angleOn)
+    }
+  }, [currentMachiningOption?.id])
+
   if (currentMachiningOption?.type === 'angled-cut') {
     return (
       <div className='flex flex-col gap-y-5'>
         <div className='flex justify-between items-start gap-x-4'>
           <span className='text-sm whitespace-nowrap'>Angle cut on:</span>
           <Radio.Group
-            name='favoriteFramework'
             onChange={value => handleChangeDirection(value as 'L1-W1' | 'L1-W2' | 'L2-W1' | 'L2-W2')}
             value={selectedDirection}
           >
             <Group>
-              <Radio variant='outline' value='L1-W1' label='L1-W1' styles={radioButtonStyle} />
-              <Radio variant='outline' value='L1-W2' label='L1-W2' styles={radioButtonStyle} />
-              <Radio variant='outline' value='L2-W1' label='L2-W1' styles={radioButtonStyle} />
-              <Radio variant='outline' value='L2-W2' label='L2-W2' styles={radioButtonStyle} />
+              <Radio
+                variant='outline'
+                value='L1-W1'
+                label='L1-W1'
+                styles={radioButtonStyle}
+                disabled={isDirectionDisabled('L1-W1')}
+              />
+              <Radio
+                variant='outline'
+                value='L1-W2'
+                label='L1-W2'
+                styles={radioButtonStyle}
+                disabled={isDirectionDisabled('L1-W2')}
+              />
+              <Radio
+                variant='outline'
+                value='L2-W1'
+                label='L2-W1'
+                styles={radioButtonStyle}
+                disabled={isDirectionDisabled('L2-W1')}
+              />
+              <Radio
+                variant='outline'
+                value='L2-W2'
+                label='L2-W2'
+                styles={radioButtonStyle}
+                disabled={isDirectionDisabled('L2-W2')}
+              />
             </Group>
           </Radio.Group>
         </div>
@@ -93,7 +132,23 @@ const AngledCutOption = (props: AngledCutOptionProps) => {
               w={80}
               styles={{
                 input: {
-                  borderRadius: '0px'
+                  borderRadius: '0px',
+                  textAlign: 'center'
+                }
+              }}
+              defaultValue={(currentDecor?.inputLength ?? 0) - currentMachiningOption.options.from.x}
+              onKeyUp={(event: React.KeyboardEvent<HTMLInputElement>) => {
+                if (event.key === 'Enter') {
+                  updateCurrentMachiningOption({
+                    ...currentMachiningOption,
+                    options: {
+                      ...currentMachiningOption.options,
+                      from: {
+                        ...currentMachiningOption.options.from,
+                        x: (currentDecor?.inputLength ?? 0) - +event.currentTarget.value
+                      }
+                    }
+                  })
                 }
               }}
             />
@@ -104,7 +159,23 @@ const AngledCutOption = (props: AngledCutOptionProps) => {
               w={80}
               styles={{
                 input: {
-                  borderRadius: '0px'
+                  borderRadius: '0px',
+                  textAlign: 'center'
+                }
+              }}
+              defaultValue={(currentDecor?.inputWidth ?? 0) - currentMachiningOption.options.from.y}
+              onKeyUp={(event: React.KeyboardEvent<HTMLInputElement>) => {
+                if (event.key === 'Enter') {
+                  updateCurrentMachiningOption({
+                    ...currentMachiningOption,
+                    options: {
+                      ...currentMachiningOption.options,
+                      from: {
+                        ...currentMachiningOption.options.from,
+                        y: (currentDecor?.inputWidth ?? 0) - +event.currentTarget.value
+                      }
+                    }
+                  })
                 }
               }}
             />
@@ -116,7 +187,7 @@ const AngledCutOption = (props: AngledCutOptionProps) => {
             {sides?.map(side => (
               <div
                 className={`flex flex-col cursor-pointer pb-1 px-7 items-center border border-primary transition duration-200 ${
-                  currentMachiningOption.options.view === side.value
+                  currentMachiningOption.view === side.value
                     ? ' bg-primary text-white hover:bg-primary-600'
                     : 'bg-white text-primary hover:bg-primary-100'
                 }`}
@@ -124,7 +195,7 @@ const AngledCutOption = (props: AngledCutOptionProps) => {
                 onClick={() => {
                   updateCurrentMachiningOption({
                     ...currentMachiningOption,
-                    options: { ...currentMachiningOption.options, view: side.value }
+                    view: side.value
                   })
                 }}
               >

@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
-import { useReactTable, flexRender, getCoreRowModel, ColumnDef } from '@tanstack/react-table'
 import ProductSelectorDropdown from './ProductSelectorDropdown'
 import MachiningModal from './machining/MachiningModal'
+import { Select } from '@mantine/core'
+import useCuttingListStore from './store/cuttingListStore'
+import { components } from '@/core/api-shop/v1'
 
 // Define the type for your data
 type CuttingListData = {
@@ -16,192 +18,15 @@ type CuttingListData = {
   l2: string
   w1: string
   w2: string
-  additionalMachining: string
   sprayCoating: string
   grainMatch: string
   actions: string
 }
 
-// Give our default column cell renderer editing superpowers!
-const defaultColumn: Partial<ColumnDef<CuttingListData>> = {
-  cell: ({ getValue, row: { index }, column: { id }, table }) => {
-    const initialValue = getValue()
-    // We need to keep and update the state of the cell normally
-    const [value, setValue] = React.useState(initialValue)
-
-    // If the initialValue is changed external, sync it up with our state
-    React.useEffect(() => {
-      setValue(initialValue)
-    }, [initialValue])
-
-    return (
-      <ProductSelectorDropdown
-        onSelect={decor => {
-          setValue(decor.name)
-          table.options.meta?.updateData(index, id, decor.name)
-        }}
-      >
-        <input
-          type='text'
-          placeholder='Enter decor code or name'
-          className='h-[35px] px-2 border border-[#d1d1d1] focus-visible:outline-none w-full placeholder:!text-[#b9b9b9] traci !text-[#222222] !text-[14px] placeholder:text-[12px]'
-          value={value as string}
-        />
-      </ProductSelectorDropdown>
-    )
-  }
-}
-
 const CuttingList = () => {
-  const columns: ColumnDef<CuttingListData>[] = [
-    {
-      accessorKey: 'id',
-      header: '#',
-      cell: info => <span className='text-center'>{info.getValue() as number}</span>,
-      size: 25
-    },
-    {
-      accessorKey: 'material',
-      header: 'Material decor code / name',
-      size: 215
-    },
-    {
-      accessorKey: 'thick',
-      header: 'Thick [mm]',
-      cell: info => (
-        <input
-          type='text'
-          className='h-[35px] px-2 border border-[#d1d1d1] focus-visible:outline-none w-full placeholder:!text-[#b9b9b9] traci !text-[#222222] !text-[14px] placeholder:text-[12px]'
-          defaultValue={info.getValue() as string}
-        />
-      ),
-      size: 55
-    },
-    {
-      accessorKey: 'length',
-      header: 'Length [mm]',
-      cell: info => (
-        <input
-          type='text'
-          className='h-[35px] px-2 border border-[#d1d1d1] focus-visible:outline-none w-full placeholder:!text-[#b9b9b9] traci !text-[#222222] !text-[14px] placeholder:text-[12px]'
-          defaultValue={info.getValue() as string}
-        />
-      ),
-      size: 55
-    },
-    {
-      accessorKey: 'width',
-      header: 'Width [mm]',
-      cell: info => (
-        <input
-          type='text'
-          className='h-[35px] px-2 border border-[#d1d1d1] focus-visible:outline-none w-full placeholder:!text-[#b9b9b9] traci !text-[#222222] !text-[14px] placeholder:text-[12px]'
-          defaultValue={info.getValue() as string}
-        />
-      ),
-      size: 55
-    },
-    {
-      accessorKey: 'qty',
-      header: 'Qty',
-      cell: info => (
-        <input
-          type='text'
-          className='h-[35px] px-2 border border-[#d1d1d1] focus-visible:outline-none w-full placeholder:!text-[#b9b9b9] traci !text-[#222222] !text-[14px] placeholder:text-[12px]'
-          defaultValue={info.getValue() as string}
-        />
-      ),
-      size: 42
-    },
-    {
-      accessorKey: 'partDescription',
-      header: 'Part description',
-      cell: info => (
-        <input
-          type='text'
-          className='h-[35px] px-2 border border-[#d1d1d1] focus-visible:outline-none w-full placeholder:!text-[#b9b9b9] traci !text-[#222222] !text-[14px] placeholder:text-[12px]'
-          defaultValue={info.getValue() as string}
-        />
-      ),
-      size: 115
-    },
-    {
-      accessorKey: 'l1',
-      header: () => <div className='text-center'>L1</div>,
-      cell: info => (
-        <input
-          type='text'
-          className='h-[35px] px-2 border border-[#d1d1d1] focus-visible:outline-none w-full placeholder:!text-[#b9b9b9] traci !text-[#222222] !text-[14px] placeholder:text-[12px]'
-          defaultValue={info.getValue() as string}
-        />
-      ),
-      size: 55
-    },
-    {
-      accessorKey: 'l2',
-      header: () => <div className='text-center'>L2</div>,
-      cell: info => (
-        <input
-          type='text'
-          className='h-[35px] px-2 border border-[#d1d1d1] focus-visible:outline-none w-full placeholder:!text-[#b9b9b9] traci !text-[#222222] !text-[14px] placeholder:text-[12px]'
-          defaultValue={info.getValue() as string}
-        />
-      ),
-      size: 55
-    },
-    {
-      accessorKey: 'w1',
-      header: () => <div className='text-center'>W1</div>,
-      cell: info => (
-        <input
-          type='text'
-          className='h-[35px] px-2 border border-[#d1d1d1] focus-visible:outline-none w-full placeholder:!text-[#b9b9b9] traci !text-[#222222] !text-[14px] placeholder:text-[12px]'
-          defaultValue={info.getValue() as string}
-        />
-      ),
-      size: 55
-    },
-    {
-      accessorKey: 'w2',
-      header: () => <div className='text-center'>W2</div>,
-      cell: info => (
-        <input
-          type='text'
-          className='h-[35px] px-2 border border-[#d1d1d1] focus-visible:outline-none w-full placeholder:!text-[#b9b9b9] traci !text-[#222222] !text-[14px] placeholder:text-[12px]'
-          defaultValue={info.getValue() as string}
-        />
-      ),
-      size: 55
-    },
-    {
-      accessorKey: 'additionalMachining',
-      header: 'Additional machining',
-      cell: ({ getValue, row: { index }, column: { id }, table }) => {
-        if (data[index]?.material) {
-          return <MachiningModal />
-        }
-      },
-      size: 150
-    },
-    {
-      accessorKey: 'sprayCoating',
-      header: 'Spray coating',
-      cell: info => <span>{info.getValue() as string}</span>,
-      size: 150
-    },
-    {
-      accessorKey: 'grainMatch',
-      header: 'Grain match',
-      cell: info => <span>{info.getValue() as string}</span>,
-      size: 150
-    },
-    {
-      accessorKey: 'actions',
-      header: () => <div className='text-right'>Actions</div>,
-      cell: info => <div className='flex justify-end'>{info.getValue() as string}</div>,
-      size: 100
-    }
-  ]
+  const { currentDecor, setCurrentDecor, addDecor, addedDecors, updateDecor } = useCuttingListStore()
+
+  console.log(addedDecors)
 
   const [data, setData] = useState<CuttingListData[]>([
     {
@@ -216,7 +41,6 @@ const CuttingList = () => {
       l2: 'L2',
       w1: 'W1',
       w2: 'W2',
-      additionalMachining: 'Machining 1',
       sprayCoating: 'Coating 1',
       grainMatch: 'Match 1',
       actions: 'Actions 1'
@@ -233,7 +57,6 @@ const CuttingList = () => {
       l2: 'L2',
       w1: 'W1',
       w2: 'W2',
-      additionalMachining: 'Machining 2',
       sprayCoating: 'Coating 2',
       grainMatch: 'Match 2',
       actions: 'Actions 2'
@@ -250,69 +73,225 @@ const CuttingList = () => {
       l2: 'L2',
       w1: 'W1',
       w2: 'W2',
-      additionalMachining: 'Machining 3',
       sprayCoating: 'Coating 3',
       grainMatch: 'Match 3',
       actions: 'Actions 3'
     }
   ])
 
-  // Create a table instance
-  const table = useReactTable({
-    data,
-    columns,
-    getCoreRowModel: getCoreRowModel(),
-    defaultColumn,
-    meta: {
-      updateData: (rowIndex, columnId, value) => {
-        console.log(value)
-
-        setData(old =>
-          old.map((row, index) => {
-            if (index === rowIndex) {
-              return {
-                ...old[rowIndex]!,
-                [columnId]: value
-              }
-            }
-            return row
-          })
-        )
-      }
-    }
-  })
+  const handleInputChange = (index: number, key: keyof CuttingListData, value: string) => {
+    setData(prevData => prevData.map((item, i) => (i === index ? { ...item, [key]: value } : item)))
+  }
 
   return (
     <div className='pt-5 pb-10'>
       <div className='w-full'>
-        <div className='flex'>
-          {table.getHeaderGroups().map(headerGroup => (
-            <div key={headerGroup.id} className='flex gap-x-3 px-2'>
-              {headerGroup.headers.map(header => (
-                <div
-                  key={header.id}
-                  className='text-left text-[#999999] text-[14px] font-normal align-top'
-                  style={{ width: `${header.getSize()}px` }}
+        <div className='flex gap-x-3 px-2'>
+          <div className='text-left text-[#999999] text-[14px] font-normal align-top' style={{ width: '25px' }}>
+            #
+          </div>
+          <div className='text-left text-[#999999] text-[14px] font-normal align-top' style={{ width: '215px' }}>
+            Material decor code / name
+          </div>
+          <div className='text-left text-[#999999] text-[14px] font-normal align-top' style={{ width: '60px' }}>
+            Thick [mm]
+          </div>
+          <div className='text-left text-[#999999] text-[14px] font-normal align-top' style={{ width: '55px' }}>
+            Length [mm]
+          </div>
+          <div className='text-left text-[#999999] text-[14px] font-normal align-top' style={{ width: '55px' }}>
+            Width [mm]
+          </div>
+          <div className='text-left text-[#999999] text-[14px] font-normal align-top' style={{ width: '42px' }}>
+            Qty
+          </div>
+          <div className='text-left text-[#999999] text-[14px] font-normal align-top' style={{ width: '115px' }}>
+            Part description
+          </div>
+          <div className='text-left text-[#999999] text-[14px] font-normal align-top' style={{ width: '55px' }}>
+            L1
+          </div>
+          <div className='text-left text-[#999999] text-[14px] font-normal align-top' style={{ width: '55px' }}>
+            L2
+          </div>
+          <div className='text-left text-[#999999] text-[14px] font-normal align-top' style={{ width: '55px' }}>
+            W1
+          </div>
+          <div className='text-left text-[#999999] text-[14px] font-normal align-top' style={{ width: '55px' }}>
+            W2
+          </div>
+          <div className='text-left text-[#999999] text-[14px] font-normal align-top' style={{ width: '150px' }}>
+            Additional Machining
+          </div>
+          <div className='text-left text-[#999999] text-[14px] font-normal align-top' style={{ width: '150px' }}>
+            Spray coating
+          </div>
+          <div className='text-left text-[#999999] text-[14px] font-normal align-top' style={{ width: '150px' }}>
+            Grain match
+          </div>
+          <div className='text-right text-[#999999] text-[14px] font-normal align-top' style={{ width: '100px' }}>
+            Actions
+          </div>
+        </div>
+        {addedDecors.map((decor, index) => (
+          <div key={decor.id} className='hover:bg-[#FFFADB] transition-all duration-200 flex items-center p-2 gap-x-3'>
+            <div className='text-center' style={{ width: '25px' }}>
+              {index + 1}
+            </div>
+            <div style={{ width: '215px' }} className='relative'>
+              <ProductSelectorDropdown
+                onSelect={selectedDecor => {
+                  setCurrentDecor(decor.id)
+                  updateDecor(decor.id, { ...selectedDecor, id: decor.id })
+                }}
+              >
+                <input
+                  type='text'
+                  placeholder='Enter decor code or name'
+                  className='h-[35px] px-2 border border-[#d1d1d1] focus-visible:outline-none w-full placeholder:!text-[#b9b9b9] traci !text-[#222222] !text-[14px] placeholder:text-[12px]'
+                  value={decor.product_name || ''}
+                  // onChange={e => handleInputChange(index, 'material', e.target.value)}
+                />
+              </ProductSelectorDropdown>
+            </div>
+            <div style={{ width: '60px' }}>
+              <Select
+                data={
+                  decor.thickness_ref?.length
+                    ? decor.thickness_ref?.map(
+                        thickness => (thickness as components['schemas']['ItemsThickness']).thickness?.toString() ?? ''
+                      )
+                    : []
+                }
+                withCheckIcon={false}
+                styles={{
+                  input: { borderRadius: '0px' },
+                  option: {
+                    justifyContent: 'center'
+                  },
+                  section: {
+                    right: '-8px'
+                  }
+                }}
+                disabled={!decor.product_name}
+                value={decor.inputThickness}
+                onChange={value => updateDecor(decor.id, { ...decor, inputThickness: value ?? '' })}
+                comboboxProps={{ shadow: 'lg' }}
+                allowDeselect={false}
+              />
+            </div>
+            <div style={{ width: '55px' }}>
+              <input
+                type='text'
+                className='h-[35px] px-2 border border-[#d1d1d1] focus-visible:outline-none w-full placeholder:!text-[#b9b9b9] traci !text-[#222222] !text-[14px] placeholder:text-[12px] text-center'
+                value={decor.inputLength}
+                onChange={event => updateDecor(decor.id, { ...decor, inputLength: +event?.target.value })}
+                disabled={!decor.product_name}
+              />
+            </div>
+            <div style={{ width: '55px' }}>
+              <input
+                type='text'
+                className='h-[35px] px-2 border border-[#d1d1d1] focus-visible:outline-none w-full placeholder:!text-[#b9b9b9] traci !text-[#222222] !text-[14px] placeholder:text-[12px] text-center'
+                value={decor.inputWidth}
+                onChange={event => updateDecor(decor.id, { ...decor, inputWidth: +event?.target.value })}
+                disabled={!decor.product_name}
+              />
+            </div>
+            <div style={{ width: '42px' }}>
+              <input
+                type='text'
+                className='h-[35px] px-2 border border-[#d1d1d1] focus-visible:outline-none w-full placeholder:!text-[#b9b9b9] traci !text-[#222222] !text-[14px] placeholder:text-[12px] text-center'
+                value={decor.inputQuantity}
+                onChange={event => updateDecor(decor.id, { ...decor, inputQuantity: +event?.target.value })}
+                disabled={!decor.product_name}
+              />
+            </div>
+            <div style={{ width: '115px' }}>
+              <input
+                type='text'
+                className='h-[35px] px-2 border border-[#d1d1d1] focus-visible:outline-none w-full placeholder:!text-[#b9b9b9] traci !text-[#222222] !text-[14px] placeholder:text-[12px]'
+                value={decor.inputDescription}
+                onChange={event => updateDecor(decor.id, { ...decor, inputDescription: +event?.target.value })}
+                disabled={!decor.product_name}
+              />
+            </div>
+            <div style={{ width: '55px' }}>
+              <input
+                type='text'
+                className='h-[35px] px-2 border border-[#d1d1d1] focus-visible:outline-none w-full placeholder:!text-[#b9b9b9] traci !text-[#222222] !text-[14px] placeholder:text-[12px]'
+                // value={row.l1}
+                onChange={e => handleInputChange(index, 'l1', e.target.value)}
+                disabled={!decor.product_name}
+              />
+            </div>
+            <div style={{ width: '55px' }}>
+              <input
+                type='text'
+                className='h-[35px] px-2 border border-[#d1d1d1] focus-visible:outline-none w-full placeholder:!text-[#b9b9b9] traci !text-[#222222] !text-[14px] placeholder:text-[12px]'
+                // value={row.l2}
+                onChange={e => handleInputChange(index, 'l2', e.target.value)}
+                disabled={!decor.product_name}
+              />
+            </div>
+            <div style={{ width: '55px' }}>
+              <input
+                type='text'
+                className='h-[35px] px-2 border border-[#d1d1d1] focus-visible:outline-none w-full placeholder:!text-[#b9b9b9] traci !text-[#222222] !text-[14px] placeholder:text-[12px]'
+                // value={row.w1}
+                onChange={e => handleInputChange(index, 'w1', e.target.value)}
+                disabled={!decor.product_name}
+              />
+            </div>
+            <div style={{ width: '55px' }}>
+              <input
+                type='text'
+                className='h-[35px] px-2 border border-[#d1d1d1] focus-visible:outline-none w-full placeholder:!text-[#b9b9b9] traci !text-[#222222] !text-[14px] placeholder:text-[12px]'
+                // value={row.w2}
+                onChange={e => handleInputChange(index, 'w2', e.target.value)}
+                disabled={!decor.product_name}
+              />
+            </div>
+            <div style={{ width: '150px' }} onClick={() => setCurrentDecor(decor.id)}>
+              {decor.product_name &&
+                decor.inputThickness &&
+                decor.inputLength &&
+                decor.inputWidth &&
+                decor.inputQuantity && <MachiningModal />}
+            </div>
+            <div style={{ width: '150px' }}>
+              <input
+                type='text'
+                className='h-[35px] px-2 border border-[#d1d1d1] focus-visible:outline-none w-full placeholder:!text-[#b9b9b9] traci !text-[#222222] !text-[14px] placeholder:text-[12px]'
+                // value={row.sprayCoating}
+                onChange={e => handleInputChange(index, 'sprayCoating', e.target.value)}
+                disabled={!decor.product_name}
+              />
+            </div>
+            <div style={{ width: '150px' }}>
+              <input
+                type='text'
+                className='h-[35px] px-2 border border-[#d1d1d1] focus-visible:outline-none w-full placeholder:!text-[#b9b9b9] traci !text-[#222222] !text-[14px] placeholder:text-[12px]'
+                // value={row.grainMatch}
+                onChange={e => handleInputChange(index, 'grainMatch', e.target.value)}
+                disabled={!decor.product_name}
+              />
+            </div>
+            <div style={{ width: '100px' }}>
+              <div className='flex justify-end'>
+                <button
+                  className='bg-red-500 text-white px-2 py-1 rounded'
+                  onClick={() => {
+                    const newData = data.filter((_, i) => i !== index)
+                    setData(newData)
+                  }}
                 >
-                  {flexRender(header.column.columnDef.header, header.getContext())}
-                </div>
-              ))}
+                  Delete
+                </button>
+              </div>
             </div>
-          ))}
-        </div>
-        <div>
-          {table.getRowModel().rows.map(row => (
-            <div key={row.id} className='hover:bg-[#FFFADB] transition-all duration-200 flex items-center p-2 gap-x-3'>
-              {row.getVisibleCells().map(cell => (
-                <div className='relative'>
-                  <div key={cell.id} className='' style={{ width: `${cell.column.getSize()}px` }}>
-                    {flexRender(cell.column.columnDef.cell, cell.getContext())}
-                  </div>
-                </div>
-              ))}
-            </div>
-          ))}
-        </div>
+          </div>
+        ))}
       </div>
     </div>
   )

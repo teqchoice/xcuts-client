@@ -5,7 +5,7 @@ import React, { useState, useImperativeHandle, useRef, useEffect } from 'react'
 
 interface ProductSelectorDropdownProps {
   children: React.ReactNode
-  onSelect?: (value: { name: string }) => void
+  onSelect?: (value: components['schemas']['ItemsDecors']) => void
 }
 
 const ProductSelectorDropdown = (props: ProductSelectorDropdownProps) => {
@@ -76,7 +76,7 @@ const ProductSelectorDropdown = (props: ProductSelectorDropdownProps) => {
     setSelectedDecor(decor)
 
     if (onSelect) {
-      onSelect({ name: `${decor.product_code} ${decor.product_name}` })
+      onSelect({ product_name: `${decor.product_code} ${decor.product_name}`, ...decor })
     }
 
     setIsOpen(false)

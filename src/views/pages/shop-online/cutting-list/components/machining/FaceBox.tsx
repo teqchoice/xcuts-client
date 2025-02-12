@@ -4,7 +4,7 @@ import { useMachiningStore } from '../store/machiningOptionsStore'
 const FaceBox = () => {
   const { currentMachiningOption } = useMachiningStore()
 
-  const isBack = currentMachiningOption?.type === 'angled-cut' ? currentMachiningOption?.options.view === 'back' : false
+  const isBack = currentMachiningOption?.view === 'back'
 
   return (
     <div className='flex flex-col'>

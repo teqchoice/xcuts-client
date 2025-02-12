@@ -23,11 +23,11 @@ const MachiningOptions = () => {
         type: selectedMachiningOption,
         selected: true,
         options: {
-          angleOn: 'L1-W1',
-          from: { x: 0, y: 0 },
-          edging: null,
-          view: 'front'
-        }
+          angleOn: 'L1-W1', // its a default value and in store it refers to next available angle
+          from: { x: 100, y: 100 },
+          edging: null
+        },
+        view: 'front'
       })
       setCurrentMachiningOption(id)
       setSelectedMachiningOption(null)
@@ -89,7 +89,7 @@ const MachiningOptions = () => {
         <SelectedOptions />
         <ActiveOption />
       </div>
-      {currentMachiningOption?.type === 'angled-cut' && currentMachiningOption?.options?.view === 'back' ? (
+      {currentMachiningOption?.view === 'back' ? (
         <div className='bg-white w-full border flex justify-center'>
           <Image src={'/images/machining/face-help.gif'} alt='' width={154} height={198} />
         </div>

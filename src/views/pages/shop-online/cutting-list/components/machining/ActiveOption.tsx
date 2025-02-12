@@ -1,4 +1,3 @@
-import React from 'react'
 import { useMachiningStore } from '../store/machiningOptionsStore'
 import AngledCutOption from './AngledCutOption'
 
@@ -12,7 +11,7 @@ const ActiveOption = (props: ActiveOptionProps) => {
   const isAngledCut = currentMachiningOption?.type === 'angled-cut'
 
   if (isAngledCut) {
-    return <AngledCutOption />
+    return <AngledCutOption key={currentMachiningOption.id} />
   } else {
     return null
   }

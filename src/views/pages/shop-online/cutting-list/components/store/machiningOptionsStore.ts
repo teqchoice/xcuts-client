@@ -9,12 +9,12 @@ export type MachiningOption =
         angleOn: 'L1-W1' | 'L1-W2' | 'L2-W1' | 'L2-W2'
         from: { x: number; y: number }
         edging: any
-        view: 'back' | 'front'
       }
+      view: 'back' | 'front'
     }
-  | { id: string; selected: boolean; type: 'groove'; depth: number; width: number }
-  | { id: string; selected: boolean; type: '5mm'; diameter: number }
-  | { id: string; selected: boolean; type: '7.5mm'; radius: number }
+  | { id: string; selected: boolean; type: 'groove'; depth: number; width: number; view: 'back' | 'front' }
+  | { id: string; selected: boolean; type: '5mm'; diameter: number; view: 'back' | 'front' }
+  | { id: string; selected: boolean; type: '7.5mm'; radius: number; view: 'back' | 'front' }
 
 export type Store = {
   machiningOptions: MachiningOption[] | null
