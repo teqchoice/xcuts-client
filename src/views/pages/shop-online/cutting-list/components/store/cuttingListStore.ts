@@ -3,7 +3,7 @@ import { uid } from 'radash'
 import { create } from 'zustand'
 
 type Decor = components['schemas']['ItemsDecors'] & {
-  inputThickness?: number
+  inputThickness?: string
   inputLength?: number
   inputWidth?: number
   inputQuantity?: number

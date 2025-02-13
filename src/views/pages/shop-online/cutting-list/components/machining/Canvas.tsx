@@ -16,7 +16,7 @@ interface Dimensions {
 }
 
 const Canvas: React.FC = () => {
-  const { currentMachiningOption } = useMachiningStore()
+  const { currentMachiningOption, machiningOptions } = useMachiningStore()
 
   const { currentDecor } = useCuttingListStore()
 
@@ -40,7 +40,7 @@ const Canvas: React.FC = () => {
   // Scale factor to fit the rectangle within the stage
   const scaleFactor = Math.min(stageWidth / dimensions.width, stageHeight / dimensions.height) * 0.4
 
-  const scale = (number: number) => scaleFactor * number
+  const scale = (number: number = 0) => scaleFactor * number
 
   // Scaled width and height
   const scaledWidth = scale(dimensions.width)
@@ -82,36 +82,96 @@ const Canvas: React.FC = () => {
 
   const isBack = currentMachiningOption?.view === 'back'
 
+  const angleCutMachiningOptions = machiningOptions?.filter(option => option.type === 'angled-cut') ?? []
+
+  const L1W1AngleCut = angleCutMachiningOptions?.find(option => option.options.angleOn === 'L1-W1')
+
+  const L1W2AngleCut = angleCutMachiningOptions?.find(option => option.options.angleOn === 'L1-W2')
+
+  const L2W1AngleCut = angleCutMachiningOptions?.find(option => option.options.angleOn === 'L2-W1')
+
+  const L2W2AngleCut = angleCutMachiningOptions?.find(option => option.options.angleOn === 'L2-W2')
+
   // main line
 
   const points = [
+    // first point
     0,
-    isAngledCut ? scale(currentAngleCutY) : 0,
-    isAngledCut ? scale(currentAngleCutX) : 0,
+    isFront && L1W1AngleCut
+      ? scale(L1W1AngleCut?.options.from.y)
+      : isBack && L2W1AngleCut
+      ? scale(L2W1AngleCut?.options.from.y)
+      : 0,
+    // second point
+    isFront && L1W1AngleCut
+      ? scale(L1W1AngleCut?.options.from.x)
+      : isBack && L2W1AngleCut
+      ? scale(L2W1AngleCut?.options.from.x)
+      : 0,
     0,
+    // third point
+    isFront && L1W2AngleCut
+      ? scaledWidth - scale(L1W2AngleCut?.options.from.x)
+      : isBack && L2W2AngleCut
+      ? scaledWidth - scale(L2W2AngleCut?.options.from.x)
+      : scaledWidth,
+    0,
+    // fourth point
     scaledWidth,
-    0,
+    isFront && L1W2AngleCut
+      ? scale(L1W2AngleCut?.options.from.y)
+      : isBack && L2W2AngleCut
+      ? scale(L2W2AngleCut?.options.from.y)
+      : 0,
+    // fifth point
     scaledWidth,
+    isFront && L2W2AngleCut
+      ? scaledHeight - scale(L2W2AngleCut?.options.from.y)
+      : isBack && L1W2AngleCut
+      ? scaledHeight - scale(L1W2AngleCut?.options.from.y)
+      : scaledHeight,
+    // sixth point
+    isFront && L2W2AngleCut
+      ? scaledWidth - scale(L2W2AngleCut?.options.from.x)
+      : isBack && L1W2AngleCut
+      ? scaledWidth - scale(L1W2AngleCut?.options.from.x)
+      : scaledWidth,
     scaledHeight,
+    // seventh point
+    isFront && L2W1AngleCut
+      ? scale(L2W1AngleCut?.options.from.x)
+      : isBack && L1W1AngleCut
+      ? scale(L1W1AngleCut?.options.from.x)
+      : 0,
+    scaledHeight,
+    // eighth point
     0,
-    scaledHeight
+    isFront && L2W1AngleCut
+      ? scaledHeight - scale(L2W1AngleCut?.options.from.y)
+      : isBack && L1W1AngleCut
+      ? scaledHeight - scale(L1W1AngleCut?.options.from.y)
+      : scaledHeight
   ]
 
-  const lineScaleX = isL1W1 || isL2W1 || !angles.length ? 1 : -1
+  // const lineScaleX = isL1W1 || isL2W1 || !angles.length ? 1 : -1
 
-  const lineScaleY = isAngledCut ? (isL1W1 || isL1W2 || !angles.length ? (isFront ? 1 : -1) : isFront ? -1 : 1) : 1
+  // const lineScaleY = isAngledCut ? (isL1W1 || isL1W2 || !angles.length ? (isFront ? 1 : -1) : isFront ? -1 : 1) : 1
 
-  const lineX = isAngledCut ? (isL1W2 || isL2W2 ? rectX + scaledWidth : rectX) : rectX
+  // const lineX = isAngledCut ? (isL1W2 || isL2W2 ? rectX + scaledWidth : rectX) : rectX
 
-  const lineY = isAngledCut
-    ? isFront
-      ? isL2W1 || isL2W2
-        ? rectY + scaledHeight
-        : rectY
-      : isL1W2 || isL1W1
-      ? rectY + scaledHeight
-      : rectY
-    : rectY
+  const lineX = rectX
+
+  // const lineY = isAngledCut
+  //   ? isFront
+  //     ? isL2W1 || isL2W2
+  //       ? rectY + scaledHeight
+  //       : rectY
+  //     : isL1W2 || isL1W1
+  //     ? rectY + scaledHeight
+  //     : rectY
+  //   : rectY
+
+  const lineY = rectY
 
   // angle cut rect
 
@@ -184,22 +244,37 @@ const Canvas: React.FC = () => {
   // top line
 
   const topHorizontalLinePoints = [
-    rectX + (isAngledCut && ((isFront && isL1W1) || (isBack && isL2W1)) ? scale(currentAngleCutX) : 0),
+    isFront && L1W1AngleCut
+      ? rectX + scale(L1W1AngleCut?.options.from.x)
+      : isBack && L2W1AngleCut
+      ? rectX + scale(L2W1AngleCut?.options.from.x)
+      : rectX,
     rectY - 90,
-    rectX + scaledWidth - (isAngledCut && ((isFront && isL1W2) || (isBack && isL2W2)) ? scale(currentAngleCutX) : 0),
+    isFront && L1W2AngleCut
+      ? rectX + scaledWidth - scale(L1W2AngleCut?.options?.from?.x)
+      : isBack && L2W2AngleCut
+      ? rectX + scaledWidth - scale(L2W2AngleCut?.options?.from?.x)
+      : rectX + scaledWidth,
     rectY - 90
   ]
 
   const topHorizontalLineLinesCoordinates = {
     right: {
       x:
-        isAngledCut && ((isFront && isL1W2) || (isBack && isL2W2))
-          ? rectX + scaledWidth - scale(currentAngleCutX)
+        isFront && L1W2AngleCut
+          ? rectX + scaledWidth - scale(L1W2AngleCut?.options.from.x)
+          : isBack && L2W2AngleCut
+          ? rectX + scaledWidth - scale(L2W2AngleCut?.options.from.x)
           : rectX + scaledWidth,
       y: rectY - 95
     },
     left: {
-      x: isAngledCut && ((isFront && isL1W1) || (isBack && isL2W1)) ? rectX + scale(currentAngleCutX) : rectX,
+      x:
+        isFront && L1W1AngleCut
+          ? rectX + scale(L1W1AngleCut?.options.from.x)
+          : isBack && L2W1AngleCut
+          ? rectX + scale(L2W1AngleCut?.options.from.x)
+          : rectX,
       y: rectY - 95
     }
   }
@@ -208,65 +283,65 @@ const Canvas: React.FC = () => {
     rectX +
     scaledWidth / 2 -
     35 +
-    (isAngledCut
-      ? (isFront && isL1W1) || (isBack && isL2W1)
-        ? scale(currentAngleCutX) / 2
-        : (isFront && isL1W2) || (isBack && isL2W2)
-        ? -scale(currentAngleCutX) / 2
-        : 0
+    (isFront && L1W1AngleCut
+      ? scale(L1W1AngleCut?.options.from.x) / 2 - (L1W2AngleCut ? scale(L1W2AngleCut.options.from.x) / 2 : 0)
+      : isBack && L2W1AngleCut
+      ? scale(L2W1AngleCut?.options.from.x) / 2 - (L2W2AngleCut ? scale(L2W2AngleCut.options.from.x) / 2 : 0)
       : 0)
 
   const topHorizontalLineTextX =
     rectX +
     scaledWidth / 2 -
     35 +
-    (isAngledCut
-      ? (isFront && isL1W1) || (isBack && isL2W1)
-        ? scale(currentAngleCutX) / 2
-        : (isFront && isL1W2) || (isBack && isL2W2)
-        ? -scale(currentAngleCutX) / 2
-        : 0
+    (isFront && L1W1AngleCut
+      ? scale(L1W1AngleCut?.options.from.x) / 2 - (L1W2AngleCut ? scale(L1W2AngleCut.options.from.x) / 2 : 0)
+      : isBack && L2W1AngleCut
+      ? scale(L2W1AngleCut?.options.from.x) / 2 - (L2W2AngleCut ? scale(L2W2AngleCut.options.from.x) / 2 : 0)
       : 0)
 
   const topHorizontalLineText = `${
     dimensions.width -
-    (isAngledCut
-      ? isFront && L1 && (W1 || W2)
-        ? currentAngleCutX
-        : isBack && L2 && (W1 || W2)
-        ? currentAngleCutX
-        : 0
+    (isFront && L1W1AngleCut
+      ? L1W1AngleCut?.options.from.x + (L1W2AngleCut ? L1W2AngleCut.options.from.x : 0)
+      : isBack && L2W1AngleCut
+      ? L2W1AngleCut?.options.from.x + (L2W2AngleCut ? L2W2AngleCut.options.from.x : 0)
       : 0)
   } mm`
-
-  // angle cut top line
-
-  // const angleCutTopHorizontalLinePoints = [
-  //   rectX + (isAngledCut ? (isFront && isL1W1 ? 0 : isFront && isL1W2 ? scaledWidth : scale(currentAngleCutX)) : rectX),
-  //   rectY - 90,
-  //   rectX + (isAngledCut && ((isFront && isL1W2) || (isBack && isL2W2)) ? 0 : scale(currentAngleCutX)),
-  //   rectY - 90
-  // ]
 
   // bottom line
 
   const bottomHorizontalLinePoints = [
-    rectX + (isAngledCut && ((isFront && isL2W1) || (isBack && isL1W1)) ? scale(currentAngleCutX) : 0),
+    isFront && L2W1AngleCut
+      ? rectX + scale(L2W1AngleCut?.options.from.x)
+      : isBack && L1W1AngleCut
+      ? rectX + scale(L1W1AngleCut?.options.from.x)
+      : rectX,
     rectY + scaledHeight + 90,
-    rectX + scaledWidth - (isAngledCut && ((isFront && isL2W2) || (isBack && isL1W2)) ? scale(currentAngleCutX) : 0),
+    isFront && L2W2AngleCut
+      ? rectX + scaledWidth - scale(L2W2AngleCut?.options.from.x)
+      : isBack && L1W2AngleCut
+      ? rectX + scaledWidth - scale(L1W2AngleCut?.options.from.x)
+      : rectX + scaledWidth,
     rectY + scaledHeight + 90
   ]
 
   const bottomHorizontalLineLinesCoordinates = {
     right: {
       x:
-        isAngledCut && ((isFront && isL2W2) || (isBack && isL1W2))
-          ? rectX + scaledWidth - scale(currentAngleCutX)
+        isFront && L2W2AngleCut
+          ? rectX + scaledWidth - scale(L2W2AngleCut?.options.from.x)
+          : isBack && L1W2AngleCut
+          ? rectX + scaledWidth - scale(L1W2AngleCut?.options.from.x)
           : rectX + scaledWidth,
       y: rectY + scaledHeight + 85
     },
     left: {
-      x: isAngledCut && ((isFront && isL2W1) || (isBack && isL1W1)) ? rectX + scale(currentAngleCutX) : rectX,
+      x:
+        isFront && L2W1AngleCut
+          ? rectX + scale(L2W1AngleCut?.options.from.x)
+          : isBack && L1W1AngleCut
+          ? rectX + scale(L1W1AngleCut?.options.from.x)
+          : rectX,
       y: rectY + scaledHeight + 85
     }
   }
@@ -275,34 +350,28 @@ const Canvas: React.FC = () => {
     rectX +
     scaledWidth / 2 -
     35 +
-    (isAngledCut
-      ? (isFront && isL2W1) || (isBack && isL1W1)
-        ? scale(currentAngleCutX) / 2
-        : (isFront && isL2W2) || (isBack && isL1W2)
-        ? -scale(currentAngleCutX) / 2
-        : 0
+    (isFront && L2W1AngleCut
+      ? scale(L2W1AngleCut?.options.from.x) / 2 - (L2W2AngleCut ? scale(L2W2AngleCut.options.from.x) / 2 : 0)
+      : isBack && L1W1AngleCut
+      ? scale(L1W1AngleCut?.options.from.x) / 2 - (L1W2AngleCut ? scale(L1W2AngleCut.options.from.x) / 2 : 0)
       : 0)
 
   const bottomHorizontalLineTextX =
     rectX +
     scaledWidth / 2 -
     35 +
-    (isAngledCut
-      ? (isFront && isL2W1) || (isBack && isL1W1)
-        ? scale(currentAngleCutX) / 2
-        : (isFront && isL2W2) || (isBack && isL1W2)
-        ? -scale(currentAngleCutX) / 2
-        : 0
+    (isFront && L2W1AngleCut
+      ? scale(L2W1AngleCut?.options.from.x) / 2 - (L2W2AngleCut ? scale(L2W2AngleCut.options.from.x) / 2 : 0)
+      : isBack && L1W1AngleCut
+      ? scale(L1W1AngleCut?.options.from.x) / 2 - (L1W2AngleCut ? scale(L1W2AngleCut.options.from.x) / 2 : 0)
       : 0)
 
   const bottomHorizontalLineText = `${
     dimensions.width -
-    (isAngledCut
-      ? isFront && L2 && (W1 || W2)
-        ? currentAngleCutX
-        : isBack && L1 && (W1 || W2)
-        ? currentAngleCutX
-        : 0
+    (isFront && L2W1AngleCut
+      ? L2W1AngleCut?.options.from.x + (L2W2AngleCut ? L2W2AngleCut.options.from.x : 0)
+      : isBack && L1W1AngleCut
+      ? L1W1AngleCut?.options.from.x + (L1W2AngleCut ? L1W2AngleCut.options.from.x : 0)
       : 0)
   } mm`
 
@@ -416,8 +485,8 @@ const Canvas: React.FC = () => {
             stroke='#7D848C'
             strokeWidth={1}
             closed={true}
-            scaleX={lineScaleX}
-            scaleY={lineScaleY}
+            // scaleX={lineScaleX}
+            // scaleY={lineScaleY}
           />
 
           {isAngledCut && (
