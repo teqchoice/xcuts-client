@@ -151,6 +151,18 @@ const AngledCutOption = (props: AngledCutOptionProps) => {
                   })
                 }
               }}
+              onBlur={event => {
+                updateCurrentMachiningOption({
+                  ...currentMachiningOption,
+                  options: {
+                    ...currentMachiningOption.options,
+                    from: {
+                      ...currentMachiningOption.options.from,
+                      x: (currentDecor?.inputLength ?? 0) - +event.currentTarget.value
+                    }
+                  }
+                })
+              }}
             />
           </div>
           <div className='flex items-center gap-x-5'>
@@ -177,6 +189,18 @@ const AngledCutOption = (props: AngledCutOptionProps) => {
                     }
                   })
                 }
+              }}
+              onBlur={event => {
+                updateCurrentMachiningOption({
+                  ...currentMachiningOption,
+                  options: {
+                    ...currentMachiningOption.options,
+                    from: {
+                      ...currentMachiningOption.options.from,
+                      y: (currentDecor?.inputWidth ?? 0) - +event.currentTarget.value
+                    }
+                  }
+                })
               }}
             />
           </div>

@@ -26,8 +26,6 @@ type CuttingListData = {
 const CuttingList = () => {
   const { currentDecor, setCurrentDecor, addDecor, addedDecors, updateDecor } = useCuttingListStore()
 
-  console.log(addedDecors)
-
   const [data, setData] = useState<CuttingListData[]>([
     {
       id: 0,
@@ -173,7 +171,7 @@ const CuttingList = () => {
                     right: '-8px'
                   }
                 }}
-                // disabled={!decor.product_name}
+                disabled={!decor.product_name}
                 value={decor.inputThickness}
                 onChange={value => updateDecor(decor.id, { ...decor, inputThickness: value ?? '' })}
                 comboboxProps={{ shadow: 'lg' }}
@@ -186,7 +184,7 @@ const CuttingList = () => {
                 className='h-[35px] px-2 border border-[#d1d1d1] focus-visible:outline-none w-full placeholder:!text-[#b9b9b9] traci !text-[#222222] !text-[14px] placeholder:text-[12px] text-center'
                 value={decor.inputLength}
                 onChange={event => updateDecor(decor.id, { ...decor, inputLength: +event?.target.value })}
-                // disabled={!decor.product_name}
+                disabled={!decor.product_name}
               />
             </div>
             <div style={{ width: '55px' }}>
@@ -195,7 +193,7 @@ const CuttingList = () => {
                 className='h-[35px] px-2 border border-[#d1d1d1] focus-visible:outline-none w-full placeholder:!text-[#b9b9b9] traci !text-[#222222] !text-[14px] placeholder:text-[12px] text-center'
                 value={decor.inputWidth}
                 onChange={event => updateDecor(decor.id, { ...decor, inputWidth: +event?.target.value })}
-                // disabled={!decor.product_name}
+                disabled={!decor.product_name}
               />
             </div>
             <div style={{ width: '42px' }}>
@@ -204,7 +202,7 @@ const CuttingList = () => {
                 className='h-[35px] px-2 border border-[#d1d1d1] focus-visible:outline-none w-full placeholder:!text-[#b9b9b9] traci !text-[#222222] !text-[14px] placeholder:text-[12px] text-center'
                 value={decor.inputQuantity}
                 onChange={event => updateDecor(decor.id, { ...decor, inputQuantity: +event?.target.value })}
-                // disabled={!decor.product_name}
+                disabled={!decor.product_name}
               />
             </div>
             <div style={{ width: '115px' }}>
@@ -213,7 +211,7 @@ const CuttingList = () => {
                 className='h-[35px] px-2 border border-[#d1d1d1] focus-visible:outline-none w-full placeholder:!text-[#b9b9b9] traci !text-[#222222] !text-[14px] placeholder:text-[12px]'
                 value={decor.inputDescription}
                 onChange={event => updateDecor(decor.id, { ...decor, inputDescription: event?.target.value })}
-                // disabled={!decor.product_name}
+                disabled={!decor.product_name}
               />
             </div>
             <div style={{ width: '55px' }}>
@@ -222,7 +220,7 @@ const CuttingList = () => {
                 className='h-[35px] px-2 border border-[#d1d1d1] focus-visible:outline-none w-full placeholder:!text-[#b9b9b9] traci !text-[#222222] !text-[14px] placeholder:text-[12px]'
                 // value={row.l1}
                 onChange={e => handleInputChange(index, 'l1', e.target.value)}
-                // disabled={!decor.product_name}
+                disabled={!decor.product_name}
               />
             </div>
             <div style={{ width: '55px' }}>
@@ -231,7 +229,7 @@ const CuttingList = () => {
                 className='h-[35px] px-2 border border-[#d1d1d1] focus-visible:outline-none w-full placeholder:!text-[#b9b9b9] traci !text-[#222222] !text-[14px] placeholder:text-[12px]'
                 // value={row.l2}
                 onChange={e => handleInputChange(index, 'l2', e.target.value)}
-                // disabled={!decor.product_name}
+                disabled={!decor.product_name}
               />
             </div>
             <div style={{ width: '55px' }}>
@@ -240,7 +238,7 @@ const CuttingList = () => {
                 className='h-[35px] px-2 border border-[#d1d1d1] focus-visible:outline-none w-full placeholder:!text-[#b9b9b9] traci !text-[#222222] !text-[14px] placeholder:text-[12px]'
                 // value={row.w1}
                 onChange={e => handleInputChange(index, 'w1', e.target.value)}
-                // disabled={!decor.product_name}
+                disabled={!decor.product_name}
               />
             </div>
             <div style={{ width: '55px' }}>
@@ -249,11 +247,15 @@ const CuttingList = () => {
                 className='h-[35px] px-2 border border-[#d1d1d1] focus-visible:outline-none w-full placeholder:!text-[#b9b9b9] traci !text-[#222222] !text-[14px] placeholder:text-[12px]'
                 // value={row.w2}
                 onChange={e => handleInputChange(index, 'w2', e.target.value)}
-                // disabled={!decor.product_name}
+                disabled={!decor.product_name}
               />
             </div>
             <div style={{ width: '150px' }} onClick={() => setCurrentDecor(decor.id)}>
-              <MachiningModal />
+              {decor.product_name &&
+                decor.inputThickness &&
+                decor.inputLength &&
+                decor.inputWidth &&
+                decor.inputQuantity && <MachiningModal />}
             </div>
             <div style={{ width: '150px' }}>
               <input
@@ -261,7 +263,7 @@ const CuttingList = () => {
                 className='h-[35px] px-2 border border-[#d1d1d1] focus-visible:outline-none w-full placeholder:!text-[#b9b9b9] traci !text-[#222222] !text-[14px] placeholder:text-[12px]'
                 // value={row.sprayCoating}
                 onChange={e => handleInputChange(index, 'sprayCoating', e.target.value)}
-                // disabled={!decor.product_name}
+                disabled={!decor.product_name}
               />
             </div>
             <div style={{ width: '150px' }}>
@@ -270,7 +272,7 @@ const CuttingList = () => {
                 className='h-[35px] px-2 border border-[#d1d1d1] focus-visible:outline-none w-full placeholder:!text-[#b9b9b9] traci !text-[#222222] !text-[14px] placeholder:text-[12px]'
                 // value={row.grainMatch}
                 onChange={e => handleInputChange(index, 'grainMatch', e.target.value)}
-                // disabled={!decor.product_name}
+                disabled={!decor.product_name}
               />
             </div>
             <div style={{ width: '100px' }}>
