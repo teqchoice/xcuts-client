@@ -194,7 +194,7 @@ export default function Pupapt({ data }: any) {
               <h3 className='lg:text-2xl text-[20px]'>
                 Total:{' '}
                 <span className='text-primary font-bold'>
-                  {currentThickness ? `£${currentThickness?.price_full_sheet?.toFixed(2) ?? ''} ` : ''}
+                  {currentThickness ? `£${currentThickness?.price_full_sheet?.toFixed(2) ?? ''} ` : 'POA'}
                 </span>
               </h3>
               <p className='text-sm'>
@@ -203,7 +203,7 @@ export default function Pupapt({ data }: any) {
                   ? `£${
                       (currentThickness?.price_full_sheet * (1 + currentThickness?.tax_percent / 100))?.toFixed(2) ?? ''
                     }`
-                  : ''}
+                  : 'POA'}
               </p>
             </div>
             <div className=' w-full'>
@@ -211,7 +211,7 @@ export default function Pupapt({ data }: any) {
               <h3 className='lg:text-2xl text-[20px]'>
                 Total:{' '}
                 <span className='text-primary font-bold'>
-                  {currentThickness ? `£${currentThickness?.price_cutting?.toFixed(2) ?? ''}` : ''}
+                  {currentThickness ? `£${currentThickness?.price_cutting?.toFixed(2) ?? ''}` : 'POA'}
                 </span>
               </h3>
               <p className='text-sm'>
@@ -222,7 +222,7 @@ export default function Pupapt({ data }: any) {
                         2
                       ) ?? ''
                     }`
-                  : ''}
+                  : 'POA'}
               </p>
             </div>
           </div>
@@ -247,7 +247,7 @@ export default function Pupapt({ data }: any) {
                 <span className='text-primary'>
                   {currentThickness
                     ? `£${(currentThickness?.price_full_sheet * (1 + currentThickness?.tax_percent / 100)).toFixed(2)}`
-                    : ''}
+                    : 'POA'}
                 </span>
               </div>
               <div className='flex justify-between items-center'>
@@ -257,7 +257,7 @@ export default function Pupapt({ data }: any) {
                     ? `£${(currentThickness?.price_cutting * (1 + (currentThickness?.tax_percent ?? 20) / 100)).toFixed(
                         2
                       )}`
-                    : ''}
+                    : 'POA'}
                 </span>
               </div>
             </div>

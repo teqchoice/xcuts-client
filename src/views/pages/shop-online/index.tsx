@@ -67,7 +67,9 @@ export default function index({ Data }: any) {
                 >
                   <span className='inline-block md:px-8 px-5'>Cut, edge & spray</span>
                   <span className='inline-block group-hover:bg-primary bg-[#7c7c7c] md:px-6 px-4 py-5 skew-x-[45deg] data-active'>
-                    <span className='-skew-x-[45deg] text-white inline-block'>£{price.Cut_edge_spray}</span>
+                    <span className='-skew-x-[45deg] text-white inline-block'>
+                      {price.Cut_edge_spray ? `£${price.Cut_edge_spray}` : 'POA'}
+                    </span>
                   </span>
                 </div>
               </a>
