@@ -199,14 +199,17 @@ export default function Pupapt({ data }: any) {
                     : 'POA'}
                 </span>
               </h3>
-              <p className='text-sm'>
-                With VAT:{' '}
-                {currentThickness?.price_full_sheet
-                  ? `£${
-                      (currentThickness?.price_full_sheet * (1 + currentThickness?.tax_percent / 100))?.toFixed(2) ?? ''
-                    }`
-                  : 'POA'}
-              </p>
+              {currentThickness?.price_full_sheet && (
+                <p className='text-sm'>
+                  With VAT:{' '}
+                  {currentThickness?.price_full_sheet
+                    ? `£${
+                        (currentThickness?.price_full_sheet * (1 + currentThickness?.tax_percent / 100))?.toFixed(2) ??
+                        ''
+                      }`
+                    : ''}
+                </p>
+              )}
             </div>
             <div className=' w-full'>
               <button className='p-3 outline-black mt-2 w-full text-xs text-white bg-black'>Add to cutting list</button>
@@ -216,16 +219,18 @@ export default function Pupapt({ data }: any) {
                   {currentThickness?.price_cutting ? `£${currentThickness?.price_cutting?.toFixed(2) ?? ''}` : 'POA'}
                 </span>
               </h3>
-              <p className='text-sm'>
-                With VAT:{' '}
-                {currentThickness?.price_cutting
-                  ? `£${
-                      (currentThickness?.price_cutting * (1 + (currentThickness?.tax_percent ?? 20) / 100))?.toFixed(
-                        2
-                      ) ?? ''
-                    }`
-                  : 'POA'}
-              </p>
+              {currentThickness?.price_cutting && (
+                <p className='text-sm'>
+                  With VAT:{' '}
+                  {currentThickness?.price_cutting
+                    ? `£${
+                        (currentThickness?.price_cutting * (1 + (currentThickness?.tax_percent ?? 20) / 100))?.toFixed(
+                          2
+                        ) ?? ''
+                      }`
+                    : ''}
+                </p>
+              )}
             </div>
           </div>
           <div className='mt-2'>
