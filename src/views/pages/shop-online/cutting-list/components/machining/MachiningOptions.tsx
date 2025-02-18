@@ -1,16 +1,17 @@
 import { Button, Select, Tooltip } from '@mantine/core'
 import React, { useState } from 'react'
-import { MachiningOption, useMachiningStore } from '../store/machiningOptionsStore'
 import SelectedOptions from './SelectedOptions'
 import { uid } from 'radash'
 import ActiveOption from './ActiveOption'
 import Image from 'next/image'
+import { useCurrentMachiningOptionStore, useMachiningOptionsStore } from '../store/machiningOptionsStore'
 
 const MachiningOptions = () => {
   const [selectedMachiningOption, setSelectedMachiningOption] = useState<string | null>(null)
 
-  const { addMachiningOption, setCurrentMachiningOption, machiningOptions, currentMachiningOption } =
-    useMachiningStore()
+  const { setCurrentMachiningOption, currentMachiningOption } = useCurrentMachiningOptionStore()
+
+  const { addMachiningOption, machiningOptions } = useMachiningOptionsStore()
 
   const noMoreAnglesForAngleCutting = machiningOptions?.filter(item => item.type === 'angled-cut').length === 4
 

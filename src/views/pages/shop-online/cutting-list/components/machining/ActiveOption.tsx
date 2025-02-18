@@ -1,4 +1,4 @@
-import { useMachiningStore } from '../store/machiningOptionsStore'
+import { useCurrentMachiningOptionStore } from '../store/machiningOptionsStore'
 import AngledCutOption from './AngledCutOption'
 
 type ActiveOptionProps = {}
@@ -6,7 +6,7 @@ type ActiveOptionProps = {}
 const ActiveOption = (props: ActiveOptionProps) => {
   const {} = props
 
-  const { currentMachiningOption } = useMachiningStore()
+  const { currentMachiningOption } = useCurrentMachiningOptionStore()
 
   const isAngledCut = currentMachiningOption?.type === 'angled-cut'
 

@@ -1,8 +1,8 @@
 import React, { useRef, useState } from 'react'
 import Image from 'next/image'
-import { useMachiningStore } from '../store/machiningOptionsStore'
+import { useCurrentMachiningOptionStore } from '../store/machiningOptionsStore'
 const FaceBox = () => {
-  const { currentMachiningOption } = useMachiningStore()
+  const { currentMachiningOption } = useCurrentMachiningOptionStore()
 
   const isBack = currentMachiningOption?.view === 'back'
 

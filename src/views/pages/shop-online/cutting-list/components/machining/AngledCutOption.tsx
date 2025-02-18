@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
-import { useMachiningStore } from '../store/machiningOptionsStore'
 import { Group, Input, Radio } from '@mantine/core'
 import useCuttingListStore from '../store/cuttingListStore'
+import { useCurrentMachiningOptionStore, useMachiningOptionsStore } from '../store/machiningOptionsStore'
 
 type AngledCutOptionProps = {}
 
@@ -48,7 +48,9 @@ const getOppositeSides = (angleOn: 'L1-W1' | 'L1-W2' | 'L2-W1' | 'L2-W2') => {
 const AngledCutOption = (props: AngledCutOptionProps) => {
   const {} = props
 
-  const { currentMachiningOption, updateCurrentMachiningOption, machiningOptions } = useMachiningStore()
+  const { currentMachiningOption, updateCurrentMachiningOption } = useCurrentMachiningOptionStore()
+
+  const { machiningOptions } = useMachiningOptionsStore()
 
   const { currentDecor, updateDecor } = useCuttingListStore()
 

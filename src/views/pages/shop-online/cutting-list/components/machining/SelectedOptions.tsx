@@ -1,10 +1,12 @@
 import React from 'react'
-import { useMachiningStore } from '../store/machiningOptionsStore'
 import { Button } from '@mantine/core'
 import { IoCloseOutline } from 'react-icons/io5'
+import { useCurrentMachiningOptionStore, useMachiningOptionsStore } from '../store/machiningOptionsStore'
 
 const SelectedOptions = () => {
-  const { machiningOptions, removeMachiningOption, setCurrentMachiningOption } = useMachiningStore()
+  const { machiningOptions, removeMachiningOption } = useMachiningOptionsStore()
+
+  const { setCurrentMachiningOption } = useCurrentMachiningOptionStore()
 
   const options = machiningOptions?.map((option, index) => {
     if (option.type === 'angled-cut') {
