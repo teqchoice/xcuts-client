@@ -4,14 +4,16 @@ import SelectedOptions from './SelectedOptions'
 import { uid } from 'radash'
 import ActiveOption from './ActiveOption'
 import Image from 'next/image'
-import { useCurrentMachiningOptionStore, useMachiningOptionsStore } from '../store/machiningOptionsStore'
+import { useMachiningStore } from '../store/machiningOptionsStore'
+import { useVirtualFromStore } from '../store/useVirtualFromStore'
 
 const MachiningOptions = () => {
   const [selectedMachiningOption, setSelectedMachiningOption] = useState<string | null>(null)
 
-  const { setCurrentMachiningOption, currentMachiningOption } = useCurrentMachiningOptionStore()
+  const { setCurrentMachiningOption, currentMachiningOption, addMachiningOption, machiningOptions } =
+    useMachiningStore()
 
-  const { addMachiningOption, machiningOptions } = useMachiningOptionsStore()
+  const { setVirtualFrom, virtualFrom } = useVirtualFromStore()
 
   const noMoreAnglesForAngleCutting = machiningOptions?.filter(item => item.type === 'angled-cut').length === 4
 
@@ -30,6 +32,7 @@ const MachiningOptions = () => {
         },
         view: 'front'
       })
+      setVirtualFrom({ x: 100, y: 100 })
       setCurrentMachiningOption(id)
       setSelectedMachiningOption(null)
     }

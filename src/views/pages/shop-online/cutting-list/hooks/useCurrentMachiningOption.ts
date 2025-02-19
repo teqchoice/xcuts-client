@@ -1,7 +1,7 @@
-import { useCurrentMachiningOptionStore } from '../components/store/machiningOptionsStore'
+import { useMachiningStore } from '../components/store/machiningOptionsStore'
 
 export const useCurrentMachiningOption = () => {
-  const { currentMachiningOption } = useCurrentMachiningOptionStore()
+  const { currentMachiningOption } = useMachiningStore()
 
   const isFront = currentMachiningOption?.view === 'front'
 

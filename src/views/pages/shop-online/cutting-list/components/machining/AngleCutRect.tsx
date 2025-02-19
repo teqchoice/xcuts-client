@@ -2,7 +2,7 @@ import React from 'react'
 import { Rect, Text } from 'react-konva'
 import { useAngleCutMachiningOptions } from '../../hooks/useAngleCutMachiningOptions'
 import { useCurrentMachiningOption } from '../../hooks/useCurrentMachiningOption'
-import { useCurrentMachiningOptionStore } from '../store/machiningOptionsStore'
+import { useMachiningStore } from '../store/machiningOptionsStore'
 
 type AngleCutRectProps = {
   rectX: number
@@ -27,7 +27,7 @@ const AngleCutRect = (props: AngleCutRectProps) => {
     currentAngleCutX
   } = useAngleCutMachiningOptions()
 
-  const { currentMachiningOption } = useCurrentMachiningOptionStore()
+  const { currentMachiningOption } = useMachiningStore()
 
   const { isFront } = useCurrentMachiningOption()
 

@@ -4,7 +4,6 @@ import GrainBox from './GrainBox'
 import DirectionTile from './DirectionTile'
 import useCuttingListStore from '../store/cuttingListStore'
 import L1W1Inputs from './L1W1Inputs'
-import { useCurrentMachiningOptionStore } from '../store/machiningOptionsStore'
 import { useAngleCutMachiningOptions } from '../../hooks/useAngleCutMachiningOptions'
 import { useCurrentMachiningOption } from '../../hooks/useCurrentMachiningOption'
 import MainLine from './MainLine'
@@ -13,9 +12,10 @@ import TopHorizontalLine from './TopHorizontalLine'
 import BottomHorizontalLine from './BottomHorizontalLine'
 import RightVerticalLine from './RightVerticalLine'
 import LeftVerticalLine from './LeftVerticalLine'
+import { useMachiningStore } from '../store/machiningOptionsStore'
 
 const Canvas: React.FC = () => {
-  const { currentMachiningOption } = useCurrentMachiningOptionStore()
+  const { currentMachiningOption } = useMachiningStore()
 
   const { currentDecor } = useCuttingListStore()
 
@@ -160,6 +160,7 @@ const Canvas: React.FC = () => {
             scale={scale}
             scaleUp={scaleUp}
             scaledHeight={scaledHeight}
+            scaledWidth={scaledWidth}
           />
           {/* <Html groupProps={{ x: rectX - 70, y: rectY - 50 }}>
             <Input

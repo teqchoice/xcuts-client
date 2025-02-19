@@ -1,10 +1,8 @@
-import { useCurrentMachiningOptionStore, useMachiningOptionsStore } from '../components/store/machiningOptionsStore'
+import { useMachiningStore } from '../components/store/machiningOptionsStore'
 import { useCurrentMachiningOption } from './useCurrentMachiningOption'
 
 export const useAngleCutMachiningOptions = () => {
-  const { machiningOptions } = useMachiningOptionsStore()
-
-  const { currentMachiningOption } = useCurrentMachiningOptionStore()
+  const { currentMachiningOption, machiningOptions } = useMachiningStore()
 
   const isAngledCut = currentMachiningOption?.type === 'angled-cut'
 

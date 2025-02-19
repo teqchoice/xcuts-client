@@ -16,14 +16,19 @@ export type MachiningOption =
   | { id: string; selected: boolean; type: '5mm'; diameter: number; view: 'back' | 'front' }
   | { id: string; selected: boolean; type: '7.5mm'; radius: number; view: 'back' | 'front' }
 
-// Store for managing machining options
-export const useMachiningOptionsStore = create<{
+export type Store = {
   machiningOptions: MachiningOption[] | null
+  currentMachiningOption: MachiningOption | null
   addMachiningOption: (option: MachiningOption) => void
   removeMachiningOption: (id: string) => void
+  setCurrentMachiningOption: (id: string) => void
+  updateCurrentMachiningOption: (option: MachiningOption) => void
   disableAllMachiningOptions: () => void
-}>(set => ({
+}
+
+export const useMachiningStore = create<Store>()((set, get) => ({
   machiningOptions: null,
+  currentMachiningOption: null,
 
   addMachiningOption: option =>
     set(state => {
@@ -52,14 +57,16 @@ export const useMachiningOptionsStore = create<{
           : [updatedOption]
 
         return {
-          machiningOptions: updatedMachiningOptions
+          machiningOptions: updatedMachiningOptions,
+          currentMachiningOption: updatedMachiningOptions.find(item => item.selected) ?? null
         }
       }
 
       const updatedMachiningOptions = state.machiningOptions ? [option, ...state.machiningOptions] : [option]
 
       return {
-        machiningOptions: updatedMachiningOptions
+        machiningOptions: updatedMachiningOptions,
+        currentMachiningOption: updatedMachiningOptions.find(item => item.selected) ?? null
       }
     }),
 
@@ -71,8 +78,42 @@ export const useMachiningOptionsStore = create<{
           : null
 
       return {
-        machiningOptions: updatedMachiningOptions
+        machiningOptions: updatedMachiningOptions,
+        currentMachiningOption: updatedMachiningOptions?.find(item => item.selected) ?? null
       }
+    }),
+
+  setCurrentMachiningOption: id =>
+    set(state => {
+      const updatedMachiningOptions = state.machiningOptions
+        ? state.machiningOptions.map(item => ({ ...item, selected: item.id === id }))
+        : null
+
+      return {
+        machiningOptions: updatedMachiningOptions,
+        currentMachiningOption: updatedMachiningOptions?.find(item => item.selected) ?? null
+      }
+    }),
+
+  updateCurrentMachiningOption: option =>
+    set(state => {
+      if (!state.currentMachiningOption) return state
+
+      if (state.currentMachiningOption.type === 'angled-cut' && option.type === 'angled-cut') {
+        const updatedMachiningOptions =
+          state.machiningOptions?.map(item =>
+            item.type === 'angled-cut' && item.id === state.currentMachiningOption?.id
+              ? { ...item, ...option, options: { ...item.options, ...option.options } }
+              : item
+          ) ?? null
+
+        return {
+          machiningOptions: updatedMachiningOptions,
+          currentMachiningOption:
+            updatedMachiningOptions?.find(item => item.id === state.currentMachiningOption?.id) ?? null
+        }
+      }
+      return state
     }),
 
   disableAllMachiningOptions: () =>
@@ -82,53 +123,8 @@ export const useMachiningOptionsStore = create<{
         : null
 
       return {
-        machiningOptions: updatedMachiningOptions
+        machiningOptions: updatedMachiningOptions,
+        currentMachiningOption: null
       }
-    })
-}))
-
-// Store for managing the current machining option
-export const useCurrentMachiningOptionStore = create<{
-  currentMachiningOption: MachiningOption | null
-  setCurrentMachiningOption: (id: string) => void
-  updateCurrentMachiningOption: (option: MachiningOption) => void
-}>((set, get) => ({
-  currentMachiningOption: null,
-
-  setCurrentMachiningOption: id =>
-    set(state => {
-      const machiningOptions = useMachiningOptionsStore.getState().machiningOptions
-      const updatedMachiningOptions = machiningOptions
-        ? machiningOptions.map(item => ({ ...item, selected: item.id === id }))
-        : null
-
-      useMachiningOptionsStore.setState({ machiningOptions: updatedMachiningOptions })
-
-      return {
-        currentMachiningOption: updatedMachiningOptions?.find(item => item.selected) ?? null
-      }
-    }),
-
-  updateCurrentMachiningOption: option =>
-    set(state => {
-      const machiningOptions = useMachiningOptionsStore.getState().machiningOptions
-      if (!state.currentMachiningOption) return state
-
-      if (state.currentMachiningOption.type === 'angled-cut' && option.type === 'angled-cut') {
-        const updatedMachiningOptions =
-          machiningOptions?.map(item =>
-            item.type === 'angled-cut' && item.id === state.currentMachiningOption?.id
-              ? { ...item, ...option, options: { ...item.options, ...option.options } }
-              : item
-          ) ?? null
-
-        useMachiningOptionsStore.setState({ machiningOptions: updatedMachiningOptions })
-
-        return {
-          currentMachiningOption:
-            updatedMachiningOptions?.find(item => item.id === state.currentMachiningOption?.id) ?? null
-        }
-      }
-      return state
     })
 }))

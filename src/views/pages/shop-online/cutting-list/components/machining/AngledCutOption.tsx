@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { Group, Input, Radio } from '@mantine/core'
 import useCuttingListStore from '../store/cuttingListStore'
-import { useCurrentMachiningOptionStore, useMachiningOptionsStore } from '../store/machiningOptionsStore'
+import { useMachiningStore } from '../store/machiningOptionsStore'
+import { useVirtualFromStore } from '../store/useVirtualFromStore'
 
 type AngledCutOptionProps = {}
 
@@ -48,11 +49,11 @@ const getOppositeSides = (angleOn: 'L1-W1' | 'L1-W2' | 'L2-W1' | 'L2-W2') => {
 const AngledCutOption = (props: AngledCutOptionProps) => {
   const {} = props
 
-  const { currentMachiningOption, updateCurrentMachiningOption } = useCurrentMachiningOptionStore()
-
-  const { machiningOptions } = useMachiningOptionsStore()
+  const { currentMachiningOption, updateCurrentMachiningOption, machiningOptions } = useMachiningStore()
 
   const { currentDecor, updateDecor } = useCuttingListStore()
+
+  const { setVirtualFrom, virtualFrom } = useVirtualFromStore()
 
   const isAngledCut = currentMachiningOption?.type === 'angled-cut'
 
@@ -138,7 +139,7 @@ const AngledCutOption = (props: AngledCutOptionProps) => {
                   textAlign: 'center'
                 }
               }}
-              defaultValue={(currentDecor?.inputLength ?? 0) - currentMachiningOption.options.from.x}
+              value={virtualFrom?.x ? (currentDecor?.inputLength ?? 0) - virtualFrom.x : undefined}
               onKeyUp={(event: React.KeyboardEvent<HTMLInputElement>) => {
                 if (event.key === 'Enter') {
                   updateCurrentMachiningOption({
@@ -153,6 +154,9 @@ const AngledCutOption = (props: AngledCutOptionProps) => {
                   })
                 }
               }}
+              onChange={event =>
+                setVirtualFrom({ ...virtualFrom, x: (currentDecor?.inputWidth ?? 0) - +event.target.value })
+              }
               onBlur={event => {
                 updateCurrentMachiningOption({
                   ...currentMachiningOption,
@@ -177,6 +181,7 @@ const AngledCutOption = (props: AngledCutOptionProps) => {
                   textAlign: 'center'
                 }
               }}
+              value={virtualFrom?.y ? (currentDecor?.inputLength ?? 0) - virtualFrom.y : undefined}
               defaultValue={(currentDecor?.inputWidth ?? 0) - currentMachiningOption.options.from.y}
               onKeyUp={(event: React.KeyboardEvent<HTMLInputElement>) => {
                 if (event.key === 'Enter') {
@@ -192,6 +197,9 @@ const AngledCutOption = (props: AngledCutOptionProps) => {
                   })
                 }
               }}
+              onChange={event =>
+                setVirtualFrom({ ...virtualFrom, y: (currentDecor?.inputWidth ?? 0) - +event.target.value })
+              }
               onBlur={event => {
                 updateCurrentMachiningOption({
                   ...currentMachiningOption,

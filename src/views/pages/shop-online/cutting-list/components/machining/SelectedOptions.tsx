@@ -1,12 +1,9 @@
 import React from 'react'
-import { Button } from '@mantine/core'
 import { IoCloseOutline } from 'react-icons/io5'
-import { useCurrentMachiningOptionStore, useMachiningOptionsStore } from '../store/machiningOptionsStore'
+import { useMachiningStore } from '../store/machiningOptionsStore'
 
 const SelectedOptions = () => {
-  const { machiningOptions, removeMachiningOption } = useMachiningOptionsStore()
-
-  const { setCurrentMachiningOption } = useCurrentMachiningOptionStore()
+  const { machiningOptions, removeMachiningOption, setCurrentMachiningOption } = useMachiningStore()
 
   const options = machiningOptions?.map((option, index) => {
     if (option.type === 'angled-cut') {
@@ -17,7 +14,9 @@ const SelectedOptions = () => {
             className={`col-span-8 px-3 py-1 cursor-pointer border border-primary ${
               option.selected ? 'bg-primary text-white' : 'text-primary bg-transparent'
             }`}
-            onClick={() => setCurrentMachiningOption(option.id)}
+            onClick={() => {
+              setCurrentMachiningOption(option.id)
+            }}
           >
             Angled cut on {option.options.angleOn}
           </div>
