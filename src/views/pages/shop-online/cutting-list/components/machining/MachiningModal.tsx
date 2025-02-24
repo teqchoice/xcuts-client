@@ -3,9 +3,15 @@ import { Modal, Select } from '@mantine/core'
 import Canvas from './Canvas'
 import { IoMdClose } from 'react-icons/io'
 import MachiningOptions from './MachiningOptions'
+import { useMediaQuery } from '@mantine/hooks'
 
 const MachiningModal = () => {
   const [isOpen, setIsOpen] = useState(false)
+
+  const isMd = useMediaQuery('(min-width: 768px)')
+
+  console.log(isMd)
+
   return (
     <>
       <button
@@ -38,11 +44,11 @@ const MachiningModal = () => {
             size={24}
           />
 
-          <div className='grid grid-cols-3'>
-            <div className='col-span-1 bg-[#F5F5F5] p-4'>
+          <div className='flex flex-nowrap'>
+            <div className='min-w-[400px] w-[400px] bg-[#F5F5F5] p-4'>
               <MachiningOptions />
             </div>
-            <div className='col-span-2 bg-primary-100 relative'>
+            <div className='min-w-[800px] w-[800px] bg-primary-100 relative'>
               <Canvas />
             </div>
           </div>

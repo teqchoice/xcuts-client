@@ -1,13 +1,24 @@
 import { Input } from '@mantine/core'
 import { Vector2d } from 'konva/lib/types'
-import React, { useCallback, useEffect } from 'react'
-import { Line } from 'react-konva'
+import React, { useCallback, useEffect, useRef, useState } from 'react'
+import { Arrow, Line } from 'react-konva'
 import { Html } from 'react-konva-utils'
 import { useVirtualFromStore } from '../store/useVirtualFromStore'
 import { useMachiningStore } from '../store/machiningOptionsStore'
 import { useAngleCutMachiningOptions } from '../../hooks/useAngleCutMachiningOptions'
 import { useCurrentMachiningOption } from '../../hooks/useCurrentMachiningOption'
 import Konva from 'konva'
+import { Spring, animated } from '@react-spring/konva'
+
+const inputStyles = {
+  input: {
+    padding: '2px',
+    minHeight: '20px',
+    height: '20px',
+    borderRadius: '0px',
+    textAlign: 'center' as 'center'
+  }
+}
 
 type L1W1InputsProps = {
   rectX: number
@@ -24,6 +35,8 @@ type L1W1InputsProps = {
 }
 
 const L1W1Inputs = (props: L1W1InputsProps) => {
+  const [flag, setFlag] = useState(false)
+
   const { dimensions, rectX, rectY, scaledHeight, scaleUp, round, scale, scaledWidth } = props
 
   const { currentMachiningOption, updateCurrentMachiningOption } = useMachiningStore()
@@ -160,25 +173,67 @@ const L1W1Inputs = (props: L1W1InputsProps) => {
 
   const xLineScaleX = (isFront && (isL1W1 || isL1W2)) || (isBack && (isL2W1 || isL2W2)) ? 1 : -1
 
+  const handleYInputBlur = (event: React.FocusEvent<HTMLInputElement>) => {
+    setFlag(false)
+    if (isAngledCut) {
+      updateCurrentMachiningOption({
+        ...currentMachiningOption,
+        options: {
+          ...currentMachiningOption.options,
+          from: {
+            ...currentMachiningOption.options.from,
+            y: (dimensions.height ?? 0) - +event.currentTarget.value
+          }
+        }
+      })
+    }
+  }
+
+  const handleYKeyUp = (event: React.KeyboardEvent<HTMLInputElement>) => {
+    if (event.key === 'Enter') {
+      if (isAngledCut) {
+        updateCurrentMachiningOption({
+          ...currentMachiningOption,
+          options: {
+            ...currentMachiningOption.options,
+            from: {
+              ...currentMachiningOption.options.from,
+              y: (dimensions.height ?? 0) - +event.currentTarget.value
+            }
+          }
+        })
+      }
+    }
+  }
+
   // const [isInputFocused, setIsInputFocused] = useState(false)
   // const connectingLineRef = useRef<Konva.Line>(null)
 
-  // // Add this effect for the animation
-  // useEffect(() => {
+  // const connectingArrowRef = useRef<Konva.Line>(null)
+
+  // const lineRef = useRef<Konva.Line>(null)
+
+  // const startAnimation = (isFocused: boolean) => {
   //   if (!connectingLineRef.current) return
 
   //   let animation: Konva.Animation | undefined
 
-  //   if (isInputFocused) {
+  //   if (isFocused) {
   //     animation = new Konva.Animation(frame => {
-  //       if (!frame || !connectingLineRef.current) return
+  //       if (!frame || !connectingLineRef.current || !connectingArrowRef.current) return
 
   //       const progress = Math.min(frame.time / 750, 1) // 500ms duration
-  //       const startY = htmlY + 20 // Start from bottom of input
+  //       const startY = yHtmlY + 20 // Start from bottom of input
   //       const endY = rectY + scaledHeight // End at the main line
   //       const currentHeight = (endY - startY) * progress
 
   //       connectingLineRef.current.points([
+  //         0,
+  //         0, // start point
+  //         0,
+  //         currentHeight // end point
+  //       ])
+  //       connectingArrowRef.current.points([
   //         0,
   //         0, // start point
   //         0,
@@ -190,14 +245,15 @@ const L1W1Inputs = (props: L1W1InputsProps) => {
   //   } else {
   //     // Animate out
   //     animation = new Konva.Animation(frame => {
-  //       if (!frame || !connectingLineRef.current) return
+  //       if (!frame || !connectingLineRef.current || !connectingArrowRef.current) return
 
   //       const progress = Math.max(1 - frame.time / 500, 0) // 500ms duration
-  //       const startY = htmlY + 20
-  //       const endY = lineY
+  //       const startY = yHtmlY + 20
+  //       const endY = yLineY
   //       const currentHeight = (endY - startY) * progress
 
   //       connectingLineRef.current.points([0, 0, 0, currentHeight])
+  //       connectingArrowRef.current.points([0, 0, 0, currentHeight])
   //     }, connectingLineRef.current.getLayer())
 
   //     animation.start()
@@ -208,82 +264,54 @@ const L1W1Inputs = (props: L1W1InputsProps) => {
   //       animation.stop()
   //     }
   //   }
-  // }, [isInputFocused])
+  // }
+
+  // const handleClickOutside = (event: MouseEvent) => {
+  //   setIsInputFocused(false)
+  //   startAnimation(false)
+  // }
+
+  // useEffect(() => {
+  //   document.addEventListener('mousedown', handleClickOutside)
+  //   return () => {
+  //     document.removeEventListener('mousedown', handleClickOutside)
+  //   }
+  // }, [])
+
+  // // Add this effect for the animation
+  // useEffect(() => {
+  //   const cleanup = startAnimation(isInputFocused)
+  //   return cleanup
+  // }, [isInputFocused, yHtmlY, rectY, scaledHeight, yLineY, connectingLineRef])
+
+  if (!currentMachiningOption) return null
 
   return (
     <>
       {/* y line */}
       <Html groupProps={{ x: yHtmlX, y: yHtmlY }}>
         <Input
-          // onFocus={() => {
-          //   if (!isInputFocused) {
-          //     setIsInputFocused(true)
-          //   }
-          // }}
+          onClick={() => setFlag(true)}
           type='text'
           w={40}
           h={20}
-          styles={{
-            input: {
-              padding: '2px',
-              minHeight: '20px',
-              height: '20px',
-              borderRadius: '0px',
-              textAlign: 'center'
-            }
-          }}
+          styles={inputStyles}
           value={dimensions.height - (virtualFrom?.y ?? 0)}
           onChange={event =>
             setVirtualFrom({ ...virtualFrom, y: (dimensions.height ?? 0) - +event.currentTarget.value })
           }
-          onKeyUp={(event: React.KeyboardEvent<HTMLInputElement>) => {
-            if (event.key === 'Enter') {
-              if (isAngledCut) {
-                updateCurrentMachiningOption({
-                  ...currentMachiningOption,
-                  options: {
-                    ...currentMachiningOption.options,
-                    from: {
-                      ...currentMachiningOption.options.from,
-                      y: (dimensions.height ?? 0) - +event.currentTarget.value
-                    }
-                  }
-                })
-              }
-            }
-          }}
-          onBlur={event => {
-            // setIsInputFocused(false)
-            if (isAngledCut) {
-              updateCurrentMachiningOption({
-                ...currentMachiningOption,
-                options: {
-                  ...currentMachiningOption.options,
-                  from: {
-                    ...currentMachiningOption.options.from,
-                    y: (dimensions.height ?? 0) - +event.currentTarget.value
-                  }
-                }
-              })
-            }
-          }}
+          onKeyUp={handleYKeyUp}
+          onBlur={handleYInputBlur}
         />
       </Html>
       {/* Add the connecting line */}
-      {/* <Line
-        ref={connectingLineRef}
-        x={htmlX + 20} // Center of input
-        y={htmlY + 20} // Bottom of input
+      <Line
+        x={yHtmlX + 20} // Center of input
+        y={yHtmlY + 20} // Bottom of input
         points={[0, 0, 0, 0]} // Initial points
         stroke='#0276BA'
         strokeWidth={1}
-        lineCap='round'
-        lineJoin='round'
-        pointerLength={6}
-        pointerWidth={6}
-        pointerAtBeginning={false}
-        pointerAtEnding={true}
-      /> */}
+      />
       <Line
         x={yLineX}
         y={yLineY}
@@ -295,6 +323,48 @@ const L1W1Inputs = (props: L1W1InputsProps) => {
         scaleX={yLineScaleX}
       />
 
+      {/* <Spring
+        from={{
+          lineX: 0,
+          shadowBlur: 0,
+          fill: 'rgb(10,50,19)',
+          arrowPoints: [0, 0],
+          linePoints: [0, 0]
+        }}
+        to={{
+          lineX: 0,
+          shadowBlur: 0,
+          fill: '#0276BA',
+          width: 1.5,
+          lineHeight: yHtmlY,
+          linePoints: [0, 0, 0, flag ? rectY + scaledHeight - yHtmlY : 0],
+          arrowHeight: flag ? rectY + scaledHeight - 8 : yHtmlY,
+          arrowPoints: flag ? [0, 0, 8, 8, 16, 0] : [0, 0]
+        }}
+      >
+        {props => (
+          <> */}
+      {/* @ts-ignore */}
+      {/* <animated.Line
+              {...props}
+              x={yHtmlX + 21}
+              points={props.linePoints}
+              y={props.lineHeight}
+              stroke='#0276BA'
+              strokeWidth={flag ? 1 : 0}
+            /> */}
+      {/* @ts-ignore */}
+      {/* <animated.Line
+              {...props}
+              x={yHtmlX + 13}
+              y={props.arrowHeight}
+              points={props.arrowPoints} // Ensure points are animated
+              stroke='#0276BA'
+              strokeWidth={flag ? 1 : 0}
+            />
+          </>
+        )}
+      </Spring> */}
       {/* x line */}
       <Html groupProps={{ x: xHtmlX, y: xHtmlY }}>
         <Input
