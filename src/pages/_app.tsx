@@ -10,6 +10,7 @@ import { PagesTopLoader } from 'nextjs-toploader/pages'
 import { Toaster } from 'react-hot-toast'
 import Head from 'next/head'
 import { MantineProvider, createTheme } from '@mantine/core'
+import ReactQueryProvider from '@/providers/react-query.provider'
 import '@mantine/core/styles.css'
 
 const theme = createTheme({
@@ -51,7 +52,9 @@ export default function App({ Component, pageProps }: AppProps) {
           zIndex={1600}
           showAtBottom={false}
         />
-        <Component {...pageProps} />
+        <ReactQueryProvider>
+          <Component {...pageProps} />
+        </ReactQueryProvider>
       </MantineProvider>
     </Provider>
   )
