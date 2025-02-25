@@ -8,7 +8,7 @@ const config: Config = {
         center: true
       },
       colors: {
-        'primary-100': '#fad2d4',
+        'primary-100': '#fce6e7',
         'primary-200': '#f5a5a8',
         'primary-300': '#f0787d',
         'primary-400': '#eb4b51',

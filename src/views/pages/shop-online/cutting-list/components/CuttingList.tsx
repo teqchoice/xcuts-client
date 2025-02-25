@@ -252,10 +252,12 @@ const CuttingList = () => {
             </div>
             <div style={{ width: '150px' }} onClick={() => setCurrentDecor(decor.id)}>
               {decor.product_name &&
-                decor.inputThickness &&
-                decor.inputLength &&
-                decor.inputWidth &&
-                decor.inputQuantity && <MachiningModal />}
+              decor.inputThickness &&
+              decor.inputLength &&
+              decor.inputWidth &&
+              decor.inputQuantity ? (
+                <MachiningModal />
+              ) : null}
             </div>
             <div style={{ width: '150px' }}>
               <input
