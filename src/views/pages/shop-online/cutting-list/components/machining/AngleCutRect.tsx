@@ -82,10 +82,10 @@ const AngleCutRect = (props: AngleCutRectProps) => {
   const angleCutTextY = isAngledCut
     ? isFront
       ? isL2W1 || isL2W2
-        ? rectY + scaledHeight - scale(currentAngleCutY) / 2
+        ? rectY + scaledHeight - scale(currentAngleCutY) / 2 - 5
         : rectY + scale(currentAngleCutY) / 2
       : isL1W2 || isL1W1
-      ? rectY + scaledHeight - scale(currentAngleCutY) / 2
+      ? rectY + scaledHeight - scale(currentAngleCutY) / 2 - 5
       : rectY + scale(currentAngleCutY) / 2
     : 0
 

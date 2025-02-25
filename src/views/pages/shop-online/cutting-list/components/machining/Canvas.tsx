@@ -162,22 +162,6 @@ const Canvas: React.FC = () => {
             scaledHeight={scaledHeight}
             scaledWidth={scaledWidth}
           />
-          {/* <Html groupProps={{ x: rectX - 70, y: rectY - 50 }}>
-            <Input
-              type='text'
-              w={40}
-              h={20}
-              styles={{
-                input: {
-                  padding: '2px',
-                  minHeight: '20px',
-                  height: '20px',
-                  borderRadius: '0px',
-                  textAlign: 'center'
-                }
-              }}
-            />
-          </Html> */}
         </Layer>
       </Stage>
       <GrainBox />
