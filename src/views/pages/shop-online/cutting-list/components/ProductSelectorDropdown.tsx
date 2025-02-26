@@ -15,7 +15,14 @@ const ProductSelectorDropdown = (props: ProductSelectorDropdownProps) => {
 
   const dropdownRef = useRef<HTMLDivElement>(null)
 
-  const { data: brandsData } = useCMSRequest().useQuery('get', '/items/brands')
+  const { data: brandsData } = useSHOPRequest().useQuery('get', '/items/categories', {
+    params: {
+      query: {
+        fields: ['*.*.*'],
+        [`filter[parent][related_categories_id][name][_eq]`]: 'brand'
+      }
+    }
+  })
 
   const brands = brandsData?.data
 
@@ -60,7 +67,7 @@ const ProductSelectorDropdown = (props: ProductSelectorDropdownProps) => {
 
   useEffect(() => {
     if (brands) {
-      setSelectedBrand(brands[0]?.page_name)
+      setSelectedBrand(brands[0]?.name)
     }
   }, [brands])
 
@@ -92,11 +99,11 @@ const ProductSelectorDropdown = (props: ProductSelectorDropdownProps) => {
               {brands?.map(brand => (
                 <div
                   className={`px-[9.75px] py-2 border border-primary text-primary text-[14px] capitalize cursor-pointer ${
-                    brand.page_name === selectedBrand ? 'bg-primary text-white' : ''
+                    brand.name === selectedBrand ? 'bg-primary text-white' : ''
                   }`}
-                  onClick={() => handleSelectBrand(brand.page_name)}
+                  onClick={() => handleSelectBrand(brand.name)}
                 >
-                  {brand.page_name}
+                  {brand.name}
                 </div>
               ))}
             </div>

@@ -130,7 +130,7 @@ const BottomHorizontalLine = (props: BottomHorizontalLineProps) => {
     <>
       <Line points={points} stroke='#7D848C' strokeWidth={1} />
       {leftAngleCutOnBottomHorizontalLine.width + rightAngleCutOnBottomHorizontalLine.width < rectX + 10 && (
-        <Rect x={textBgX} y={textBgY} width={70} height={10} fill='#fce6e7' />
+        <Rect x={textBgX} y={textBgY} width={70} height={10} fill='#fef2f2' />
       )}
       <Rect x={lines.left.x} y={lines.left.y} height={10} stroke='#7D848C' strokeWidth={1} />
       <Rect x={lines.right.x} y={lines.right.y} height={10} stroke='#7D848C' strokeWidth={1} />
@@ -164,7 +164,7 @@ const BottomHorizontalLine = (props: BottomHorizontalLineProps) => {
               y={textBgY}
               width={55}
               height={10}
-              fill='#fce6e7'
+              fill='#fef2f2'
             />
           )}
           <Text
@@ -195,7 +195,7 @@ const BottomHorizontalLine = (props: BottomHorizontalLineProps) => {
               y={textBgY}
               width={55}
               height={10}
-              fill='#fce6e7'
+              fill='#fef2f2'
             />
           )}
           <Text
