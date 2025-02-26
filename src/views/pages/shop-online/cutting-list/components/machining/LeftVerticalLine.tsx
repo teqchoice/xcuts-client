@@ -129,7 +129,7 @@ const LeftVerticalLine = (props: LeftVerticalLineProps) => {
     <>
       <Line points={points} stroke='#7D848C' strokeWidth={1} />
       {topAngleCutOnLeftVerticalLine.height + bottomAngleCutOnLeftVerticalLine.height < rectY + 10 && (
-        <Rect x={textBgX} y={textBgY} width={10} height={70} fill='#fce6e7' />
+        <Rect x={textBgX} y={textBgY} width={10} height={70} fill='#fef2f2' />
       )}
       <Rect x={lines.bottom.x} y={lines.bottom.y} height={1} stroke='#7D848C' strokeWidth={10} />
       <Rect x={lines.top.x} y={lines.top.y} height={1} stroke='#7D848C' strokeWidth={10} />
@@ -164,7 +164,7 @@ const LeftVerticalLine = (props: LeftVerticalLineProps) => {
               y={rectY + topAngleCutOnLeftVerticalLine.height / 2 - 27.5}
               width={10}
               height={55}
-              fill='#fce6e7'
+              fill='#fef2f2'
             />
           )}
           <Text
@@ -195,7 +195,7 @@ const LeftVerticalLine = (props: LeftVerticalLineProps) => {
               y={rectY + scaledHeight - bottomAngleCutOnLeftVerticalLine.height / 2 - 27.5}
               width={10}
               height={55}
-              fill='#fce6e7'
+              fill='#fef2f2'
             />
           )}
           <Text

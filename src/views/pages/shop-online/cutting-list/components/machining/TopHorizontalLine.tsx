@@ -129,7 +129,7 @@ const TopHorizontalLine = (props: TopHorizontalLineProps) => {
     <>
       <Line points={points} stroke='#7D848C' strokeWidth={1} />
       {leftAngleCutOnTopHorizontalLine.width + rightAngleCutOnTopHorizontalLine.width < rectX + 10 && (
-        <Rect x={textBgX} y={textBgY} width={70} height={10} fill='#fce6e7' />
+        <Rect x={textBgX} y={textBgY} width={70} height={10} fill='#fef2f2' />
       )}
       <Rect x={lines.left.x} y={lines.left.y} height={10} stroke='#7D848C' strokeWidth={1} />
       <Rect x={lines.right.x} y={lines.right.y} height={10} stroke='#7D848C' strokeWidth={1} />
@@ -163,7 +163,7 @@ const TopHorizontalLine = (props: TopHorizontalLineProps) => {
               y={textBgY}
               width={55}
               height={10}
-              fill='#fce6e7'
+              fill='#fef2f2'
             />
           )}
           <Text
@@ -194,7 +194,7 @@ const TopHorizontalLine = (props: TopHorizontalLineProps) => {
               y={textBgY}
               width={55}
               height={10}
-              fill='#fce6e7'
+              fill='#fef2f2'
             />
           )}
           <Text

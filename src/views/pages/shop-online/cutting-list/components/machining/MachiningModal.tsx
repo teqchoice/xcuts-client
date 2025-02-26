@@ -1,25 +1,30 @@
 import { useState } from 'react'
-import { Modal, Select } from '@mantine/core'
+import { Button, Modal, Select } from '@mantine/core'
 import Canvas from './Canvas'
 import { IoMdClose } from 'react-icons/io'
 import MachiningOptions from './MachiningOptions'
 import { useMediaQuery } from '@mantine/hooks'
 
-const MachiningModal = () => {
+type MachiningModalProps = {
+  disabled: boolean
+}
+
+const MachiningModal = (props: MachiningModalProps) => {
+  const { disabled } = props
+
   const [isOpen, setIsOpen] = useState(false)
 
   const isMd = useMediaQuery('(min-width: 768px)')
 
-  console.log(isMd)
-
   return (
     <>
-      <button
-        className='w-full border border-primary text-primary py-1 hover:bg-primary-100'
+      <Button
+        className='!w-full border border-primary text-primary py-1 hover:bg-primary-100 !rounded-none !font-normal'
         onClick={() => setIsOpen(true)}
+        disabled={disabled}
       >
-        machining
-      </button>
+        Machining
+      </Button>
 
       <Modal
         opened={isOpen}

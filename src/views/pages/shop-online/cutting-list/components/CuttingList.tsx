@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import ProductSelectorDropdown from './ProductSelectorDropdown'
 import MachiningModal from './machining/MachiningModal'
-import { Select } from '@mantine/core'
+import { Select, Tooltip } from '@mantine/core'
 import useCuttingListStore from './store/cuttingListStore'
 import { components } from '@/core/api-shop/v1'
 
@@ -81,6 +81,8 @@ const CuttingList = () => {
     setData(prevData => prevData.map((item, i) => (i === index ? { ...item, [key]: value } : item)))
   }
 
+  console.log(addedDecors)
+
   return (
     <div className='pt-5 pb-10'>
       <div className='w-full'>
@@ -147,7 +149,8 @@ const CuttingList = () => {
                   type='text'
                   placeholder='Enter decor code or name'
                   className='h-[35px] px-2 border border-[#d1d1d1] focus-visible:outline-none w-full placeholder:!text-[#b9b9b9] traci !text-[#222222] !text-[14px] placeholder:text-[12px]'
-                  value={decor.product_name || ''}
+                  value={`${decor?.product_code ? `${decor.product_code}-` : ''}${decor.product_name ?? ''}`}
+                  title={`${decor?.product_code ? `${decor.product_code}-` : ''}${decor.product_name ?? ''}`}
                   // onChange={e => handleInputChange(index, 'material', e.target.value)}
                 />
               </ProductSelectorDropdown>
@@ -179,22 +182,68 @@ const CuttingList = () => {
               />
             </div>
             <div style={{ width: '55px' }}>
-              <input
-                type='text'
-                className='h-[35px] px-2 border border-[#d1d1d1] focus-visible:outline-none w-full placeholder:!text-[#b9b9b9] traci !text-[#222222] !text-[14px] placeholder:text-[12px] text-center'
-                value={decor.inputLength}
-                onChange={event => updateDecor(decor.id, { ...decor, inputLength: +event?.target.value })}
-                disabled={!decor.product_name}
-              />
+              <Tooltip
+                label={`Maximum length is ${decor.length}mm`}
+                disabled={!decor?.inputLength || decor?.inputLength! <= decor.length!}
+                w={115}
+                multiline
+                position='top-start'
+                withArrow
+                offset={{
+                  alignmentAxis: -27,
+                  mainAxis: 5
+                }}
+                arrowOffset={50}
+                arrowSize={10}
+                transitionProps={{ transition: 'pop', duration: 300 }}
+                classNames={{
+                  tooltip:
+                    '!text-[12px] !text-center !border !border-red-300 !bg-red-100 !text-red-500 !py-0 !px-1 !rounded-none',
+                  arrow: '!bg-red-100'
+                }}
+              >
+                <input
+                  type='text'
+                  className={`h-[35px] px-2 border ${
+                    decor?.inputLength! > decor.length! ? 'border-red-300' : 'border-[#d1d1d1]'
+                  } focus-visible:outline-none w-full placeholder:!text-[#b9b9b9] traci !text-[#222222] !text-[14px] placeholder:text-[12px] text-center`}
+                  value={decor.inputLength}
+                  onChange={event => updateDecor(decor.id, { ...decor, inputLength: +event?.target.value })}
+                  disabled={!decor.product_name}
+                />
+              </Tooltip>
             </div>
             <div style={{ width: '55px' }}>
-              <input
-                type='text'
-                className='h-[35px] px-2 border border-[#d1d1d1] focus-visible:outline-none w-full placeholder:!text-[#b9b9b9] traci !text-[#222222] !text-[14px] placeholder:text-[12px] text-center'
-                value={decor.inputWidth}
-                onChange={event => updateDecor(decor.id, { ...decor, inputWidth: +event?.target.value })}
-                disabled={!decor.product_name}
-              />
+              <Tooltip
+                label={`Maximum Width is ${decor.width}mm`}
+                disabled={!decor?.inputWidth || decor?.inputWidth! <= decor.width!}
+                w={115}
+                multiline
+                position='top-start'
+                withArrow
+                offset={{
+                  alignmentAxis: -27,
+                  mainAxis: 5
+                }}
+                arrowOffset={50}
+                arrowSize={10}
+                transitionProps={{ transition: 'pop', duration: 300 }}
+                classNames={{
+                  tooltip:
+                    '!text-[12px] !text-center !border !border-red-300 !bg-red-100 !text-red-500 !py-0 !px-1 !rounded-none',
+                  arrow: '!bg-red-100'
+                }}
+              >
+                <input
+                  type='text'
+                  className={`h-[35px] px-2 border ${
+                    decor?.inputWidth! > decor.width! ? 'border-red-300' : 'border-[#d1d1d1]'
+                  } focus-visible:outline-none w-full placeholder:!text-[#b9b9b9] traci !text-[#222222] !text-[14px] placeholder:text-[12px] text-center`}
+                  value={decor.inputWidth}
+                  onChange={event => updateDecor(decor.id, { ...decor, inputWidth: +event?.target.value })}
+                  disabled={!decor.product_name}
+                />
+              </Tooltip>
             </div>
             <div style={{ width: '42px' }}>
               <input
@@ -256,7 +305,11 @@ const CuttingList = () => {
               decor.inputLength &&
               decor.inputWidth &&
               decor.inputQuantity ? (
-                <MachiningModal />
+                <MachiningModal
+                  disabled={
+                    decor?.inputWidth! > decor.width! || !decor?.inputWidth || decor?.inputWidth! > decor.width!
+                  }
+                />
               ) : null}
             </div>
             <div style={{ width: '150px' }}>
