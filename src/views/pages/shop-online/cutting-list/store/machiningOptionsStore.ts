@@ -24,6 +24,7 @@ export type Store = {
   setCurrentMachiningOption: (id: string) => void
   updateCurrentMachiningOption: (option: MachiningOption) => void
   disableAllMachiningOptions: () => void
+  removeAllMachiningOptions: () => void
 }
 
 export const useMachiningStore = create<Store>()((set, get) => ({
@@ -126,5 +127,10 @@ export const useMachiningStore = create<Store>()((set, get) => ({
         machiningOptions: updatedMachiningOptions,
         currentMachiningOption: null
       }
-    })
+    }),
+  removeAllMachiningOptions: () =>
+    set(() => ({
+      machiningOptions: null,
+      currentMachiningOption: null
+    }))
 }))

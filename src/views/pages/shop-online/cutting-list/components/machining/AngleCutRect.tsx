@@ -2,7 +2,7 @@ import React from 'react'
 import { Rect, Text } from 'react-konva'
 import { useAngleCutMachiningOptions } from '../../hooks/useAngleCutMachiningOptions'
 import { useCurrentMachiningOption } from '../../hooks/useCurrentMachiningOption'
-import { useMachiningStore } from '../store/machiningOptionsStore'
+import { useMachiningStore } from '../../store/machiningOptionsStore'
 
 type AngleCutRectProps = {
   rectX: number
@@ -118,8 +118,8 @@ const AngleCutRect = (props: AngleCutRectProps) => {
         fontSize={12}
         fill='#3592C8'
         align='center'
-        width={scale(Math.round(currentAngleCutHypotenuse))}
-        offsetX={scale(Math.round(currentAngleCutHypotenuse)) / 2}
+        width={200}
+        offsetX={100}
         offsetY={angleCutTextOffsetY}
         rotation={angleCutRectRotation}
       />
