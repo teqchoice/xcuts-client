@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react'
 import Image from 'next/image'
-import { useMachiningStore } from '../store/machiningOptionsStore'
+import { useMachiningStore } from '../../store/machiningOptionsStore'
 const FaceBox = () => {
   const { currentMachiningOption } = useMachiningStore()
 

@@ -1,4 +1,4 @@
-import { useMachiningStore } from '../store/machiningOptionsStore'
+import { useMachiningStore } from '../../store/machiningOptionsStore'
 import AngledCutOption from './AngledCutOption'
 
 type ActiveOptionProps = {}

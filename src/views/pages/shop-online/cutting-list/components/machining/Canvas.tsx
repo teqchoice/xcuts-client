@@ -2,7 +2,7 @@ import { Stage, Layer } from 'react-konva'
 import FaceBox from './FaceBox'
 import GrainBox from './GrainBox'
 import DirectionTile from './DirectionTile'
-import useCuttingListStore from '../store/cuttingListStore'
+import useCuttingListStore from '../../store/cuttingListStore'
 import L1W1Inputs from './L1W1Inputs'
 import { useAngleCutMachiningOptions } from '../../hooks/useAngleCutMachiningOptions'
 import { useCurrentMachiningOption } from '../../hooks/useCurrentMachiningOption'
@@ -12,7 +12,7 @@ import TopHorizontalLine from './TopHorizontalLine'
 import BottomHorizontalLine from './BottomHorizontalLine'
 import RightVerticalLine from './RightVerticalLine'
 import LeftVerticalLine from './LeftVerticalLine'
-import { useMachiningStore } from '../store/machiningOptionsStore'
+import { useMachiningStore } from '../../store/machiningOptionsStore'
 
 const Canvas: React.FC = () => {
   const { currentMachiningOption } = useMachiningStore()

@@ -1,4 +1,4 @@
-import { useMachiningStore } from '../components/store/machiningOptionsStore'
+import { useMachiningStore } from '../store/machiningOptionsStore'
 
 export const useCurrentMachiningOption = () => {
   const { currentMachiningOption } = useMachiningStore()

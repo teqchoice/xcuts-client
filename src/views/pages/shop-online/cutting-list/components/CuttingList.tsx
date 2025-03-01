@@ -1,10 +1,15 @@
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 import ProductSelectorDropdown from './ProductSelectorDropdown'
 import MachiningModal from './machining/MachiningModal'
-import { Select, Tooltip } from '@mantine/core'
-import useCuttingListStore from './store/cuttingListStore'
+import { Button, Select, Tooltip } from '@mantine/core'
+import useCuttingListStore from '../store/cuttingListStore'
 import { components } from '@/core/api-shop/v1'
-
+import { useAngleCutMachiningOptions } from '../hooks/useAngleCutMachiningOptions'
+import ChangePanelSizeConfirmationModal, {
+  ChangePanelSizeConfirmationModalHandle
+} from './ChangePanelSizeConfirmationModal'
+import { AiOutlineExclamation } from 'react-icons/ai'
+import { useMachiningStore } from '../store/machiningOptionsStore'
 // Define the type for your data
 type CuttingListData = {
   id: number
@@ -25,6 +30,12 @@ type CuttingListData = {
 
 const CuttingList = () => {
   const { currentDecor, setCurrentDecor, addDecor, addedDecors, updateDecor } = useCuttingListStore()
+
+  const { L1W1AngleCut, L1W2AngleCut, L2W1AngleCut, L2W2AngleCut } = useAngleCutMachiningOptions()
+
+  const { removeAllMachiningOptions } = useMachiningStore()
+
+  const modalRef = useRef<ChangePanelSizeConfirmationModalHandle>(null)
 
   const [data, setData] = useState<CuttingListData[]>([
     {
@@ -81,7 +92,10 @@ const CuttingList = () => {
     setData(prevData => prevData.map((item, i) => (i === index ? { ...item, [key]: value } : item)))
   }
 
-  console.log(addedDecors)
+  const handleResetMachiningOptions = () => {
+    removeAllMachiningOptions()
+    modalRef.current?.closeModal()
+  }
 
   return (
     <div className='pt-5 pb-10'>
@@ -201,15 +215,21 @@ const CuttingList = () => {
                     '!text-[12px] !text-center !border !border-red-300 !bg-red-100 !text-red-500 !py-0 !px-1 !rounded-none',
                   arrow: '!bg-red-100'
                 }}
+                onClick={() => {
+                  if (L1W1AngleCut || L1W2AngleCut || L2W1AngleCut || L2W2AngleCut) {
+                    modalRef.current?.openModal()
+                  }
+                }}
               >
                 <input
-                  type='text'
+                  type='number'
                   className={`h-[35px] px-2 border ${
                     decor?.inputLength! > decor.length! ? 'border-red-300' : 'border-[#d1d1d1]'
                   } focus-visible:outline-none w-full placeholder:!text-[#b9b9b9] traci !text-[#222222] !text-[14px] placeholder:text-[12px] text-center`}
                   value={decor.inputLength}
                   onChange={event => updateDecor(decor.id, { ...decor, inputLength: +event?.target.value })}
                   disabled={!decor.product_name}
+                  readOnly={!!L1W1AngleCut || !!L1W2AngleCut || !!L2W1AngleCut || !!L2W2AngleCut}
                 />
               </Tooltip>
             </div>
@@ -233,15 +253,21 @@ const CuttingList = () => {
                     '!text-[12px] !text-center !border !border-red-300 !bg-red-100 !text-red-500 !py-0 !px-1 !rounded-none',
                   arrow: '!bg-red-100'
                 }}
+                onClick={() => {
+                  if (L1W1AngleCut || L1W2AngleCut || L2W1AngleCut || L2W2AngleCut) {
+                    modalRef.current?.openModal()
+                  }
+                }}
               >
                 <input
-                  type='text'
+                  type='number'
                   className={`h-[35px] px-2 border ${
                     decor?.inputWidth! > decor.width! ? 'border-red-300' : 'border-[#d1d1d1]'
                   } focus-visible:outline-none w-full placeholder:!text-[#b9b9b9] traci !text-[#222222] !text-[14px] placeholder:text-[12px] text-center`}
                   value={decor.inputWidth}
                   onChange={event => updateDecor(decor.id, { ...decor, inputWidth: +event?.target.value })}
                   disabled={!decor.product_name}
+                  readOnly={!!L1W1AngleCut || !!L1W2AngleCut || !!L2W1AngleCut || !!L2W2AngleCut}
                 />
               </Tooltip>
             </div>
@@ -307,7 +333,7 @@ const CuttingList = () => {
               decor.inputQuantity ? (
                 <MachiningModal
                   disabled={
-                    decor?.inputWidth! > decor.width! || !decor?.inputWidth || decor?.inputWidth! > decor.width!
+                    decor?.inputLength! > decor.length! || !decor?.inputWidth || decor?.inputWidth! > decor.width!
                   }
                 />
               ) : null}
@@ -346,6 +372,36 @@ const CuttingList = () => {
           </div>
         ))}
       </div>
+      <ChangePanelSizeConfirmationModal ref={modalRef}>
+        <div className='flex flex-col items-center gap-y-4'>
+          <div className='rounded-full border border-primary p-2'>
+            <AiOutlineExclamation size={50} className='text-primary' />
+          </div>
+
+          <span className='text-4xl'>Confirmation Required</span>
+          <span className='text-base text-center font-normal text-gray-700'>
+            Changing panel size will result in discarding your machining options. Do you want to proceed?
+          </span>
+          <div className='flex items-center gap-x-2'>
+            <Button
+              color='red'
+              variant='outline'
+              className='!rounded-none !font-normal'
+              onClick={() => modalRef.current?.closeModal()}
+            >
+              Cancel
+            </Button>
+            <Button
+              color='blue'
+              variant='outline'
+              className='!rounded-none !font-normal'
+              onClick={handleResetMachiningOptions}
+            >
+              Proceed
+            </Button>
+          </div>
+        </div>
+      </ChangePanelSizeConfirmationModal>
     </div>
   )
 }

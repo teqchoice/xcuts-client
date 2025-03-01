@@ -4,8 +4,8 @@ import SelectedOptions from './SelectedOptions'
 import { uid } from 'radash'
 import ActiveOption from './ActiveOption'
 import Image from 'next/image'
-import { useMachiningStore } from '../store/machiningOptionsStore'
-import { useVirtualFromStore } from '../store/useVirtualFromStore'
+import { useMachiningStore } from '../../store/machiningOptionsStore'
+import { useVirtualFromStore } from '../../store/useVirtualFromStore'
 
 const MachiningOptions = () => {
   const [selectedMachiningOption, setSelectedMachiningOption] = useState<string | null>(null)
@@ -13,7 +13,7 @@ const MachiningOptions = () => {
   const { setCurrentMachiningOption, currentMachiningOption, addMachiningOption, machiningOptions } =
     useMachiningStore()
 
-  const { setVirtualFrom, virtualFrom } = useVirtualFromStore()
+  const { setVirtualFrom } = useVirtualFromStore()
 
   const noMoreAnglesForAngleCutting = machiningOptions?.filter(item => item.type === 'angled-cut').length === 4
 
@@ -50,6 +50,13 @@ const MachiningOptions = () => {
               },
               { group: 'Surface shaping', items: [{ value: 'groove', label: 'Groove' }] },
               {
+                group: 'Hinge holes',
+                items: [
+                  { value: 'screw-on', label: 'Blum 35mm Screw-On' },
+                  { value: 'inserta', label: 'Blum 35mm INSERTA' }
+                ]
+              },
+              {
                 group: 'Shelf holes',
                 items: [
                   { value: '5mm', label: '5mm Ø (8mm deep)' },
@@ -60,6 +67,7 @@ const MachiningOptions = () => {
             color='gray'
             placeholder='select machining option'
             className='col-span-4'
+            maxDropdownHeight={324}
             value={selectedMachiningOption}
             onChange={value => setSelectedMachiningOption(value)}
             renderOption={item => {

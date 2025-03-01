@@ -1,4 +1,4 @@
-import { useMachiningStore } from '../components/store/machiningOptionsStore'
+import { useMachiningStore } from '../store/machiningOptionsStore'
 import { useCurrentMachiningOption } from './useCurrentMachiningOption'
 
 export const useAngleCutMachiningOptions = () => {
