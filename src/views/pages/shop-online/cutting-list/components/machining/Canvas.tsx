@@ -30,8 +30,8 @@ const Canvas: React.FC = () => {
 
   const isAngledCut = currentMachiningOption?.type === 'angled-cut'
 
-  const stageWidth = 800
-  const stageHeight = 800
+  const stageWidth = 880
+  const stageHeight = 700
 
   // Scale factor to fit the rectangle within the stage
   const scaleFactor = Math.min(stageWidth / dimensions.width, stageHeight / dimensions.height) * 0.4

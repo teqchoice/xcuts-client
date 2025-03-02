@@ -25,12 +25,15 @@ export type Store = {
   updateCurrentMachiningOption: (option: MachiningOption) => void
   disableAllMachiningOptions: () => void
   removeAllMachiningOptions: () => void
+  setMachiningOptions: (options: MachiningOption[]) => void
+  isMachiningModalOpen: boolean
+  setIsMachiningModalOpen: (isOpen: boolean) => void
 }
 
 export const useMachiningStore = create<Store>()((set, get) => ({
   machiningOptions: null,
   currentMachiningOption: null,
-
+  isMachiningModalOpen: false,
   addMachiningOption: option =>
     set(state => {
       if (option.type === 'angled-cut') {
@@ -128,9 +131,18 @@ export const useMachiningStore = create<Store>()((set, get) => ({
         currentMachiningOption: null
       }
     }),
+
   removeAllMachiningOptions: () =>
     set(() => ({
       machiningOptions: null,
       currentMachiningOption: null
-    }))
+    })),
+
+  setMachiningOptions: options =>
+    set(() => ({
+      machiningOptions: options,
+      currentMachiningOption: options.find(item => item.selected) ?? null
+    })),
+
+  setIsMachiningModalOpen: isOpen => set({ isMachiningModalOpen: isOpen })
 }))
