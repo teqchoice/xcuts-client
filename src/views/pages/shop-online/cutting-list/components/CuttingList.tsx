@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import ProductSelectorDropdown from './ProductSelectorDropdown'
 import MachiningModal from './machining/MachiningModal'
 import { Button, Select, Tooltip } from '@mantine/core'
@@ -31,128 +31,102 @@ type CuttingListData = {
 const CuttingList = () => {
   const { currentDecor, setCurrentDecor, addDecor, addedDecors, updateDecor } = useCuttingListStore()
 
-  const { L1W1AngleCut, L1W2AngleCut, L2W1AngleCut, L2W2AngleCut } = useAngleCutMachiningOptions()
+  const { setMachiningOptions, isMachiningModalOpen, setIsMachiningModalOpen } = useMachiningStore()
 
   const { removeAllMachiningOptions } = useMachiningStore()
 
   const modalRef = useRef<ChangePanelSizeConfirmationModalHandle>(null)
 
-  const [data, setData] = useState<CuttingListData[]>([
-    {
-      id: 0,
-      material: null,
-      thick: '10',
-      length: '100',
-      width: '50',
-      qty: '5',
-      partDescription: 'Part 1',
-      l1: 'L1',
-      l2: 'L2',
-      w1: 'W1',
-      w2: 'W2',
-      sprayCoating: 'Coating 1',
-      grainMatch: 'Match 1',
-      actions: 'Actions 1'
-    },
-    {
-      id: 1,
-      material: null,
-      thick: '20',
-      length: '200',
-      width: '60',
-      qty: '10',
-      partDescription: 'Part 2',
-      l1: 'L1',
-      l2: 'L2',
-      w1: 'W1',
-      w2: 'W2',
-      sprayCoating: 'Coating 2',
-      grainMatch: 'Match 2',
-      actions: 'Actions 2'
-    },
-    {
-      id: 2,
-      material: null,
-      thick: '30',
-      length: '300',
-      width: '70',
-      qty: '15',
-      partDescription: 'Part 3',
-      l1: 'L1',
-      l2: 'L2',
-      w1: 'W1',
-      w2: 'W2',
-      sprayCoating: 'Coating 3',
-      grainMatch: 'Match 3',
-      actions: 'Actions 3'
-    }
-  ])
-
-  const handleInputChange = (index: number, key: keyof CuttingListData, value: string) => {
-    setData(prevData => prevData.map((item, i) => (i === index ? { ...item, [key]: value } : item)))
-  }
-
   const handleResetMachiningOptions = () => {
     removeAllMachiningOptions()
+    updateDecor(currentDecor?.id ?? '', { ...currentDecor, machiningOptions: [] })
     modalRef.current?.closeModal()
   }
+
+  const [selectedRow, setSelectedRow] = useState<string>('')
+
+  const rowRefs = useRef<(HTMLDivElement | null)[]>([])
+
+  const scrollToRow = (index: number) => {
+    const row = rowRefs.current[index]
+    if (row) {
+      row.scrollIntoView({ behavior: 'instant', block: 'start' })
+    }
+  }
+
+  useEffect(() => {
+    if (!!isMachiningModalOpen) {
+      document.documentElement.classList.add('overflow-y-hidden')
+    } else {
+      document.documentElement.classList.remove('overflow-y-hidden')
+    }
+  }, [isMachiningModalOpen])
 
   return (
     <div className='pt-5 pb-10'>
       <div className='w-full'>
         <div className='flex gap-x-3 px-2'>
-          <div className='text-left text-[#999999] text-[14px] font-normal align-top' style={{ width: '25px' }}>
+          <div className='text-left text-[#999999] text-[13px] font-normal align-top' style={{ width: '25px' }}>
             #
           </div>
-          <div className='text-left text-[#999999] text-[14px] font-normal align-top' style={{ width: '215px' }}>
+          <div className='text-left text-[#999999] text-[13px] font-normal align-top' style={{ width: '260px' }}>
             Material decor code / name
           </div>
-          <div className='text-left text-[#999999] text-[14px] font-normal align-top' style={{ width: '60px' }}>
+          <div className='text-left text-[#999999] text-[13px] font-normal align-top' style={{ width: '60px' }}>
             Thick [mm]
           </div>
-          <div className='text-left text-[#999999] text-[14px] font-normal align-top' style={{ width: '55px' }}>
+          <div className='text-left text-[#999999] text-[13px] font-normal align-top' style={{ width: '65px' }}>
             Length [mm]
           </div>
-          <div className='text-left text-[#999999] text-[14px] font-normal align-top' style={{ width: '55px' }}>
+          <div className='text-left text-[#999999] text-[13px] font-normal align-top' style={{ width: '65px' }}>
             Width [mm]
           </div>
-          <div className='text-left text-[#999999] text-[14px] font-normal align-top' style={{ width: '42px' }}>
+          <div className='text-left text-[#999999] text-[13px] font-normal align-top' style={{ width: '50px' }}>
             Qty
           </div>
-          <div className='text-left text-[#999999] text-[14px] font-normal align-top' style={{ width: '115px' }}>
+          <div className='text-left text-[#999999] text-[13px] font-normal align-top' style={{ width: '115px' }}>
             Part description
           </div>
-          <div className='text-left text-[#999999] text-[14px] font-normal align-top' style={{ width: '55px' }}>
+          <div className='text-left text-[#999999] text-[13px] font-normal align-top' style={{ width: '55px' }}>
             L1
           </div>
-          <div className='text-left text-[#999999] text-[14px] font-normal align-top' style={{ width: '55px' }}>
+          <div className='text-left text-[#999999] text-[13px] font-normal align-top' style={{ width: '55px' }}>
             L2
           </div>
-          <div className='text-left text-[#999999] text-[14px] font-normal align-top' style={{ width: '55px' }}>
+          <div className='text-left text-[#999999] text-[13px] font-normal align-top' style={{ width: '55px' }}>
             W1
           </div>
-          <div className='text-left text-[#999999] text-[14px] font-normal align-top' style={{ width: '55px' }}>
+          <div className='text-left text-[#999999] text-[13px] font-normal align-top' style={{ width: '55px' }}>
             W2
           </div>
-          <div className='text-left text-[#999999] text-[14px] font-normal align-top' style={{ width: '150px' }}>
+          <div className='text-left text-[#999999] text-[13px] font-normal align-top' style={{ width: '150px' }}>
             Additional Machining
           </div>
-          <div className='text-left text-[#999999] text-[14px] font-normal align-top' style={{ width: '150px' }}>
+          <div className='text-left text-[#999999] text-[13px] font-normal align-top' style={{ width: '125px' }}>
             Spray coating
           </div>
-          <div className='text-left text-[#999999] text-[14px] font-normal align-top' style={{ width: '150px' }}>
+          <div className='text-left text-[#999999] text-[13px] font-normal align-top' style={{ width: '125px' }}>
             Grain match
           </div>
-          <div className='text-right text-[#999999] text-[14px] font-normal align-top' style={{ width: '100px' }}>
+          <div className='text-right text-[#999999] text-[13px] font-normal align-top' style={{ width: '100px' }}>
             Actions
           </div>
         </div>
         {addedDecors.map((decor, index) => (
-          <div key={decor.id} className='hover:bg-[#FFFADB] transition-all duration-200 flex items-center p-2 gap-x-3'>
+          <div
+            key={decor.id}
+            className={`hover:bg-[#FFFADB] transition-all duration-200 flex items-center scroll-mt-[20px] p-2 gap-x-3 ${
+              selectedRow === decor.id ? 'z-50 relative bg-white' : ''
+            }`}
+            ref={el => {
+              rowRefs.current[index] = el
+            }}
+            onClick={() => setSelectedRow(decor.id)}
+          >
             <div className='text-center' style={{ width: '25px' }}>
               {index + 1}
             </div>
-            <div style={{ width: '215px' }} className='relative'>
+            <div style={{ width: '260px' }} className='relative'>
               <ProductSelectorDropdown
                 onSelect={selectedDecor => {
                   setCurrentDecor(decor.id)
@@ -165,7 +139,6 @@ const CuttingList = () => {
                   className='h-[35px] px-2 border border-[#d1d1d1] focus-visible:outline-none w-full placeholder:!text-[#b9b9b9] traci !text-[#222222] !text-[14px] placeholder:text-[12px]'
                   value={`${decor?.product_code ? `${decor.product_code}-` : ''}${decor.product_name ?? ''}`}
                   title={`${decor?.product_code ? `${decor.product_code}-` : ''}${decor.product_name ?? ''}`}
-                  // onChange={e => handleInputChange(index, 'material', e.target.value)}
                 />
               </ProductSelectorDropdown>
             </div>
@@ -193,9 +166,10 @@ const CuttingList = () => {
                 onChange={value => updateDecor(decor.id, { ...decor, inputThickness: value ?? '' })}
                 comboboxProps={{ shadow: 'lg' }}
                 allowDeselect={false}
+                readOnly={isMachiningModalOpen}
               />
             </div>
-            <div style={{ width: '55px' }}>
+            <div style={{ width: '65px' }}>
               <Tooltip
                 label={`Maximum length is ${decor.length}mm`}
                 disabled={!decor?.inputLength || decor?.inputLength! <= decor.length!}
@@ -216,7 +190,7 @@ const CuttingList = () => {
                   arrow: '!bg-red-100'
                 }}
                 onClick={() => {
-                  if (L1W1AngleCut || L1W2AngleCut || L2W1AngleCut || L2W2AngleCut) {
+                  if (decor.machiningOptions?.length && !isMachiningModalOpen) {
                     modalRef.current?.openModal()
                   }
                 }}
@@ -229,11 +203,11 @@ const CuttingList = () => {
                   value={decor.inputLength}
                   onChange={event => updateDecor(decor.id, { ...decor, inputLength: +event?.target.value })}
                   disabled={!decor.product_name}
-                  readOnly={!!L1W1AngleCut || !!L1W2AngleCut || !!L2W1AngleCut || !!L2W2AngleCut}
+                  readOnly={!!decor.machiningOptions?.length || isMachiningModalOpen}
                 />
               </Tooltip>
             </div>
-            <div style={{ width: '55px' }}>
+            <div style={{ width: '65px' }}>
               <Tooltip
                 label={`Maximum Width is ${decor.width}mm`}
                 disabled={!decor?.inputWidth || decor?.inputWidth! <= decor.width!}
@@ -254,7 +228,7 @@ const CuttingList = () => {
                   arrow: '!bg-red-100'
                 }}
                 onClick={() => {
-                  if (L1W1AngleCut || L1W2AngleCut || L2W1AngleCut || L2W2AngleCut) {
+                  if (decor.machiningOptions?.length && !isMachiningModalOpen) {
                     modalRef.current?.openModal()
                   }
                 }}
@@ -267,17 +241,18 @@ const CuttingList = () => {
                   value={decor.inputWidth}
                   onChange={event => updateDecor(decor.id, { ...decor, inputWidth: +event?.target.value })}
                   disabled={!decor.product_name}
-                  readOnly={!!L1W1AngleCut || !!L1W2AngleCut || !!L2W1AngleCut || !!L2W2AngleCut}
+                  readOnly={!!decor.machiningOptions?.length || isMachiningModalOpen}
                 />
               </Tooltip>
             </div>
-            <div style={{ width: '42px' }}>
+            <div style={{ width: '50px' }}>
               <input
-                type='text'
+                type='number'
                 className='h-[35px] px-2 border border-[#d1d1d1] focus-visible:outline-none w-full placeholder:!text-[#b9b9b9] traci !text-[#222222] !text-[14px] placeholder:text-[12px] text-center'
                 value={decor.inputQuantity}
                 onChange={event => updateDecor(decor.id, { ...decor, inputQuantity: +event?.target.value })}
                 disabled={!decor.product_name}
+                readOnly={isMachiningModalOpen}
               />
             </div>
             <div style={{ width: '115px' }}>
@@ -287,6 +262,7 @@ const CuttingList = () => {
                 value={decor.inputDescription}
                 onChange={event => updateDecor(decor.id, { ...decor, inputDescription: event?.target.value })}
                 disabled={!decor.product_name}
+                readOnly={isMachiningModalOpen}
               />
             </div>
             <div style={{ width: '55px' }}>
@@ -294,8 +270,8 @@ const CuttingList = () => {
                 type='text'
                 className='h-[35px] px-2 border border-[#d1d1d1] focus-visible:outline-none w-full placeholder:!text-[#b9b9b9] traci !text-[#222222] !text-[14px] placeholder:text-[12px]'
                 // value={row.l1}
-                onChange={e => handleInputChange(index, 'l1', e.target.value)}
                 disabled={!decor.product_name}
+                readOnly={isMachiningModalOpen}
               />
             </div>
             <div style={{ width: '55px' }}>
@@ -303,8 +279,8 @@ const CuttingList = () => {
                 type='text'
                 className='h-[35px] px-2 border border-[#d1d1d1] focus-visible:outline-none w-full placeholder:!text-[#b9b9b9] traci !text-[#222222] !text-[14px] placeholder:text-[12px]'
                 // value={row.l2}
-                onChange={e => handleInputChange(index, 'l2', e.target.value)}
                 disabled={!decor.product_name}
+                readOnly={isMachiningModalOpen}
               />
             </div>
             <div style={{ width: '55px' }}>
@@ -312,8 +288,8 @@ const CuttingList = () => {
                 type='text'
                 className='h-[35px] px-2 border border-[#d1d1d1] focus-visible:outline-none w-full placeholder:!text-[#b9b9b9] traci !text-[#222222] !text-[14px] placeholder:text-[12px]'
                 // value={row.w1}
-                onChange={e => handleInputChange(index, 'w1', e.target.value)}
                 disabled={!decor.product_name}
+                readOnly={isMachiningModalOpen}
               />
             </div>
             <div style={{ width: '55px' }}>
@@ -321,11 +297,11 @@ const CuttingList = () => {
                 type='text'
                 className='h-[35px] px-2 border border-[#d1d1d1] focus-visible:outline-none w-full placeholder:!text-[#b9b9b9] traci !text-[#222222] !text-[14px] placeholder:text-[12px]'
                 // value={row.w2}
-                onChange={e => handleInputChange(index, 'w2', e.target.value)}
                 disabled={!decor.product_name}
+                readOnly={isMachiningModalOpen}
               />
             </div>
-            <div style={{ width: '150px' }} onClick={() => setCurrentDecor(decor.id)}>
+            <div style={{ width: '150px' }} className='relative'>
               {decor.product_name &&
               decor.inputThickness &&
               decor.inputLength &&
@@ -335,38 +311,38 @@ const CuttingList = () => {
                   disabled={
                     decor?.inputLength! > decor.length! || !decor?.inputWidth || decor?.inputWidth! > decor.width!
                   }
+                  onMachiningClick={() => {
+                    // console.log(decor.machiningOptions)
+                    setMachiningOptions(decor.machiningOptions ?? [])
+                    setCurrentDecor(decor.id)
+                    setIsMachiningModalOpen(true)
+                    scrollToRow(index)
+                  }}
+                  setSelectedRow={setSelectedRow}
+                  selectedRow={selectedRow}
+                  currentDecorInList={decor.id}
                 />
               ) : null}
             </div>
-            <div style={{ width: '150px' }}>
+            <div style={{ width: '125px' }}>
               <input
                 type='text'
                 className='h-[35px] px-2 border border-[#d1d1d1] focus-visible:outline-none w-full placeholder:!text-[#b9b9b9] traci !text-[#222222] !text-[14px] placeholder:text-[12px]'
                 // value={row.sprayCoating}
-                onChange={e => handleInputChange(index, 'sprayCoating', e.target.value)}
                 disabled={!decor.product_name}
               />
             </div>
-            <div style={{ width: '150px' }}>
+            <div style={{ width: '125px' }}>
               <input
                 type='text'
                 className='h-[35px] px-2 border border-[#d1d1d1] focus-visible:outline-none w-full placeholder:!text-[#b9b9b9] traci !text-[#222222] !text-[14px] placeholder:text-[12px]'
                 // value={row.grainMatch}
-                onChange={e => handleInputChange(index, 'grainMatch', e.target.value)}
                 disabled={!decor.product_name}
               />
             </div>
             <div style={{ width: '100px' }}>
               <div className='flex justify-end'>
-                <button
-                  className='bg-red-500 text-white px-2 py-1 rounded'
-                  onClick={() => {
-                    const newData = data.filter((_, i) => i !== index)
-                    setData(newData)
-                  }}
-                >
-                  Delete
-                </button>
+                <button className='bg-red-500 text-white px-2 py-1 rounded'>Delete</button>
               </div>
             </div>
           </div>
@@ -402,6 +378,7 @@ const CuttingList = () => {
           </div>
         </div>
       </ChangePanelSizeConfirmationModal>
+      {isMachiningModalOpen && <div className='fixed inset-0 bg-black bg-opacity-50 z-40'></div>}
     </div>
   )
 }

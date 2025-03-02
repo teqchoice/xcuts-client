@@ -1,6 +1,7 @@
 import { components } from '@/core/api-shop/v1'
 import { uid } from 'radash'
 import { create } from 'zustand'
+import { MachiningOption } from './machiningOptionsStore'
 
 type Decor = components['schemas']['ItemsDecors'] & {
   inputThickness?: string
@@ -8,6 +9,7 @@ type Decor = components['schemas']['ItemsDecors'] & {
   inputWidth?: number
   inputQuantity?: number
   inputDescription?: string
+  machiningOptions?: MachiningOption[] | null
 }
 
 type CuttingListStore = {
