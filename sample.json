@@ -1,0 +1,57 @@
+{
+  "decor_id": "f2ad68fd-a401-45b5-b493-8f2a30397356",
+  "thickness": "18",
+  "length": "2000",
+  "width": "1000",
+  "quantity": "1",
+  "machining_options": [
+    {
+      "id": "OGgefcqJz8",
+      "type": "angled-cut",
+      "options": {
+        "angleOn": "L2-W2",
+        "from": {
+          "x": 100,
+          "y": 100
+        },
+        "edging": null
+      }
+    },
+    {
+      "id": "nYkUHMc9pT",
+      "type": "angled-cut",
+      "options": {
+        "angleOn": "L2-W1",
+        "from": {
+          "x": 100,
+          "y": 100
+        },
+        "edging": null
+      }
+    },
+    {
+      "id": "GD59YCHWrB",
+      "type": "angled-cut",
+      "options": {
+        "angleOn": "L1-W2",
+        "from": {
+          "x": 100,
+          "y": 100
+        },
+        "edging": null
+      }
+    },
+    {
+      "id": "isDuIPrAuO",
+      "type": "angled-cut",
+      "options": {
+        "angleOn": "L1-W1",
+        "from": {
+          "x": 100,
+          "y": 100
+        },
+        "edging": null
+      }
+    }
+  ]
+}
