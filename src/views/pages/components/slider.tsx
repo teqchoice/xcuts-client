@@ -23,17 +23,7 @@ const Slider = ({ children, slidesPerView, spaceBetween, className }: any) => {
       }}
       modules={[Navigation]}
     >
-      {Array.isArray(children) ? (
-        children.map((item, index) => {
-          return (
-            <SwiperSlide key={index} className={`${className} overflow-hidden w-full`}>
-              {item.props.children}
-            </SwiperSlide>
-          )
-        })
-      ) : (
-        <SwiperSlide>{children.props.children}</SwiperSlide>
-      )}
+      {children}
       <div className='absolute bottom-0 right-0 z-10 lg:w-[300px] md:w-[250px] w-[200px] bg-white lg:pb-64 md:pb-52 pb-40 lg:skew-y-[144deg] md:skew-y-[139deg] skew-y-[136deg] lg:origin-[110%_100%] md:origin-[90%_100%] origin-[90%_100%]'></div>
       <div className='flex gap-3 relative md:-top-14 -top-10 px-5'>
         <button onClick={() => swiperRef.current?.slidePrev()} className=' text-black z-50 relative'>

@@ -5,6 +5,7 @@ import Modal from '../components/Modal'
 import { Pencil } from '@icon-park/react'
 import { user_info } from '@/extensions/redux/api/auth'
 import Link from 'next/link'
+import Image from 'next/image'
 
 export default function ServicesSection({ data }: any) {
   // console.log(data)
@@ -305,29 +306,14 @@ export default function ServicesSection({ data }: any) {
                   src={'images/spray-painting.webp'}
                   alt=''
                 /> */}
-                <video
+                <Image
                   className='h-[380px] md:h-[460px] lg:h-[596px] w-full object-cover object-center'
                   src={`${process.env.NEXT_PUBLIC_API__URL_images}/${data?.s_poster4?.id}/${data?.s_poster4?.filename_download}`}
-                  width='100%'
-                  height='auto'
-                  onMouseEnter={e => {
-                    const video = e.currentTarget
-                    if (video.paused !== false) {
-                      video.play()
-                    }
-                  }}
-                  onMouseLeave={e => {
-                    const video = e.currentTarget
-                    if (video.paused === false) {
-                      video.pause()
-                    }
-                  }}
-                  playsInline
-                  autoPlay
-                  muted
-                  loop
-                  preload='auto'
-                ></video>
+                  alt='spray-painting'
+                  width={990}
+                  height={596}
+                  quality={100}
+                />
               </div>
             </div>
             <div className='basis-[47.88%] md:basis-[45%] lg:basis-[46%] xl:basis-[47%] 2xl:basis-[48%] flex items-center'>
