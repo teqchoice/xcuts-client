@@ -15,15 +15,27 @@ import Resources from './Resources'
 export default function index({ Data }: any) {
   return (
     <>
-      <PageIntroduction Data={{ title: 'CNC Wood Milling', baner: '/images/banner-1-showroom.jpeg' }} />
+      <PageIntroduction
+        Data={{
+          title: 'CNC Wood Milling',
+          baner: '/images/cnc-cutting/main-banner.jpg'
+        }}
+      />
       <IntroductionSection Data={Data?.delivery} />
-      <VideoSection Data={Data?.delivery} />
+      <VideoSection Data={{ src: '/images/cnc-cutting/video.mp4' }} />
 
       {/* <DifferentTechnologiesSection Data={Data?.delivery} /> */}
       {/* <PaintableSection Data={Data?.delivery} /> */}
 
       <GrainAlignment Data={Data?.delivery} />
-      <CuttingMCF Data={Data?.delivery} />
+      <CuttingMCF
+        Data={{
+          image1: '/images/cnc-cutting/cut-out.jpg',
+          image2: '/images/cnc-cutting/insert.jpg',
+          image3: '/images/cnc-cutting/profile.jpg',
+          image4: '/images/cnc-cutting/bevel.jpg'
+        }}
+      />
       <Grooving Data={Data?.delivery} />
       <ABSEdgebandSection Data={Data?.delivery} />
       <Resources Data={Data?.delivery} />

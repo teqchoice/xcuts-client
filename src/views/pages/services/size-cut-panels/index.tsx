@@ -13,13 +13,20 @@ import FAQ from './faq'
 export default function index({ Data }: any) {
   return (
     <>
-      <PageIntroduction Data={{ title: 'Panels Cut to Size', baner: '/images/banner-1-showroom.jpeg' }} />
+      <PageIntroduction Data={{ title: 'Panels Cut to Size', baner: '/images/size-cut-panel/main-banner.jpg' }} />
       <IntroductionSection Data={Data?.delivery} />
-      <VideoSection Data={Data?.delivery} />
+      <VideoSection Data={{ src: '/images/size-cut-panel/video.mp4' }} />
 
       {/* <DifferentTechnologiesSection Data={Data?.delivery} /> */}
 
-      <ABSEdgebandSection Data={Data?.delivery} />
+      <ABSEdgebandSection
+        Data={{
+          image1: '/images/size-cut-panel/computerised-cutting.jpg',
+          image2: '/images/size-cut-panel/accurate.jpg',
+          image3: '/images/size-cut-panel/panel-labelling.jpg',
+          image4: '/images/size-cut-panel/quality-inspections.jpg'
+        }}
+      />
 
       {/* <PaintableSection Data={Data?.delivery} /> */}
 

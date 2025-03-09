@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import React from 'react'
 
 type TOurGuarantee = {
@@ -64,20 +65,44 @@ export default function CuttingMCF(props: any) {
               </p>
 
               <div className='flex md:flex-row flex-col gap-5 my-5 lg:my-10'>
-                <div className='flex flex-col items-center gap-3'>
-                  <img className=' w-full object-cover object-center' src='/images/alldecor.jpeg' alt='' />
+                <div className='flex flex-col w-full items-center gap-3'>
+                  <Image
+                    className='w-full object-cover h-[192px]'
+                    src={props?.Data?.image1 ?? '/images/alldecor.jpeg'}
+                    alt=''
+                    height={285}
+                    width={190}
+                  />
                   <h4 className='font-bold text-lg'>Cutout</h4>
                 </div>
-                <div className='flex flex-col items-center gap-3'>
-                  <img className=' w-full object-cover object-center' src='/images/alldecor.jpeg' alt='' />
+                <div className='flex flex-col w-full items-center gap-3'>
+                  <Image
+                    className='w-full object-cover h-[192px]'
+                    src={props?.Data?.image2 ?? '/images/alldecor.jpeg'}
+                    alt=''
+                    height={285}
+                    width={190}
+                  />
                   <h4 className='font-bold text-lg'>Insert</h4>
                 </div>
-                <div className='flex flex-col items-center gap-3'>
-                  <img className=' w-full object-cover object-center' src='/images/alldecor.jpeg' alt='' />
+                <div className='flex flex-col w-full items-center gap-3'>
+                  <Image
+                    className='w-full object-cover h-[192px]'
+                    src={props?.Data?.image3 ?? '/images/alldecor.jpeg'}
+                    alt=''
+                    height={285}
+                    width={190}
+                  />
                   <h4 className='font-bold text-lg'>J Profile</h4>
                 </div>
-                <div className='flex flex-col items-center gap-3'>
-                  <img className=' w-full object-cover object-center' src='/images/alldecor.jpeg' alt='' />
+                <div className='flex flex-col w-full items-center gap-3'>
+                  <Image
+                    className='w-full object-cover h-[192px]'
+                    src={props?.Data?.image4 ?? '/images/alldecor.jpeg'}
+                    alt=''
+                    height={285}
+                    width={190}
+                  />
                   <h4 className='font-bold text-lg'>Bevel</h4>
                 </div>
               </div>

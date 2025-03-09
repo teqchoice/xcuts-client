@@ -37,7 +37,7 @@ const ProductSelectorDropdown = (props: ProductSelectorDropdownProps) => {
       params: {
         query: {
           fields: ['*.*.*'],
-          [`filter[brand_ref][name][_eq]`]: selectedBrand?.toLowerCase(),
+          [`filter[brand_ref][name][_eq]`]: selectedBrand,
           limit: 500,
           sort: ['sort', '-date_updated', 'date_updated']
         }

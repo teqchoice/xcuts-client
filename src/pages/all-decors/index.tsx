@@ -31,6 +31,8 @@ export const getServerSideProps = async (context: any) => {
     search: context.query.CodeOrName ? context.query.CodeOrName : null
   })
 
+  console.log(filters)
+
   try {
     // const { data: brand } = await axios.get(
     //   `https://shopi.xcuts.co.uk/api/collections/categories/records?filter=(parent.name=\'brand\')`
