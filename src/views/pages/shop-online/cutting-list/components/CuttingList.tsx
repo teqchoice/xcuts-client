@@ -153,9 +153,11 @@ const CuttingList = () => {
                 }
                 withCheckIcon={false}
                 styles={{
-                  input: { borderRadius: '0px' },
+                  input: { borderRadius: '0px', padding: '6px', fontSize: '12px' },
                   option: {
-                    justifyContent: 'center'
+                    justifyContent: 'center',
+                    fontSize: '12px',
+                    padding: '4px'
                   },
                   section: {
                     right: '-8px'
