@@ -5,7 +5,7 @@ import { TableSelection } from './list'
 
 export default function FullSheet({ price, setPrice, setUser }: any) {
   return (
-    <Disclosure defaultOpen={true} as='div' className='w-full'>
+    <Disclosure as='div' className='w-full'>
       {({ open }) => (
         <>
           <DisclosureButton className='flex justify-between items-center w-full shadow-lg rounded-xl border px-5 py-7 text-left text-xl font-semibold'>
@@ -20,7 +20,7 @@ export default function FullSheet({ price, setPrice, setUser }: any) {
               className='origin-top transition duration-200 ease-out data-[closed]:-translate-y-6 data-[closed]:opacity-0'
             >
               <div className='border border-dashed border-gray-400 p-10 text-center font-bold text-xl'>
-                <TableSelection price={price} setPrice={setPrice} setUser={setUser}  />
+                <TableSelection price={price} setPrice={setPrice} setUser={setUser} />
               </div>
             </DisclosurePanel>
           </div>
