@@ -5,7 +5,7 @@ import { CuttingList } from './cutting-list/components'
 
 export default function CutToSize() {
   return (
-    <Disclosure as='div' className='w-full'>
+    <Disclosure defaultOpen as='div' className='w-full'>
       {({ open }) => (
         <>
           <DisclosureButton className='flex justify-between items-center w-full shadow-lg rounded-xl border px-5 py-7 text-left text-xl font-semibold'>
