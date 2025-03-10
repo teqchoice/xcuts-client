@@ -313,7 +313,6 @@ export default function Order() {
                               <td className='td-eb'>
                                 <input
                                   type='text'
-                                  name
                                   data-tab-index='W2'
                                   autoComplete='off'
                                   className='border border-[#cacaca] text-[15px] p-2 w-full bg-[#474747] text-white focus:border-primary focus:outline-none rounded'

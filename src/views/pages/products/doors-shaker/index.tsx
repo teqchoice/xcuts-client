@@ -11,7 +11,7 @@ export default function index({ data }: any) {
       <PageIntroduction
         Data={{
           title: data?.data?.title ?? 'Custom Shaker-style Doors',
-          baner: '/images/shaker-doors/main-banner.jpeg'
+          baner: '/images/shaker-doors/main-banner.webp'
         }}
       />
       <IntroductionSection data={data?.data} />
