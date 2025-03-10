@@ -3,8 +3,11 @@ import React from 'react'
 
 export default function PageIntroduction(data: any) {
   const Data = {
-    title: data?.Data?.title ?? 'Wardrobe Sliding Doors',
-    baner: data?.Data?.baner ?? '/images/sliding-doors-banner.webp'
+    title: data?.Data?.title ?? '',
+    baner:
+      data?.Data?.baner?.length && !data?.Data?.baner?.startsWith('images')
+        ? data?.Data?.baner
+        : '/images/sliding-doors-banner.webp'
   }
 
   return (
@@ -22,6 +25,7 @@ export default function PageIntroduction(data: any) {
           className='max-h-[550px] w-full md:h-auto h-[200px] object-cover'
           width={2000}
           height={460}
+          quality={100}
         />
       )}
 
