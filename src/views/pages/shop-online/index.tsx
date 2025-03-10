@@ -40,7 +40,7 @@ export default function index({ Data }: any) {
   const rel = 'data-te-nav-active'
   return (
     <>
-      <PageIntroduction Data={{ title: '' }} />
+      <PageIntroduction Data={{ title: 'SHOP ONLINE', baner: '/images/all-decors.jpg' }} />
 
       <div className='mt-16'>
         <div className='px-5 overflow-x-hidden'>

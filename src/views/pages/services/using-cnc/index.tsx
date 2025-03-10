@@ -18,7 +18,7 @@ export default function index({ Data }: any) {
       <PageIntroduction
         Data={{
           title: 'CNC Wood Milling',
-          baner: '/images/cnc-cutting/main-banner.jpg'
+          baner: '/images/cnc-cutting/main-banner.webp'
         }}
       />
       <IntroductionSection Data={Data?.delivery} />
@@ -30,10 +30,10 @@ export default function index({ Data }: any) {
       <GrainAlignment Data={Data?.delivery} />
       <CuttingMCF
         Data={{
-          image1: '/images/cnc-cutting/cut-out.jpg',
-          image2: '/images/cnc-cutting/insert.jpg',
-          image3: '/images/cnc-cutting/profile.jpg',
-          image4: '/images/cnc-cutting/bevel.jpg'
+          image1: '/images/cnc-cutting/cut-out.webp',
+          image2: '/images/cnc-cutting/insert.webp',
+          image3: '/images/cnc-cutting/profile.webp',
+          image4: '/images/cnc-cutting/bevel.webp'
         }}
       />
       <Grooving Data={Data?.delivery} />

@@ -2,6 +2,8 @@ import React from 'react'
 import MiddleRedTitle from '@/views/pages/components/middleRedTitle'
 
 export default function FirstPortfolio({ data }: any) {
+  console.log(data, 'datahast')
+
   return (
     <section className='overflow-hidden'>
       <MiddleRedTitle title={data?.feature_title} />
