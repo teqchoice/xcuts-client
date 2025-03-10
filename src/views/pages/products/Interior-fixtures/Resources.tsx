@@ -20,18 +20,26 @@ export default function Resources(data, props: any) {
               </p>
 
               <div className='flex md:flex-row flex-col gap-5 my-5 lg:my-10'>
-                <div className='flex flex-col items-center justify-between gap-3'>
+                <div className='flex flex-col items-center justify-between gap-3 flex-1'>
                   <div>
-                    <img className=' w-full object-cover object-center' src='/images/alldecor.jpeg' alt='' />
+                    <img
+                      className=' w-full object-cover object-center max-h-[233px]'
+                      src='/images/interior-fixtures/21-Standard applications.jpg'
+                      alt=''
+                    />
                     <h4 className='font-bold text-lg'>Standard Application</h4>
                     <p>
                       Hinges for conventional applications with a front thicknesses of up to 24 mm are all available.
                     </p>
                   </div>
                 </div>
-                <div className='flex flex-col items-center justify-between gap-3'>
+                <div className='flex flex-col items-center justify-between gap-3 flex-1'>
                   <div>
-                    <img className=' w-full object-cover object-center' src='/images/alldecor.jpeg' alt='' />
+                    <img
+                      className=' w-full object-cover object-center max-h-[233px]'
+                      src='/images/interior-fixtures/22-wide-angled hinges.jpg'
+                      alt=''
+                    />
                     <h4 className='font-bold text-lg'>Applications for wide-angled hinges</h4>
                     <p>
                       include pull-out surrounds, inner pull-outs, and suitable for cabinet hinges with large opening
@@ -39,16 +47,24 @@ export default function Resources(data, props: any) {
                     </p>
                   </div>
                 </div>
-                <div className='flex flex-col items-center justify-between gap-3'>
+                <div className='flex flex-col items-center justify-between gap-3 flex-1'>
                   <div>
-                    <img className=' w-full object-cover object-center' src='/images/alldecor.jpeg' alt='' />
+                    <img
+                      className=' w-full object-cover object-center max-h-[233px]'
+                      src='/images/interior-fixtures/23-profile doors.jpg'
+                      alt=''
+                    />
                     <h4 className='font-bold text-lg'>Application for profile doors</h4>
                     <p>Hinges for thick doors and doors with a profile as thick as 32 mm</p>
                   </div>
                 </div>
-                <div className='flex flex-col items-center justify-between gap-3'>
+                <div className='flex flex-col items-center justify-between gap-3 flex-1'>
                   <div>
-                    <img className=' w-full object-cover object-center' src='/images/alldecor.jpeg' alt='' />
+                    <img
+                      className=' w-full object-cover object-center max-h-[233px]'
+                      src='/images/interior-fixtures/24-Blind Applications.jpg'
+                      alt=''
+                    />
                     <h4 className='font-bold text-lg'>Blind Applications (corners)</h4>
                     <p>Suitable for hinges that overlay or inset blind corner applications.</p>
                   </div>

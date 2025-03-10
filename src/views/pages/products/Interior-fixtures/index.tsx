@@ -17,7 +17,7 @@ import Resources from './Resources'
 export default function index({ data }: any) {
   return (
     <>
-      <PageIntroduction data={data?.data} />
+      <PageIntroduction Data={{ title: data?.data.title, baner: '/images/interior-fixtures/01-main-banner.jpg' }} />
       <IntroductionSection data={data?.data} />
 
       {/* <VideoSection Data={Data?.delivery} /> */}

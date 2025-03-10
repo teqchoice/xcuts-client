@@ -24,13 +24,25 @@ export default function Grooving(data, props: any) {
 
               <div className='flex md:flex-row flex-col gap-5 my-5 lg:my-10'>
                 <div className='flex flex-col items-center gap-3'>
-                  <img className=' w-full object-cover object-center' src={data?.data?.items[0]?.poster_url} alt='' />
+                  <img
+                    className=' w-full object-cover object-center'
+                    src={'/images/interior-fixtures/06-Movento.jpg'}
+                    alt=''
+                  />
                 </div>
                 <div className='flex flex-col items-center gap-3'>
-                  <img className=' w-full object-cover object-center' src={data?.data?.items[0]?.poster_url} alt='' />
+                  <img
+                    className=' w-full object-cover object-center'
+                    src={'/images/interior-fixtures/07-Movento.jpg'}
+                    alt=''
+                  />
                 </div>
                 <div className='flex flex-col items-center gap-3'>
-                  <img className=' w-full object-cover object-center' src={data?.data?.items[0]?.poster_url} alt='' />
+                  <img
+                    className=' w-full object-cover object-center'
+                    src={'/images/interior-fixtures/08-Movento.jpg'}
+                    alt=''
+                  />
                 </div>
               </div>
               <div className='flex justify-center'>
