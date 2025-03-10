@@ -96,7 +96,10 @@ export function TableSelection({ price, setPrice, setUser }: any) {
         <Table.Td>{item?.thickness_id?.thickness_ref?.product_name}</Table.Td>
         <Table.Td>1</Table.Td>
         <Table.Td>
-          £{(item?.thickness_id?.price_full_sheet * (1 + item?.thickness_id?.tax_percent / 100)).toFixed(2)}
+          {item?.thickness_id
+            ? `£
+          ${(item?.thickness_id?.price_full_sheet * (1 + item?.thickness_id?.tax_percent / 100)).toFixed(2)}}`
+            : 'POA'}
         </Table.Td>
         <Table.Td className='flex justify-center gap-5 py-3'>
           {/* <div

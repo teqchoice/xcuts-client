@@ -4,8 +4,6 @@ import MineMenu from './mineMenu'
 import CopyRight from './copyRight'
 
 export default function index({ data }: any) {
-  console.log(data)
-
   return (
     <footer className='bg-neutral-700'>
       <div className='px-4 sm:container'>

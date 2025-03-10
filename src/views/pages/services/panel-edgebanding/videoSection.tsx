@@ -39,11 +39,6 @@ const defaultTOurGuarantee: Partial<TOurGuarantee> = {
 }
 
 export default function VideoSection(props: any) {
-  const Data: TOurGuarantee = {
-    ...defaultTOurGuarantee,
-    ...props.Data
-  }
-  // console.log(Data)
   return (
     <>
       <section className='md:pt-20 pt-10 relative before:bg-primary before:lg:h-[583px] before:md:h-[483px] before:sm:h-[383px] before:h-[303px] before:block before:w-full before:md:rounded-3xl before:rounded-xl before:absolute before:top-0'>
@@ -65,7 +60,7 @@ export default function VideoSection(props: any) {
             ></iframe> */}
             <video
               className='embed-responsive-item absolute bottom-0 left-0 right-0 top-0 h-full w-full '
-              src='/images/vid/Main Banner.mp4'
+              src={props?.Data?.src ?? '/images/vid/Main Banner.mp4'}
               width='100%'
               height='auto'
               onMouseEnter={e => {

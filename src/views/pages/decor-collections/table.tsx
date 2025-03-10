@@ -2,6 +2,8 @@ import React from 'react'
 import Producttable from './components/producttable'
 
 export default function Table({ setOpened, opened, setPupitem, DecorsData }: any) {
+  console.log(DecorsData)
+
   return (
     <div
       className='hidden opacity-100 transition-opacity duration-150 ease-linear data-[te-tab-active]:block mb-8'

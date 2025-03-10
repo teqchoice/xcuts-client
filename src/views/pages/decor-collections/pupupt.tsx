@@ -191,35 +191,46 @@ export default function Pupapt({ data }: any) {
                 </div>
               )}
 
-              <h3 className='text-2xl'>
+              <h3 className='lg:text-2xl text-[20px]'>
                 Total:{' '}
                 <span className='text-primary font-bold'>
-                  {currentThickness ? `£${currentThickness?.price_full_sheet.toFixed(2)} ` : ''}
+                  {currentThickness?.price_full_sheet
+                    ? `£${currentThickness?.price_full_sheet?.toFixed(2) ?? ''} `
+                    : 'POA'}
                 </span>
               </h3>
-              <p className='text-sm'>
-                With VAT:{' '}
-                {currentThickness
-                  ? `£${(currentThickness?.price_full_sheet * (1 + currentThickness?.tax_percent / 100)).toFixed(2)}`
-                  : ''}
-              </p>
+              {currentThickness?.price_full_sheet && (
+                <p className='text-sm'>
+                  With VAT:{' '}
+                  {currentThickness?.price_full_sheet
+                    ? `£${
+                        (currentThickness?.price_full_sheet * (1 + currentThickness?.tax_percent / 100))?.toFixed(2) ??
+                        ''
+                      }`
+                    : ''}
+                </p>
+              )}
             </div>
             <div className=' w-full'>
               <button className='p-3 outline-black mt-2 w-full text-xs text-white bg-black'>Add to cutting list</button>
-              <h3 className='text-2xl'>
+              <h3 className='lg:text-2xl text-[20px]'>
                 Total:{' '}
                 <span className='text-primary font-bold'>
-                  {currentThickness ? `£${currentThickness?.price_cutting.toFixed(2)}` : ''}
+                  {currentThickness?.price_cutting ? `£${currentThickness?.price_cutting?.toFixed(2) ?? ''}` : 'POA'}
                 </span>
               </h3>
-              <p className='text-sm'>
-                With VAT:{' '}
-                {currentThickness
-                  ? `£${(currentThickness?.price_cutting * (1 + (currentThickness?.tax_percent ?? 20) / 100)).toFixed(
-                      2
-                    )}`
-                  : ''}
-              </p>
+              {currentThickness?.price_cutting && (
+                <p className='text-sm'>
+                  With VAT:{' '}
+                  {currentThickness?.price_cutting
+                    ? `£${
+                        (currentThickness?.price_cutting * (1 + (currentThickness?.tax_percent ?? 20) / 100))?.toFixed(
+                          2
+                        ) ?? ''
+                      }`
+                    : ''}
+                </p>
+              )}
             </div>
           </div>
           <div className='mt-2'>
@@ -241,19 +252,19 @@ export default function Pupapt({ data }: any) {
               <div className={`flex justify-between items-center mt-2 ${!currentThickness && 'mb-2'}`}>
                 <p className='text-[9px] text-black'>Full sheet price</p>
                 <span className='text-primary'>
-                  {currentThickness
+                  {currentThickness?.price_full_sheet
                     ? `£${(currentThickness?.price_full_sheet * (1 + currentThickness?.tax_percent / 100)).toFixed(2)}`
-                    : ''}
+                    : 'POA'}
                 </span>
               </div>
               <div className='flex justify-between items-center'>
                 <p className='text-[9px] text-black'>Sheet price with cutting (up to 20 pieces per sheet)</p>
                 <span className='text-primary'>
-                  {currentThickness
+                  {currentThickness?.price_cutting
                     ? `£${(currentThickness?.price_cutting * (1 + (currentThickness?.tax_percent ?? 20) / 100)).toFixed(
                         2
                       )}`
-                    : ''}
+                    : 'POA'}
                 </span>
               </div>
             </div>

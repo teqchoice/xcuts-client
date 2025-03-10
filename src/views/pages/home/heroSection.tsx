@@ -1,6 +1,8 @@
 import React, { Fragment } from 'react'
 import Slider from '../components/slider'
 import Image from 'next/image'
+import HeroItem from './HeroItem'
+import { SwiperSlide } from 'swiper/react'
 
 export default function HeroSection({ data }: any) {
   // console.log(process?.env.NEXT_PUBLIC_API__URL_images + `/${data?.s1_image?.id}/${data?.s1_image?.filename_download}`)
@@ -33,10 +35,10 @@ export default function HeroSection({ data }: any) {
     return (
       <Slider slidesPerView={1} className={'w-full overflow-hidden  object-cover !h-auto'}>
         {defaultSlide?.map((slide: any, i: number) => {
-          // console.log(slide)
           return (
-            <Fragment key={i}>
-              {/* <Image
+            <SwiperSlide key={i} className={`overflow-hidden w-full`}>
+              <Fragment>
+                {/* <Image
                 src={slide.filec}
                 // src={process.env.NEXT_PUBLIC_API_URL + slide.filec}
                 alt='baner'
@@ -45,33 +47,55 @@ export default function HeroSection({ data }: any) {
                 unoptimized
                 className='w-full aspect-video md:aspect-auto object-cover md:max-h-[370px] lg:max-h-[450px] xl:max-h-[39rem] 2xl::max-h-[650px]'
               /> */}
-              <video
-                src={slide.filec}
-                width='100%'
-                height='auto'
-                playsInline
-                autoPlay
-                muted
-                loop
-                preload='auto'
-                className='w-full aspect-video md:aspect-auto object-cover md:max-h-[370px] lg:max-h-[450px] xl:max-h-[39rem] 2xl::max-h-[650px]'
-                onMouseEnter={e => {
-                  const video = e.currentTarget
-                  if (video.paused !== false) {
-                    video.play()
-                  }
-                }}
-                onMouseLeave={e => {
-                  const video = e.currentTarget
-                  if (video.paused === false) {
-                    video.pause()
-                  }
-                }}
-              ></video>
-              {/* <video ref="vidRef" src="/images/Home-Banner.mp4" typeof="video/mp4"></video> */}
-            </Fragment>
+                <video
+                  src={slide.filec}
+                  width='100%'
+                  height='auto'
+                  playsInline
+                  autoPlay
+                  muted
+                  loop
+                  preload='auto'
+                  className='w-full aspect-video md:aspect-auto object-cover md:max-h-[370px] lg:max-h-[450px] xl:max-h-[45rem] 2xl::max-h-[650px]'
+                  onMouseEnter={e => {
+                    const video = e.currentTarget
+                    if (video.paused !== false) {
+                      video.play()
+                    }
+                  }}
+                  onMouseLeave={e => {
+                    const video = e.currentTarget
+                    if (video.paused === false) {
+                      video.pause()
+                    }
+                  }}
+                ></video>
+                {/* <video ref="vidRef" src="/images/Home-Banner.mp4" typeof="video/mp4"></video> */}
+              </Fragment>
+            </SwiperSlide>
           )
         })}
+        <SwiperSlide className={`overflow-hidden w-full`}>
+          <HeroItem
+            image={`/images/main-slider/1.jpg`}
+            hoverImage={`/images/main-slider/1-hover.jpg`}
+            link={'/services/size-cut-panels'}
+          />
+        </SwiperSlide>
+        <SwiperSlide className={`overflow-hidden w-full`}>
+          <HeroItem
+            image={`/images/main-slider/2.jpg`}
+            hoverImage={`/images/main-slider/2-hover.jpg`}
+            link={'/services/panel-edgebanding'}
+          />
+        </SwiperSlide>
+        <SwiperSlide className={`overflow-hidden w-full`}>
+          <HeroItem
+            image={`/images/main-slider/3.jpg`}
+            hoverImage={`/images/main-slider/3-hover.jpg`}
+            link={'/services/using-cnc'}
+          />
+        </SwiperSlide>
       </Slider>
     )
   }
