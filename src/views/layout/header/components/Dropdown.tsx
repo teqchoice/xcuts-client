@@ -9,7 +9,7 @@ export default function Dropdown({ menu, setMenu, data }: any) {
       <div onMouseLeave={() => setMenu('')} className={`relative bg-white`}>
         <div className='container  grid grid-cols-4 p-6 gap-10 items-center'>
           <Link href={'/all-decors'} className='relative border-4 cursor-pointer'>
-            <Image src='/images/alldecor.jpeg' alt='' className='w-full' width={334} height={227} />
+            <Image src='/images/all-decors.jpg' alt='' className='w-full object-cover' width={334} height={227} />
             <div className='bg-primary/50 absolute bottom-0 left-0 right-0 w-full text-white'>
               <h3 className='font-semibold text-lg text-center'>ALL DECORS</h3>
             </div>
