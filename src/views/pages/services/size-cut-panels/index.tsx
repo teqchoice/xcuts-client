@@ -24,7 +24,7 @@ export default function index({ Data }: any) {
           image1: '/images/size-cut-panel/computerised-cutting.webp',
           image2: '/images/size-cut-panel/accurate.webp',
           image3: '/images/size-cut-panel/panel-labelling.webp',
-          image4: '/images/size-cut-panel/quality-inspections.webp'
+          image4: '/images/size-cut-panel/quality-inspection.webp'
         }}
       />
 
