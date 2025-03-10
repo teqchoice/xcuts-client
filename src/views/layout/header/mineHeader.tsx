@@ -13,6 +13,7 @@ export default function MineHeader({ data }: any) {
   // }
   // console.log(data[3])
   // console.log(`https://cms.xcuts.co.uk/items/header/` + data.logo)
+
   return (
     <div className='relative mainHder bg-white py-7'>
       <div className='px-4 sm:container flex justify-between place-items-center'>
