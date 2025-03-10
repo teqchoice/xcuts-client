@@ -7,7 +7,7 @@ export default function DifferentTechnologiesSection(data, props: any) {
       <section>
         <div className='px-4 sm:container py-5'>
           <div className='relative mb-6'>
-            <img src='/images/alldecor.jpeg' alt='' className='w-full' />
+            <img src='/images/interior-fixtures/09-Legrabox.jpg' alt='' className='w-full' />
             <div className='px-5 py-6 md:px-10 md:py-9 bg-[#f3f3f3] md:absolute md:bottom-0 md:w-[600px] lg:w-[503px]'>
               <p className='text-xl md:text-3xl text-black'>
                 {/* Blum box approach. */}
@@ -42,24 +42,36 @@ export default function DifferentTechnologiesSection(data, props: any) {
               </p>
 
               <div className='flex md:flex-row flex-col gap-5 my-5 lg:my-10'>
-                <div className='flex flex-col items-center gap-3'>
-                  <img className=' w-full object-cover object-center' src='/images/alldecor.jpeg' alt='' />
+                <div className='flex flex-col items-center gap-3 flex-1'>
+                  <img
+                    className=' w-full object-cover object-center max-h-[233px]'
+                    src='/images/interior-fixtures/10-Streamlined Style.jpg'
+                    alt=''
+                  />
                   <h4 className='font-bold text-lg'>Streamlined Style</h4>
                   <p>
                     The wonderfully straight and thin (12.8 mm) drawer sides mix in well with all pieces of furniture.
                     The many elements work in harmony with one another thanks to meticulous coordination.
                   </p>
                 </div>
-                <div className='flex flex-col items-center gap-3'>
-                  <img className=' w-full object-cover object-center' src='/images/alldecor.jpeg' alt='' />
+                <div className='flex flex-col items-center gap-3 flex-1'>
+                  <img
+                    className=' w-full object-cover object-center max-h-[233px]'
+                    src='/images/interior-fixtures/11-Total capacity for Bearing Loads.jpg'
+                    alt=''
+                  />
                   <h4 className='font-bold text-lg'>Total capacity for Bearing Loads</h4>
                   <p>
                     Legrabox delivers excellent performance even when fully stretched and loaded. Due to its high
                     dynamic carrying capacity of 40 and 70 kg, even very wide and large pull-outs move smoothly.
                   </p>
                 </div>
-                <div className='flex flex-col items-center gap-3'>
-                  <img className=' w-full object-cover object-center' src='/images/alldecor.jpeg' alt='' />
+                <div className='flex flex-col items-center gap-3 flex-1'>
+                  <img
+                    className=' w-full object-cover object-center max-h-[233px]'
+                    src='/images/interior-fixtures/12-High-front Stability.jpg'
+                    alt=''
+                  />
                   <h4 className='font-bold text-lg'>High-front Stability</h4>
                   <p>
                     High fronts have grown into a more and more common design feature. With a new kind of front fixing
@@ -67,8 +79,12 @@ export default function DifferentTechnologiesSection(data, props: any) {
                     responds to this trend.{' '}
                   </p>
                 </div>
-                <div className='flex flex-col items-center gap-3'>
-                  <img className=' w-full object-cover object-center' src='/images/alldecor.jpeg' alt='' />
+                <div className='flex flex-col items-center gap-3 flex-1'>
+                  <img
+                    className=' w-full object-cover object-center max-h-[233px]'
+                    src='/images/interior-fixtures/13-Tip-on Bluemotion.jpg'
+                    alt=''
+                  />
                   <h4 className='font-bold text-lg'>Tip-on Bluemotion</h4>
                   <p>
                     The benefits of this mechanical opening mechanism are combined with Blumotion's tried-and-true
