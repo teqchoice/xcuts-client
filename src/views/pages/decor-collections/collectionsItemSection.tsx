@@ -62,7 +62,7 @@ export default function CollectionsItemSection({ BrandData, DecorsData }: any) {
               />
             </div>
             <div className='relative py-5 pl-5 pr-10 before:border-solid before:border-t-[bg-transparent] before:border-r-[#fff] before:border-b-[#f82f45] before:border-l-[bg-transparent] before:border-t-0 sm:before:border-r-[40px] before:border-b-[72px] before:border-l-0 before:absolute before:w-full before:h-full before:-top-2 before:md:top-0 before:left-0 before:-z-10 sm:w-[40%] lg:bottom-10 bottom-0'>
-              <h5 className='lg:text-xl text-base pr-8 font-semibold text-white whitespace-nowrap'>
+              <h5 className='lg:text-xl text-base pr-8 font-semibold text-white whitespace-nowrap capitalize'>
                 {item?.page_name}
               </h5>
             </div>

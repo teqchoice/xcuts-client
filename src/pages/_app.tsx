@@ -24,11 +24,15 @@ export default function App({ Component, pageProps }: AppProps) {
           <meta name='theme-color' content='#e11e26' />
           {/* <link rel='manifest' href='/manifest.json' /> */}
           <link rel='shortcut icon' href='/favicon.ico' />
-          <meta name='description' content='xcut'></meta>
+          <meta name='description' content='Xcuts - Precision CNC Cutting & Bespoke Manufacturing Solutions.' />
           <meta name='robots' content='index, follow' />
-          <meta name='keywords' content='xcut, cnc, cut'></meta>
-          <meta name='author' content='xcut'></meta>
-          <title>XCUT</title>
+          <meta
+            name='keywords'
+            content='CNC cutting, precision cutting, bespoke manufacturing, wood cutting, MDF cutting, plywood cutting, custom panels'
+          />
+          <meta name='author' content='Xcuts' />
+
+          <title>XCUTS | Precision CNC Cutting and Bespoke Manufacturing Services</title>
         </Head>
         <Toaster
           position='top-center'

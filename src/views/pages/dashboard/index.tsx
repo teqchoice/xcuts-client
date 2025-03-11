@@ -14,8 +14,10 @@ export default function index() {
   const router = useRouter()
 
   useEffect(() => {
-    token ? null : router.push('/login')
-  }, [])
+    if (!token) {
+      router.replace('/login')
+    }
+  }, [token, router])
 
   function Render() {
     switch (true) {

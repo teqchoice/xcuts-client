@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import PageIntroduction from '../components/pageIntroduction'
 // import Order from './order'
-import { BackgroundImage } from '@mantine/core'
 import CNCCutting from './CncCutting'
 import CutEdge from './CutEdge'
 import axios from 'axios'
@@ -36,6 +35,12 @@ export default function index({ Data }: any) {
         console.log(error)
       })
   }, [active])
+
+  // useEffect(() => {
+  //   if (!token) {
+  //     router.replace('/login')
+  //   }
+  // }, [token, router])
 
   const rel = 'data-te-nav-active'
   return (
