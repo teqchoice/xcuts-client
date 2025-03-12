@@ -10,11 +10,11 @@ import CuttingMDF from './cuttingMDF '
 import CuttingMCF from './cuttingMCF'
 import FAQ from './faq'
 
-export default function index({ Data }: any) {
+export default function index({ data }: any) {
   return (
     <>
       <PageIntroduction Data={{ title: 'Panels Cut to Size', baner: '/images/size-cut-panel/main-banner.webp' }} />
-      <IntroductionSection Data={Data?.delivery} />
+      <IntroductionSection Data={data?.delivery} />
       <VideoSection Data={{ src: '/images/size-cut-panel/video.mp4' }} />
 
       {/* <DifferentTechnologiesSection Data={Data?.delivery} /> */}
@@ -30,10 +30,10 @@ export default function index({ Data }: any) {
 
       {/* <PaintableSection Data={Data?.delivery} /> */}
 
-      <GrainAlignment Data={Data?.delivery} />
-      <CuttingMDF Data={Data?.delivery} />
-      <CuttingMCF Data={Data?.delivery} />
-      <FAQ Data={Data?.delivery} />
+      <GrainAlignment Data={data?.delivery} />
+      <CuttingMDF Data={data?.delivery} />
+      <CuttingMCF Data={data?.delivery} />
+      <FAQ data={data?.faq_items} />
     </>
   )
 }

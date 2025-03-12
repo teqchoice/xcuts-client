@@ -9,14 +9,14 @@ import axios from 'axios'
 export default function PSizeCutPanels({ data, header, footer }: any) {
   return (
     <Layout header={header} footer={footer}>
-      <SizeCutPanels Data={FakeDb} />
+      <SizeCutPanels data={data?.data} />
     </Layout>
   )
 }
 
 export const getServerSideProps = async (context: any) => {
   try {
-    const { data } = await axios.get(`${process.env.NEXT_PUBLIC_CMS_API_URL}/items/home_page?fields=*.*`)
+    const { data } = await axios.get(`${process.env.NEXT_PUBLIC_CMS_API_URL}/items/SizeCut_Panels?fields=*.*`)
 
     const { data: header } = await axios.get(`${process.env.NEXT_PUBLIC_CMS_API_URL}/items/header?fields=*.*`)
     const { data: footer } = await axios.get(`${process.env.NEXT_PUBLIC_CMS_API_URL}/items/footer?fields=*.*`)
