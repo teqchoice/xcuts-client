@@ -10,11 +10,11 @@ import CuttingMDF from './cuttingMDF '
 import CuttingMCF from './cuttingMCF'
 import FAQ from './faq'
 
-export default function index({ Data }: any) {
+export default function index({ data }: any) {
   return (
     <>
       <PageIntroduction Data={{ title: 'Panel Spray Painting', baner: '/images/spray-painting/main-banner.jpg' }} />
-      <IntroductionSection Data={Data?.delivery} />
+      <IntroductionSection Data={data?.delivery} />
 
       {/* <VideoSection Data={Data?.delivery} /> */}
       {/* <DifferentTechnologiesSection Data={Data?.delivery} /> */}
@@ -30,12 +30,12 @@ export default function index({ Data }: any) {
 
       {/* <PaintableSection Data={Data?.delivery} /> */}
 
-      <GrainAlignment Data={Data?.delivery} />
+      <GrainAlignment Data={data?.delivery} />
 
       {/* <CuttingMDF Data={Data?.delivery} /> */}
       {/* <CuttingMCF Data={Data?.delivery} /> */}
 
-      <FAQ />
+      <FAQ data={data?.faq_items} />
     </>
   )
 }
