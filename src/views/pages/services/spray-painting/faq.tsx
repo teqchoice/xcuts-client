@@ -21,8 +21,8 @@ export default function FAQ({ data }: any) {
                     value={(index + 1).toString()}
                     className='bg-slate-100 text-left p-4 rounded-md shadow-md'
                   >
-                    <Accordion.Control className='text-left'>{item.faq_question}</Accordion.Control>
-                    <Accordion.Panel>{item.faq_answer}</Accordion.Panel>
+                    <Accordion.Control className='text-left'>{item.question}</Accordion.Control>
+                    <Accordion.Panel>{item.answer}</Accordion.Panel>
                   </Accordion.Item>
                 ))}
               </Accordion>
